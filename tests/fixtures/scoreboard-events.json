@@ -1,0 +1,128 @@
+{
+  "regularFinal": {
+    "id": "401909088",
+    "shortName": "BOS @ DET",
+    "season": {
+      "year": 2027,
+      "type": 2,
+      "slug": "regular-season"
+    },
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "competitions": [
+      {
+        "type": {
+          "id": "1",
+          "abbreviation": "STD"
+        },
+        "notes": []
+      }
+    ]
+  },
+  "live": {
+    "id": "401909089",
+    "shortName": "PHI @ NY",
+    "season": {
+      "year": 2027,
+      "type": 2,
+      "slug": "regular-season"
+    },
+    "status": {
+      "type": {
+        "id": "23",
+        "name": "STATUS_HALFTIME",
+        "state": "in",
+        "completed": false,
+        "description": "Halftime",
+        "detail": "Halftime",
+        "shortDetail": "Halftime"
+      }
+    },
+    "competitions": [
+      {
+        "type": {
+          "id": "1",
+          "abbreviation": "STD"
+        },
+        "notes": []
+      }
+    ]
+  },
+  "cupSemifinal": {
+    "id": "401809837",
+    "shortName": "NY VS ORL",
+    "season": {
+      "year": 2026,
+      "type": 2,
+      "slug": "regular-season"
+    },
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "competitions": [
+      {
+        "type": {
+          "id": "1",
+          "abbreviation": "STD"
+        },
+        "notes": [
+          {
+            "type": "event",
+            "headline": "NBA Cup - Semifinals"
+          }
+        ]
+      }
+    ]
+  },
+  "cupFinal": {
+    "id": "401809839",
+    "shortName": "SA VS NY",
+    "season": {
+      "year": 2026,
+      "type": 2,
+      "slug": "regular-season"
+    },
+    "status": {
+      "type": {
+        "id": "3",
+        "name": "STATUS_FINAL",
+        "state": "post",
+        "completed": true,
+        "description": "Final",
+        "detail": "Final",
+        "shortDetail": "Final"
+      }
+    },
+    "competitions": [
+      {
+        "type": {
+          "id": "39",
+          "abbreviation": "CC"
+        },
+        "notes": [
+          {
+            "type": "event",
+            "headline": "NBA Cup Championship"
+          }
+        ]
+      }
+    ]
+  }
+}

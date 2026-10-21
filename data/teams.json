@@ -1,0 +1,212 @@
+[
+  {
+    "id": "1",
+    "code": "ATL",
+    "name": "Atlanta Hawks",
+    "color": "c8102e",
+    "alternateColor": "fdb927"
+  },
+  {
+    "id": "2",
+    "code": "BOS",
+    "name": "Boston Celtics",
+    "color": "008348",
+    "alternateColor": "ffffff"
+  },
+  {
+    "id": "17",
+    "code": "BKN",
+    "name": "Brooklyn Nets",
+    "color": "000000",
+    "alternateColor": "ffffff"
+  },
+  {
+    "id": "30",
+    "code": "CHA",
+    "name": "Charlotte Hornets",
+    "color": "008ca8",
+    "alternateColor": "1d1060"
+  },
+  {
+    "id": "4",
+    "code": "CHI",
+    "name": "Chicago Bulls",
+    "color": "ce1141",
+    "alternateColor": "000000"
+  },
+  {
+    "id": "5",
+    "code": "CLE",
+    "name": "Cleveland Cavaliers",
+    "color": "860038",
+    "alternateColor": "bc945c"
+  },
+  {
+    "id": "6",
+    "code": "DAL",
+    "name": "Dallas Mavericks",
+    "color": "0064b1",
+    "alternateColor": "bbc4ca"
+  },
+  {
+    "id": "7",
+    "code": "DEN",
+    "name": "Denver Nuggets",
+    "color": "0e2240",
+    "alternateColor": "fec524"
+  },
+  {
+    "id": "8",
+    "code": "DET",
+    "name": "Detroit Pistons",
+    "color": "1d428a",
+    "alternateColor": "c8102e"
+  },
+  {
+    "id": "9",
+    "code": "GS",
+    "name": "Golden State Warriors",
+    "color": "fdb927",
+    "alternateColor": "1d428a"
+  },
+  {
+    "id": "10",
+    "code": "HOU",
+    "name": "Houston Rockets",
+    "color": "ce0e2d",
+    "alternateColor": "000000"
+  },
+  {
+    "id": "11",
+    "code": "IND",
+    "name": "Indiana Pacers",
+    "color": "0c2340",
+    "alternateColor": "ffd520"
+  },
+  {
+    "id": "12",
+    "code": "LAC",
+    "name": "LA Clippers",
+    "color": "12173f",
+    "alternateColor": "c8102e"
+  },
+  {
+    "id": "13",
+    "code": "LAL",
+    "name": "Los Angeles Lakers",
+    "color": "552583",
+    "alternateColor": "fdb927"
+  },
+  {
+    "id": "29",
+    "code": "MEM",
+    "name": "Memphis Grizzlies",
+    "color": "5d76a9",
+    "alternateColor": "12173f"
+  },
+  {
+    "id": "14",
+    "code": "MIA",
+    "name": "Miami Heat",
+    "color": "98002e",
+    "alternateColor": "000000"
+  },
+  {
+    "id": "15",
+    "code": "MIL",
+    "name": "Milwaukee Bucks",
+    "color": "00471b",
+    "alternateColor": "eee1c6"
+  },
+  {
+    "id": "16",
+    "code": "MIN",
+    "name": "Minnesota Timberwolves",
+    "color": "266092",
+    "alternateColor": "79bc43"
+  },
+  {
+    "id": "3",
+    "code": "NO",
+    "name": "New Orleans Pelicans",
+    "color": "0a2240",
+    "alternateColor": "b4975a"
+  },
+  {
+    "id": "18",
+    "code": "NY",
+    "name": "New York Knicks",
+    "color": "1d428a",
+    "alternateColor": "f58426"
+  },
+  {
+    "id": "25",
+    "code": "OKC",
+    "name": "Oklahoma City Thunder",
+    "color": "007ac1",
+    "alternateColor": "ef3b24"
+  },
+  {
+    "id": "19",
+    "code": "ORL",
+    "name": "Orlando Magic",
+    "color": "0150b5",
+    "alternateColor": "9ca0a3"
+  },
+  {
+    "id": "20",
+    "code": "PHI",
+    "name": "Philadelphia 76ers",
+    "color": "1d428a",
+    "alternateColor": "e01234"
+  },
+  {
+    "id": "21",
+    "code": "PHX",
+    "name": "Phoenix Suns",
+    "color": "29127a",
+    "alternateColor": "e56020"
+  },
+  {
+    "id": "22",
+    "code": "POR",
+    "name": "Portland Trail Blazers",
+    "color": "e03a3e",
+    "alternateColor": "000000"
+  },
+  {
+    "id": "23",
+    "code": "SAC",
+    "name": "Sacramento Kings",
+    "color": "5a2d81",
+    "alternateColor": "6a7a82"
+  },
+  {
+    "id": "24",
+    "code": "SA",
+    "name": "San Antonio Spurs",
+    "color": "000000",
+    "alternateColor": "c4ced4"
+  },
+  {
+    "id": "28",
+    "code": "TOR",
+    "name": "Toronto Raptors",
+    "color": "d91244",
+    "alternateColor": "000000"
+  },
+  {
+    "id": "26",
+    "code": "UTAH",
+    "name": "Utah Jazz",
+    "color": "4e008e",
+    "alternateColor": "79a3dc"
+  },
+  {
+    "id": "27",
+    "code": "WSH",
+    "name": "Washington Wizards",
+    "color": "e31837",
+    "alternateColor": "002b5c"
+  }
+]
