@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getTeams, getScoreboard, getSummary, isCountedGame, trimGame } from './espn.js';
 import { checkGame } from './checks.js';
+import { build } from './build.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8'));
@@ -77,6 +78,9 @@ async function main() {
     }
   }
   console.log(`Done: ${saved} game files saved or updated, ${unchanged} unchanged.`);
+
+  const data = build();
+  console.log(`Built app-data.json: ${data.teams.length} teams, checked ${data.checked}`);
 }
 
 main().catch((err) => {
