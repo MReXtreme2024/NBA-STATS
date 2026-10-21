@@ -5,6 +5,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { checkAppData, checkGame } from './checks.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -132,13 +133,16 @@ export function loadGames(gamesDir) {
     .map((f) => JSON.parse(fs.readFileSync(path.join(gamesDir, f), 'utf8')));
 }
 
-// Rebuild app-data.json from everything saved; returns the built data.
+// Rebuild app-data.json from everything saved, after the checks pass; returns the built data.
 export function build(now = new Date()) {
   const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8'));
   const teams = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'teams.json'), 'utf8'));
   const games = loadGames(path.join(ROOT, 'data', 'games', config.season));
+  games.forEach(checkGame);
   const data = buildAppData(games, teams, config, now);
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
+  const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
+  checkAppData(data, previous);
   fs.mkdirSync(path.dirname(file), { recursive: true });
   fs.writeFileSync(file, JSON.stringify(data) + '\n');
   return data;
