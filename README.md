@@ -6,7 +6,7 @@ Your personal NBA stats app for the 2026-27 regular season: every team's and pla
 
 **https://mrextreme2024.github.io/NBA-STATS/**
 
-Only people you give this link to will find it. It updates itself every night at about **12:00am Melbourne time**, and nothing runs on your computer. The top of the home screen shows when it last checked, for example "Checked 12:04am Thu 22 Oct".
+Only people you give this link to will find it. It updates itself every night at about **12:07am Melbourne time** (GitHub sometimes starts it later), and nothing runs on your computer. The top of the home screen shows when it last checked, for example "Checked 12:11am Thu 22 Oct".
 
 ## Add it to your home screen
 

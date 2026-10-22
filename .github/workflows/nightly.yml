@@ -2,7 +2,7 @@ name: Nightly update
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '7 0 * * *'                 # 12:07am: GitHub delays or drops jobs set for exactly the hour
       timezone: 'Australia/Melbourne'   # GitHub adjusts for daylight saving
   workflow_dispatch:                    # adds a "Run workflow" button for manual updates
     inputs:

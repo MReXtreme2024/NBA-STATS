@@ -41,3 +41,7 @@ The owner, Nate, is not a developer: explain steps in plain English and run comm
 ## Tech
 
 Node.js (LTS) built-ins only: no frameworks, no npm packages, no build step. Site is plain HTML/CSS/JS in `docs/`.
+
+## Schedule
+
+The nightly run is at **12:07am** Australia/Melbourne (`cron: '7 0 * * *'`), not 12:00am as in PLAN.md. Nate approved the move because GitHub delays or drops jobs scheduled exactly on the hour; the first midnight run started about 5 hours late.
