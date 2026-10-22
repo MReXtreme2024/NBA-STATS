@@ -5,22 +5,26 @@ The owner, Nate, is not a developer: explain steps in plain English and run comm
 
 ## Maths rules
 
-- Whole numbers only. **Cut** (round down, `Math.floor`) at every step. Never round up, never multiply decimals.
+Nate changed these after the build (22 Oct 2026); they replace PLAN.md's "cut at every step" rule.
+
+- All maths is done in **whole numbers** (no floating-point), so results are exact. Never multiply decimals.
 - Team GP = the team's finished regular-season games.
 - Team total = one stat summed over the team's games, **built from player lines** (never ESPN's team `totalRebounds`).
-- Team average = cut(team total ÷ team GP).
 - Player GP = games where ESPN lists stats for him (not `didNotPlay`). Player totals count only games for that team.
-- Share % and projection, in this exact order (logic lives in `docs/calc.js`):
+- **The projection formula keeps every decimal; only the final projection is cut** (round down) to a whole number: 20.56 → 20.
+- **Shown** averages and share % have **2 decimals, cut** (never rounded): 33.627% → 33.62%, average 4.50.
+- Logic lives in `docs/calc.js`; shown figures are held as whole hundredths (1769 = 17.69):
 
   ```js
-  const cut = (a, b) => Math.floor(a / b);
-  const teamAvg    = cut(teamTotal, teamGP);
-  const sharePct   = cut(100 * playerTotal, base);   // base = teamTotal (All team games) or teamTotalInHisGames (Games he played)
-  const projection = cut(teamAvg * sharePct, 100);   // both modes use the full-season team average
+  const cut = (a, b) => (a - (a % b)) / b;                     // whole-number division, decimals dropped
+  const teamAvg100  = cut(100 * teamTotal, teamGP);            // 9 over 2 → 450, shown 4.50
+  const share100    = cut(10000 * playerTotal, base);          // base = teamTotal (All team games) or teamTotalInHisGames (Games he played)
+  const projection  = cut(teamTotal * playerTotal, teamGP * base);  // = team average × share with every decimal kept
   ```
 
-- Zero cases: team GP 0 → "—" for averages, shares, projections. Base total 0 → share 0%, projection 0. "Games he played" mode with player GP 0 → "—".
-- Small numbers cutting to 0 (e.g. blocks projection 0) is intended. Don't "fix" it.
+- Both modes use the full-season team average.
+- Zero cases: team GP 0 → "—" for averages, shares, projections. Base total 0 → share 0.00%, projection 0. "Games he played" mode with player GP 0 → "—".
+- **Projections page** (Team page's third button): only Points, Rebounds, Assists and 3PM; lists players with a projection of 1 or more in any of them; projections below 1 are blank. Uses the remembered mode switch; sorted by PTS; headings re-sort; rows open the Player page. The Player page keeps all six stats.
 - `tests/calc.test.js` (run with `node --test`) must pass before any screen work.
 
 ## Data source rules

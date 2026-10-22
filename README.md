@@ -50,13 +50,15 @@ Team codes are the usual NBA ones (BOS, NYK, GSW, LAL…).
 
 ## How the numbers work
 
-- **Average** = total ÷ games, with the decimals cut off (4.5 becomes 4). Nothing is ever rounded up.
-- **Share %** = the player's part of the team's total, decimals cut off.
+- **Average** = total ÷ games, shown with 2 decimals (4.50 blocks). Decimals are cut, never rounded up.
+- **Share %** = the player's part of the team's total, shown with 2 decimals (33.62%).
   - **All team games:** out of the team's total for the whole season.
   - **Games he played:** out of the team's total in only the games he played.
-- **Projection** = team average × share %, decimals cut off.
+- **Projection** = team average × share %, worked out with **every decimal kept**, then cut to a whole number (20.56 becomes 20).
 
-Each Player page shows the working under every number, so you can check it by hand. Small stats like blocks often project to 0. That's expected, because cutting decimals at every step pulls small numbers down.
+Each Player page shows the working under every number. Because the projection uses the full decimals, it can come out a touch higher than multiplying the two shown 2-decimal figures by hand.
+
+**Projections button** (on each Team page): every player's projection for Points, Rebounds, Assists and 3PM. Only players with a projection of 1 or more are listed, and anything below 1 is left blank. The *All team games / Games he played* switch works here too. Tap a heading to re-sort, or a player to see their working.
 
 ## Off-season and next season
 

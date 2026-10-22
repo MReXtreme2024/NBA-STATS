@@ -186,6 +186,14 @@ Total steals 22 (average 11 steals)
   - All team games: `100 ÷ 226 × 40 = 17% · 113 × 17% = 19`
   - Games he played: `100 ÷ 116 × 40 = 34% · 113 × 34% = 38`
 
+**4b. Projections** (added at Nate's request after the plan)
+
+- A third button on the Team page. Columns Player, GP, then projections for PTS, REB, AST and 3PM only.
+- Lists players with a projection of 1 or more in any of those four; projections below 1 are left blank.
+- Uses the same *All team games* / *Games he played* switch as the Player page (and the remembered choice). Sorted by PTS; tapping a heading re-sorts; tapping a player opens the Player page.
+
+**Decimals change** (Nate, 22 Oct 2026, replaces "cut at every step" in Maths rules): the projection formula keeps every decimal and only the final projection is cut to a whole number (20.56 → 20). Averages and share % are shown with 2 decimals, cut. Worked examples are now: 226 ÷ 2 → 113.00; 40 of 226 → 17.69%, projection 20; games he played 40 of 116 → 34.48%, projection 38; 2 of 9 blocks → 22.22%, projection 1. See `CLAUDE.md` and `tests/calc.test.js`.
+
 **Everywhere**
 
 - A back button on every page, tap targets at least 44 px, readable in light and dark mode.

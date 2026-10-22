@@ -1,25 +1,33 @@
-// All app maths. Whole numbers only; decimals are cut (rounded down) at every step.
-// Never multiply decimals: floating-point error can turn an exact 1 into 0.9999, which cuts to 0.
+// All app maths, done in whole numbers so there is no floating-point error
+// (which could turn an exact 20 into 19.9999 and cut it to 19).
+// The projection formula keeps every decimal; only the final projection is cut to a whole number.
+// Averages and share % are shown with 2 decimals, cut (never rounded up): 33.627% shows as 33.62%.
+// Shown 2-decimal figures are held as whole hundredths: 3362 means 33.62.
 // null means "no figure yet" and is shown as "—".
 
 export const DASH = '—';
 
-// a and b are whole numbers.
-export const cut = (a, b) => Math.floor(a / b);
+// a ÷ b with the decimals cut. a and b are whole numbers, b > 0.
+export const cut = (a, b) => (a - (a % b)) / b;
 
-// cut(team total ÷ team GP); null when the team hasn't played.
+// Team average in hundredths: 9 blocks over 2 games -> 450 (shown 4.50). null when the team hasn't played.
 export function teamAverage(teamTotal, teamGP) {
-  return teamGP > 0 ? cut(teamTotal, teamGP) : null;
+  return teamGP > 0 ? cut(100 * teamTotal, teamGP) : null;
 }
 
-// cut(100 ÷ base × player total), done as cut(100 × player total, base). A base of 0 gives 0%.
+// Share % in hundredths: 100 ÷ 226 × 40 = 17.699…% -> 1769 (shown 17.69%). A base of 0 gives 0.
 export function sharePct(playerTotal, base) {
-  return base > 0 ? cut(100 * playerTotal, base) : 0;
+  return base > 0 ? cut(10000 * playerTotal, base) : 0;
 }
 
-// cut(team average × share %), done as cut(team average × share, 100).
-export function projection(teamAvg, share) {
-  return cut(teamAvg * share, 100);
+// Projection with every decimal kept: team average × share
+//   = (teamTotal ÷ teamGP) × (playerTotal ÷ base) = (teamTotal × playerTotal) ÷ (teamGP × base).
+// Returns the exact value in hundredths (for the working) and the projection cut to a whole number.
+export function projection(teamTotal, teamGP, playerTotal, base) {
+  if (base <= 0) return { exact: 0, whole: 0 };
+  const top = teamTotal * playerTotal;
+  const bottom = teamGP * base;
+  return { exact: cut(100 * top, bottom), whole: cut(top, bottom) };
 }
 
 export const MODES = { ALL: 'all', PLAYED: 'played' };
@@ -32,16 +40,22 @@ export function playerStat({ teamTotal, teamGP, playerTotal, teamTotalInHisGames
   const avg = teamAverage(teamTotal, teamGP);
   const base = mode === MODES.PLAYED ? teamTotalInHisGames : teamTotal;
   if (avg === null || (mode === MODES.PLAYED && playerGP === 0)) {
-    return { base, avg, share: null, projection: null };
+    return { base, avg, share: null, exact: null, projection: null };
   }
-  const share = sharePct(playerTotal, base);
-  return { base, avg, share, projection: projection(avg, share) };
+  const p = projection(teamTotal, teamGP, playerTotal, base);
+  return { base, avg, share: sharePct(playerTotal, base), exact: p.exact, projection: p.whole };
 }
 
-// The working shown beneath each stat, e.g. "100 ÷ 226 × 40 = 17% · 113 × 17% = 19".
-export function working(playerTotal, { base, avg, share, projection: proj }) {
+// Hundredths as text with 2 decimals: 1769 -> "17.69", 450 -> "4.50".
+export const hundredths = (n) => `${cut(n, 100)}.${String(n % 100).padStart(2, '0')}`;
+
+// A figure as text: "—" for null; 2 decimals when it is in hundredths.
+export const show = (value, { decimals = false, suffix = '' } = {}) =>
+  value === null ? DASH : `${decimals ? hundredths(value) : value}${suffix}`;
+
+// The working shown beneath each stat, e.g. "100 ÷ 226 × 40 = 17.69% · 113.00 × 17.69% = 20.00 → 20".
+// The product is worked from the full decimals, so it can be a touch above the shown figures multiplied.
+export function working(playerTotal, { base, avg, share, exact, projection: proj }) {
   if (share === null) return DASH;
-  return `100 ÷ ${base} × ${playerTotal} = ${share}% · ${avg} × ${share}% = ${proj}`;
+  return `100 ÷ ${base} × ${playerTotal} = ${hundredths(share)}% · ${hundredths(avg)} × ${hundredths(share)}% = ${hundredths(exact)} → ${proj}`;
 }
-
-export const show = (value, suffix = '') => (value === null ? DASH : `${value}${suffix}`);

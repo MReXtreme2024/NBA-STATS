@@ -92,6 +92,7 @@ a { color: inherit; }
   font-weight: 700;
   font-size: 17px;
 }
+.button.wide { grid-column: 1 / -1; }
 
 /* Tables scroll sideways inside their own box */
 .table-wrap {
@@ -163,8 +164,8 @@ td a { display: inline-flex; align-items: center; min-height: 44px; text-decorat
   padding: 12px 14px;
 }
 .stat h3 { margin: 0 0 6px; font-size: 15px; color: var(--muted); font-weight: 600; }
-.figures { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.figures { display: grid; grid-template-columns: 1fr 1.6fr 1fr; gap: 8px; }
 .figures div { display: flex; flex-direction: column; }
-.figures b { font-size: 28px; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.figures b { font-size: 26px; line-height: 1.1; font-variant-numeric: tabular-nums; }
 .figures span { font-size: 12px; color: var(--muted); }
 .working { margin: 8px 0 0; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
