@@ -63,14 +63,15 @@ export function isoIn(date, timeZone) {
 }
 
 // games: trimmed game objects; teams: ESPN's 30-team list; now: the check time.
-export function buildAppData(games, teams, config, now) {
+// upcoming: { usDate, games } not yet played; rosters: { teamId: [playerId] } current rosters.
+export function buildAppData(games, teams, config, now, { upcoming = null, rosters = {} } = {}) {
   const byId = new Map(
     teams.map((t) => {
       const code = nbaCode(t.code);
       const colour = normaliseHex(config.colourOverrides?.[code] ?? t.color);
       return [t.id, {
         id: t.id, code, name: t.name, colour, textColour: textColourFor(colour),
-        gp: 0, totals: zeroTotals(), games: [], playersById: new Map(),
+        gp: 0, totals: zeroTotals(), games: [], playersById: new Map(), roster: rosters[t.id] ?? null,
       }];
     }),
   );
@@ -123,7 +124,16 @@ export function buildAppData(games, teams, config, now) {
     }))
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  return { season: config.season, checked: isoIn(now, config.timeZone), teams: out };
+  const upcomingGames = (upcoming?.games ?? [])
+    .filter((g) => byId.has(g.homeId) && byId.has(g.awayId))
+    .sort((a, b) => a.start.localeCompare(b.start) || a.id.localeCompare(b.id));
+
+  return {
+    season: config.season,
+    checked: isoIn(now, config.timeZone),
+    upcoming: { usDate: upcoming?.usDate ?? null, games: upcomingGames },
+    teams: out,
+  };
 }
 
 export function loadGames(gamesDir) {
@@ -139,7 +149,13 @@ export function build(now = new Date()) {
   const teams = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'teams.json'), 'utf8'));
   const games = loadGames(path.join(ROOT, 'data', 'games', config.season));
   games.forEach(checkGame);
-  const data = buildAppData(games, teams, config, now);
+  const readOptional = (name) => {
+    const f = path.join(ROOT, 'data', name);
+    return fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : undefined;
+  };
+  const data = buildAppData(games, teams, config, now, {
+    upcoming: readOptional('upcoming.json'), rosters: readOptional('rosters.json'),
+  });
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   checkAppData(data, previous);

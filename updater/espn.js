@@ -51,6 +51,34 @@ export async function getSummary(eventId) {
   return fetchJson(`${SUMMARY_URL}?event=${eventId}`);
 }
 
+// One team's current roster as a list of player ids.
+export async function getRoster(teamId) {
+  const data = await fetchJson(`${TEAMS_URL}/${teamId}/roster`);
+  return (data.athletes ?? []).map((a) => a.id);
+}
+
+// A regular-season game of this season that hasn't started yet.
+export function isUpcomingGame(event, espnSeasonYear) {
+  return (
+    event.season?.year === espnSeasonYear &&
+    event.season?.type === 2 &&
+    event.status?.type?.state === 'pre'
+  );
+}
+
+// An upcoming game as we keep it: when, and who is home and away.
+export function trimUpcoming(event) {
+  const comp = event.competitions[0];
+  const side = (homeAway) => comp.competitors.find((c) => c.homeAway === homeAway).team.id;
+  return {
+    id: event.id,
+    start: event.date,
+    homeId: side('home'),
+    awayId: side('away'),
+    note: comp.notes?.[0]?.headline ?? '',
+  };
+}
+
 // The NBA Cup Championship is labelled regular season (type 2) by ESPN, but doesn't count.
 // ESPN marks it with competition type "CC" (id 39) and the note "NBA Cup Championship".
 export function isCupFinal(event) {

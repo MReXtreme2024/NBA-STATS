@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { isCountedGame, isCupFinal, trimGame } from '../updater/espn.js';
+import { isCountedGame, isCupFinal, isUpcomingGame, trimGame, trimUpcoming } from '../updater/espn.js';
 import { checkGame } from '../updater/checks.js';
 
 const read = (f) => JSON.parse(fs.readFileSync(new URL(`./fixtures/${f}`, import.meta.url)));
@@ -53,4 +53,23 @@ test('points check fails when players do not add up to the score', () => {
   const game = trimGame(summary, '2026-10-20');
   game.teams[0].score += 1;
   assert.throws(() => checkGame(game), /final score/);
+});
+
+const preGame = {
+  id: '401909092', date: '2026-10-22T02:00Z',
+  season: { year: 2027, type: 2 }, status: { type: { state: 'pre', completed: false } },
+  competitions: [{ notes: [], competitors: [
+    { homeAway: 'home', team: { id: '13' } }, { homeAway: 'away', team: { id: '9' } },
+  ] }],
+};
+
+test('a game that has not started is upcoming; live and finished games are not', () => {
+  assert.equal(isUpcomingGame(preGame, 2027), true);
+  assert.equal(isUpcomingGame({ ...preGame, status: { type: { state: 'in' } } }, 2027), false);
+  assert.equal(isUpcomingGame(events.regularFinal, 2027), false);
+  assert.equal(isUpcomingGame({ ...preGame, season: { year: 2027, type: 1 } }, 2027), false); // preseason
+});
+
+test('upcoming game keeps start time and home/away teams', () => {
+  assert.deepEqual(trimUpcoming(preGame), { id: '401909092', start: '2026-10-22T02:00Z', homeId: '13', awayId: '9', note: '' });
 });

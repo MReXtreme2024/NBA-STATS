@@ -5,7 +5,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getTeams, getScoreboard, getSummary, isCountedGame, trimGame } from './espn.js';
+import {
+  getTeams, getScoreboard, getSummary, getRoster, isCountedGame, isUpcomingGame, trimGame, trimUpcoming,
+} from './espn.js';
 import { checkGame } from './checks.js';
 import { build } from './build.js';
 
@@ -55,12 +57,15 @@ async function main() {
   const refetchFrom = from ?? addDays(today, -REFETCH_DAYS);
 
   console.log(`Teams list`);
-  writeJson(path.join(DATA_DIR, 'teams.json'), await getTeams());
+  const teams = await getTeams();
+  writeJson(path.join(DATA_DIR, 'teams.json'), teams);
 
   let saved = 0;
   let unchanged = 0;
+  let upcoming = [];
   for (let date = start; date <= end; date = addDays(date, 1)) {
     const events = await getScoreboard(date);
+    if (date === today) upcoming = events.filter((e) => isUpcomingGame(e, config.espnSeasonYear)).map(trimUpcoming);
     const kept = events.filter((e) => isCountedGame(e, config.espnSeasonYear));
     console.log(`${date}: ${events.length} games listed, ${kept.length} finished regular-season`);
     for (const event of kept) {
@@ -78,6 +83,16 @@ async function main() {
     }
   }
   console.log(`Done: ${saved} game files saved or updated, ${unchanged} unchanged.`);
+
+  // Today's (US date) games that haven't started, for the Upcoming games screen.
+  writeJson(path.join(DATA_DIR, 'upcoming.json'), { usDate: today, games: upcoming });
+  console.log(`Upcoming: ${upcoming.length} games on ${today}`);
+
+  // Current rosters, so upcoming-game projections leave out players who have moved on.
+  console.log('Rosters');
+  const rosters = {};
+  for (const t of teams) rosters[t.id] = await getRoster(t.id);
+  writeJson(path.join(DATA_DIR, 'rosters.json'), rosters);
 
   const data = build();
   console.log(`Built app-data.json: ${data.teams.length} teams, checked ${data.checked}`);

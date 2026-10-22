@@ -73,3 +73,20 @@ test('check time is Melbourne time with daylight saving offset', () => {
   assert.equal(data.checked, '2026-10-22T00:04:00+11:00');
   assert.equal(isoIn(new Date('2027-06-01T14:00:00Z'), 'Australia/Melbourne'), '2027-06-02T00:00:00+10:00');
 });
+
+test('upcoming games are kept in start order; games with unknown teams are dropped', () => {
+  const upcoming = { usDate: '2026-10-22', games: [
+    { id: 'b', start: '2026-10-23T02:00Z', homeId: '8', awayId: '2', note: '' },
+    { id: 'a', start: '2026-10-22T23:00Z', homeId: '18', awayId: '2', note: '' },
+    { id: 'x', start: '2026-10-22T23:00Z', homeId: '99', awayId: '2', note: '' },
+  ] };
+  const d = buildAppData([game], teams, config, now, { upcoming, rosters: { 2: ['1', '2'] } });
+  assert.equal(d.upcoming.usDate, '2026-10-22');
+  assert.deepEqual(d.upcoming.games.map((g) => g.id), ['a', 'b']);
+  assert.deepEqual(d.teams.find((t) => t.code === 'BOS').roster, ['1', '2']);
+  assert.equal(d.teams.find((t) => t.code === 'DET').roster, null); // roster unknown
+});
+
+test('no upcoming file means an empty upcoming list', () => {
+  assert.deepEqual(data.upcoming, { usDate: null, games: [] });
+});

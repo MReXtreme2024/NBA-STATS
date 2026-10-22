@@ -60,6 +60,12 @@ Each Player page shows the working under every number. Because the projection us
 
 **Projections button** (on each Team page): every player's projection for Points, Rebounds, Assists and 3PM. Only players with a projection of 1 or more are listed, and anything below 1 is left blank. The *All team games / Games he played* switch works here too. Tap a heading to re-sort, or a player to see their working.
 
+## Upcoming games
+
+Tap **Upcoming games** at the top of the home screen to see the day's games that haven't started yet, with Melbourne start times. The list refreshes with each nightly update.
+
+Tap a game to see the two teams **side by side** for Points, Rebounds, Assists and 3PM. Each player's projection is listed highest first, and anything below 1 is left out. Only players on each team's current roster are included, so a traded player shows for his new team only once he has played for it. The *All team games / Games he played* switch works here too. Tap a player to see their working.
+
 ## Off-season and next season
 
 - After the season ends (11 Apr 2027) the app simply stops changing. The nightly check still runs, which keeps GitHub's schedule switched on.
