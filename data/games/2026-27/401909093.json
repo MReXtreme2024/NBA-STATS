@@ -1,0 +1,482 @@
+{
+  "id": "401909093",
+  "usDate": "2026-10-22",
+  "start": "2026-10-22T23:00Z",
+  "teams": [
+    {
+      "id": "20",
+      "code": "PHI",
+      "name": "Philadelphia 76ers",
+      "homeAway": "home",
+      "score": 114,
+      "color": "1d428a",
+      "alternateColor": "e01234",
+      "players": [
+        {
+          "id": "1966",
+          "name": "LeBron James",
+          "played": true,
+          "stats": {
+            "minutes": "33",
+            "points": "17",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "6-7",
+            "rebounds": "10",
+            "assists": "5",
+            "turnovers": "5",
+            "steals": "3",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "9",
+            "fouls": "3",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "3059318",
+          "name": "Joel Embiid",
+          "played": true,
+          "stats": {
+            "minutes": "34",
+            "points": "24",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-16",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "7-9",
+            "rebounds": "7",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "7",
+            "fouls": "3",
+            "plusMinus": "+18"
+          }
+        },
+        {
+          "id": "3917376",
+          "name": "Jaylen Brown",
+          "played": true,
+          "stats": {
+            "minutes": "38",
+            "points": "21",
+            "fieldGoalsMade-fieldGoalsAttempted": "10-20",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "8",
+            "assists": "4",
+            "turnovers": "4",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "7",
+            "fouls": "4",
+            "plusMinus": "+17"
+          }
+        },
+        {
+          "id": "4431678",
+          "name": "Tyrese Maxey",
+          "played": true,
+          "stats": {
+            "minutes": "42",
+            "points": "32",
+            "fieldGoalsMade-fieldGoalsAttempted": "12-23",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
+            "freeThrowsMade-freeThrowsAttempted": "6-8",
+            "rebounds": "3",
+            "assists": "6",
+            "turnovers": "2",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "4",
+            "plusMinus": "+19"
+          }
+        },
+        {
+          "id": "5124612",
+          "name": "VJ Edgecombe",
+          "played": true,
+          "stats": {
+            "minutes": "33",
+            "points": "11",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-11",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "2-3",
+            "rebounds": "7",
+            "assists": "6",
+            "turnovers": "1",
+            "steals": "3",
+            "blocks": "0",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "4",
+            "fouls": "2",
+            "plusMinus": "+19"
+          }
+        },
+        {
+          "id": "4432446",
+          "name": "Jabari Walker",
+          "played": true,
+          "stats": {
+            "minutes": "4",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "0",
+            "fouls": "1",
+            "plusMinus": "-2"
+          }
+        },
+        {
+          "id": "5105637",
+          "name": "Adem Bona",
+          "played": true,
+          "stats": {
+            "minutes": "14",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-2",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "2",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "-10"
+          }
+        },
+        {
+          "id": "2581018",
+          "name": "Kentavious Caldwell-Pope",
+          "played": true,
+          "stats": {
+            "minutes": "25",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "3",
+            "assists": "2",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "2",
+            "plusMinus": "-4"
+          }
+        },
+        {
+          "id": "4351851",
+          "name": "Anfernee Simons",
+          "played": true,
+          "stats": {
+            "minutes": "17",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+            "freeThrowsMade-freeThrowsAttempted": "2-3",
+            "rebounds": "3",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "-24"
+          }
+        },
+        {
+          "id": "3912848",
+          "name": "Dean Wade",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4711297",
+          "name": "Justin Edwards",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4433144",
+          "name": "Caleb Love",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4873090",
+          "name": "Labaron Philon Jr.",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5099752",
+          "name": "Rayan Rupert",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "code": "CLE",
+      "name": "Cleveland Cavaliers",
+      "homeAway": "away",
+      "score": 106,
+      "color": "860038",
+      "alternateColor": "bc945c",
+      "players": [
+        {
+          "id": "4066328",
+          "name": "Jarrett Allen",
+          "played": true,
+          "stats": {
+            "minutes": "28",
+            "points": "14",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "2-4",
+            "rebounds": "7",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "2",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "4",
+            "fouls": "1",
+            "plusMinus": "-2"
+          }
+        },
+        {
+          "id": "4432158",
+          "name": "Evan Mobley",
+          "played": true,
+          "stats": {
+            "minutes": "34",
+            "points": "18",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "3-3",
+            "rebounds": "8",
+            "assists": "2",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "7",
+            "fouls": "4",
+            "plusMinus": "-15"
+          }
+        },
+        {
+          "id": "3992",
+          "name": "James Harden",
+          "played": true,
+          "stats": {
+            "minutes": "33",
+            "points": "16",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-12",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-6",
+            "freeThrowsMade-freeThrowsAttempted": "3-4",
+            "rebounds": "3",
+            "assists": "5",
+            "turnovers": "6",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "2",
+            "plusMinus": "-17"
+          }
+        },
+        {
+          "id": "3908809",
+          "name": "Donovan Mitchell",
+          "played": true,
+          "stats": {
+            "minutes": "35",
+            "points": "32",
+            "fieldGoalsMade-fieldGoalsAttempted": "11-19",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
+            "freeThrowsMade-freeThrowsAttempted": "8-11",
+            "rebounds": "10",
+            "assists": "3",
+            "turnovers": "5",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "10",
+            "fouls": "3",
+            "plusMinus": "-6"
+          }
+        },
+        {
+          "id": "4576087",
+          "name": "Peyton Watson",
+          "played": true,
+          "stats": {
+            "minutes": "30",
+            "points": "8",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-3",
+            "freeThrowsMade-freeThrowsAttempted": "4-4",
+            "rebounds": "1",
+            "assists": "2",
+            "turnovers": "5",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "2",
+            "plusMinus": "-19"
+          }
+        },
+        {
+          "id": "2995706",
+          "name": "Mario Hezonja",
+          "played": true,
+          "stats": {
+            "minutes": "19",
+            "points": "10",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "3",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "1",
+            "fouls": "2",
+            "plusMinus": "+1"
+          }
+        },
+        {
+          "id": "4066757",
+          "name": "Sam Merrill",
+          "played": true,
+          "stats": {
+            "minutes": "24",
+            "points": "5",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "5",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "4",
+            "fouls": "3",
+            "plusMinus": "+5"
+          }
+        },
+        {
+          "id": "4683747",
+          "name": "Jaylon Tyson",
+          "played": true,
+          "stats": {
+            "minutes": "24",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "6",
+            "assists": "2",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "2",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "4",
+            "fouls": "4",
+            "plusMinus": "+5"
+          }
+        },
+        {
+          "id": "4701233",
+          "name": "Craig Porter Jr.",
+          "played": true,
+          "stats": {
+            "minutes": "8",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "3",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "0",
+            "plusMinus": "+2"
+          }
+        },
+        {
+          "id": "5023693",
+          "name": "Tyrese Proctor",
+          "played": true,
+          "stats": {
+            "minutes": "5",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "2",
+            "plusMinus": "+6"
+          }
+        },
+        {
+          "id": "4431734",
+          "name": "Tristan Enaruna",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5177362",
+          "name": "Riley Minix",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "3934723",
+          "name": "Thomas Bryant",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5041951",
+          "name": "Meleek Thomas",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    }
+  ]
+}
