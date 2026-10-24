@@ -1,0 +1,485 @@
+{
+  "id": "401909852",
+  "usDate": "2026-10-23",
+  "start": "2026-10-24T02:00Z",
+  "teams": [
+    {
+      "id": "23",
+      "code": "SAC",
+      "name": "Sacramento Kings",
+      "homeAway": "home",
+      "score": 120,
+      "color": "5a2d81",
+      "alternateColor": "6a7a82",
+      "players": [
+        {
+          "id": "3155942",
+          "name": "Domantas Sabonis",
+          "played": true,
+          "stats": {
+            "minutes": "39",
+            "points": "27",
+            "fieldGoalsMade-fieldGoalsAttempted": "10-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+            "freeThrowsMade-freeThrowsAttempted": "6-7",
+            "rebounds": "19",
+            "assists": "10",
+            "turnovers": "5",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "7",
+            "defensiveRebounds": "12",
+            "fouls": "5",
+            "plusMinus": "-3"
+          }
+        },
+        {
+          "id": "4065732",
+          "name": "De'Andre Hunter",
+          "played": true,
+          "stats": {
+            "minutes": "25",
+            "points": "4",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "7",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "7",
+            "fouls": "3",
+            "plusMinus": "+1"
+          }
+        },
+        {
+          "id": "4594327",
+          "name": "Keegan Murray",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-3",
+            "freeThrowsMade-freeThrowsAttempted": "4-4",
+            "rebounds": "2",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "-3"
+          }
+        },
+        {
+          "id": "3064440",
+          "name": "Zach LaVine",
+          "played": true,
+          "stats": {
+            "minutes": "39",
+            "points": "22",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-15",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-9",
+            "freeThrowsMade-freeThrowsAttempted": "7-7",
+            "rebounds": "5",
+            "assists": "1",
+            "turnovers": "3",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "5",
+            "fouls": "1",
+            "plusMinus": "-2"
+          }
+        },
+        {
+          "id": "5142620",
+          "name": "Darius Acuff Jr.",
+          "played": true,
+          "stats": {
+            "minutes": "37",
+            "points": "33",
+            "fieldGoalsMade-fieldGoalsAttempted": "10-26",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-11",
+            "freeThrowsMade-freeThrowsAttempted": "11-12",
+            "rebounds": "2",
+            "assists": "4",
+            "turnovers": "3",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "3",
+            "plusMinus": "-2"
+          }
+        },
+        {
+          "id": "4431679",
+          "name": "Precious Achiuwa",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "14",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-11",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "6",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "4",
+            "fouls": "2",
+            "plusMinus": "-14"
+          }
+        },
+        {
+          "id": "4066262",
+          "name": "Malik Monk",
+          "played": true,
+          "stats": {
+            "minutes": "12",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "2",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "1",
+            "plusMinus": "-6"
+          }
+        },
+        {
+          "id": "4279318",
+          "name": "Daeqwon Plowden",
+          "played": true,
+          "stats": {
+            "minutes": "20",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-2",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "2",
+            "plusMinus": "-4"
+          }
+        },
+        {
+          "id": "4702384",
+          "name": "Nique Clifford",
+          "played": true,
+          "stats": {
+            "minutes": "2",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "-1"
+          }
+        },
+        {
+          "id": "5106058",
+          "name": "Emanuel Sharp",
+          "played": true,
+          "stats": {
+            "minutes": "14",
+            "points": "5",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "3",
+            "plusMinus": "-6"
+          }
+        },
+        {
+          "id": "4395650",
+          "name": "Leaky Black",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4917149",
+          "name": "Alex Karaban",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5107897",
+          "name": "Jonathan Mogbo",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    },
+    {
+      "id": "22",
+      "code": "POR",
+      "name": "Portland Trail Blazers",
+      "homeAway": "away",
+      "score": 128,
+      "color": "e03a3e",
+      "alternateColor": "000000",
+      "players": [
+        {
+          "id": "4431736",
+          "name": "Toumani Camara",
+          "played": true,
+          "stats": {
+            "minutes": "27",
+            "points": "19",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-12",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-10",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "3",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "3",
+            "plusMinus": "-3"
+          }
+        },
+        {
+          "id": "4683021",
+          "name": "Deni Avdija",
+          "played": true,
+          "stats": {
+            "minutes": "38",
+            "points": "26",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-16",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-5",
+            "freeThrowsMade-freeThrowsAttempted": "9-12",
+            "rebounds": "7",
+            "assists": "6",
+            "turnovers": "3",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "6",
+            "fouls": "2",
+            "plusMinus": "+12"
+          }
+        },
+        {
+          "id": "5105565",
+          "name": "Donovan Clingan",
+          "played": true,
+          "stats": {
+            "minutes": "21",
+            "points": "8",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "10",
+            "assists": "3",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "3",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "6",
+            "fouls": "4",
+            "plusMinus": "+8"
+          }
+        },
+        {
+          "id": "6606",
+          "name": "Damian Lillard",
+          "played": true,
+          "stats": {
+            "minutes": "33",
+            "points": "19",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-18",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-10",
+            "freeThrowsMade-freeThrowsAttempted": "3-3",
+            "rebounds": "5",
+            "assists": "2",
+            "turnovers": "2",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "5",
+            "fouls": "1",
+            "plusMinus": "+19"
+          }
+        },
+        {
+          "id": "4279888",
+          "name": "Ja Morant",
+          "played": true,
+          "stats": {
+            "minutes": "27",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-5",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "3",
+            "assists": "7",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "2",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "4066211",
+          "name": "Robert Williams III",
+          "played": true,
+          "stats": {
+            "minutes": "18",
+            "points": "13",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "6",
+            "assists": "0",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "4",
+            "fouls": "0",
+            "plusMinus": "-4"
+          }
+        },
+        {
+          "id": "3995",
+          "name": "Jrue Holiday",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-9",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "1",
+            "assists": "8",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "1",
+            "plusMinus": "-1"
+          }
+        },
+        {
+          "id": "4578893",
+          "name": "Vit Krejci",
+          "played": true,
+          "stats": {
+            "minutes": "3",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "2",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "0",
+            "plusMinus": "-4"
+          }
+        },
+        {
+          "id": "4683678",
+          "name": "Scoot Henderson",
+          "played": true,
+          "stats": {
+            "minutes": "21",
+            "points": "4",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-3",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "1",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "5",
+            "plusMinus": "-1"
+          }
+        },
+        {
+          "id": "5081727",
+          "name": "Sidy Cissoko",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "15",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-8",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
+            "freeThrowsMade-freeThrowsAttempted": "3-5",
+            "rebounds": "7",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "3",
+            "fouls": "3",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "4593043",
+          "name": "John Tonje",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4066399",
+          "name": "Micah Potter",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5217746",
+          "name": "Yang Hansen",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    }
+  ]
+}
