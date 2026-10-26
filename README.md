@@ -66,6 +66,18 @@ Tap **Upcoming games** at the top of the home screen to see the day's games that
 
 Tap a game to see the two teams **side by side** for Points, Rebounds, Assists and 3PM. Each player's projection is listed highest first, and anything below 1 is left out. Only players on each team's current roster are included, so a traded player shows for his new team only once he has played for it. The *All team games / Games he played* switch works here too. Tap a player to see their working.
 
+### Claude's formula
+
+The Upcoming games page and every matchup have two tabs: **Your formula** and **Claude's formula**. The app remembers which one you used last.
+
+Claude's formula is a separate projection that Claude designed using everything ESPN offers:
+
+- **Team scores** mostly follow the betting market's expected score, which reflects injuries, rest and form. They're fine-tuned with a stats model of each team's pace and scoring, plus home-court advantage.
+- **Players** get expected minutes (recent games count more, players ruled out are removed and their minutes shared among teammates) × how much they produce per minute (this season blended with last season), adjusted for the opponent.
+- You see both teams' projected scores, then the players side by side for Points, Rebounds, Assists, Points + Rebounds, Points + Assists, Rebounds + Assists, Points + Rebounds + Assists, and 3PM. Figures are cut to one decimal. "GTD" means a game-time decision.
+
+In a test on the season's first 27 games, Claude's formula missed by less than yours on every player stat (points by 4.9 on average, against 5.8). These are still projections, not certainties.
+
 ## Off-season and next season
 
 - After the season ends (11 Apr 2027) the app simply stops changing. The nightly check still runs, which keeps GitHub's schedule switched on.

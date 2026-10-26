@@ -8,6 +8,7 @@ const RETRIES = 3;
 const TEAMS_URL = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams';
 const SCOREBOARD_URL = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard';
 const SUMMARY_URL = 'https://site.web.api.espn.com/apis/site/v2/sports/basketball/nba/summary';
+const ATHLETE_URL = 'https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/athletes';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -49,6 +50,40 @@ export async function getScoreboard(usDate) {
 
 export async function getSummary(eventId) {
   return fetchJson(`${SUMMARY_URL}?event=${eventId}`);
+}
+
+// Betting line and injury report for one game, from its summary.
+//   line: { spread (home team's line), overUnder } or null; injuries: { teamId: { playerId: status } }.
+export function gameExtras(summary) {
+  const pick = (summary.pickcenter ?? []).find((p) => Number.isFinite(p.spread) && Number.isFinite(p.overUnder));
+  const injuries = {};
+  for (const t of summary.injuries ?? []) {
+    const id = t.team?.id;
+    if (!id) continue;
+    injuries[id] = {};
+    for (const i of t.injuries ?? []) if (i.athlete?.id) injuries[id][i.athlete.id] = i.status ?? '';
+  }
+  return { line: pick ? { spread: pick.spread, overUnder: pick.overUnder } : null, injuries };
+}
+
+// A player's per-game averages for one season (e.g. "2025-26"), or null if he didn't play in it.
+// Players traded mid-season have a row per team plus a Totals row; the Totals row is used.
+export async function getSeasonAverages(athleteId, seasonLabel) {
+  const data = await fetchJson(`${ATHLETE_URL}/${athleteId}/stats`);
+  const cat = (data.categories ?? []).find((c) => c.name === 'averages');
+  if (!cat) return null;
+  const rows = (cat.statistics ?? []).filter((s) => s.season?.displayName === seasonLabel);
+  const row = rows.find((s) => !s.teamId) ?? (rows.length === 1 ? rows[0] : null);
+  if (!row) return null;
+  const v = (name) => Number(String(row.stats[cat.names.indexOf(name)] ?? '').split('-')[0]) || 0;
+  return {
+    gp: v('gamesPlayed'),
+    min: v('avgMinutes'),
+    pts: v('avgPoints'),
+    reb: v('avgRebounds'),
+    ast: v('avgAssists'),
+    tpm: v('avgThreePointFieldGoalsMade-avgThreePointFieldGoalsAttempted'),
+  };
 }
 
 // One team's current roster as a list of player ids.

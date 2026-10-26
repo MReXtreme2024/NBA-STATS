@@ -6,10 +6,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  getTeams, getScoreboard, getSummary, getRoster, isCountedGame, isUpcomingGame, trimGame, trimUpcoming,
+  getTeams, getScoreboard, getSummary, getRoster, gameExtras, isCountedGame, isUpcomingGame, trimGame, trimUpcoming,
 } from './espn.js';
 import { checkGame } from './checks.js';
-import { build } from './build.js';
+import { build, loadGames } from './build.js';
+import { projectGame } from './model.js';
+import { loadPriors } from './priors.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8'));
@@ -84,15 +86,27 @@ async function main() {
   }
   console.log(`Done: ${saved} game files saved or updated, ${unchanged} unchanged.`);
 
-  // Today's (US date) games that haven't started, for the Upcoming games screen.
-  writeJson(path.join(DATA_DIR, 'upcoming.json'), { usDate: today, games: upcoming });
-  console.log(`Upcoming: ${upcoming.length} games on ${today}`);
-
   // Current rosters, so upcoming-game projections leave out players who have moved on.
   console.log('Rosters');
   const rosters = {};
   for (const t of teams) rosters[t.id] = await getRoster(t.id);
   writeJson(path.join(DATA_DIR, 'rosters.json'), rosters);
+
+  // Claude's formula for each upcoming game: needs the betting line and injury report
+  // (from the game's summary) and last season's averages for the players involved.
+  const allGames = loadGames(GAMES_DIR);
+  const playing = new Set(upcoming.flatMap((g) => [g.homeId, g.awayId]));
+  const playerIds = allGames.flatMap((g) => g.teams.filter((t) => playing.has(t.id))
+    .flatMap((t) => t.players.filter((p) => p.played).map((p) => p.id)));
+  const prior = await loadPriors(DATA_DIR, config.priorSeason, playerIds);
+  for (const g of upcoming) {
+    const extras = gameExtras(await getSummary(g.id));
+    g.claude = projectGame(allGames, g, { extras, prior, rosters });
+  }
+
+  // Today's (US date) games that haven't started, for the Upcoming games screen.
+  writeJson(path.join(DATA_DIR, 'upcoming.json'), { usDate: today, games: upcoming });
+  console.log(`Upcoming: ${upcoming.length} games on ${today}`);
 
   const data = build();
   console.log(`Built app-data.json: ${data.teams.length} teams, checked ${data.checked}`);

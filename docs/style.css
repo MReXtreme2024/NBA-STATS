@@ -225,3 +225,12 @@ td a { display: inline-flex; align-items: center; min-height: 44px; text-decorat
 .side .name { min-width: 0; overflow-wrap: anywhere; line-height: 1.2; }
 .side b { font-size: 18px; font-variant-numeric: tabular-nums; }
 .side .none { margin: 8px 0; font-size: 13px; color: var(--muted); }
+
+/* Claude's formula */
+.tabs { margin-bottom: 12px; }
+.proj-score { font-weight: 700; color: var(--text); font-size: 15px; font-variant-numeric: tabular-nums; }
+.panel h2.big { font-size: 30px; font-variant-numeric: tabular-nums; margin: 2px 0; }
+.panel .small { font-size: 12px; opacity: 0.85; }
+.out-line { margin: 0 0 8px; font-size: 13px; color: var(--muted); }
+.side .mins { display: block; font-size: 11px; color: var(--muted); }
+.side .tag { font-size: 10px; font-weight: 700; padding: 1px 4px; border-radius: 4px; background: var(--accent); color: var(--bg); vertical-align: 1px; }

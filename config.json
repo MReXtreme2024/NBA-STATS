@@ -3,6 +3,7 @@
   "espnSeasonYear": 2027,
   "seasonStart": "2026-10-20",
   "seasonEnd": "2027-04-11",
+  "priorSeason": "2025-26",
   "timeZone": "Australia/Melbourne",
   "colourOverrides": {}
 }

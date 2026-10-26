@@ -53,3 +53,13 @@ The nightly run is at **12:07am** Australia/Melbourne (`cron: '7 0 * * *'`), not
 ## Upcoming games
 
 Added at Nate's request (22 Oct 2026). Each run saves today's (America/New_York date) regular-season games that haven't started (`status.type.state === 'pre'`) to `data/upcoming.json`, and every team's current roster to `data/rosters.json` (`/teams/<id>/roster`). The home screen's **Upcoming games** button lists them; tapping one shows a matchup page with, for each of PTS, REB, AST and 3PM, both teams' players side by side, sorted by projection, showing only projections of 1 or more. Players are those on the current roster who have played for the team (all players if the roster is unknown). Same maths and remembered mode switch as everywhere else.
+
+## Claude's formula
+
+Added at Nate's request (26 Oct 2026): "your perfect formula, not mine". A second tab on the Upcoming games and matchup pages ("Your formula" / "Claude's formula", remembered on the phone). Logic in `updater/model.js`, run by the nightly update, results saved in `data/upcoming.json` as each game's `claude` field. **It is exempt from the whole-number Maths rules above**: it uses ordinary decimals and its figures are shown cut to one decimal.
+
+- Team scores: possessions model (pace, points per 100 possessions scored/allowed, shrunk toward league average with 8 games' weight, ±1.2 home court) blended 10% with 90% of the betting market's implied score (ESPN `pickcenter`: home = (O/U − spread) / 2; spread is the home team's line).
+- Players: expected minutes (recency-weighted, blended with last season, × how often he plays, Out players removed, team scaled to 240, cap 42) × per-minute rates (this season blended with last season at 400 minutes' weight, or league rate at 150 minutes for players without one), then scaled so each team's players add up to its projected points, rebounds, assists and 3PM for the matchup (factor limited to 0.8–1.2). Players under 8 projected minutes are left off.
+- Shows team scores (with the stats-model and market figures), and both teams' players side by side for PTS, REB, AST, P+R, P+A, R+A, P+R+A and 3PM. Day-To-Day players are tagged GTD; Out players listed.
+- Last season's averages come from `apis/common/v3/.../athletes/<id>/stats` (Totals row for traded players), cached in `data/prior/<season>.json`; `priorSeason` is in `config.json`.
+- `node updater/backtest.js` re-tests it on finished games against Nate's formula. Re-check `marketWeight` once the season has more games.
