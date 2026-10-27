@@ -1,0 +1,551 @@
+{
+  "id": "401909873",
+  "usDate": "2026-10-26",
+  "start": "2026-10-27T00:00Z",
+  "teams": [
+    {
+      "id": "25",
+      "code": "OKC",
+      "name": "Oklahoma City Thunder",
+      "homeAway": "home",
+      "score": 125,
+      "color": "007ac1",
+      "alternateColor": "ef3b24",
+      "players": [
+        {
+          "id": "4222252",
+          "name": "Isaiah Hartenstein",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "15",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "3-3",
+            "rebounds": "13",
+            "assists": "3",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "6",
+            "defensiveRebounds": "7",
+            "fouls": "2",
+            "plusMinus": "-2"
+          }
+        },
+        {
+          "id": "3133626",
+          "name": "Kenrich Williams",
+          "played": true,
+          "stats": {
+            "minutes": "24",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "1-1",
+            "rebounds": "7",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "5",
+            "fouls": "1",
+            "plusMinus": "0"
+          }
+        },
+        {
+          "id": "4278073",
+          "name": "Shai Gilgeous-Alexander",
+          "played": true,
+          "stats": {
+            "minutes": "30",
+            "points": "26",
+            "fieldGoalsMade-fieldGoalsAttempted": "11-18",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-5",
+            "freeThrowsMade-freeThrowsAttempted": "3-4",
+            "rebounds": "3",
+            "assists": "3",
+            "turnovers": "4",
+            "steals": "0",
+            "blocks": "2",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "5",
+            "plusMinus": "+10"
+          }
+        },
+        {
+          "id": "4683778",
+          "name": "Jared McCain",
+          "played": true,
+          "stats": {
+            "minutes": "30",
+            "points": "18",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-7",
+            "freeThrowsMade-freeThrowsAttempted": "2-3",
+            "rebounds": "3",
+            "assists": "4",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "+6"
+          }
+        },
+        {
+          "id": "4900671",
+          "name": "Ajay Mitchell",
+          "played": true,
+          "stats": {
+            "minutes": "25",
+            "points": "30",
+            "fieldGoalsMade-fieldGoalsAttempted": "10-16",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "9-10",
+            "rebounds": "2",
+            "assists": "5",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "4",
+            "plusMinus": "+18"
+          }
+        },
+        {
+          "id": "4432823",
+          "name": "Jaylin Williams",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "6",
+            "assists": "3",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "6",
+            "fouls": "0",
+            "plusMinus": "+8"
+          }
+        },
+        {
+          "id": "4684208",
+          "name": "Brooks Barnhizer",
+          "played": true,
+          "stats": {
+            "minutes": "3",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "-7"
+          }
+        },
+        {
+          "id": "5174983",
+          "name": "Aday Mara",
+          "played": true,
+          "stats": {
+            "minutes": "20",
+            "points": "11",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "3-4",
+            "rebounds": "10",
+            "assists": "2",
+            "turnovers": "4",
+            "steals": "0",
+            "blocks": "2",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "7",
+            "fouls": "5",
+            "plusMinus": "+14"
+          }
+        },
+        {
+          "id": "2991350",
+          "name": "Alex Caruso",
+          "played": true,
+          "stats": {
+            "minutes": "9",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "2",
+            "assists": "3",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "0",
+            "plusMinus": "+14"
+          }
+        },
+        {
+          "id": "5105800",
+          "name": "Josh Dix",
+          "played": true,
+          "stats": {
+            "minutes": "22",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-3",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "1",
+            "plusMinus": "-8"
+          }
+        },
+        {
+          "id": "5241364",
+          "name": "Bennett Stirtz",
+          "played": true,
+          "stats": {
+            "minutes": "25",
+            "points": "7",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "4-4",
+            "rebounds": "1",
+            "assists": "1",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "1",
+            "plusMinus": "+2"
+          }
+        },
+        {
+          "id": "5106270",
+          "name": "Otega Oweh",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    },
+    {
+      "id": "21",
+      "code": "PHX",
+      "name": "Phoenix Suns",
+      "homeAway": "away",
+      "score": 114,
+      "color": "29127a",
+      "alternateColor": "e56020",
+      "players": [
+        {
+          "id": "3155526",
+          "name": "Dillon Brooks",
+          "played": true,
+          "stats": {
+            "minutes": "33",
+            "points": "19",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-10",
+            "freeThrowsMade-freeThrowsAttempted": "8-12",
+            "rebounds": "5",
+            "assists": "5",
+            "turnovers": "0",
+            "steals": "3",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "4",
+            "fouls": "3",
+            "plusMinus": "-12"
+          }
+        },
+        {
+          "id": "4066383",
+          "name": "Miles Bridges",
+          "played": true,
+          "stats": {
+            "minutes": "32",
+            "points": "17",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-17",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-10",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "8",
+            "assists": "4",
+            "turnovers": "3",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "4",
+            "fouls": "2",
+            "plusMinus": "-17"
+          }
+        },
+        {
+          "id": "5203685",
+          "name": "Khaman Maluach",
+          "played": true,
+          "stats": {
+            "minutes": "26",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "7",
+            "assists": "1",
+            "turnovers": "4",
+            "steals": "1",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "5",
+            "fouls": "4",
+            "plusMinus": "-3"
+          }
+        },
+        {
+          "id": "3136193",
+          "name": "Devin Booker",
+          "played": true,
+          "stats": {
+            "minutes": "34",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "1-1",
+            "rebounds": "2",
+            "assists": "7",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "-12"
+          }
+        },
+        {
+          "id": "4437244",
+          "name": "Jalen Green",
+          "played": true,
+          "stats": {
+            "minutes": "31",
+            "points": "20",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "3-4",
+            "rebounds": "4",
+            "assists": "4",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "3",
+            "fouls": "1",
+            "plusMinus": "-11"
+          }
+        },
+        {
+          "id": "4888725",
+          "name": "Ryan Dunn",
+          "played": true,
+          "stats": {
+            "minutes": "14",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-2",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "2",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "+6"
+          }
+        },
+        {
+          "id": "5041953",
+          "name": "Koa Peat",
+          "played": true,
+          "stats": {
+            "minutes": "3",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "5105977",
+          "name": "Rasheer Fleming",
+          "played": true,
+          "stats": {
+            "minutes": "3",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "0",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "4066268",
+          "name": "Duop Reath",
+          "played": true,
+          "stats": {
+            "minutes": "7",
+            "points": "5",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "3",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "+3"
+          }
+        },
+        {
+          "id": "3913174",
+          "name": "Luke Kennard",
+          "played": true,
+          "stats": {
+            "minutes": "16",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "-5"
+          }
+        },
+        {
+          "id": "4278402",
+          "name": "Jordan Goodwin",
+          "played": true,
+          "stats": {
+            "minutes": "17",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-8",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "4",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "0",
+            "fouls": "3",
+            "plusMinus": "-10"
+          }
+        },
+        {
+          "id": "4278585",
+          "name": "Collin Gillespie",
+          "played": true,
+          "stats": {
+            "minutes": "23",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-8",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "2",
+            "turnovers": "2",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "-15"
+          }
+        },
+        {
+          "id": "4280245",
+          "name": "Jamaree Bouyea",
+          "played": true,
+          "stats": {
+            "minutes": "3",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "+7"
+          }
+        },
+        {
+          "id": "4702602",
+          "name": "CJ Huntley",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4591259",
+          "name": "Koby Brea",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    }
+  ]
+}
