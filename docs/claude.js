@@ -67,7 +67,7 @@ export function lineupScores(claude, lineups) {
   const shifts = (lu) => [ratingShift(claude.home.inputs, lu?.[claude.home.teamId] ?? null), ratingShift(claude.away.inputs, lu?.[claude.away.teamId] ?? null)];
   const before = modelScores(claude.scoring, ...shifts(null));
   const after = modelScores(claude.scoring, ...shifts(lineups));
-  return { home: claude.home.score + after.home - before.home, away: claude.away.score + after.away - before.away };
+  return { home: claude.home.score + (after.home - before.home), away: claude.away.score + (after.away - before.away) };
 }
 const clamp = (x, [lo, hi]) => Math.min(hi, Math.max(lo, x));
 
