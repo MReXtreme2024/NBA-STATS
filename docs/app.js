@@ -1,4 +1,5 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
+import { allocate } from './claude.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -250,8 +251,91 @@ const CLAUDE_STATS = [
   ['3PM', (p) => p.tpm],
 ];
 
+// Starting lineups Nate confirms before tip-off, kept on his phone: { teamId: { starters: [id], out: [id] } }.
+const LINEUP_PREFIX = 'lineup:';
+function readLineup(gameId) {
+  try { return JSON.parse(localStorage.getItem(LINEUP_PREFIX + gameId)) ?? null; } catch { return null; }
+}
+function saveLineup(gameId, lineup) {
+  try {
+    if (lineup) localStorage.setItem(LINEUP_PREFIX + gameId, JSON.stringify(lineup));
+    else localStorage.removeItem(LINEUP_PREFIX + gameId);
+  } catch { /* private mode: the lineup just isn't kept */ }
+}
+// Forget lineups for games that are no longer upcoming.
+function tidyLineups() {
+  try {
+    const live = new Set((data.upcoming?.games ?? []).map((g) => LINEUP_PREFIX + g.id));
+    for (const k of Object.keys(localStorage)) if (k.startsWith(LINEUP_PREFIX) && !live.has(k)) localStorage.removeItem(k);
+  } catch { /* nothing to tidy */ }
+}
+
+// Claude's formula for a game: the nightly figures, re-worked on the phone with Nate's confirmed lineup if he set one.
+function claudeFor(g) {
+  const lineup = readLineup(g.id);
+  if (!g.claude || !lineup) return g.claude;
+  const redo = (side) => (side.inputs ? { ...side, ...allocate(side.inputs, lineup[side.teamId]) } : side);
+  return { ...g.claude, home: redo(g.claude.home), away: redo(g.claude.away) };
+}
+
+// "Confirm starting lineup" button, or a note that it's confirmed.
+function lineupButton(g) {
+  if (!g.claude?.home?.inputs) return '';
+  const done = readLineup(g.id);
+  return `<a class="lineup-link${done ? ' done' : ''}" href="#/game/${g.id}/lineup">${done
+    ? '<span>✓ Lineup confirmed by you</span><span class="gp">Edit ›</span>'
+    : '<span>Confirm starting lineup</span><span class="gp">Before tip-off ›</span>'}</a>`;
+}
+
+// The lineup Claude's formula expects for one team: last game's starters (unless ruled out), injured players out.
+function predictedLineup(inputs) {
+  const isOut = (c) => /^out$/i.test(c.status);
+  return {
+    starters: inputs.candidates.filter((c) => c.starter && !isOut(c)).map((c) => c.id),
+    out: inputs.candidates.filter(isOut).map((c) => c.id),
+  };
+}
+
+let lineupDraft = null; // { gameId, teams: { teamId: { starters, out } } } while Nate is editing
+let lineupFromMatchup = false; // opened with the button, so saving can step back to the matchup page
+
+// 9. Confirm lineup: Start / Bench / Out for every player of both teams.
+function lineupPage(g) {
+  const away = teamById(g.awayId);
+  const home = teamById(g.homeId);
+  const sides = [[away, g.claude.away], [home, g.claude.home]];
+  if (lineupDraft?.gameId !== g.id) {
+    const saved = readLineup(g.id);
+    lineupDraft = { gameId: g.id, teams: Object.fromEntries(sides.map(([t, side]) => [t.id, saved?.[t.id] ?? predictedLineup(side.inputs)])) };
+  }
+  const teamBlock = ([t, side]) => {
+    const pick = lineupDraft.teams[t.id];
+    const roleOf = (id) => (pick.starters.includes(id) ? 'start' : pick.out.includes(id) ? 'out' : 'bench');
+    const avgMin = (c) => (c.w ? c.wMin / c.w : 0);
+    const rows = [...side.inputs.candidates]
+      .sort((a, b) => b.starter - a.starter || avgMin(b) - avgMin(a)) // fixed order, so rows don't jump while tapping
+      .map((c) => {
+        const role = roleOf(c.id);
+        const btn = (r, label) => `<button data-role="${r}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${role === r}">${label}</button>`;
+        const note = c.status ? ` <span class="tag">${esc(c.status === 'Day-To-Day' ? 'GTD' : c.status)}</span>` : '';
+        return `<li><span class="name">${esc(c.name)}${note}<span class="mins">${Math.floor(avgMin(c))} min a game</span></span>
+          <span class="roles">${btn('start', 'Start')}${btn('bench', 'Bench')}${btn('out', 'Out')}</span></li>`;
+      }).join('');
+    const n = pick.starters.length;
+    return `<section class="stat"><h3><span class="pill" style="${colours(t)}">${esc(t.code)}</span> Starters: <b class="${n === 5 ? '' : 'warn'}">${n} of 5</b></h3>
+      <ul class="lineup">${rows}</ul></section>`;
+  };
+  return `${bar(`${away.code} @ ${home.code} lineup`, `#/game/${g.id}`, 'Tap Start, Bench or Out for each player')}
+    <div class="stats">${sides.map(teamBlock).join('')}</div>
+    <div class="buttons lineup-actions">
+      <button class="button" data-lineup="reset">Back to predicted</button>
+      <button class="button primary" data-lineup="save">Save lineup</button>
+    </div>
+    <p class="working">Claude's formula then re-works this game on your phone: confirmed starters get their minutes from games they started, players marked Out are removed and their minutes shared out, and everyone else comes off the bench. Your formula leaves out players marked Out.</p>`;
+}
+
 function claudeMatchup(g, away, home) {
-  const c = g.claude;
+  const c = claudeFor(g);
   if (!c) return '<p class="message">Claude\'s formula isn\'t ready for this game yet. It appears after the next nightly update.</p>';
   const scoreBox = (t, side) => {
     const parts = [`Stats model ${one(side.model)}`];
@@ -278,7 +362,7 @@ function claudeMatchup(g, away, home) {
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
-const projectable = (t) => t.players.filter((p) => (t.roster?.length ? t.roster.includes(p.id) : p.gp > 0));
+const projectable = (t, out = []) => t.players.filter((p) => (t.roster?.length ? t.roster.includes(p.id) : p.gp > 0) && !out.includes(p.id));
 
 // 7. Matchup: for each projection stat, the two teams' players side by side, highest first, 1 or more only.
 // The upcoming game before or after this one (wrapping round), for swiping and the ‹ › arrows.
@@ -308,10 +392,11 @@ function matchupPage(g) {
   const home = teamById(g.homeId);
   if (formula === 'claude') {
     const note = g.note ? ` · ${g.note}` : '';
-    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${formulaTabs(formula)}${claudeMatchup(g, away, home)}`;
+    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}${formulaTabs(formula)}${claudeMatchup(g, away, home)}`;
   }
+  const outFor = (t) => readLineup(g.id)?.[t.id]?.out ?? [];
   const column = (t, s) => {
-    const items = projectable(t)
+    const items = projectable(t, outFor(t))
       .map((p) => ({ p, v: statFor(t, p, s, mode).projection }))
       .filter(({ v }) => v !== null && v >= 1)
       .sort((a, b) => b.v - a.v || a.p.name.localeCompare(b.p.name))
@@ -323,7 +408,7 @@ function matchupPage(g) {
   const sections = PROJ_STATS.map((s) => `<section class="stat"><h3>${LONG[s]}</h3>
       <div class="sides">${column(away, s)}${column(home, s)}</div></section>`).join('');
   const note = g.note ? ` · ${g.note}` : '';
-  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}
+  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}
     ${formulaTabs(formula)}
     <section class="matchup">
       <div class="panel" style="${colours(away)}"><h2>${esc(away.name)}</h2><p>Away · ${away.gp} played</p></div>
@@ -366,7 +451,10 @@ function render() {
     html = resultsPage(); title = 'How did the projections go?';
   } else if (parts[0] === 'upcoming') {
     html = upcomingPage(); title = 'Upcoming games';
+  } else if (game && parts[2] === 'lineup' && game.claude?.home?.inputs) {
+    html = lineupPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} lineup`;
   } else if (game) {
+    lineupDraft = null;
     html = matchupPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code}`;
   } else if (team && parts.length === 2) {
     html = teamPage(team); title = team.name;
@@ -391,6 +479,28 @@ app.addEventListener('click', (e) => {
   if (sortBtn) { playerSort = sortBtn.dataset.sort; render(); return; }
   const projSortBtn = e.target.closest('[data-psort]');
   if (projSortBtn) { projectionSort = projSortBtn.dataset.psort; render(); return; }
+  if (e.target.closest('.lineup-link')) lineupFromMatchup = true;
+  const roleBtn = e.target.closest('[data-role]');
+  if (roleBtn && lineupDraft) {
+    const pick = lineupDraft.teams[roleBtn.dataset.team];
+    const id = roleBtn.dataset.player;
+    pick.starters = pick.starters.filter((x) => x !== id);
+    pick.out = pick.out.filter((x) => x !== id);
+    if (roleBtn.dataset.role === 'start') pick.starters.push(id);
+    if (roleBtn.dataset.role === 'out') pick.out.push(id);
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
+  }
+  const lineupBtn = e.target.closest('[data-lineup]');
+  if (lineupBtn && lineupDraft) {
+    const gameId = lineupDraft.gameId;
+    if (lineupBtn.dataset.lineup === 'save') saveLineup(gameId, lineupDraft.teams);
+    else saveLineup(gameId, null);
+    lineupDraft = null;
+    // Step back to the matchup page rather than adding it again, so Back still returns to the games list.
+    if (lineupFromMatchup) history.back(); else location.replace(`#/game/${gameId}`);
+    lineupFromMatchup = false;
+    return;
+  }
   const formulaBtn = e.target.closest('[data-formula]');
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
   const modeBtn = e.target.closest('[data-mode]');
@@ -428,6 +538,7 @@ try {
   const res = await fetch('data/app-data.json', { cache: 'no-cache' });
   if (!res.ok) throw new Error(res.status);
   data = await res.json();
+  tidyLineups();
   render();
 } catch {
   app.innerHTML = `<p class="message">Couldn't load the stats. Check your connection and try again.</p>`;

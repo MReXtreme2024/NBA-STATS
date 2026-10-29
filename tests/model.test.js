@@ -107,3 +107,19 @@ test('betting line and injuries are read from an ESPN game summary', () => {
   });
   assert.deepEqual(gameExtras({}), { line: null, injuries: {} });
 });
+
+test('a confirmed lineup re-works a team: players marked out are removed, everyone else plays', async () => {
+  const { allocate } = await import('../docs/claude.js');
+  const base = projectGame(games, upcoming, { extras: { line: null, injuries: { A: { a2: 'Out' } } } });
+  const inputs = base.home.inputs;
+  assert.ok(inputs.candidates.length >= 5);
+  // No lineup: the same result as the nightly update.
+  assert.deepEqual(allocate(inputs).players.map((p) => p.id), base.home.players.map((p) => p.id));
+  // Nate confirms a2 is playing after all (starting) and a1 is out.
+  const confirmed = allocate(inputs, { starters: ['a2', 'a3', 'a4', 'a5', 'a6'], out: ['a1'] });
+  assert.ok(confirmed.players.some((p) => p.id === 'a2'));
+  assert.deepEqual(confirmed.out.map((p) => p.id), ['a1']);
+  // five players left in this small made-up team: each capped at 42 minutes, never more than 240 in all
+  const min = confirmed.players.reduce((t, p) => t + p.min, 0);
+  assert.ok(min <= 240 + 1e-9 && confirmed.players.every((p) => p.min <= 42 + 1e-9));
+});

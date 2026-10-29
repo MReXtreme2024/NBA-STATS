@@ -68,6 +68,8 @@ On a game, **swipe left** for the next upcoming game and **swipe right** to go b
 
 Tap a game to see the two teams **side by side** for Points, Rebounds, Assists and 3PM. Each player's projection is listed highest first, and anything below 1 is left out. Only players on each team's current roster are included, so a traded player shows for his new team only once he has played for it. The *All team games / Games he played* switch works here too. Tap a player to see their working.
 
+**Confirm starting lineup.** Each game has a **Confirm starting lineup** button. NBA lineups are announced about 30 minutes before tip-off, hours after the nightly update. Tap it, set each player to **Start**, **Bench** or **Out**, and tap **Save lineup**. The screen starts with the lineup Claude's formula expected: last game's starters, and players on the injury report marked out. Claude's formula then re-works the game on your phone: confirmed starters get their minutes from games they started, players marked Out are removed and their minutes shared among teammates. Your formula leaves out players marked Out. The lineup is kept on your phone until the game is over; **Back to predicted** undoes it. In the season's first 23 games, 1 in 15 projected players didn't play after all, so it's worth a quick check before you use a projection.
+
 ### Claude's formula
 
 The Upcoming games page and every matchup have two tabs: **Your formula** and **Claude's formula**. The app remembers which one you used last.

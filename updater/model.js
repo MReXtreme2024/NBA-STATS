@@ -10,27 +10,9 @@
 // or league average for players without one), then scaled so each team's players add up
 // to the team's projected points, rebounds, assists and 3PM for this matchup.
 
-export const MODEL = {
-  shrinkGames: 8, // team ratings: league average counts as this many games
-  recency: 0.85, // each older game counts this much of the next newer one
-  priorMinuteGames: 3, // last season's minutes count as this many games
-  priorRateMinutes: 400, // last season's per-minute rates count as this many minutes
-  leagueRateMinutes: 60, // league-average rates (no last season) count as this many minutes (tested: 60 beat 150)
-  homeEdge: 1.2, // points added to the home team, taken from the away team
-  marketWeight: 0.9, // share of the betting market's implied score in the final team score
-  teamMinutes: 240, // regulation minutes per team
-  maxMinutes: 42,
-  showMinutes: 8, // players projected below this are left off
-  factorRange: [0.8, 1.2], // limits on the team scaling of player projections
-  // Improvements, each tested on finished games before being switched on (0 / false = off):
-  blowoutFrom: 6, // a spread bigger than this many points counts as a likely blowout…
-  blowoutPerPoint: 0, // …and starters lose this share of their minutes per point beyond it
-  backToBack: 0, // share of starters' minutes lost on the second night of a back-to-back
-  usagePower: 1, // >1: points and assists a team gains (e.g. a star is out) go mostly to its main scorers
-  starterRole: false, // true: a player's minutes come from games in his current role (starter or bench)
-  minutesPower: 1, // >1: when sharing out the team's 240 minutes, the main players get a bigger share
-  playRateBonus: 1, // fringe players' chance to play = (games played + this) ÷ (team games + this)
-};
+import { MODEL, allocate } from '../docs/claude.js';
+
+export { MODEL };
 
 const STAT_KEYS = { pts: 'points', reb: 'rebounds', ast: 'assists' };
 const num = (v) => Number(v) || 0;
@@ -152,17 +134,16 @@ export function leagueRates(games, before = null) {
   return Object.fromEntries(Object.entries(tot).map(([k, v]) => [k, min ? v / min : 0]));
 }
 
-// One team's player projections for a game.
-//   games: saved games; teamId: this team; injuries: { playerId: status }; prior: { playerId: last-season averages };
-//   expected: this team's projected { pts, reb, ast, tpm } for the game.
-//   spread: points one team is expected to win by (size only); backToBack: this team played the day before.
-export function projectPlayers(games, teamId, {
-  injuries = {}, prior = {}, rates, expected, before = null, roster = null, spread = 0, backToBack = false,
-}) {
+const r = (x, d = 3) => Math.round(x * 10 ** d) / 10 ** d; // keep the saved inputs small
+
+// One team's inputs for the shared step (docs/claude.js), from its saved games: every player who has
+// played for it (on the current roster, when known), with his minutes by role, last season's minutes
+// and his per-minute rates.
+//   injuries: { playerId: status }; prior: { playerId: last-season averages }; rates: league per-minute rates.
+export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null }) {
   const mine = games
     .filter((g) => (!before || g.start < before) && g.teams.some((s) => s.id === teamId))
     .sort((x, y) => y.start.localeCompare(x.start)); // newest first
-  const teamGames = mine.length;
   const players = new Map();
   mine.forEach((g, i) => {
     const w = MODEL.recency ** i;
@@ -171,6 +152,7 @@ export function projectPlayers(games, teamId, {
       if (!players.has(p.id)) {
         players.set(p.id, {
           id: p.id, name: p.name, gp: 0, wMin: 0, w: 0, starter: p.starter === true, roleMin: 0, roleW: 0,
+          startMin: 0, startW: 0, benchMin: 0, benchW: 0,
           tot: { min: 0, pts: 0, reb: 0, ast: 0, tpm: 0 },
         });
       }
@@ -179,6 +161,7 @@ export function projectPlayers(games, teamId, {
       pl.gp++;
       pl.wMin += w * l.min;
       pl.w += w;
+      if (p.starter === true) { pl.startMin += w * l.min; pl.startW += w; } else { pl.benchMin += w * l.min; pl.benchW += w; }
       if ((p.starter === true) === pl.starter) { // same role as in his most recent game
         pl.roleMin += w * l.min;
         pl.roleW += w;
@@ -187,72 +170,38 @@ export function projectPlayers(games, teamId, {
     }
   });
 
-  const out = [];
-  const injured = [];
+  const candidates = [];
   for (const pl of players.values()) {
     if (roster && !roster.includes(pl.id)) continue;
-    const status = injuries[pl.id] ?? '';
-    if (/^out$/i.test(status)) { injured.push({ id: pl.id, name: pl.name, status }); continue; }
     const pr = prior[pl.id];
-    const kMin = pr ? MODEL.priorMinuteGames : 0;
-    const [wMin, w] = MODEL.starterRole && pl.roleW > 0 ? [pl.roleMin, pl.roleW] : [pl.wMin, pl.w];
-    const minWhenPlaying = (wMin + kMin * (pr?.min ?? 0)) / (w + kMin);
-    const playRate = teamGames ? (pl.gp + MODEL.playRateBonus) / (teamGames + MODEL.playRateBonus) : 1; // fringe players don't play every game
     const rate = {};
     for (const s of ['pts', 'reb', 'ast', 'tpm']) {
-      const [k, r] = pr && pr.min > 0 ? [MODEL.priorRateMinutes, pr[s] / pr.min] : [MODEL.leagueRateMinutes, rates[s]];
-      rate[s] = (pl.tot[s] + k * r) / (pl.tot.min + k);
+      const [k, rt] = pr && pr.min > 0 ? [MODEL.priorRateMinutes, pr[s] / pr.min] : [MODEL.leagueRateMinutes, rates[s]];
+      rate[s] = r((pl.tot[s] + k * rt) / (pl.tot.min + k), 5);
     }
-    out.push({ id: pl.id, name: pl.name, status, starter: pl.starter, min: minWhenPlaying * playRate, rate });
+    candidates.push({
+      id: pl.id, name: pl.name, status: injuries[pl.id] ?? '', starter: pl.starter, gp: pl.gp,
+      wMin: r(pl.wMin), w: r(pl.w), startMin: r(pl.startMin), startW: r(pl.startW),
+      benchMin: r(pl.benchMin), benchW: r(pl.benchW), roleMin: r(pl.roleMin), roleW: r(pl.roleW),
+      priorMin: pr?.min ?? 0, kMin: pr ? MODEL.priorMinuteGames : 0, rate,
+    });
   }
+  return { teamGames: mine.length, candidates };
+}
 
-  // Share the team's 240 minutes among the available players (absorbs injured players' minutes), capped.
-  for (const p of out) p.min = Math.min(MODEL.maxMinutes, 24 * (p.min / 24) ** MODEL.minutesPower); // 24 min stays 24
-  for (let i = 0; i < 4; i++) {
-    const free = out.filter((p) => p.min < MODEL.maxMinutes);
-    const fixed = out.filter((p) => p.min >= MODEL.maxMinutes).length * MODEL.maxMinutes;
-    const sum = free.reduce((s, p) => s + p.min, 0);
-    if (!sum) break;
-    const scale = (MODEL.teamMinutes - fixed) / sum;
-    for (const p of free) p.min = Math.min(MODEL.maxMinutes, p.min * scale);
-  }
-
-  // Likely blowouts and back-to-backs: starters play less, and the bench picks up those minutes.
-  const cut = clamp(
-    MODEL.blowoutPerPoint * Math.max(0, spread - MODEL.blowoutFrom) + (backToBack ? MODEL.backToBack : 0), [0, 0.3],
-  );
-  const bench = out.filter((p) => !p.starter);
-  const benchMin = bench.reduce((t, p) => t + p.min, 0);
-  if (cut > 0 && benchMin > 0) {
-    let freed = 0;
-    for (const p of out.filter((x) => x.starter)) { freed += p.min * cut; p.min *= 1 - cut; }
-    for (const p of bench) p.min += (freed * p.min) / benchMin;
-  }
-
-  // Raw projections, then make each stat add up to the team's projected total for this matchup.
-  // Points and assists the team gains or loses go to players by their share of raw output^usagePower,
-  // so with usagePower > 1 an injured star's shots go mostly to the other main scorers.
-  for (const s of ['pts', 'reb', 'ast', 'tpm']) {
-    for (const p of out) p[s] = p.rate[s] * p.min;
-    const raw = out.reduce((t, p) => t + p[s], 0);
-    if (!raw) continue;
-    const target = raw * clamp(expected[s] / raw, MODEL.factorRange);
-    const power = s === 'pts' || s === 'ast' ? MODEL.usagePower : 1;
-    const weights = out.map((p) => p[s] ** power);
-    const wSum = weights.reduce((t, x) => t + x, 0);
-    out.forEach((p, i) => { p[s] += ((target - raw) * weights[i]) / wSum; });
-  }
-  return {
-    players: out
-      .filter((p) => p.min >= MODEL.showMinutes)
-      .map(({ id, name, status, starter, min, pts, reb, ast, tpm }) => ({ id, name, status, starter, min, pts, reb, ast, tpm }))
-      .sort((x, y) => y.pts - x.pts),
-    out: injured,
-  };
+// One team's player projections for a game: its inputs, then the shared step.
+//   expected: this team's projected { pts, reb, ast, tpm }; spread: expected winning margin (size only);
+//   backToBack: this team played the day before; lineup: optional confirmed lineup.
+export function projectPlayers(games, teamId, {
+  injuries = {}, prior = {}, rates, expected, before = null, roster = null, spread = 0, backToBack = false, lineup = null,
+}) {
+  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster }), expected, spread, backToBack };
+  return { ...allocate(team, lineup), inputs: team };
 }
 
 // The whole projection for one upcoming game.
-//   extras: { line: { spread, overUnder } | null, injuries: { teamId: { playerId: status } } }
+//   extras: { line: { spread, overUnder } | null, injuries: { teamId: { playerId: status } },
+//             lineups: { teamId: { starters: [playerId], out: [playerId] } } (optional, confirmed before tip-off) }
 export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}, before = null } = {}) {
   const ratings = teamRatings(games, before);
   const rates = leagueRates(games, before);
@@ -282,7 +231,7 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
       market: scores.market?.[side] ?? null,
       ...projectPlayers(games, id, {
         injuries: extras.injuries?.[id] ?? {}, prior, rates, expected, before, roster: rosters[id]?.length ? rosters[id] : null,
-        spread, backToBack: backToBack(id),
+        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null,
       }),
     };
   }
