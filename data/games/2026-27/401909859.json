@@ -16,6 +16,7 @@
           "id": "3064290",
           "name": "Aaron Gordon",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "7",
@@ -37,6 +38,7 @@
           "id": "4565698",
           "name": "Bryce Hopkins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "19",
             "points": "2",
@@ -58,6 +60,7 @@
           "id": "3112335",
           "name": "Nikola Jokic",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "44",
             "points": "35",
@@ -79,6 +82,7 @@
           "id": "3936299",
           "name": "Jamal Murray",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "43",
             "points": "42",
@@ -100,6 +104,7 @@
           "id": "4431767",
           "name": "Christian Braun",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "40",
             "points": "15",
@@ -121,6 +126,7 @@
           "id": "4277848",
           "name": "Marvin Bagley III",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "5",
@@ -142,6 +148,7 @@
           "id": "4698719",
           "name": "Trevon Brazile",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "28",
             "points": "17",
@@ -163,6 +170,7 @@
           "id": "5105592",
           "name": "Cam Whitmore",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "4",
@@ -184,6 +192,7 @@
           "id": "3978",
           "name": "DeMar DeRozan",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "12",
@@ -205,6 +214,7 @@
           "id": "3135046",
           "name": "Tyus Jones",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "10",
             "points": "2",
@@ -255,6 +265,7 @@
           "id": "4395628",
           "name": "Zion Williamson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "17",
@@ -276,6 +287,7 @@
           "id": "4397688",
           "name": "Trey Murphy III",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "26",
@@ -297,6 +309,7 @@
           "id": "3442",
           "name": "DeAndre Jordan",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "20",
             "points": "9",
@@ -318,6 +331,7 @@
           "id": "3907497",
           "name": "Dejounte Murray",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "22",
@@ -339,6 +353,7 @@
           "id": "5144091",
           "name": "Jeremiah Fears",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "10",
@@ -360,6 +375,7 @@
           "id": "4277813",
           "name": "Herbert Jones",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "2",
@@ -381,6 +397,7 @@
           "id": "4997538",
           "name": "Karlo Matkovic",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "3",
@@ -402,6 +419,7 @@
           "id": "4869780",
           "name": "Derik Queen",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "17",
@@ -423,6 +441,7 @@
           "id": "4277956",
           "name": "Jordan Poole",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "6",
@@ -444,6 +463,7 @@
           "id": "4397136",
           "name": "Saddiq Bey",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "14",
@@ -465,6 +485,7 @@
           "id": "4683634",
           "name": "Bennedict Mathurin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "9",

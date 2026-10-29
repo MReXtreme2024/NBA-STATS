@@ -16,6 +16,7 @@
           "id": "3157465",
           "name": "Duncan Robinson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "21",
@@ -37,6 +38,7 @@
           "id": "3908845",
           "name": "John Collins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "6",
@@ -58,6 +60,7 @@
           "id": "4433621",
           "name": "Jalen Duren",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "22",
@@ -79,6 +82,7 @@
           "id": "4432166",
           "name": "Cade Cunningham",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "22",
@@ -100,6 +104,7 @@
           "id": "4684742",
           "name": "Ausar Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "11",
@@ -121,6 +126,7 @@
           "id": "4278562",
           "name": "Paul Reed",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "6",
@@ -142,6 +148,7 @@
           "id": "4683771",
           "name": "Ronald Holland II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "2596112",
           "name": "Javonte Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "19",
@@ -184,6 +192,7 @@
           "id": "4066372",
           "name": "Kevin Huerter",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "3",
@@ -205,6 +214,7 @@
           "id": "4395702",
           "name": "Isaiah Joe",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "8",
@@ -226,6 +236,7 @@
           "id": "5107199",
           "name": "Daniss Jenkins",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "3",
@@ -276,6 +287,7 @@
           "id": "4251",
           "name": "Paul George",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "38",
@@ -297,6 +309,7 @@
           "id": "4065648",
           "name": "Jayson Tatum",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "13",
@@ -318,6 +331,7 @@
           "id": "4351852",
           "name": "Mitchell Robinson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "18",
             "points": "4",
@@ -339,6 +353,7 @@
           "id": "3078576",
           "name": "Derrick White",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "17",
@@ -360,6 +375,7 @@
           "id": "4683689",
           "name": "Jordan Walsh",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "13",
             "points": "0",
@@ -381,6 +397,7 @@
           "id": "4065804",
           "name": "Sam Hauser",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "11",
@@ -402,6 +419,7 @@
           "id": "4277951",
           "name": "Luka Garza",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "2",
@@ -423,6 +441,7 @@
           "id": "4397424",
           "name": "Neemias Queta",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "3",
@@ -444,6 +463,7 @@
           "id": "4066354",
           "name": "Payton Pritchard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "28",
             "points": "17",
@@ -465,6 +485,7 @@
           "id": "4593841",
           "name": "Baylor Scheierman",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "8",
@@ -486,6 +507,7 @@
           "id": "5175647",
           "name": "Hugo Gonzalez",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "10",
             "points": "0",

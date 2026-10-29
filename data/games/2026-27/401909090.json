@@ -16,6 +16,7 @@
           "id": "5104157",
           "name": "Victor Wembanyama",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "12",
@@ -37,6 +38,7 @@
           "id": "4066259",
           "name": "De'Aaron Fox",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "14",
@@ -58,6 +60,7 @@
           "id": "4395630",
           "name": "Devin Vassell",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "7",
@@ -79,6 +82,7 @@
           "id": "4845367",
           "name": "Stephon Castle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "24",
@@ -100,6 +104,7 @@
           "id": "5037871",
           "name": "Dylan Harper",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "18",
@@ -121,6 +126,7 @@
           "id": "6578",
           "name": "Harrison Barnes",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "3",
@@ -142,6 +148,7 @@
           "id": "4395723",
           "name": "Keldon Johnson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "10",
@@ -163,6 +170,7 @@
           "id": "4592479",
           "name": "Julian Champagnie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "30",
             "points": "8",
@@ -184,6 +192,7 @@
           "id": "4713010",
           "name": "David Jones Garcia",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "2",
@@ -205,6 +214,7 @@
           "id": "5061568",
           "name": "Carter Bryant",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "6",
             "points": "0",
@@ -226,6 +236,7 @@
           "id": "5105337",
           "name": "Maliq Brown",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -247,6 +258,7 @@
           "id": "3064560",
           "name": "Luke Kornet",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "4",
@@ -268,6 +280,7 @@
           "id": "5105809",
           "name": "Tarris Reed Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -289,6 +302,7 @@
           "id": "5107968",
           "name": "Ja'Kobi Gillespie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "2",
@@ -327,6 +341,7 @@
           "id": "4222252",
           "name": "Isaiah Hartenstein",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "17",
             "points": "4",
@@ -348,6 +363,7 @@
           "id": "4433255",
           "name": "Chet Holmgren",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "14",
@@ -369,6 +385,7 @@
           "id": "4278073",
           "name": "Shai Gilgeous-Alexander",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "32",
@@ -390,6 +407,7 @@
           "id": "4593803",
           "name": "Jalen Williams",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "12",
@@ -411,6 +429,7 @@
           "id": "4683692",
           "name": "Cason Wallace",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "19",
             "points": "6",
@@ -432,6 +451,7 @@
           "id": "4432823",
           "name": "Jaylin Williams",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "5",
@@ -453,6 +473,7 @@
           "id": "4684208",
           "name": "Brooks Barnhizer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -474,6 +495,7 @@
           "id": "5174983",
           "name": "Aday Mara",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "7",
@@ -495,6 +517,7 @@
           "id": "2991350",
           "name": "Alex Caruso",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "9",
@@ -516,6 +539,7 @@
           "id": "3133626",
           "name": "Kenrich Williams",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "3",
@@ -537,6 +561,7 @@
           "id": "4683778",
           "name": "Jared McCain",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "20",
@@ -558,6 +583,7 @@
           "id": "4900671",
           "name": "Ajay Mitchell",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "4",
@@ -579,6 +605,7 @@
           "id": "5241364",
           "name": "Bennett Stirtz",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",

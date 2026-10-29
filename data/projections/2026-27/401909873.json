@@ -1,0 +1,253 @@
+{
+  "id": "401909873",
+  "start": "2026-10-27T00:00Z",
+  "homeId": "25",
+  "awayId": "21",
+  "savedAt": "2026-10-26T19:12:48+00:00",
+  "teams": {
+    "21": {
+      "score": 106.54,
+      "players": {
+        "3136193": {
+          "name": "Devin Booker",
+          "claude": {
+            "pts": 22.15,
+            "reb": 4.37,
+            "ast": 5.01
+          },
+          "nate": {
+            "pts": 33,
+            "reb": 5,
+            "ast": 4
+          }
+        },
+        "3155526": {
+          "name": "Dillon Brooks",
+          "claude": {
+            "pts": 15.82,
+            "reb": 3.76,
+            "ast": 1.65
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "3913174": {
+          "name": "Luke Kennard",
+          "claude": {
+            "pts": 4.52,
+            "reb": 1.64,
+            "ast": 1.2
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4066383": {
+          "name": "Miles Bridges",
+          "claude": {
+            "pts": 13.5,
+            "reb": 6.13,
+            "ast": 2.59
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "4278402": {
+          "name": "Jordan Goodwin",
+          "claude": {
+            "pts": 6.78,
+            "reb": 4.9,
+            "ast": 1.86
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4278585": {
+          "name": "Collin Gillespie",
+          "claude": {
+            "pts": 9.37,
+            "reb": 4.01,
+            "ast": 3.96
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 5
+          }
+        },
+        "4437244": {
+          "name": "Jalen Green",
+          "claude": {
+            "pts": 13.92,
+            "reb": 3.62,
+            "ast": 2.35
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4592714": {
+          "name": "Pat Spencer",
+          "claude": {
+            "pts": 3.4,
+            "reb": 1.52,
+            "ast": 1.74
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4888725": {
+          "name": "Ryan Dunn",
+          "claude": {
+            "pts": 4.2,
+            "reb": 3.99,
+            "ast": 1.08
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "5203685": {
+          "name": "Khaman Maluach",
+          "claude": {
+            "pts": 3.84,
+            "reb": 4.95,
+            "ast": 0.24
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 7,
+            "ast": 2
+          }
+        }
+      }
+    },
+    "25": {
+      "score": 115.03,
+      "players": {
+        "2991350": {
+          "name": "Alex Caruso",
+          "claude": {
+            "pts": 9.69,
+            "reb": 4.71,
+            "ast": 2.97
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 4
+          }
+        },
+        "3133626": {
+          "name": "Kenrich Williams",
+          "claude": {
+            "pts": 6.63,
+            "reb": 3.4,
+            "ast": 1.25
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4222252": {
+          "name": "Isaiah Hartenstein",
+          "claude": {
+            "pts": 12.08,
+            "reb": 12.45,
+            "ast": 3.99
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 7,
+            "ast": 2
+          }
+        },
+        "4278073": {
+          "name": "Shai Gilgeous-Alexander",
+          "claude": {
+            "pts": 36.32,
+            "reb": 5.31,
+            "ast": 6.54
+          },
+          "nate": {
+            "pts": 27,
+            "reb": 4,
+            "ast": 4
+          }
+        },
+        "4432823": {
+          "name": "Jaylin Williams",
+          "claude": {
+            "pts": 7.77,
+            "reb": 6.28,
+            "ast": 2.39
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4683778": {
+          "name": "Jared McCain",
+          "claude": {
+            "pts": 12.19,
+            "reb": 2.79,
+            "ast": 1.66
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4900671": {
+          "name": "Ajay Mitchell",
+          "claude": {
+            "pts": 18.04,
+            "reb": 4.66,
+            "ast": 4.37
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "5174983": {
+          "name": "Aday Mara",
+          "claude": {
+            "pts": 7.85,
+            "reb": 3.47,
+            "ast": 1.55
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 2,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@
           "id": "3155942",
           "name": "Domantas Sabonis",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "39",
             "points": "27",
@@ -37,6 +38,7 @@
           "id": "4065732",
           "name": "De'Andre Hunter",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "4",
@@ -58,6 +60,7 @@
           "id": "4594327",
           "name": "Keegan Murray",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "12",
@@ -79,11 +82,12 @@
           "id": "3064440",
           "name": "Zach LaVine",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "39",
             "points": "22",
             "fieldGoalsMade-fieldGoalsAttempted": "6-15",
-            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-10",
             "freeThrowsMade-freeThrowsAttempted": "7-7",
             "rebounds": "5",
             "assists": "1",
@@ -100,6 +104,7 @@
           "id": "5142620",
           "name": "Darius Acuff Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "33",
@@ -121,6 +126,7 @@
           "id": "4431679",
           "name": "Precious Achiuwa",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "14",
@@ -142,6 +148,7 @@
           "id": "4066262",
           "name": "Malik Monk",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "4279318",
           "name": "Daeqwon Plowden",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "3",
@@ -184,6 +192,7 @@
           "id": "4702384",
           "name": "Nique Clifford",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "0",
@@ -205,6 +214,7 @@
           "id": "5106058",
           "name": "Emanuel Sharp",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "5",
@@ -255,18 +265,19 @@
           "id": "4431736",
           "name": "Toumani Camara",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "19",
             "fieldGoalsMade-fieldGoalsAttempted": "7-12",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-10",
             "freeThrowsMade-freeThrowsAttempted": "0-0",
-            "rebounds": "3",
+            "rebounds": "2",
             "assists": "1",
             "turnovers": "0",
             "steals": "2",
             "blocks": "0",
-            "offensiveRebounds": "1",
+            "offensiveRebounds": "0",
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "-3"
@@ -276,6 +287,7 @@
           "id": "4683021",
           "name": "Deni Avdija",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "26",
@@ -297,18 +309,19 @@
           "id": "5105565",
           "name": "Donovan Clingan",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "21",
             "points": "8",
             "fieldGoalsMade-fieldGoalsAttempted": "3-5",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
             "freeThrowsMade-freeThrowsAttempted": "2-2",
-            "rebounds": "10",
+            "rebounds": "11",
             "assists": "3",
             "turnovers": "0",
             "steals": "0",
             "blocks": "3",
-            "offensiveRebounds": "4",
+            "offensiveRebounds": "5",
             "defensiveRebounds": "6",
             "fouls": "4",
             "plusMinus": "+8"
@@ -318,6 +331,7 @@
           "id": "6606",
           "name": "Damian Lillard",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "19",
@@ -339,6 +353,7 @@
           "id": "4279888",
           "name": "Ja Morant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "12",
@@ -360,6 +375,7 @@
           "id": "4066211",
           "name": "Robert Williams III",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "13",
@@ -381,6 +397,7 @@
           "id": "3995",
           "name": "Jrue Holiday",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "12",
@@ -402,6 +419,7 @@
           "id": "4578893",
           "name": "Vit Krejci",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -423,6 +441,7 @@
           "id": "4683678",
           "name": "Scoot Henderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "4",
@@ -444,6 +463,7 @@
           "id": "5081727",
           "name": "Sidy Cissoko",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "15",

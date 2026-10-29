@@ -16,6 +16,7 @@
           "id": "4066328",
           "name": "Jarrett Allen",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "21",
@@ -37,6 +38,7 @@
           "id": "4432158",
           "name": "Evan Mobley",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "20",
@@ -58,6 +60,7 @@
           "id": "3992",
           "name": "James Harden",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "12",
@@ -79,6 +82,7 @@
           "id": "3908809",
           "name": "Donovan Mitchell",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "22",
@@ -100,6 +104,7 @@
           "id": "4576087",
           "name": "Peyton Watson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "11",
@@ -121,6 +126,7 @@
           "id": "2995706",
           "name": "Mario Hezonja",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "9",
@@ -142,6 +148,7 @@
           "id": "4066757",
           "name": "Sam Merrill",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "7",
@@ -163,6 +170,7 @@
           "id": "4683747",
           "name": "Jaylon Tyson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "15",
@@ -184,6 +192,7 @@
           "id": "4701233",
           "name": "Craig Porter Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "3",
@@ -205,6 +214,7 @@
           "id": "5023693",
           "name": "Tyrese Proctor",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "5",
@@ -261,6 +271,7 @@
           "id": "3064514",
           "name": "Julius Randle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "23",
@@ -282,6 +293,7 @@
           "id": "4278104",
           "name": "Michael Porter Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "28",
@@ -303,6 +315,7 @@
           "id": "4432194",
           "name": "Day'Ron Sharpe",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "7",
@@ -324,6 +337,7 @@
           "id": "4702177",
           "name": "Keon Ellis",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "22",
             "points": "6",
@@ -345,6 +359,7 @@
           "id": "5175643",
           "name": "Egor Demin",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "22",
@@ -366,6 +381,7 @@
           "id": "4687718",
           "name": "Josh Minott",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "4",
@@ -387,6 +403,7 @@
           "id": "4712896",
           "name": "Noah Clowney",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "4",
@@ -408,6 +425,7 @@
           "id": "5174655",
           "name": "Chaney Johnson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "10",
@@ -429,6 +447,7 @@
           "id": "3150844",
           "name": "Moritz Wagner",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "6",
@@ -450,6 +469,7 @@
           "id": "5101761",
           "name": "Mikel Brown Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "8",
@@ -471,6 +491,7 @@
           "id": "5279130",
           "name": "Nolan Traore",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "3",

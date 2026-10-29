@@ -16,6 +16,7 @@
           "id": "3202",
           "name": "Kevin Durant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "30",
@@ -37,6 +38,7 @@
           "id": "4432639",
           "name": "Jabari Smith Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "30",
@@ -58,6 +60,7 @@
           "id": "4871144",
           "name": "Alperen Sengun",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "23",
@@ -79,6 +82,7 @@
           "id": "2991230",
           "name": "Fred VanVleet",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "6",
@@ -100,6 +104,7 @@
           "id": "4684740",
           "name": "Amen Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "16",
@@ -121,6 +126,7 @@
           "id": "3136777",
           "name": "Jae'Sean Tate",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "4433192",
           "name": "Tari Eason",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "2",
@@ -163,6 +170,7 @@
           "id": "4592857",
           "name": "Isaiah Crawford",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "3",
@@ -184,6 +192,7 @@
           "id": "3102529",
           "name": "Clint Capela",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "0",
@@ -205,6 +214,7 @@
           "id": "2990992",
           "name": "Marcus Smart",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "10",
@@ -226,6 +236,7 @@
           "id": "3037789",
           "name": "Bogdan Bogdanovic",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "5",
@@ -247,6 +258,7 @@
           "id": "4711272",
           "name": "Reed Sheppard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "3",
@@ -268,6 +280,7 @@
           "id": "5105837",
           "name": "Bruce Thornton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -306,6 +319,7 @@
           "id": "4278049",
           "name": "Daniel Gafford",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "22",
             "points": "2",
@@ -327,6 +341,7 @@
           "id": "4278078",
           "name": "P.J. Washington",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "10",
@@ -348,6 +363,7 @@
           "id": "5041939",
           "name": "Cooper Flagg",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "32",
@@ -369,6 +385,7 @@
           "id": "6442",
           "name": "Kyrie Irving",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "15",
@@ -390,6 +407,7 @@
           "id": "4432582",
           "name": "Max Christie",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "5",
@@ -411,11 +429,12 @@
           "id": "4278594",
           "name": "Naji Marshall",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "29",
             "points": "16",
-            "fieldGoalsMade-fieldGoalsAttempted": "7-13",
-            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-6",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
             "freeThrowsMade-freeThrowsAttempted": "0-0",
             "rebounds": "2",
             "assists": "6",
@@ -432,6 +451,7 @@
           "id": "4873153",
           "name": "Morez Johnson Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "6",
@@ -453,6 +473,7 @@
           "id": "5211175",
           "name": "Zaccharie Risacher",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "4",
@@ -474,6 +495,7 @@
           "id": "5279129",
           "name": "Sergio de Larrea",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "0",
@@ -495,6 +517,7 @@
           "id": "4701208",
           "name": "Moussa Cisse",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "3",
@@ -516,6 +539,7 @@
           "id": "4432107",
           "name": "Marcus Sasser",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "17",

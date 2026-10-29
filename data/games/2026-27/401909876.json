@@ -16,6 +16,7 @@
           "id": "3064290",
           "name": "Aaron Gordon",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "7",
@@ -37,6 +38,7 @@
           "id": "4565698",
           "name": "Bryce Hopkins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "13",
@@ -58,6 +60,7 @@
           "id": "3112335",
           "name": "Nikola Jokic",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "19",
@@ -79,6 +82,7 @@
           "id": "3936299",
           "name": "Jamal Murray",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "19",
@@ -100,6 +104,7 @@
           "id": "4431767",
           "name": "Christian Braun",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "9",
@@ -121,6 +126,7 @@
           "id": "4277848",
           "name": "Marvin Bagley III",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "7",
@@ -142,6 +148,7 @@
           "id": "4431690",
           "name": "Zeke Nnaji",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "5",
@@ -163,6 +170,7 @@
           "id": "4433607",
           "name": "DaRon Holmes II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "0",
@@ -184,6 +192,7 @@
           "id": "4698719",
           "name": "Trevon Brazile",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "6",
@@ -205,6 +214,7 @@
           "id": "5105592",
           "name": "Cam Whitmore",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "4",
@@ -226,6 +236,7 @@
           "id": "3978",
           "name": "DeMar DeRozan",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "29",
             "points": "21",
@@ -247,6 +258,7 @@
           "id": "3135046",
           "name": "Tyus Jones",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "0",
@@ -268,6 +280,7 @@
           "id": "4433629",
           "name": "Ryan Nembhard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "4",
@@ -300,6 +313,7 @@
           "id": "6589",
           "name": "Draymond Green",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "3",
@@ -321,6 +335,7 @@
           "id": "4997536",
           "name": "Gui Santos",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "13",
@@ -342,6 +357,7 @@
           "id": "5175737",
           "name": "Yaxel Lendeborg",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "31",
@@ -363,6 +379,7 @@
           "id": "3975",
           "name": "Stephen Curry",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "24",
@@ -384,6 +401,7 @@
           "id": "4709138",
           "name": "Brandin Podziemski",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "18",
@@ -405,6 +423,7 @@
           "id": "2990969",
           "name": "Georges Niang",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "9",
@@ -426,6 +445,7 @@
           "id": "4703396",
           "name": "Graham Ike",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "3",
@@ -447,6 +467,7 @@
           "id": "4897449",
           "name": "Malevy Leons",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -468,6 +489,7 @@
           "id": "3213",
           "name": "Al Horford",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "11",
@@ -489,6 +511,7 @@
           "id": "4397886",
           "name": "Charles Bassey",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "0",
@@ -510,6 +533,7 @@
           "id": "3134903",
           "name": "Gary Payton II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "7",
@@ -531,6 +555,7 @@
           "id": "4066436",
           "name": "De'Anthony Melton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "3",
@@ -552,6 +577,7 @@
           "id": "4397040",
           "name": "Brandon Williams",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "6",
@@ -573,6 +599,7 @@
           "id": "4433149",
           "name": "LJ Cryer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "6",
@@ -594,6 +621,7 @@
           "id": "4897262",
           "name": "Will Richard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",

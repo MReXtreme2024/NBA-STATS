@@ -9,9 +9,10 @@ import {
   getTeams, getScoreboard, getSummary, getRoster, gameExtras, isCountedGame, isUpcomingGame, trimGame, trimUpcoming,
 } from './espn.js';
 import { checkGame } from './checks.js';
-import { build, loadGames } from './build.js';
+import { build, buildAppData, loadGames } from './build.js';
 import { projectGame } from './model.js';
 import { loadPriors } from './priors.js';
+import { snapshot } from './results.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const config = JSON.parse(fs.readFileSync(path.join(ROOT, 'config.json'), 'utf8'));
@@ -99,9 +100,13 @@ async function main() {
   const playerIds = allGames.flatMap((g) => g.teams.filter((t) => playing.has(t.id))
     .flatMap((t) => t.players.filter((p) => p.played).map((p) => p.id)));
   const prior = await loadPriors(DATA_DIR, config.priorSeason, playerIds);
+  // Both formulas' projections are also saved per game, to be scored once the game is played.
+  const appTeams = buildAppData(allGames, teams, config, new Date()).teams;
   for (const g of upcoming) {
     const extras = gameExtras(await getSummary(g.id));
     g.claude = projectGame(allGames, g, { extras, prior, rosters });
+    writeJson(path.join(DATA_DIR, 'projections', config.season, `${g.id}.json`),
+      snapshot(g, g.claude, appTeams, new Date().toISOString()));
   }
 
   // Today's (US date) games that haven't started, for the Upcoming games screen.

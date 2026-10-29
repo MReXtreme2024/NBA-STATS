@@ -43,6 +43,7 @@ test('trimmed game keeps teams, scores and stat lines by key', () => {
   assert.equal(bos.score, 113);
   assert.equal(bos.color, '008348');
   const played = bos.players.find((p) => p.played);
+  assert.equal(bos.players.filter((p) => p.starter).length, 5);
   assert.ok('threePointFieldGoalsMade-threePointFieldGoalsAttempted' in played.stats);
   const dnp = bos.players.find((p) => !p.played);
   assert.equal(dnp.stats, undefined);

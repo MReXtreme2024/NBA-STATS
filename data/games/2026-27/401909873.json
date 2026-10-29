@@ -16,6 +16,7 @@
           "id": "4222252",
           "name": "Isaiah Hartenstein",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "15",
@@ -37,6 +38,7 @@
           "id": "3133626",
           "name": "Kenrich Williams",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "3",
@@ -58,6 +60,7 @@
           "id": "4278073",
           "name": "Shai Gilgeous-Alexander",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "26",
@@ -79,6 +82,7 @@
           "id": "4683778",
           "name": "Jared McCain",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "18",
@@ -100,6 +104,7 @@
           "id": "4900671",
           "name": "Ajay Mitchell",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "30",
@@ -121,6 +126,7 @@
           "id": "4432823",
           "name": "Jaylin Williams",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "6",
@@ -142,6 +148,7 @@
           "id": "4684208",
           "name": "Brooks Barnhizer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "5174983",
           "name": "Aday Mara",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "11",
@@ -184,6 +192,7 @@
           "id": "2991350",
           "name": "Alex Caruso",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "9",
@@ -205,6 +214,7 @@
           "id": "5105800",
           "name": "Josh Dix",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "0",
@@ -226,6 +236,7 @@
           "id": "5241364",
           "name": "Bennett Stirtz",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "7",
@@ -264,6 +275,7 @@
           "id": "3155526",
           "name": "Dillon Brooks",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "19",
@@ -285,6 +297,7 @@
           "id": "4066383",
           "name": "Miles Bridges",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "17",
@@ -306,6 +319,7 @@
           "id": "5203685",
           "name": "Khaman Maluach",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "12",
@@ -327,6 +341,7 @@
           "id": "3136193",
           "name": "Devin Booker",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "3",
@@ -348,6 +363,7 @@
           "id": "4437244",
           "name": "Jalen Green",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "20",
@@ -369,6 +385,7 @@
           "id": "4888725",
           "name": "Ryan Dunn",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "6",
@@ -390,6 +407,7 @@
           "id": "5041953",
           "name": "Koa Peat",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -411,6 +429,7 @@
           "id": "5105977",
           "name": "Rasheer Fleming",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -432,6 +451,7 @@
           "id": "4066268",
           "name": "Duop Reath",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "5",
@@ -453,6 +473,7 @@
           "id": "3913174",
           "name": "Luke Kennard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "9",
@@ -474,6 +495,7 @@
           "id": "4278402",
           "name": "Jordan Goodwin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "12",
@@ -495,6 +517,7 @@
           "id": "4278585",
           "name": "Collin Gillespie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "9",
@@ -516,6 +539,7 @@
           "id": "4280245",
           "name": "Jamaree Bouyea",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "2",

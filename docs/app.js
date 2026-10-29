@@ -202,7 +202,44 @@ function upcomingPage() {
   const body = games.length
     ? `<ul class="games-list">${rows}</ul>`
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
-  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${formulaTabs(formula)}${body}`;
+  const results = data.results?.games
+    ? `<a class="upcoming-link" href="#/results"><span>How did the projections go?</span><span class="gp">${data.results.games} games scored ›</span></a>` : '';
+  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${formulaTabs(formula)}${body}${results}`;
+}
+
+// 8. Results: both formulas' real pre-game projections against what happened.
+function resultsPage() {
+  const r = data.results;
+  const back = '#/upcoming';
+  if (!r?.games) return `${bar('How did the projections go?', back)}<p class="message">No finished games with saved projections yet.</p>`;
+  const formula = readFormula();
+  const fig = (v) => (v === null ? '—' : v.toFixed(2));
+  const row = (label, k) => {
+    const c = r.claude[k];
+    const n = r.nate[k];
+    return `<tr><th scope="row">${label}</th><td class="${c <= n ? 'win' : ''}">${fig(c)}</td><td class="${n < c ? 'win' : ''}">${fig(n)}</td></tr>`;
+  };
+  const summary = `<section class="stat"><h3>Season so far · average miss (lower is better)</h3>
+    <div class="table-wrap"><table class="results"><thead><tr><th></th><th scope="col">Claude</th><th scope="col">Yours</th></tr></thead>
+    <tbody>${row('Points', 'pts')}${row('Rebounds', 'reb')}${row('Assists', 'ast')}${row('P+R+A', 'pra')}</tbody></table></div>
+    <p class="working">${r.games} games, ${r.players} player performances. Projections were made before tip-off with that day's injury report.</p></section>`;
+  const shown = (v) => (formula === 'claude' ? one(v) : String(v));
+  const cell = (proj, actual) => `<td><b>${actual}</b><span class="proj">${shown(proj)}</span></td>`;
+  const games = r.lastDay.map((g) => {
+    const away = teamById(g.away.id);
+    const home = teamById(g.home.id);
+    const proj = (t) => (formula === 'claude' && t.projected !== null ? ` <span class="proj">(${one(t.projected)})</span>` : '');
+    const rows = g.players.map((p) => {
+      const f = p[formula];
+      return `<tr><td><a href="#/team/${p.teamId}/player/${p.id}">${esc(p.name)}</a><span class="date">${esc(teamById(p.teamId).code)}</span></td>
+        ${cell(f.pts, p.actual.pts)}${cell(f.reb, p.actual.reb)}${cell(f.ast, p.actual.ast)}</tr>`;
+    }).join('');
+    return `<section class="stat"><h3>${pill(away)} ${g.away.actual}${proj(g.away)} @ ${pill(home)} ${g.home.actual}${proj(g.home)}</h3>
+      <div class="table-wrap sticky"><table class="results"><thead><tr><th scope="col">Player</th><th scope="col">PTS</th><th scope="col">REB</th><th scope="col">AST</th></tr></thead>
+      <tbody>${rows}</tbody></table></div></section>`;
+  }).join('');
+  return `${bar('How did the projections go?', back, `Last day: ${dateText(r.lastDate)} · actual in bold, projection below`)}
+    ${summary}${formulaTabs(formula)}<div class="stats">${games}</div>`;
 }
 
 // Claude's formula for one game: projected team scores, then every stat side by side.
@@ -305,6 +342,8 @@ function render() {
   const game = parts[0] === 'game' ? data.upcoming?.games.find((g) => g.id === parts[1]) : null;
   if (parts.length === 0) {
     html = teamsPage();
+  } else if (parts[0] === 'results') {
+    html = resultsPage(); title = 'How did the projections go?';
   } else if (parts[0] === 'upcoming') {
     html = upcomingPage(); title = 'Upcoming games';
   } else if (game) {

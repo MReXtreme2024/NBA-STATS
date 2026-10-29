@@ -16,6 +16,7 @@
           "id": "3934719",
           "name": "OG Anunoby",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "13",
@@ -37,6 +38,7 @@
           "id": "3136195",
           "name": "Karl-Anthony Towns",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "27",
@@ -58,6 +60,7 @@
           "id": "3062679",
           "name": "Josh Hart",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "6",
@@ -79,6 +82,7 @@
           "id": "3147657",
           "name": "Mikal Bridges",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "12",
@@ -100,6 +104,7 @@
           "id": "3934672",
           "name": "Jalen Brunson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "23",
@@ -121,6 +126,7 @@
           "id": "5211983",
           "name": "Pacome Dadiet",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "5289900",
           "name": "Mohamed Diawara",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "6585",
           "name": "Andre Drummond",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "10",
@@ -184,6 +192,7 @@
           "id": "4432808",
           "name": "James Wiseman",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -205,6 +214,7 @@
           "id": "3914044",
           "name": "Landry Shamet",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "28",
             "points": "13",
@@ -226,6 +236,7 @@
           "id": "4431823",
           "name": "Miles McBride",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "5",
@@ -247,6 +258,7 @@
           "id": "4433225",
           "name": "Tyler Kolek",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "2",
@@ -268,6 +280,7 @@
           "id": "4683730",
           "name": "Jaden Akins",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "0",
@@ -312,6 +325,7 @@
           "id": "3157465",
           "name": "Duncan Robinson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "12",
@@ -333,6 +347,7 @@
           "id": "3908845",
           "name": "John Collins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "2",
@@ -354,6 +369,7 @@
           "id": "4278562",
           "name": "Paul Reed",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "22",
@@ -375,6 +391,7 @@
           "id": "4432166",
           "name": "Cade Cunningham",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "19",
@@ -396,6 +413,7 @@
           "id": "4684742",
           "name": "Ausar Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "11",
@@ -417,6 +435,7 @@
           "id": "2990962",
           "name": "Taurean Prince",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "3",
@@ -438,6 +457,7 @@
           "id": "4397882",
           "name": "Tolu Smith",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "6",
             "points": "1",
@@ -459,6 +479,7 @@
           "id": "4683771",
           "name": "Ronald Holland II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "4",
@@ -480,6 +501,7 @@
           "id": "5107818",
           "name": "Isaac Jones",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -501,6 +523,7 @@
           "id": "2596112",
           "name": "Javonte Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "3",
@@ -522,6 +545,7 @@
           "id": "4066372",
           "name": "Kevin Huerter",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "7",
@@ -543,6 +567,7 @@
           "id": "4397449",
           "name": "Elijah Harkless",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -564,6 +589,7 @@
           "id": "4700852",
           "name": "Chaz Lanier",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "2",
@@ -585,6 +611,7 @@
           "id": "5107199",
           "name": "Daniss Jenkins",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "11",
@@ -606,6 +633,7 @@
           "id": "5258459",
           "name": "Ebuka Okorie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "0",

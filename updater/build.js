@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkAppData, checkGame } from './checks.js';
+import { scoreResults } from './results.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -156,6 +157,7 @@ export function build(now = new Date()) {
   const data = buildAppData(games, teams, config, now, {
     upcoming: readOptional('upcoming.json'), rosters: readOptional('rosters.json'),
   });
+  data.results = scoreResults(loadGames(path.join(ROOT, 'data', 'projections', config.season)), games, config.timeZone);
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   checkAppData(data, previous);

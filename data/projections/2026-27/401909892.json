@@ -1,0 +1,253 @@
+{
+  "id": "401909892",
+  "start": "2026-10-29T02:30Z",
+  "homeId": "12",
+  "awayId": "13",
+  "savedAt": "2026-10-28T18:48:16+00:00",
+  "teams": {
+    "12": {
+      "score": 112.99,
+      "players": {
+        "3448": {
+          "name": "Brook Lopez",
+          "claude": {
+            "pts": 12.65,
+            "reb": 5.22,
+            "ast": 1.48
+          },
+          "nate": {
+            "pts": 18,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "2991139": {
+          "name": "Kris Dunn",
+          "claude": {
+            "pts": 10.2,
+            "reb": 4.94,
+            "ast": 4.85
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 4,
+            "ast": 6
+          }
+        },
+        "3936099": {
+          "name": "Derrick Jones Jr.",
+          "claude": {
+            "pts": 13.6,
+            "reb": 5.27,
+            "ast": 1.87
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4396907": {
+          "name": "Darius Garland",
+          "claude": {
+            "pts": 26.19,
+            "reb": 3.17,
+            "ast": 8.18
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 1,
+            "ast": 7
+          }
+        },
+        "4432170": {
+          "name": "Isaiah Jackson",
+          "claude": {
+            "pts": 10.05,
+            "reb": 8.06,
+            "ast": 1.38
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4702352": {
+          "name": "Kobe Sanders",
+          "claude": {
+            "pts": 8.99,
+            "reb": 3.05,
+            "ast": 2.09
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 3
+          }
+        },
+        "5106258": {
+          "name": "Gradey Dick",
+          "claude": {
+            "pts": 8.28,
+            "reb": 2.92,
+            "ast": 0.77
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5254165": {
+          "name": "Keaton Wagler",
+          "claude": {
+            "pts": 15.95,
+            "reb": 6.22,
+            "ast": 3.71
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 4,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "13": {
+      "score": 116.97,
+      "players": {
+        "3155535": {
+          "name": "Kevon Looney",
+          "claude": {
+            "pts": 1.79,
+            "reb": 3.66,
+            "ast": 0.95
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "3907498": {
+          "name": "Matisse Thybulle",
+          "claude": {
+            "pts": 6.09,
+            "reb": 2.11,
+            "ast": 0.95
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "3945274": {
+          "name": "Luka Doncic",
+          "claude": {
+            "pts": 29.25,
+            "reb": 6.85,
+            "ast": 7.12
+          },
+          "nate": {
+            "pts": 36,
+            "reb": 6,
+            "ast": 8
+          }
+        },
+        "4066457": {
+          "name": "Austin Reaves",
+          "claude": {
+            "pts": 20.95,
+            "reb": 3.92,
+            "ast": 5.02
+          },
+          "nate": {
+            "pts": 26,
+            "reb": 2,
+            "ast": 6
+          }
+        },
+        "4277811": {
+          "name": "Collin Sexton",
+          "claude": {
+            "pts": 8.87,
+            "reb": 1.42,
+            "ast": 1.95
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4278580": {
+          "name": "Sandro Mamukelashvili",
+          "claude": {
+            "pts": 9.43,
+            "reb": 4.4,
+            "ast": 1.59
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4397014": {
+          "name": "Quentin Grimes",
+          "claude": {
+            "pts": 9.52,
+            "reb": 3.11,
+            "ast": 2.45
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4433136": {
+          "name": "Walker Kessler",
+          "claude": {
+            "pts": 12.64,
+            "reb": 9.35,
+            "ast": 2.18
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 8,
+            "ast": 1
+          }
+        },
+        "4433137": {
+          "name": "Ziaire Williams",
+          "claude": {
+            "pts": 9.6,
+            "reb": 2.49,
+            "ast": 1.22
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4592691": {
+          "name": "Jake LaRavia",
+          "claude": {
+            "pts": 4.75,
+            "reb": 2.48,
+            "ast": 1.07
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 1,
+            "ast": 1
+          }
+        }
+      }
+    }
+  }
+}

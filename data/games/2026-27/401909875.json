@@ -16,6 +16,7 @@
           "id": "4066336",
           "name": "Lauri Markkanen",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "6",
             "points": "2",
@@ -37,6 +38,7 @@
           "id": "4277961",
           "name": "Jaren Jackson Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "10",
             "points": "6",
@@ -58,6 +60,7 @@
           "id": "4433627",
           "name": "Keyonte George",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "26",
@@ -79,6 +82,7 @@
           "id": "4873138",
           "name": "Ace Bailey",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "17",
@@ -100,6 +104,7 @@
           "id": "5041955",
           "name": "Darryn Peterson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "14",
@@ -121,6 +126,7 @@
           "id": "4684793",
           "name": "Kyle Filipowski",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "5105839",
           "name": "Brice Sensabaugh",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "11",
@@ -163,6 +170,7 @@
           "id": "4065673",
           "name": "Tony Bradley",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "6",
             "points": "2",
@@ -184,6 +192,7 @@
           "id": "4277919",
           "name": "Mo Bamba",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "29",
             "points": "14",
@@ -205,6 +214,7 @@
           "id": "3133602",
           "name": "Svi Mykhailiuk",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "0",
@@ -226,6 +236,7 @@
           "id": "4065663",
           "name": "Josh Okogie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "0",
@@ -247,6 +258,7 @@
           "id": "4432811",
           "name": "Josh Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "6",
@@ -268,6 +280,7 @@
           "id": "4683766",
           "name": "Isaiah Collier",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "7",
@@ -306,6 +319,7 @@
           "id": "4903027",
           "name": "Cedric Coward",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "16",
@@ -327,6 +341,7 @@
           "id": "5041935",
           "name": "Cameron Boozer",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "13",
@@ -348,6 +363,7 @@
           "id": "5112087",
           "name": "Jaylen Wells",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "14",
@@ -369,6 +385,7 @@
           "id": "4600663",
           "name": "Zach Edey",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "21",
             "points": "4",
@@ -390,6 +407,7 @@
           "id": "4065733",
           "name": "Ty Jerome",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "15",
@@ -411,6 +429,7 @@
           "id": "2991070",
           "name": "Jerami Grant",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "13",
@@ -432,6 +451,7 @@
           "id": "5105550",
           "name": "GG Jackson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "4",
@@ -453,6 +473,7 @@
           "id": "4432810",
           "name": "Isaiah Stewart",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "4",
@@ -474,6 +495,7 @@
           "id": "4593016",
           "name": "Quinten Post",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "12",
@@ -495,6 +517,7 @@
           "id": "4431785",
           "name": "Scotty Pippen Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "7",
@@ -516,6 +539,7 @@
           "id": "4433083",
           "name": "Cam Spencer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "8",

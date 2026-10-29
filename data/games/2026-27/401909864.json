@@ -16,6 +16,7 @@
           "id": "4431671",
           "name": "Jaden McDaniels",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "14",
@@ -37,6 +38,7 @@
           "id": "4433247",
           "name": "Jonathan Kuminga",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "13",
@@ -58,6 +60,7 @@
           "id": "3032976",
           "name": "Rudy Gobert",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "8",
@@ -79,6 +82,7 @@
           "id": "4432816",
           "name": "LaMelo Ball",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "17",
             "points": "15",
@@ -100,6 +104,7 @@
           "id": "4594268",
           "name": "Anthony Edwards",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "26",
@@ -121,6 +126,7 @@
           "id": "3136196",
           "name": "Trey Lyles",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "3",
@@ -142,6 +148,7 @@
           "id": "4895758",
           "name": "Cody Williams",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "5061585",
           "name": "Isaiah Evans",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "0",
@@ -184,6 +192,7 @@
           "id": "5279133",
           "name": "Joan Beringer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "6",
@@ -205,6 +214,7 @@
           "id": "4397002",
           "name": "Ayo Dosunmu",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "9",
@@ -226,6 +236,7 @@
           "id": "4432247",
           "name": "Jaylen Clark",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "3",
@@ -247,6 +258,7 @@
           "id": "4432847",
           "name": "Terrence Shannon Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "15",
@@ -268,6 +280,7 @@
           "id": "4592492",
           "name": "Bones Hyland",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "3",
@@ -289,6 +302,7 @@
           "id": "4592979",
           "name": "Zyon Pullin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "2",
@@ -321,6 +335,7 @@
           "id": "4395625",
           "name": "RJ Barrett",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "20",
@@ -342,6 +357,7 @@
           "id": "4433134",
           "name": "Scottie Barnes",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "0",
@@ -363,6 +379,7 @@
           "id": "3134908",
           "name": "Jakob Poeltl",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "19",
             "points": "0",
@@ -384,6 +401,7 @@
           "id": "4395724",
           "name": "Immanuel Quickley",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "19",
@@ -405,6 +423,7 @@
           "id": "4684272",
           "name": "Ja'Kobe Walter",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "22",
@@ -426,6 +445,7 @@
           "id": "2993874",
           "name": "Kyle Anderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "0",
@@ -447,6 +467,7 @@
           "id": "4431684",
           "name": "Trayce Jackson-Davis",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "6",
             "points": "3",
@@ -468,6 +489,7 @@
           "id": "4431893",
           "name": "Jamison Battle",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "4",
@@ -489,6 +511,7 @@
           "id": "5093267",
           "name": "Collin Murray-Boyles",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "3",
@@ -510,6 +533,7 @@
           "id": "5149115",
           "name": "Allen Graves",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "11",
@@ -531,6 +555,7 @@
           "id": "4432241",
           "name": "Jamal Shead",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "4",
@@ -552,6 +577,7 @@
           "id": "4432737",
           "name": "Jaden Bradley",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "6",
@@ -573,6 +599,7 @@
           "id": "4702656",
           "name": "Alijah Martin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "2",

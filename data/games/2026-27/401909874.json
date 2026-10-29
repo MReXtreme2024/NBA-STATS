@@ -16,6 +16,7 @@
           "id": "3202",
           "name": "Kevin Durant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "22",
@@ -37,6 +38,7 @@
           "id": "4432639",
           "name": "Jabari Smith Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "39",
             "points": "16",
@@ -58,6 +60,7 @@
           "id": "4871144",
           "name": "Alperen Sengun",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "29",
@@ -79,6 +82,7 @@
           "id": "2991230",
           "name": "Fred VanVleet",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "5",
@@ -100,6 +104,7 @@
           "id": "4684740",
           "name": "Amen Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "15",
@@ -121,6 +126,7 @@
           "id": "3136777",
           "name": "Jae'Sean Tate",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "4433192",
           "name": "Tari Eason",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "33",
             "points": "13",
@@ -163,6 +170,7 @@
           "id": "4592857",
           "name": "Isaiah Crawford",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -184,6 +192,7 @@
           "id": "3102529",
           "name": "Clint Capela",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "2",
@@ -205,6 +214,7 @@
           "id": "3037789",
           "name": "Bogdan Bogdanovic",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "5",
@@ -226,6 +236,7 @@
           "id": "4711272",
           "name": "Reed Sheppard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "13",
@@ -247,6 +258,7 @@
           "id": "5105837",
           "name": "Bruce Thornton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -285,6 +297,7 @@
           "id": "4431680",
           "name": "Onyeka Okongwu",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "11",
@@ -306,6 +319,7 @@
           "id": "4701230",
           "name": "Jalen Johnson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "21",
@@ -327,6 +341,7 @@
           "id": "2490149",
           "name": "CJ McCollum",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "20",
@@ -348,6 +363,7 @@
           "id": "4278039",
           "name": "Nickeil Alexander-Walker",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "12",
@@ -369,6 +385,7 @@
           "id": "4869342",
           "name": "Dyson Daniels",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "4",
@@ -390,6 +407,7 @@
           "id": "2578185",
           "name": "Dorian Finney-Smith",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -411,6 +429,7 @@
           "id": "4280151",
           "name": "Corey Kispert",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "5",
@@ -432,6 +451,7 @@
           "id": "4873201",
           "name": "Asa Newell",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -453,6 +473,7 @@
           "id": "5106262",
           "name": "Zuby Ejiofor",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "1",
             "points": "0",
@@ -474,6 +495,7 @@
           "id": "3146557",
           "name": "Jock Landale",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "8",
@@ -495,6 +517,7 @@
           "id": "4397020",
           "name": "Luguentz Dort",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "11",
@@ -516,6 +539,7 @@
           "id": "4397183",
           "name": "Aaron Wiggins",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "12",
@@ -537,6 +561,7 @@
           "id": "5149077",
           "name": "Kingston Flemings",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "6",

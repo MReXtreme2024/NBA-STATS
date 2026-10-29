@@ -16,6 +16,7 @@
           "id": "3134907",
           "name": "Kyle Kuzma",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "14",
@@ -37,6 +38,7 @@
           "id": "4432848",
           "name": "Jaime Jaquez Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "19",
@@ -58,6 +60,7 @@
           "id": "3133628",
           "name": "Myles Turner",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "12",
@@ -79,6 +82,7 @@
           "id": "4395725",
           "name": "Tyler Herro",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "34",
@@ -100,6 +104,7 @@
           "id": "4591725",
           "name": "Ryan Rollins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "11",
@@ -121,6 +126,7 @@
           "id": "4997526",
           "name": "Ousmane Dieng",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "3",
@@ -142,6 +148,7 @@
           "id": "5105623",
           "name": "Kel'el Ware",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "11",
@@ -163,6 +170,7 @@
           "id": "4397475",
           "name": "AJ Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "11",
@@ -184,6 +192,7 @@
           "id": "5082206",
           "name": "Brayden Burries",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "3",
@@ -205,6 +214,7 @@
           "id": "5214640",
           "name": "Kasparas Jakucionis",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "7",
@@ -273,6 +283,7 @@
           "id": "4397189",
           "name": "Jalen Smith",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "14",
@@ -294,6 +305,7 @@
           "id": "4711294",
           "name": "Matas Buzelis",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "17",
             "points": "7",
@@ -315,6 +327,7 @@
           "id": "5095151",
           "name": "Caleb Wilson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "21",
@@ -336,6 +349,7 @@
           "id": "2595516",
           "name": "Norman Powell",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "25",
@@ -357,6 +371,7 @@
           "id": "4871145",
           "name": "Josh Giddey",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "6",
@@ -378,6 +393,7 @@
           "id": "4432822",
           "name": "Isaac Okoro",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "28",
             "points": "12",
@@ -399,6 +415,7 @@
           "id": "5044385",
           "name": "Leonard Miller",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "19",
@@ -420,6 +437,7 @@
           "id": "5242496",
           "name": "Noa Essengue",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "4",
@@ -441,6 +459,7 @@
           "id": "2990984",
           "name": "Buddy Hield",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "13",
@@ -462,6 +481,7 @@
           "id": "4395626",
           "name": "Tre Jones",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "11",

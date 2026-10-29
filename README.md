@@ -76,7 +76,7 @@ Claude's formula is a separate projection that Claude designed using everything 
 - **Players** get expected minutes (recent games count more, players ruled out are removed and their minutes shared among teammates) × how much they produce per minute (this season blended with last season), adjusted for the opponent.
 - You see both teams' projected scores, then the players side by side for Points, Rebounds, Assists, Points + Rebounds, Points + Assists, Rebounds + Assists, Points + Rebounds + Assists, and 3PM. Figures are cut to one decimal. "GTD" means a game-time decision.
 
-In a test on the season's first 27 games, Claude's formula missed by less than yours on every player stat (points by 4.9 on average, against 5.8). These are still projections, not certainties.
+**How did the projections go?** At the bottom of the Upcoming games page, this page scores both formulas' real projections (made before tip-off, with that day's injury report) against what actually happened: a season scoreboard for points, rebounds and assists, then the last day's games player by player, with the actual number in bold and the projection below it. As of 29 Oct, over 23 games, Claude's formula missed points by 4.56 on average against yours 4.94, rebounds by 2.01 against 2.16, and assists by 1.35 against 1.50. These are still projections, not certainties.
 
 ## Off-season and next season
 

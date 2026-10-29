@@ -1,0 +1,279 @@
+{
+  "id": "401909885",
+  "start": "2026-10-28T23:30Z",
+  "homeId": "28",
+  "awayId": "19",
+  "savedAt": "2026-10-28T18:48:16+00:00",
+  "teams": {
+    "19": {
+      "score": 109.49,
+      "players": {
+        "6478": {
+          "name": "Nikola Vucevic",
+          "claude": {
+            "pts": 10.79,
+            "reb": 6.81,
+            "ast": 2.92
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "3133635": {
+          "name": "Jevon Carter",
+          "claude": {
+            "pts": 3.23,
+            "reb": 0.97,
+            "ast": 0.97
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4066320": {
+          "name": "Desmond Bane",
+          "claude": {
+            "pts": 20.56,
+            "reb": 4.94,
+            "ast": 4.45
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4277847": {
+          "name": "Wendell Carter Jr.",
+          "claude": {
+            "pts": 14.17,
+            "reb": 9.38,
+            "ast": 2.36
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 8,
+            "ast": 1
+          }
+        },
+        "4278572": {
+          "name": "Jamal Cain",
+          "claude": {
+            "pts": 5.77,
+            "reb": 2.51,
+            "ast": 0.85
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4348700": {
+          "name": "Goga Bitadze",
+          "claude": {
+            "pts": 4.5,
+            "reb": 4.23,
+            "ast": 1.12
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "4566434": {
+          "name": "Franz Wagner",
+          "claude": {
+            "pts": 23.35,
+            "reb": 7.21,
+            "ast": 5.08
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 8,
+            "ast": 6
+          }
+        },
+        "4702382": {
+          "name": "Tristan da Silva",
+          "claude": {
+            "pts": 11.73,
+            "reb": 4.37,
+            "ast": 2.2
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4712849": {
+          "name": "Anthony Black",
+          "claude": {
+            "pts": 8.12,
+            "reb": 2.21,
+            "ast": 2.36
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "5239561": {
+          "name": "Jase Richardson",
+          "claude": {
+            "pts": 5.55,
+            "reb": 1.68,
+            "ast": 1.71
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 2
+          }
+        }
+      }
+    },
+    "28": {
+      "score": 114.22,
+      "players": {
+        "2993874": {
+          "name": "Kyle Anderson",
+          "claude": {
+            "pts": 3.81,
+            "reb": 2.26,
+            "ast": 1.52
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "3134908": {
+          "name": "Jakob Poeltl",
+          "claude": {
+            "pts": 9.88,
+            "reb": 7.07,
+            "ast": 1.54
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 5,
+            "ast": 0
+          }
+        },
+        "4395625": {
+          "name": "RJ Barrett",
+          "claude": {
+            "pts": 21.28,
+            "reb": 5.73,
+            "ast": 2.91
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "4395724": {
+          "name": "Immanuel Quickley",
+          "claude": {
+            "pts": 17.43,
+            "reb": 3.93,
+            "ast": 4.93
+          },
+          "nate": {
+            "pts": 18,
+            "reb": 2,
+            "ast": 5
+          }
+        },
+        "4431893": {
+          "name": "Jamison Battle",
+          "claude": {
+            "pts": 4.09,
+            "reb": 1.94,
+            "ast": 0.43
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4432241": {
+          "name": "Jamal Shead",
+          "claude": {
+            "pts": 6.47,
+            "reb": 1.79,
+            "ast": 4.41
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 1,
+            "ast": 3
+          }
+        },
+        "4433134": {
+          "name": "Scottie Barnes",
+          "claude": {
+            "pts": 18.78,
+            "reb": 7.97,
+            "ast": 4.84
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 7,
+            "ast": 4
+          }
+        },
+        "4684272": {
+          "name": "Ja'Kobe Walter",
+          "claude": {
+            "pts": 9.7,
+            "reb": 3.25,
+            "ast": 1.36
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "5093267": {
+          "name": "Collin Murray-Boyles",
+          "claude": {
+            "pts": 8.33,
+            "reb": 5.33,
+            "ast": 1.59
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 6,
+            "ast": 1
+          }
+        },
+        "5149115": {
+          "name": "Allen Graves",
+          "claude": {
+            "pts": 7.44,
+            "reb": 3.42,
+            "ast": 1.39
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 4,
+            "ast": 1
+          }
+        }
+      }
+    }
+  }
+}

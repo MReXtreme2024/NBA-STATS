@@ -16,6 +16,7 @@
           "id": "3064514",
           "name": "Julius Randle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "10",
@@ -37,6 +38,7 @@
           "id": "4278104",
           "name": "Michael Porter Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "21",
             "points": "10",
@@ -58,6 +60,7 @@
           "id": "4432194",
           "name": "Day'Ron Sharpe",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "16",
             "points": "11",
@@ -79,6 +82,7 @@
           "id": "4702177",
           "name": "Keon Ellis",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "9",
@@ -100,6 +104,7 @@
           "id": "5175643",
           "name": "Egor Demin",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "19",
             "points": "3",
@@ -121,6 +126,7 @@
           "id": "4687718",
           "name": "Josh Minott",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "15",
@@ -142,6 +148,7 @@
           "id": "4712896",
           "name": "Noah Clowney",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "9",
@@ -163,6 +170,7 @@
           "id": "4870564",
           "name": "Joshua Jefferson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "0",
@@ -184,6 +192,7 @@
           "id": "5107173",
           "name": "Danny Wolf",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "6",
@@ -205,6 +214,7 @@
           "id": "5174655",
           "name": "Chaney Johnson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "4",
@@ -226,6 +236,7 @@
           "id": "3150844",
           "name": "Moritz Wagner",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "13",
@@ -247,6 +258,7 @@
           "id": "5037873",
           "name": "Drake Powell",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "0",
@@ -268,6 +280,7 @@
           "id": "5242502",
           "name": "Ben Saraf",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "2",
@@ -289,6 +302,7 @@
           "id": "5279130",
           "name": "Nolan Traore",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "17",
@@ -327,6 +341,7 @@
           "id": "3149673",
           "name": "Pascal Siakam",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "21",
@@ -348,6 +363,7 @@
           "id": "4017837",
           "name": "Ivica Zubac",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "7",
             "points": "2",
@@ -369,6 +385,7 @@
           "id": "4395712",
           "name": "Andrew Nembhard",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "14",
@@ -390,6 +407,7 @@
           "id": "4396909",
           "name": "Aaron Nesmith",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "19",
             "points": "13",
@@ -411,6 +429,7 @@
           "id": "4396993",
           "name": "Tyrese Haliburton",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "24",
@@ -432,6 +451,7 @@
           "id": "2580365",
           "name": "Larry Nance Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "6",
@@ -453,6 +473,7 @@
           "id": "4278355",
           "name": "Obi Toppin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "16",
@@ -474,6 +495,7 @@
           "id": "4398207",
           "name": "Jalen Slawson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "8",
             "points": "1",
@@ -495,6 +517,7 @@
           "id": "5106060",
           "name": "Jarace Walker",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "6",
@@ -516,6 +539,7 @@
           "id": "4065731",
           "name": "Jay Huff",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "14",
@@ -537,6 +561,7 @@
           "id": "3133603",
           "name": "Kelly Oubre Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "14",
@@ -558,6 +583,7 @@
           "id": "4592829",
           "name": "Quenton Jackson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "5",

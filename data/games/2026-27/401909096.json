@@ -16,6 +16,7 @@
           "id": "5104157",
           "name": "Victor Wembanyama",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "25",
@@ -37,8 +38,9 @@
           "id": "4066259",
           "name": "De'Aaron Fox",
           "played": true,
+          "starter": true,
           "stats": {
-            "minutes": "34",
+            "minutes": "32",
             "points": "19",
             "fieldGoalsMade-fieldGoalsAttempted": "6-11",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
@@ -51,15 +53,16 @@
             "offensiveRebounds": "0",
             "defensiveRebounds": "4",
             "fouls": "1",
-            "plusMinus": "-14"
+            "plusMinus": "-13"
           }
         },
         {
           "id": "4395630",
           "name": "Devin Vassell",
           "played": true,
+          "starter": true,
           "stats": {
-            "minutes": "36",
+            "minutes": "34",
             "points": "10",
             "fieldGoalsMade-fieldGoalsAttempted": "3-8",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
@@ -72,13 +75,14 @@
             "offensiveRebounds": "1",
             "defensiveRebounds": "3",
             "fouls": "4",
-            "plusMinus": "+1"
+            "plusMinus": "+5"
           }
         },
         {
           "id": "4845367",
           "name": "Stephon Castle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "15",
@@ -100,8 +104,9 @@
           "id": "5037871",
           "name": "Dylan Harper",
           "played": true,
+          "starter": true,
           "stats": {
-            "minutes": "36",
+            "minutes": "34",
             "points": "20",
             "fieldGoalsMade-fieldGoalsAttempted": "8-15",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
@@ -114,13 +119,14 @@
             "offensiveRebounds": "0",
             "defensiveRebounds": "3",
             "fouls": "2",
-            "plusMinus": "+4"
+            "plusMinus": "+8"
           }
         },
         {
           "id": "6578",
           "name": "Harrison Barnes",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "4395723",
           "name": "Keldon Johnson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "8",
@@ -163,8 +170,9 @@
           "id": "4592479",
           "name": "Julian Champagnie",
           "played": true,
+          "starter": false,
           "stats": {
-            "minutes": "25",
+            "minutes": "28",
             "points": "6",
             "fieldGoalsMade-fieldGoalsAttempted": "2-5",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
@@ -177,15 +185,16 @@
             "offensiveRebounds": "0",
             "defensiveRebounds": "0",
             "fouls": "1",
-            "plusMinus": "+7"
+            "plusMinus": "+2"
           }
         },
         {
           "id": "5061568",
           "name": "Carter Bryant",
           "played": true,
+          "starter": false,
           "stats": {
-            "minutes": "4",
+            "minutes": "6",
             "points": "0",
             "fieldGoalsMade-fieldGoalsAttempted": "0-0",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
@@ -198,13 +207,14 @@
             "offensiveRebounds": "0",
             "defensiveRebounds": "0",
             "fouls": "1",
-            "plusMinus": "-5"
+            "plusMinus": "-9"
           }
         },
         {
           "id": "3064560",
           "name": "Luke Kornet",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "7",
@@ -249,6 +259,7 @@
           "id": "3202",
           "name": "Kevin Durant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "20",
@@ -256,7 +267,7 @@
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-2",
             "freeThrowsMade-freeThrowsAttempted": "8-8",
             "rebounds": "7",
-            "assists": "6",
+            "assists": "5",
             "turnovers": "3",
             "steals": "0",
             "blocks": "0",
@@ -270,6 +281,7 @@
           "id": "4432639",
           "name": "Jabari Smith Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "7",
@@ -291,6 +303,7 @@
           "id": "4871144",
           "name": "Alperen Sengun",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "29",
@@ -305,13 +318,14 @@
             "offensiveRebounds": "1",
             "defensiveRebounds": "6",
             "fouls": "2",
-            "plusMinus": "+3"
+            "plusMinus": "+6"
           }
         },
         {
           "id": "2991230",
           "name": "Fred VanVleet",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "14",
@@ -333,6 +347,7 @@
           "id": "4684740",
           "name": "Amen Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "20",
@@ -354,6 +369,7 @@
           "id": "4433192",
           "name": "Tari Eason",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "12",
@@ -375,8 +391,9 @@
           "id": "2991235",
           "name": "Steven Adams",
           "played": true,
+          "starter": false,
           "stats": {
-            "minutes": "9",
+            "minutes": "8",
             "points": "4",
             "fieldGoalsMade-fieldGoalsAttempted": "2-2",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
@@ -389,13 +406,14 @@
             "offensiveRebounds": "1",
             "defensiveRebounds": "1",
             "fouls": "4",
-            "plusMinus": "+6"
+            "plusMinus": "+3"
           }
         },
         {
           "id": "2990992",
           "name": "Marcus Smart",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "5",
@@ -417,6 +435,7 @@
           "id": "3037789",
           "name": "Bogdan Bogdanovic",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "3",

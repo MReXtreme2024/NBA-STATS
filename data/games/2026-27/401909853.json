@@ -16,6 +16,7 @@
           "id": "4433249",
           "name": "Moussa Diabate",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "22",
             "points": "4",
@@ -37,6 +38,7 @@
           "id": "4433287",
           "name": "Brandon Miller",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "34",
@@ -58,6 +60,7 @@
           "id": "4396971",
           "name": "Naz Reid",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "23",
@@ -79,6 +82,7 @@
           "id": "3032979",
           "name": "Dennis Schroder",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "25",
@@ -100,6 +104,7 @@
           "id": "4602025",
           "name": "Sion James",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "0",
@@ -121,6 +126,7 @@
           "id": "2583632",
           "name": "Royce O'Neale",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "11",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "5211176",
           "name": "Tidjane Salaun",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "10",
             "points": "3",
@@ -163,6 +170,7 @@
           "id": "4576060",
           "name": "Ryan Kalkbrenner",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "6",
@@ -184,6 +192,7 @@
           "id": "3135045",
           "name": "Grayson Allen",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "34",
             "points": "20",
@@ -205,6 +214,7 @@
           "id": "5060701",
           "name": "Christian Anderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -255,6 +265,7 @@
           "id": "3032977",
           "name": "Giannis Antetokounmpo",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "14",
@@ -276,6 +287,7 @@
           "id": "3059319",
           "name": "Andrew Wiggins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "18",
             "points": "4",
@@ -297,6 +309,7 @@
           "id": "4066261",
           "name": "Bam Adebayo",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "39",
             "points": "20",
@@ -318,6 +331,7 @@
           "id": "6475",
           "name": "Klay Thompson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "14",
@@ -339,6 +353,7 @@
           "id": "4278053",
           "name": "Davion Mitchell",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "22",
@@ -360,6 +375,7 @@
           "id": "3064482",
           "name": "Bobby Portis",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "13",
@@ -381,6 +397,7 @@
           "id": "4997528",
           "name": "Nikola Jovic",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "6",
             "points": "0",
@@ -402,6 +419,7 @@
           "id": "2528210",
           "name": "Tim Hardaway Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "5",
@@ -423,6 +441,7 @@
           "id": "4601025",
           "name": "Pelle Larsson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "36",
             "points": "15",
@@ -444,6 +463,7 @@
           "id": "5107157",
           "name": "Ryan Conwell",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "3",

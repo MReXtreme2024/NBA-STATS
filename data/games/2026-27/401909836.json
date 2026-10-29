@@ -16,6 +16,7 @@
           "id": "3064514",
           "name": "Julius Randle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "33",
@@ -37,6 +38,7 @@
           "id": "4278104",
           "name": "Michael Porter Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "26",
@@ -58,6 +60,7 @@
           "id": "4432194",
           "name": "Day'Ron Sharpe",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "8",
@@ -67,7 +70,7 @@
             "rebounds": "8",
             "assists": "3",
             "turnovers": "2",
-            "steals": "0",
+            "steals": "1",
             "blocks": "3",
             "offensiveRebounds": "3",
             "defensiveRebounds": "5",
@@ -79,6 +82,7 @@
           "id": "4702177",
           "name": "Keon Ellis",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "7",
@@ -88,7 +92,7 @@
             "rebounds": "2",
             "assists": "4",
             "turnovers": "1",
-            "steals": "2",
+            "steals": "1",
             "blocks": "1",
             "offensiveRebounds": "1",
             "defensiveRebounds": "1",
@@ -100,6 +104,7 @@
           "id": "5175643",
           "name": "Egor Demin",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "4",
@@ -121,6 +126,7 @@
           "id": "4712896",
           "name": "Noah Clowney",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "9",
@@ -142,6 +148,7 @@
           "id": "5174655",
           "name": "Chaney Johnson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "3150844",
           "name": "Moritz Wagner",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "7",
@@ -184,6 +192,7 @@
           "id": "5101761",
           "name": "Mikel Brown Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "6",
@@ -205,6 +214,7 @@
           "id": "5279130",
           "name": "Nolan Traore",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "16",
             "points": "3",
@@ -267,6 +277,7 @@
           "id": "4433249",
           "name": "Moussa Diabate",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "17",
@@ -288,6 +299,7 @@
           "id": "4433287",
           "name": "Brandon Miller",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "18",
@@ -309,6 +321,7 @@
           "id": "4396971",
           "name": "Naz Reid",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "20",
@@ -330,6 +343,7 @@
           "id": "3032979",
           "name": "Dennis Schroder",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "35",
             "points": "19",
@@ -351,6 +365,7 @@
           "id": "4602025",
           "name": "Sion James",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "3",
@@ -372,6 +387,7 @@
           "id": "2583632",
           "name": "Royce O'Neale",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "8",
@@ -393,6 +409,7 @@
           "id": "4576060",
           "name": "Ryan Kalkbrenner",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "4",
@@ -414,6 +431,7 @@
           "id": "3135045",
           "name": "Grayson Allen",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "29",
             "points": "21",
@@ -435,6 +453,7 @@
           "id": "5060701",
           "name": "Christian Anderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "0",
@@ -456,6 +475,7 @@
           "id": "5239590",
           "name": "Liam McNeeley",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",

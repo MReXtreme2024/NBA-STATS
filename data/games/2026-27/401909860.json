@@ -16,6 +16,7 @@
           "id": "3155526",
           "name": "Dillon Brooks",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "15",
@@ -37,6 +38,7 @@
           "id": "4066383",
           "name": "Miles Bridges",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "16",
@@ -58,6 +60,7 @@
           "id": "5203685",
           "name": "Khaman Maluach",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "9",
@@ -79,6 +82,7 @@
           "id": "3136193",
           "name": "Devin Booker",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "43",
@@ -100,6 +104,7 @@
           "id": "4437244",
           "name": "Jalen Green",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "12",
@@ -121,6 +126,7 @@
           "id": "4888725",
           "name": "Ryan Dunn",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "5",
@@ -142,6 +148,7 @@
           "id": "4066268",
           "name": "Duop Reath",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -163,6 +170,7 @@
           "id": "3913174",
           "name": "Luke Kennard",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "18",
             "points": "11",
@@ -184,6 +192,7 @@
           "id": "4278402",
           "name": "Jordan Goodwin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "9",
@@ -205,6 +214,7 @@
           "id": "4278585",
           "name": "Collin Gillespie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "28",
             "points": "11",
@@ -261,6 +271,7 @@
           "id": "4703396",
           "name": "Graham Ike",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "12",
@@ -282,6 +293,7 @@
           "id": "4997536",
           "name": "Gui Santos",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "7",
@@ -303,6 +315,7 @@
           "id": "5175737",
           "name": "Yaxel Lendeborg",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "26",
@@ -324,6 +337,7 @@
           "id": "4397040",
           "name": "Brandon Williams",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "20",
@@ -345,6 +359,7 @@
           "id": "4897262",
           "name": "Will Richard",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "11",
@@ -366,6 +381,7 @@
           "id": "2990969",
           "name": "Georges Niang",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "4",
@@ -387,6 +403,7 @@
           "id": "4897449",
           "name": "Malevy Leons",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "2",
@@ -408,6 +425,7 @@
           "id": "4397886",
           "name": "Charles Bassey",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "10",
@@ -429,6 +447,7 @@
           "id": "3134903",
           "name": "Gary Payton II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "2",
@@ -450,6 +469,7 @@
           "id": "4066436",
           "name": "De'Anthony Melton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "25",
@@ -471,6 +491,7 @@
           "id": "4433149",
           "name": "LJ Cryer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "3",

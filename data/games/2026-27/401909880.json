@@ -16,6 +16,7 @@
           "id": "4433137",
           "name": "Ziaire Williams",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "11",
@@ -37,6 +38,7 @@
           "id": "4433136",
           "name": "Walker Kessler",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "13",
@@ -58,6 +60,7 @@
           "id": "3907498",
           "name": "Matisse Thybulle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "22",
             "points": "5",
@@ -79,6 +82,7 @@
           "id": "3945274",
           "name": "Luka Doncic",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "41",
@@ -100,6 +104,7 @@
           "id": "4066457",
           "name": "Austin Reaves",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "39",
             "points": "26",
@@ -121,6 +126,7 @@
           "id": "3155535",
           "name": "Kevon Looney",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "0",
@@ -142,6 +148,7 @@
           "id": "4278580",
           "name": "Sandro Mamukelashvili",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "24",
             "points": "17",
@@ -163,6 +170,7 @@
           "id": "4592691",
           "name": "Jake LaRavia",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "5",
@@ -184,6 +192,7 @@
           "id": "4277811",
           "name": "Collin Sexton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "9",
@@ -205,6 +214,7 @@
           "id": "4397014",
           "name": "Quentin Grimes",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "2",
@@ -261,6 +271,7 @@
           "id": "4431736",
           "name": "Toumani Camara",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "12",
@@ -282,6 +293,7 @@
           "id": "4683021",
           "name": "Deni Avdija",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "23",
@@ -303,6 +315,7 @@
           "id": "5105565",
           "name": "Donovan Clingan",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "9",
@@ -324,6 +337,7 @@
           "id": "6606",
           "name": "Damian Lillard",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "21",
@@ -345,6 +359,7 @@
           "id": "4279888",
           "name": "Ja Morant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "23",
@@ -366,6 +381,7 @@
           "id": "4066211",
           "name": "Robert Williams III",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "14",
@@ -387,6 +403,7 @@
           "id": "3995",
           "name": "Jrue Holiday",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "30",
             "points": "22",
@@ -408,6 +425,7 @@
           "id": "4578893",
           "name": "Vit Krejci",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "4",
@@ -429,6 +447,7 @@
           "id": "4683678",
           "name": "Scoot Henderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "2",
@@ -450,6 +469,7 @@
           "id": "5081727",
           "name": "Sidy Cissoko",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "6",

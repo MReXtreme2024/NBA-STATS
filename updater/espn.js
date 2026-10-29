@@ -151,7 +151,7 @@ export function trimGame(summary, usDate) {
         id: a.athlete.id,
         name: a.athlete.displayName,
         played,
-        ...(played ? { stats } : { reason: a.reason ?? '' }),
+        ...(played ? { starter: a.starter === true, stats } : { reason: a.reason ?? '' }),
       };
     });
     return {

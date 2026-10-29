@@ -16,6 +16,7 @@
           "id": "1966",
           "name": "LeBron James",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "18",
@@ -37,6 +38,7 @@
           "id": "3912848",
           "name": "Dean Wade",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "37",
             "points": "7",
@@ -58,6 +60,7 @@
           "id": "2581018",
           "name": "Kentavious Caldwell-Pope",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "31",
             "points": "7",
@@ -79,6 +82,7 @@
           "id": "3917376",
           "name": "Jaylen Brown",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "40",
             "points": "16",
@@ -100,6 +104,7 @@
           "id": "4431678",
           "name": "Tyrese Maxey",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "29",
@@ -121,6 +126,7 @@
           "id": "5105637",
           "name": "Adem Bona",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "6",
@@ -142,6 +148,7 @@
           "id": "4351851",
           "name": "Anfernee Simons",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "27",
             "points": "5",
@@ -163,6 +170,7 @@
           "id": "4873090",
           "name": "Labaron Philon Jr.",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "5",
@@ -219,6 +227,7 @@
           "id": "3157465",
           "name": "Duncan Robinson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "32",
             "points": "21",
@@ -240,6 +249,7 @@
           "id": "3908845",
           "name": "John Collins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "34",
             "points": "16",
@@ -261,6 +271,7 @@
           "id": "4278562",
           "name": "Paul Reed",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "8",
@@ -282,6 +293,7 @@
           "id": "4432166",
           "name": "Cade Cunningham",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "26",
@@ -303,6 +315,7 @@
           "id": "5107199",
           "name": "Daniss Jenkins",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "18",
@@ -324,6 +337,7 @@
           "id": "4397882",
           "name": "Tolu Smith",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -345,6 +359,7 @@
           "id": "4683771",
           "name": "Ronald Holland II",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "23",
             "points": "2",
@@ -366,6 +381,7 @@
           "id": "2596112",
           "name": "Javonte Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "2",
@@ -387,6 +403,7 @@
           "id": "4066372",
           "name": "Kevin Huerter",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "26",
             "points": "9",
@@ -408,6 +425,7 @@
           "id": "4395702",
           "name": "Isaiah Joe",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "4",
             "points": "2",
@@ -429,6 +447,7 @@
           "id": "5258459",
           "name": "Ebuka Okorie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "2",
             "points": "2",

@@ -16,6 +16,7 @@
           "id": "4066336",
           "name": "Lauri Markkanen",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "28",
@@ -37,6 +38,7 @@
           "id": "4277961",
           "name": "Jaren Jackson Jr.",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "20",
@@ -58,6 +60,7 @@
           "id": "4433627",
           "name": "Keyonte George",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "33",
             "points": "24",
@@ -79,6 +82,7 @@
           "id": "4873138",
           "name": "Ace Bailey",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "17",
@@ -100,6 +104,7 @@
           "id": "5041955",
           "name": "Darryn Peterson",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "8",
@@ -121,6 +126,7 @@
           "id": "5105839",
           "name": "Brice Sensabaugh",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "17",
             "points": "7",
@@ -142,6 +148,7 @@
           "id": "4397077",
           "name": "Jaxson Hayes",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "9",
@@ -163,6 +170,7 @@
           "id": "3133602",
           "name": "Svi Mykhailiuk",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "2",
@@ -184,6 +192,7 @@
           "id": "4065663",
           "name": "Josh Okogie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "10",
             "points": "2",
@@ -205,6 +214,7 @@
           "id": "4432811",
           "name": "Josh Green",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "3",
             "points": "0",
@@ -226,6 +236,7 @@
           "id": "4683766",
           "name": "Isaiah Collier",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "13",
             "points": "6",
@@ -282,6 +293,7 @@
           "id": "4433137",
           "name": "Ziaire Williams",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "30",
             "points": "11",
@@ -303,6 +315,7 @@
           "id": "4433136",
           "name": "Walker Kessler",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "28",
             "points": "2",
@@ -324,6 +337,7 @@
           "id": "3907498",
           "name": "Matisse Thybulle",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "26",
             "points": "11",
@@ -345,6 +359,7 @@
           "id": "3945274",
           "name": "Luka Doncic",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "38",
             "points": "52",
@@ -366,6 +381,7 @@
           "id": "4066457",
           "name": "Austin Reaves",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "36",
             "points": "29",
@@ -387,6 +403,7 @@
           "id": "3155535",
           "name": "Kevon Looney",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "5",
             "points": "2",
@@ -408,6 +425,7 @@
           "id": "4278580",
           "name": "Sandro Mamukelashvili",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "9",
@@ -429,6 +447,7 @@
           "id": "4592691",
           "name": "Jake LaRavia",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "0",
@@ -450,6 +469,7 @@
           "id": "4277811",
           "name": "Collin Sexton",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "13",
@@ -471,6 +491,7 @@
           "id": "4397014",
           "name": "Quentin Grimes",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "20",
             "points": "3",

@@ -16,6 +16,7 @@
           "id": "4431736",
           "name": "Toumani Camara",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "18",
@@ -37,6 +38,7 @@
           "id": "4683021",
           "name": "Deni Avdija",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "18",
@@ -58,6 +60,7 @@
           "id": "5105565",
           "name": "Donovan Clingan",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "21",
             "points": "11",
@@ -79,6 +82,7 @@
           "id": "6606",
           "name": "Damian Lillard",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "24",
             "points": "25",
@@ -100,6 +104,7 @@
           "id": "4279888",
           "name": "Ja Morant",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "23",
             "points": "14",
@@ -121,6 +126,7 @@
           "id": "4066211",
           "name": "Robert Williams III",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "2",
@@ -142,6 +148,7 @@
           "id": "4066399",
           "name": "Micah Potter",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "4",
@@ -163,6 +170,7 @@
           "id": "5217746",
           "name": "Yang Hansen",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "5",
@@ -184,6 +192,7 @@
           "id": "3995",
           "name": "Jrue Holiday",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "8",
@@ -205,8 +214,9 @@
           "id": "4578893",
           "name": "Vit Krejci",
           "played": true,
+          "starter": false,
           "stats": {
-            "minutes": "15",
+            "minutes": "16",
             "points": "1",
             "fieldGoalsMade-fieldGoalsAttempted": "0-3",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
@@ -226,6 +236,7 @@
           "id": "4683678",
           "name": "Scoot Henderson",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "19",
             "points": "15",
@@ -247,6 +258,7 @@
           "id": "4703889",
           "name": "Jayson Kent",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "0",
@@ -268,6 +280,7 @@
           "id": "5081727",
           "name": "Sidy Cissoko",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "25",
             "points": "3",
@@ -300,6 +313,7 @@
           "id": "3155526",
           "name": "Dillon Brooks",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "27",
             "points": "10",
@@ -321,6 +335,7 @@
           "id": "4066383",
           "name": "Miles Bridges",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "8",
@@ -342,6 +357,7 @@
           "id": "5203685",
           "name": "Khaman Maluach",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "17",
             "points": "2",
@@ -363,6 +379,7 @@
           "id": "3136193",
           "name": "Devin Booker",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "29",
             "points": "23",
@@ -384,6 +401,7 @@
           "id": "4437244",
           "name": "Jalen Green",
           "played": true,
+          "starter": true,
           "stats": {
             "minutes": "25",
             "points": "10",
@@ -405,6 +423,7 @@
           "id": "4601023",
           "name": "Oso Ighodaro",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "15",
             "points": "8",
@@ -426,19 +445,20 @@
           "id": "4888725",
           "name": "Ryan Dunn",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "14",
             "points": "3",
             "fieldGoalsMade-fieldGoalsAttempted": "0-1",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
             "freeThrowsMade-freeThrowsAttempted": "3-4",
-            "rebounds": "2",
+            "rebounds": "3",
             "assists": "0",
             "turnovers": "0",
             "steals": "0",
             "blocks": "0",
             "offensiveRebounds": "1",
-            "defensiveRebounds": "1",
+            "defensiveRebounds": "2",
             "fouls": "2",
             "plusMinus": "-8"
           }
@@ -447,6 +467,7 @@
           "id": "5041953",
           "name": "Koa Peat",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "4",
@@ -468,6 +489,7 @@
           "id": "5105977",
           "name": "Rasheer Fleming",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "12",
             "points": "1",
@@ -489,6 +511,7 @@
           "id": "4066268",
           "name": "Duop Reath",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "9",
             "points": "5",
@@ -510,6 +533,7 @@
           "id": "4278402",
           "name": "Jordan Goodwin",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "22",
             "points": "3",
@@ -531,6 +555,7 @@
           "id": "4278585",
           "name": "Collin Gillespie",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "21",
             "points": "0",
@@ -552,19 +577,20 @@
           "id": "4280245",
           "name": "Jamaree Bouyea",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "3",
             "fieldGoalsMade-fieldGoalsAttempted": "1-1",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
             "freeThrowsMade-freeThrowsAttempted": "1-1",
-            "rebounds": "2",
+            "rebounds": "1",
             "assists": "2",
             "turnovers": "0",
             "steals": "0",
             "blocks": "0",
             "offensiveRebounds": "0",
-            "defensiveRebounds": "2",
+            "defensiveRebounds": "1",
             "fouls": "0",
             "plusMinus": "+4"
           }
@@ -573,6 +599,7 @@
           "id": "4592714",
           "name": "Pat Spencer",
           "played": true,
+          "starter": false,
           "stats": {
             "minutes": "7",
             "points": "3",
