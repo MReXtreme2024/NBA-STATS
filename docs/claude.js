@@ -23,6 +23,9 @@ export const MODEL = {
   starterRole: false, // true: a player's minutes come from games in his current role (starter or bench)
   minutesPower: 1, // >1: when sharing out the team's 240 minutes, the main players get a bigger share
   playRateBonus: 1, // fringe players' chance to play = (games played + this) ÷ (team games + this)
+  projectedStartShare: 0.85, // a projected (not yet confirmed) starter: this share starter minutes, the rest bench minutes
+  positionWeight: 0.5, // moving a player to another position shifts his rates this far toward that position's (0 = not at all)
+  newRoleShare: 0.25, // (tested: 0.25 beat 0, 0.15, 0.35, 0.5) a player new to a role (first start, or first game off the bench): this share of the way to the team's typical minutes in it
 };
 
 const STATS = ['pts', 'reb', 'ast', 'tpm'];
@@ -30,29 +33,56 @@ const clamp = (x, [lo, hi]) => Math.min(hi, Math.max(lo, x));
 
 // One team's player projections.
 //   team: { teamGames, candidates, expected: { pts, reb, ast, tpm }, spread, backToBack }, where each
-//     candidate is a player who has played for the team: { id, name, status (injury report), starter (in his
-//     latest game), gp, wMin, w, startMin, startW, benchMin, benchW, roleMin, roleW, priorMin, kMin, rate }.
-//   lineup (optional, confirmed by Nate before tip-off): { starters: [playerId], out: [playerId] }; with a
-//     lineup, everyone not starting or out comes off the bench, whatever the injury report said.
-export function allocate(team, lineup = null) {
+//     candidate is a player who has played for the team: { id, name, pos (G, F or C), status (injury report),
+//     starter (in his latest game), gp, wMin, w, startMin, startW, benchMin, benchW, roleMin, roleW, priorMin, kMin, rate }.
+//   lineup (optional, set by Nate before tip-off): { starters: [id] (confirmed), projected: [id], out: [id],
+//     positions: { id: 'G' | 'F' | 'C' } }; with a lineup, everyone else comes off the bench, whatever the
+//     injury report said.
+//   options: all (include players under showMinutes), positionRates ({ G|F|C: per-minute rates }, for position moves).
+export function allocate(team, lineup = null, { all = false, positionRates = null } = {}) {
   const { teamGames, candidates, expected, spread = 0, backToBack = false } = team;
-  const confirmedLineup = Boolean(lineup?.starters?.length || lineup?.out?.length);
+  const confirmedLineup = Boolean(lineup?.starters?.length || lineup?.projected?.length || lineup?.out?.length);
+  // The team's typical minutes for a starter and for a bench player, for players new to a role.
+  const typical = (m, w) => {
+    const ws = candidates.reduce((t, c) => t + c[w], 0);
+    return ws > 0 ? candidates.reduce((t, c) => t + c[m], 0) / ws : null;
+  };
+  const teamStarterMin = typical('startMin', 'startW');
+  const teamBenchMin = typical('benchMin', 'benchW');
   const out = [];
   const injured = [];
   for (const c of candidates) {
     const isOut = confirmedLineup ? lineup.out?.includes(c.id) : /^out$/i.test(c.status);
     if (isOut) { injured.push({ id: c.id, name: c.name, status: 'Out' }); continue; }
-    // Minutes when he plays: from games in his role (confirmed lineup, or his latest role if starterRole is on).
-    const confirmed = lineup?.starters?.length ? lineup.starters.includes(c.id) : null;
-    let [wMin, w] = [c.wMin, c.w];
-    if (confirmed === true && c.startW > 0) [wMin, w] = [c.startMin, c.startW];
-    else if (confirmed === false && c.benchW > 0) [wMin, w] = [c.benchMin, c.benchW];
-    else if (confirmed === null && MODEL.starterRole && c.roleW > 0) [wMin, w] = [c.roleMin, c.roleW];
-    const minWhenPlaying = (wMin + c.kMin * c.priorMin) / (w + c.kMin);
-    const playRate = confirmed === true ? 1 // a confirmed starter will play
+    // His role: confirmed or projected starter, bench (with a lineup), or unknown (no lineup: the nightly figures).
+    const role = !confirmedLineup ? null
+      : lineup.starters?.includes(c.id) ? 'confirmed' : lineup.projected?.includes(c.id) ? 'projected' : 'bench';
+    // Minutes when he plays, from games in that role (or all his games if he hasn't played in it).
+    const fromGames = (m, w) => (w > 0 ? (m + c.kMin * c.priorMin) / (w + c.kMin) : null);
+    // New to a role: part of the way from his usual minutes to the team's typical minutes in that role.
+    const anyRole = fromGames(c.wMin, c.w);
+    const newTo = (teamMin) => (teamMin === null ? anyRole : anyRole + MODEL.newRoleShare * (teamMin - anyRole));
+    const asStarter = fromGames(c.startMin, c.startW) ?? newTo(teamStarterMin);
+    const offBench = fromGames(c.benchMin, c.benchW) ?? newTo(teamBenchMin);
+    let minWhenPlaying = anyRole;
+    if (role === 'confirmed') minWhenPlaying = asStarter;
+    else if (role === 'projected') minWhenPlaying = MODEL.projectedStartShare * asStarter + (1 - MODEL.projectedStartShare) * offBench;
+    else if (role === 'bench') minWhenPlaying = offBench;
+    else if (MODEL.starterRole && c.roleW > 0) minWhenPlaying = fromGames(c.roleMin, c.roleW);
+    const playRate = role === 'confirmed' ? 1 // a confirmed starter will play
       : teamGames ? (c.gp + MODEL.playRateBonus) / (teamGames + MODEL.playRateBonus) : 1; // fringe players don't play every game
-    const status = confirmedLineup ? '' : c.status; // a confirmed lineup replaces the injury report
-    out.push({ id: c.id, name: c.name, status, starter: confirmed ?? c.starter, min: minWhenPlaying * playRate, rate: c.rate });
+    // A different position: his rates move part of the way toward that position's league rates.
+    const pos = lineup?.positions?.[c.id];
+    let rate = c.rate;
+    if (pos && c.pos && pos !== c.pos && positionRates?.[pos] && positionRates?.[c.pos]) {
+      rate = Object.fromEntries(Object.entries(c.rate).map(([s, v]) => {
+        const from = positionRates[c.pos][s];
+        return [s, from > 0 ? v * (positionRates[pos][s] / from) ** MODEL.positionWeight : v];
+      }));
+    }
+    const status = confirmedLineup ? '' : c.status; // a lineup replaces the injury report
+    const starter = role ? role === 'confirmed' || role === 'projected' : c.starter;
+    out.push({ id: c.id, name: c.name, status, role, starter, min: minWhenPlaying * playRate, rate });
   }
 
   // Share the team's 240 minutes among the available players (absorbs injured players' minutes), capped.
@@ -93,8 +123,8 @@ export function allocate(team, lineup = null) {
   }
   return {
     players: out
-      .filter((p) => p.min >= MODEL.showMinutes)
-      .map(({ id, name, status, starter, min, pts, reb, ast, tpm }) => ({ id, name, status, starter, min, pts, reb, ast, tpm }))
+      .filter((p) => all || p.min >= MODEL.showMinutes)
+      .map(({ id, name, status, role, starter, min, pts, reb, ast, tpm }) => ({ id, name, status, role, starter, min, pts, reb, ast, tpm }))
       .sort((x, y) => y.pts - x.pts),
     out: injured,
   };

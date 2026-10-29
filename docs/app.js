@@ -274,7 +274,7 @@ function tidyLineups() {
 function claudeFor(g) {
   const lineup = readLineup(g.id);
   if (!g.claude || !lineup) return g.claude;
-  const redo = (side) => (side.inputs ? { ...side, ...allocate(side.inputs, lineup[side.teamId]) } : side);
+  const redo = (side) => (side.inputs ? { ...side, ...allocate(side.inputs, lineup[side.teamId], { positionRates: g.claude.positionRates }) } : side);
   return { ...g.claude, home: redo(g.claude.home), away: redo(g.claude.away) };
 }
 
@@ -287,51 +287,81 @@ function lineupButton(g) {
     : '<span>Confirm starting lineup</span><span class="gp">Before tip-off ›</span>'}</a>`;
 }
 
-// The lineup Claude's formula expects for one team: last game's starters (unless ruled out), injured players out.
+// The lineup Claude's formula expects for one team: last game's starters (unless ruled out) as projected
+// starters, injured players out, nobody confirmed yet.
 function predictedLineup(inputs) {
   const isOut = (c) => /^out$/i.test(c.status);
   return {
-    starters: inputs.candidates.filter((c) => c.starter && !isOut(c)).map((c) => c.id),
+    starters: [],
+    projected: inputs.candidates.filter((c) => c.starter && !isOut(c)).map((c) => c.id),
     out: inputs.candidates.filter(isOut).map((c) => c.id),
+    positions: {},
   };
 }
 
-let lineupDraft = null; // { gameId, teams: { teamId: { starters, out } } } while Nate is editing
+let lineupDraft = null; // { gameId, teams: { teamId: lineup }, open: playerId } while Nate is editing
 let lineupFromMatchup = false; // opened with the button, so saving can step back to the matchup page
 
-// 9. Confirm lineup: Start / Bench / Out for every player of both teams.
+const ROLES = [['confirmed', 'Confirmed starter'], ['projected', 'Projected starter'], ['out', 'Out']];
+const ROLE_LIST = { confirmed: 'starters', projected: 'projected', out: 'out' };
+const roleIn = (pick, id) => (pick.starters.includes(id) ? 'confirmed' : pick.projected.includes(id) ? 'projected' : pick.out.includes(id) ? 'out' : 'bench');
+const ROLE_SHORT = { confirmed: 'Confirmed', projected: 'Projected', out: 'Out', bench: 'Bench' };
+
+// 9. Lineup: tap a player to set Confirmed starter, Projected starter or Out (untapped = bench) and his
+// position; his points, rebounds and assists update straight away.
 function lineupPage(g) {
   const away = teamById(g.awayId);
   const home = teamById(g.homeId);
   const sides = [[away, g.claude.away], [home, g.claude.home]];
   if (lineupDraft?.gameId !== g.id) {
     const saved = readLineup(g.id);
-    lineupDraft = { gameId: g.id, teams: Object.fromEntries(sides.map(([t, side]) => [t.id, saved?.[t.id] ?? predictedLineup(side.inputs)])) };
+    lineupDraft = {
+      gameId: g.id,
+      open: null,
+      teams: Object.fromEntries(sides.map(([t, side]) => {
+        const base = predictedLineup(side.inputs);
+        const s = saved?.[t.id];
+        return [t.id, s ? { starters: s.starters ?? [], projected: s.projected ?? [], out: s.out ?? [], positions: s.positions ?? {} } : base];
+      })),
+    };
   }
   const teamBlock = ([t, side]) => {
     const pick = lineupDraft.teams[t.id];
-    const roleOf = (id) => (pick.starters.includes(id) ? 'start' : pick.out.includes(id) ? 'out' : 'bench');
+    const result = allocate(side.inputs, pick, { all: true, positionRates: g.claude.positionRates });
+    const projOf = (id) => result.players.find((p) => p.id === id) ?? { pts: 0, reb: 0, ast: 0 }; // out: 0P 0R 0A
     const avgMin = (c) => (c.w ? c.wMin / c.w : 0);
     const rows = [...side.inputs.candidates]
       .sort((a, b) => b.starter - a.starter || avgMin(b) - avgMin(a)) // fixed order, so rows don't jump while tapping
       .map((c) => {
-        const role = roleOf(c.id);
-        const btn = (r, label) => `<button data-role="${r}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${role === r}">${label}</button>`;
+        const role = roleIn(pick, c.id);
+        const pos = pick.positions[c.id] ?? c.pos;
+        const p = projOf(c.id);
+        const nums = `<span class="pra"><b>${one(p.pts)}</b>P <b>${one(p.reb)}</b>R <b>${one(p.ast)}</b>A</span>`;
         const note = c.status ? ` <span class="tag">${esc(c.status === 'Day-To-Day' ? 'GTD' : c.status)}</span>` : '';
-        return `<li><span class="name">${esc(c.name)}${note}<span class="mins">${Math.floor(avgMin(c))} min a game</span></span>
-          <span class="roles">${btn('start', 'Start')}${btn('bench', 'Bench')}${btn('out', 'Out')}</span></li>`;
+        const isOpen = lineupDraft.open === c.id;
+        const row = `<button class="lineup-row role-${role}" data-open="${c.id}" aria-expanded="${isOpen}">
+          <span class="name">${esc(c.name)}${note}<span class="mins">${pos || '—'} · ${ROLE_SHORT[role]}</span></span>${nums}</button>`;
+        if (!isOpen) return `<li>${row}</li>`;
+        const posBtn = (x) => `<button data-pos="${x}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${pos === x}">${x}${x === c.pos ? ' <small>usual</small>' : ''}</button>`;
+        const roleBtn = ([r, label]) => `<button data-role="${r}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${role === r}">${label}</button>`;
+        return `<li>${row}<div class="lineup-panel">
+          <h4>${esc(c.name)}</h4>
+          <p class="panel-label">Position</p><div class="choice">${['G', 'F', 'C'].map(posBtn).join('')}</div>
+          <p class="panel-label">Status <small>(tap again for bench)</small></p><div class="choice">${ROLES.map(roleBtn).join('')}</div>
+          <div class="figures"><div><b>${one(p.pts)}</b><span>Points</span></div><div><b>${one(p.reb)}</b><span>Rebounds</span></div><div><b>${one(p.ast)}</b><span>Assists</span></div></div>
+        </div></li>`;
       }).join('');
-    const n = pick.starters.length;
-    return `<section class="stat"><h3><span class="pill" style="${colours(t)}">${esc(t.code)}</span> Starters: <b class="${n === 5 ? '' : 'warn'}">${n} of 5</b></h3>
+    const n = pick.starters.length + pick.projected.length;
+    return `<section class="stat"><h3><span class="pill" style="${colours(t)}">${esc(t.code)}</span> Starters: <b class="${n === 5 ? '' : 'warn'}">${n} of 5</b> <small>(${pick.starters.length} confirmed)</small></h3>
       <ul class="lineup">${rows}</ul></section>`;
   };
-  return `${bar(`${away.code} @ ${home.code} lineup`, `#/game/${g.id}`, 'Tap Start, Bench or Out for each player')}
+  return `${bar(`${away.code} @ ${home.code} lineup`, `#/game/${g.id}`, 'Tap a player to set his status and position')}
     <div class="stats">${sides.map(teamBlock).join('')}</div>
     <div class="buttons lineup-actions">
       <button class="button" data-lineup="reset">Back to predicted</button>
       <button class="button primary" data-lineup="save">Save lineup</button>
     </div>
-    <p class="working">Claude's formula then re-works this game on your phone: confirmed starters get their minutes from games they started, players marked Out are removed and their minutes shared out, and everyone else comes off the bench. Your formula leaves out players marked Out.</p>`;
+    <p class="working">Confirmed starters are certain to play their usual starter minutes. Projected starters get mostly starter minutes, with a small chance they come off the bench. Everyone you don't tap comes off the bench; players marked Out are removed and their minutes shared out. Moving a player to another position shifts his numbers halfway toward that position's league averages, and his teammates are re-balanced. Your formula leaves out players marked Out.</p>`;
 }
 
 function claudeMatchup(g, away, home) {
@@ -480,14 +510,23 @@ app.addEventListener('click', (e) => {
   const projSortBtn = e.target.closest('[data-psort]');
   if (projSortBtn) { projectionSort = projSortBtn.dataset.psort; render(); return; }
   if (e.target.closest('.lineup-link')) lineupFromMatchup = true;
+  const openBtn = e.target.closest('[data-open]');
+  if (openBtn && lineupDraft) {
+    lineupDraft.open = lineupDraft.open === openBtn.dataset.open ? null : openBtn.dataset.open;
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
+  }
   const roleBtn = e.target.closest('[data-role]');
   if (roleBtn && lineupDraft) {
     const pick = lineupDraft.teams[roleBtn.dataset.team];
     const id = roleBtn.dataset.player;
-    pick.starters = pick.starters.filter((x) => x !== id);
-    pick.out = pick.out.filter((x) => x !== id);
-    if (roleBtn.dataset.role === 'start') pick.starters.push(id);
-    if (roleBtn.dataset.role === 'out') pick.out.push(id);
+    const was = roleIn(pick, id);
+    for (const list of Object.values(ROLE_LIST)) pick[list] = pick[list].filter((x) => x !== id);
+    if (was !== roleBtn.dataset.role) pick[ROLE_LIST[roleBtn.dataset.role]].push(id); // tapping his current status again = bench
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
+  }
+  const posBtn = e.target.closest('[data-pos]');
+  if (posBtn && lineupDraft) {
+    lineupDraft.teams[posBtn.dataset.team].positions[posBtn.dataset.player] = posBtn.dataset.pos;
     const y = window.scrollY; render(); window.scrollTo(0, y); return;
   }
   const lineupBtn = e.target.closest('[data-lineup]');

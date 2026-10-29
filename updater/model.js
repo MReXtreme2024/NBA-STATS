@@ -136,11 +136,29 @@ export function leagueRates(games, before = null) {
 
 const r = (x, d = 3) => Math.round(x * 10 ** d) / 10 ** d; // keep the saved inputs small
 
+// League per-minute points, rebounds, assists and 3PM by position (G, F, C), for when Nate moves a player.
+export function positionRates(games, positions, before = null) {
+  const min = { G: 0, F: 0, C: 0 };
+  const tot = Object.fromEntries(Object.keys(min).map((k) => [k, { pts: 0, reb: 0, ast: 0, tpm: 0 }]));
+  for (const g of games) {
+    if (before && g.start >= before) continue;
+    for (const s of g.teams) for (const p of s.players) {
+      const pos = positions[p.id];
+      if (!p.played || !(pos in min)) continue;
+      const l = lineOf(p.stats);
+      min[pos] += l.min;
+      for (const k of Object.keys(tot[pos])) tot[pos][k] += l[k];
+    }
+  }
+  return Object.fromEntries(Object.entries(tot).map(([pos, t]) => [pos,
+    Object.fromEntries(Object.entries(t).map(([k, v]) => [k, min[pos] ? r(v / min[pos], 5) : 0]))]));
+}
+
 // One team's inputs for the shared step (docs/claude.js), from its saved games: every player who has
 // played for it (on the current roster, when known), with his minutes by role, last season's minutes
 // and his per-minute rates.
 //   injuries: { playerId: status }; prior: { playerId: last-season averages }; rates: league per-minute rates.
-export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null }) {
+export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null, positions = {} }) {
   const mine = games
     .filter((g) => (!before || g.start < before) && g.teams.some((s) => s.id === teamId))
     .sort((x, y) => y.start.localeCompare(x.start)); // newest first
@@ -180,7 +198,7 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
       rate[s] = r((pl.tot[s] + k * rt) / (pl.tot.min + k), 5);
     }
     candidates.push({
-      id: pl.id, name: pl.name, status: injuries[pl.id] ?? '', starter: pl.starter, gp: pl.gp,
+      id: pl.id, name: pl.name, pos: positions[pl.id] ?? '', status: injuries[pl.id] ?? '', starter: pl.starter, gp: pl.gp,
       wMin: r(pl.wMin), w: r(pl.w), startMin: r(pl.startMin), startW: r(pl.startW),
       benchMin: r(pl.benchMin), benchW: r(pl.benchW), roleMin: r(pl.roleMin), roleW: r(pl.roleW),
       priorMin: pr?.min ?? 0, kMin: pr ? MODEL.priorMinuteGames : 0, rate,
@@ -194,15 +212,16 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
 //   backToBack: this team played the day before; lineup: optional confirmed lineup.
 export function projectPlayers(games, teamId, {
   injuries = {}, prior = {}, rates, expected, before = null, roster = null, spread = 0, backToBack = false, lineup = null,
+  positions = {},
 }) {
-  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster }), expected, spread, backToBack };
+  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster, positions }), expected, spread, backToBack };
   return { ...allocate(team, lineup), inputs: team };
 }
 
 // The whole projection for one upcoming game.
 //   extras: { line: { spread, overUnder } | null, injuries: { teamId: { playerId: status } },
 //             lineups: { teamId: { starters: [playerId], out: [playerId] } } (optional, confirmed before tip-off) }
-export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}, before = null } = {}) {
+export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}, positions = {}, before = null } = {}) {
   const ratings = teamRatings(games, before);
   const rates = leagueRates(games, before);
   const scores = projectScores(ratings, game.homeId, game.awayId, extras.line);
@@ -231,9 +250,9 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
       market: scores.market?.[side] ?? null,
       ...projectPlayers(games, id, {
         injuries: extras.injuries?.[id] ?? {}, prior, rates, expected, before, roster: rosters[id]?.length ? rosters[id] : null,
-        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null,
+        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null, positions,
       }),
     };
   }
-  return { line: extras.line ?? null, home: sides.home, away: sides.away };
+  return { line: extras.line ?? null, positionRates: positionRates(games, positions, before), home: sides.home, away: sides.away };
 }

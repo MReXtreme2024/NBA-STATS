@@ -86,10 +86,13 @@ export async function getSeasonAverages(athleteId, seasonLabel) {
   };
 }
 
-// One team's current roster as a list of player ids.
+// One team's current roster: player ids, and each player's position as ESPN lists it (G, F or C).
 export async function getRoster(teamId) {
   const data = await fetchJson(`${TEAMS_URL}/${teamId}/roster`);
-  return (data.athletes ?? []).map((a) => a.id);
+  const athletes = data.athletes ?? [];
+  const positions = {};
+  for (const a of athletes) if (/^[GFC]$/.test(a.position?.abbreviation ?? '')) positions[a.id] = a.position.abbreviation;
+  return { ids: athletes.map((a) => a.id), positions };
 }
 
 // A regular-season game of this season that hasn't started yet.

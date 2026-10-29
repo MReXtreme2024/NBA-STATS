@@ -90,8 +90,16 @@ async function main() {
   // Current rosters, so upcoming-game projections leave out players who have moved on.
   console.log('Rosters');
   const rosters = {};
-  for (const t of teams) rosters[t.id] = await getRoster(t.id);
+  // Positions (G, F, C) are kept for players who leave a roster, like the saved games are.
+  const positionsFile = path.join(DATA_DIR, 'positions.json');
+  const positions = fs.existsSync(positionsFile) ? JSON.parse(fs.readFileSync(positionsFile, 'utf8')) : {};
+  for (const t of teams) {
+    const roster = await getRoster(t.id);
+    rosters[t.id] = roster.ids;
+    Object.assign(positions, roster.positions);
+  }
   writeJson(path.join(DATA_DIR, 'rosters.json'), rosters);
+  writeJson(positionsFile, Object.fromEntries(Object.entries(positions).sort(([a], [b]) => a.localeCompare(b))));
 
   // Claude's formula for each upcoming game: needs the betting line and injury report
   // (from the game's summary) and last season's averages for the players involved.
@@ -104,7 +112,7 @@ async function main() {
   const appTeams = buildAppData(allGames, teams, config, new Date()).teams;
   for (const g of upcoming) {
     const extras = gameExtras(await getSummary(g.id));
-    g.claude = projectGame(allGames, g, { extras, prior, rosters });
+    g.claude = projectGame(allGames, g, { extras, prior, rosters, positions });
     writeJson(path.join(DATA_DIR, 'projections', config.season, `${g.id}.json`),
       snapshot(g, g.claude, appTeams, new Date().toISOString()));
   }

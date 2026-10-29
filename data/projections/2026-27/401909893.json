@@ -1,0 +1,266 @@
+{
+  "id": "401909893",
+  "start": "2026-10-30T00:00Z",
+  "homeId": "1",
+  "awayId": "5",
+  "savedAt": "2026-10-29T04:01:04.816Z",
+  "teams": {
+    "1": {
+      "score": 119,
+      "players": {
+        "2490149": {
+          "name": "CJ McCollum",
+          "claude": {
+            "pts": 16.01,
+            "reb": 2.47,
+            "ast": 2.79
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "3146557": {
+          "name": "Jock Landale",
+          "claude": {
+            "pts": 8.64,
+            "reb": 4.7,
+            "ast": 1.55
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4278039": {
+          "name": "Nickeil Alexander-Walker",
+          "claude": {
+            "pts": 18.53,
+            "reb": 3.03,
+            "ast": 3.04
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "4397020": {
+          "name": "Luguentz Dort",
+          "claude": {
+            "pts": 7.41,
+            "reb": 3.05,
+            "ast": 1.13
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4397183": {
+          "name": "Aaron Wiggins",
+          "claude": {
+            "pts": 10.4,
+            "reb": 3.08,
+            "ast": 1.61
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4431680": {
+          "name": "Onyeka Okongwu",
+          "claude": {
+            "pts": 12.34,
+            "reb": 6.27,
+            "ast": 2.63
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "4701230": {
+          "name": "Jalen Johnson",
+          "claude": {
+            "pts": 20.03,
+            "reb": 9.2,
+            "ast": 7.16
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 9,
+            "ast": 8
+          }
+        },
+        "4869342": {
+          "name": "Dyson Daniels",
+          "claude": {
+            "pts": 10.61,
+            "reb": 5.49,
+            "ast": 4.59
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 5,
+            "ast": 4
+          }
+        },
+        "5149077": {
+          "name": "Kingston Flemings",
+          "claude": {
+            "pts": 7.75,
+            "reb": 3.32,
+            "ast": 3.24
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "5": {
+      "score": 119.99,
+      "players": {
+        "3992": {
+          "name": "James Harden",
+          "claude": {
+            "pts": 18.5,
+            "reb": 4.62,
+            "ast": 7.02
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 4,
+            "ast": 6
+          }
+        },
+        "2995706": {
+          "name": "Mario Hezonja",
+          "claude": {
+            "pts": 6.35,
+            "reb": 3.28,
+            "ast": 1.53
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "3908809": {
+          "name": "Donovan Mitchell",
+          "claude": {
+            "pts": 23.35,
+            "reb": 4.86,
+            "ast": 5.13
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 6,
+            "ast": 5
+          }
+        },
+        "4066328": {
+          "name": "Jarrett Allen",
+          "claude": {
+            "pts": 12.94,
+            "reb": 8.51,
+            "ast": 1.51
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 9,
+            "ast": 1
+          }
+        },
+        "4066757": {
+          "name": "Sam Merrill",
+          "claude": {
+            "pts": 9.65,
+            "reb": 2.54,
+            "ast": 2.05
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4432158": {
+          "name": "Evan Mobley",
+          "claude": {
+            "pts": 16.31,
+            "reb": 9.23,
+            "ast": 3.17
+          },
+          "nate": {
+            "pts": 20,
+            "reb": 10,
+            "ast": 2
+          }
+        },
+        "4576087": {
+          "name": "Peyton Watson",
+          "claude": {
+            "pts": 12.59,
+            "reb": 4.78,
+            "ast": 1.98
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4683747": {
+          "name": "Jaylon Tyson",
+          "claude": {
+            "pts": 9.82,
+            "reb": 4.24,
+            "ast": 2.06
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "4701233": {
+          "name": "Craig Porter Jr.",
+          "claude": {
+            "pts": 1.85,
+            "reb": 1.63,
+            "ast": 1.38
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "5041951": {
+          "name": "Meleek Thomas",
+          "claude": {
+            "pts": 5.52,
+            "reb": 1.98,
+            "ast": 0.81
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}

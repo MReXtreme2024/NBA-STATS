@@ -123,3 +123,40 @@ test('a confirmed lineup re-works a team: players marked out are removed, everyo
   const min = confirmed.players.reduce((t, p) => t + p.min, 0);
   assert.ok(min <= 240 + 1e-9 && confirmed.players.every((p) => p.min <= 42 + 1e-9));
 });
+
+test('projected starters, first-time starters and position moves', async () => {
+  const { allocate } = await import('../docs/claude.js');
+  const games2 = games.map((g) => ({ ...g, teams: g.teams.map((t) => ({ ...t, players: t.players.map((p) => ({ ...p, starter: ['a1', 'a2', 'a3', 'a4', 'a5'].includes(p.id) })) })) }));
+  const p = projectGame(games2, upcoming, { positions: { a1: 'G', a2: 'F', a3: 'G', a4: 'C', a5: 'G', a6: 'F' } });
+  const inputs = p.home.inputs;
+  assert.deepEqual(Object.keys(p.positionRates).sort(), ['C', 'F', 'G']);
+  const min = (r, id) => r.players.find((x) => x.id === id).min;
+  // A realistic little team: five starters on 34 minutes, four bench players on 12; b1 has never started.
+  const rate = { pts: 0.5, reb: 0.2, ast: 0.1, tpm: 0.05 };
+  const cand = (id, starter, m) => ({
+    id, name: id, pos: 'G', status: '', starter, gp: 4, wMin: m * 3, w: 3, roleMin: m * 3, roleW: 3,
+    startMin: starter ? m * 3 : 0, startW: starter ? 3 : 0, benchMin: starter ? 0 : m * 3, benchW: starter ? 0 : 3,
+    priorMin: 0, kMin: 0, rate,
+  });
+  const team = {
+    teamGames: 4, expected: { pts: 110, reb: 44, ast: 24, tpm: 12 },
+    candidates: [...['s1', 's2', 's3', 's4', 's5'].map((id) => cand(id, true, 34)), ...['b1', 'b2', 'b3', 'b4'].map((id) => cand(id, false, 12))],
+  };
+  const usual = allocate(team, { starters: [], projected: ['s1', 's2', 's3', 's4', 's5'], out: [] }, { all: true });
+  const promoted = allocate(team, { starters: ['b1', 's2', 's3', 's4', 's5'], projected: [], out: ['s1'] }, { all: true });
+  assert.ok(min(promoted, 'b1') > min(usual, 'b1'), 'a first-time starter gets more minutes');
+  assert.equal(promoted.players.some((x) => x.id === 's1'), false);
+  const projected = allocate(team, { starters: [], projected: ['b1', 's2', 's3', 's4', 's5'], out: ['s1'] }, { all: true });
+  assert.ok(min(projected, 'b1') < min(promoted, 'b1'), 'projected starts count for less than confirmed ones');
+  const bench = allocate(inputs, { starters: [], projected: ['a1', 'a2', 'a3', 'a4', 'a5'], out: [] }, { all: true });
+  // moving a guard to centre raises his rebounds share and lowers his assists share
+  const share = (r, id, s) => r.players.find((x) => x.id === id)[s] / r.players.reduce((t, x) => t + x[s], 0);
+  const asC = allocate(inputs, { starters: [], projected: ['a1', 'a2', 'a3', 'a4', 'a5'], out: [], positions: { a3: 'C' } },
+    { all: true, positionRates: p.positionRates });
+  assert.ok(share(asC, 'a3', 'reb') > share(bench, 'a3', 'reb'));
+  assert.ok(share(asC, 'a3', 'ast') < share(bench, 'a3', 'ast'));
+  // his usual position changes nothing
+  const same = allocate(inputs, { starters: [], projected: ['a1', 'a2', 'a3', 'a4', 'a5'], out: [], positions: { a3: 'G' } },
+    { all: true, positionRates: p.positionRates });
+  assert.deepEqual(same.players, bench.players);
+});
