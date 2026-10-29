@@ -98,10 +98,12 @@ export function marketScores(line) {
 }
 
 // Projected team scores: the possessions model, blended with the market when there is a line.
-export function projectScores(ratings, homeId, awayId, line) {
+// shift (optional): { home: { off, def }, away: { off, def } } points per 100 added to each team's ratings.
+export function projectScores(ratings, homeId, awayId, line, shift = null) {
   const { league } = ratings;
-  const h = ratings.team(homeId);
-  const a = ratings.team(awayId);
+  const adj = (t, s) => (s ? { ...t, ortg: t.ortg + s.off, drtg: t.drtg + s.def } : t);
+  const h = adj(ratings.team(homeId), shift?.home);
+  const a = adj(ratings.team(awayId), shift?.away);
   const poss = league.pace * (h.pace / league.pace) * (a.pace / league.pace);
   const model = {
     home: (poss * h.ortg * a.drtg) / league.rtg / 100 + MODEL.homeEdge,
@@ -175,6 +177,49 @@ export function inferRoles(games, groups, prior = {}, before = null) {
     else if (grp === 'F') roles[id] = (rateOf(id, 'reb') ?? 0) >= forwardReb ? 'PF' : 'SF';
   }
   return roles;
+}
+
+// Player offensive and defensive ratings from time on court (play-by-play): points his team scored and
+// allowed per 100 possessions while he played, as a difference from his team's own ratings (+3 offence =
+// his team scores 3 more per 100 with him on), pulled toward 0 as if he'd also played
+// MODEL.ratingPossessions possessions at his team's average.
+export function playerRatings(games, before = null) {
+  const teams = new Map();
+  for (const g of games) {
+    if (before && g.start >= before) continue;
+    const lines = g.teams.map((s) => s.players.filter((p) => p.played).map((p) => lineOf(p.stats)));
+    const possOf = (ls) => ls.reduce((t, l) => t + l.fga - l.oreb + l.tov + 0.44 * l.fta, 0);
+    const poss = (possOf(lines[0]) + possOf(lines[1])) / 2;
+    const seconds = Math.max(2880, ...g.teams.map((s) => s.players.reduce((t, p) => t + (p.onCourt?.secs ?? 0), 0) / 5));
+    g.teams.forEach((s, i) => {
+      const opp = g.teams[1 - i];
+      if (!teams.has(s.id)) teams.set(s.id, { poss: 0, pts: 0, oppPts: 0, players: new Map() });
+      const t = teams.get(s.id);
+      t.poss += poss; t.pts += s.score; t.oppPts += opp.score;
+      for (const p of s.players) {
+        if (!p.onCourt) continue;
+        const e = t.players.get(p.id) ?? { poss: 0, ptsFor: 0, ptsAgainst: 0 };
+        e.poss += (poss * p.onCourt.secs) / seconds;
+        e.ptsFor += p.onCourt.ptsFor;
+        e.ptsAgainst += p.onCourt.ptsAgainst;
+        t.players.set(p.id, e);
+      }
+    });
+  }
+  const out = {};
+  const k = MODEL.ratingPossessions;
+  for (const t of teams.values()) {
+    const tO = (100 * t.pts) / t.poss;
+    const tD = (100 * t.oppPts) / t.poss;
+    for (const [id, e] of t.players) {
+      out[id] = {
+        off: r((100 * e.ptsFor + k * tO) / (e.poss + k) - tO, 2),
+        def: r((100 * e.ptsAgainst + k * tD) / (e.poss + k) - tD, 2), // lower is better
+        poss: r(e.poss, 0),
+      };
+    }
+  }
+  return out;
 }
 
 // League per-minute points, rebounds, assists and 3PM by role, for when Nate moves a player.
@@ -297,7 +342,28 @@ export function projectPlayers(games, teamId, {
 export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}, positions = {}, before = null } = {}) {
   const ratings = teamRatings(games, before);
   const rates = leagueRates(games, before);
-  const scores = projectScores(ratings, game.homeId, game.awayId, extras.line);
+  let scores = projectScores(ratings, game.homeId, game.awayId, extras.line);
+  // Who is playing: shift the stats model's team ratings by the on-court ratings of the players expected
+  // to play, weighted by their expected minutes (players out pull nothing; season minutes average to 0).
+  const pRatings = MODEL.ratingWeight > 0 ? playerRatings(games, before) : null;
+  const ratingShift = (teamId) => {
+    const team = prepareTeam(games, teamId, { injuries: extras.injuries?.[teamId] ?? {}, prior, rates, before, roster: rosters[teamId]?.length ? rosters[teamId] : null });
+    const res = allocate({ ...team, expected: { pts: 1, reb: 1, ast: 1, tpm: 1 } }, extras.lineups?.[teamId] ?? null, { all: true });
+    const shift = { off: 0, def: 0 };
+    for (const p of res.players) {
+      const pr = pRatings[p.id];
+      if (pr) { shift.off += (p.min / MODEL.teamMinutes) * pr.off; shift.def += (p.min / MODEL.teamMinutes) * pr.def; }
+    }
+    return shift;
+  };
+  if (pRatings) {
+    const h = ratingShift(game.homeId);
+    const a = ratingShift(game.awayId);
+    const w = MODEL.ratingWeight;
+    scores = projectScores(ratings, game.homeId, game.awayId, extras.line, {
+      home: { off: w * h.off, def: w * h.def }, away: { off: w * a.off, def: w * a.def },
+    });
+  }
   const roles = inferRoles(games, positions, prior, before);
   const posRates = positionRates(games, roles, before);
   const matchups = matchupFactors(games, roles, posRates, before);

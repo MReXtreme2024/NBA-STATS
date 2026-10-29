@@ -3,10 +3,10 @@
   "start": "2026-10-30T00:00Z",
   "homeId": "3",
   "awayId": "23",
-  "savedAt": "2026-10-29T04:01:05.368Z",
+  "savedAt": "2026-10-29T04:18:36.611Z",
   "teams": {
     "3": {
-      "score": 121.81,
+      "score": 121.83,
       "players": {
         "3442": {
           "name": "DeAndre Jordan",
@@ -64,7 +64,7 @@
           "name": "Zion Williamson",
           "claude": {
             "pts": 19.13,
-            "reb": 5.13,
+            "reb": 5.14,
             "ast": 2.81
           },
           "nate": {
@@ -103,7 +103,7 @@
           "name": "Bennedict Mathurin",
           "claude": {
             "pts": 11.48,
-            "reb": 3.9,
+            "reb": 3.91,
             "ast": 1.82
           },
           "nate": {
@@ -142,7 +142,7 @@
           "name": "Jeremiah Fears",
           "claude": {
             "pts": 11.27,
-            "reb": 3.36,
+            "reb": 3.37,
             "ast": 2.73
           },
           "nate": {
@@ -154,13 +154,13 @@
       }
     },
     "23": {
-      "score": 116.2,
+      "score": 116.21,
       "players": {
         "3064440": {
           "name": "Zach LaVine",
           "claude": {
-            "pts": 21.73,
-            "reb": 3.07,
+            "pts": 21.74,
+            "reb": 3.08,
             "ast": 3.01
           },
           "nate": {
@@ -173,7 +173,7 @@
           "name": "Domantas Sabonis",
           "claude": {
             "pts": 17.43,
-            "reb": 13.34,
+            "reb": 13.35,
             "ast": 5.89
           },
           "nate": {
@@ -198,7 +198,7 @@
         "4066262": {
           "name": "Malik Monk",
           "claude": {
-            "pts": 7.54,
+            "pts": 7.55,
             "reb": 1.27,
             "ast": 2.39
           },
@@ -237,7 +237,7 @@
         "4431679": {
           "name": "Precious Achiuwa",
           "claude": {
-            "pts": 10.51,
+            "pts": 10.52,
             "reb": 6.64,
             "ast": 1.5
           },
@@ -290,7 +290,7 @@
           "name": "Darius Acuff Jr.",
           "claude": {
             "pts": 19.85,
-            "reb": 3.85,
+            "reb": 3.86,
             "ast": 5.12
           },
           "nate": {

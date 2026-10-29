@@ -27,6 +27,8 @@ export const MODEL = {
   positionWeight: 0.5, // moving a player to another position shifts his rates this far toward that position's (0 = not at all)
   matchupWeight: 0, // how much the opponent's record against his role (PG, SG, SF, PF, C) counts (0 = off, 1 = fully)
   matchupMinutes: 600, // a team's record against a role is pulled toward average as if it had allowed this many average minutes
+  ratingWeight: 1, // (tested 29 Oct: 0.5–1.5 all helped the stats model in both halves) how much players' on-court offensive/defensive ratings adjust the stats model's team scores for who is playing (0 = off)
+  ratingPossessions: 200, // a player's ratings are pulled toward his team's as if he'd also played this many average possessions
   newRoleShare: 0.25, // (tested: 0.25 beat 0, 0.15, 0.35, 0.5) a player new to a role (first start, or first game off the bench): this share of the way to the team's typical minutes in it
 };
 

@@ -32,6 +32,11 @@
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "+1"
+          },
+          "onCourt": {
+            "secs": 1928.0000000000002,
+            "ptsFor": 83,
+            "ptsAgainst": 82
           }
         },
         {
@@ -54,6 +59,11 @@
             "defensiveRebounds": "4",
             "fouls": "2",
             "plusMinus": "-8"
+          },
+          "onCourt": {
+            "secs": 1893,
+            "ptsFor": 79,
+            "ptsAgainst": 86
           }
         },
         {
@@ -76,6 +86,11 @@
             "defensiveRebounds": "7",
             "fouls": "3",
             "plusMinus": "-7"
+          },
+          "onCourt": {
+            "secs": 1795,
+            "ptsFor": 77,
+            "ptsAgainst": 84
           }
         },
         {
@@ -98,6 +113,11 @@
             "defensiveRebounds": "1",
             "fouls": "2",
             "plusMinus": "-6"
+          },
+          "onCourt": {
+            "secs": 2061.0000000000005,
+            "ptsFor": 85,
+            "ptsAgainst": 91
           }
         },
         {
@@ -120,6 +140,11 @@
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "-12"
+          },
+          "onCourt": {
+            "secs": 1256,
+            "ptsFor": 51,
+            "ptsAgainst": 63
           }
         },
         {
@@ -142,6 +167,11 @@
             "defensiveRebounds": "1",
             "fouls": "3",
             "plusMinus": "+5"
+          },
+          "onCourt": {
+            "secs": 1014,
+            "ptsFor": 42,
+            "ptsAgainst": 37
           }
         },
         {
@@ -164,6 +194,11 @@
             "defensiveRebounds": "9",
             "fouls": "3",
             "plusMinus": "+4"
+          },
+          "onCourt": {
+            "secs": 1085,
+            "ptsFor": 43,
+            "ptsAgainst": 39
           }
         },
         {
@@ -186,6 +221,11 @@
             "defensiveRebounds": "2",
             "fouls": "1",
             "plusMinus": "+12"
+          },
+          "onCourt": {
+            "secs": 879,
+            "ptsFor": 39,
+            "ptsAgainst": 28
           }
         },
         {
@@ -208,6 +248,11 @@
             "defensiveRebounds": "5",
             "fouls": "1",
             "plusMinus": "+1"
+          },
+          "onCourt": {
+            "secs": 1417,
+            "ptsFor": 60,
+            "ptsAgainst": 59
           }
         },
         {
@@ -230,6 +275,11 @@
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "-5"
+          },
+          "onCourt": {
+            "secs": 1072,
+            "ptsFor": 41,
+            "ptsAgainst": 46
           }
         },
         {
@@ -293,6 +343,11 @@
             "defensiveRebounds": "6",
             "fouls": "3",
             "plusMinus": "+6"
+          },
+          "onCourt": {
+            "secs": 2117,
+            "ptsFor": 99,
+            "ptsAgainst": 93
           }
         },
         {
@@ -315,6 +370,11 @@
             "defensiveRebounds": "11",
             "fouls": "5",
             "plusMinus": "+11"
+          },
+          "onCourt": {
+            "secs": 2018,
+            "ptsFor": 95,
+            "ptsAgainst": 84
           }
         },
         {
@@ -337,6 +397,11 @@
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "+8"
+          },
+          "onCourt": {
+            "secs": 1664.1,
+            "ptsFor": 72,
+            "ptsAgainst": 63
           }
         },
         {
@@ -359,6 +424,11 @@
             "defensiveRebounds": "2",
             "fouls": "4",
             "plusMinus": "+9"
+          },
+          "onCourt": {
+            "secs": 2020,
+            "ptsFor": 96,
+            "ptsAgainst": 87
           }
         },
         {
@@ -381,6 +451,11 @@
             "defensiveRebounds": "2",
             "fouls": "0",
             "plusMinus": "-4"
+          },
+          "onCourt": {
+            "secs": 2011.9,
+            "ptsFor": 83,
+            "ptsAgainst": 87
           }
         },
         {
@@ -403,6 +478,11 @@
             "defensiveRebounds": "0",
             "fouls": "2",
             "plusMinus": "-11"
+          },
+          "onCourt": {
+            "secs": 314,
+            "ptsFor": 3,
+            "ptsAgainst": 14
           }
         },
         {
@@ -425,6 +505,11 @@
             "defensiveRebounds": "2",
             "fouls": "3",
             "plusMinus": "+3"
+          },
+          "onCourt": {
+            "secs": 1482,
+            "ptsFor": 62,
+            "ptsAgainst": 59
           }
         },
         {
@@ -447,6 +532,11 @@
             "defensiveRebounds": "6",
             "fouls": "2",
             "plusMinus": "-5"
+          },
+          "onCourt": {
+            "secs": 1111.1,
+            "ptsFor": 43,
+            "ptsAgainst": 49
           }
         },
         {
@@ -469,6 +559,11 @@
             "defensiveRebounds": "0",
             "fouls": "4",
             "plusMinus": "-2"
+          },
+          "onCourt": {
+            "secs": 730.1,
+            "ptsFor": 28,
+            "ptsAgainst": 30
           }
         },
         {
@@ -491,6 +586,11 @@
             "defensiveRebounds": "3",
             "fouls": "0",
             "plusMinus": "0"
+          },
+          "onCourt": {
+            "secs": 931.8,
+            "ptsFor": 34,
+            "ptsAgainst": 34
           }
         },
         {
