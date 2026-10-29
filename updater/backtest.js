@@ -23,6 +23,8 @@ export async function loadCases() {
   const games = loadGames(path.join(ROOT, 'data', 'games', config.season)).sort((a, b) => a.start.localeCompare(b.start));
   const priorFile = path.join(ROOT, 'data', 'prior', `${config.priorSeason}.json`);
   const prior = fs.existsSync(priorFile) ? JSON.parse(fs.readFileSync(priorFile, 'utf8')) : {};
+  const posFile = path.join(ROOT, 'data', 'positions.json');
+  const positions = fs.existsSync(posFile) ? JSON.parse(fs.readFileSync(posFile, 'utf8')) : {};
   const lines = fs.existsSync(LINES) ? JSON.parse(fs.readFileSync(LINES, 'utf8')) : {};
   const cases = [];
   for (const g of games) {
@@ -45,16 +47,16 @@ export async function loadCases() {
     cases.push({ g, prev, home, away, line: lines[g.id], injuries, teamGames: { [home.id]: before(home.id), [away.id]: before(away.id) } });
   }
   fs.writeFileSync(LINES, JSON.stringify(lines) + '\n');
-  return { cases, prior };
+  return { cases, prior, positions };
 }
 
 // Average misses for Claude's formula (with the current MODEL settings) and Nate's.
-export function score({ cases, prior }) {
+export function score({ cases, prior, positions = {} }) {
   const misses = {};
   const add = (k, e) => (misses[k] ??= []).push(Math.abs(e));
   for (const c of cases) {
     const proj = projectGame(c.prev, { homeId: c.home.id, awayId: c.away.id, start: c.g.start }, {
-      extras: { line: c.line, injuries: c.injuries }, prior,
+      extras: { line: c.line, injuries: c.injuries }, prior, positions,
     });
     for (const [side, actual] of [['home', c.home], ['away', c.away]]) {
       const s = proj[side];

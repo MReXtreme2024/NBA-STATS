@@ -25,6 +25,8 @@ export const MODEL = {
   playRateBonus: 1, // fringe players' chance to play = (games played + this) ÷ (team games + this)
   projectedStartShare: 0.85, // a projected (not yet confirmed) starter: this share starter minutes, the rest bench minutes
   positionWeight: 0.5, // moving a player to another position shifts his rates this far toward that position's (0 = not at all)
+  matchupWeight: 0, // how much the opponent's record against his role (PG, SG, SF, PF, C) counts (0 = off, 1 = fully)
+  matchupMinutes: 600, // a team's record against a role is pulled toward average as if it had allowed this many average minutes
   newRoleShare: 0.25, // (tested: 0.25 beat 0, 0.15, 0.35, 0.5) a player new to a role (first start, or first game off the bench): this share of the way to the team's typical minutes in it
 };
 
@@ -38,7 +40,8 @@ const clamp = (x, [lo, hi]) => Math.min(hi, Math.max(lo, x));
 //   lineup (optional, set by Nate before tip-off): { starters: [id] (confirmed), projected: [id], out: [id],
 //     positions: { id: 'G' | 'F' | 'C' } }; with a lineup, everyone else comes off the bench, whatever the
 //     injury report said.
-//   options: all (include players under showMinutes), positionRates ({ G|F|C: per-minute rates }, for position moves).
+//   team.oppMatchup (optional): { PG|SG|SF|PF|C: { pts, reb, ast, tpm } }, how much the opponent allows to each role.
+//   options: all (include players under showMinutes), positionRates ({ PG|…|C: per-minute rates }, for position moves).
 export function allocate(team, lineup = null, { all = false, positionRates = null } = {}) {
   const { teamGames, candidates, expected, spread = 0, backToBack = false } = team;
   const confirmedLineup = Boolean(lineup?.starters?.length || lineup?.projected?.length || lineup?.out?.length);
@@ -79,6 +82,11 @@ export function allocate(team, lineup = null, { all = false, positionRates = nul
         const from = positionRates[c.pos][s];
         return [s, from > 0 ? v * (positionRates[pos][s] / from) ** MODEL.positionWeight : v];
       }));
+    }
+    // Matchup: how much this opponent gives up to his role, compared with the league.
+    const playsAs = pos || c.pos;
+    if (MODEL.matchupWeight > 0 && team.oppMatchup?.[playsAs]) {
+      rate = Object.fromEntries(Object.entries(rate).map(([s, v]) => [s, v * (team.oppMatchup[playsAs][s] ?? 1) ** MODEL.matchupWeight]));
     }
     const status = confirmedLineup ? '' : c.status; // a lineup replaces the injury report
     const starter = role ? role === 'confirmed' || role === 'projected' : c.starter;

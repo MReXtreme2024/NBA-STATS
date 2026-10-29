@@ -129,7 +129,9 @@ test('projected starters, first-time starters and position moves', async () => {
   const games2 = games.map((g) => ({ ...g, teams: g.teams.map((t) => ({ ...t, players: t.players.map((p) => ({ ...p, starter: ['a1', 'a2', 'a3', 'a4', 'a5'].includes(p.id) })) })) }));
   const p = projectGame(games2, upcoming, { positions: { a1: 'G', a2: 'F', a3: 'G', a4: 'C', a5: 'G', a6: 'F' } });
   const inputs = p.home.inputs;
-  assert.deepEqual(Object.keys(p.positionRates).sort(), ['C', 'F', 'G']);
+  assert.deepEqual(Object.keys(p.positionRates).sort(), ['C', 'PF', 'PG', 'SF', 'SG']);
+  const usualRole = inputs.candidates.find((c) => c.id === 'a3').pos;
+  assert.ok(['PG', 'SG'].includes(usualRole)); // a guard
   const min = (r, id) => r.players.find((x) => x.id === id).min;
   // A realistic little team: five starters on 34 minutes, four bench players on 12; b1 has never started.
   const rate = { pts: 0.5, reb: 0.2, ast: 0.1, tpm: 0.05 };
@@ -156,7 +158,7 @@ test('projected starters, first-time starters and position moves', async () => {
   assert.ok(share(asC, 'a3', 'reb') > share(bench, 'a3', 'reb'));
   assert.ok(share(asC, 'a3', 'ast') < share(bench, 'a3', 'ast'));
   // his usual position changes nothing
-  const same = allocate(inputs, { starters: [], projected: ['a1', 'a2', 'a3', 'a4', 'a5'], out: [], positions: { a3: 'G' } },
+  const same = allocate(inputs, { starters: [], projected: ['a1', 'a2', 'a3', 'a4', 'a5'], out: [], positions: { a3: usualRole } },
     { all: true, positionRates: p.positionRates });
   assert.deepEqual(same.players, bench.players);
 });

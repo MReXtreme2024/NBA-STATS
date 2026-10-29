@@ -136,14 +136,55 @@ export function leagueRates(games, before = null) {
 
 const r = (x, d = 3) => Math.round(x * 10 ** d) / 10 ** d; // keep the saved inputs small
 
-// League per-minute points, rebounds, assists and 3PM by position (G, F, C), for when Nate moves a player.
-export function positionRates(games, positions, before = null) {
-  const min = { G: 0, F: 0, C: 0 };
-  const tot = Object.fromEntries(Object.keys(min).map((k) => [k, { pts: 0, reb: 0, ast: 0, tpm: 0 }]));
+export const ROLES = ['PG', 'SG', 'SF', 'PF', 'C'];
+
+// Each player's role. ESPN only lists G, F or C, so guards and forwards are split by how they play
+// (this season plus last season): the guards who pass most (assists a minute at or above the guards'
+// middle value) are PGs, the rest SGs; the forwards who rebound most are PFs, the rest SFs.
+//   groups: { playerId: 'G' | 'F' | 'C' } from ESPN rosters.
+export function inferRoles(games, groups, prior = {}, before = null) {
+  const tot = new Map();
   for (const g of games) {
     if (before && g.start >= before) continue;
     for (const s of g.teams) for (const p of s.players) {
-      const pos = positions[p.id];
+      if (!p.played) continue;
+      const l = lineOf(p.stats);
+      const t = tot.get(p.id) ?? { min: 0, reb: 0, ast: 0 };
+      t.min += l.min; t.reb += l.reb; t.ast += l.ast;
+      tot.set(p.id, t);
+    }
+  }
+  const rateOf = (id, k) => {
+    const t = tot.get(id) ?? { min: 0, reb: 0, ast: 0 };
+    const pr = prior[id];
+    const min = t.min + (pr ? pr.min * pr.gp : 0);
+    return min > 0 ? (t[k] + (pr ? pr[k] * pr.gp : 0)) / min : null;
+  };
+  const middle = (xs) => {
+    const v = xs.filter((x) => x !== null).sort((a, b) => a - b);
+    return v.length ? v[Math.floor(v.length / 2)] : 0;
+  };
+  const ids = Object.keys(groups);
+  const guardAst = middle(ids.filter((id) => groups[id] === 'G').map((id) => rateOf(id, 'ast')));
+  const forwardReb = middle(ids.filter((id) => groups[id] === 'F').map((id) => rateOf(id, 'reb')));
+  const roles = {};
+  for (const id of ids) {
+    const grp = groups[id];
+    if (grp === 'C') roles[id] = 'C';
+    else if (grp === 'G') roles[id] = (rateOf(id, 'ast') ?? 0) >= guardAst ? 'PG' : 'SG';
+    else if (grp === 'F') roles[id] = (rateOf(id, 'reb') ?? 0) >= forwardReb ? 'PF' : 'SF';
+  }
+  return roles;
+}
+
+// League per-minute points, rebounds, assists and 3PM by role, for when Nate moves a player.
+export function positionRates(games, roles, before = null) {
+  const min = Object.fromEntries(ROLES.map((k) => [k, 0]));
+  const tot = Object.fromEntries(ROLES.map((k) => [k, { pts: 0, reb: 0, ast: 0, tpm: 0 }]));
+  for (const g of games) {
+    if (before && g.start >= before) continue;
+    for (const s of g.teams) for (const p of s.players) {
+      const pos = roles[p.id];
       if (!p.played || !(pos in min)) continue;
       const l = lineOf(p.stats);
       min[pos] += l.min;
@@ -154,11 +195,43 @@ export function positionRates(games, positions, before = null) {
     Object.fromEntries(Object.entries(t).map(([k, v]) => [k, min[pos] ? r(v / min[pos], 5) : 0]))]));
 }
 
+// Matchups between roles: for each team, how much opposing players in each role produce against it,
+// as a multiple of the league rate for that role (1.1 = 10% more), pulled toward 1 as if every team had
+// also allowed MODEL.matchupMinutes league-average minutes in that role.
+export function matchupFactors(games, roles, posRates, before = null) {
+  const allowed = new Map();
+  for (const g of games) {
+    if (before && g.start >= before) continue;
+    for (const s of g.teams) {
+      const defence = g.teams.find((t) => t !== s).id;
+      if (!allowed.has(defence)) allowed.set(defence, Object.fromEntries(ROLES.map((k) => [k, { min: 0, pts: 0, reb: 0, ast: 0, tpm: 0 }])));
+      for (const p of s.players) {
+        const pos = roles[p.id];
+        if (!p.played || !ROLES.includes(pos)) continue;
+        const l = lineOf(p.stats);
+        const a = allowed.get(defence)[pos];
+        for (const k of Object.keys(a)) a[k] += l[k];
+      }
+    }
+  }
+  const k = MODEL.matchupMinutes;
+  const out = {};
+  for (const [team, byPos] of allowed) {
+    out[team] = Object.fromEntries(ROLES.map((pos) => [pos, Object.fromEntries(['pts', 'reb', 'ast', 'tpm'].map((st) => {
+      const lr = posRates[pos]?.[st] ?? 0;
+      const a = byPos[pos];
+      return [st, lr > 0 ? r((a[st] + k * lr) / (a.min + k) / lr, 3) : 1];
+    }))]));
+  }
+  return out;
+}
+
 // One team's inputs for the shared step (docs/claude.js), from its saved games: every player who has
 // played for it (on the current roster, when known), with his minutes by role, last season's minutes
 // and his per-minute rates.
-//   injuries: { playerId: status }; prior: { playerId: last-season averages }; rates: league per-minute rates.
-export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null, positions = {} }) {
+//   injuries: { playerId: status }; prior: { playerId: last-season averages }; rates: league per-minute rates;
+//   roles: { playerId: 'PG' | 'SG' | 'SF' | 'PF' | 'C' }.
+export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null, roles = {} }) {
   const mine = games
     .filter((g) => (!before || g.start < before) && g.teams.some((s) => s.id === teamId))
     .sort((x, y) => y.start.localeCompare(x.start)); // newest first
@@ -198,7 +271,7 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
       rate[s] = r((pl.tot[s] + k * rt) / (pl.tot.min + k), 5);
     }
     candidates.push({
-      id: pl.id, name: pl.name, pos: positions[pl.id] ?? '', status: injuries[pl.id] ?? '', starter: pl.starter, gp: pl.gp,
+      id: pl.id, name: pl.name, pos: roles[pl.id] ?? '', status: injuries[pl.id] ?? '', starter: pl.starter, gp: pl.gp,
       wMin: r(pl.wMin), w: r(pl.w), startMin: r(pl.startMin), startW: r(pl.startW),
       benchMin: r(pl.benchMin), benchW: r(pl.benchW), roleMin: r(pl.roleMin), roleW: r(pl.roleW),
       priorMin: pr?.min ?? 0, kMin: pr ? MODEL.priorMinuteGames : 0, rate,
@@ -212,9 +285,9 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
 //   backToBack: this team played the day before; lineup: optional confirmed lineup.
 export function projectPlayers(games, teamId, {
   injuries = {}, prior = {}, rates, expected, before = null, roster = null, spread = 0, backToBack = false, lineup = null,
-  positions = {},
+  roles = {}, oppMatchup = null,
 }) {
-  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster, positions }), expected, spread, backToBack };
+  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster, roles }), expected, spread, backToBack, oppMatchup };
   return { ...allocate(team, lineup), inputs: team };
 }
 
@@ -225,6 +298,9 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
   const ratings = teamRatings(games, before);
   const rates = leagueRates(games, before);
   const scores = projectScores(ratings, game.homeId, game.awayId, extras.line);
+  const roles = inferRoles(games, positions, prior, before);
+  const posRates = positionRates(games, roles, before);
+  const matchups = matchupFactors(games, roles, posRates, before);
   const spread = Math.abs(scores.home - scores.away);
   // Second night of a back-to-back: the team's previous game started less than 30 hours earlier.
   const backToBack = (teamId) => Boolean(game.start) && games.some((g) => g.teams.some((s) => s.id === teamId)
@@ -250,9 +326,9 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
       market: scores.market?.[side] ?? null,
       ...projectPlayers(games, id, {
         injuries: extras.injuries?.[id] ?? {}, prior, rates, expected, before, roster: rosters[id]?.length ? rosters[id] : null,
-        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null, positions,
+        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null, roles, oppMatchup: matchups[oppId] ?? null,
       }),
     };
   }
-  return { line: extras.line ?? null, positionRates: positionRates(games, positions, before), home: sides.home, away: sides.away };
+  return { line: extras.line ?? null, positionRates: posRates, home: sides.home, away: sides.away };
 }

@@ -346,7 +346,7 @@ function lineupPage(g) {
         const roleBtn = ([r, label]) => `<button data-role="${r}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${role === r}">${label}</button>`;
         return `<li>${row}<div class="lineup-panel">
           <h4>${esc(c.name)}</h4>
-          <p class="panel-label">Position</p><div class="choice">${['G', 'F', 'C'].map(posBtn).join('')}</div>
+          <p class="panel-label">Position</p><div class="choice">${['PG', 'SG', 'SF', 'PF', 'C'].map(posBtn).join('')}</div>
           <p class="panel-label">Status <small>(tap again for bench)</small></p><div class="choice">${ROLES.map(roleBtn).join('')}</div>
           <div class="figures"><div><b>${one(p.pts)}</b><span>Points</span></div><div><b>${one(p.reb)}</b><span>Rebounds</span></div><div><b>${one(p.ast)}</b><span>Assists</span></div></div>
         </div></li>`;

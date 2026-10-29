@@ -291,3 +291,5 @@ ul.lineup li { display: block; }
 .choice button[aria-pressed="true"] small { color: var(--bg); }
 .choice button[data-role="out"][aria-pressed="true"] { background: #b91c1c; border-color: #b91c1c; color: #fff; }
 .lineup-panel .figures { margin-top: 10px; }
+.choice button { min-width: 0; }
+.choice button small { display: block; font-size: 10px; line-height: 1; }
