@@ -162,3 +162,26 @@ test('projected starters, first-time starters and position moves', async () => {
     { all: true, positionRates: p.positionRates });
   assert.deepEqual(same.players, bench.players);
 });
+
+test("a confirmed lineup moves team scores by the players' ratings", async () => {
+  const { lineupScores } = await import('../docs/claude.js');
+  const cand = (id, off, def) => ({
+    id, name: id, pos: 'SF', status: '', starter: true, gp: 4, wMin: 96, w: 3, roleMin: 96, roleW: 3, startMin: 96, startW: 3,
+    benchMin: 0, benchW: 0, priorMin: 0, kMin: 0, rate: { pts: 0.5, reb: 0.2, ast: 0.1, tpm: 0.05 }, rating: { off, def },
+  });
+  const side = (teamId, star) => ({
+    teamId, score: 110,
+    inputs: { teamGames: 4, expected: { pts: 110, reb: 44, ast: 24, tpm: 12 },
+      candidates: [cand(`${teamId}star`, star.off, star.def), ...[1, 2, 3, 4, 5, 6, 7].map((i) => cand(`${teamId}${i}`, 0, 0))] },
+  });
+  const claude = {
+    scoring: { poss: 100, lgRtg: 110, homeEdge: 1.2, base: { home: { ortg: 110, drtg: 110 }, away: { ortg: 110, drtg: 110 } } },
+    home: side('H', { off: 6, def: -4 }), // a star who helps on both ends
+    away: side('A', { off: 0, def: 0 }),
+  };
+  assert.deepEqual(lineupScores(claude, {}), { home: 110, away: 110 }); // nothing changed
+  const out = lineupScores(claude, { H: { starters: [], projected: [], out: ['Hstar'], positions: {} } });
+  assert.ok(out.home < 110, 'home scores less without its star');
+  assert.ok(out.away > 110, 'and the away team scores more against it');
+  assert.equal(lineupScores({}, {}), null);
+});

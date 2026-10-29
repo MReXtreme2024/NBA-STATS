@@ -10,7 +10,7 @@
 // or league average for players without one), then scaled so each team's players add up
 // to the team's projected points, rebounds, assists and 3PM for this matchup.
 
-import { MODEL, allocate } from '../docs/claude.js';
+import { MODEL, allocate, modelScores, ratingShift } from '../docs/claude.js';
 
 export { MODEL };
 
@@ -276,7 +276,7 @@ export function matchupFactors(games, roles, posRates, before = null) {
 // and his per-minute rates.
 //   injuries: { playerId: status }; prior: { playerId: last-season averages }; rates: league per-minute rates;
 //   roles: { playerId: 'PG' | 'SG' | 'SF' | 'PF' | 'C' }.
-export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null, roles = {} }) {
+export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, before = null, roster = null, roles = {}, pRatings = null }) {
   const mine = games
     .filter((g) => (!before || g.start < before) && g.teams.some((s) => s.id === teamId))
     .sort((x, y) => y.start.localeCompare(x.start)); // newest first
@@ -320,6 +320,7 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
       wMin: r(pl.wMin), w: r(pl.w), startMin: r(pl.startMin), startW: r(pl.startW),
       benchMin: r(pl.benchMin), benchW: r(pl.benchW), roleMin: r(pl.roleMin), roleW: r(pl.roleW),
       priorMin: pr?.min ?? 0, kMin: pr ? MODEL.priorMinuteGames : 0, rate,
+      ...(pRatings?.[pl.id] ? { rating: { off: pRatings[pl.id].off, def: pRatings[pl.id].def } } : {}),
     });
   }
   return { teamGames: mine.length, candidates };
@@ -330,9 +331,9 @@ export function prepareTeam(games, teamId, { injuries = {}, prior = {}, rates, b
 //   backToBack: this team played the day before; lineup: optional confirmed lineup.
 export function projectPlayers(games, teamId, {
   injuries = {}, prior = {}, rates, expected, before = null, roster = null, spread = 0, backToBack = false, lineup = null,
-  roles = {}, oppMatchup = null,
+  roles = {}, oppMatchup = null, pRatings = null,
 }) {
-  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster, roles }), expected, spread, backToBack, oppMatchup };
+  const team = { ...prepareTeam(games, teamId, { injuries, prior, rates, before, roster, roles, pRatings }), expected, spread, backToBack, oppMatchup };
   return { ...allocate(team, lineup), inputs: team };
 }
 
@@ -346,23 +347,21 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
   // Who is playing: shift the stats model's team ratings by the on-court ratings of the players expected
   // to play, weighted by their expected minutes (players out pull nothing; season minutes average to 0).
   const pRatings = MODEL.ratingWeight > 0 ? playerRatings(games, before) : null;
-  const ratingShift = (teamId) => {
-    const team = prepareTeam(games, teamId, { injuries: extras.injuries?.[teamId] ?? {}, prior, rates, before, roster: rosters[teamId]?.length ? rosters[teamId] : null });
-    const res = allocate({ ...team, expected: { pts: 1, reb: 1, ast: 1, tpm: 1 } }, extras.lineups?.[teamId] ?? null, { all: true });
-    const shift = { off: 0, def: 0 };
-    for (const p of res.players) {
-      const pr = pRatings[p.id];
-      if (pr) { shift.off += (p.min / MODEL.teamMinutes) * pr.off; shift.def += (p.min / MODEL.teamMinutes) * pr.def; }
-    }
-    return shift;
+  const shiftFor = (teamId) => ratingShift(prepareTeam(games, teamId, {
+    injuries: extras.injuries?.[teamId] ?? {}, prior, rates, before, roster: rosters[teamId]?.length ? rosters[teamId] : null, pRatings,
+  }), extras.lineups?.[teamId] ?? null);
+  const h0 = ratings.team(game.homeId);
+  const a0 = ratings.team(game.awayId);
+  // What the phone needs to re-work team scores for a confirmed lineup (docs/claude.js lineupScores).
+  const scoring = {
+    poss: scores.poss, lgRtg: ratings.league.rtg, homeEdge: MODEL.homeEdge,
+    base: { home: { ortg: h0.ortg, drtg: h0.drtg }, away: { ortg: a0.ortg, drtg: a0.drtg } },
   };
   if (pRatings) {
-    const h = ratingShift(game.homeId);
-    const a = ratingShift(game.awayId);
-    const w = MODEL.ratingWeight;
-    scores = projectScores(ratings, game.homeId, game.awayId, extras.line, {
-      home: { off: w * h.off, def: w * h.def }, away: { off: w * a.off, def: w * a.def },
-    });
+    const model = modelScores(scoring, shiftFor(game.homeId), shiftFor(game.awayId));
+    const market = scores.market;
+    const w = market ? MODEL.marketWeight : 0;
+    scores = { ...scores, model, home: w * (market?.home ?? 0) + (1 - w) * model.home, away: w * (market?.away ?? 0) + (1 - w) * model.away };
   }
   const roles = inferRoles(games, positions, prior, before);
   const posRates = positionRates(games, roles, before);
@@ -392,9 +391,9 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
       market: scores.market?.[side] ?? null,
       ...projectPlayers(games, id, {
         injuries: extras.injuries?.[id] ?? {}, prior, rates, expected, before, roster: rosters[id]?.length ? rosters[id] : null,
-        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null, roles, oppMatchup: matchups[oppId] ?? null,
+        spread, backToBack: backToBack(id), lineup: extras.lineups?.[id] ?? null, roles, oppMatchup: matchups[oppId] ?? null, pRatings,
       }),
     };
   }
-  return { line: extras.line ?? null, positionRates: posRates, home: sides.home, away: sides.away };
+  return { line: extras.line ?? null, positionRates: posRates, scoring, home: sides.home, away: sides.away };
 }

@@ -33,6 +33,42 @@ export const MODEL = {
 };
 
 const STATS = ['pts', 'reb', 'ast', 'tpm'];
+
+// How much a team's on-court offensive and defensive ratings move with who plays: each player's
+// ratings (vs his team, from the play-by-play) weighted by his expected minutes.
+export function ratingShift(inputs, lineup = null) {
+  const res = allocate({ ...inputs, expected: { pts: 1, reb: 1, ast: 1, tpm: 1 } }, lineup, { all: true });
+  const byId = new Map(inputs.candidates.map((c) => [c.id, c]));
+  const shift = { off: 0, def: 0 };
+  for (const p of res.players) {
+    const r = byId.get(p.id)?.rating;
+    if (r) { shift.off += (p.min / MODEL.teamMinutes) * r.off; shift.def += (p.min / MODEL.teamMinutes) * r.def; }
+  }
+  return shift;
+}
+
+// The stats model's team scores, with each team's ratings shifted for who plays.
+//   scoring: { poss, lgRtg, homeEdge, base: { home: { ortg, drtg }, away: { ortg, drtg } } }
+export function modelScores(scoring, homeShift, awayShift) {
+  const w = MODEL.ratingWeight;
+  const { poss, lgRtg, homeEdge, base } = scoring;
+  return {
+    home: (poss * (base.home.ortg + w * homeShift.off) * (base.away.drtg + w * awayShift.def)) / lgRtg / 100 + homeEdge,
+    away: (poss * (base.away.ortg + w * awayShift.off) * (base.home.drtg + w * homeShift.def)) / lgRtg / 100 - homeEdge,
+  };
+}
+
+// Team scores with Nate's confirmed lineup. The nightly scores already reflect the injury report (the
+// betting market prices it in), so only the difference his lineup makes, through the players' ratings,
+// is added — in full, as news the betting line may not have had.
+//   claude: a game's nightly projection (with scoring and each side's inputs); lineups: { teamId: lineup }.
+export function lineupScores(claude, lineups) {
+  if (!claude?.scoring || !claude.home?.inputs || !claude.away?.inputs) return null;
+  const shifts = (lu) => [ratingShift(claude.home.inputs, lu?.[claude.home.teamId] ?? null), ratingShift(claude.away.inputs, lu?.[claude.away.teamId] ?? null)];
+  const before = modelScores(claude.scoring, ...shifts(null));
+  const after = modelScores(claude.scoring, ...shifts(lineups));
+  return { home: claude.home.score + after.home - before.home, away: claude.away.score + after.away - before.away };
+}
 const clamp = (x, [lo, hi]) => Math.min(hi, Math.max(lo, x));
 
 // One team's player projections.

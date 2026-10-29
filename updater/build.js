@@ -7,6 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkAppData, checkGame } from './checks.js';
 import { scoreResults } from './results.js';
+import { playerRatings } from './model.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -157,6 +158,9 @@ export function build(now = new Date()) {
   const data = buildAppData(games, teams, config, now, {
     upcoming: readOptional('upcoming.json'), rosters: readOptional('rosters.json'),
   });
+  // Players' on-court ratings for the Player page (the same ones Claude's formula uses).
+  const pr = playerRatings(games);
+  for (const t of data.teams) for (const p of t.players) if (pr[p.id]) p.rating = pr[p.id];
   data.results = scoreResults(loadGames(path.join(ROOT, 'data', 'projections', config.season)), games, config.timeZone);
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;

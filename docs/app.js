@@ -1,5 +1,5 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
-import { allocate } from './claude.js';
+import { allocate, lineupScores } from './claude.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -69,6 +69,11 @@ function formulaTabs(formula) {
 
 // Claude's formula figures are decimals, shown cut to one decimal: 24.19 -> "24.1".
 const one = (x) => (Math.floor(x * 10 + 1e-9) / 10).toFixed(1);
+// The change between two shown figures, as shown: 118.67 -> 118.43 is "−0.2" (blank if none).
+const changeText = (now, was) => {
+  const d = Math.round((Number(one(now)) - Number(one(was))) * 10) / 10;
+  return d ? `${d > 0 ? '+' : '−'}${Math.abs(d).toFixed(1)}` : '';
+};
 
 function saveMode(mode) {
   try { localStorage.setItem(MODE_KEY, mode); } catch { /* private mode: just don't remember */ }
@@ -271,12 +276,23 @@ function tidyLineups() {
 }
 
 // Claude's formula for a game: the nightly figures, re-worked on the phone with Nate's confirmed lineup if he set one.
-function claudeFor(g) {
-  const lineup = readLineup(g.id);
-  if (!g.claude || !lineup) return g.claude;
-  const redo = (side) => (side.inputs ? { ...side, ...allocate(side.inputs, lineup[side.teamId], { positionRates: g.claude.positionRates }) } : side);
-  return { ...g.claude, home: redo(g.claude.home), away: redo(g.claude.away) };
+// Claude's formula for a game with a lineup: team scores moved by what the lineup changes (players'
+// ratings), then each team's players re-worked to the new score. all: include every player (lineup screen).
+function claudeWith(g, lineups, { all = false } = {}) {
+  const scores = lineupScores(g.claude, lineups);
+  const redo = (side, key) => {
+    if (!side.inputs) return side;
+    const score = scores?.[key] ?? side.score;
+    const exp = side.inputs.expected;
+    const inputs = { ...side.inputs, expected: { ...exp, pts: score, ast: side.score ? (exp.ast * score) / side.score : exp.ast } };
+    return { ...side, score, lineupChange: score - side.score, ...allocate(inputs, lineups[side.teamId], { all, positionRates: g.claude.positionRates }) };
+  };
+  return { ...g.claude, home: redo(g.claude.home, 'home'), away: redo(g.claude.away, 'away') };
 }
+const claudeFor = (g) => {
+  const lineup = readLineup(g.id);
+  return g.claude && lineup ? claudeWith(g, lineup) : g.claude;
+};
 
 // "Confirm starting lineup" button, or a note that it's confirmed.
 function lineupButton(g) {
@@ -325,9 +341,14 @@ function lineupPage(g) {
       })),
     };
   }
+  const draft = claudeWith(g, lineupDraft.teams, { all: true });
+  const scoreLine = [[away, draft.away], [home, draft.home]].map(([t, s]) => {
+    const ch = changeText(s.score, s.score - (s.lineupChange ?? 0));
+    return `${esc(t.code)} ${one(s.score)}${ch ? ` <small>(${ch})</small>` : ''}`;
+  }).join(' · ');
   const teamBlock = ([t, side]) => {
     const pick = lineupDraft.teams[t.id];
-    const result = allocate(side.inputs, pick, { all: true, positionRates: g.claude.positionRates });
+    const result = draft[side === g.claude.home ? 'home' : 'away'];
     const projOf = (id) => result.players.find((p) => p.id === id) ?? { pts: 0, reb: 0, ast: 0 }; // out: 0P 0R 0A
     const avgMin = (c) => (c.w ? c.wMin / c.w : 0);
     const rows = [...side.inputs.candidates]
@@ -356,6 +377,7 @@ function lineupPage(g) {
       <ul class="lineup">${rows}</ul></section>`;
   };
   return `${bar(`${away.code} @ ${home.code} lineup`, `#/game/${g.id}`, 'Tap a player to set his status and position')}
+    <p class="out-line"><b>Projected score with this lineup:</b> ${scoreLine}</p>
     <div class="stats">${sides.map(teamBlock).join('')}</div>
     <div class="buttons lineup-actions">
       <button class="button" data-lineup="reset">Back to predicted</button>
@@ -370,6 +392,8 @@ function claudeMatchup(g, away, home) {
   const scoreBox = (t, side) => {
     const parts = [`Stats model ${one(side.model)}`];
     if (side.market !== null) parts.push(`Betting market ${one(side.market)}`);
+    const ch = changeText(side.score, side.score - (side.lineupChange ?? 0));
+    if (ch) parts.push(`Your lineup ${ch}`);
     return `<div class="panel" style="${colours(t)}"><p>${esc(t.code)} projected</p><h2 class="big">${one(side.score)}</h2><p class="small">${parts.join(' · ')}</p></div>`;
   };
   const outLine = (t, side) => (side.out.length ? `<p class="out-line"><b>${esc(t.code)} out:</b> ${side.out.map((o) => esc(o.name)).join(', ')}</p>` : '');
@@ -448,6 +472,22 @@ function matchupPage(g) {
     <div class="stats">${sections}</div>`;
 }
 
+// On-court ratings from the play-by-play: points per 100 possessions his team scores and allows with him
+// on the court, against its usual (pulled toward 0 until he has played enough).
+function ratingsCard(p) {
+  const r = p.rating;
+  if (!r) return '';
+  const signed = (v) => `${v > 0 ? '+' : v < 0 ? '−' : ''}${Math.abs(v).toFixed(1)}`;
+  const net = r.off - r.def;
+  return `<section class="stat"><h3>On-court ratings · points per 100 possessions vs his team</h3>
+    <div class="figures">
+      <div><b>${signed(r.off)}</b><span>Offence (scored)</span></div>
+      <div><b>${signed(r.def)}</b><span>Defence (allowed)</span></div>
+      <div><b>${signed(net)}</b><span>Net</span></div>
+    </div>
+    <p class="working">With him on the court, his team scores ${signed(r.off)} and allows ${signed(r.def)} points per 100 possessions compared with its usual (for defence, minus is good). Based on about ${r.poss} possessions; early in the season these are pulled toward 0 until he has played enough.</p></section>`;
+}
+
 // 5. Player page: share % and projection per stat, two modes
 function playerPage(t, p) {
   const mode = readMode();
@@ -465,6 +505,7 @@ function playerPage(t, p) {
     <section class="panel" style="${colours(t)}">
       <h2>${esc(p.name)}</h2><p>Played ${p.gp} of ${t.gp} team games</p>
     </section>
+    ${ratingsCard(p)}
     ${modeSwitch(mode)}
     <div class="stats">${cards}</div>`;
 }
