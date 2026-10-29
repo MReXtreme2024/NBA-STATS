@@ -281,6 +281,26 @@ function claudeMatchup(g, away, home) {
 const projectable = (t) => t.players.filter((p) => (t.roster?.length ? t.roster.includes(p.id) : p.gp > 0));
 
 // 7. Matchup: for each projection stat, the two teams' players side by side, highest first, 1 or more only.
+// The upcoming game before or after this one (wrapping round), for swiping and the ‹ › arrows.
+function neighbourGame(id, step) {
+  const games = data.upcoming?.games ?? [];
+  const i = games.findIndex((g) => g.id === id);
+  return i === -1 || games.length < 2 ? null : games[(i + step + games.length) % games.length];
+}
+
+// "‹  3 of 9  ›" under the title of a matchup page.
+function gameNav(g) {
+  const games = data.upcoming?.games ?? [];
+  if (games.length < 2) return '';
+  const i = games.findIndex((x) => x.id === g.id);
+  const prev = neighbourGame(g.id, -1);
+  const next = neighbourGame(g.id, 1);
+  return `<nav class="game-nav" aria-label="Other upcoming games">
+    <a href="#/game/${prev.id}" data-replace aria-label="Previous game">‹</a>
+    <span>Game ${i + 1} of ${games.length} · swipe for more</span>
+    <a href="#/game/${next.id}" data-replace aria-label="Next game">›</a></nav>`;
+}
+
 function matchupPage(g) {
   const mode = readMode();
   const formula = readFormula();
@@ -288,7 +308,7 @@ function matchupPage(g) {
   const home = teamById(g.homeId);
   if (formula === 'claude') {
     const note = g.note ? ` · ${g.note}` : '';
-    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${formulaTabs(formula)}${claudeMatchup(g, away, home)}`;
+    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${formulaTabs(formula)}${claudeMatchup(g, away, home)}`;
   }
   const column = (t, s) => {
     const items = projectable(t)
@@ -303,7 +323,7 @@ function matchupPage(g) {
   const sections = PROJ_STATS.map((s) => `<section class="stat"><h3>${LONG[s]}</h3>
       <div class="sides">${column(away, s)}${column(home, s)}</div></section>`).join('');
   const note = g.note ? ` · ${g.note}` : '';
-  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}
+  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}
     ${formulaTabs(formula)}
     <section class="matchup">
       <div class="panel" style="${colours(away)}"><h2>${esc(away.name)}</h2><p>Away · ${away.gp} played</p></div>
@@ -375,11 +395,34 @@ app.addEventListener('click', (e) => {
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
   const modeBtn = e.target.closest('[data-mode]');
   if (modeBtn) { saveMode(modeBtn.dataset.mode); render(); return; }
+  const replaceLink = e.target.closest('a[data-replace]');
+  if (replaceLink) { e.preventDefault(); location.replace(replaceLink.getAttribute('href')); return; }
   const row = e.target.closest('tr[data-href]');
   if (row && !e.target.closest('a')) location.hash = row.dataset.href;
 });
 
 window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
+
+// Matchup pages: swipe left for the next upcoming game, right for the previous one.
+// Moving between games replaces the page in history, so Back still returns to the games list.
+const openGame = (g) => { if (g) location.replace(`#/game/${g.id}`); };
+let touch = null;
+app.addEventListener('touchstart', (e) => {
+  const t = e.touches[0];
+  // ignore two-finger gestures, tables that scroll sideways, and the screen edge (the phone's own back swipe)
+  touch = e.touches.length === 1 && !e.target.closest('.table-wrap') && t.clientX > 24 && t.clientX < innerWidth - 24
+    ? { x: t.clientX, y: t.clientY } : null;
+}, { passive: true });
+app.addEventListener('touchend', (e) => {
+  const m = /^#\/game\/([^/]+)$/.exec(location.hash);
+  if (!touch || !m) return;
+  const t = e.changedTouches[0];
+  const dx = t.clientX - touch.x;
+  const dy = t.clientY - touch.y;
+  touch = null;
+  if (Math.abs(dx) < 60 || Math.abs(dx) < 2 * Math.abs(dy)) return; // not a clear sideways swipe
+  openGame(neighbourGame(m[1], dx < 0 ? 1 : -1));
+}, { passive: true });
 
 try {
   const res = await fetch('data/app-data.json', { cache: 'no-cache' });

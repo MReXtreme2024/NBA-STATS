@@ -52,7 +52,7 @@ The nightly run is at **12:07am** Australia/Melbourne (`cron: '7 0 * * *'`), not
 
 ## Upcoming games
 
-Added at Nate's request (22 Oct 2026). Each run saves today's (America/New_York date) regular-season games that haven't started (`status.type.state === 'pre'`) to `data/upcoming.json`, and every team's current roster to `data/rosters.json` (`/teams/<id>/roster`). The home screen's **Upcoming games** button lists them; tapping one shows a matchup page with, for each of PTS, REB, AST and 3PM, both teams' players side by side, sorted by projection, showing only projections of 1 or more. Players are those on the current roster who have played for the team (all players if the roster is unknown). Same maths and remembered mode switch as everywhere else.
+Added at Nate's request (22 Oct 2026). Each run saves today's (America/New_York date) regular-season games that haven't started (`status.type.state === 'pre'`) to `data/upcoming.json`, and every team's current roster to `data/rosters.json` (`/teams/<id>/roster`). The home screen's **Upcoming games** button lists them; tapping one shows a matchup page with, for each of PTS, REB, AST and 3PM, both teams' players side by side, sorted by projection, showing only projections of 1 or more. Players are those on the current roster who have played for the team (all players if the roster is unknown). Same maths and remembered mode switch as everywhere else. On a matchup page, swiping left/right (or the ‹ › arrows) moves to the next/previous upcoming game, wrapping round; it replaces the history entry so Back returns to the list.
 
 ## Claude's formula
 

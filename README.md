@@ -64,6 +64,8 @@ Each Player page shows the working under every number. Because the projection us
 
 Tap **Upcoming games** at the top of the home screen to see the day's games that haven't started yet, with Melbourne start times. The list refreshes with each nightly update.
 
+On a game, **swipe left** for the next upcoming game and **swipe right** to go back one, or tap the **‹ ›** arrows under the title. Back always returns to the games list.
+
 Tap a game to see the two teams **side by side** for Points, Rebounds, Assists and 3PM. Each player's projection is listed highest first, and anything below 1 is left out. Only players on each team's current roster are included, so a traded player shows for his new team only once he has played for it. The *All team games / Games he played* switch works here too. Tap a player to see their working.
 
 ### Claude's formula
