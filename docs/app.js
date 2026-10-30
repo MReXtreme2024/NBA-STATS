@@ -1,6 +1,6 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
-import { MIN_SLIP_MINUTES, STAT_NAME, chanceOver, settle, slipChance, suggestSlips } from './slips.js';
+import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, settle, slipChance, suggestSlips } from './slips.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -408,6 +408,36 @@ function valueText(chance, odds) {
   return `Claude's chance all three go over: <b>${pct(chance)}</b> · the odds imply ${pct(implied)}. ${verdict}.`;
 }
 
+// A player's season averages for this team (lines for the suggested slips; value for Claude's).
+function seasonAverages(teamId, id) {
+  const p = teamById(teamId)?.players.find((x) => x.id === id);
+  return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
+}
+
+// Claude's locked slips. The nightly update records them for every game (with the injury report); when
+// Nate saves a lineup before tip-off, Claude re-picks them on the phone and that version counts instead.
+const CLAUDE_SLIP_PREFIX = 'claudeSlips:';
+function readClaudeOverride(gameId) {
+  try { return JSON.parse(localStorage.getItem(CLAUDE_SLIP_PREFIX + gameId)) ?? null; } catch { return null; }
+}
+function writeClaudeOverride(gameId, entry) {
+  try {
+    if (entry) localStorage.setItem(CLAUDE_SLIP_PREFIX + gameId, JSON.stringify(entry));
+    else localStorage.removeItem(CLAUDE_SLIP_PREFIX + gameId);
+  } catch { /* private mode: not kept */ }
+}
+function allClaudeOverrides() {
+  try { return Object.keys(localStorage).filter((k) => k.startsWith(CLAUDE_SLIP_PREFIX)).map((k) => JSON.parse(localStorage.getItem(k))).filter(Boolean); } catch { return []; }
+}
+const claudeSlipsFor = (g) => (data.calibration?.pts && g.claude?.home ? claudeSlips([claudeFor(g).away, claudeFor(g).home], seasonAverages, data.calibration) : []);
+// After a lineup is saved (or reset), Claude's slips for that game follow it — until tip-off.
+function refreshClaudeOverride(g, saving) {
+  if (!g || new Date(g.start) <= new Date()) return;
+  if (!saving) { writeClaudeOverride(g.id, null); return; }
+  const slips = claudeSlipsFor(g);
+  if (slips.length) writeClaudeOverride(g.id, { gameId: g.id, start: g.start, game: `${teamById(g.awayId).code} @ ${teamById(g.homeId).code}`, made: new Date().toISOString(), lineup: true, slips });
+}
+
 let slipDraft = null; // { gameId, slips, odds: { i: text }, saved: { i: true } } on a game's slips page
 
 // 10. A game's two suggested bet slips (from Claude's formula with Nate's lineup): edit lines, add odds, save.
@@ -416,18 +446,14 @@ function slipsPage(g) {
   const home = teamById(g.homeId);
   if (slipDraft?.gameId !== g.id) {
     const c = claudeFor(g);
-    const averages = (teamId, id) => {
-      const p = teamById(teamId)?.players.find((x) => x.id === id);
-      return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
-    };
-    slipDraft = { gameId: g.id, slips: suggestSlips([c.away, c.home], averages, data.calibration), odds: {}, saved: {} };
+    slipDraft = { gameId: g.id, slips: suggestSlips([c.away, c.home], seasonAverages, data.calibration), odds: {}, saved: {} };
   }
   const lineupNote = readLineup(g.id) ? '' : `<p class="out-line">You haven't confirmed this game's lineup, so these use the injury report. <a href="#/game/${g.id}/lineup">Confirm lineup ›</a></p>`;
   const cards = slipDraft.slips.map((slip, i) => {
     const legs = slip.legs.map((l, j) => `<li class="leg">
       <span class="name">${pill(teamById(l.teamId))} ${esc(l.name)}<span class="mins">Claude projects ${one(l.mu)} · chance over ${pct(l.chance)}</span></span>
       <span class="line-edit"><button data-step="-1" data-slip="${i}" data-leg="${j}" aria-label="Lower line">−</button>
-        <b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small>
+        <span class="line"><b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small></span>
         <button data-step="1" data-slip="${i}" data-leg="${j}" aria-label="Raise line">+</button></span></li>`).join('');
     const odds = slipDraft.odds[i] ?? '';
     return `<section class="stat slip"><h3>${slip.title}</h3>
@@ -436,39 +462,91 @@ function slipsPage(g) {
       <p class="working" data-value="${i}">${valueText(slipChance(slip.legs), Number(odds))}</p>
       <button class="button primary" data-save-slip="${i}">${slipDraft.saved[i] ? '✓ Saved — save again to update' : 'Save slip'}</button></section>`;
   }).join('');
+  const locked = claudeSlipsFor(g).map((slip) => `<section class="stat slip locked"><h3>🔒 ${slip.title}</h3>
+      <ul class="legs">${slip.legs.map((l) => `<li class="leg">
+        <span class="name">${pill(teamById(l.teamId))} ${esc(l.name)}<span class="mins">Claude projects ${one(l.mu)} (season average ${one(l.avg)}) · chance over ${pct(l.chance)}</span></span>
+        <span class="line-edit"><span class="line"><b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small></span></span></li>`).join('')}</ul>
+      <p class="working">Claude's chance all three go over: <b>${pct(slip.chance)}</b> · fair odds ${(1 / slip.chance).toFixed(2)}</p></section>`).join('');
+  const lockedNote = readLineup(g.id) ? 'Picked with your lineup.' : 'Picked with the injury report; they change to fit your lineup when you save one (until tip-off).';
   return `${bar(`${away.code} @ ${home.code} bet slips`, `#/game/${g.id}`, 'Goal: all three go over')}
-    ${lineupNote}<div class="stats">${cards}</div>
+    ${lineupNote}<h2 class="group">Your slips <small>you can change these</small></h2><div class="stats">${cards}</div>
+    ${locked ? `<h2 class="group">Claude's slips <small>locked</small></h2><p class="working">Claude's own picks: Claude chooses the players and the lines (common bookmaker lines like 10+, 15+, 20+ points). It looks for value, players its projection rates above their season average, since that's roughly what bookmakers price on. Banker: every leg ${Math.round(CLAUDE_SLIPS[0].target * 100)}%+. Bigger payout: every leg ${Math.round(CLAUDE_SLIPS[1].target * 100)}%+. ${lockedNote} Claude's slips are recorded for every game, so Claude has its own record on My bet slips.</p><div class="stats">${locked}</div>` : ''}
     <p class="working"><b>Safest overs</b> picks, for each stat, the player most likely to go over a line set at his season average (to the .5 below). <b>Biggest projections</b> picks the top projected player for each stat. Three different players each time, from players expected to play ${MIN_SLIP_MINUTES}+ minutes, with lines of at least 9.5 points, 3.5 rebounds and 2.5 assists. Change a line with − and + to match your bookmaker's; the chance updates. Chances come from how far real results have landed from Claude's projections, re-learned every night. They treat the three legs as separate, though in one game they can move together. Points chances have run a few % high so far. These are estimates, not certainties — bet only what you're comfortable losing.</p>
     <a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${readSlips().length} saved ›</span></a>`;
 }
 
-// 11. Saved slips, settled from each night's results, with Claude's record and what it has learned.
+// 11. Saved slips, settled from each night's results: Nate's record, Claude's record, and what Claude has learned.
+// A settled result is kept with the slip, since results are only published for two weeks.
 function mySlipsPage() {
   const slips = readSlips().sort((a, b) => (b.start ?? '').localeCompare(a.start ?? ''));
-  const settled = slips.map((s) => ({ s, r: settle(s, data.recent) }));
-  const count = (st) => settled.filter((x) => x.r.status === st).length;
+  let changed = false;
+  const settled = slips.map((s) => {
+    const r = settle(s, data.recent);
+    if (!s.result && r.status !== 'pending') { s.result = r; changed = true; }
+    return { s, r };
+  });
+  if (changed) writeSlips(slips);
+  const count = (list, st) => list.filter((x) => x.r.status === st).length;
+  const figures = (list) => `<div class="figures"><div><b>${count(list, 'won')}</b><span>Won</span></div><div><b>${count(list, 'lost')}</b><span>Lost</span></div><div><b>${count(list, 'pending')}</b><span>Waiting</span></div></div>`;
   const legs = settled.flatMap((x) => x.s.legs.map((l, i) => ({ l, r: x.r.legs[i] }))).filter((x) => x.r.result === 'hit' || x.r.result === 'miss');
   const saidAvg = legs.length ? legs.reduce((t, x) => t + (x.l.chance ?? 0), 0) / legs.length : null;
   const hitRate = legs.length ? legs.filter((x) => x.r.result === 'hit').length / legs.length : null;
-  const record = `<section class="stat"><h3>Your record</h3>
-    <div class="figures"><div><b>${count('won')}</b><span>Won</span></div><div><b>${count('lost')}</b><span>Lost</span></div><div><b>${count('pending')}</b><span>Waiting</span></div></div>
+  const record = `<section class="stat"><h3>Your record</h3>${figures(settled)}
     <p class="working">Each slip is one bet: it wins only if all three legs go over, and one leg missing makes it one loss.</p>
-    <p class="working">${legs.length ? `How Claude's chances are tracking (single legs, not your bets): ${legs.length} legs settled; Claude gave them ${pct(saidAvg)} on average and ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count('void') ? ` ${count('void')} slip(s) void (players didn't play).` : ''}</p></section>`;
+    <p class="working">${legs.length ? `How Claude's chances are tracking (single legs, not your bets): ${legs.length} legs settled; Claude gave them ${pct(saidAvg)} on average and ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count(settled, 'void') ? ` ${count(settled, 'void')} slip(s) void (players didn't play).` : ''}</p></section>`;
+
+  // Claude's slips: the nightly record, with the phone's lineup versions counting instead where Nate saved one.
+  const cs = data.claudeSlips ?? { results: {}, recent: [] };
+  const overrides = new Map();
+  for (const o of allClaudeOverrides()) {
+    let dirty = false;
+    for (const sl of o.slips) {
+      if (sl.result) continue;
+      const r = settle({ ...sl, gameId: o.gameId }, data.recent);
+      if (r.status !== 'pending') { sl.result = r; dirty = true; }
+    }
+    if (dirty) writeClaudeOverride(o.gameId, o);
+    overrides.set(o.gameId, o);
+  }
+  const letter = { W: 'won', L: 'lost', V: 'void' };
+  const claudeList = []; // { type, r } for every Claude slip
+  for (const [gameId, codes] of Object.entries(cs.results)) {
+    if (overrides.has(gameId)) continue;
+    CLAUDE_SLIPS.forEach((c, i) => letter[codes[i]] && claudeList.push({ type: c.type, r: { status: letter[codes[i]] } }));
+  }
+  const nightly = cs.recent.filter((e) => !overrides.has(e.gameId));
+  for (const e of nightly) if (!cs.results[e.gameId]) e.slips.forEach((sl) => claudeList.push({ type: sl.type, r: { status: 'pending' } }));
+  for (const o of overrides.values()) o.slips.forEach((sl) => claudeList.push({ type: sl.type, r: sl.result ?? { status: 'pending' } }));
+  const byType = CLAUDE_SLIPS.map((c) => {
+    const list = claudeList.filter((x) => x.type === c.type);
+    return `<p class="working"><b>${c.title}:</b> won ${count(list, 'won')}, lost ${count(list, 'lost')}${count(list, 'pending') ? `, waiting ${count(list, 'pending')}` : ''}</p>`;
+  }).join('');
+  const claudeRecord = `<section class="stat"><h3>Claude's record (its locked slips, every game)</h3>${figures(claudeList)}${byType}</section>`;
+
+  const badge = { won: '✓ Won', lost: '✗ Lost', void: 'Void', pending: 'Waiting' };
+  const card = (game, start, slip, r, extra) => `<section class="stat slip ${r.status}"><h3>${esc(game)} · ${esc(slip.title)} <span class="badge ${r.status}">${badge[r.status]}</span></h3>
+    <ul class="legs">${slip.legs.map((l, i) => {
+    const res = r.legs?.[i] ?? { result: 'pending' };
+    const mark = res.result === 'hit' ? '✓' : res.result === 'miss' ? '✗' : res.result === 'void' ? 'void' : '';
+    return `<li class="leg"><span class="name">${esc(l.name)} over ${l.line.toFixed(1)} ${STAT_NAME[l.stat]}<span class="mins">Claude: ${one(l.mu)} projected, ${pct(l.chance)} chance</span></span><b>${res.actual ?? ''} ${mark}</b></li>`;
+  }).join('')}</ul>
+    <p class="working">${start ? startText(start) : ''}${slip.odds ? ` · odds ${slip.odds.toFixed(2)}` : ''} · Claude's chance ${pct(slip.chance)}</p>${extra}</section>`;
+  const cards = settled.map(({ s, r }) => card(s.game, s.start, s, r, `<button class="button" data-delete-slip="${esc(s.id)}">Delete</button>`)).join('');
+  const claudeGames = [...nightly.map((e) => ({ ...e, lineup: false })), ...overrides.values()]
+    .filter((e) => e.start >= new Date(Date.now() - 14 * 24 * 3600 * 1000).toISOString())
+    .sort((a, b) => b.start.localeCompare(a.start));
+  const claudeCards = claudeGames.flatMap((e) => e.slips.map((sl) => card(e.game, e.start, sl, sl.result ?? settle({ ...sl, gameId: e.gameId }, data.recent),
+    e.lineup ? '<p class="working">Picked with your lineup.</p>' : ''))).join('');
+
   const cal = data.calibration;
   const hist = (cal?.history ?? []).slice(-6).map((h) => `<tr><td>${dateText(h.date)}</td><td>${h.games}</td><td>×${h.pts?.lean ?? '—'}</td><td>×${h.reb?.lean ?? '—'}</td><td>×${h.ast?.lean ?? '—'}</td></tr>`).join('');
   const learning = cal?.pts ? `<section class="stat"><h3>What Claude has learned</h3>
     <p class="working">Every night Claude compares its projections with what players actually did and re-learns its chances. So far: ${cal.games} games, ${cal.pts.n} player results. "Lean" is how results compare with projections (×1.00 = spot on, ×0.97 = results 3% lower).</p>
     <div class="table-wrap"><table class="results"><thead><tr><th>Night</th><th>Games</th><th>Points</th><th>Rebounds</th><th>Assists</th></tr></thead><tbody>${hist}</tbody></table></div></section>` : '';
-  const badge = { won: '✓ Won', lost: '✗ Lost', void: 'Void', pending: 'Waiting' };
-  const cards = settled.map(({ s, r }) => `<section class="stat slip ${r.status}"><h3>${esc(s.game)} · ${esc(s.title)} <span class="badge ${r.status}">${badge[r.status]}</span></h3>
-    <ul class="legs">${s.legs.map((l, i) => {
-    const res = r.legs[i];
-    const mark = res.result === 'hit' ? '✓' : res.result === 'miss' ? '✗' : res.result === 'void' ? 'void' : '';
-    return `<li class="leg"><span class="name">${esc(l.name)} over ${l.line.toFixed(1)} ${STAT_NAME[l.stat]}<span class="mins">Claude: ${one(l.mu)} projected, ${pct(l.chance)} chance</span></span><b>${res.actual ?? ''} ${mark}</b></li>`;
-  }).join('')}</ul>
-    <p class="working">${s.start ? startText(s.start) : ''}${s.odds ? ` · odds ${s.odds.toFixed(2)}` : ''} · Claude's chance ${pct(s.chance)}</p>
-    <button class="button" data-delete-slip="${esc(s.id)}">Delete</button></section>`).join('');
-  return `${bar('My bet slips', '#/upcoming', 'Settled automatically after each game')}${record}${cards || '<p class="message">No saved slips yet. Confirm a game\'s lineup to get its slips.</p>'}${learning}`;
+  return `${bar('My bet slips', '#/upcoming', 'Settled automatically after each game')}
+    <h2 class="group">Your slips</h2>${record}${cards || '<p class="message">No saved slips yet. Confirm a game\'s lineup to get its slips.</p>'}
+    <h2 class="group">Claude's slips <small>locked</small></h2>${claudeRecord}${claudeCards ? `<details class="claude-slips"><summary>Show Claude's slips (last two weeks)</summary>${claudeCards}</details>` : '<p class="message">Claude\'s slips appear after the next nightly update.</p>'}
+    ${learning}`;
 }
 
 function claudeMatchup(g, away, home) {
@@ -666,6 +744,7 @@ app.addEventListener('click', (e) => {
     const gameId = lineupDraft.gameId;
     const saving = lineupBtn.dataset.lineup === 'save';
     saveLineup(gameId, saving ? lineupDraft.teams : null);
+    refreshClaudeOverride(data.upcoming?.games.find((x) => x.id === gameId), saving);
     lineupDraft = null;
     slipDraft = null; // new lineup, new suggested slips
     lineupFromMatchup = false;

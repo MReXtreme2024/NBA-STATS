@@ -1,0 +1,84 @@
+{
+ "gameId": "401909280",
+ "start": "2026-10-30T23:30Z",
+ "game": "NYK @ PHI",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.458476712718337,
+     "avg": 20.6,
+     "chance": 0.9418570801440083
+    },
+    {
+     "playerId": "3062679",
+     "name": "Josh Hart",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.08808183612863,
+     "avg": 7.8,
+     "chance": 0.9266264483889014
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.874565893339744,
+     "avg": 5,
+     "chance": 0.9506005443843524
+    }
+   ],
+   "chance": 0.8296363219305023
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 21.458476712718337,
+     "avg": 20.6,
+     "chance": 0.5572102090385258
+    },
+    {
+     "playerId": "3062679",
+     "name": "Josh Hart",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.08808183612863,
+     "avg": 7.8,
+     "chance": 0.7592637038743416
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.874565893339744,
+     "avg": 5,
+     "chance": 0.6924988124693652
+    }
+   ],
+   "chance": 0.2929751174442205
+  }
+ ]
+}

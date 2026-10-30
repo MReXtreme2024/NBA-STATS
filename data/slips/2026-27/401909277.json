@@ -1,0 +1,84 @@
+{
+ "gameId": "401909277",
+ "start": "2026-10-30T23:00Z",
+ "game": "CHA @ WAS",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.579842735000593,
+     "avg": 15.2,
+     "chance": 0.8255100199235202
+    },
+    {
+     "playerId": "6583",
+     "name": "Anthony Davis",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.1663726357214,
+     "avg": 8.4,
+     "chance": 0.8337598721035132
+    },
+    {
+     "playerId": "3032979",
+     "name": "Dennis Schroder",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.369611264102741,
+     "avg": 4.6,
+     "chance": 0.9089633641868627
+    }
+   ],
+   "chance": 0.6256186943338558
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5160992",
+     "name": "Alex Sarr",
+     "teamId": "27",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.33346057459131,
+     "avg": 10.6,
+     "chance": 0.6440272878090656
+    },
+    {
+     "playerId": "6583",
+     "name": "Anthony Davis",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.1663726357214,
+     "avg": 8.4,
+     "chance": 0.6484516305030837
+    },
+    {
+     "playerId": "4433287",
+     "name": "Brandon Miller",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.004962831038127,
+     "avg": 1.8,
+     "chance": 0.5668420707323987
+    }
+   ],
+   "chance": 0.2367248944335213
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909279",
+ "start": "2026-10-30T23:30Z",
+ "game": "DET @ BKN",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.387975166114657,
+     "avg": 22.75,
+     "chance": 0.940877077136811
+    },
+    {
+     "playerId": "4278562",
+     "name": "Paul Reed",
+     "teamId": "8",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.082594999433788,
+     "avg": 7.6,
+     "chance": 0.8654954060974961
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 9.06364219768956,
+     "avg": 7.8,
+     "chance": 0.9751092418093913
+    }
+   ],
+   "chance": 0.79405562657851
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.108589124127722,
+     "avg": 10.2,
+     "chance": 0.6357234630531675
+    },
+    {
+     "playerId": "5174655",
+     "name": "Chaney Johnson",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.324981295451631,
+     "avg": 3.5,
+     "chance": 0.5931286997761137
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 8.5,
+     "mu": 9.06364219768956,
+     "avg": 7.8,
+     "chance": 0.5507577270259054
+    }
+   ],
+   "chance": 0.20767192005257948
+  }
+ ]
+}

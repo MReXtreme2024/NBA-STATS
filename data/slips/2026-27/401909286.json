@@ -1,0 +1,84 @@
+{
+ "gameId": "401909286",
+ "start": "2026-10-31T02:00Z",
+ "game": "DEN @ PHX",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3155526",
+     "name": "Dillon Brooks",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.808175684301844,
+     "avg": 14.666666666666666,
+     "chance": 0.834636128429362
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 11.408283940926742,
+     "avg": 10.5,
+     "chance": 0.8212181843104287
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.5109849886912565,
+     "avg": 5.333333333333333,
+     "chance": 0.9215048964245196
+    }
+   ],
+   "chance": 0.6316163803209709
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3155526",
+     "name": "Dillon Brooks",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.808175684301844,
+     "avg": 14.666666666666666,
+     "chance": 0.5904302043037699
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 9.5,
+     "mu": 11.408283940926742,
+     "avg": 10.5,
+     "chance": 0.6530272457774535
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.5109849886912565,
+     "avg": 5.333333333333333,
+     "chance": 0.634876055459509
+    }
+   ],
+   "chance": 0.24478726251319652
+  }
+ ]
+}

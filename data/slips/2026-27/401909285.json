@@ -1,0 +1,84 @@
+{
+ "gameId": "401909285",
+ "start": "2026-10-31T02:00Z",
+ "game": "LAL @ GSW",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 25.348652543489877,
+     "avg": 36,
+     "chance": 0.9854917509424663
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.991109730945707,
+     "avg": 8.2,
+     "chance": 0.8233940020483677
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.07133054087844,
+     "avg": 5.4,
+     "chance": 0.8672514791045582
+    }
+   ],
+   "chance": 0.7037294754361753
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397014",
+     "name": "Quentin Grimes",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.953304177967295,
+     "avg": 10.2,
+     "chance": 0.5608186895226981
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.991109730945707,
+     "avg": 8.2,
+     "chance": 0.6307931665446549
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.40380946117842,
+     "avg": 8.25,
+     "chance": 0.9761024943976456
+    }
+   ],
+   "chance": 0.34530660117223416
+  }
+ ]
+}

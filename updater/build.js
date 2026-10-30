@@ -9,6 +9,7 @@ import { checkAppData, checkGame } from './checks.js';
 import { scoreResults } from './results.js';
 import { playerRatings, lineOf } from './model.js';
 import { updateCalibration } from './calibrate.js';
+import { CLAUDE_SLIPS, claudeSlips, settle } from '../docs/slips.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -139,6 +140,40 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
   };
 }
 
+// Claude's locked bet slips: picked for every upcoming game each run (until tip-off) and kept in
+// data/slips/<season>/<gameId>.json, then settled against the finished game. Published: one letter per
+// slip for every finished game (W won, L lost, V void, in CLAUDE_SLIPS order) for the season record, and
+// the full slips for the last two weeks and upcoming games.
+export function recordClaudeSlips(dir, data, games, now, cutoff) {
+  const code = (id) => data.teams.find((t) => t.id === id)?.code ?? '';
+  const averages = (teamId, id) => {
+    const p = data.teams.find((t) => t.id === teamId)?.players.find((x) => x.id === id);
+    return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
+  };
+  fs.mkdirSync(dir, { recursive: true });
+  for (const g of data.upcoming.games) {
+    if (!g.claude?.home || new Date(g.start) <= now) continue;
+    const slips = claudeSlips([g.claude.away, g.claude.home], averages, data.calibration);
+    if (!slips.length) continue;
+    const entry = { gameId: g.id, start: g.start, game: `${code(g.awayId)} @ ${code(g.homeId)}`, made: now.toISOString(), slips };
+    fs.writeFileSync(path.join(dir, `${g.id}.json`), JSON.stringify(entry, null, 1) + '\n');
+  }
+  const byId = new Map(games.map((g) => [g.id, g]));
+  const results = {};
+  const recent = [];
+  for (const entry of loadGames(dir).sort((a, b) => a.start.localeCompare(b.start))) {
+    const g = byId.get(entry.gameId);
+    const box = g && { [g.id]: { players: Object.fromEntries(g.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {
+      const l = lineOf(p.stats);
+      return [p.id, [l.pts, l.reb, l.ast]];
+    }))) } };
+    const slips = entry.slips.map((sl) => ({ ...sl, result: box ? settle({ ...sl, gameId: entry.gameId }, box) : null }));
+    if (box) results[entry.gameId] = CLAUDE_SLIPS.map((c) => ({ won: 'W', lost: 'L', void: 'V' })[slips.find((x) => x.type === c.type)?.result?.status] ?? '-').join('');
+    if (!box ? new Date(entry.start) > now : entry.start >= cutoff) recent.push({ ...entry, slips });
+  }
+  return { results, recent };
+}
+
 export function loadGames(gamesDir) {
   if (!fs.existsSync(gamesDir)) return [];
   return fs.readdirSync(gamesDir)
@@ -176,7 +211,9 @@ export function build(now = new Date()) {
   const history = fs.existsSync(historyFile) ? JSON.parse(fs.readFileSync(historyFile, 'utf8')) : [];
   if (added || !history.length) {
     const summary = (c) => (c ? { n: c.n, lean: c.bias, spread: c.k } : null);
-    history.push({ date: dateIn(now.toISOString(), config.timeZone), games: calibration.games, pts: summary(calibration.pts), reb: summary(calibration.reb), ast: summary(calibration.ast) });
+    const date = dateIn(now.toISOString(), config.timeZone);
+    if (history.at(-1)?.date === date) history.pop(); // one row a night: the latest run wins
+    history.push({ date, games: calibration.games, pts: summary(calibration.pts), reb: summary(calibration.reb), ast: summary(calibration.ast) });
     fs.writeFileSync(historyFile, JSON.stringify(history, null, 1) + '\n');
   }
   data.calibration = { ...calibration, history: history.slice(-30) };
@@ -188,6 +225,7 @@ export function build(now = new Date()) {
       return [p.id, [l.pts, l.reb, l.ast]];
     }))),
   }]));
+  data.claudeSlips = recordClaudeSlips(path.join(ROOT, 'data', 'slips', config.season), data, games, now, cutoff);
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   checkAppData(data, previous);

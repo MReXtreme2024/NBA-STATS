@@ -1,0 +1,84 @@
+{
+ "gameId": "401909281",
+ "start": "2026-10-30T23:30Z",
+ "game": "ORL @ TOR",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.90826366112026,
+     "avg": 14.5,
+     "chance": 0.9074060836917013
+    },
+    {
+     "playerId": "6478",
+     "name": "Nikola Vucevic",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.397719829729347,
+     "avg": 2.5,
+     "chance": 0.8200123463483852
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.942093054360879,
+     "avg": 4.25,
+     "chance": 0.8452977296986598
+    }
+   ],
+   "chance": 0.6289726780153081
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 22.610962694942977,
+     "avg": 19.5,
+     "chance": 0.6184995188585733
+    },
+    {
+     "playerId": "6478",
+     "name": "Nikola Vucevic",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.397719829729347,
+     "avg": 2.5,
+     "chance": 0.5760067136532745
+    },
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.334953249152935,
+     "avg": 2,
+     "chance": 0.7791838796384054
+    }
+   ],
+   "chance": 0.2775919517597957
+  }
+ ]
+}

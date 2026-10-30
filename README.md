@@ -96,7 +96,16 @@ Claude's formula is a separate projection that Claude designed using everything 
 
 Each line starts at the player's season average, to the .5 below (like a bookmaker's line), and never below 9.5 points, 3.5 rebounds or 2.5 assists. Use − / + to match the line your bookmaker offers, then type the slip's odds. The app shows Claude's chance of each leg and of the whole slip, and compares it with the chance the odds imply. Tap **Save slip** to keep it.
 
-**My bet slips** (link on the Upcoming games page) lists saved slips. After each nightly update they settle by themselves: won if all three go over, lost if any doesn't. Each slip counts as one bet in your record (one leg missing = one loss, not three). A leg is void if the player doesn't play. It also shows your record and how Claude's chances have compared with what actually hit. Slips are saved on your phone only, so they stay on that phone and browser. Results are kept for two weeks.
+**Claude's slips (locked).** Under your two slips, the page shows two more that you can't change: Claude's own picks. Claude chooses the players and the lines, using common bookmaker lines (10+, 15+, 20+ points; 4+, 6+, 8+ rebounds; 3+, 5+, 7+ assists). It looks for value: players whose projection (with your lineup, injuries and the matchup) is above their season average, since bookmakers' prices roughly follow the average.
+
+- **Claude's banker:** every leg at least 80% likely in Claude's view.
+- **Claude's bigger payout:** every leg at least 55%, for higher odds.
+
+The nightly update records Claude's slips for every game, so Claude builds up its own record. If you save a lineup before tip-off, Claude re-picks them for your lineup, and that version counts on your phone. In a test on the season's first 48 games, the banker won 41 (Claude had said about 72%) and the bigger payout won 18 (Claude had said about 32%).
+
+**What percentages to look for:** Claude's chance for a slip against the chance the odds imply (1 ÷ the odds; 4.00 odds means 25%). A slip is worth it in Claude's view only when Claude's chance is higher than the odds' chance, for example Claude 30% at odds of 4.00. Claude's slips show "fair odds": any odds above those are value in Claude's view.
+
+**My bet slips** (link on the Upcoming games page) lists saved slips. After each nightly update they settle by themselves: won if all three go over, lost if any doesn't. Each slip counts as one bet in your record (one leg missing = one loss, not three). A leg is void if the player doesn't play. It also shows your record, Claude's record (its locked slips, every game) and how Claude's chances have compared with what actually hit. A settled result is kept on the phone even after the game's results stop being published. Slips are saved on your phone only, so they stay on that phone and browser. Results are kept for two weeks.
 
 How Claude learns: every night, every finished game's projections are compared with what happened. From that the update re-learns how far results tend to land above or below Claude's projections (and how spread out they are) for points, rebounds and assists, and the chances on the slips come from that. The "What Claude has learned" table on My bet slips shows it changing night by night. The three legs are treated as separate events, and in testing the points chances ran a few percent high at the top end. These are estimates, not certainties; only bet what you can afford to lose.
 

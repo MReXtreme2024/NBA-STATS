@@ -1,0 +1,84 @@
+{
+ "gameId": "401909282",
+ "start": "2026-10-31T00:00Z",
+ "game": "IND @ MIA",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.51253330908197,
+     "avg": 14.2,
+     "chance": 0.8223798997436489
+    },
+    {
+     "playerId": "3149673",
+     "name": "Pascal Siakam",
+     "teamId": "11",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.700787667218751,
+     "avg": 8.4,
+     "chance": 0.9102310453566183
+    },
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.964330305615469,
+     "avg": 4.6,
+     "chance": 0.8495237063216395
+    }
+   ],
+   "chance": 0.6359158260949951
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.51253330908197,
+     "avg": 14.2,
+     "chance": 0.5725759677562581
+    },
+    {
+     "playerId": "3133603",
+     "name": "Kelly Oubre Jr.",
+     "teamId": "11",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.342877371083414,
+     "avg": 2.4,
+     "chance": 0.5964554617328316
+    },
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.964330305615469,
+     "avg": 4.6,
+     "chance": 0.8495237063216395
+    }
+   ],
+   "chance": 0.2901259917994318
+  }
+ ]
+}

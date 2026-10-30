@@ -74,3 +74,33 @@ test('learning: the lean and spread come from how results compared with projecti
   assert.ok(out.pts.shape[0] < 0 && out.pts.shape[100] > 0);
   assert.equal(out.reb, null); // too few results to learn from
 });
+
+test("Claude's locked slips: milestone lines, every leg at the target chance, three different players, value over season average", async () => {
+  const { claudeSlips, MILESTONES, CLAUDE_SLIPS } = await import('../docs/slips.js');
+  const p = (id, min, pts, reb, ast) => ({ id, name: id, min, pts, reb, ast });
+  const sides = [
+    { teamId: 'A', players: [p('star', 34, 28, 6, 7), p('big', 30, 14, 11, 2), p('pg', 32, 16, 4, 9), p('bench', 12, 20, 9, 8)] },
+    { teamId: 'B', players: [p('wing', 33, 19, 5, 3), p('hot', 30, 18, 5, 3)] },
+  ];
+  // 'hot' is projected well above his season average (e.g. a teammate is out): value.
+  const avgs = { star: { pts: 28, reb: 6, ast: 7 }, big: { pts: 14, reb: 11, ast: 2 }, pg: { pts: 16, reb: 4, ast: 9 }, wing: { pts: 19, reb: 5, ast: 3 }, hot: { pts: 11, reb: 5, ast: 3 } };
+  const slips = claudeSlips(sides, (t, id) => avgs[id] ?? null, cal);
+  assert.deepEqual(slips.map((s) => s.type), CLAUDE_SLIPS.map((c) => c.type));
+  slips.forEach((s, i) => {
+    assert.ok(s.locked);
+    assert.deepEqual(s.legs.map((l) => l.stat), ['pts', 'reb', 'ast']);
+    assert.equal(new Set(s.legs.map((l) => l.playerId)).size, 3);
+    for (const l of s.legs) {
+      assert.ok(MILESTONES[l.stat].includes(l.line));
+      assert.ok(l.chance >= CLAUDE_SLIPS[i].target);
+      assert.notEqual(l.playerId, 'bench'); // under 20 minutes
+    }
+  });
+  assert.equal(slips[0].legs[0].playerId, 'hot');
+  assert.deepEqual(claudeSlips(sides, () => null, null), []); // nothing learned yet
+});
+
+test('a settled slip keeps its result after the game drops out of the published results', () => {
+  const kept = { status: 'won', legs: [] };
+  assert.equal(settle({ gameId: 'old', legs: [], result: kept }, {}), kept);
+});

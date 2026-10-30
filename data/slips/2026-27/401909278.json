@@ -1,0 +1,84 @@
+{
+ "gameId": "401909278",
+ "start": "2026-10-30T23:30Z",
+ "game": "CHI @ BOS",
+ "made": "2026-10-30T04:22:56.284Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 24.867968644565586,
+     "avg": 28,
+     "chance": 0.9832500930580581
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.732430204333177,
+     "avg": 5.6,
+     "chance": 0.8452949677096098
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.70189724520233,
+     "avg": 3.75,
+     "chance": 0.8160388435812145
+    }
+   ],
+   "chance": 0.6782395505327088
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.667850003922773,
+     "avg": 7.6,
+     "chance": 0.61269615454451
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 7.855271139122159,
+     "avg": 6.25,
+     "chance": 0.7330593710214357
+    },
+    {
+     "playerId": "4395626",
+     "name": "Tre Jones",
+     "teamId": "4",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.7253158630352234,
+     "avg": 2.8,
+     "chance": 0.7126416261179982
+    }
+   ],
+   "chance": 0.3200777539263605
+  }
+ ]
+}
