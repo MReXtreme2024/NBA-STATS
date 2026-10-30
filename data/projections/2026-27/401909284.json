@@ -3,18 +3,18 @@
   "start": "2026-10-31T00:00Z",
   "homeId": "16",
   "awayId": "12",
-  "savedAt": "2026-10-30T05:06:55.664Z",
+  "savedAt": "2026-10-30T18:34:10.499Z",
   "teams": {
     "12": {
-      "score": 107.5,
+      "score": 107.95,
       "players": {
         "3448": {
           "name": "Brook Lopez",
           "min": 22.3,
           "claude": {
-            "pts": 10.12,
+            "pts": 10.16,
             "reb": 4.55,
-            "ast": 1.39
+            "ast": 1.4
           },
           "nate": {
             "pts": 14,
@@ -26,9 +26,9 @@
           "name": "Kris Dunn",
           "min": 28.7,
           "claude": {
-            "pts": 8.21,
+            "pts": 8.25,
             "reb": 4.26,
-            "ast": 4.2
+            "ast": 4.22
           },
           "nate": {
             "pts": 8,
@@ -40,9 +40,9 @@
           "name": "Derrick Jones Jr.",
           "min": 28.4,
           "claude": {
-            "pts": 11.51,
+            "pts": 11.56,
             "reb": 4.7,
-            "ast": 1.56
+            "ast": 1.57
           },
           "nate": {
             "pts": 12,
@@ -54,9 +54,9 @@
           "name": "Rui Hachimura",
           "min": 23.6,
           "claude": {
-            "pts": 9.74,
+            "pts": 9.78,
             "reb": 3.64,
-            "ast": 0.7
+            "ast": 0.71
           },
           "nate": {
             "pts": 7,
@@ -68,9 +68,9 @@
           "name": "Darius Garland",
           "min": 31.1,
           "claude": {
-            "pts": 20.85,
+            "pts": 20.94,
             "reb": 2.64,
-            "ast": 6.99
+            "ast": 7.02
           },
           "nate": {
             "pts": 21,
@@ -82,7 +82,7 @@
           "name": "Isaiah Jackson",
           "min": 19.1,
           "claude": {
-            "pts": 8.1,
+            "pts": 8.13,
             "reb": 6.99,
             "ast": 1.21
           },
@@ -96,9 +96,9 @@
           "name": "Kobe Sanders",
           "min": 20.9,
           "claude": {
-            "pts": 7.92,
+            "pts": 7.95,
             "reb": 2.91,
-            "ast": 1.87
+            "ast": 1.88
           },
           "nate": {
             "pts": 7,
@@ -110,7 +110,7 @@
           "name": "Gradey Dick",
           "min": 15.6,
           "claude": {
-            "pts": 7.05,
+            "pts": 7.07,
             "reb": 2.77,
             "ast": 0.69
           },
@@ -124,9 +124,9 @@
           "name": "Keaton Wagler",
           "min": 26.8,
           "claude": {
-            "pts": 14.91,
+            "pts": 14.98,
             "reb": 5.31,
-            "ast": 3.38
+            "ast": 3.4
           },
           "nate": {
             "pts": 15,
@@ -137,15 +137,15 @@
       }
     },
     "16": {
-      "score": 115.08,
+      "score": 115.53,
       "players": {
         "3032976": {
           "name": "Rudy Gobert",
           "min": 31.8,
           "claude": {
-            "pts": 10.17,
+            "pts": 10.21,
             "reb": 12.16,
-            "ast": 1.49
+            "ast": 1.5
           },
           "nate": {
             "pts": 6,
@@ -157,9 +157,9 @@
           "name": "Trey Lyles",
           "min": 17,
           "claude": {
-            "pts": 6.46,
+            "pts": 6.49,
             "reb": 3.5,
-            "ast": 1.49
+            "ast": 1.5
           },
           "nate": {
             "pts": 4,
@@ -171,9 +171,9 @@
           "name": "Ayo Dosunmu",
           "min": 29,
           "claude": {
-            "pts": 15.5,
+            "pts": 15.56,
             "reb": 3.75,
-            "ast": 3.79
+            "ast": 3.81
           },
           "nate": {
             "pts": 13,
@@ -185,9 +185,9 @@
           "name": "Jaden McDaniels",
           "min": 34.2,
           "claude": {
-            "pts": 16.48,
+            "pts": 16.54,
             "reb": 5.28,
-            "ast": 2.88
+            "ast": 2.89
           },
           "nate": {
             "pts": 15,
@@ -199,9 +199,9 @@
           "name": "LaMelo Ball",
           "min": 28.3,
           "claude": {
-            "pts": 19.33,
+            "pts": 19.41,
             "reb": 4.3,
-            "ast": 6.95
+            "ast": 6.98
           },
           "nate": {
             "pts": 13,
@@ -213,7 +213,7 @@
           "name": "Terrence Shannon Jr.",
           "min": 19.7,
           "claude": {
-            "pts": 9.75,
+            "pts": 9.78,
             "reb": 2.09,
             "ast": 1.51
           },
@@ -227,9 +227,9 @@
           "name": "Jonathan Kuminga",
           "min": 28.7,
           "claude": {
-            "pts": 14.75,
+            "pts": 14.8,
             "reb": 6.48,
-            "ast": 2.76
+            "ast": 2.77
           },
           "nate": {
             "pts": 13,
@@ -241,9 +241,9 @@
           "name": "Bones Hyland",
           "min": 13.8,
           "claude": {
-            "pts": 7.13,
+            "pts": 7.16,
             "reb": 1.57,
-            "ast": 2.07
+            "ast": 2.08
           },
           "nate": {
             "pts": 4,
@@ -255,9 +255,9 @@
           "name": "Cody Williams",
           "min": 11.6,
           "claude": {
-            "pts": 4.15,
+            "pts": 4.17,
             "reb": 1.4,
-            "ast": 0.89
+            "ast": 0.9
           },
           "nate": {
             "pts": 0,
@@ -269,9 +269,9 @@
           "name": "Joan Beringer",
           "min": 13.2,
           "claude": {
-            "pts": 6.51,
+            "pts": 6.53,
             "reb": 4.3,
-            "ast": 0.48
+            "ast": 0.49
           },
           "nate": {
             "pts": 6,

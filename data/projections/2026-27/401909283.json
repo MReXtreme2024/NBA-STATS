@@ -3,18 +3,18 @@
   "start": "2026-10-31T00:00Z",
   "homeId": "6",
   "awayId": "10",
-  "savedAt": "2026-10-30T05:06:55.147Z",
+  "savedAt": "2026-10-30T18:34:09.965Z",
   "teams": {
     "6": {
-      "score": 110.72,
+      "score": 108.92,
       "players": {
         "6442": {
           "name": "Kyrie Irving",
           "min": 22.8,
           "claude": {
-            "pts": 13.32,
+            "pts": 13.1,
             "reb": 3.06,
-            "ast": 3.11
+            "ast": 3.06
           },
           "nate": {
             "pts": 14,
@@ -26,9 +26,9 @@
           "name": "Daniel Gafford",
           "min": 22.2,
           "claude": {
-            "pts": 8.87,
+            "pts": 8.73,
             "reb": 6.61,
-            "ast": 1.55
+            "ast": 1.52
           },
           "nate": {
             "pts": 6,
@@ -40,9 +40,9 @@
           "name": "P.J. Washington",
           "min": 31.9,
           "claude": {
-            "pts": 14.54,
+            "pts": 14.3,
             "reb": 6.83,
-            "ast": 1.76
+            "ast": 1.73
           },
           "nate": {
             "pts": 16,
@@ -54,9 +54,9 @@
           "name": "Naji Marshall",
           "min": 18.8,
           "claude": {
-            "pts": 9.45,
+            "pts": 9.3,
             "reb": 2.7,
-            "ast": 2.58
+            "ast": 2.54
           },
           "nate": {
             "pts": 8,
@@ -68,9 +68,9 @@
           "name": "Marcus Sasser",
           "min": 16.6,
           "claude": {
-            "pts": 7.04,
+            "pts": 6.92,
             "reb": 1.27,
-            "ast": 2.8
+            "ast": 2.76
           },
           "nate": {
             "pts": 9,
@@ -82,9 +82,9 @@
           "name": "Max Christie",
           "min": 27.7,
           "claude": {
-            "pts": 10.93,
+            "pts": 10.75,
             "reb": 3.18,
-            "ast": 2.17
+            "ast": 2.14
           },
           "nate": {
             "pts": 9,
@@ -96,9 +96,9 @@
           "name": "Morez Johnson Jr.",
           "min": 15.2,
           "claude": {
-            "pts": 7.07,
+            "pts": 6.95,
             "reb": 3.05,
-            "ast": 1.62
+            "ast": 1.59
           },
           "nate": {
             "pts": 7,
@@ -110,9 +110,9 @@
           "name": "Walter Clayton Jr.",
           "min": 13.5,
           "claude": {
-            "pts": 5.08,
+            "pts": 5,
             "reb": 1.37,
-            "ast": 3
+            "ast": 2.95
           },
           "nate": {
             "pts": 3,
@@ -124,9 +124,9 @@
           "name": "Cooper Flagg",
           "min": 26.7,
           "claude": {
-            "pts": 17.7,
+            "pts": 17.41,
             "reb": 4.86,
-            "ast": 4.43
+            "ast": 4.36
           },
           "nate": {
             "pts": 20,
@@ -138,9 +138,9 @@
           "name": "Zaccharie Risacher",
           "min": 26.2,
           "claude": {
-            "pts": 10.14,
+            "pts": 9.98,
             "reb": 4.39,
-            "ast": 1.36
+            "ast": 1.34
           },
           "nate": {
             "pts": 9,
@@ -151,15 +151,15 @@
       }
     },
     "10": {
-      "score": 115.88,
+      "score": 114.98,
       "players": {
         "3202": {
           "name": "Kevin Durant",
           "min": 37,
           "claude": {
-            "pts": 24.84,
+            "pts": 24.65,
             "reb": 5.19,
-            "ast": 4.43
+            "ast": 4.4
           },
           "nate": {
             "pts": 22,
@@ -171,9 +171,9 @@
           "name": "Fred VanVleet",
           "min": 26.3,
           "claude": {
-            "pts": 10.92,
+            "pts": 10.83,
             "reb": 3.35,
-            "ast": 4.66
+            "ast": 4.62
           },
           "nate": {
             "pts": 9,
@@ -185,9 +185,9 @@
           "name": "Bogdan Bogdanovic",
           "min": 17.6,
           "claude": {
-            "pts": 6.9,
+            "pts": 6.85,
             "reb": 1.97,
-            "ast": 1.94
+            "ast": 1.93
           },
           "nate": {
             "pts": 8,
@@ -199,7 +199,7 @@
           "name": "Clint Capela",
           "min": 10.8,
           "claude": {
-            "pts": 3.22,
+            "pts": 3.19,
             "reb": 3.52,
             "ast": 0.61
           },
@@ -213,9 +213,9 @@
           "name": "Jabari Smith Jr.",
           "min": 36.6,
           "claude": {
-            "pts": 16.13,
+            "pts": 16.01,
             "reb": 6.05,
-            "ast": 2.11
+            "ast": 2.1
           },
           "nate": {
             "pts": 16,
@@ -227,9 +227,9 @@
           "name": "Tari Eason",
           "min": 27.9,
           "claude": {
-            "pts": 10.98,
+            "pts": 10.9,
             "reb": 5.83,
-            "ast": 1.37
+            "ast": 1.36
           },
           "nate": {
             "pts": 10,
@@ -241,9 +241,9 @@
           "name": "Amen Thompson",
           "min": 37.3,
           "claude": {
-            "pts": 18.16,
+            "pts": 18.02,
             "reb": 7.11,
-            "ast": 4.88
+            "ast": 4.84
           },
           "nate": {
             "pts": 18,
@@ -255,9 +255,9 @@
           "name": "Alperen Sengun",
           "min": 29.8,
           "claude": {
-            "pts": 18.43,
+            "pts": 18.29,
             "reb": 6.98,
-            "ast": 5.6
+            "ast": 5.56
           },
           "nate": {
             "pts": 19,

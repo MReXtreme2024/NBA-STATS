@@ -3,16 +3,16 @@
   "start": "2026-10-30T23:30Z",
   "homeId": "17",
   "awayId": "8",
-  "savedAt": "2026-10-30T05:06:53.079Z",
+  "savedAt": "2026-10-30T18:34:07.823Z",
   "teams": {
     "8": {
-      "score": 114.48,
+      "score": 115.38,
       "players": {
         "2596112": {
           "name": "Javonte Green",
           "min": 17.5,
           "claude": {
-            "pts": 6.89,
+            "pts": 6.94,
             "reb": 2.97,
             "ast": 0.64
           },
@@ -26,7 +26,7 @@
           "name": "Taurean Prince",
           "min": 8.2,
           "claude": {
-            "pts": 3.2,
+            "pts": 3.22,
             "reb": 1.18,
             "ast": 0.61
           },
@@ -40,9 +40,9 @@
           "name": "Duncan Robinson",
           "min": 28.3,
           "claude": {
-            "pts": 13.49,
+            "pts": 13.59,
             "reb": 2.65,
-            "ast": 2.14
+            "ast": 2.15
           },
           "nate": {
             "pts": 16,
@@ -54,9 +54,9 @@
           "name": "John Collins",
           "min": 25.5,
           "claude": {
-            "pts": 12.11,
+            "pts": 12.2,
             "reb": 5.85,
-            "ast": 0.85
+            "ast": 0.86
           },
           "nate": {
             "pts": 10,
@@ -68,9 +68,9 @@
           "name": "Kevin Huerter",
           "min": 20.2,
           "claude": {
-            "pts": 8.34,
+            "pts": 8.4,
             "reb": 3.41,
-            "ast": 2.24
+            "ast": 2.26
           },
           "nate": {
             "pts": 5,
@@ -82,9 +82,9 @@
           "name": "Paul Reed",
           "min": 20.6,
           "claude": {
-            "pts": 11.52,
+            "pts": 11.61,
             "reb": 7.09,
-            "ast": 1.73
+            "ast": 1.74
           },
           "nate": {
             "pts": 14,
@@ -96,9 +96,9 @@
           "name": "Isaiah Joe",
           "min": 11.6,
           "claude": {
-            "pts": 6.1,
+            "pts": 6.14,
             "reb": 1.49,
-            "ast": 0.72
+            "ast": 0.73
           },
           "nate": {
             "pts": 4,
@@ -110,9 +110,9 @@
           "name": "Cade Cunningham",
           "min": 33.3,
           "claude": {
-            "pts": 23.06,
+            "pts": 23.24,
             "reb": 5.88,
-            "ast": 9.07
+            "ast": 9.14
           },
           "nate": {
             "pts": 22,
@@ -124,9 +124,9 @@
           "name": "Ronald Holland II",
           "min": 16.3,
           "claude": {
-            "pts": 6.21,
+            "pts": 6.26,
             "reb": 3.78,
-            "ast": 1.25
+            "ast": 1.26
           },
           "nate": {
             "pts": 2,
@@ -138,9 +138,9 @@
           "name": "Ausar Thompson",
           "min": 21.1,
           "claude": {
-            "pts": 7.76,
+            "pts": 7.82,
             "reb": 5.3,
-            "ast": 2.82
+            "ast": 2.85
           },
           "nate": {
             "pts": 6,
@@ -152,9 +152,9 @@
           "name": "Daniss Jenkins",
           "min": 22.1,
           "claude": {
-            "pts": 10.4,
+            "pts": 10.48,
             "reb": 3.02,
-            "ast": 4.07
+            "ast": 4.1
           },
           "nate": {
             "pts": 12,

@@ -3,7 +3,7 @@
   "start": "2026-10-31T00:00Z",
   "homeId": "14",
   "awayId": "11",
-  "savedAt": "2026-10-30T05:06:54.629Z",
+  "savedAt": "2026-10-30T18:34:09.430Z",
   "teams": {
     "11": {
       "score": 114.71,
@@ -165,15 +165,15 @@
       }
     },
     "14": {
-      "score": 121.35,
+      "score": 122.25,
       "players": {
         "6475": {
           "name": "Klay Thompson",
           "min": 19,
           "claude": {
-            "pts": 9.42,
+            "pts": 9.49,
             "reb": 1.75,
-            "ast": 1.17
+            "ast": 1.18
           },
           "nate": {
             "pts": 7,
@@ -185,9 +185,9 @@
           "name": "Tim Hardaway Jr.",
           "min": 21.1,
           "claude": {
-            "pts": 9.81,
+            "pts": 9.89,
             "reb": 2.14,
-            "ast": 1.06
+            "ast": 1.07
           },
           "nate": {
             "pts": 7,
@@ -199,9 +199,9 @@
           "name": "Giannis Antetokounmpo",
           "min": 28.3,
           "claude": {
-            "pts": 25.64,
+            "pts": 25.83,
             "reb": 9.6,
-            "ast": 4.97
+            "ast": 5
           },
           "nate": {
             "pts": 27,
@@ -213,9 +213,9 @@
           "name": "Andrew Wiggins",
           "min": 26.5,
           "claude": {
-            "pts": 12.37,
+            "pts": 12.46,
             "reb": 3.89,
-            "ast": 2.12
+            "ast": 2.14
           },
           "nate": {
             "pts": 10,
@@ -227,9 +227,9 @@
           "name": "Bobby Portis",
           "min": 22.3,
           "claude": {
-            "pts": 11.61,
+            "pts": 11.7,
             "reb": 6.22,
-            "ast": 1.52
+            "ast": 1.53
           },
           "nate": {
             "pts": 10,
@@ -241,9 +241,9 @@
           "name": "Bam Adebayo",
           "min": 29.6,
           "claude": {
-            "pts": 16.51,
+            "pts": 16.63,
             "reb": 8.48,
-            "ast": 3.01
+            "ast": 3.04
           },
           "nate": {
             "pts": 14,
@@ -255,9 +255,9 @@
           "name": "Dru Smith",
           "min": 9,
           "claude": {
-            "pts": 3,
+            "pts": 3.02,
             "reb": 1.31,
-            "ast": 1.42
+            "ast": 1.43
           },
           "nate": {
             "pts": 2,
@@ -269,9 +269,9 @@
           "name": "Davion Mitchell",
           "min": 29.3,
           "claude": {
-            "pts": 10.6,
+            "pts": 10.68,
             "reb": 2.12,
-            "ast": 6.64
+            "ast": 6.69
           },
           "nate": {
             "pts": 16,
@@ -283,9 +283,9 @@
           "name": "Pelle Larsson",
           "min": 27,
           "claude": {
-            "pts": 10.7,
+            "pts": 10.78,
             "reb": 3.42,
-            "ast": 3.54
+            "ast": 3.57
           },
           "nate": {
             "pts": 10,
@@ -297,9 +297,9 @@
           "name": "Nikola Jovic",
           "min": 11,
           "claude": {
-            "pts": 4.37,
+            "pts": 4.4,
             "reb": 2.17,
-            "ast": 1.33
+            "ast": 1.34
           },
           "nate": {
             "pts": 2,
