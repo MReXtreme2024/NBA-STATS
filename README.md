@@ -89,6 +89,17 @@ Claude's formula is a separate projection that Claude designed using everything 
 
 **How did the projections go?** At the bottom of the Upcoming games page, this page scores both formulas' real projections (made before tip-off, with that day's injury report) against what actually happened: a season scoreboard for points, rebounds and assists, then the last day's games player by player, with the actual number in bold and the projection below it. As of 29 Oct, over 23 games, Claude's formula missed points by 4.56 on average against yours 4.94, rebounds by 2.01 against 2.16, and assists by 1.35 against 1.50. These are still projections, not certainties.
 
+**Bet slips.** When you confirm a starting lineup and save it, the app opens **Bet slips for this game** (also linked at the top of every Claude's formula matchup). It suggests two 3-leg slips, each with one player over on points, one on rebounds and one on assists (three different players, all projected 20+ minutes):
+
+- **Safest overs**: the three legs Claude rates most likely to go over.
+- **Biggest projections**: the players with the biggest projected numbers.
+
+Each line starts at the player's season average, to the .5 below (like a bookmaker's line), and never below 9.5 points, 3.5 rebounds or 2.5 assists. Use − / + to match the line your bookmaker offers, then type the slip's odds. The app shows Claude's chance of each leg and of the whole slip, and compares it with the chance the odds imply. Tap **Save slip** to keep it.
+
+**My bet slips** (link on the Upcoming games page) lists saved slips. After each nightly update they settle by themselves: won if all three go over, lost if any doesn't. A leg is void if the player doesn't play. It also shows your record and how Claude's chances have compared with what actually hit. Slips are saved on your phone only, so they stay on that phone and browser. Results are kept for two weeks.
+
+How Claude learns: every night, every finished game's projections are compared with what happened. From that the update re-learns how far results tend to land above or below Claude's projections (and how spread out they are) for points, rebounds and assists, and the chances on the slips come from that. The "What Claude has learned" table on My bet slips shows it changing night by night. The three legs are treated as separate events, and in testing the points chances ran a few percent high at the top end. These are estimates, not certainties; only bet what you can afford to lose.
+
 ## Off-season and next season
 
 - After the season ends (11 Apr 2027) the app simply stops changing. The nightly check still runs, which keeps GitHub's schedule switched on.

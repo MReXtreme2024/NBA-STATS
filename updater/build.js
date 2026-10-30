@@ -7,7 +7,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkAppData, checkGame } from './checks.js';
 import { scoreResults } from './results.js';
-import { playerRatings } from './model.js';
+import { playerRatings, lineOf } from './model.js';
+import { updateCalibration } from './calibrate.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -161,7 +162,32 @@ export function build(now = new Date()) {
   // Players' on-court ratings for the Player page (the same ones Claude's formula uses).
   const pr = playerRatings(games);
   for (const t of data.teams) for (const p of t.players) if (pr[p.id]) p.rating = pr[p.id];
-  data.results = scoreResults(loadGames(path.join(ROOT, 'data', 'projections', config.season)), games, config.timeZone);
+  const snapshots = loadGames(path.join(ROOT, 'data', 'projections', config.season));
+  data.results = scoreResults(snapshots, games, config.timeZone);
+
+  // Bet slips: re-learn the chances from every result so far (a history is kept to show the learning),
+  // and publish the last two weeks of players' points, rebounds and assists so the phone can settle slips.
+  const { calibration, added } = updateCalibration(path.join(ROOT, 'data'), config.season, games, snapshots, {
+    prior: readOptional(path.join('prior', `${config.priorSeason}.json`)) ?? {},
+    positions: readOptional('positions.json') ?? {},
+    lines: readOptional('backtest-lines.json') ?? {},
+  });
+  const historyFile = path.join(ROOT, 'data', 'calibration', `${config.season}-history.json`);
+  const history = fs.existsSync(historyFile) ? JSON.parse(fs.readFileSync(historyFile, 'utf8')) : [];
+  if (added || !history.length) {
+    const summary = (c) => (c ? { n: c.n, lean: c.bias, spread: c.k } : null);
+    history.push({ date: dateIn(now.toISOString(), config.timeZone), games: calibration.games, pts: summary(calibration.pts), reb: summary(calibration.reb), ast: summary(calibration.ast) });
+    fs.writeFileSync(historyFile, JSON.stringify(history, null, 1) + '\n');
+  }
+  data.calibration = { ...calibration, history: history.slice(-30) };
+  const cutoff = new Date(now.getTime() - 14 * 24 * 3600 * 1000).toISOString();
+  data.recent = Object.fromEntries(games.filter((g) => g.start >= cutoff).map((g) => [g.id, {
+    date: dateIn(g.start, config.timeZone),
+    players: Object.fromEntries(g.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {
+      const l = lineOf(p.stats);
+      return [p.id, [l.pts, l.reb, l.ast]];
+    }))),
+  }]));
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   checkAppData(data, previous);

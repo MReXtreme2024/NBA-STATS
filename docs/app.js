@@ -1,5 +1,6 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
+import { MIN_SLIP_MINUTES, STAT_NAME, chanceOver, settle, slipChance, suggestSlips } from './slips.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -210,7 +211,9 @@ function upcomingPage() {
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
   const results = data.results?.games
     ? `<a class="upcoming-link" href="#/results"><span>How did the projections go?</span><span class="gp">${data.results.games} games scored ›</span></a>` : '';
-  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${formulaTabs(formula)}${body}${results}`;
+  const mine = readSlips();
+  const slips = `<a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${mine.length} saved ›</span></a>`;
+  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${formulaTabs(formula)}${body}${slips}${results}`;
 }
 
 // 8. Results: both formulas' real pre-game projections against what happened.
@@ -386,6 +389,87 @@ function lineupPage(g) {
     <p class="working">Confirmed starters are certain to play their usual starter minutes. Projected starters get mostly starter minutes, with a small chance they come off the bench. Everyone you don't tap comes off the bench; players marked Out are removed and their minutes shared out. Moving a player to another position shifts his numbers halfway toward that position's league averages, and his teammates are re-balanced. Your formula leaves out players marked Out.</p>`;
 }
 
+// Saved bet slips, kept on the phone (they stay after the game, so the record builds up).
+const SLIPS_KEY = 'betSlips';
+function readSlips() {
+  try { return JSON.parse(localStorage.getItem(SLIPS_KEY)) ?? []; } catch { return []; }
+}
+function writeSlips(list) {
+  try { localStorage.setItem(SLIPS_KEY, JSON.stringify(list)); } catch { /* private mode: not kept */ }
+}
+const pct = (x) => (x === null ? '—' : `${Math.round(x * 100)}%`);
+// Claude's chance against what the odds say (1 ÷ odds; the bookmaker's margin makes this a little high).
+function valueText(chance, odds) {
+  if (chance === null) return '';
+  if (!(odds > 1)) return `Claude's chance all three go over: <b>${pct(chance)}</b>. Add the odds to compare.`;
+  const implied = 1 / odds;
+  const verdict = chance > implied * 1.05 ? 'Claude rates this <b>better</b> than the odds suggest'
+    : chance < implied * 0.95 ? 'Claude rates this <b>worse</b> than the odds suggest' : 'About what the odds suggest';
+  return `Claude's chance all three go over: <b>${pct(chance)}</b> · the odds imply ${pct(implied)}. ${verdict}.`;
+}
+
+let slipDraft = null; // { gameId, slips, odds: { i: text }, saved: { i: true } } on a game's slips page
+
+// 10. A game's two suggested bet slips (from Claude's formula with Nate's lineup): edit lines, add odds, save.
+function slipsPage(g) {
+  const away = teamById(g.awayId);
+  const home = teamById(g.homeId);
+  if (slipDraft?.gameId !== g.id) {
+    const c = claudeFor(g);
+    const averages = (teamId, id) => {
+      const p = teamById(teamId)?.players.find((x) => x.id === id);
+      return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
+    };
+    slipDraft = { gameId: g.id, slips: suggestSlips([c.away, c.home], averages, data.calibration), odds: {}, saved: {} };
+  }
+  const lineupNote = readLineup(g.id) ? '' : `<p class="out-line">You haven't confirmed this game's lineup, so these use the injury report. <a href="#/game/${g.id}/lineup">Confirm lineup ›</a></p>`;
+  const cards = slipDraft.slips.map((slip, i) => {
+    const legs = slip.legs.map((l, j) => `<li class="leg">
+      <span class="name">${pill(teamById(l.teamId))} ${esc(l.name)}<span class="mins">Claude projects ${one(l.mu)} · chance over ${pct(l.chance)}</span></span>
+      <span class="line-edit"><button data-step="-1" data-slip="${i}" data-leg="${j}" aria-label="Lower line">−</button>
+        <b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small>
+        <button data-step="1" data-slip="${i}" data-leg="${j}" aria-label="Raise line">+</button></span></li>`).join('');
+    const odds = slipDraft.odds[i] ?? '';
+    return `<section class="stat slip"><h3>${slip.title}</h3>
+      <ul class="legs">${legs}</ul>
+      <label class="odds">Odds for this slip <input data-odds="${i}" inputmode="decimal" placeholder="e.g. 5.50" value="${esc(odds)}"></label>
+      <p class="working" data-value="${i}">${valueText(slipChance(slip.legs), Number(odds))}</p>
+      <button class="button primary" data-save-slip="${i}">${slipDraft.saved[i] ? '✓ Saved — save again to update' : 'Save slip'}</button></section>`;
+  }).join('');
+  return `${bar(`${away.code} @ ${home.code} bet slips`, `#/game/${g.id}`, 'Goal: all three go over')}
+    ${lineupNote}<div class="stats">${cards}</div>
+    <p class="working"><b>Safest overs</b> picks, for each stat, the player most likely to go over a line set at his season average (to the .5 below). <b>Biggest projections</b> picks the top projected player for each stat. Three different players each time, from players expected to play ${MIN_SLIP_MINUTES}+ minutes, with lines of at least 9.5 points, 3.5 rebounds and 2.5 assists. Change a line with − and + to match your bookmaker's; the chance updates. Chances come from how far real results have landed from Claude's projections, re-learned every night. They treat the three legs as separate, though in one game they can move together. Points chances have run a few % high so far. These are estimates, not certainties — bet only what you're comfortable losing.</p>
+    <a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${readSlips().length} saved ›</span></a>`;
+}
+
+// 11. Saved slips, settled from each night's results, with Claude's record and what it has learned.
+function mySlipsPage() {
+  const slips = readSlips().sort((a, b) => (b.start ?? '').localeCompare(a.start ?? ''));
+  const settled = slips.map((s) => ({ s, r: settle(s, data.recent) }));
+  const count = (st) => settled.filter((x) => x.r.status === st).length;
+  const legs = settled.flatMap((x) => x.s.legs.map((l, i) => ({ l, r: x.r.legs[i] }))).filter((x) => x.r.result === 'hit' || x.r.result === 'miss');
+  const saidAvg = legs.length ? legs.reduce((t, x) => t + (x.l.chance ?? 0), 0) / legs.length : null;
+  const hitRate = legs.length ? legs.filter((x) => x.r.result === 'hit').length / legs.length : null;
+  const record = `<section class="stat"><h3>Your record</h3>
+    <div class="figures"><div><b>${count('won')}</b><span>Won</span></div><div><b>${count('lost')}</b><span>Lost</span></div><div><b>${count('pending')}</b><span>Waiting</span></div></div>
+    <p class="working">${legs.length ? `Legs settled: ${legs.length}. Claude gave them ${pct(saidAvg)} on average; ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count('void') ? ` ${count('void')} slip(s) void (players didn't play).` : ''}</p></section>`;
+  const cal = data.calibration;
+  const hist = (cal?.history ?? []).slice(-6).map((h) => `<tr><td>${dateText(h.date)}</td><td>${h.games}</td><td>×${h.pts?.lean ?? '—'}</td><td>×${h.reb?.lean ?? '—'}</td><td>×${h.ast?.lean ?? '—'}</td></tr>`).join('');
+  const learning = cal?.pts ? `<section class="stat"><h3>What Claude has learned</h3>
+    <p class="working">Every night Claude compares its projections with what players actually did and re-learns its chances. So far: ${cal.games} games, ${cal.pts.n} player results. "Lean" is how results compare with projections (×1.00 = spot on, ×0.97 = results 3% lower).</p>
+    <div class="table-wrap"><table class="results"><thead><tr><th>Night</th><th>Games</th><th>Points</th><th>Rebounds</th><th>Assists</th></tr></thead><tbody>${hist}</tbody></table></div></section>` : '';
+  const badge = { won: '✓ Won', lost: '✗ Lost', void: 'Void', pending: 'Waiting' };
+  const cards = settled.map(({ s, r }) => `<section class="stat slip ${r.status}"><h3>${esc(s.game)} · ${esc(s.title)} <span class="badge ${r.status}">${badge[r.status]}</span></h3>
+    <ul class="legs">${s.legs.map((l, i) => {
+    const res = r.legs[i];
+    const mark = res.result === 'hit' ? '✓' : res.result === 'miss' ? '✗' : res.result === 'void' ? 'void' : '';
+    return `<li class="leg"><span class="name">${esc(l.name)} over ${l.line.toFixed(1)} ${STAT_NAME[l.stat]}<span class="mins">Claude: ${one(l.mu)} projected, ${pct(l.chance)} chance</span></span><b>${res.actual ?? ''} ${mark}</b></li>`;
+  }).join('')}</ul>
+    <p class="working">${s.start ? startText(s.start) : ''}${s.odds ? ` · odds ${s.odds.toFixed(2)}` : ''} · Claude's chance ${pct(s.chance)}</p>
+    <button class="button" data-delete-slip="${esc(s.id)}">Delete</button></section>`).join('');
+  return `${bar('My bet slips', '#/upcoming', 'Settled automatically after each game')}${record}${cards || '<p class="message">No saved slips yet. Confirm a game\'s lineup to get its slips.</p>'}${learning}`;
+}
+
 function claudeMatchup(g, away, home) {
   const c = claudeFor(g);
   if (!c) return '<p class="message">Claude\'s formula isn\'t ready for this game yet. It appears after the next nightly update.</p>';
@@ -409,7 +493,9 @@ function claudeMatchup(g, away, home) {
   };
   const sections = CLAUDE_STATS.map(([label, value]) => `<section class="stat"><h3>${label}</h3>
       <div class="sides">${column(away, c.away, value)}${column(home, c.home, value)}</div></section>`).join('');
-  return `<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  const slipLink = g.claude?.home?.inputs && data.calibration?.pts
+    ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
+  return `${slipLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
     <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal.</p>`;
@@ -522,6 +608,10 @@ function render() {
     html = resultsPage(); title = 'How did the projections go?';
   } else if (parts[0] === 'upcoming') {
     html = upcomingPage(); title = 'Upcoming games';
+  } else if (parts[0] === 'slips') {
+    html = mySlipsPage(); title = 'My bet slips';
+  } else if (game && parts[2] === 'slips' && game.claude?.home?.inputs) {
+    html = slipsPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} bet slips`;
   } else if (game && parts[2] === 'lineup' && game.claude?.home?.inputs) {
     html = lineupPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} lineup`;
   } else if (game) {
@@ -573,13 +663,42 @@ app.addEventListener('click', (e) => {
   const lineupBtn = e.target.closest('[data-lineup]');
   if (lineupBtn && lineupDraft) {
     const gameId = lineupDraft.gameId;
-    if (lineupBtn.dataset.lineup === 'save') saveLineup(gameId, lineupDraft.teams);
-    else saveLineup(gameId, null);
+    const saving = lineupBtn.dataset.lineup === 'save';
+    saveLineup(gameId, saving ? lineupDraft.teams : null);
     lineupDraft = null;
-    // Step back to the matchup page rather than adding it again, so Back still returns to the games list.
-    if (lineupFromMatchup) history.back(); else location.replace(`#/game/${gameId}`);
+    slipDraft = null; // new lineup, new suggested slips
     lineupFromMatchup = false;
+    // Saving a lineup opens this game's bet slips (Back returns to the matchup); resetting returns to the matchup.
+    location.replace(saving && data.calibration?.pts ? `#/game/${gameId}/slips` : `#/game/${gameId}`);
     return;
+  }
+  const stepBtn = e.target.closest('[data-step]');
+  if (stepBtn && slipDraft) {
+    const l = slipDraft.slips[stepBtn.dataset.slip].legs[stepBtn.dataset.leg];
+    l.line = Math.max(0.5, l.line + Number(stepBtn.dataset.step));
+    l.chance = chanceOver(l.mu, l.line, data.calibration?.[l.stat]);
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
+  }
+  const saveSlipBtn = e.target.closest('[data-save-slip]');
+  if (saveSlipBtn && slipDraft) {
+    const i = Number(saveSlipBtn.dataset.saveSlip);
+    const slip = slipDraft.slips[i];
+    const odds = Number(document.querySelector(`[data-odds="${i}"]`)?.value) || null;
+    const g = data.upcoming?.games.find((x) => x.id === slipDraft.gameId);
+    const all = readSlips().filter((x) => !(x.gameId === slipDraft.gameId && x.type === slip.type));
+    all.push({
+      id: `${slipDraft.gameId}-${slip.type}`, gameId: slipDraft.gameId, start: g?.start ?? null,
+      game: g ? `${teamById(g.awayId).code} @ ${teamById(g.homeId).code}` : '', type: slip.type, title: slip.title,
+      legs: slip.legs.map((l) => ({ ...l })), odds: odds && odds > 1 ? odds : null, chance: slipChance(slip.legs), saved: new Date().toISOString(),
+    });
+    writeSlips(all);
+    slipDraft.saved[i] = true;
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
+  }
+  const delSlip = e.target.closest('[data-delete-slip]');
+  if (delSlip) {
+    writeSlips(readSlips().filter((x) => x.id !== delSlip.dataset.deleteSlip));
+    const y = window.scrollY; render(); window.scrollTo(0, y); return;
   }
   const formulaBtn = e.target.closest('[data-formula]');
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
@@ -592,6 +711,14 @@ app.addEventListener('click', (e) => {
 });
 
 window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
+app.addEventListener('input', (e) => {
+  const box = e.target.closest('[data-odds]');
+  if (!box || !slipDraft) return;
+  slipDraft.odds[box.dataset.odds] = box.value;
+  const slip = slipDraft.slips[box.dataset.odds];
+  const out = document.querySelector(`[data-value="${box.dataset.odds}"]`);
+  if (out) out.innerHTML = valueText(slipChance(slip.legs), Number(box.value));
+});
 
 // Matchup pages: swipe left for the next upcoming game, right for the previous one.
 // Moving between games replaces the page in history, so Back still returns to the games list.

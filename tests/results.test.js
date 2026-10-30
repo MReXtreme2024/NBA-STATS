@@ -7,14 +7,14 @@ const teams = [{ id: 'A', gp: 2, totals: { pts: 200, reb: 80, ast: 40 }, players
   { id: 'p1', gp: 2, totals: { pts: 50, reb: 10, ast: 9 }, teamTotalsInHisGames: { pts: 200, reb: 80, ast: 40 } },
 ] }, { id: 'B', gp: 2, totals: { pts: 210, reb: 90, ast: 44 }, players: [] }];
 const claude = {
-  home: { teamId: 'A', score: 110.456, players: [{ id: 'p1', name: 'P One', pts: 24.567, reb: 5.1, ast: 4.2, tpm: 2 }] },
+  home: { teamId: 'A', score: 110.456, players: [{ id: 'p1', name: 'P One', min: 31.24, pts: 24.567, reb: 5.1, ast: 4.2, tpm: 2 }] },
   away: { teamId: 'B', score: 104, players: [] },
 };
 const game = { id: 'g9', start: '2026-10-28T23:00Z', homeId: 'A', awayId: 'B' };
 
 test("snapshot keeps both formulas' projections; Nate's uses his whole-number maths", () => {
   const s = snapshot(game, claude, teams, '2026-10-28T13:00:00Z');
-  assert.deepEqual(s.teams.A.players.p1, { name: 'P One', claude: { pts: 24.57, reb: 5.1, ast: 4.2 }, nate: { pts: 25, reb: 5, ast: 4 } });
+  assert.deepEqual(s.teams.A.players.p1, { name: 'P One', min: 31.2, claude: { pts: 24.57, reb: 5.1, ast: 4.2 }, nate: { pts: 25, reb: 5, ast: 4 } });
   assert.equal(s.teams.A.score, 110.46);
 });
 

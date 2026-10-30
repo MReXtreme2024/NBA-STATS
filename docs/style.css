@@ -293,3 +293,22 @@ ul.lineup li { display: block; }
 .lineup-panel .figures { margin-top: 10px; }
 .choice button { min-width: 0; }
 .choice button small { display: block; font-size: 10px; line-height: 1; }
+
+/* Bet slips */
+.slip .legs { list-style: none; margin: 0 0 10px; padding: 0; }
+.slip .leg { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.slip .leg .name { min-width: 0; overflow-wrap: anywhere; line-height: 1.25; }
+.slip .leg .pill { min-width: 0; font-size: 11px; padding: 1px 5px; }
+.line-edit { display: flex; align-items: center; gap: 4px; flex-shrink: 0; text-align: center; }
+.line-edit b { display: block; font-size: 15px; white-space: nowrap; }
+.line-edit small { display: block; font-size: 11px; color: var(--muted); }
+.line-edit > b + small { margin-top: -2px; }
+.line-edit button { min-width: 44px; min-height: 44px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font-size: 20px; cursor: pointer; }
+.line-edit button:focus-visible, .odds input:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.odds { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 14px; font-weight: 600; }
+.odds input { width: 110px; min-height: 44px; padding: 0 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--text); font: inherit; font-size: 16px; }
+.slip .button { width: 100%; margin-top: 6px; background: var(--surface); color: var(--text); font: inherit; font-weight: 700; cursor: pointer; }
+.slip .button.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+.badge { font-size: 12px; padding: 2px 8px; border-radius: 999px; margin-left: 6px; color: #fff; background: var(--muted); }
+.badge.won { background: #15803d; }
+.badge.lost { background: #b91c1c; }

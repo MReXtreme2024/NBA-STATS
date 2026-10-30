@@ -25,6 +25,7 @@ export function snapshot(game, claude, teams, savedAt) {
         : null]));
       players[p.id] = {
         name: p.name,
+        min: Math.round(p.min * 10) / 10,
         claude: Object.fromEntries(STATS.map((s) => [s, Math.round(p[s] * 100) / 100])),
         nate,
       };
