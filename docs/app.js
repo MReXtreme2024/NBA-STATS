@@ -452,7 +452,8 @@ function mySlipsPage() {
   const hitRate = legs.length ? legs.filter((x) => x.r.result === 'hit').length / legs.length : null;
   const record = `<section class="stat"><h3>Your record</h3>
     <div class="figures"><div><b>${count('won')}</b><span>Won</span></div><div><b>${count('lost')}</b><span>Lost</span></div><div><b>${count('pending')}</b><span>Waiting</span></div></div>
-    <p class="working">${legs.length ? `Legs settled: ${legs.length}. Claude gave them ${pct(saidAvg)} on average; ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count('void') ? ` ${count('void')} slip(s) void (players didn't play).` : ''}</p></section>`;
+    <p class="working">Each slip is one bet: it wins only if all three legs go over, and one leg missing makes it one loss.</p>
+    <p class="working">${legs.length ? `How Claude's chances are tracking (single legs, not your bets): ${legs.length} legs settled; Claude gave them ${pct(saidAvg)} on average and ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count('void') ? ` ${count('void')} slip(s) void (players didn't play).` : ''}</p></section>`;
   const cal = data.calibration;
   const hist = (cal?.history ?? []).slice(-6).map((h) => `<tr><td>${dateText(h.date)}</td><td>${h.games}</td><td>×${h.pts?.lean ?? '—'}</td><td>×${h.reb?.lean ?? '—'}</td><td>×${h.ast?.lean ?? '—'}</td></tr>`).join('');
   const learning = cal?.pts ? `<section class="stat"><h3>What Claude has learned</h3>
