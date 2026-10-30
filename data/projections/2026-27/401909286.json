@@ -1,0 +1,285 @@
+{
+  "id": "401909286",
+  "start": "2026-10-31T02:00Z",
+  "homeId": "21",
+  "awayId": "7",
+  "savedAt": "2026-10-30T04:07:12.637Z",
+  "teams": {
+    "7": {
+      "score": 117.8,
+      "players": {
+        "3978": {
+          "name": "DeMar DeRozan",
+          "min": 26.7,
+          "claude": {
+            "pts": 14.42,
+            "reb": 2.52,
+            "ast": 2.81
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "3064290": {
+          "name": "Aaron Gordon",
+          "min": 26.9,
+          "claude": {
+            "pts": 13.81,
+            "reb": 5.6,
+            "ast": 2.14
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "3112335": {
+          "name": "Nikola Jokic",
+          "min": 33.1,
+          "claude": {
+            "pts": 23.32,
+            "reb": 11.41,
+            "ast": 8.18
+          },
+          "nate": {
+            "pts": 22,
+            "reb": 10,
+            "ast": 9
+          }
+        },
+        "3135046": {
+          "name": "Tyus Jones",
+          "min": 11.3,
+          "claude": {
+            "pts": 2.23,
+            "reb": 0.77,
+            "ast": 1.51
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "3936299": {
+          "name": "Jamal Murray",
+          "min": 34.1,
+          "claude": {
+            "pts": 22.1,
+            "reb": 4.27,
+            "ast": 5.42
+          },
+          "nate": {
+            "pts": 22,
+            "reb": 5,
+            "ast": 5
+          }
+        },
+        "4277848": {
+          "name": "Marvin Bagley III",
+          "min": 15.2,
+          "claude": {
+            "pts": 7.44,
+            "reb": 4.56,
+            "ast": 0.86
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "4431767": {
+          "name": "Christian Braun",
+          "min": 31.3,
+          "claude": {
+            "pts": 10.79,
+            "reb": 4.49,
+            "ast": 2.11
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4565698": {
+          "name": "Bryce Hopkins",
+          "min": 16,
+          "claude": {
+            "pts": 5.25,
+            "reb": 2.41,
+            "ast": 0.92
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4698719": {
+          "name": "Trevon Brazile",
+          "min": 22.5,
+          "claude": {
+            "pts": 9.18,
+            "reb": 5.93,
+            "ast": 0.81
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 7,
+            "ast": 0
+          }
+        }
+      }
+    },
+    "21": {
+      "score": 113.53,
+      "players": {
+        "3136193": {
+          "name": "Devin Booker",
+          "min": 30.6,
+          "claude": {
+            "pts": 22.04,
+            "reb": 3.99,
+            "ast": 5.51
+          },
+          "nate": {
+            "pts": 23,
+            "reb": 4,
+            "ast": 5
+          }
+        },
+        "3155526": {
+          "name": "Dillon Brooks",
+          "min": 28.4,
+          "claude": {
+            "pts": 16.81,
+            "reb": 3.67,
+            "ast": 1.99
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "3913174": {
+          "name": "Luke Kennard",
+          "min": 13.6,
+          "claude": {
+            "pts": 5.21,
+            "reb": 1.63,
+            "ast": 1.41
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4066383": {
+          "name": "Miles Bridges",
+          "min": 28.6,
+          "claude": {
+            "pts": 14.31,
+            "reb": 5.94,
+            "ast": 2.87
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4278402": {
+          "name": "Jordan Goodwin",
+          "min": 19.3,
+          "claude": {
+            "pts": 7.1,
+            "reb": 4.47,
+            "ast": 1.95
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4278585": {
+          "name": "Collin Gillespie",
+          "min": 24.2,
+          "claude": {
+            "pts": 9.62,
+            "reb": 3.57,
+            "ast": 4.09
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "4437244": {
+          "name": "Jalen Green",
+          "min": 24.5,
+          "claude": {
+            "pts": 15.2,
+            "reb": 3.53,
+            "ast": 2.67
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4601023": {
+          "name": "Oso Ighodaro",
+          "min": 9.4,
+          "claude": {
+            "pts": 2.72,
+            "reb": 2.39,
+            "ast": 1.05
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4888725": {
+          "name": "Ryan Dunn",
+          "min": 15.3,
+          "claude": {
+            "pts": 4.39,
+            "reb": 3.68,
+            "ast": 1.14
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5203685": {
+          "name": "Khaman Maluach",
+          "min": 14.6,
+          "claude": {
+            "pts": 4.62,
+            "reb": 5.16,
+            "ast": 0.3
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 7,
+            "ast": 1
+          }
+        }
+      }
+    }
+  }
+}

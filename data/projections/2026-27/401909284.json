@@ -1,0 +1,285 @@
+{
+  "id": "401909284",
+  "start": "2026-10-31T00:00Z",
+  "homeId": "16",
+  "awayId": "12",
+  "savedAt": "2026-10-30T04:07:11.545Z",
+  "teams": {
+    "12": {
+      "score": 107.5,
+      "players": {
+        "3448": {
+          "name": "Brook Lopez",
+          "min": 22.3,
+          "claude": {
+            "pts": 10.12,
+            "reb": 4.55,
+            "ast": 1.39
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "2991139": {
+          "name": "Kris Dunn",
+          "min": 28.7,
+          "claude": {
+            "pts": 8.21,
+            "reb": 4.26,
+            "ast": 4.2
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 4,
+            "ast": 5
+          }
+        },
+        "3936099": {
+          "name": "Derrick Jones Jr.",
+          "min": 28.4,
+          "claude": {
+            "pts": 11.51,
+            "reb": 4.7,
+            "ast": 1.56
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "4066648": {
+          "name": "Rui Hachimura",
+          "min": 23.6,
+          "claude": {
+            "pts": 9.74,
+            "reb": 3.64,
+            "ast": 0.7
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "4396907": {
+          "name": "Darius Garland",
+          "min": 31.1,
+          "claude": {
+            "pts": 20.85,
+            "reb": 2.64,
+            "ast": 6.99
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 1,
+            "ast": 6
+          }
+        },
+        "4432170": {
+          "name": "Isaiah Jackson",
+          "min": 19.1,
+          "claude": {
+            "pts": 8.1,
+            "reb": 6.99,
+            "ast": 1.21
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4702352": {
+          "name": "Kobe Sanders",
+          "min": 20.9,
+          "claude": {
+            "pts": 7.92,
+            "reb": 2.9,
+            "ast": 1.87
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "5106258": {
+          "name": "Gradey Dick",
+          "min": 15.6,
+          "claude": {
+            "pts": 7.05,
+            "reb": 2.77,
+            "ast": 0.69
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "5254165": {
+          "name": "Keaton Wagler",
+          "min": 26.8,
+          "claude": {
+            "pts": 14.91,
+            "reb": 5.3,
+            "ast": 3.38
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 4,
+            "ast": 3
+          }
+        }
+      }
+    },
+    "16": {
+      "score": 115.08,
+      "players": {
+        "3032976": {
+          "name": "Rudy Gobert",
+          "min": 31.8,
+          "claude": {
+            "pts": 10.17,
+            "reb": 12.16,
+            "ast": 1.49
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 12,
+            "ast": 1
+          }
+        },
+        "3136196": {
+          "name": "Trey Lyles",
+          "min": 17,
+          "claude": {
+            "pts": 6.46,
+            "reb": 3.5,
+            "ast": 1.49
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4397002": {
+          "name": "Ayo Dosunmu",
+          "min": 29,
+          "claude": {
+            "pts": 15.5,
+            "reb": 3.75,
+            "ast": 3.79
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 4
+          }
+        },
+        "4431671": {
+          "name": "Jaden McDaniels",
+          "min": 34.2,
+          "claude": {
+            "pts": 16.48,
+            "reb": 5.28,
+            "ast": 2.88
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 6,
+            "ast": 3
+          }
+        },
+        "4432816": {
+          "name": "LaMelo Ball",
+          "min": 28.3,
+          "claude": {
+            "pts": 19.33,
+            "reb": 4.3,
+            "ast": 6.95
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 2,
+            "ast": 6
+          }
+        },
+        "4432847": {
+          "name": "Terrence Shannon Jr.",
+          "min": 19.7,
+          "claude": {
+            "pts": 9.75,
+            "reb": 2.09,
+            "ast": 1.51
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4433247": {
+          "name": "Jonathan Kuminga",
+          "min": 28.7,
+          "claude": {
+            "pts": 14.75,
+            "reb": 6.48,
+            "ast": 2.76
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "4592492": {
+          "name": "Bones Hyland",
+          "min": 13.8,
+          "claude": {
+            "pts": 7.13,
+            "reb": 1.57,
+            "ast": 2.07
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4895758": {
+          "name": "Cody Williams",
+          "min": 11.6,
+          "claude": {
+            "pts": 4.15,
+            "reb": 1.4,
+            "ast": 0.89
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5279133": {
+          "name": "Joan Beringer",
+          "min": 13.2,
+          "claude": {
+            "pts": 6.51,
+            "reb": 4.3,
+            "ast": 0.48
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 7,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}
