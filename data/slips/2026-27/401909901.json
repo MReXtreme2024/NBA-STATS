@@ -1,0 +1,84 @@
+{
+ "gameId": "401909901",
+ "start": "2026-11-01T00:00Z",
+ "game": "MIN @ SAS",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.16606371044368,
+     "avg": 15.166666666666666,
+     "chance": 0.8712360616028741
+    },
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.057833427889618,
+     "avg": 4.5,
+     "chance": 0.8012469469071801
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.106916056633255,
+     "avg": 5.4,
+     "chance": 0.9660425327267332
+    }
+   ],
+   "chance": 0.6743703674685014
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395723",
+     "name": "Keldon Johnson",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.074808395253747,
+     "avg": 9.6,
+     "chance": 0.5718706378801246
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.349348060012268,
+     "avg": 2.5,
+     "chance": 0.6049421074344903
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 6.106916056633255,
+     "avg": 5.4,
+     "chance": 0.716250973254755
+    }
+   ],
+   "chance": 0.2477860421164847
+  }
+ ]
+}

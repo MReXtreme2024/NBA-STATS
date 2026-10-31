@@ -1,0 +1,84 @@
+{
+ "gameId": "401909897",
+ "start": "2026-10-31T22:00Z",
+ "game": "PHI @ CHA",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433287",
+     "name": "Brandon Miller",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 23.062989657337557,
+     "avg": 24.5,
+     "chance": 0.965379468944479
+    },
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.613649490223342,
+     "avg": 6.6,
+     "chance": 0.8052042419900272
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.051900245641239,
+     "avg": 4.5,
+     "chance": 0.9631629910755275
+    }
+   ],
+   "chance": 0.748693218182435
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4351851",
+     "name": "Anfernee Simons",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.186075316717847,
+     "avg": 10.833333333333334,
+     "chance": 0.7721546226148917
+    },
+    {
+     "playerId": "3912848",
+     "name": "Dean Wade",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.298845383430884,
+     "avg": 2.5,
+     "chance": 0.5959890691365233
+    },
+    {
+     "playerId": "2581018",
+     "name": "Kentavious Caldwell-Pope",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.1535299983852347,
+     "avg": 1.8333333333333333,
+     "chance": 0.585357587541256
+    }
+   ],
+   "chance": 0.2693790533897401
+  }
+ ]
+}

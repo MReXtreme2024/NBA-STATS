@@ -1,0 +1,84 @@
+{
+ "gameId": "401909900",
+ "start": "2026-11-01T00:00Z",
+ "game": "CLE @ MIL",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 25.73332886204232,
+     "avg": 24.2,
+     "chance": 0.8938600455298473
+    },
+    {
+     "playerId": "4432158",
+     "name": "Evan Mobley",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.654115512343035,
+     "avg": 8.8,
+     "chance": 0.8746277351922469
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.4973966503611615,
+     "avg": 6.2,
+     "chance": 0.8579441653202082
+    }
+   ],
+   "chance": 0.6707362761565163
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066757",
+     "name": "Sam Merrill",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.138120311164068,
+     "avg": 9,
+     "chance": 0.5758813680057162
+    },
+    {
+     "playerId": "4432158",
+     "name": "Evan Mobley",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.654115512343035,
+     "avg": 8.8,
+     "chance": 0.6980516514817061
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.835731341606217,
+     "avg": 2.6,
+     "chance": 0.718862631180543
+    }
+   ],
+   "chance": 0.2889791402853042
+  }
+ ]
+}

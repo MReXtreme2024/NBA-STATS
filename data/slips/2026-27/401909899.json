@@ -1,0 +1,84 @@
+{
+ "gameId": "401909899",
+ "start": "2026-11-01T00:00Z",
+ "game": "SAC @ MEM",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.909897498940413,
+     "avg": 24,
+     "chance": 0.9270722288803193
+    },
+    {
+     "playerId": "4431679",
+     "name": "Precious Achiuwa",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.9144037733612596,
+     "avg": 6.2,
+     "chance": 0.8668375961835696
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.557069340975922,
+     "avg": 5.8,
+     "chance": 0.926815039087997
+    }
+   ],
+   "chance": 0.7448080863334644
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.911984756142036,
+     "avg": 8.2,
+     "chance": 0.6711808291469014
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.116882182783781,
+     "avg": 3.4,
+     "chance": 0.5661560270879612
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.557069340975922,
+     "avg": 5.8,
+     "chance": 0.926815039087997
+    }
+   ],
+   "chance": 0.3521832935891381
+  }
+ ]
+}

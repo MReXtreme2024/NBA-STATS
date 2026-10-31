@@ -1,0 +1,84 @@
+{
+ "gameId": "401909902",
+ "start": "2026-11-01T00:30Z",
+ "game": "OKC @ HOU",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 33.88879476276309,
+     "avg": 26,
+     "chance": 0.9246241930780073
+    },
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 11.005403734086501,
+     "avg": 9.6,
+     "chance": 0.8042092319872831
+    },
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.729831401491065,
+     "avg": 3,
+     "chance": 0.824491863083263
+    }
+   ],
+   "chance": 0.613084986361814
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.824606581603094,
+     "avg": 9.4,
+     "chance": 0.5599708262235326
+    },
+    {
+     "playerId": "4432639",
+     "name": "Jabari Smith Jr.",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.300574648228734,
+     "avg": 5.333333333333333,
+     "chance": 0.5715127741546517
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 6.085437497621987,
+     "avg": 3.4,
+     "chance": 0.7147183812316513
+    }
+   ],
+   "chance": 0.2287316668538811
+  }
+ ]
+}

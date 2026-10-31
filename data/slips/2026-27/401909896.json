@@ -1,0 +1,84 @@
+{
+ "gameId": "401909896",
+ "start": "2026-10-31T19:00Z",
+ "game": "POR @ UTA",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.26140883672652,
+     "avg": 16,
+     "chance": 0.8435331444034535
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.94928367169729,
+     "avg": 9,
+     "chance": 0.8935525888571461
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.309785353097156,
+     "avg": 4,
+     "chance": 0.9057793129240763
+    }
+   ],
+   "chance": 0.6827232088745329
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.881184332626335,
+     "avg": 7.5,
+     "chance": 0.6267807884686092
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.94928367169729,
+     "avg": 9,
+     "chance": 0.7227489729388505
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.309785353097156,
+     "avg": 4,
+     "chance": 0.5863010100647941
+    }
+   ],
+   "chance": 0.2655973893942772
+  }
+ ]
+}

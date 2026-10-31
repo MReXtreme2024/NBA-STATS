@@ -1,0 +1,84 @@
+{
+ "gameId": "401909898",
+ "start": "2026-10-31T23:00Z",
+ "game": "ATL @ NOP",
+ "made": "2026-10-31T17:40:39.877Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397688",
+     "name": "Trey Murphy III",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.248041369968824,
+     "avg": 14.2,
+     "chance": 0.8429651784084173
+    },
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.785358602399714,
+     "avg": 6.666666666666667,
+     "chance": 0.8571155367473242
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.958600815291256,
+     "avg": 4.5,
+     "chance": 0.8544697592912711
+    }
+   ],
+   "chance": 0.6173702526562255
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683634",
+     "name": "Bennedict Mathurin",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.845356395947455,
+     "avg": 7.8,
+     "chance": 0.6250755251256809
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.525609998322683,
+     "avg": 3.2,
+     "chance": 0.6310048947424407
+    },
+    {
+     "playerId": "4869780",
+     "name": "Derik Queen",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.1314563847169756,
+     "avg": 1.8,
+     "chance": 0.5812056545854571
+    }
+   ],
+   "chance": 0.22924245641708643
+  }
+ ]
+}

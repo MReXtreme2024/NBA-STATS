@@ -1,0 +1,257 @@
+{
+  "id": "401909897",
+  "start": "2026-10-31T22:00Z",
+  "homeId": "30",
+  "awayId": "20",
+  "savedAt": "2026-10-31T17:40:37.262Z",
+  "teams": {
+    "20": {
+      "score": 106.06,
+      "players": {
+        "2581018": {
+          "name": "Kentavious Caldwell-Pope",
+          "min": 30.2,
+          "claude": {
+            "pts": 9.39,
+            "reb": 3.94,
+            "ast": 3.15
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "3912848": {
+          "name": "Dean Wade",
+          "min": 22.7,
+          "claude": {
+            "pts": 4.56,
+            "reb": 4.3,
+            "ast": 1.25
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "3917376": {
+          "name": "Jaylen Brown",
+          "min": 39.2,
+          "claude": {
+            "pts": 25.45,
+            "reb": 8.61,
+            "ast": 5.06
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "4351851": {
+          "name": "Anfernee Simons",
+          "min": 32.6,
+          "claude": {
+            "pts": 15.19,
+            "reb": 3.64,
+            "ast": 2.54
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4431678": {
+          "name": "Tyrese Maxey",
+          "min": 42,
+          "claude": {
+            "pts": 27.08,
+            "reb": 5.16,
+            "ast": 6.05
+          },
+          "nate": {
+            "pts": 28,
+            "reb": 4,
+            "ast": 4
+          }
+        },
+        "5105637": {
+          "name": "Adem Bona",
+          "min": 19.1,
+          "claude": {
+            "pts": 4.13,
+            "reb": 5.45,
+            "ast": 0.54
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5124612": {
+          "name": "VJ Edgecombe",
+          "min": 37.4,
+          "claude": {
+            "pts": 13.82,
+            "reb": 7.71,
+            "ast": 3.79
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 6,
+            "ast": 2
+          }
+        }
+      }
+    },
+    "30": {
+      "score": 107.19,
+      "players": {
+        "2583632": {
+          "name": "Royce O'Neale",
+          "min": 21.9,
+          "claude": {
+            "pts": 7.61,
+            "reb": 3.7,
+            "ast": 1.75
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "3032979": {
+          "name": "Dennis Schroder",
+          "min": 28.2,
+          "claude": {
+            "pts": 12.75,
+            "reb": 3.32,
+            "ast": 5.37
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "3135045": {
+          "name": "Grayson Allen",
+          "min": 27.1,
+          "claude": {
+            "pts": 15.57,
+            "reb": 3,
+            "ast": 3.38
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4396971": {
+          "name": "Naz Reid",
+          "min": 26.3,
+          "claude": {
+            "pts": 14.74,
+            "reb": 7.25,
+            "ast": 2.08
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 9,
+            "ast": 1
+          }
+        },
+        "4433249": {
+          "name": "Moussa Diabate",
+          "min": 27.9,
+          "claude": {
+            "pts": 8.94,
+            "reb": 9.72,
+            "ast": 2
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 9,
+            "ast": 2
+          }
+        },
+        "4433287": {
+          "name": "Brandon Miller",
+          "min": 32.4,
+          "claude": {
+            "pts": 23.06,
+            "reb": 5.73,
+            "ast": 2.94
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 6,
+            "ast": 1
+          }
+        },
+        "4576060": {
+          "name": "Ryan Kalkbrenner",
+          "min": 17.8,
+          "claude": {
+            "pts": 6.24,
+            "reb": 4.82,
+            "ast": 0.83
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4602025": {
+          "name": "Sion James",
+          "min": 24.3,
+          "claude": {
+            "pts": 5.37,
+            "reb": 3.7,
+            "ast": 2.44
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "5060701": {
+          "name": "Christian Anderson",
+          "min": 10.8,
+          "claude": {
+            "pts": 3.5,
+            "reb": 1.88,
+            "ast": 1.33
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "5211176": {
+          "name": "Tidjane Salaun",
+          "min": 12,
+          "claude": {
+            "pts": 4.82,
+            "reb": 3.19,
+            "ast": 0.49
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 2,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}
