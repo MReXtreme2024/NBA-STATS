@@ -1,0 +1,84 @@
+{
+ "gameId": "401909905",
+ "start": "2026-11-02T01:30Z",
+ "game": "LAC @ GSW",
+ "made": "2026-11-01T18:25:01.178Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.361529816817686,
+     "avg": 22,
+     "chance": 0.9375089312650582
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.127617147402459,
+     "avg": 7.833333333333333,
+     "chance": 0.9347649149647905
+    },
+    {
+     "playerId": "2991139",
+     "name": "Kris Dunn",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.533588774203985,
+     "avg": 5.6,
+     "chance": 0.8047031559824291
+    }
+   ],
+   "chance": 0.7052019780219531
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.043780339372836,
+     "avg": 10.333333333333334,
+     "chance": 0.6717200878875242
+    },
+    {
+     "playerId": "5254165",
+     "name": "Keaton Wagler",
+     "teamId": "12",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.280744632485171,
+     "avg": 4.6,
+     "chance": 0.7266885489851973
+    },
+    {
+     "playerId": "4397040",
+     "name": "Brandon Williams",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.7395141462287813,
+     "avg": 2.3333333333333335,
+     "chance": 0.7040374988873414
+    }
+   ],
+   "chance": 0.34366273675827685
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909906",
+ "start": "2026-11-02T02:00Z",
+ "game": "TOR @ LAL",
+ "made": "2026-11-01T18:25:01.178Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.207326261965814,
+     "avg": 19.4,
+     "chance": 0.9121257846127784
+    },
+    {
+     "playerId": "3134908",
+     "name": "Jakob Poeltl",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.148382533733242,
+     "avg": 5.8,
+     "chance": 0.8125394448087921
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.789256307704264,
+     "avg": 4.4,
+     "chance": 0.8288127263661316
+    }
+   ],
+   "chance": 0.6142647544402574
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 20.207326261965814,
+     "avg": 19.4,
+     "chance": 0.7301086619225053
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.374385276675218,
+     "avg": 9,
+     "chance": 0.6748783028821672
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.789256307704264,
+     "avg": 4.4,
+     "chance": 0.8288127263661316
+    }
+   ],
+   "chance": 0.4083846199085707
+  }
+ ]
+}
