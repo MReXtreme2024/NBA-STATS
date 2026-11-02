@@ -1,0 +1,84 @@
+{
+ "gameId": "401909918",
+ "start": "2026-11-03T02:00Z",
+ "game": "POR @ DEN",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.439576698482163,
+     "avg": 21.2,
+     "chance": 0.8073576034289388
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.55530576750322,
+     "avg": 9,
+     "chance": 0.8716896948645969
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.971929070788403,
+     "avg": 3.8,
+     "chance": 0.858346897268902
+    }
+   ],
+   "chance": 0.6040747642180346
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.870706597104878,
+     "avg": 8.8,
+     "chance": 0.6205801007692413
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 9.5,
+     "mu": 10.472597104899865,
+     "avg": 9.8,
+     "chance": 0.5595149916562077
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.971929070788403,
+     "avg": 3.8,
+     "chance": 0.858346897268902
+    }
+   ],
+   "chance": 0.2980385313897225
+  }
+ ]
+}

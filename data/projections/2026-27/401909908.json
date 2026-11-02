@@ -1,0 +1,285 @@
+{
+  "id": "401909908",
+  "start": "2026-11-03T00:30Z",
+  "homeId": "30",
+  "awayId": "8",
+  "savedAt": "2026-11-02T22:17:32.964Z",
+  "teams": {
+    "8": {
+      "score": 107.45,
+      "players": {
+        "2596112": {
+          "name": "Javonte Green",
+          "min": 18.8,
+          "claude": {
+            "pts": 6.94,
+            "reb": 2.87,
+            "ast": 0.62
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "3157465": {
+          "name": "Duncan Robinson",
+          "min": 29,
+          "claude": {
+            "pts": 13.34,
+            "reb": 2.54,
+            "ast": 1.96
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "3908845": {
+          "name": "John Collins",
+          "min": 26.7,
+          "claude": {
+            "pts": 11.63,
+            "reb": 5.69,
+            "ast": 0.76
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 7,
+            "ast": 0
+          }
+        },
+        "4066372": {
+          "name": "Kevin Huerter",
+          "min": 21.6,
+          "claude": {
+            "pts": 8.41,
+            "reb": 3.19,
+            "ast": 2.16
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4278562": {
+          "name": "Paul Reed",
+          "min": 22.4,
+          "claude": {
+            "pts": 11.71,
+            "reb": 6.74,
+            "ast": 1.63
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 7,
+            "ast": 1
+          }
+        },
+        "4432166": {
+          "name": "Cade Cunningham",
+          "min": 33.9,
+          "claude": {
+            "pts": 22.29,
+            "reb": 5.43,
+            "ast": 8.06
+          },
+          "nate": {
+            "pts": 22,
+            "reb": 5,
+            "ast": 7
+          }
+        },
+        "4683771": {
+          "name": "Ronald Holland II",
+          "min": 18,
+          "claude": {
+            "pts": 6.83,
+            "reb": 3.7,
+            "ast": 1.24
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4684742": {
+          "name": "Ausar Thompson",
+          "min": 22.7,
+          "claude": {
+            "pts": 7.96,
+            "reb": 5.22,
+            "ast": 2.81
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 6,
+            "ast": 4
+          }
+        },
+        "5107199": {
+          "name": "Daniss Jenkins",
+          "min": 23.1,
+          "claude": {
+            "pts": 10.11,
+            "reb": 2.85,
+            "ast": 3.82
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "30": {
+      "score": 102,
+      "players": {
+        "2583632": {
+          "name": "Royce O'Neale",
+          "min": 22.3,
+          "claude": {
+            "pts": 7.4,
+            "reb": 3.61,
+            "ast": 1.68
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "3032979": {
+          "name": "Dennis Schroder",
+          "min": 28.8,
+          "claude": {
+            "pts": 11.85,
+            "reb": 3.1,
+            "ast": 5.28
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "3135045": {
+          "name": "Grayson Allen",
+          "min": 27.5,
+          "claude": {
+            "pts": 15.49,
+            "reb": 2.86,
+            "ast": 3.26
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4396971": {
+          "name": "Naz Reid",
+          "min": 27.5,
+          "claude": {
+            "pts": 14.39,
+            "reb": 6.84,
+            "ast": 2.05
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 8,
+            "ast": 1
+          }
+        },
+        "4433249": {
+          "name": "Moussa Diabate",
+          "min": 27.8,
+          "claude": {
+            "pts": 8.5,
+            "reb": 8.92,
+            "ast": 1.96
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 9,
+            "ast": 2
+          }
+        },
+        "4433287": {
+          "name": "Brandon Miller",
+          "min": 32.3,
+          "claude": {
+            "pts": 21.88,
+            "reb": 5.27,
+            "ast": 2.9
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4576060": {
+          "name": "Ryan Kalkbrenner",
+          "min": 18.1,
+          "claude": {
+            "pts": 6.02,
+            "reb": 4.49,
+            "ast": 0.91
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4602025": {
+          "name": "Sion James",
+          "min": 23.4,
+          "claude": {
+            "pts": 4.89,
+            "reb": 3.27,
+            "ast": 2.21
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "5060701": {
+          "name": "Christian Anderson",
+          "min": 10.1,
+          "claude": {
+            "pts": 3.09,
+            "reb": 1.54,
+            "ast": 1.13
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "5211176": {
+          "name": "Tidjane Salaun",
+          "min": 12,
+          "claude": {
+            "pts": 4.61,
+            "reb": 2.96,
+            "ast": 0.46
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 2,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}

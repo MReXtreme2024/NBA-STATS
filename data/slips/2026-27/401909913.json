@@ -1,0 +1,84 @@
+{
+ "gameId": "401909913",
+ "start": "2026-11-03T01:00Z",
+ "game": "SAC @ DAL",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.96904020961903,
+     "avg": 26.333333333333332,
+     "chance": 0.9658352093481225
+    },
+    {
+     "playerId": "4431679",
+     "name": "Precious Achiuwa",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.611477230243727,
+     "avg": 6,
+     "chance": 0.8456586182128066
+    },
+    {
+     "playerId": "6442",
+     "name": "Kyrie Irving",
+     "teamId": "6",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.489793060537408,
+     "avg": 4.8,
+     "chance": 0.8016919123796017
+    }
+   ],
+   "chance": 0.6547953928230509
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432582",
+     "name": "Max Christie",
+     "teamId": "6",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.920077097067765,
+     "avg": 8.333333333333334,
+     "chance": 0.559493891278542
+    },
+    {
+     "playerId": "4431679",
+     "name": "Precious Achiuwa",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.611477230243727,
+     "avg": 6,
+     "chance": 0.6093238649332939
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.140364498270473,
+     "avg": 6.333333333333333,
+     "chance": 0.9681523702926466
+    }
+   ],
+   "chance": 0.3300557098832825
+  }
+ ]
+}

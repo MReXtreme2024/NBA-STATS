@@ -1,0 +1,46 @@
+{
+ "gameId": "401909914",
+ "start": "2026-11-03T01:00Z",
+ "game": "NOP @ MEM",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683634",
+     "name": "Bennedict Mathurin",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.969777076206599,
+     "avg": 7.666666666666667,
+     "chance": 0.5622254052982958
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.195188881866898,
+     "avg": 3.6666666666666665,
+     "chance": 0.5748827095167426
+    },
+    {
+     "playerId": "4397688",
+     "name": "Trey Murphy III",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.084829229026523,
+     "avg": 3.1666666666666665,
+     "chance": 0.5681491428934198
+    }
+   ],
+   "chance": 0.1836335663758898
+  }
+ ]
+}

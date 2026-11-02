@@ -1,0 +1,84 @@
+{
+ "gameId": "401909909",
+ "start": "2026-11-03T00:30Z",
+ "game": "ATL @ IND",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.00532398560759,
+     "avg": 14.428571428571429,
+     "chance": 0.8355925619918732
+    },
+    {
+     "playerId": "4701230",
+     "name": "Jalen Johnson",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 10.295618877366836,
+     "avg": 9,
+     "chance": 0.9135542704251658
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.897069877421489,
+     "avg": 4.285714285714286,
+     "chance": 0.8462588568167698
+    }
+   ],
+   "chance": 0.6459994444488175
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 17.00532398560759,
+     "avg": 14.428571428571429,
+     "chance": 0.6005222216368291
+    },
+    {
+     "playerId": "3133603",
+     "name": "Kelly Oubre Jr.",
+     "teamId": "11",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.308728621448538,
+     "avg": 2.5714285714285716,
+     "chance": 0.5939953610322501
+    },
+    {
+     "playerId": "4278039",
+     "name": "Nickeil Alexander-Walker",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.0661784011452116,
+     "avg": 2.5714285714285716,
+     "chance": 0.565423952509445
+    }
+   ],
+   "chance": 0.20169091582795629
+  }
+ ]
+}

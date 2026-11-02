@@ -1,0 +1,84 @@
+{
+ "gameId": "401909920",
+ "start": "2026-11-03T03:00Z",
+ "game": "TOR @ LAC",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5254165",
+     "name": "Keaton Wagler",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.563247285461454,
+     "avg": 13.166666666666666,
+     "chance": 0.8211893088882485
+    },
+    {
+     "playerId": "4432170",
+     "name": "Isaiah Jackson",
+     "teamId": "12",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.861267033352677,
+     "avg": 6.166666666666667,
+     "chance": 0.8269430141037188
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.349622954490528,
+     "avg": 6.333333333333333,
+     "chance": 0.8410287306592816
+    }
+   ],
+   "chance": 0.5711230673684342
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5254165",
+     "name": "Keaton Wagler",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.563247285461454,
+     "avg": 13.166666666666666,
+     "chance": 0.5758260926548131
+    },
+    {
+     "playerId": "4432170",
+     "name": "Isaiah Jackson",
+     "teamId": "12",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.861267033352677,
+     "avg": 6.166666666666667,
+     "chance": 0.6173097695864281
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.349622954490528,
+     "avg": 6.333333333333333,
+     "chance": 0.5747971881249077
+    }
+   ],
+   "chance": 0.20431917460041688
+  }
+ ]
+}

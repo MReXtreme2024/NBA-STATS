@@ -1,0 +1,84 @@
+{
+ "gameId": "401909907",
+ "start": "2026-11-03T00:00Z",
+ "game": "OKC @ CLE",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.716916864220742,
+     "avg": 16.666666666666668,
+     "chance": 0.8836292806827484
+    },
+    {
+     "playerId": "4432823",
+     "name": "Jaylin Williams",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.355587084043387,
+     "avg": 4.333333333333333,
+     "chance": 0.8284475636252098
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.152108905092339,
+     "avg": 3.3333333333333335,
+     "chance": 0.9687395873031496
+    }
+   ],
+   "chance": 0.7091566358156558
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 29.5,
+     "mu": 33.908650364012004,
+     "avg": 26,
+     "chance": 0.630897094916191
+    },
+    {
+     "playerId": "4432823",
+     "name": "Jaylin Williams",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.355587084043387,
+     "avg": 4.333333333333333,
+     "chance": 0.5744492500820234
+    },
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.5540377834784698,
+     "avg": 2,
+     "chance": 0.6798154063796658
+    }
+   ],
+   "chance": 0.2463775867586908
+  }
+ ]
+}

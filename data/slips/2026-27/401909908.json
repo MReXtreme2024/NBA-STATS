@@ -1,0 +1,84 @@
+{
+ "gameId": "401909908",
+ "start": "2026-11-03T00:30Z",
+ "game": "DET @ CHA",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433287",
+     "name": "Brandon Miller",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.883566232116014,
+     "avg": 24.428571428571427,
+     "chance": 0.9477992228140943
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.915432273996723,
+     "avg": 9.571428571428571,
+     "chance": 0.9653726825634893
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 8.060618019185965,
+     "avg": 7.166666666666667,
+     "chance": 0.9214585705218982
+    }
+   ],
+   "chance": 0.8431156820939932
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.629543140167737,
+     "avg": 9.166666666666666,
+     "chance": 0.604650050125442
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.915432273996723,
+     "avg": 9.571428571428571,
+     "chance": 0.9653726825634893
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 8.060618019185965,
+     "avg": 7.166666666666667,
+     "chance": 0.6891999355516882
+    }
+   ],
+   "chance": 0.4022947144901892
+  }
+ ]
+}

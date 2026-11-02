@@ -1,0 +1,84 @@
+{
+ "gameId": "401909921",
+ "start": "2026-11-03T03:00Z",
+ "game": "MIA @ LAL",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.253558741979006,
+     "avg": 16.333333333333332,
+     "chance": 0.8067805139793709
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 10.081155685460452,
+     "avg": 9.857142857142858,
+     "chance": 0.9037146520052848
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.0828033854378925,
+     "avg": 5.142857142857143,
+     "chance": 0.8757518025735652
+    }
+   ],
+   "chance": 0.638510088789903
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059319",
+     "name": "Andrew Wiggins",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.843639446906133,
+     "avg": 10.833333333333334,
+     "chance": 0.6192494129575066
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.14510201367588,
+     "avg": 3.4285714285714284,
+     "chance": 0.5673314736875623
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.521337349064156,
+     "avg": 7.333333333333333,
+     "chance": 0.9774208600070807
+    }
+   ],
+   "chance": 0.3433871857504414
+  }
+ ]
+}

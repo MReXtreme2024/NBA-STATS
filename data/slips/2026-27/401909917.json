@@ -1,0 +1,84 @@
+{
+ "gameId": "401909917",
+ "start": "2026-11-03T01:30Z",
+ "game": "UTA @ SAS",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.535587206832627,
+     "avg": 15.4,
+     "chance": 0.8197431114582024
+    },
+    {
+     "playerId": "5104157",
+     "name": "Victor Wembanyama",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.412361254710333,
+     "avg": 10.666666666666666,
+     "chance": 0.987594058626662
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.879905386775036,
+     "avg": 5.166666666666667,
+     "chance": 0.951201830005359
+    }
+   ],
+   "chance": 0.770067724787922
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395723",
+     "name": "Keldon Johnson",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.161643651390278,
+     "avg": 8.333333333333334,
+     "chance": 0.5735395310926481
+    },
+    {
+     "playerId": "4592479",
+     "name": "Julian Champagnie",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.554076181930228,
+     "avg": 3.3333333333333335,
+     "chance": 0.6318482223403767
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.879905386775036,
+     "avg": 5.166666666666667,
+     "chance": 0.6908586344861034
+    }
+   ],
+   "chance": 0.2503602143763781
+  }
+ ]
+}

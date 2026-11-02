@@ -1,0 +1,84 @@
+{
+ "gameId": "401909910",
+ "start": "2026-11-03T00:30Z",
+ "game": "BKN @ NYK",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.900182688568226,
+     "avg": 21.166666666666668,
+     "chance": 0.9082072215347806
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.065615340255558,
+     "avg": 13.5,
+     "chance": 0.9946446507547804
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.294145541050392,
+     "avg": 5.166666666666667,
+     "chance": 0.9725544289553957
+    }
+   ],
+   "chance": 0.878550677713431
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 24.705732143585863,
+     "avg": 25.5,
+     "chance": 0.9851407120423112
+    },
+    {
+     "playerId": "5174655",
+     "name": "Chaney Johnson",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.175553847740726,
+     "avg": 3,
+     "chance": 0.5721644695562084
+    },
+    {
+     "playerId": "3147657",
+     "name": "Mikal Bridges",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 2.9993435027703743,
+     "avg": 2,
+     "chance": 0.5556680933188494
+    }
+   ],
+   "chance": 0.3132092738428562
+  }
+ ]
+}

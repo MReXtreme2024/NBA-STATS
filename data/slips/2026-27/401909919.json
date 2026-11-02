@@ -1,0 +1,84 @@
+{
+ "gameId": "401909919",
+ "start": "2026-11-03T03:00Z",
+ "game": "PHX @ GSW",
+ "made": "2026-11-02T22:17:39.738Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3155526",
+     "name": "Dillon Brooks",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.412167999032558,
+     "avg": 16.5,
+     "chance": 0.8145432319681364
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.957248983766574,
+     "avg": 7.285714285714286,
+     "chance": 0.9288647703547334
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.643506385325518,
+     "avg": 5.25,
+     "chance": 0.931823890166469
+    }
+   ],
+   "chance": 0.7050184324926351
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.415266833520194,
+     "avg": 11,
+     "chance": 0.7354112266574024
+    },
+    {
+     "playerId": "4278402",
+     "name": "Jordan Goodwin",
+     "teamId": "21",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.459600225945006,
+     "avg": 3.75,
+     "chance": 0.6171825931595423
+    },
+    {
+     "playerId": "4397040",
+     "name": "Brandon Williams",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.3233408919246603,
+     "avg": 2.4285714285714284,
+     "chance": 0.6314950034627116
+    }
+   ],
+   "chance": 0.286624851649932
+  }
+ ]
+}
