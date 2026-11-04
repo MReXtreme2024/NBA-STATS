@@ -1,0 +1,84 @@
+{
+ "gameId": "401909928",
+ "start": "2026-11-05T01:00Z",
+ "game": "UTA @ NOP",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397688",
+     "name": "Trey Murphy III",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.80709486752567,
+     "avg": 14.857142857142858,
+     "chance": 0.8333604513421471
+    },
+    {
+     "playerId": "4869780",
+     "name": "Derik Queen",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.673827266433166,
+     "avg": 7.714285714285714,
+     "chance": 0.8620514671959303
+    },
+    {
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.124737767206093,
+     "avg": 5.142857142857143,
+     "chance": 0.9664464208346931
+    }
+   ],
+   "chance": 0.6942947219389316
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683634",
+     "name": "Bennedict Mathurin",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.795105496852267,
+     "avg": 7.142857142857143,
+     "chance": 0.5553895302899637
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.538561077000935,
+     "avg": 3.857142857142857,
+     "chance": 0.6303679717622084
+    },
+    {
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 6.124737767206093,
+     "avg": 5.142857142857143,
+     "chance": 0.7189238800416895
+    }
+   ],
+   "chance": 0.2516950863059553
+  }
+ ]
+}

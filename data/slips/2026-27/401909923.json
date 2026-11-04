@@ -1,0 +1,84 @@
+{
+ "gameId": "401909923",
+ "start": "2026-11-05T00:00Z",
+ "game": "ATL @ WAS",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.534098218494837,
+     "avg": 14.25,
+     "chance": 0.8218974964105243
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.370383186708912,
+     "avg": 5.5,
+     "chance": 0.8411056300442744
+    },
+    {
+     "playerId": "4277905",
+     "name": "Trae Young",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.897861786566212,
+     "avg": 10,
+     "chance": 0.9924182040696244
+    }
+   ],
+   "chance": 0.6860612962232766
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.534098218494837,
+     "avg": 14.25,
+     "chance": 0.5749957209926568
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.370383186708912,
+     "avg": 5.5,
+     "chance": 0.5813649146802643
+    },
+    {
+     "playerId": "4845374",
+     "name": "Bub Carrington",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 2.9754285914459864,
+     "avg": 2.4285714285714284,
+     "chance": 0.5590417829009698
+    }
+   ],
+   "chance": 0.18687779438235105
+  }
+ ]
+}

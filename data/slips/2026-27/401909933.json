@@ -1,0 +1,84 @@
+{
+ "gameId": "401909933",
+ "start": "2026-11-05T02:30Z",
+ "game": "DAL @ SAS",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066259",
+     "name": "De'Aaron Fox",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.182099496648174,
+     "avg": 15.857142857142858,
+     "chance": 0.8085004552158602
+    },
+    {
+     "playerId": "4278049",
+     "name": "Daniel Gafford",
+     "teamId": "6",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.760339916054544,
+     "avg": 7,
+     "chance": 0.9276591604055396
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.902623615170416,
+     "avg": 5,
+     "chance": 0.9521760291923067
+    }
+   ],
+   "chance": 0.714144260663152
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395723",
+     "name": "Keldon Johnson",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.332725235722902,
+     "avg": 9.285714285714286,
+     "chance": 0.5854169103620923
+    },
+    {
+     "playerId": "4592479",
+     "name": "Julian Champagnie",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.482109017028202,
+     "avg": 3.7142857142857144,
+     "chance": 0.6226105500493624
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.902623615170416,
+     "avg": 5,
+     "chance": 0.6992086356476828
+    }
+   ],
+   "chance": 0.25485227938157456
+  }
+ ]
+}

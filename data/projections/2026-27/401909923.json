@@ -1,0 +1,299 @@
+{
+  "id": "401909923",
+  "start": "2026-11-05T00:00Z",
+  "homeId": "27",
+  "awayId": "1",
+  "savedAt": "2026-11-04T20:24:56.598Z",
+  "teams": {
+    "1": {
+      "score": 116.38,
+      "players": {
+        "2490149": {
+          "name": "CJ McCollum",
+          "min": 27.6,
+          "claude": {
+            "pts": 16.53,
+            "reb": 3.18,
+            "ast": 3.51
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 2,
+            "ast": 3
+          }
+        },
+        "4278039": {
+          "name": "Nickeil Alexander-Walker",
+          "min": 30.7,
+          "claude": {
+            "pts": 20.21,
+            "reb": 3.41,
+            "ast": 2.98
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4397020": {
+          "name": "Luguentz Dort",
+          "min": 25.4,
+          "claude": {
+            "pts": 8.48,
+            "reb": 3.53,
+            "ast": 1.15
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4397183": {
+          "name": "Aaron Wiggins",
+          "min": 23.2,
+          "claude": {
+            "pts": 10.92,
+            "reb": 3.51,
+            "ast": 1.66
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4431680": {
+          "name": "Onyeka Okongwu",
+          "min": 29.5,
+          "claude": {
+            "pts": 13.76,
+            "reb": 7.88,
+            "ast": 2.67
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 7,
+            "ast": 2
+          }
+        },
+        "4701230": {
+          "name": "Jalen Johnson",
+          "min": 29.3,
+          "claude": {
+            "pts": 18.05,
+            "reb": 8.97,
+            "ast": 6.33
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 7,
+            "ast": 6
+          }
+        },
+        "4869342": {
+          "name": "Dyson Daniels",
+          "min": 30,
+          "claude": {
+            "pts": 10.58,
+            "reb": 6.37,
+            "ast": 4.67
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 4
+          }
+        },
+        "5149077": {
+          "name": "Kingston Flemings",
+          "min": 18.1,
+          "claude": {
+            "pts": 7.06,
+            "reb": 2.96,
+            "ast": 3.32
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "27": {
+      "score": 113.48,
+      "players": {
+        "6583": {
+          "name": "Anthony Davis",
+          "min": 29.5,
+          "claude": {
+            "pts": 18.36,
+            "reb": 9.36,
+            "ast": 2.14
+          },
+          "nate": {
+            "pts": 23,
+            "reb": 9,
+            "ast": 2
+          }
+        },
+        "6609": {
+          "name": "Khris Middleton",
+          "min": 12.2,
+          "claude": {
+            "pts": 4.67,
+            "reb": 1.86,
+            "ast": 1.23
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4277905": {
+          "name": "Trae Young",
+          "min": 28.6,
+          "claude": {
+            "pts": 17.21,
+            "reb": 2.42,
+            "ast": 7.9
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 3,
+            "ast": 10
+          }
+        },
+        "4278129": {
+          "name": "Deandre Ayton",
+          "min": 18.7,
+          "claude": {
+            "pts": 7.62,
+            "reb": 5.37,
+            "ast": 0.6
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "4432907": {
+          "name": "Justin Champagnie",
+          "min": 10.7,
+          "claude": {
+            "pts": 4.29,
+            "reb": 3.14,
+            "ast": 0.6
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "4845374": {
+          "name": "Bub Carrington",
+          "min": 20.8,
+          "claude": {
+            "pts": 7.15,
+            "reb": 2.35,
+            "ast": 2.98
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "5104155": {
+          "name": "Bilal Coulibaly",
+          "min": 24.3,
+          "claude": {
+            "pts": 9.08,
+            "reb": 3.65,
+            "ast": 1.7
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5142718": {
+          "name": "AJ Dybantsa",
+          "min": 13.7,
+          "claude": {
+            "pts": 7.26,
+            "reb": 2.23,
+            "ast": 0.97
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "5144126": {
+          "name": "Will Riley",
+          "min": 8.1,
+          "claude": {
+            "pts": 3.46,
+            "reb": 1,
+            "ast": 0.67
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5160992": {
+          "name": "Alex Sarr",
+          "min": 20.9,
+          "claude": {
+            "pts": 10.47,
+            "reb": 5.25,
+            "ast": 1.84
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "5174563": {
+          "name": "Kyshawn George",
+          "min": 28.4,
+          "claude": {
+            "pts": 13.48,
+            "reb": 4.46,
+            "ast": 3.9
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 4,
+            "ast": 4
+          }
+        },
+        "5238230": {
+          "name": "Tre Johnson",
+          "min": 17.4,
+          "claude": {
+            "pts": 8.01,
+            "reb": 1.92,
+            "ast": 1.13
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 1,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}

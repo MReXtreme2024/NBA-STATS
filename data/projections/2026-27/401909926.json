@@ -1,0 +1,299 @@
+{
+  "id": "401909926",
+  "start": "2026-11-05T00:30Z",
+  "homeId": "18",
+  "awayId": "4",
+  "savedAt": "2026-11-04T20:24:58.268Z",
+  "teams": {
+    "4": {
+      "score": 110.37,
+      "players": {
+        "2595516": {
+          "name": "Norman Powell",
+          "min": 28.6,
+          "claude": {
+            "pts": 18.71,
+            "reb": 2.98,
+            "ast": 2.06
+          },
+          "nate": {
+            "pts": 20,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "2990984": {
+          "name": "Buddy Hield",
+          "min": 13.9,
+          "claude": {
+            "pts": 5.81,
+            "reb": 1.88,
+            "ast": 1.25
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4066650": {
+          "name": "Zach Collins",
+          "min": 9,
+          "claude": {
+            "pts": 4.06,
+            "reb": 2.64,
+            "ast": 0.66
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4395626": {
+          "name": "Tre Jones",
+          "min": 20.8,
+          "claude": {
+            "pts": 10.18,
+            "reb": 2.49,
+            "ast": 3.82
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 2,
+            "ast": 3
+          }
+        },
+        "4397189": {
+          "name": "Jalen Smith",
+          "min": 22.4,
+          "claude": {
+            "pts": 10.14,
+            "reb": 7.12,
+            "ast": 1.4
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 8,
+            "ast": 2
+          }
+        },
+        "4432822": {
+          "name": "Isaac Okoro",
+          "min": 20.7,
+          "claude": {
+            "pts": 6.18,
+            "reb": 1.84,
+            "ast": 1.23
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4711294": {
+          "name": "Matas Buzelis",
+          "min": 25.3,
+          "claude": {
+            "pts": 12.69,
+            "reb": 4.62,
+            "ast": 1.77
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4871145": {
+          "name": "Josh Giddey",
+          "min": 28.2,
+          "claude": {
+            "pts": 12.04,
+            "reb": 6.37,
+            "ast": 7.7
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 7
+          }
+        },
+        "5044385": {
+          "name": "Leonard Miller",
+          "min": 14.9,
+          "claude": {
+            "pts": 6.6,
+            "reb": 3.47,
+            "ast": 0.77
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5095151": {
+          "name": "Caleb Wilson",
+          "min": 32.4,
+          "claude": {
+            "pts": 17.85,
+            "reb": 6.04,
+            "ast": 2.66
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 6,
+            "ast": 2
+          }
+        }
+      }
+    },
+    "18": {
+      "score": 122.51,
+      "players": {
+        "6585": {
+          "name": "Andre Drummond",
+          "min": 16.3,
+          "claude": {
+            "pts": 5.85,
+            "reb": 8.56,
+            "ast": 1.39
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 7,
+            "ast": 1
+          }
+        },
+        "2528426": {
+          "name": "Jordan Clarkson",
+          "min": 12.1,
+          "claude": {
+            "pts": 6.28,
+            "reb": 1.52,
+            "ast": 0.98
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "3136195": {
+          "name": "Karl-Anthony Towns",
+          "min": 33.6,
+          "claude": {
+            "pts": 22.36,
+            "reb": 15.44,
+            "ast": 3.96
+          },
+          "nate": {
+            "pts": 20,
+            "reb": 13,
+            "ast": 3
+          }
+        },
+        "3147657": {
+          "name": "Mikal Bridges",
+          "min": 29.2,
+          "claude": {
+            "pts": 11.39,
+            "reb": 3.76,
+            "ast": 3.37
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "3914044": {
+          "name": "Landry Shamet",
+          "min": 25.5,
+          "claude": {
+            "pts": 10.59,
+            "reb": 2.11,
+            "ast": 2
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "3934672": {
+          "name": "Jalen Brunson",
+          "min": 36.6,
+          "claude": {
+            "pts": 27.63,
+            "reb": 3.69,
+            "ast": 7.65
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 2,
+            "ast": 5
+          }
+        },
+        "3934719": {
+          "name": "OG Anunoby",
+          "min": 35.8,
+          "claude": {
+            "pts": 18.31,
+            "reb": 6.51,
+            "ast": 2.92
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4277869": {
+          "name": "Jose Alvarado",
+          "min": 8.7,
+          "claude": {
+            "pts": 3.27,
+            "reb": 1.26,
+            "ast": 1.71
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4431823": {
+          "name": "Miles McBride",
+          "min": 22.6,
+          "claude": {
+            "pts": 10.22,
+            "reb": 2.48,
+            "ast": 2.34
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4433225": {
+          "name": "Tyler Kolek",
+          "min": 9.2,
+          "claude": {
+            "pts": 3.43,
+            "reb": 1.44,
+            "ast": 2.78
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 1,
+            "ast": 3
+          }
+        }
+      }
+    }
+  }
+}

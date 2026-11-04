@@ -1,0 +1,84 @@
+{
+ "gameId": "401909930",
+ "start": "2026-11-05T01:30Z",
+ "game": "MIN @ HOU",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397002",
+     "name": "Ayo Dosunmu",
+     "teamId": "16",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.486326804530798,
+     "avg": 15.75,
+     "chance": 0.8194505333635698
+    },
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.221206902151135,
+     "avg": 5.375,
+     "chance": 0.8286336453863861
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.468108315192206,
+     "avg": 5.875,
+     "chance": 0.9758383215440782
+    }
+   ],
+   "chance": 0.6626179162931201
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 19.376359580026854,
+     "avg": 16.875,
+     "chance": 0.7035585199511623
+    },
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.221206902151135,
+     "avg": 5.375,
+     "chance": 0.559697114421079
+    },
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.63138966797909,
+     "avg": 3.125,
+     "chance": 0.6976055000825396
+    }
+   ],
+   "chance": 0.2747028660145645
+  }
+ ]
+}

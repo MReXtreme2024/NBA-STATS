@@ -1,0 +1,84 @@
+{
+ "gameId": "401909925",
+ "start": "2026-11-05T00:30Z",
+ "game": "CHA @ BKN",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.522096157707356,
+     "avg": 20.714285714285715,
+     "chance": 0.9257307727498703
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.544278542821115,
+     "avg": 9.5,
+     "chance": 0.9587009547658035
+    },
+    {
+     "playerId": "3032979",
+     "name": "Dennis Schroder",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.342692534713807,
+     "avg": 4.875,
+     "chance": 0.9113979149228489
+    }
+   ],
+   "chance": 0.8088647159412932
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3032979",
+     "name": "Dennis Schroder",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.59985115187449,
+     "avg": 10.875,
+     "chance": 0.6018596578654998
+    },
+    {
+     "playerId": "5174655",
+     "name": "Chaney Johnson",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.028142751822586,
+     "avg": 3,
+     "chance": 0.5516648384089982
+    },
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.282990121482612,
+     "avg": 2.5,
+     "chance": 0.6306181264684885
+    }
+   ],
+   "chance": 0.20938086419161042
+  }
+ ]
+}

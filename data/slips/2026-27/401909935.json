@@ -1,0 +1,84 @@
+{
+ "gameId": "401909935",
+ "start": "2026-11-05T03:30Z",
+ "game": "MIA @ LAC",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 25.41830825777899,
+     "avg": 28.428571428571427,
+     "chance": 0.9902254400798359
+    },
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.077612180033295,
+     "avg": 8,
+     "chance": 0.9401708602333966
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.540260883336124,
+     "avg": 6.571428571428571,
+     "chance": 0.8717195026727762
+    }
+   ],
+   "chance": 0.811554384823953
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059319",
+     "name": "Andrew Wiggins",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.714553744249056,
+     "avg": 10.285714285714286,
+     "chance": 0.6101202921888111
+    },
+    {
+     "playerId": "5254165",
+     "name": "Keaton Wagler",
+     "teamId": "12",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.055777588369209,
+     "avg": 4.428571428571429,
+     "chance": 0.7077248267974561
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.540260883336124,
+     "avg": 6.571428571428571,
+     "chance": 0.6227837797809074
+    }
+   ],
+   "chance": 0.2689163409635298
+  }
+ ]
+}

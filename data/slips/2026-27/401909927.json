@@ -1,0 +1,84 @@
+{
+ "gameId": "401909927",
+ "start": "2026-11-05T01:00Z",
+ "game": "IND @ MEM",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3149673",
+     "name": "Pascal Siakam",
+     "teamId": "11",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.851992684189,
+     "avg": 21.428571428571427,
+     "chance": 0.9127417074018025
+    },
+    {
+     "playerId": "5106060",
+     "name": "Jarace Walker",
+     "teamId": "11",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.050422924706232,
+     "avg": 6.125,
+     "chance": 0.8163770740695231
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.172248534436217,
+     "avg": 5.666666666666667,
+     "chance": 0.889099819220214
+    }
+   ],
+   "chance": 0.6625050880076883
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.792577203829417,
+     "avg": 9.428571428571429,
+     "chance": 0.6580870777857942
+    },
+    {
+     "playerId": "5106060",
+     "name": "Jarace Walker",
+     "teamId": "11",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.050422924706232,
+     "avg": 6.125,
+     "chance": 0.8163770740695231
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.172248534436217,
+     "avg": 5.666666666666667,
+     "chance": 0.889099819220214
+    }
+   ],
+   "chance": 0.4776663911045236
+  }
+ ]
+}

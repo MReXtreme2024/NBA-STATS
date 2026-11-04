@@ -1,0 +1,84 @@
+{
+ "gameId": "401909934",
+ "start": "2026-11-05T03:00Z",
+ "game": "LAL @ SAC",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 29.032997648502487,
+     "avg": 38.285714285714285,
+     "chance": 0.9936010278391346
+    },
+    {
+     "playerId": "4431679",
+     "name": "Precious Achiuwa",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.565688867511935,
+     "avg": 6.571428571428571,
+     "chance": 0.854414455026128
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.17105623493078,
+     "avg": 5.125,
+     "chance": 0.8889768356416632
+    }
+   ],
+   "chance": 0.7546942894408704
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4065732",
+     "name": "De'Andre Hunter",
+     "teamId": "23",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.488287692344501,
+     "avg": 12.857142857142858,
+     "chance": 0.6981666447742804
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.135746103465339,
+     "avg": 3.857142857142857,
+     "chance": 0.5688530251948234
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.17105623493078,
+     "avg": 5.125,
+     "chance": 0.5735574675182217
+    }
+   ],
+   "chance": 0.22779076173746057
+  }
+ ]
+}

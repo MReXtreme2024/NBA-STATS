@@ -1,0 +1,84 @@
+{
+ "gameId": "401909926",
+ "start": "2026-11-05T00:30Z",
+ "game": "CHI @ NYK",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.359262118761528,
+     "avg": 20.285714285714285,
+     "chance": 0.8091601253999436
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.366077066250331,
+     "avg": 5.142857142857143,
+     "chance": 0.8407946040169408
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.650285127257572,
+     "avg": 5.285714285714286,
+     "chance": 0.8844153969154543
+    }
+   ],
+   "chance": 0.6017009311095504
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3147657",
+     "name": "Mikal Bridges",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.386941769939057,
+     "avg": 6.142857142857143,
+     "chance": 0.5896660430798548
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.366077066250331,
+     "avg": 5.142857142857143,
+     "chance": 0.5808040167494406
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.650285127257572,
+     "avg": 5.285714285714286,
+     "chance": 0.6425249380632967
+    }
+   ],
+   "chance": 0.2200522018853337
+  }
+ ]
+}

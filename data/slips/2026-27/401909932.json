@@ -1,0 +1,84 @@
+{
+ "gameId": "401909932",
+ "start": "2026-11-05T02:00Z",
+ "game": "POR @ PHX",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3155526",
+     "name": "Dillon Brooks",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.07187742889716,
+     "avg": 16.8,
+     "chance": 0.839897185728895
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.379077248601739,
+     "avg": 10.5,
+     "chance": 0.9888724991548089
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.286605593974019,
+     "avg": 4.833333333333333,
+     "chance": 0.9052842839560842
+    }
+   ],
+   "chance": 0.7518849747108998
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.988744080375183,
+     "avg": 8.666666666666666,
+     "chance": 0.6221731436443163
+    },
+    {
+     "playerId": "6606",
+     "name": "Damian Lillard",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.338118620433864,
+     "avg": 4.333333333333333,
+     "chance": 0.602584819574634
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.286605593974019,
+     "avg": 4.833333333333333,
+     "chance": 0.5953436844808546
+    }
+   ],
+   "chance": 0.22320154591425614
+  }
+ ]
+}

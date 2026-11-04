@@ -1,0 +1,84 @@
+{
+ "gameId": "401909924",
+ "start": "2026-11-05T00:30Z",
+ "game": "MIL @ BOS",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.426869363444364,
+     "avg": 11.142857142857142,
+     "chance": 0.8491818835491858
+    },
+    {
+     "playerId": "4397424",
+     "name": "Neemias Queta",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.369990377271873,
+     "avg": 5.428571428571429,
+     "chance": 0.9093983889403137
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.637118582181687,
+     "avg": 3.4285714285714284,
+     "chance": 0.933056756453519
+    }
+   ],
+   "chance": 0.7205480760170311
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 17.426869363444364,
+     "avg": 11.142857142857142,
+     "chance": 0.6197795986139563
+    },
+    {
+     "playerId": "4397424",
+     "name": "Neemias Queta",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 7.369990377271873,
+     "avg": 5.428571428571429,
+     "chance": 0.7072227619568627
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.637118582181687,
+     "avg": 3.4285714285714284,
+     "chance": 0.6622973528174965
+    }
+   ],
+   "chance": 0.2902996589259135
+  }
+ ]
+}

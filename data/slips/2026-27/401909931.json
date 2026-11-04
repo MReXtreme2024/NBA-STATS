@@ -1,0 +1,84 @@
+{
+ "gameId": "401909931",
+ "start": "2026-11-05T02:00Z",
+ "game": "TOR @ DEN",
+ "made": "2026-11-04T20:25:03.266Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.1507614702522,
+     "avg": 20.714285714285715,
+     "chance": 0.9381489211961805
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 10.480146202845988,
+     "avg": 9.666666666666666,
+     "chance": 0.9293937445453855
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.188253843957039,
+     "avg": 5,
+     "chance": 0.8912328256633244
+    }
+   ],
+   "chance": 0.777074580244551
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3978",
+     "name": "DeMar DeRozan",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.894902118852443,
+     "avg": 10.666666666666666,
+     "chance": 0.6629543394265026
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 9.5,
+     "mu": 10.480146202845988,
+     "avg": 9.666666666666666,
+     "chance": 0.5663196483296176
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.188253843957039,
+     "avg": 5,
+     "chance": 0.5760441584429853
+    }
+   ],
+   "chance": 0.21627236240235082
+  }
+ ]
+}
