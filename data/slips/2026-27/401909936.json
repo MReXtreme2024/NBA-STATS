@@ -1,0 +1,84 @@
+{
+ "gameId": "401909936",
+ "start": "2026-11-06T02:00Z",
+ "game": "ORL @ PHX",
+ "made": "2026-11-05T13:05:42.970Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.547233388145788,
+     "avg": 17.857142857142858,
+     "chance": 0.9034064585111502
+    },
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.008974454553828,
+     "avg": 6.142857142857143,
+     "chance": 0.8146239465806272
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.570634578062794,
+     "avg": 4.666666666666667,
+     "chance": 0.9275751099581021
+    }
+   ],
+   "chance": 0.6826364120026488
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.669884220109457,
+     "avg": 12.833333333333334,
+     "chance": 0.7951663542080503
+    },
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.008974454553828,
+     "avg": 6.142857142857143,
+     "chance": 0.8146239465806272
+    },
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.086525406163189,
+     "avg": 2.5714285714285716,
+     "chance": 0.7597913764027251
+    }
+   ],
+   "chance": 0.49216364243084954
+  }
+ ]
+}

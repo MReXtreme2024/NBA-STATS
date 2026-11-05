@@ -1,0 +1,84 @@
+{
+ "gameId": "401909937",
+ "start": "2026-11-06T03:00Z",
+ "game": "MIA @ GSW",
+ "made": "2026-11-05T13:05:42.970Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 23.848276116111926,
+     "avg": 28.25,
+     "chance": 0.977118132036694
+    },
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.706807711006343,
+     "avg": 8.25,
+     "chance": 0.93060690525241
+    },
+    {
+     "playerId": "4278053",
+     "name": "Davion Mitchell",
+     "teamId": "14",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.507856474529502,
+     "avg": 8.25,
+     "chance": 0.9767789110960616
+    }
+   ],
+   "chance": 0.8881976456713279
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.184233124348085,
+     "avg": 10.625,
+     "chance": 0.5754315840126316
+    },
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.223691656906647,
+     "avg": 12.5,
+     "chance": 0.9776532856258114
+    },
+    {
+     "playerId": "4278053",
+     "name": "Davion Mitchell",
+     "teamId": "14",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.507856474529502,
+     "avg": 8.25,
+     "chance": 0.9767789110960616
+    }
+   ],
+   "chance": 0.5495090308964452
+  }
+ ]
+}
