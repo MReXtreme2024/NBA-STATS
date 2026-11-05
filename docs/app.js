@@ -1,6 +1,6 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
-import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, fiftyFifty, settle, slipChance, suggestSlips } from './slips.js';
+import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, LEVELS, lineAt, settle, slipChance, suggestSlips } from './slips.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -63,6 +63,16 @@ function saveFormula(f) {
 }
 
 // The Your formula / Claude's formula tabs on the Upcoming games and matchup pages.
+// Which over/under line Claude's formula lists show under each player (0.8 = the 80/20 line), remembered.
+const LEVEL_KEY = 'claudeLine';
+function readLevel() {
+  try { const v = Number(localStorage.getItem(LEVEL_KEY)); return LEVELS.includes(v) ? v : 0.5; } catch { return 0.5; }
+}
+function saveLevel(v) {
+  try { localStorage.setItem(LEVEL_KEY, String(v)); } catch { /* private mode: not remembered */ }
+}
+const levelName = (v) => `${Math.round(v * 100)}/${Math.round((1 - v) * 100)}`;
+
 function formulaTabs(formula) {
   const btn = (f, label) => `<button data-formula="${f}" aria-pressed="${formula === f}">${label}</button>`;
   return `<div class="switch tabs" role="group" aria-label="Formula">${btn('nate', 'Your formula')}${btn('claude', "Claude's formula")}</div>`;
@@ -570,19 +580,23 @@ function claudeMatchup(g, away, home) {
     return `<div class="side"><div class="side-head" style="${colours(t)}">${esc(t.code)}</div>
       ${items ? `<ul>${items}</ul>` : '<p class="none">No projections</p>'}</div>`;
   };
-  // The 50/50 line for points, rebounds and assists (learned from results; none for the combos and 3PM).
+  // The chosen over/under line for points, rebounds and assists (learned from results; none for the combos and 3PM).
+  const level = readLevel();
   const half = (p, stat) => {
-    const line = stat && fiftyFifty(p[stat], data.calibration?.[stat]);
-    return line ? ` · 50/50 ${line.toFixed(1)}` : '';
+    if (!stat || !data.calibration?.[stat]) return '';
+    const line = lineAt(p[stat], data.calibration[stat], level);
+    return ` · ${levelName(level)} ${line ? line.toFixed(1) : '—'}`;
   };
+  const levels = data.calibration?.pts ? `<section class="levels-box"><p class="levels-title">Line shown under each player: he goes over it <b>${Math.round(level * 100)}%</b> of the time</p>
+    <div class="levels" role="group" aria-label="Over/under line">${LEVELS.map((v) => `<button data-level="${v}" aria-pressed="${v === level}">${levelName(v)}</button>`).join('')}</div></section>` : '';
   const sections = CLAUDE_STATS.map(([label, value, stat]) => `<section class="stat"><h3>${label}</h3>
       <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
     ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
-  return `${slipLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  return `${levels}${slipLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
-    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. The big number is his projected average; "50/50" is the line he's as likely to go over as under (usually a little lower, because big nights pull the average up), learned from how real results have landed.</p>`;
+    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. The big number is his projected average; the small line under it is the one he goes over the chosen share of the time (tap the buttons at the top: 80/20 = goes over 80% of the time, 50/50 = as likely over as under), learned from how real results have landed. "—" means no line is that safe for him (e.g. a player who gets 2 assists has no 90/10 line). No line is ever 100% certain, so the buttons stop at 95/5 and 5/95. Points, rebounds and assists only.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
@@ -785,6 +799,8 @@ app.addEventListener('click', (e) => {
     writeSlips(readSlips().filter((x) => x.id !== delSlip.dataset.deleteSlip));
     const y = window.scrollY; render(); window.scrollTo(0, y); return;
   }
+  const levelBtn = e.target.closest('[data-level]');
+  if (levelBtn) { saveLevel(Number(levelBtn.dataset.level)); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const formulaBtn = e.target.closest('[data-formula]');
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
   const modeBtn = e.target.closest('[data-mode]');

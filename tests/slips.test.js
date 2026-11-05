@@ -115,3 +115,12 @@ test('the 50/50 line: the .5 line nearest an even chance, a little under the ave
   assert.ok(fiftyFifty(20.3, skewed) < 20.3);
   assert.equal(fiftyFifty(20, null), null);
 });
+
+test('lines at other levels: higher shares give lower lines; none when no line is that safe', async () => {
+  const { lineAt, LEVELS } = await import('../docs/slips.js');
+  const lines = LEVELS.map((v) => lineAt(20.3, cal.pts, v));
+  for (let i = 1; i < lines.length; i++) assert.ok(lines[i] >= lines[i - 1]);
+  const l80 = lineAt(20.3, cal.pts, 0.8);
+  assert.ok(Math.abs(chanceOver(20.3, l80, cal.pts) - 0.8) <= 0.05);
+  assert.equal(lineAt(0.6, cal.ast, 0.95), null); // a player projected under 1 assist has no 95% line
+});

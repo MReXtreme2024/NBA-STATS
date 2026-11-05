@@ -23,17 +23,21 @@ export function chanceOver(mu, line, cal) {
   return 1 - (i + frac) / (q.length - 1);
 }
 
-// The 50/50 line: the .5 line he's as likely to go over as under, from Claude's projection and what
-// results have taught it (a projection is an average; big nights pull it above the middle game).
-export function fiftyFifty(mu, cal) {
+// The line he goes over a given share of the time (0.8 = the "80/20" line): the .5 line whose chance,
+// from Claude's projection and what results have taught it, is nearest that share. null if no line comes
+// within 5% of it (e.g. a 2-assist player has no 90% line: even over 0.5 is less likely than that).
+export const LEVELS = [0.95, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05];
+export function lineAt(mu, cal, share) {
   if (!cal?.shape?.length) return null;
   let best = null;
-  for (let line = 0.5; line <= Math.ceil(mu) + 10; line++) {
-    const gap = Math.abs(chanceOver(mu, line, cal) - 0.5);
+  for (let line = 0.5; line <= Math.ceil(mu) + 40; line++) {
+    const gap = Math.abs(chanceOver(mu, line, cal) - share);
     if (!best || gap < best.gap - 1e-12) best = { line, gap };
   }
-  return best.line;
+  return best.gap <= 0.05 ? best.line : null;
 }
+// The 50/50 line: as likely to go over as under (a projection is an average; big nights pull it above the middle game).
+export const fiftyFifty = (mu, cal) => lineAt(mu, cal, 0.5);
 
 // A bookmaker-style line: his average so far, to the .5 below (23.4 → 22.5, 23.6 → 23.5), at least 0.5.
 export const lineFor = (avg) => Math.max(0.5, Math.floor(avg - 0.5) + 0.5);
