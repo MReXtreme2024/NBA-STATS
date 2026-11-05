@@ -22,7 +22,7 @@ export const MODEL = {
   usagePower: 1, // >1: points and assists a team gains (e.g. a star is out) go mostly to its main scorers
   starterRole: false, // true: a player's minutes come from games in his current role (starter or bench)
   minutesPower: 1, // >1: when sharing out the team's 240 minutes, the main players get a bigger share
-  playRateBonus: 1, // fringe players' chance to play = (games played + this) ÷ (team games + this)
+  playRateBonus: 10, // fringe players' chance to play = (games played + this) ÷ (team games + this) (5 Nov, 91 games: 10 beat 1, PTS/REB/AST misses −1.9%, both halves)
   projectedStartShare: 0.85, // a projected (not yet confirmed) starter: this share starter minutes, the rest bench minutes
   positionWeight: 0.5, // moving a player to another position shifts his rates this far toward that position's (0 = not at all)
   matchupWeight: 0, // how much the opponent's record against his role (PG, SG, SF, PF, C) counts (0 = off, 1 = fully)

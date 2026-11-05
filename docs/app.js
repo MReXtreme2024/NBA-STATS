@@ -1,6 +1,6 @@
 import { MODES, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
-import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, settle, slipChance, suggestSlips } from './slips.js';
+import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, fiftyFifty, settle, slipChance, suggestSlips } from './slips.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -253,7 +253,7 @@ function resultsPage() {
 
 // Claude's formula for one game: projected team scores, then every stat side by side.
 const CLAUDE_STATS = [
-  ['Points', (p) => p.pts], ['Rebounds', (p) => p.reb], ['Assists', (p) => p.ast],
+  ['Points', (p) => p.pts, 'pts'], ['Rebounds', (p) => p.reb, 'reb'], ['Assists', (p) => p.ast, 'ast'],
   ['Points + Rebounds', (p) => p.pts + p.reb], ['Points + Assists', (p) => p.pts + p.ast],
   ['Rebounds + Assists', (p) => p.reb + p.ast], ['Points + Rebounds + Assists', (p) => p.pts + p.reb + p.ast],
   ['3PM', (p) => p.tpm],
@@ -560,24 +560,29 @@ function claudeMatchup(g, away, home) {
     return `<div class="panel" style="${colours(t)}"><p>${esc(t.code)} projected</p><h2 class="big">${one(side.score)}</h2><p class="small">${parts.join(' · ')}</p></div>`;
   };
   const outLine = (t, side) => (side.out.length ? `<p class="out-line"><b>${esc(t.code)} out:</b> ${side.out.map((o) => esc(o.name)).join(', ')}</p>` : '');
-  const column = (t, side, value) => {
+  const column = (t, side, value, stat) => {
     const items = [...side.players]
       .sort((a, b) => value(b) - value(a) || a.name.localeCompare(b.name))
       .map((p) => {
         const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-        return `<li><a href="#/team/${t.id}/player/${p.id}"><span class="name">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min</span></span><b>${one(value(p))}</b></a></li>`;
+        return `<li><a href="#/team/${t.id}/player/${p.id}"><span class="name">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min${half(p, stat)}</span></span><b>${one(value(p))}</b></a></li>`;
       }).join('');
     return `<div class="side"><div class="side-head" style="${colours(t)}">${esc(t.code)}</div>
       ${items ? `<ul>${items}</ul>` : '<p class="none">No projections</p>'}</div>`;
   };
-  const sections = CLAUDE_STATS.map(([label, value]) => `<section class="stat"><h3>${label}</h3>
-      <div class="sides">${column(away, c.away, value)}${column(home, c.home, value)}</div></section>`).join('');
+  // The 50/50 line for points, rebounds and assists (learned from results; none for the combos and 3PM).
+  const half = (p, stat) => {
+    const line = stat && fiftyFifty(p[stat], data.calibration?.[stat]);
+    return line ? ` · 50/50 ${line.toFixed(1)}` : '';
+  };
+  const sections = CLAUDE_STATS.map(([label, value, stat]) => `<section class="stat"><h3>${label}</h3>
+      <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
     ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
   return `${slipLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
-    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal.</p>`;
+    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. The big number is his projected average; "50/50" is the line he's as likely to go over as under (usually a little lower, because big nights pull the average up), learned from how real results have landed.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.

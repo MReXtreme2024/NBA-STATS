@@ -23,6 +23,18 @@ export function chanceOver(mu, line, cal) {
   return 1 - (i + frac) / (q.length - 1);
 }
 
+// The 50/50 line: the .5 line he's as likely to go over as under, from Claude's projection and what
+// results have taught it (a projection is an average; big nights pull it above the middle game).
+export function fiftyFifty(mu, cal) {
+  if (!cal?.shape?.length) return null;
+  let best = null;
+  for (let line = 0.5; line <= Math.ceil(mu) + 10; line++) {
+    const gap = Math.abs(chanceOver(mu, line, cal) - 0.5);
+    if (!best || gap < best.gap - 1e-12) best = { line, gap };
+  }
+  return best.line;
+}
+
 // A bookmaker-style line: his average so far, to the .5 below (23.4 → 22.5, 23.6 → 23.5), at least 0.5.
 export const lineFor = (avg) => Math.max(0.5, Math.floor(avg - 0.5) + 0.5);
 

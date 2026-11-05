@@ -104,3 +104,14 @@ test('a settled slip keeps its result after the game drops out of the published 
   const kept = { status: 'won', legs: [] };
   assert.equal(settle({ gameId: 'old', legs: [], result: kept }, {}), kept);
 });
+
+test('the 50/50 line: the .5 line nearest an even chance, a little under the average when big nights skew it', async () => {
+  const { fiftyFifty } = await import('../docs/slips.js');
+  const line = fiftyFifty(20.3, cal.pts);
+  assert.equal(line % 1, 0.5);
+  assert.ok(Math.abs(chanceOver(20.3, line, cal.pts) - 0.5) <= Math.abs(chanceOver(20.3, line + 1, cal.pts) - 0.5));
+  assert.ok(Math.abs(chanceOver(20.3, line, cal.pts) - 0.5) <= Math.abs(chanceOver(20.3, line - 1, cal.pts) - 0.5));
+  const skewed = { bias: 1, k: 3, shape: bell.map((z) => z - 0.2) }; // the middle game sits below the average (big nights pull it up)
+  assert.ok(fiftyFifty(20.3, skewed) < 20.3);
+  assert.equal(fiftyFifty(20, null), null);
+});
