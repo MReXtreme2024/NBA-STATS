@@ -1,0 +1,84 @@
+{
+ "gameId": "401909292",
+ "start": "2026-11-07T01:00Z",
+ "game": "TOR @ MIL",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395724",
+     "name": "Immanuel Quickley",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.971917271740512,
+     "avg": 17.375,
+     "chance": 0.8654539767505773
+    },
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.079725388869741,
+     "avg": 6,
+     "chance": 0.8185336019543997
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.301143189161164,
+     "avg": 5.125,
+     "chance": 0.9075120084838224
+    }
+   ],
+   "chance": 0.6428843753786315
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4591725",
+     "name": "Ryan Rollins",
+     "teamId": "15",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.220535038617546,
+     "avg": 11.25,
+     "chance": 0.635070177540054
+    },
+    {
+     "playerId": "4395724",
+     "name": "Immanuel Quickley",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.107579656673328,
+     "avg": 3.5,
+     "chance": 0.5654141030689303
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.637136112045667,
+     "avg": 2.75,
+     "chance": 0.6978297805944351
+    }
+   ],
+   "chance": 0.25057506712255523
+  }
+ ]
+}

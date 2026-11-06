@@ -1,0 +1,84 @@
+{
+ "gameId": "401909294",
+ "start": "2026-11-07T03:00Z",
+ "game": "POR @ LAL",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 28.13376155383018,
+     "avg": 38.5,
+     "chance": 0.9925483054899676
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.751125628990183,
+     "avg": 10.571428571428571,
+     "chance": 0.9835797061826221
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.032419515533564,
+     "avg": 4.142857142857143,
+     "chance": 0.8726681207006728
+    }
+   ],
+   "chance": 0.8519425763197837
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.476207197521608,
+     "avg": 8.714285714285714,
+     "chance": 0.5952426724043463
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.751125628990183,
+     "avg": 10.571428571428571,
+     "chance": 0.9835797061826221
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.032419515533564,
+     "avg": 4.142857142857143,
+     "chance": 0.5575003861140249
+    }
+   ],
+   "chance": 0.3263989777108279
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909289",
+ "start": "2026-11-07T00:30Z",
+ "game": "PHI @ CLE",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.341083077326488,
+     "avg": 22.5,
+     "chance": 0.939704962547902
+    },
+    {
+     "playerId": "4432158",
+     "name": "Evan Mobley",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.546164787672183,
+     "avg": 8.25,
+     "chance": 0.8186859509752524
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.161303943916574,
+     "avg": 6.25,
+     "chance": 0.9678017398572007
+    }
+   ],
+   "chance": 0.7445523807333208
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 17.18024283962637,
+     "avg": 16.625,
+     "chance": 0.6106906104538652
+    },
+    {
+     "playerId": "4432158",
+     "name": "Evan Mobley",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.546164787672183,
+     "avg": 8.25,
+     "chance": 0.5899842097515343
+    },
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.601197123722258,
+     "avg": 3.875,
+     "chance": 0.6921948402494231
+    }
+   ],
+   "chance": 0.24939629002679561
+  }
+ ]
+}

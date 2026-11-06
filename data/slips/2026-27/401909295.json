@@ -1,0 +1,84 @@
+{
+ "gameId": "401909295",
+ "start": "2026-11-07T03:00Z",
+ "game": "SAS @ SAC",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066259",
+     "name": "De'Aaron Fox",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.1509879292088,
+     "avg": 15.125,
+     "chance": 0.8095836028001768
+    },
+    {
+     "playerId": "5104157",
+     "name": "Victor Wembanyama",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.73490207878541,
+     "avg": 12.375,
+     "chance": 0.9908655408891424
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.866619805658877,
+     "avg": 4.75,
+     "chance": 0.9482852798883441
+    }
+   ],
+   "chance": 0.7607035410145689
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395723",
+     "name": "Keldon Johnson",
+     "teamId": "24",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.956260386545043,
+     "avg": 8.625,
+     "chance": 0.5636870469711486
+    },
+    {
+     "playerId": "4592479",
+     "name": "Julian Champagnie",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.377880992977951,
+     "avg": 3.75,
+     "chance": 0.6087780984144693
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.866619805658877,
+     "avg": 4.75,
+     "chance": 0.6940339429615019
+    }
+   ],
+   "chance": 0.2381649158956598
+  }
+ ]
+}

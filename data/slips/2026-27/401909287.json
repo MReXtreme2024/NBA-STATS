@@ -1,0 +1,84 @@
+{
+ "gameId": "401909287",
+ "start": "2026-11-07T00:00Z",
+ "game": "WAS @ ATL",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.879015532094453,
+     "avg": 14.333333333333334,
+     "chance": 0.8019936462812877
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.787380176925806,
+     "avg": 6.666666666666667,
+     "chance": 0.8729779718200668
+    },
+    {
+     "playerId": "4277905",
+     "name": "Trae Young",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.249431723532438,
+     "avg": 9.5,
+     "chance": 0.9876679690395833
+    }
+   ],
+   "chance": 0.6914888508610079
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.405781107685682,
+     "avg": 12.222222222222221,
+     "chance": 0.6937211551381286
+    },
+    {
+     "playerId": "5174563",
+     "name": "Kyshawn George",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.389435372755956,
+     "avg": 4.25,
+     "chance": 0.6104262230741297
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.70265827814608,
+     "avg": 4.666666666666667,
+     "chance": 0.8255928621652234
+    }
+   ],
+   "chance": 0.3496101640163941
+  }
+ ]
+}

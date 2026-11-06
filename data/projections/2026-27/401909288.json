@@ -1,0 +1,327 @@
+{
+  "id": "401909288",
+  "start": "2026-11-07T00:00Z",
+  "homeId": "30",
+  "awayId": "2",
+  "savedAt": "2026-11-06T19:56:12.843Z",
+  "teams": {
+    "2": {
+      "score": 109.16,
+      "players": {
+        "3195": {
+          "name": "Mike Conley",
+          "min": 8.5,
+          "claude": {
+            "pts": 2.24,
+            "reb": 0.63,
+            "ast": 1.28
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4251": {
+          "name": "Paul George",
+          "min": 26.3,
+          "claude": {
+            "pts": 16.09,
+            "reb": 3.81,
+            "ast": 3.4
+          },
+          "nate": {
+            "pts": 18,
+            "reb": 4,
+            "ast": 4
+          }
+        },
+        "3078576": {
+          "name": "Derrick White",
+          "min": 28.6,
+          "claude": {
+            "pts": 13.28,
+            "reb": 2.86,
+            "ast": 4.53
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "4065648": {
+          "name": "Jayson Tatum",
+          "min": 28.3,
+          "claude": {
+            "pts": 20.27,
+            "reb": 6,
+            "ast": 5.15
+          },
+          "nate": {
+            "pts": 23,
+            "reb": 5,
+            "ast": 6
+          }
+        },
+        "4065804": {
+          "name": "Sam Hauser",
+          "min": 20.3,
+          "claude": {
+            "pts": 7.58,
+            "reb": 2.5,
+            "ast": 1.09
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4066354": {
+          "name": "Payton Pritchard",
+          "min": 25.3,
+          "claude": {
+            "pts": 13.13,
+            "reb": 2.41,
+            "ast": 3.76
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 2,
+            "ast": 3
+          }
+        },
+        "4277951": {
+          "name": "Luka Garza",
+          "min": 13.3,
+          "claude": {
+            "pts": 7,
+            "reb": 2.79,
+            "ast": 0.88
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "4351852": {
+          "name": "Mitchell Robinson",
+          "min": 16.1,
+          "claude": {
+            "pts": 4.78,
+            "reb": 5.43,
+            "ast": 0.66
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "4397424": {
+          "name": "Neemias Queta",
+          "min": 21.5,
+          "claude": {
+            "pts": 8.99,
+            "reb": 5.63,
+            "ast": 1.37
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 6,
+            "ast": 1
+          }
+        },
+        "4593841": {
+          "name": "Baylor Scheierman",
+          "min": 18.6,
+          "claude": {
+            "pts": 5.51,
+            "reb": 2.99,
+            "ast": 1.36
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4683689": {
+          "name": "Jordan Walsh",
+          "min": 14,
+          "claude": {
+            "pts": 4.22,
+            "reb": 2.67,
+            "ast": 0.63
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5175647": {
+          "name": "Hugo Gonzalez",
+          "min": 12.3,
+          "claude": {
+            "pts": 3.4,
+            "reb": 2.21,
+            "ast": 0.42
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 2,
+            "ast": 0
+          }
+        }
+      }
+    },
+    "30": {
+      "score": 100.01,
+      "players": {
+        "2583632": {
+          "name": "Royce O'Neale",
+          "min": 25.7,
+          "claude": {
+            "pts": 7.36,
+            "reb": 4.34,
+            "ast": 2.06
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "3135045": {
+          "name": "Grayson Allen",
+          "min": 31.3,
+          "claude": {
+            "pts": 16.36,
+            "reb": 3.27,
+            "ast": 3.93
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4395651": {
+          "name": "Coby White",
+          "min": 16.1,
+          "claude": {
+            "pts": 9.67,
+            "reb": 2.2,
+            "ast": 2.67
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4396971": {
+          "name": "Naz Reid",
+          "min": 33.2,
+          "claude": {
+            "pts": 16.18,
+            "reb": 8.47,
+            "ast": 2.64
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 8,
+            "ast": 1
+          }
+        },
+        "4433287": {
+          "name": "Brandon Miller",
+          "min": 36.5,
+          "claude": {
+            "pts": 22.01,
+            "reb": 5.92,
+            "ast": 3.54
+          },
+          "nate": {
+            "pts": 22,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4576060": {
+          "name": "Ryan Kalkbrenner",
+          "min": 21.5,
+          "claude": {
+            "pts": 6.44,
+            "reb": 5.54,
+            "ast": 1.18
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4602025": {
+          "name": "Sion James",
+          "min": 28.1,
+          "claude": {
+            "pts": 5.76,
+            "reb": 3.99,
+            "ast": 2.83
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "5060701": {
+          "name": "Christian Anderson",
+          "min": 11,
+          "claude": {
+            "pts": 3.42,
+            "reb": 1.77,
+            "ast": 1.41
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "5211176": {
+          "name": "Tidjane Salaun",
+          "min": 15.6,
+          "claude": {
+            "pts": 5.41,
+            "reb": 3.97,
+            "ast": 0.61
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5239590": {
+          "name": "Liam McNeeley",
+          "min": 8.4,
+          "claude": {
+            "pts": 2.69,
+            "reb": 1.73,
+            "ast": 0.57
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        }
+      }
+    }
+  }
+}

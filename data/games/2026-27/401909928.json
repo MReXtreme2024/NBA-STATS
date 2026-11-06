@@ -53,7 +53,7 @@
             "rebounds": "4",
             "assists": "2",
             "turnovers": "2",
-            "steals": "2",
+            "steals": "1",
             "blocks": "2",
             "offensiveRebounds": "2",
             "defensiveRebounds": "2",
@@ -358,7 +358,7 @@
           "stats": {
             "minutes": "44",
             "points": "39",
-            "fieldGoalsMade-fieldGoalsAttempted": "14-26",
+            "fieldGoalsMade-fieldGoalsAttempted": "14-27",
             "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-9",
             "freeThrowsMade-freeThrowsAttempted": "9-13",
             "rebounds": "2",

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909291",
+ "start": "2026-11-07T01:00Z",
+ "game": "OKC @ MEM",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.069299113320717,
+     "avg": 27.428571428571427,
+     "chance": 0.869138293467196
+    },
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 10.585285971075862,
+     "avg": 10.125,
+     "chance": 0.9382693622094861
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.227709114237308,
+     "avg": 4.5,
+     "chance": 0.8969906313563025
+    }
+   ],
+   "chance": 0.7314831515619235
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.545501877232919,
+     "avg": 9.625,
+     "chance": 0.5991603566197345
+    },
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 9.5,
+     "mu": 10.585285971075862,
+     "avg": 10.125,
+     "chance": 0.5827628143586977
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.227709114237308,
+     "avg": 4.5,
+     "chance": 0.5840485052594284
+    }
+   ],
+   "chance": 0.20393126789735883
+  }
+ ]
+}

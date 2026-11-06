@@ -1,0 +1,84 @@
+{
+ "gameId": "401909290",
+ "start": "2026-11-07T01:00Z",
+ "game": "UTA @ DAL",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.71271022857085,
+     "avg": 17.142857142857142,
+     "chance": 0.8855963499221353
+    },
+    {
+     "playerId": "4278049",
+     "name": "Daniel Gafford",
+     "teamId": "6",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.517775746991224,
+     "avg": 6.625,
+     "chance": 0.8536772265636492
+    },
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.6879829855527335,
+     "avg": 5.875,
+     "chance": 0.936912102286344
+    }
+   ],
+   "chance": 0.7083181375449601
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 18.71271022857085,
+     "avg": 17.142857142857142,
+     "chance": 0.6720068495962259
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.1913731306352435,
+     "avg": 4,
+     "chance": 0.5796818264928609
+    },
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.6879829855527335,
+     "avg": 5.875,
+     "chance": 0.936912102286344
+    }
+   ],
+   "chance": 0.3649742574680637
+  }
+ ]
+}

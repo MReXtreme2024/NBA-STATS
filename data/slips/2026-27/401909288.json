@@ -1,0 +1,84 @@
+{
+ "gameId": "401909288",
+ "start": "2026-11-07T00:00Z",
+ "game": "BOS @ CHA",
+ "made": "2026-11-06T19:56:16.544Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.36295191832248,
+     "avg": 15.666666666666666,
+     "chance": 0.8170489472816839
+    },
+    {
+     "playerId": "4433287",
+     "name": "Brandon Miller",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.920586228444869,
+     "avg": 5.333333333333333,
+     "chance": 0.8055281224956438
+    },
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.527018709606119,
+     "avg": 5.125,
+     "chance": 0.8075205766608275
+    }
+   ],
+   "chance": 0.5314744355271854
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.36295191832248,
+     "avg": 15.666666666666666,
+     "chance": 0.5675893279709724
+    },
+    {
+     "playerId": "2583632",
+     "name": "Royce O'Neale",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.337174392479094,
+     "avg": 3,
+     "chance": 0.6026242411075071
+    },
+    {
+     "playerId": "4433287",
+     "name": "Brandon Miller",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.54448246186482,
+     "avg": 2.3333333333333335,
+     "chance": 0.6819030608747221
+    }
+   ],
+   "chance": 0.23324022867817207
+  }
+ ]
+}
