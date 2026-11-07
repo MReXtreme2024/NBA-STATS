@@ -1,0 +1,84 @@
+{
+ "gameId": "401909939",
+ "start": "2026-11-08T00:30Z",
+ "game": "BKN @ ATL",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.730010667238318,
+     "avg": 13.3,
+     "chance": 0.8334051869684225
+    },
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.069113324275246,
+     "avg": 8.6,
+     "chance": 0.8561615991453343
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.121593668045346,
+     "avg": 5.4,
+     "chance": 0.9635067239042919
+    }
+   ],
+   "chance": 0.6874904879222888
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.730010667238318,
+     "avg": 13.3,
+     "chance": 0.5926989790541792
+    },
+    {
+     "playerId": "4397020",
+     "name": "Luguentz Dort",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.049377906855429,
+     "avg": 3.4,
+     "chance": 0.5578122407440512
+    },
+    {
+     "playerId": "4278039",
+     "name": "Nickeil Alexander-Walker",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.4299161499919006,
+     "avg": 2.6,
+     "chance": 0.656719527758922
+    }
+   ],
+   "chance": 0.21712115959592065
+  }
+ ]
+}

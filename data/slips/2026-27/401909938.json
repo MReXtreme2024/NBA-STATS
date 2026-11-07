@@ -1,0 +1,84 @@
+{
+ "gameId": "401909938",
+ "start": "2026-11-07T22:00Z",
+ "game": "DEN @ IND",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3149673",
+     "name": "Pascal Siakam",
+     "teamId": "11",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.630364320867365,
+     "avg": 21.25,
+     "chance": 0.8844771836180414
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.984788301954705,
+     "avg": 9.714285714285714,
+     "chance": 0.9129633041858483
+    },
+    {
+     "playerId": "4395712",
+     "name": "Andrew Nembhard",
+     "teamId": "11",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.109753702305325,
+     "avg": 6.857142857142857,
+     "chance": 0.9630364026664484
+    }
+   ],
+   "chance": 0.7776472841665646
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3978",
+     "name": "DeMar DeRozan",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.501779886319177,
+     "avg": 10.666666666666666,
+     "chance": 0.6008372961185783
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.984788301954705,
+     "avg": 9.714285714285714,
+     "chance": 0.7422108490244359
+    },
+    {
+     "playerId": "4395712",
+     "name": "Andrew Nembhard",
+     "teamId": "11",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.109753702305325,
+     "avg": 6.857142857142857,
+     "chance": 0.9630364026664484
+    }
+   ],
+   "chance": 0.4294641188644704
+  }
+ ]
+}

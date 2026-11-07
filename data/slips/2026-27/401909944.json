@@ -1,0 +1,84 @@
+{
+ "gameId": "401909944",
+ "start": "2026-11-08T03:00Z",
+ "game": "SAS @ POR",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683021",
+     "name": "Deni Avdija",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.719035947353785,
+     "avg": 23.25,
+     "chance": 0.946429915048303
+    },
+    {
+     "playerId": "5105565",
+     "name": "Donovan Clingan",
+     "teamId": "22",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.155959634210495,
+     "avg": 10.625,
+     "chance": 0.9876339165138504
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.909836365216675,
+     "avg": 4.5,
+     "chance": 0.8539488039342981
+    }
+   ],
+   "chance": 0.7982083919758585
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.676557146556954,
+     "avg": 7.875,
+     "chance": 0.5511448954363376
+    },
+    {
+     "playerId": "4592479",
+     "name": "Julian Champagnie",
+     "teamId": "24",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.239691978241881,
+     "avg": 4.111111111111111,
+     "chance": 0.5878921348916561
+    },
+    {
+     "playerId": "4845367",
+     "name": "Stephon Castle",
+     "teamId": "24",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.343000183632751,
+     "avg": 5,
+     "chance": 0.6030064409980382
+    }
+   ],
+   "chance": 0.19538237774718542
+  }
+ ]
+}

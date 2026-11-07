@@ -1,0 +1,84 @@
+{
+ "gameId": "401909942",
+ "start": "2026-11-08T01:30Z",
+ "game": "ORL @ GSW",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.77851910258061,
+     "avg": 17.5,
+     "chance": 0.8873476381340106
+    },
+    {
+     "playerId": "4277847",
+     "name": "Wendell Carter Jr.",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.187668767791877,
+     "avg": 9.375,
+     "chance": 0.9506731910332776
+    },
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.194022001189906,
+     "avg": 8.5,
+     "chance": 0.9663684545105572
+    }
+   ],
+   "chance": 0.8152067919125459
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 20.903479817913976,
+     "avg": 19.625,
+     "chance": 0.769911201363531
+    },
+    {
+     "playerId": "4277847",
+     "name": "Wendell Carter Jr.",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.187668767791877,
+     "avg": 9.375,
+     "chance": 0.9506731910332776
+    },
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.7776165911159367,
+     "avg": 2.25,
+     "chance": 0.7144281154808425
+    }
+   ],
+   "chance": 0.5229141844194222
+  }
+ ]
+}

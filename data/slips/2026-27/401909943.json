@@ -1,0 +1,84 @@
+{
+ "gameId": "401909943",
+ "start": "2026-11-08T02:00Z",
+ "game": "HOU @ PHX",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.85323131287392,
+     "avg": 20.77777777777778,
+     "chance": 0.9283179988917368
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.422049531204052,
+     "avg": 6.333333333333333,
+     "chance": 0.8484485181249511
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.87573653544406,
+     "avg": 5.142857142857143,
+     "chance": 0.8484573190241669
+    }
+   ],
+   "chance": 0.6682704640680919
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.457679992030647,
+     "avg": 11.857142857142858,
+     "chance": 0.7036506225905301
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.422049531204052,
+     "avg": 6.333333333333333,
+     "chance": 0.5916036249060583
+    },
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.4646299323927403,
+     "avg": 3,
+     "chance": 0.6629272486456695
+    }
+   ],
+   "chance": 0.2759648526135457
+  }
+ ]
+}

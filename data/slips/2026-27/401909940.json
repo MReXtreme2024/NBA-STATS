@@ -1,0 +1,84 @@
+{
+ "gameId": "401909940",
+ "start": "2026-11-08T01:00Z",
+ "game": "NYK @ CLE",
+ "made": "2026-11-07T18:00:24.512Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.9710302096473,
+     "avg": 16.666666666666668,
+     "chance": 0.8071371512641615
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 9.5,
+     "mu": 13.827205832198816,
+     "avg": 13.625,
+     "chance": 0.8539788708970024
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.115803181971022,
+     "avg": 5.125,
+     "chance": 0.9632767961984245
+    }
+   ],
+   "chance": 0.6639655739413451
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.961962551217148,
+     "avg": 19.875,
+     "chance": 0.8910728245502229
+    },
+    {
+     "playerId": "3934719",
+     "name": "OG Anunoby",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.795198478216513,
+     "avg": 5.5,
+     "chance": 0.7929886548034899
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 6.115803181971022,
+     "avg": 5.125,
+     "chance": 0.7184654148448509
+    }
+   ],
+   "chance": 0.507675306940521
+  }
+ ]
+}
