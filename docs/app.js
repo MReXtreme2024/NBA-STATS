@@ -62,7 +62,7 @@ function saveFormula(f) {
   try { localStorage.setItem(FORMULA_KEY, f); } catch { /* private mode: just don't remember */ }
 }
 
-// The Your formula / Claude's formula tabs on the Upcoming games and matchup pages.
+// The Your formula / Claude's formula tabs on the results page.
 // Which over/under line Claude's formula lists show under each player (0.8 = the 80/20 line), remembered.
 const LEVEL_KEY = 'claudeLine';
 function readLevel() {
@@ -72,6 +72,25 @@ function saveLevel(v) {
   try { localStorage.setItem(LEVEL_KEY, String(v)); } catch { /* private mode: not remembered */ }
 }
 const levelName = (v) => `${Math.round(v * 100)}/${Math.round((1 - v) * 100)}`;
+
+// The Upcoming games page: Claude's formula (the games) or Rankings (every projected player across the
+// day's games, ranked by points, rebounds or assists). Nate swapped this in for the Your formula tab (8 Nov 2026).
+const VIEW_KEY = 'upcomingView';
+const RANK_KEY = 'rankStat';
+const readStored = (key, allowed, fallback) => {
+  try { const v = localStorage.getItem(key); return allowed.includes(v) ? v : fallback; } catch { return fallback; }
+};
+const store = (key, v) => { try { localStorage.setItem(key, v); } catch { /* private mode: not remembered */ } };
+function viewTabs(view) {
+  const btn = (v, label) => `<button data-view="${v}" aria-pressed="${view === v}">${label}</button>`;
+  return `<div class="switch tabs" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}</div>`;
+}
+
+// The row of over/under line buttons (95/5 … 5/95).
+function levelsBox(level) {
+  return data.calibration?.pts ? `<section class="levels-box"><p class="levels-title">Line shown under each player: he goes over it <b>${Math.round(level * 100)}%</b> of the time</p>
+    <div class="levels" role="group" aria-label="Over/under line">${LEVELS.map((v) => `<button data-level="${v}" aria-pressed="${v === level}">${levelName(v)}</button>`).join('')}</div></section>` : '';
+}
 
 function formulaTabs(formula) {
   const btn = (f, label) => `<button data-formula="${f}" aria-pressed="${formula === f}">${label}</button>`;
@@ -204,26 +223,50 @@ const pill = (t) => `<span class="pill" style="${colours(t)}">${esc(t.code)}</sp
 
 // 6. Upcoming games: today's (US date) games not yet started, from the nightly update.
 function upcomingPage() {
-  const formula = readFormula();
+  const view = readStored(VIEW_KEY, ['games', 'rankings'], 'games');
   const games = data.upcoming?.games ?? [];
   const rows = games.map((g) => {
     const away = teamById(g.awayId);
     const home = teamById(g.homeId);
     const note = g.note ? `<span class="note">${esc(g.note)}</span>` : '';
-    const score = formula === 'claude' && g.claude
+    const score = g.claude
       ? `<span class="proj-score">${one(g.claude.away.score)} – ${one(g.claude.home.score)}</span>` : '';
     return `<li><a class="game-row" href="#/game/${g.id}">
       <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
       <span class="when">${score}${startText(g.start)}${note}</span></a></li>`;
   }).join('');
-  const body = games.length
-    ? `<ul class="games-list">${rows}</ul>`
+  const body = !games.length ? null : view === 'rankings' ? rankings(games) : `<ul class="games-list">${rows}</ul>`;
+  const shown = body !== null
+    ? body
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
   const results = data.results?.games
     ? `<a class="upcoming-link" href="#/results"><span>How did the projections go?</span><span class="gp">${data.results.games} games scored ›</span></a>` : '';
   const mine = readSlips();
   const slips = `<a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${mine.length} saved ›</span></a>`;
-  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${formulaTabs(formula)}${body}${slips}${results}`;
+  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${viewTabs(view)}${shown}${slips}${results}`;
+}
+
+// Rankings: every player Claude projects in the day's games (with Nate's lineups where confirmed), ranked
+// by points, rebounds or assists, with the chosen over/under line. Tap a row for that game.
+function rankings(games) {
+  const stat = readStored(RANK_KEY, ['pts', 'reb', 'ast'], 'pts');
+  const level = readLevel();
+  const all = games.filter((g) => g.claude).flatMap((g) => {
+    const c = claudeFor(g);
+    return [[c.away, g.homeId], [c.home, g.awayId]].flatMap(([side, oppId]) => side.players.map((p) => ({ p, g, team: teamById(side.teamId), opp: teamById(oppId), home: side === c.home })));
+  }).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name));
+  if (!all.length) return '<p class="message">Claude\'s formula isn\'t ready for these games yet. It appears after the next nightly update.</p>';
+  const cal = data.calibration?.[stat];
+  const items = all.map(({ p, g, team, opp, home }, i) => {
+    const line = cal ? lineAt(p[stat], cal, level) : null;
+    const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
+    return `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}${tag}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${Math.floor(p.min)} min${cal ? ` · ${levelName(level)} ${line ? line.toFixed(1) : '—'}` : ''}</span></span><b>${one(p[stat])}</b></a></li>`;
+  }).join('');
+  const btn = (s, label) => `<button data-rank="${s}" aria-pressed="${stat === s}">${label}</button>`;
+  return `<div class="switch three" role="group" aria-label="Rank by">${btn('pts', 'Points')}${btn('reb', 'Rebounds')}${btn('ast', 'Assists')}</div>
+    ${levelsBox(level)}
+    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} · ${all.length} players, ${games.filter((g) => g.claude).length} games</h3><ul class="ranking">${items}</ul></section>
+    <p class="working">Claude's projected ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} for every player in the day's games, highest first, using your confirmed lineups where you've saved one. The small line is the one he goes over the chosen share of the time. Tap a player for his game.</p>`;
 }
 
 // 8. Results: both formulas' real pre-game projections against what happened.
@@ -587,8 +630,7 @@ function claudeMatchup(g, away, home) {
     const line = lineAt(p[stat], data.calibration[stat], level);
     return ` · ${levelName(level)} ${line ? line.toFixed(1) : '—'}`;
   };
-  const levels = data.calibration?.pts ? `<section class="levels-box"><p class="levels-title">Line shown under each player: he goes over it <b>${Math.round(level * 100)}%</b> of the time</p>
-    <div class="levels" role="group" aria-label="Over/under line">${LEVELS.map((v) => `<button data-level="${v}" aria-pressed="${v === level}">${levelName(v)}</button>`).join('')}</div></section>` : '';
+  const levels = levelsBox(level);
   const sections = CLAUDE_STATS.map(([label, value, stat]) => `<section class="stat"><h3>${label}</h3>
       <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
@@ -625,12 +667,11 @@ function gameNav(g) {
 
 function matchupPage(g) {
   const mode = readMode();
-  const formula = readFormula();
   const away = teamById(g.awayId);
   const home = teamById(g.homeId);
-  if (formula === 'claude') {
+  if (g.claude) {
     const note = g.note ? ` · ${g.note}` : '';
-    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}${formulaTabs(formula)}${claudeMatchup(g, away, home)}`;
+    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}${claudeMatchup(g, away, home)}`;
   }
   const outFor = (t) => readLineup(g.id)?.[t.id]?.out ?? [];
   const column = (t, s) => {
@@ -647,7 +688,7 @@ function matchupPage(g) {
       <div class="sides">${column(away, s)}${column(home, s)}</div></section>`).join('');
   const note = g.note ? ` · ${g.note}` : '';
   return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}
-    ${formulaTabs(formula)}
+    <p class="out-line">Claude's formula isn't ready for this game yet (it appears after the next nightly update), so this shows your formula.</p>
     <section class="matchup">
       <div class="panel" style="${colours(away)}"><h2>${esc(away.name)}</h2><p>Away · ${away.gp} played</p></div>
       <div class="panel" style="${colours(home)}"><h2>${esc(home.name)}</h2><p>Home · ${home.gp} played</p></div>
@@ -801,6 +842,10 @@ app.addEventListener('click', (e) => {
   }
   const levelBtn = e.target.closest('[data-level]');
   if (levelBtn) { saveLevel(Number(levelBtn.dataset.level)); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
+  const viewBtn = e.target.closest('[data-view]');
+  if (viewBtn) { store(VIEW_KEY, viewBtn.dataset.view); render(); return; }
+  const rankBtn = e.target.closest('[data-rank]');
+  if (rankBtn) { store(RANK_KEY, rankBtn.dataset.rank); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const formulaBtn = e.target.closest('[data-formula]');
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
   const modeBtn = e.target.closest('[data-mode]');

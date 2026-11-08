@@ -324,3 +324,11 @@ details.claude-slips summary { cursor: pointer; font-weight: 700; padding: 12px 
 .levels button { flex: 0 0 auto; min-width: 58px; min-height: 44px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; }
 .levels button[aria-pressed="true"] { background: var(--text); color: var(--bg); border-color: var(--text); }
 .levels button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+ul.ranking { list-style: none; margin: 0; padding: 0; }
+ul.ranking li a { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); color: inherit; text-decoration: none; min-height: 44px; }
+ul.ranking .rank { flex: 0 0 28px; font-size: 13px; font-weight: 700; color: var(--muted); text-align: right; }
+ul.ranking .name { flex: 1; min-width: 0; overflow-wrap: anywhere; line-height: 1.25; }
+ul.ranking .name .pill { font-size: 11px; padding: 1px 5px; }
+ul.ranking .mins { display: block; margin-top: 2px; font-size: 12px; color: var(--muted); }
+ul.ranking b { flex-shrink: 0; font-size: 18px; }
+.switch.three { grid-template-columns: repeat(3, 1fr); }

@@ -77,6 +77,8 @@ His numbers update as you tap. Tap **Save lineup** and the game's projections us
 
 ### Claude's formula
 
+**Rankings.** The Upcoming games page has two tabs: **Claude's formula** (the day's games) and **Rankings**, which lists every player in the day's games ranked by Claude's projected points, rebounds or assists (tap the buttons to switch), with the over/under line under each name. Tap a player to open his game. (The Your formula tab was removed from the Upcoming games and matchup pages on 8 Nov; your formula is still on each team's Projections page.)
+
 The Upcoming games page and every matchup have two tabs: **Your formula** and **Claude's formula**. The app remembers which one you used last.
 
 Claude's formula is a separate projection that Claude designed using everything ESPN offers:
