@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '7 0 * * *'                 # 12:07am: GitHub delays or drops jobs set for exactly the hour
       timezone: 'Australia/Melbourne'   # GitHub adjusts for daylight saving
+  push:                                 # Claude starts an update by changing .github/run-update (Nate approved 8 Nov 2026)
+    branches: [main]
+    paths: ['.github/run-update']
   workflow_dispatch:                    # adds a "Run workflow" button for manual updates
     inputs:
       from:
