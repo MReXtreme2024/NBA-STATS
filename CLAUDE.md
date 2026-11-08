@@ -48,6 +48,8 @@ Node.js (LTS) built-ins only: no frameworks, no npm packages, no build step. Sit
 
 ## Schedule
 
+`.github/workflows/publish.yml` (added 8 Nov 2026) republishes the site whenever a change under `docs/` is pushed to `main`, so screen changes go live without waiting for the nightly run.
+
 The nightly run is at **12:07am** Australia/Melbourne (`cron: '7 0 * * *'`), not 12:00am as in PLAN.md. Nate approved the move because GitHub delays or drops jobs scheduled exactly on the hour; the first midnight run started about 5 hours late.
 
 ## Upcoming games
