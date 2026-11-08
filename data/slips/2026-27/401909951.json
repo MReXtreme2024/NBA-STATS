@@ -1,0 +1,84 @@
+{
+ "gameId": "401909951",
+ "start": "2026-11-09T02:00Z",
+ "game": "MIA @ SAC",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 25.525341816905314,
+     "avg": 27.333333333333332,
+     "chance": 0.9903865961974687
+    },
+    {
+     "playerId": "3155942",
+     "name": "Domantas Sabonis",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 11.630092935624228,
+     "avg": 14.555555555555555,
+     "chance": 0.9938940315828362
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.8590487953487775,
+     "avg": 7.111111111111111,
+     "chance": 0.9816303299410185
+    }
+   ],
+   "chance": 0.9662573382586986
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059319",
+     "name": "Andrew Wiggins",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.686530597844738,
+     "avg": 8.555555555555555,
+     "chance": 0.5515308829999377
+    },
+    {
+     "playerId": "3155942",
+     "name": "Domantas Sabonis",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 11.630092935624228,
+     "avg": 14.555555555555555,
+     "chance": 0.9938940315828362
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.8590487953487775,
+     "avg": 7.111111111111111,
+     "chance": 0.9816303299410185
+    }
+   ],
+   "chance": 0.5380936747539876
+  }
+ ]
+}

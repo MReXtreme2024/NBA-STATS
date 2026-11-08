@@ -1,0 +1,84 @@
+{
+ "gameId": "401909947",
+ "start": "2026-11-09T00:00Z",
+ "game": "UTA @ MIN",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.319225715884834,
+     "avg": 18,
+     "chance": 0.8783108885302353
+    },
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.593274039598783,
+     "avg": 5.9,
+     "chance": 0.8606125759813382
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.60342190455952,
+     "avg": 6.1,
+     "chance": 0.9770553118964238
+    }
+   ],
+   "chance": 0.738541841630531
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.046408818827393,
+     "avg": 13.1,
+     "chance": 0.7296725947977937
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.491336618816298,
+     "avg": 3.3,
+     "chance": 0.6295412418543608
+    },
+    {
+     "playerId": "4397002",
+     "name": "Ayo Dosunmu",
+     "teamId": "16",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.0158670930698355,
+     "avg": 4.3,
+     "chance": 0.7499654797445425
+    }
+   ],
+   "chance": 0.3445033864173402
+  }
+ ]
+}

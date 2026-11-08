@@ -1,0 +1,84 @@
+{
+ "gameId": "401909946",
+ "start": "2026-11-08T23:00Z",
+ "game": "LAL @ DET",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 26.04377915611232,
+     "avg": 40.111111111111114,
+     "chance": 0.9908929498286971
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.839387659142396,
+     "avg": 10.4,
+     "chance": 0.9681856043387788
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 8.134623370868102,
+     "avg": 7.625,
+     "chance": 0.9250189915815042
+    }
+   ],
+   "chance": 0.8874338876761244
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.073755857072388,
+     "avg": 9.375,
+     "chance": 0.5728569239979489
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.839387659142396,
+     "avg": 10.4,
+     "chance": 0.9681856043387788
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 8.134623370868102,
+     "avg": 7.625,
+     "chance": 0.7051029300864944
+    }
+   ],
+   "chance": 0.3910725264501708
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909945",
+ "start": "2026-11-08T20:30Z",
+ "game": "PHI @ CHI",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059318",
+     "name": "Joel Embiid",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.79529734121444,
+     "avg": 17.875,
+     "chance": 0.8635602412853831
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.726261778672215,
+     "avg": 4.625,
+     "chance": 0.8728306718368551
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.371660352259929,
+     "avg": 5.3,
+     "chance": 0.9119136014488775
+    }
+   ],
+   "chance": 0.6873474591972126
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4711294",
+     "name": "Matas Buzelis",
+     "teamId": "4",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.139432584403721,
+     "avg": 12.875,
+     "chance": 0.6811097194755208
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.726261778672215,
+     "avg": 4.625,
+     "chance": 0.6363483044555485
+    },
+    {
+     "playerId": "4395626",
+     "name": "Tre Jones",
+     "teamId": "4",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.811787548303042,
+     "avg": 3.125,
+     "chance": 0.7188637954354917
+    }
+   ],
+   "chance": 0.31157211369007726
+  }
+ ]
+}

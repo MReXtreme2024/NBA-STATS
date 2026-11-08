@@ -1,0 +1,84 @@
+{
+ "gameId": "401909948",
+ "start": "2026-11-09T00:30Z",
+ "game": "BKN @ DAL",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.517186053619284,
+     "avg": 21.77777777777778,
+     "chance": 0.9437362455181257
+    },
+    {
+     "playerId": "4432194",
+     "name": "Day'Ron Sharpe",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.183580464651433,
+     "avg": 7.444444444444445,
+     "chance": 0.9013716892742021
+    },
+    {
+     "playerId": "3064514",
+     "name": "Julius Randle",
+     "teamId": "17",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.727502760385332,
+     "avg": 5.111111111111111,
+     "chance": 0.8261720299310419
+    }
+   ],
+   "chance": 0.7027891310498009
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.517186053619284,
+     "avg": 21.77777777777778,
+     "chance": 0.9437362455181257
+    },
+    {
+     "playerId": "4432194",
+     "name": "Day'Ron Sharpe",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.183580464651433,
+     "avg": 7.444444444444445,
+     "chance": 0.9013716892742021
+    },
+    {
+     "playerId": "5279130",
+     "name": "Nolan Traore",
+     "teamId": "17",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.332856235403739,
+     "avg": 2.6666666666666665,
+     "chance": 0.638000978914801
+    }
+   ],
+   "chance": 0.5427200841184133
+  }
+ ]
+}

@@ -1,0 +1,46 @@
+{
+ "gameId": "401909950",
+ "start": "2026-11-09T02:00Z",
+ "game": "NOP @ LAC",
+ "made": "2026-11-08T18:19:45.531Z",
+ "slips": [
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3936099",
+     "name": "Derrick Jones Jr.",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.980061448599193,
+     "avg": 11.571428571428571,
+     "chance": 0.567662226509986
+    },
+    {
+     "playerId": "5254165",
+     "name": "Keaton Wagler",
+     "teamId": "12",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.6023379629526975,
+     "avg": 4.125,
+     "chance": 0.6480803578414074
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.166199233563315,
+     "avg": 6.625,
+     "chance": 0.5653398913797996
+    }
+   ],
+   "chance": 0.2079833103635043
+  }
+ ]
+}
