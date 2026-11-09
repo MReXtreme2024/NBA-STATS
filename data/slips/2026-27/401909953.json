@@ -2,7 +2,7 @@
  "gameId": "401909953",
  "start": "2026-11-10T00:00Z",
  "game": "CLE @ CHA",
- "made": "2026-11-09T21:09:44.760Z",
+ "made": "2026-11-09T22:58:09.850Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -10,37 +10,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3135045",
-     "name": "Grayson Allen",
+     "playerId": "4396971",
+     "name": "Naz Reid",
      "teamId": "30",
      "stat": "pts",
      "line": 9.5,
-     "mu": 18.074420548317537,
-     "avg": 14.1,
-     "chance": 0.8742089184219356
+     "mu": 20.471742892684443,
+     "avg": 16.6,
+     "chance": 0.9248439826174653
     },
     {
-     "playerId": "4432158",
-     "name": "Evan Mobley",
-     "teamId": "5",
+     "playerId": "4576060",
+     "name": "Ryan Kalkbrenner",
+     "teamId": "30",
      "stat": "reb",
      "line": 3.5,
-     "mu": 8.077100706921176,
-     "avg": 8.1,
-     "chance": 0.9458053210932813
+     "mu": 6.304615164803408,
+     "avg": 4.4,
+     "chance": 0.8386996822833168
     },
     {
-     "playerId": "3992",
-     "name": "James Harden",
-     "teamId": "5",
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
      "stat": "ast",
      "line": 2.5,
-     "mu": 6.3972799765197275,
-     "avg": 5.8,
-     "chance": 0.9729330475779053
+     "mu": 4.5313584864408005,
+     "avg": 2.7,
+     "chance": 0.8082201070161563
     }
    ],
-   "chance": 0.8044516393592943
+   "chance": 0.6269091439481838
   },
   {
    "type": "claude-bigger",
@@ -48,37 +48,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3992",
-     "name": "James Harden",
-     "teamId": "5",
-     "stat": "pts",
-     "line": 14.5,
-     "mu": 17.44960166149322,
-     "avg": 15.7,
-     "chance": 0.6320565514440486
-    },
-    {
-     "playerId": "2583632",
-     "name": "Royce O'Neale",
-     "teamId": "30",
-     "stat": "reb",
-     "line": 3.5,
-     "mu": 4.028607952217546,
-     "avg": 3.1,
-     "chance": 0.5621725731864436
-    },
-    {
      "playerId": "3135045",
      "name": "Grayson Allen",
      "teamId": "30",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 19.95977410950662,
+     "avg": 14.1,
+     "chance": 0.7393012681374309
+    },
+    {
+     "playerId": "4576060",
+     "name": "Ryan Kalkbrenner",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.304615164803408,
+     "avg": 4.4,
+     "chance": 0.584122515010354
+    },
+    {
+     "playerId": "4396971",
+     "name": "Naz Reid",
+     "teamId": "30",
      "stat": "ast",
      "line": 2.5,
-     "mu": 4.053891819668563,
-     "avg": 2.7,
-     "chance": 0.7578734393093178
+     "mu": 3.0360301718776728,
+     "avg": 1.9,
+     "chance": 0.5734826693753214
     }
    ],
-   "chance": 0.26929127214744963
+   "chance": 0.24765419887978976
   }
  ]
 }

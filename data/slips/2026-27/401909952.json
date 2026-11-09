@@ -2,7 +2,7 @@
  "gameId": "401909952",
  "start": "2026-11-10T00:00Z",
  "game": "LAL @ ATL",
- "made": "2026-11-09T21:09:44.760Z",
+ "made": "2026-11-09T22:58:09.850Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -10,37 +10,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3945274",
-     "name": "Luka Doncic",
-     "teamId": "13",
-     "stat": "pts",
-     "line": 9.5,
-     "mu": 29.746966813238355,
-     "avg": 40.111111111111114,
-     "chance": 0.9943668583318551
-    },
-    {
      "playerId": "4433136",
      "name": "Walker Kessler",
      "teamId": "13",
-     "stat": "reb",
-     "line": 3.5,
-     "mu": 9.915899068477541,
-     "avg": 10.909090909090908,
-     "chance": 0.984707704093055
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.715999432133977,
+     "avg": 14.363636363636363,
+     "chance": 0.8015234122808907
     },
     {
-     "playerId": "4066457",
-     "name": "Austin Reaves",
+     "playerId": "4701230",
+     "name": "Jalen Johnson",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.112539704316257,
+     "avg": 8.75,
+     "chance": 0.8955740395759904
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
      "teamId": "13",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 4.808319176616176,
-     "avg": 4.636363636363637,
-     "chance": 0.8391086539549308
+     "line": 4.5,
+     "mu": 8.307925042001997,
+     "avg": 7.666666666666667,
+     "chance": 0.9392723566923085
     }
    ],
-   "chance": 0.8216222220962514
+   "chance": 0.6742318270324142
   },
   {
    "type": "claude-bigger",
@@ -48,37 +48,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "2490149",
-     "name": "CJ McCollum",
-     "teamId": "1",
+     "playerId": "4277811",
+     "name": "Collin Sexton",
+     "teamId": "13",
      "stat": "pts",
      "line": 9.5,
-     "mu": 14.625211417303518,
-     "avg": 12.909090909090908,
-     "chance": 0.76098815580718
+     "mu": 12.62548532274528,
+     "avg": 9.5,
+     "chance": 0.6616953991842156
     },
     {
-     "playerId": "4433136",
-     "name": "Walker Kessler",
+     "playerId": "4278580",
+     "name": "Sandro Mamukelashvili",
      "teamId": "13",
      "stat": "reb",
      "line": 3.5,
-     "mu": 9.915899068477541,
-     "avg": 10.909090909090908,
-     "chance": 0.984707704093055
+     "mu": 4.585864618862955,
+     "avg": 4.2727272727272725,
+     "chance": 0.646819064272586
     },
     {
-     "playerId": "4066457",
-     "name": "Austin Reaves",
+     "playerId": "3945274",
+     "name": "Luka Doncic",
      "teamId": "13",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 4.808319176616176,
-     "avg": 4.636363636363637,
-     "chance": 0.8391086539549308
+     "line": 6.5,
+     "mu": 8.307925042001997,
+     "avg": 7.666666666666667,
+     "chance": 0.721955891040777
     }
    ],
-   "chance": 0.6287868248265345
+   "chance": 0.30899509911921513
   }
  ]
 }

@@ -2,7 +2,7 @@
  "gameId": "401909955",
  "start": "2026-11-10T00:30Z",
  "game": "MEM @ TOR",
- "made": "2026-11-09T21:09:44.760Z",
+ "made": "2026-11-09T22:58:09.850Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -14,33 +14,33 @@
      "name": "RJ Barrett",
      "teamId": "28",
      "stat": "pts",
-     "line": 9.5,
-     "mu": 21.34024755888714,
+     "line": 14.5,
+     "mu": 25.147476557900962,
      "avg": 21.555555555555557,
-     "chance": 0.9427016146707239
+     "chance": 0.8901102696738873
     },
     {
-     "playerId": "4433134",
-     "name": "Scottie Barnes",
+     "playerId": "5093267",
+     "name": "Collin Murray-Boyles",
      "teamId": "28",
      "stat": "reb",
      "line": 3.5,
-     "mu": 7.01213034528247,
-     "avg": 7.625,
-     "chance": 0.8888219857320641
+     "mu": 6.127821701239243,
+     "avg": 5,
+     "chance": 0.8241492174073317
     },
     {
-     "playerId": "4065733",
-     "name": "Ty Jerome",
-     "teamId": "29",
+     "playerId": "4395724",
+     "name": "Immanuel Quickley",
+     "teamId": "28",
      "stat": "ast",
      "line": 2.5,
-     "mu": 4.769356769971811,
-     "avg": 5.25,
-     "chance": 0.8328878459010313
+     "mu": 5.776340847730915,
+     "avg": 5.75,
+     "chance": 0.9429889741942702
     }
    ],
-   "chance": 0.6978716630422589
+   "chance": 0.6917613239237933
   },
   {
    "type": "claude-bigger",
@@ -53,32 +53,32 @@
      "teamId": "29",
      "stat": "pts",
      "line": 9.5,
-     "mu": 11.86942453572337,
+     "mu": 11.96083207595225,
      "avg": 9.666666666666666,
-     "chance": 0.6265730271411394
+     "chance": 0.6310293103894846
     },
     {
      "playerId": "5093267",
      "name": "Collin Murray-Boyles",
      "teamId": "28",
      "stat": "reb",
-     "line": 3.5,
-     "mu": 5.12098859213427,
+     "line": 5.5,
+     "mu": 6.127821701239243,
      "avg": 5,
-     "chance": 0.720837837017259
+     "chance": 0.5617557661770451
     },
     {
-     "playerId": "4433134",
-     "name": "Scottie Barnes",
+     "playerId": "4395724",
+     "name": "Immanuel Quickley",
      "teamId": "28",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 4.654132219927272,
-     "avg": 5.125,
-     "chance": 0.8191819160550475
+     "line": 4.5,
+     "mu": 5.776340847730915,
+     "avg": 5.75,
+     "chance": 0.6845760385419352
     }
    ],
-   "chance": 0.36998969361988915
+   "chance": 0.24267149460706994
   }
  ]
 }

@@ -2,7 +2,7 @@
  "gameId": "401909959",
  "start": "2026-11-10T03:00Z",
  "game": "NOP @ GSW",
- "made": "2026-11-09T21:09:44.760Z",
+ "made": "2026-11-09T22:58:09.850Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -10,24 +10,24 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3975",
-     "name": "Stephen Curry",
-     "teamId": "9",
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
      "stat": "pts",
      "line": 9.5,
-     "mu": 24.002388771314767,
-     "avg": 31.25,
-     "chance": 0.9793838815226211
+     "mu": 17.69142356750418,
+     "avg": 16.1,
+     "chance": 0.8636377842157124
     },
     {
-     "playerId": "5175737",
-     "name": "Yaxel Lendeborg",
-     "teamId": "9",
+     "playerId": "4869780",
+     "name": "Derik Queen",
+     "teamId": "3",
      "stat": "reb",
      "line": 3.5,
-     "mu": 6.673491063224872,
+     "mu": 6.902467046837381,
      "avg": 7.2,
-     "chance": 0.8697585562911164
+     "chance": 0.8815266493384082
     },
     {
      "playerId": "3907497",
@@ -35,12 +35,12 @@
      "teamId": "3",
      "stat": "ast",
      "line": 2.5,
-     "mu": 4.821025540710265,
+     "mu": 5.346335670696203,
      "avg": 5,
-     "chance": 0.8415312756426102
+     "chance": 0.9108391636713151
     }
    ],
-   "chance": 0.7168394918313067
+   "chance": 0.6934398190202627
   },
   {
    "type": "claude-bigger",
@@ -48,14 +48,14 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3975",
-     "name": "Stephen Curry",
-     "teamId": "9",
+     "playerId": "4683634",
+     "name": "Bennedict Mathurin",
+     "teamId": "3",
      "stat": "pts",
      "line": 9.5,
-     "mu": 24.002388771314767,
-     "avg": 31.25,
-     "chance": 0.9793838815226211
+     "mu": 10.939342882355971,
+     "avg": 6,
+     "chance": 0.5669264943476688
     },
     {
      "playerId": "4397136",
@@ -63,22 +63,22 @@
      "teamId": "3",
      "stat": "reb",
      "line": 3.5,
-     "mu": 4.360660722418169,
+     "mu": 4.9509559598808,
      "avg": 4,
-     "chance": 0.6122754900601619
+     "chance": 0.6987719163109649
     },
     {
-     "playerId": "3907497",
-     "name": "Dejounte Murray",
+     "playerId": "4869780",
+     "name": "Derik Queen",
      "teamId": "3",
      "stat": "ast",
      "line": 2.5,
-     "mu": 4.821025540710265,
-     "avg": 5,
-     "chance": 0.8415312756426102
+     "mu": 3.1983236613242454,
+     "avg": 2.8,
+     "chance": 0.6112182722637797
     }
    ],
-   "chance": 0.5046265402976796
+   "chance": 0.24213553222128745
   }
  ]
 }

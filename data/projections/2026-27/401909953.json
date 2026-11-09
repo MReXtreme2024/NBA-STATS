@@ -3,10 +3,10 @@
   "start": "2026-11-10T00:00Z",
   "homeId": "30",
   "awayId": "5",
-  "savedAt": "2026-11-09T21:09:41.575Z",
+  "savedAt": "2026-11-09T22:58:06.475Z",
   "teams": {
     "5": {
-      "score": 112.04,
+      "score": 112.03,
       "players": {
         "3992": {
           "name": "James Harden",
@@ -151,15 +151,15 @@
       }
     },
     "30": {
-      "score": 103.7,
+      "score": 103.76,
       "players": {
         "2583632": {
           "name": "Royce O'Neale",
-          "min": 26,
+          "min": 29.6,
           "claude": {
-            "pts": 8.81,
-            "reb": 4.03,
-            "ast": 2.23
+            "pts": 9.73,
+            "reb": 4.99,
+            "ast": 2.49
           },
           "nate": {
             "pts": 4,
@@ -169,11 +169,11 @@
         },
         "3135045": {
           "name": "Grayson Allen",
-          "min": 29.9,
+          "min": 34.1,
           "claude": {
-            "pts": 18.07,
-            "reb": 2.88,
-            "ast": 4.05
+            "pts": 19.96,
+            "reb": 3.56,
+            "ast": 4.53
           },
           "nate": {
             "pts": 14,
@@ -183,11 +183,11 @@
         },
         "4395651": {
           "name": "Coby White",
-          "min": 15.5,
+          "min": 17.7,
           "claude": {
-            "pts": 11.01,
-            "reb": 1.93,
-            "ast": 2.71
+            "pts": 12.16,
+            "reb": 2.38,
+            "ast": 3.02
           },
           "nate": {
             "pts": 1,
@@ -197,11 +197,11 @@
         },
         "4396971": {
           "name": "Naz Reid",
-          "min": 31.8,
+          "min": 36.3,
           "claude": {
-            "pts": 18.54,
-            "reb": 7.48,
-            "ast": 2.72
+            "pts": 20.47,
+            "reb": 9.26,
+            "ast": 3.04
           },
           "nate": {
             "pts": 16,
@@ -209,27 +209,13 @@
             "ast": 1
           }
         },
-        "4433249": {
-          "name": "Moussa Diabate",
-          "min": 29.5,
-          "claude": {
-            "pts": 9.74,
-            "reb": 8.95,
-            "ast": 2.43
-          },
-          "nate": {
-            "pts": 8,
-            "reb": 8,
-            "ast": 1
-          }
-        },
         "4576060": {
           "name": "Ryan Kalkbrenner",
-          "min": 21.4,
+          "min": 24.5,
           "claude": {
-            "pts": 7.56,
-            "reb": 5.09,
-            "ast": 1.22
+            "pts": 8.35,
+            "reb": 6.3,
+            "ast": 1.36
           },
           "nate": {
             "pts": 4,
@@ -239,11 +225,11 @@
         },
         "4602025": {
           "name": "Sion James",
-          "min": 26.8,
+          "min": 30.5,
           "claude": {
-            "pts": 6.86,
-            "reb": 3.52,
-            "ast": 2.81
+            "pts": 7.57,
+            "reb": 4.36,
+            "ast": 3.14
           },
           "nate": {
             "pts": 5,
@@ -253,11 +239,11 @@
         },
         "5060701": {
           "name": "Christian Anderson",
-          "min": 14.3,
+          "min": 16.3,
           "claude": {
-            "pts": 4.88,
-            "reb": 2.05,
-            "ast": 2.15
+            "pts": 5.39,
+            "reb": 2.54,
+            "ast": 2.41
           },
           "nate": {
             "pts": 2,
@@ -267,11 +253,11 @@
         },
         "5211176": {
           "name": "Tidjane Salaun",
-          "min": 16.4,
+          "min": 18.7,
           "claude": {
-            "pts": 6.96,
-            "reb": 3.82,
-            "ast": 0.66
+            "pts": 7.69,
+            "reb": 4.73,
+            "ast": 0.74
           },
           "nate": {
             "pts": 5,
@@ -281,11 +267,11 @@
         },
         "5239590": {
           "name": "Liam McNeeley",
-          "min": 9.8,
+          "min": 11.2,
           "claude": {
-            "pts": 3.79,
-            "reb": 1.83,
-            "ast": 0.76
+            "pts": 4.18,
+            "reb": 2.26,
+            "ast": 0.85
           },
           "nate": {
             "pts": 1,
@@ -295,11 +281,11 @@
         },
         "5281370": {
           "name": "Hannes Steinbach",
-          "min": 11.9,
+          "min": 13.5,
           "claude": {
-            "pts": 4.67,
-            "reb": 2.89,
-            "ast": 1.03
+            "pts": 5.15,
+            "reb": 3.58,
+            "ast": 1.15
           },
           "nate": {
             "pts": 1,

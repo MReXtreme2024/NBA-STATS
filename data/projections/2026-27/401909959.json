@@ -3,18 +3,18 @@
   "start": "2026-11-10T03:00Z",
   "homeId": "9",
   "awayId": "3",
-  "savedAt": "2026-11-09T21:09:44.756Z",
+  "savedAt": "2026-11-09T22:58:09.847Z",
   "teams": {
     "3": {
-      "score": 111.46,
+      "score": 109.58,
       "players": {
         "3442": {
           "name": "DeAndre Jordan",
-          "min": 9.4,
+          "min": 10.8,
           "claude": {
-            "pts": 2.39,
-            "reb": 3.39,
-            "ast": 0.49
+            "pts": 2.84,
+            "reb": 3.85,
+            "ast": 0.55
           },
           "nate": {
             "pts": 1,
@@ -24,11 +24,11 @@
         },
         "3907497": {
           "name": "Dejounte Murray",
-          "min": 25.2,
+          "min": 28.9,
           "claude": {
-            "pts": 12.74,
-            "reb": 4.27,
-            "ast": 4.82
+            "pts": 15.12,
+            "reb": 4.85,
+            "ast": 5.35
           },
           "nate": {
             "pts": 10,
@@ -38,11 +38,11 @@
         },
         "4277813": {
           "name": "Herbert Jones",
-          "min": 23.7,
+          "min": 27.2,
           "claude": {
-            "pts": 6.43,
-            "reb": 2.73,
-            "ast": 1.76
+            "pts": 7.63,
+            "reb": 3.1,
+            "ast": 1.95
           },
           "nate": {
             "pts": 5,
@@ -52,11 +52,11 @@
         },
         "4277956": {
           "name": "Jordan Poole",
-          "min": 14.3,
+          "min": 16.3,
           "claude": {
-            "pts": 7.13,
-            "reb": 1.21,
-            "ast": 1.88
+            "pts": 8.46,
+            "reb": 1.37,
+            "ast": 2.09
           },
           "nate": {
             "pts": 2,
@@ -64,27 +64,13 @@
             "ast": 1
           }
         },
-        "4395628": {
-          "name": "Zion Williamson",
-          "min": 30.4,
-          "claude": {
-            "pts": 19.15,
-            "reb": 5.12,
-            "ast": 2.79
-          },
-          "nate": {
-            "pts": 21,
-            "reb": 5,
-            "ast": 2
-          }
-        },
         "4397136": {
           "name": "Saddiq Bey",
-          "min": 27.5,
+          "min": 31.5,
           "claude": {
-            "pts": 14.9,
-            "reb": 4.36,
-            "ast": 2.13
+            "pts": 17.69,
+            "reb": 4.95,
+            "ast": 2.36
           },
           "nate": {
             "pts": 16,
@@ -94,11 +80,11 @@
         },
         "4576086": {
           "name": "Bryce McGowens",
-          "min": 9.7,
+          "min": 11.1,
           "claude": {
-            "pts": 3.37,
-            "reb": 0.89,
-            "ast": 0.68
+            "pts": 4.01,
+            "reb": 1.01,
+            "ast": 0.75
           },
           "nate": {
             "pts": 0,
@@ -108,11 +94,11 @@
         },
         "4683634": {
           "name": "Bennedict Mathurin",
-          "min": 18.4,
+          "min": 21,
           "claude": {
-            "pts": 9.21,
-            "reb": 2.89,
-            "ast": 1.47
+            "pts": 10.94,
+            "reb": 3.28,
+            "ast": 1.64
           },
           "nate": {
             "pts": 6,
@@ -122,11 +108,11 @@
         },
         "4683742": {
           "name": "Julian Reese",
-          "min": 12.2,
+          "min": 14,
           "claude": {
-            "pts": 4.35,
-            "reb": 3.91,
-            "ast": 0.67
+            "pts": 5.17,
+            "reb": 4.44,
+            "ast": 0.75
           },
           "nate": {
             "pts": 0,
@@ -136,11 +122,11 @@
         },
         "4869780": {
           "name": "Derik Queen",
-          "min": 21.5,
+          "min": 24.7,
           "claude": {
-            "pts": 9.94,
-            "reb": 6.08,
-            "ast": 2.88
+            "pts": 11.8,
+            "reb": 6.9,
+            "ast": 3.2
           },
           "nate": {
             "pts": 12,
@@ -150,11 +136,11 @@
         },
         "4997538": {
           "name": "Karlo Matkovic",
-          "min": 16.1,
+          "min": 18.4,
           "claude": {
-            "pts": 6.37,
-            "reb": 3.69,
-            "ast": 0.86
+            "pts": 7.56,
+            "reb": 4.19,
+            "ast": 0.95
           },
           "nate": {
             "pts": 8,
@@ -164,11 +150,11 @@
         },
         "5144091": {
           "name": "Jeremiah Fears",
-          "min": 27.4,
+          "min": 31.4,
           "claude": {
-            "pts": 14.12,
-            "reb": 3.94,
-            "ast": 3.76
+            "pts": 16.76,
+            "reb": 4.47,
+            "ast": 4.17
           },
           "nate": {
             "pts": 15,
@@ -179,7 +165,7 @@
       }
     },
     "9": {
-      "score": 120.54,
+      "score": 120.5,
       "players": {
         "3213": {
           "name": "Al Horford",
@@ -199,7 +185,7 @@
           "name": "Stephen Curry",
           "min": 26.4,
           "claude": {
-            "pts": 24,
+            "pts": 23.99,
             "reb": 3.28,
             "ast": 3.89
           },
@@ -241,7 +227,7 @@
           "name": "Gary Payton II",
           "min": 13.3,
           "claude": {
-            "pts": 5.91,
+            "pts": 5.9,
             "reb": 2.73,
             "ast": 1.14
           },
@@ -255,7 +241,7 @@
           "name": "De'Anthony Melton",
           "min": 20.8,
           "claude": {
-            "pts": 10.13,
+            "pts": 10.12,
             "reb": 3.35,
             "ast": 2.14
           },
@@ -325,9 +311,9 @@
           "name": "Yaxel Lendeborg",
           "min": 30.4,
           "claude": {
-            "pts": 18.7,
+            "pts": 18.69,
             "reb": 6.67,
-            "ast": 3.57
+            "ast": 3.56
           },
           "nate": {
             "pts": 21,
