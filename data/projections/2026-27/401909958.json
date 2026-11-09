@@ -1,0 +1,285 @@
+{
+  "id": "401909958",
+  "start": "2026-11-10T02:00Z",
+  "homeId": "21",
+  "awayId": "24",
+  "savedAt": "2026-11-09T21:09:44.223Z",
+  "teams": {
+    "21": {
+      "score": 109.21,
+      "players": {
+        "3136193": {
+          "name": "Devin Booker",
+          "min": 32.8,
+          "claude": {
+            "pts": 22.81,
+            "reb": 3.56,
+            "ast": 5.23
+          },
+          "nate": {
+            "pts": 25,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "3155526": {
+          "name": "Dillon Brooks",
+          "min": 29.6,
+          "claude": {
+            "pts": 16.76,
+            "reb": 3.84,
+            "ast": 1.95
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "3913174": {
+          "name": "Luke Kennard",
+          "min": 16.3,
+          "claude": {
+            "pts": 6.27,
+            "reb": 1.8,
+            "ast": 1.71
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4066383": {
+          "name": "Miles Bridges",
+          "min": 30,
+          "claude": {
+            "pts": 14.91,
+            "reb": 6.85,
+            "ast": 3.13
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 8,
+            "ast": 3
+          }
+        },
+        "4278585": {
+          "name": "Collin Gillespie",
+          "min": 24.3,
+          "claude": {
+            "pts": 8.71,
+            "reb": 3.31,
+            "ast": 3.89
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "4437244": {
+          "name": "Jalen Green",
+          "min": 26.7,
+          "claude": {
+            "pts": 14.51,
+            "reb": 3.56,
+            "ast": 2.98
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 2,
+            "ast": 3
+          }
+        },
+        "4592714": {
+          "name": "Pat Spencer",
+          "min": 8.6,
+          "claude": {
+            "pts": 3.04,
+            "reb": 1.23,
+            "ast": 1.58
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4601023": {
+          "name": "Oso Ighodaro",
+          "min": 18.7,
+          "claude": {
+            "pts": 5.1,
+            "reb": 4.73,
+            "ast": 2.17
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4888725": {
+          "name": "Ryan Dunn",
+          "min": 17.2,
+          "claude": {
+            "pts": 4.93,
+            "reb": 4.08,
+            "ast": 1.34
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "5203685": {
+          "name": "Khaman Maluach",
+          "min": 14.4,
+          "claude": {
+            "pts": 4.6,
+            "reb": 5.05,
+            "ast": 0.34
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 6,
+            "ast": 1
+          }
+        }
+      }
+    },
+    "24": {
+      "score": 117.56,
+      "players": {
+        "6578": {
+          "name": "Harrison Barnes",
+          "min": 18.8,
+          "claude": {
+            "pts": 6.87,
+            "reb": 1.74,
+            "ast": 0.99
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "3064560": {
+          "name": "Luke Kornet",
+          "min": 18.5,
+          "claude": {
+            "pts": 4.96,
+            "reb": 5.01,
+            "ast": 1.4
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4066259": {
+          "name": "De'Aaron Fox",
+          "min": 31.2,
+          "claude": {
+            "pts": 16.08,
+            "reb": 3.73,
+            "ast": 5.64
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "4395723": {
+          "name": "Keldon Johnson",
+          "min": 25.4,
+          "claude": {
+            "pts": 11.71,
+            "reb": 5.65,
+            "ast": 1.59
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "4592479": {
+          "name": "Julian Champagnie",
+          "min": 27,
+          "claude": {
+            "pts": 10.19,
+            "reb": 4.86,
+            "ast": 1.29
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4845367": {
+          "name": "Stephon Castle",
+          "min": 30.8,
+          "claude": {
+            "pts": 15.93,
+            "reb": 5.47,
+            "ast": 6.01
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 5,
+            "ast": 5
+          }
+        },
+        "5037871": {
+          "name": "Dylan Harper",
+          "min": 30,
+          "claude": {
+            "pts": 15.44,
+            "reb": 4.5,
+            "ast": 4.27
+          },
+          "nate": {
+            "pts": 18,
+            "reb": 5,
+            "ast": 4
+          }
+        },
+        "5061568": {
+          "name": "Carter Bryant",
+          "min": 11,
+          "claude": {
+            "pts": 3.61,
+            "reb": 1.98,
+            "ast": 0.58
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5104157": {
+          "name": "Victor Wembanyama",
+          "min": 31.1,
+          "claude": {
+            "pts": 26.55,
+            "reb": 11.58,
+            "ast": 2.9
+          },
+          "nate": {
+            "pts": 29,
+            "reb": 12,
+            "ast": 3
+          }
+        }
+      }
+    }
+  }
+}

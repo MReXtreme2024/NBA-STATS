@@ -1,0 +1,84 @@
+{
+ "gameId": "401909959",
+ "start": "2026-11-10T03:00Z",
+ "game": "NOP @ GSW",
+ "made": "2026-11-09T21:09:44.760Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3975",
+     "name": "Stephen Curry",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 24.002388771314767,
+     "avg": 31.25,
+     "chance": 0.9793838815226211
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.673491063224872,
+     "avg": 7.2,
+     "chance": 0.8697585562911164
+    },
+    {
+     "playerId": "3907497",
+     "name": "Dejounte Murray",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.821025540710265,
+     "avg": 5,
+     "chance": 0.8415312756426102
+    }
+   ],
+   "chance": 0.7168394918313067
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3975",
+     "name": "Stephen Curry",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 24.002388771314767,
+     "avg": 31.25,
+     "chance": 0.9793838815226211
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.360660722418169,
+     "avg": 4,
+     "chance": 0.6122754900601619
+    },
+    {
+     "playerId": "3907497",
+     "name": "Dejounte Murray",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.821025540710265,
+     "avg": 5,
+     "chance": 0.8415312756426102
+    }
+   ],
+   "chance": 0.5046265402976796
+  }
+ ]
+}

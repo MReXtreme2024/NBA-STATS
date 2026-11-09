@@ -1,0 +1,84 @@
+{
+ "gameId": "401909957",
+ "start": "2026-11-10T01:30Z",
+ "game": "DEN @ HOU",
+ "made": "2026-11-09T21:09:44.760Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.405757368814193,
+     "avg": 20.8,
+     "chance": 0.9436990630627182
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.780217768791813,
+     "avg": 6.5,
+     "chance": 0.8751611492778095
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.911957554974091,
+     "avg": 9.125,
+     "chance": 0.9830032406417742
+    }
+   ],
+   "chance": 0.8118513241497259
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 21.405757368814193,
+     "avg": 20.8,
+     "chance": 0.56681676928805
+    },
+    {
+     "playerId": "4432639",
+     "name": "Jabari Smith Jr.",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.48323096754595,
+     "avg": 6.4,
+     "chance": 0.6058590185654307
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.7436448615203823,
+     "avg": 3,
+     "chance": 0.7137317289905085
+    }
+   ],
+   "chance": 0.24510336357529316
+  }
+ ]
+}

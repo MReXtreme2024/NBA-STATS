@@ -1,0 +1,84 @@
+{
+ "gameId": "401909952",
+ "start": "2026-11-10T00:00Z",
+ "game": "LAL @ ATL",
+ "made": "2026-11-09T21:09:44.760Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 29.746966813238355,
+     "avg": 40.111111111111114,
+     "chance": 0.9943668583318551
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.915899068477541,
+     "avg": 10.909090909090908,
+     "chance": 0.984707704093055
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.808319176616176,
+     "avg": 4.636363636363637,
+     "chance": 0.8391086539549308
+    }
+   ],
+   "chance": 0.8216222220962514
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.625211417303518,
+     "avg": 12.909090909090908,
+     "chance": 0.76098815580718
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.915899068477541,
+     "avg": 10.909090909090908,
+     "chance": 0.984707704093055
+    },
+    {
+     "playerId": "4066457",
+     "name": "Austin Reaves",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.808319176616176,
+     "avg": 4.636363636363637,
+     "chance": 0.8391086539549308
+    }
+   ],
+   "chance": 0.6287868248265345
+  }
+ ]
+}

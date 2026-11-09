@@ -1,0 +1,84 @@
+{
+ "gameId": "401909955",
+ "start": "2026-11-10T00:30Z",
+ "game": "MEM @ TOR",
+ "made": "2026-11-09T21:09:44.760Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.34024755888714,
+     "avg": 21.555555555555557,
+     "chance": 0.9427016146707239
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.01213034528247,
+     "avg": 7.625,
+     "chance": 0.8888219857320641
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.769356769971811,
+     "avg": 5.25,
+     "chance": 0.8328878459010313
+    }
+   ],
+   "chance": 0.6978716630422589
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.86942453572337,
+     "avg": 9.666666666666666,
+     "chance": 0.6265730271411394
+    },
+    {
+     "playerId": "5093267",
+     "name": "Collin Murray-Boyles",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.12098859213427,
+     "avg": 5,
+     "chance": 0.720837837017259
+    },
+    {
+     "playerId": "4433134",
+     "name": "Scottie Barnes",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.654132219927272,
+     "avg": 5.125,
+     "chance": 0.8191819160550475
+    }
+   ],
+   "chance": 0.36998969361988915
+  }
+ ]
+}
