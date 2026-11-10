@@ -1,0 +1,84 @@
+{
+ "gameId": "401909962",
+ "start": "2026-11-11T02:00Z",
+ "game": "LAC @ PHX",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3155526",
+     "name": "Dillon Brooks",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.030501865377754,
+     "avg": 15.666666666666666,
+     "chance": 0.8452140684666025
+    },
+    {
+     "playerId": "4066383",
+     "name": "Miles Bridges",
+     "teamId": "21",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.582747257383847,
+     "avg": 7.777777777777778,
+     "chance": 0.8594422225712087
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.489422040290783,
+     "avg": 4.777777777777778,
+     "chance": 0.9197193886214587
+    }
+   ],
+   "chance": 0.6680958052900541
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.750506916712954,
+     "avg": 11.666666666666666,
+     "chance": 0.7670044475389122
+    },
+    {
+     "playerId": "4066383",
+     "name": "Miles Bridges",
+     "teamId": "21",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.582747257383847,
+     "avg": 7.777777777777778,
+     "chance": 0.8594422225712087
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.489422040290783,
+     "avg": 4.777777777777778,
+     "chance": 0.6411378207917794
+    }
+   ],
+   "chance": 0.42263549147625384
+  }
+ ]
+}

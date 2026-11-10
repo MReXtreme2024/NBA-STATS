@@ -1,0 +1,84 @@
+{
+ "gameId": "401909960",
+ "start": "2026-11-11T00:30Z",
+ "game": "MIL @ NYK",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395725",
+     "name": "Tyler Herro",
+     "teamId": "15",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.88877787614291,
+     "avg": 21.4,
+     "chance": 0.8416426051978325
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.204963469495265,
+     "avg": 13.555555555555555,
+     "chance": 0.9955335830876698
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.732247738591947,
+     "avg": 5.555555555555555,
+     "chance": 0.9416730973388769
+    }
+   ],
+   "chance": 0.7890123303439822
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 23.2849064341978,
+     "avg": 26.22222222222222,
+     "chance": 0.9740572481522598
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.204963469495265,
+     "avg": 13.555555555555555,
+     "chance": 0.9955335830876698
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.1856962817948937,
+     "avg": 2.7,
+     "chance": 0.611291379279141
+    }
+   ],
+   "chance": 0.592773347597481
+  }
+ ]
+}

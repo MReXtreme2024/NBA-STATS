@@ -1,0 +1,84 @@
+{
+ "gameId": "401909963",
+ "start": "2026-11-11T02:00Z",
+ "game": "MIA @ UTA",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.360644509843915,
+     "avg": 18,
+     "chance": 0.8207026149484926
+    },
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.328602995052819,
+     "avg": 8.4,
+     "chance": 0.9559277417834048
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.882264059728497,
+     "avg": 3.9,
+     "chance": 0.8542420637154904
+    }
+   ],
+   "chance": 0.6701805741924975
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066336",
+     "name": "Lauri Markkanen",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 22.360644509843915,
+     "avg": 18,
+     "chance": 0.6172530838061874
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.711126179013153,
+     "avg": 4,
+     "chance": 0.6612650617104776
+    },
+    {
+     "playerId": "4278053",
+     "name": "Davion Mitchell",
+     "teamId": "14",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.7099550948714635,
+     "avg": 8.5,
+     "chance": 0.9799890832749645
+    }
+   ],
+   "chance": 0.4000000847262826
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909961",
+ "start": "2026-11-11T01:00Z",
+ "game": "BOS @ PHI",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.658260746793875,
+     "avg": 26.90909090909091,
+     "chance": 0.9327126956792209
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.714002323842793,
+     "avg": 6,
+     "chance": 0.8728247743203206
+    },
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.604711785394166,
+     "avg": 5.3,
+     "chance": 0.8170456544630085
+    }
+   ],
+   "chance": 0.6651525762659967
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.273504024112338,
+     "avg": 12.9,
+     "chance": 0.6975019087470269
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.714002323842793,
+     "avg": 6,
+     "chance": 0.6348937012448305
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.876214002098051,
+     "avg": 3.8,
+     "chance": 0.7305294076349258
+    }
+   ],
+   "chance": 0.32350732763150086
+  }
+ ]
+}

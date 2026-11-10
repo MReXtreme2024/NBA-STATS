@@ -1,0 +1,84 @@
+{
+ "gameId": "401909965",
+ "start": "2026-11-11T04:00Z",
+ "game": "OKC @ POR",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 32.46264867643847,
+     "avg": 29.9,
+     "chance": 0.9116932464631977
+    },
+    {
+     "playerId": "4222252",
+     "name": "Isaiah Hartenstein",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 10.890075059878557,
+     "avg": 10.1,
+     "chance": 0.8204922800810331
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.602675224579994,
+     "avg": 4,
+     "chance": 0.8168385886697506
+    }
+   ],
+   "chance": 0.6110257083280692
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.953393393566982,
+     "avg": 8.444444444444445,
+     "chance": 0.5698286327903352
+    },
+    {
+     "playerId": "3133626",
+     "name": "Kenrich Williams",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.5434618963178375,
+     "avg": 3.8,
+     "chance": 0.640161363824602
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.994386131031201,
+     "avg": 4.9,
+     "chance": 0.7138790697696715
+    }
+   ],
+   "chance": 0.2604104309408449
+  }
+ ]
+}

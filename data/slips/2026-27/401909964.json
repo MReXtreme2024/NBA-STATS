@@ -1,0 +1,84 @@
+{
+ "gameId": "401909964",
+ "start": "2026-11-11T03:00Z",
+ "game": "ORL @ SAC",
+ "made": "2026-11-10T14:09:25.236Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.16653923855958,
+     "avg": 20.77777777777778,
+     "chance": 0.815846130071813
+    },
+    {
+     "playerId": "3155942",
+     "name": "Domantas Sabonis",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.236493013526518,
+     "avg": 14.555555555555555,
+     "chance": 0.9880153628969003
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.936148910967536,
+     "avg": 7.4,
+     "chance": 0.9834184889348424
+    }
+   ],
+   "chance": 0.7927026763486014
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4566434",
+     "name": "Franz Wagner",
+     "teamId": "19",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 22.16653923855958,
+     "avg": 20.77777777777778,
+     "chance": 0.6078994417034614
+    },
+    {
+     "playerId": "4702382",
+     "name": "Tristan da Silva",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.003758455979855,
+     "avg": 3.6666666666666665,
+     "chance": 0.5572155224757898
+    },
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.695331361878877,
+     "avg": 2.25,
+     "chance": 0.7091835414252141
+    }
+   ],
+   "chance": 0.24022245373169432
+  }
+ ]
+}
