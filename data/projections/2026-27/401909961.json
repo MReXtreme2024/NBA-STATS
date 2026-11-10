@@ -3,18 +3,18 @@
   "start": "2026-11-11T01:00Z",
   "homeId": "20",
   "awayId": "2",
-  "savedAt": "2026-11-10T14:09:23.010Z",
+  "savedAt": "2026-11-10T20:26:16.397Z",
   "teams": {
     "2": {
-      "score": 110.02,
+      "score": 109.12,
       "players": {
         "3195": {
           "name": "Mike Conley",
           "min": 8.7,
           "claude": {
-            "pts": 2.25,
+            "pts": 2.23,
             "reb": 0.77,
-            "ast": 1.28
+            "ast": 1.27
           },
           "nate": {
             "pts": 1,
@@ -26,9 +26,9 @@
           "name": "Paul George",
           "min": 25.8,
           "claude": {
-            "pts": 16,
+            "pts": 15.87,
             "reb": 4.25,
-            "ast": 3.15
+            "ast": 3.13
           },
           "nate": {
             "pts": 18,
@@ -40,9 +40,9 @@
           "name": "Derrick White",
           "min": 28.3,
           "claude": {
-            "pts": 13.27,
+            "pts": 13.16,
             "reb": 3.27,
-            "ast": 4.6
+            "ast": 4.57
           },
           "nate": {
             "pts": 12,
@@ -54,9 +54,9 @@
           "name": "Jayson Tatum",
           "min": 28.1,
           "claude": {
-            "pts": 20.72,
+            "pts": 20.55,
             "reb": 6.71,
-            "ast": 5.26
+            "ast": 5.22
           },
           "nate": {
             "pts": 24,
@@ -68,9 +68,9 @@
           "name": "Sam Hauser",
           "min": 20.5,
           "claude": {
-            "pts": 7.69,
+            "pts": 7.63,
             "reb": 2.89,
-            "ast": 1.16
+            "ast": 1.15
           },
           "nate": {
             "pts": 7,
@@ -82,9 +82,9 @@
           "name": "Payton Pritchard",
           "min": 25.9,
           "claude": {
-            "pts": 13.32,
+            "pts": 13.22,
             "reb": 3,
-            "ast": 3.88
+            "ast": 3.84
           },
           "nate": {
             "pts": 12,
@@ -96,9 +96,9 @@
           "name": "Luka Garza",
           "min": 13.5,
           "claude": {
-            "pts": 6.98,
+            "pts": 6.92,
             "reb": 3.37,
-            "ast": 0.94
+            "ast": 0.93
           },
           "nate": {
             "pts": 7,
@@ -110,9 +110,9 @@
           "name": "Mitchell Robinson",
           "min": 16.2,
           "claude": {
-            "pts": 5.03,
+            "pts": 4.99,
             "reb": 6.24,
-            "ast": 0.68
+            "ast": 0.67
           },
           "nate": {
             "pts": 5,
@@ -124,9 +124,9 @@
           "name": "Neemias Queta",
           "min": 21.1,
           "claude": {
-            "pts": 8.88,
+            "pts": 8.81,
             "reb": 6.33,
-            "ast": 1.43
+            "ast": 1.42
           },
           "nate": {
             "pts": 9,
@@ -138,9 +138,9 @@
           "name": "Baylor Scheierman",
           "min": 18.1,
           "claude": {
-            "pts": 5.43,
+            "pts": 5.39,
             "reb": 3.26,
-            "ast": 1.3
+            "ast": 1.29
           },
           "nate": {
             "pts": 5,
@@ -152,7 +152,7 @@
           "name": "Jordan Walsh",
           "min": 14.6,
           "claude": {
-            "pts": 4.3,
+            "pts": 4.27,
             "reb": 3.15,
             "ast": 0.61
           },
@@ -166,7 +166,7 @@
           "name": "Hugo Gonzalez",
           "min": 12.4,
           "claude": {
-            "pts": 3.45,
+            "pts": 3.42,
             "reb": 2.49,
             "ast": 0.43
           },
@@ -179,15 +179,15 @@
       }
     },
     "20": {
-      "score": 108.5,
+      "score": 107.6,
       "players": {
         "1966": {
           "name": "LeBron James",
           "min": 27,
           "claude": {
-            "pts": 12.79,
+            "pts": 12.68,
             "reb": 5.64,
-            "ast": 4.88
+            "ast": 4.84
           },
           "nate": {
             "pts": 12,
@@ -199,9 +199,9 @@
           "name": "Kentavious Caldwell-Pope",
           "min": 18.9,
           "claude": {
-            "pts": 5.45,
+            "pts": 5.41,
             "reb": 2.36,
-            "ast": 1.65
+            "ast": 1.64
           },
           "nate": {
             "pts": 5,
@@ -213,9 +213,9 @@
           "name": "Joel Embiid",
           "min": 25.3,
           "claude": {
-            "pts": 15.55,
+            "pts": 15.43,
             "reb": 7.19,
-            "ast": 2.73
+            "ast": 2.7
           },
           "nate": {
             "pts": 14,
@@ -227,9 +227,9 @@
           "name": "Dean Wade",
           "min": 18.8,
           "claude": {
-            "pts": 3.38,
+            "pts": 3.36,
             "reb": 3.3,
-            "ast": 1.14
+            "ast": 1.13
           },
           "nate": {
             "pts": 2,
@@ -241,9 +241,9 @@
           "name": "Jaylen Brown",
           "min": 30.4,
           "claude": {
-            "pts": 18.74,
+            "pts": 18.58,
             "reb": 6.22,
-            "ast": 3.4
+            "ast": 3.37
           },
           "nate": {
             "pts": 20,
@@ -255,9 +255,9 @@
           "name": "Anfernee Simons",
           "min": 20,
           "claude": {
-            "pts": 8.64,
+            "pts": 8.57,
             "reb": 2.09,
-            "ast": 1.41
+            "ast": 1.4
           },
           "nate": {
             "pts": 9,
@@ -269,9 +269,9 @@
           "name": "Tyrese Maxey",
           "min": 33.2,
           "claude": {
-            "pts": 20.66,
+            "pts": 20.49,
             "reb": 3.68,
-            "ast": 4.58
+            "ast": 4.55
           },
           "nate": {
             "pts": 26,
@@ -283,7 +283,7 @@
           "name": "Jabari Walker",
           "min": 9.4,
           "claude": {
-            "pts": 3,
+            "pts": 2.97,
             "reb": 2.63,
             "ast": 0.35
           },
@@ -297,7 +297,7 @@
           "name": "Caleb Love",
           "min": 9.1,
           "claude": {
-            "pts": 3.82,
+            "pts": 3.79,
             "reb": 1.06,
             "ast": 0.93
           },
@@ -311,9 +311,9 @@
           "name": "VJ Edgecombe",
           "min": 29.6,
           "claude": {
-            "pts": 10.66,
+            "pts": 10.57,
             "reb": 5.49,
-            "ast": 2.65
+            "ast": 2.63
           },
           "nate": {
             "pts": 12,

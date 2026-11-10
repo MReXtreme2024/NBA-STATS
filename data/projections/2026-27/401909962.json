@@ -3,16 +3,16 @@
   "start": "2026-11-11T02:00Z",
   "homeId": "21",
   "awayId": "12",
-  "savedAt": "2026-11-10T14:09:23.565Z",
+  "savedAt": "2026-11-10T20:26:16.935Z",
   "teams": {
     "12": {
-      "score": 110.93,
+      "score": 110.96,
       "players": {
         "3448": {
           "name": "Brook Lopez",
           "min": 21.5,
           "claude": {
-            "pts": 10.55,
+            "pts": 10.56,
             "reb": 4.64,
             "ast": 1.21
           },
@@ -126,7 +126,7 @@
           "claude": {
             "pts": 3.98,
             "reb": 2.4,
-            "ast": 1.08
+            "ast": 1.09
           },
           "nate": {
             "pts": 3,
@@ -169,11 +169,11 @@
       "players": {
         "3136193": {
           "name": "Devin Booker",
-          "min": 32.3,
+          "min": 30.4,
           "claude": {
-            "pts": 24.15,
-            "reb": 3.39,
-            "ast": 5.49
+            "pts": 22.95,
+            "reb": 3.13,
+            "ast": 5.16
           },
           "nate": {
             "pts": 26,
@@ -183,11 +183,11 @@
         },
         "3155526": {
           "name": "Dillon Brooks",
-          "min": 29.2,
+          "min": 27.4,
           "claude": {
-            "pts": 17.03,
-            "reb": 3.75,
-            "ast": 1.98
+            "pts": 16.19,
+            "reb": 3.45,
+            "ast": 1.86
           },
           "nate": {
             "pts": 15,
@@ -197,11 +197,11 @@
         },
         "3913174": {
           "name": "Luke Kennard",
-          "min": 16.2,
+          "min": 15.2,
           "claude": {
-            "pts": 6.47,
-            "reb": 1.74,
-            "ast": 1.77
+            "pts": 6.15,
+            "reb": 1.6,
+            "ast": 1.66
           },
           "nate": {
             "pts": 6,
@@ -211,11 +211,11 @@
         },
         "4066383": {
           "name": "Miles Bridges",
-          "min": 29.5,
+          "min": 27.7,
           "claude": {
-            "pts": 15.17,
-            "reb": 6.58,
-            "ast": 3.18
+            "pts": 14.42,
+            "reb": 6.07,
+            "ast": 2.99
           },
           "nate": {
             "pts": 15,
@@ -223,13 +223,27 @@
             "ast": 3
           }
         },
+        "4278402": {
+          "name": "Jordan Goodwin",
+          "min": 14.7,
+          "claude": {
+            "pts": 5.65,
+            "reb": 3.2,
+            "ast": 1.63
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 1
+          }
+        },
         "4278585": {
           "name": "Collin Gillespie",
-          "min": 24.4,
+          "min": 22.9,
           "claude": {
-            "pts": 9.11,
-            "reb": 3.22,
-            "ast": 4.16
+            "pts": 8.66,
+            "reb": 2.97,
+            "ast": 3.91
           },
           "nate": {
             "pts": 6,
@@ -239,11 +253,11 @@
         },
         "4437244": {
           "name": "Jalen Green",
-          "min": 26.3,
+          "min": 24.7,
           "claude": {
-            "pts": 14.75,
-            "reb": 3.53,
-            "ast": 3.2
+            "pts": 14.02,
+            "reb": 3.25,
+            "ast": 3.01
           },
           "nate": {
             "pts": 11,
@@ -251,27 +265,13 @@
             "ast": 3
           }
         },
-        "4592714": {
-          "name": "Pat Spencer",
-          "min": 8.4,
-          "claude": {
-            "pts": 3.11,
-            "reb": 1.2,
-            "ast": 1.67
-          },
-          "nate": {
-            "pts": 0,
-            "reb": 0,
-            "ast": 0
-          }
-        },
         "4601023": {
           "name": "Oso Ighodaro",
-          "min": 18.5,
+          "min": 17.3,
           "claude": {
-            "pts": 5.37,
-            "reb": 4.57,
-            "ast": 2.29
+            "pts": 5.1,
+            "reb": 4.21,
+            "ast": 2.16
           },
           "nate": {
             "pts": 5,
@@ -281,11 +281,11 @@
         },
         "4888725": {
           "name": "Ryan Dunn",
-          "min": 18,
+          "min": 16.9,
           "claude": {
-            "pts": 5.3,
-            "reb": 4.07,
-            "ast": 1.43
+            "pts": 5.04,
+            "reb": 3.75,
+            "ast": 1.35
           },
           "nate": {
             "pts": 5,
@@ -295,11 +295,11 @@
         },
         "5203685": {
           "name": "Khaman Maluach",
-          "min": 14.7,
+          "min": 13.8,
           "claude": {
-            "pts": 5.06,
-            "reb": 5.03,
-            "ast": 0.41
+            "pts": 4.81,
+            "reb": 4.64,
+            "ast": 0.39
           },
           "nate": {
             "pts": 7,

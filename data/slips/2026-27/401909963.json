@@ -2,7 +2,7 @@
  "gameId": "401909963",
  "start": "2026-11-11T02:00Z",
  "game": "MIA @ UTA",
- "made": "2026-11-10T14:09:25.236Z",
+ "made": "2026-11-10T20:26:18.564Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -10,37 +10,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "4066336",
-     "name": "Lauri Markkanen",
+     "playerId": "4873138",
+     "name": "Ace Bailey",
      "teamId": "26",
      "stat": "pts",
-     "line": 14.5,
-     "mu": 22.360644509843915,
-     "avg": 18,
-     "chance": 0.8207026149484926
+     "line": 9.5,
+     "mu": 18.341728845062153,
+     "avg": 11.9,
+     "chance": 0.882311448832942
     },
     {
-     "playerId": "4066261",
-     "name": "Bam Adebayo",
-     "teamId": "14",
+     "playerId": "4397077",
+     "name": "Jaxson Hayes",
+     "teamId": "26",
      "stat": "reb",
      "line": 3.5,
-     "mu": 8.328602995052819,
-     "avg": 8.4,
-     "chance": 0.9559277417834048
+     "mu": 6.423264753937211,
+     "avg": 6.333333333333333,
+     "chance": 0.848972627567743
     },
     {
-     "playerId": "5041955",
-     "name": "Darryn Peterson",
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
      "teamId": "26",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 4.882264059728497,
-     "avg": 3.9,
-     "chance": 0.8542420637154904
+     "line": 4.5,
+     "mu": 7.288673925455489,
+     "avg": 4.1,
+     "chance": 0.8458024610350483
     }
    ],
-   "chance": 0.6701805741924975
+   "chance": 0.6335553274201327
   },
   {
    "type": "claude-bigger",
@@ -48,14 +48,14 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "4066336",
-     "name": "Lauri Markkanen",
+     "playerId": "5105839",
+     "name": "Brice Sensabaugh",
      "teamId": "26",
      "stat": "pts",
-     "line": 19.5,
-     "mu": 22.360644509843915,
-     "avg": 18,
-     "chance": 0.6172530838061874
+     "line": 9.5,
+     "mu": 14.04092411407379,
+     "avg": 7.3,
+     "chance": 0.7350847872640583
     },
     {
      "playerId": "5041955",
@@ -63,22 +63,22 @@
      "teamId": "26",
      "stat": "reb",
      "line": 3.5,
-     "mu": 4.711126179013153,
+     "mu": 5.500165673784224,
      "avg": 4,
-     "chance": 0.6612650617104776
+     "chance": 0.7631230966479713
     },
     {
-     "playerId": "4278053",
-     "name": "Davion Mitchell",
-     "teamId": "14",
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 6.7099550948714635,
-     "avg": 8.5,
-     "chance": 0.9799890832749645
+     "line": 6.5,
+     "mu": 7.288673925455489,
+     "avg": 4.1,
+     "chance": 0.5895754759930985
     }
    ],
-   "chance": 0.4000000847262826
+   "chance": 0.330728364638933
   }
  ]
 }
