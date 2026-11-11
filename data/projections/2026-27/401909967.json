@@ -3,18 +3,18 @@
   "start": "2026-11-12T00:00Z",
   "homeId": "18",
   "awayId": "5",
-  "savedAt": "2026-11-11T13:36:24.685Z",
+  "savedAt": "2026-11-11T20:09:31.052Z",
   "teams": {
     "5": {
-      "score": 108.38,
+      "score": 109.28,
       "players": {
         "3992": {
           "name": "James Harden",
           "min": 34,
           "claude": {
-            "pts": 16.32,
+            "pts": 16.46,
             "reb": 4.32,
-            "ast": 6
+            "ast": 6.05
           },
           "nate": {
             "pts": 15,
@@ -26,9 +26,9 @@
           "name": "Mario Hezonja",
           "min": 21.4,
           "claude": {
-            "pts": 7.7,
+            "pts": 7.76,
             "reb": 5.15,
-            "ast": 1.61
+            "ast": 1.62
           },
           "nate": {
             "pts": 8,
@@ -40,9 +40,9 @@
           "name": "Donovan Mitchell",
           "min": 33.6,
           "claude": {
-            "pts": 21.46,
+            "pts": 21.64,
             "reb": 4.21,
-            "ast": 4.9
+            "ast": 4.94
           },
           "nate": {
             "pts": 22,
@@ -54,7 +54,7 @@
           "name": "Thomas Bryant",
           "min": 10.1,
           "claude": {
-            "pts": 4.51,
+            "pts": 4.55,
             "reb": 2.36,
             "ast": 0.38
           },
@@ -68,9 +68,9 @@
           "name": "Jarrett Allen",
           "min": 22.9,
           "claude": {
-            "pts": 10.57,
+            "pts": 10.66,
             "reb": 6.4,
-            "ast": 1.2
+            "ast": 1.21
           },
           "nate": {
             "pts": 10,
@@ -82,9 +82,9 @@
           "name": "Evan Mobley",
           "min": 32.5,
           "claude": {
-            "pts": 15.09,
+            "pts": 15.22,
             "reb": 7.54,
-            "ast": 3.18
+            "ast": 3.21
           },
           "nate": {
             "pts": 17,
@@ -96,9 +96,9 @@
           "name": "Peyton Watson",
           "min": 26,
           "claude": {
-            "pts": 9.99,
+            "pts": 10.07,
             "reb": 3.83,
-            "ast": 1.81
+            "ast": 1.83
           },
           "nate": {
             "pts": 9,
@@ -110,9 +110,9 @@
           "name": "Craig Porter Jr.",
           "min": 13,
           "claude": {
-            "pts": 2.51,
+            "pts": 2.53,
             "reb": 2.15,
-            "ast": 1.91
+            "ast": 1.93
           },
           "nate": {
             "pts": 1,
@@ -124,9 +124,9 @@
           "name": "Tyrese Proctor",
           "min": 16,
           "claude": {
-            "pts": 6.03,
+            "pts": 6.08,
             "reb": 1.9,
-            "ast": 1.9
+            "ast": 1.92
           },
           "nate": {
             "pts": 5,
@@ -138,9 +138,9 @@
           "name": "Meleek Thomas",
           "min": 21.3,
           "claude": {
-            "pts": 9.56,
+            "pts": 9.64,
             "reb": 2.48,
-            "ast": 1.24
+            "ast": 1.25
           },
           "nate": {
             "pts": 9,

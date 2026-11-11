@@ -2,7 +2,7 @@
  "gameId": "401909968",
  "start": "2026-11-12T00:00Z",
  "game": "BOS @ TOR",
- "made": "2026-11-11T13:36:29.138Z",
+ "made": "2026-11-11T20:09:35.641Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -10,14 +10,14 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "4395625",
-     "name": "RJ Barrett",
-     "teamId": "28",
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
      "stat": "pts",
-     "line": 14.5,
-     "mu": 22.031596657855985,
-     "avg": 21.3,
-     "chance": 0.813040638217333
+     "line": 9.5,
+     "mu": 16.044477356795504,
+     "avg": 13.272727272727273,
+     "chance": 0.8154351824795175
     },
     {
      "playerId": "4065648",
@@ -25,22 +25,22 @@
      "teamId": "2",
      "stat": "reb",
      "line": 3.5,
-     "mu": 6.143631574753934,
+     "mu": 6.762291772973947,
      "avg": 6,
-     "chance": 0.8272429715916734
+     "chance": 0.875190192087254
     },
     {
-     "playerId": "4432241",
-     "name": "Jamal Shead",
-     "teamId": "28",
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
      "stat": "ast",
      "line": 2.5,
-     "mu": 5.777254059259251,
-     "avg": 7,
-     "chance": 0.9441561363209134
+     "mu": 5.160285279590479,
+     "avg": 5.090909090909091,
+     "chance": 0.8880255006895028
     }
    ],
-   "chance": 0.6350225674859827
+   "chance": 0.633749054946549
   },
   {
    "type": "claude-bigger",
@@ -48,37 +48,37 @@
    "locked": true,
    "legs": [
     {
-     "playerId": "3078576",
-     "name": "Derrick White",
-     "teamId": "2",
-     "stat": "pts",
-     "line": 9.5,
-     "mu": 12.798160435025189,
-     "avg": 12.181818181818182,
-     "chance": 0.6728577703876518
-    },
-    {
-     "playerId": "4395625",
-     "name": "RJ Barrett",
-     "teamId": "28",
-     "stat": "reb",
-     "line": 5.5,
-     "mu": 6.082958462028961,
-     "avg": 5.8,
-     "chance": 0.5550386054429812
-    },
-    {
      "playerId": "4066354",
      "name": "Payton Pritchard",
      "teamId": "2",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.044477356795504,
+     "avg": 13.272727272727273,
+     "chance": 0.5637281270355572
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.762291772973947,
+     "avg": 6,
+     "chance": 0.6422285106756307
+    },
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
      "stat": "ast",
-     "line": 2.5,
-     "mu": 4.055768249365273,
-     "avg": 3.909090909090909,
-     "chance": 0.7599467679051494
+     "line": 4.5,
+     "mu": 5.160285279590479,
+     "avg": 5.090909090909091,
+     "chance": 0.5809522693901411
     }
    ],
-   "chance": 0.2838112691217928
+   "chance": 0.21032928153901498
   }
  ]
 }

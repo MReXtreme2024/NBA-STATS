@@ -2,11 +2,49 @@
  "gameId": "401909973",
  "start": "2026-11-12T02:00Z",
  "game": "ORL @ UTA",
- "made": "2026-11-11T13:36:29.138Z",
+ "made": "2026-11-11T20:09:35.641Z",
  "slips": [
   {
    "type": "claude-banker",
    "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.49474659507399,
+     "avg": 21.1,
+     "chance": 0.9497658757615657
+    },
+    {
+     "playerId": "4277847",
+     "name": "Wendell Carter Jr.",
+     "teamId": "19",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.05676415851544,
+     "avg": 9.7,
+     "chance": 0.9722870467691507
+    },
+    {
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.355814430127946,
+     "avg": 4.181818181818182,
+     "chance": 0.9120248299696774
+    }
+   ],
+   "chance": 0.8422048224340922
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
    "locked": true,
    "legs": [
     {
@@ -15,47 +53,9 @@
      "teamId": "26",
      "stat": "pts",
      "line": 9.5,
-     "mu": 17.824038050937897,
+     "mu": 14.135475185268907,
      "avg": 12.909090909090908,
-     "chance": 0.8697798229194864
-    },
-    {
-     "playerId": "4566434",
-     "name": "Franz Wagner",
-     "teamId": "19",
-     "stat": "reb",
-     "line": 3.5,
-     "mu": 6.871362700532861,
-     "avg": 6.4,
-     "chance": 0.8810567619596074
-    },
-    {
-     "playerId": "4683766",
-     "name": "Isaiah Collier",
-     "teamId": "26",
-     "stat": "ast",
-     "line": 4.5,
-     "mu": 7.048698920084323,
-     "avg": 4.181818181818182,
-     "chance": 0.81785821857503
-    }
-   ],
-   "chance": 0.6267455219121725
-  },
-  {
-   "type": "claude-bigger",
-   "title": "Claude's bigger payout",
-   "locked": true,
-   "legs": [
-    {
-     "playerId": "5105839",
-     "name": "Brice Sensabaugh",
-     "teamId": "26",
-     "stat": "pts",
-     "line": 9.5,
-     "mu": 12.986712964808063,
-     "avg": 7.090909090909091,
-     "chance": 0.6805152397210752
+     "chance": 0.7373564047262826
     },
     {
      "playerId": "5041955",
@@ -63,22 +63,22 @@
      "teamId": "26",
      "stat": "reb",
      "line": 3.5,
-     "mu": 4.982738678735897,
+     "mu": 4.527176313032475,
      "avg": 4,
-     "chance": 0.7020138649210816
+     "chance": 0.6386411977864599
     },
     {
      "playerId": "4683766",
      "name": "Isaiah Collier",
      "teamId": "26",
      "stat": "ast",
-     "line": 6.5,
-     "mu": 7.048698920084323,
+     "line": 4.5,
+     "mu": 5.355814430127946,
      "avg": 4.181818181818182,
-     "chance": 0.5601469691238106
+     "chance": 0.6143219124177095
     }
    ],
-   "chance": 0.26759964652771995
+   "chance": 0.2892879835372018
   }
  ]
 }
