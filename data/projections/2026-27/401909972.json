@@ -1,0 +1,383 @@
+{
+  "id": "401909972",
+  "start": "2026-11-12T01:00Z",
+  "homeId": "3",
+  "awayId": "17",
+  "savedAt": "2026-11-11T13:36:27.469Z",
+  "teams": {
+    "3": {
+      "score": 117.16,
+      "players": {
+        "3907497": {
+          "name": "Dejounte Murray",
+          "min": 21.1,
+          "claude": {
+            "pts": 11.25,
+            "reb": 3.65,
+            "ast": 4.21
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "4277813": {
+          "name": "Herbert Jones",
+          "min": 21.1,
+          "claude": {
+            "pts": 6.1,
+            "reb": 2.59,
+            "ast": 1.64
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "4277956": {
+          "name": "Jordan Poole",
+          "min": 14.5,
+          "claude": {
+            "pts": 7.31,
+            "reb": 1.26,
+            "ast": 1.96
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4395628": {
+          "name": "Zion Williamson",
+          "min": 25.6,
+          "claude": {
+            "pts": 16.92,
+            "reb": 4.41,
+            "ast": 2.5
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4397136": {
+          "name": "Saddiq Bey",
+          "min": 24,
+          "claude": {
+            "pts": 13.49,
+            "reb": 3.77,
+            "ast": 2.05
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4397688": {
+          "name": "Trey Murphy III",
+          "min": 25.8,
+          "claude": {
+            "pts": 13.93,
+            "reb": 3.87,
+            "ast": 2.84
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "4576086": {
+          "name": "Bryce McGowens",
+          "min": 10.5,
+          "claude": {
+            "pts": 3.77,
+            "reb": 0.97,
+            "ast": 0.73
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4683634": {
+          "name": "Bennedict Mathurin",
+          "min": 17.2,
+          "claude": {
+            "pts": 8.87,
+            "reb": 2.72,
+            "ast": 1.41
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4683742": {
+          "name": "Julian Reese",
+          "min": 10.4,
+          "claude": {
+            "pts": 3.84,
+            "reb": 3.33,
+            "ast": 0.59
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4869780": {
+          "name": "Derik Queen",
+          "min": 19.1,
+          "claude": {
+            "pts": 9.39,
+            "reb": 5.44,
+            "ast": 2.63
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4997538": {
+          "name": "Karlo Matkovic",
+          "min": 14.1,
+          "claude": {
+            "pts": 5.78,
+            "reb": 3.36,
+            "ast": 0.83
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "5144091": {
+          "name": "Jeremiah Fears",
+          "min": 24.2,
+          "claude": {
+            "pts": 12.91,
+            "reb": 3.52,
+            "ast": 3.67
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 4,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "17": {
+      "score": 112.65,
+      "players": {
+        "3064514": {
+          "name": "Julius Randle",
+          "min": 29,
+          "claude": {
+            "pts": 18.07,
+            "reb": 5.99,
+            "ast": 4.54
+          },
+          "nate": {
+            "pts": 20,
+            "reb": 6,
+            "ast": 5
+          }
+        },
+        "3150844": {
+          "name": "Moritz Wagner",
+          "min": 14.1,
+          "claude": {
+            "pts": 8.15,
+            "reb": 3.45,
+            "ast": 0.93
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "3907823": {
+          "name": "Terance Mann",
+          "min": 13.2,
+          "claude": {
+            "pts": 3.34,
+            "reb": 1.66,
+            "ast": 1.59
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4278104": {
+          "name": "Michael Porter Jr.",
+          "min": 29,
+          "claude": {
+            "pts": 20.51,
+            "reb": 6.71,
+            "ast": 1.98
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 7,
+            "ast": 1
+          }
+        },
+        "4432194": {
+          "name": "Day'Ron Sharpe",
+          "min": 19.5,
+          "claude": {
+            "pts": 8.06,
+            "reb": 6.72,
+            "ast": 2.84
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 7,
+            "ast": 4
+          }
+        },
+        "4687718": {
+          "name": "Josh Minott",
+          "min": 8.6,
+          "claude": {
+            "pts": 3.93,
+            "reb": 1.73,
+            "ast": 0.48
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4702177": {
+          "name": "Keon Ellis",
+          "min": 17.4,
+          "claude": {
+            "pts": 4.93,
+            "reb": 1.54,
+            "ast": 1.13
+          },
+          "nate": {
+            "pts": 3,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4712896": {
+          "name": "Noah Clowney",
+          "min": 18.9,
+          "claude": {
+            "pts": 7.37,
+            "reb": 3.43,
+            "ast": 1.01
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "5037873": {
+          "name": "Drake Powell",
+          "min": 9.4,
+          "claude": {
+            "pts": 2.79,
+            "reb": 0.86,
+            "ast": 0.75
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5101761": {
+          "name": "Mikel Brown Jr.",
+          "min": 17.7,
+          "claude": {
+            "pts": 9.41,
+            "reb": 2.11,
+            "ast": 2.76
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "5107173": {
+          "name": "Danny Wolf",
+          "min": 15.4,
+          "claude": {
+            "pts": 6.63,
+            "reb": 3.71,
+            "ast": 1.61
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "5174655": {
+          "name": "Chaney Johnson",
+          "min": 16.6,
+          "claude": {
+            "pts": 5.86,
+            "reb": 3.3,
+            "ast": 1.49
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "5242502": {
+          "name": "Ben Saraf",
+          "min": 9.3,
+          "claude": {
+            "pts": 3.37,
+            "reb": 0.97,
+            "ast": 1.51
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5279130": {
+          "name": "Nolan Traore",
+          "min": 20.1,
+          "claude": {
+            "pts": 9.39,
+            "reb": 1.74,
+            "ast": 3.17
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 2,
+            "ast": 2
+          }
+        }
+      }
+    }
+  }
+}

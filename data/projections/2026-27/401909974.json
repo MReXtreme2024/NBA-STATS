@@ -1,0 +1,285 @@
+{
+  "id": "401909974",
+  "start": "2026-11-12T02:30Z",
+  "homeId": "10",
+  "awayId": "9",
+  "savedAt": "2026-11-11T13:36:28.581Z",
+  "teams": {
+    "9": {
+      "score": 108.39,
+      "players": {
+        "3213": {
+          "name": "Al Horford",
+          "min": 18.3,
+          "claude": {
+            "pts": 5.74,
+            "reb": 3.78,
+            "ast": 1.8
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "3975": {
+          "name": "Stephen Curry",
+          "min": 29,
+          "claude": {
+            "pts": 24,
+            "reb": 3.35,
+            "ast": 3.7
+          },
+          "nate": {
+            "pts": 25,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "6589": {
+          "name": "Draymond Green",
+          "min": 26.3,
+          "claude": {
+            "pts": 5.3,
+            "reb": 4.61,
+            "ast": 5.1
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 4,
+            "ast": 6
+          }
+        },
+        "2990969": {
+          "name": "Georges Niang",
+          "min": 22.7,
+          "claude": {
+            "pts": 8.35,
+            "reb": 3.11,
+            "ast": 1.64
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4066436": {
+          "name": "De'Anthony Melton",
+          "min": 24.3,
+          "claude": {
+            "pts": 10.77,
+            "reb": 3.53,
+            "ast": 2.2
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4397886": {
+          "name": "Charles Bassey",
+          "min": 12.8,
+          "claude": {
+            "pts": 5.84,
+            "reb": 4.55,
+            "ast": 0.46
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 4,
+            "ast": 0
+          }
+        },
+        "4433149": {
+          "name": "LJ Cryer",
+          "min": 10.1,
+          "claude": {
+            "pts": 4.56,
+            "reb": 0.85,
+            "ast": 0.66
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4709138": {
+          "name": "Brandin Podziemski",
+          "min": 30.5,
+          "claude": {
+            "pts": 13.25,
+            "reb": 4.63,
+            "ast": 3.31
+          },
+          "nate": {
+            "pts": 13,
+            "reb": 4,
+            "ast": 3
+          }
+        },
+        "4997536": {
+          "name": "Gui Santos",
+          "min": 17.5,
+          "claude": {
+            "pts": 6.35,
+            "reb": 3.11,
+            "ast": 1.51
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "5175737": {
+          "name": "Yaxel Lendeborg",
+          "min": 33.8,
+          "claude": {
+            "pts": 19.12,
+            "reb": 6.75,
+            "ast": 3.51
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 7,
+            "ast": 4
+          }
+        }
+      }
+    },
+    "10": {
+      "score": 114.4,
+      "players": {
+        "3202": {
+          "name": "Kevin Durant",
+          "min": 32.4,
+          "claude": {
+            "pts": 21.06,
+            "reb": 5.21,
+            "ast": 3.67
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 6,
+            "ast": 3
+          }
+        },
+        "2990992": {
+          "name": "Marcus Smart",
+          "min": 18.9,
+          "claude": {
+            "pts": 6.4,
+            "reb": 1.91,
+            "ast": 1.88
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "2991230": {
+          "name": "Fred VanVleet",
+          "min": 25,
+          "claude": {
+            "pts": 10.88,
+            "reb": 2.92,
+            "ast": 4.15
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "3037789": {
+          "name": "Bogdan Bogdanovic",
+          "min": 12.3,
+          "claude": {
+            "pts": 4.78,
+            "reb": 1.52,
+            "ast": 1.27
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4432639": {
+          "name": "Jabari Smith Jr.",
+          "min": 32.8,
+          "claude": {
+            "pts": 14.95,
+            "reb": 6.02,
+            "ast": 1.93
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4433192": {
+          "name": "Tari Eason",
+          "min": 22.5,
+          "claude": {
+            "pts": 8.93,
+            "reb": 5.34,
+            "ast": 1.26
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "4684740": {
+          "name": "Amen Thompson",
+          "min": 32.1,
+          "claude": {
+            "pts": 14.71,
+            "reb": 6.37,
+            "ast": 3.64
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 6,
+            "ast": 3
+          }
+        },
+        "4711272": {
+          "name": "Reed Sheppard",
+          "min": 17.2,
+          "claude": {
+            "pts": 8.51,
+            "reb": 1.73,
+            "ast": 2.2
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "4871144": {
+          "name": "Alperen Sengun",
+          "min": 28.7,
+          "claude": {
+            "pts": 17.2,
+            "reb": 7.35,
+            "ast": 5.64
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 7,
+            "ast": 6
+          }
+        }
+      }
+    }
+  }
+}

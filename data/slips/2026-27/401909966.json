@@ -1,0 +1,84 @@
+{
+ "gameId": "401909966",
+ "start": "2026-11-12T00:00Z",
+ "game": "WAS @ IND",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3149673",
+     "name": "Pascal Siakam",
+     "teamId": "11",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.562529317836912,
+     "avg": 22.2,
+     "chance": 0.9120825987317491
+    },
+    {
+     "playerId": "6583",
+     "name": "Anthony Davis",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.66633856544044,
+     "avg": 9.666666666666666,
+     "chance": 0.964341216187516
+    },
+    {
+     "playerId": "4277905",
+     "name": "Trae Young",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.146748951317323,
+     "avg": 8.727272727272727,
+     "chance": 0.9864995251525523
+    }
+   ],
+   "chance": 0.8676843804940936
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5160992",
+     "name": "Alex Sarr",
+     "teamId": "27",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.717074544657189,
+     "avg": 9.9,
+     "chance": 0.5588332608789258
+    },
+    {
+     "playerId": "5174563",
+     "name": "Kyshawn George",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.50148817006138,
+     "avg": 4.363636363636363,
+     "chance": 0.6338733147631102
+    },
+    {
+     "playerId": "4277905",
+     "name": "Trae Young",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.146748951317323,
+     "avg": 8.727272727272727,
+     "chance": 0.9864995251525523
+    }
+   ],
+   "chance": 0.3494472251333445
+  }
+ ]
+}

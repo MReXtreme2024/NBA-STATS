@@ -1,0 +1,84 @@
+{
+ "gameId": "401909971",
+ "start": "2026-11-12T01:00Z",
+ "game": "LAL @ MIL",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 28.972812945204222,
+     "avg": 39.3,
+     "chance": 0.9938187542478106
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.956574259095193,
+     "avg": 10.833333333333334,
+     "chance": 0.9851514598461641
+    },
+    {
+     "playerId": "4591725",
+     "name": "Ryan Rollins",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.742478544659517,
+     "avg": 4.090909090909091,
+     "chance": 0.8306051961386511
+    }
+   ],
+   "chance": 0.8132139816926974
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5082206",
+     "name": "Brayden Burries",
+     "teamId": "15",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.685867011955553,
+     "avg": 9.818181818181818,
+     "chance": 0.6181769661081131
+    },
+    {
+     "playerId": "4433136",
+     "name": "Walker Kessler",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.956574259095193,
+     "avg": 10.833333333333334,
+     "chance": 0.9851514598461641
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.9730626344863467,
+     "avg": 2.727272727272727,
+     "chance": 0.7484904476297101
+    }
+   ],
+   "chance": 0.4558291411687688
+  }
+ ]
+}

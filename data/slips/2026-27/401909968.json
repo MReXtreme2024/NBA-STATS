@@ -1,0 +1,84 @@
+{
+ "gameId": "401909968",
+ "start": "2026-11-12T00:00Z",
+ "game": "BOS @ TOR",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.031596657855985,
+     "avg": 21.3,
+     "chance": 0.813040638217333
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.143631574753934,
+     "avg": 6,
+     "chance": 0.8272429715916734
+    },
+    {
+     "playerId": "4432241",
+     "name": "Jamal Shead",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.777254059259251,
+     "avg": 7,
+     "chance": 0.9441561363209134
+    }
+   ],
+   "chance": 0.6350225674859827
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3078576",
+     "name": "Derrick White",
+     "teamId": "2",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.798160435025189,
+     "avg": 12.181818181818182,
+     "chance": 0.6728577703876518
+    },
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.082958462028961,
+     "avg": 5.8,
+     "chance": 0.5550386054429812
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.055768249365273,
+     "avg": 3.909090909090909,
+     "chance": 0.7599467679051494
+    }
+   ],
+   "chance": 0.2838112691217928
+  }
+ ]
+}

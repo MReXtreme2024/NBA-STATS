@@ -1,0 +1,84 @@
+{
+ "gameId": "401909975",
+ "start": "2026-11-12T03:00Z",
+ "game": "OKC @ POR",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 30.860318247211072,
+     "avg": 29.545454545454547,
+     "chance": 0.8848997407467454
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.696555044247739,
+     "avg": 6.2727272727272725,
+     "chance": 0.8717256581654157
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.499965538226753,
+     "avg": 3.8,
+     "chance": 0.8068167997747481
+    }
+   ],
+   "chance": 0.6223702570059301
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.980455984239235,
+     "avg": 8.7,
+     "chance": 0.5714854411322006
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.696555044247739,
+     "avg": 6.2727272727272725,
+     "chance": 0.6330565626097663
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.539025822994666,
+     "avg": 4.7272727272727275,
+     "chance": 0.6469631157274396
+    }
+   ],
+   "chance": 0.23406000389884998
+  }
+ ]
+}

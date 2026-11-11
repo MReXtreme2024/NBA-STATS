@@ -1,0 +1,84 @@
+{
+ "gameId": "401909974",
+ "start": "2026-11-12T02:30Z",
+ "game": "GSW @ HOU",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.060868389950723,
+     "avg": 21,
+     "chance": 0.9402159310342068
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.751123195874471,
+     "avg": 7.181818181818182,
+     "chance": 0.874603569116803
+    },
+    {
+     "playerId": "4871144",
+     "name": "Alperen Sengun",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.644733621407817,
+     "avg": 7.777777777777778,
+     "chance": 0.9343406979792614
+    }
+   ],
+   "chance": 0.7683235006982055
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.767676354715954,
+     "avg": 10,
+     "chance": 0.5614767298087485
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.751123195874471,
+     "avg": 7.181818181818182,
+     "chance": 0.874603569116803
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.6423973918306127,
+     "avg": 3,
+     "chance": 0.7020453107957135
+    }
+   ],
+   "chance": 0.3447530761626129
+  }
+ ]
+}

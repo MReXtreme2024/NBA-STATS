@@ -1,0 +1,84 @@
+{
+ "gameId": "401909970",
+ "start": "2026-11-12T01:00Z",
+ "game": "DEN @ MEM",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3936299",
+     "name": "Jamal Murray",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.048804448807104,
+     "avg": 25.77777777777778,
+     "chance": 0.9399632271497915
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.834043753543057,
+     "avg": 10.777777777777779,
+     "chance": 0.9838904723534446
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.888870716615264,
+     "avg": 4.888888888888889,
+     "chance": 0.8550524744046316
+    }
+   ],
+   "chance": 0.7907703677639675
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.776573493314222,
+     "avg": 10.4,
+     "chance": 0.6235595325690246
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.834043753543057,
+     "avg": 10.777777777777779,
+     "chance": 0.9838904723534446
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.888870716615264,
+     "avg": 4.888888888888889,
+     "chance": 0.8550524744046316
+    }
+   ],
+   "chance": 0.5245869057957908
+  }
+ ]
+}

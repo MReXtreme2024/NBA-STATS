@@ -1,0 +1,84 @@
+{
+ "gameId": "401909972",
+ "start": "2026-11-12T01:00Z",
+ "game": "BKN @ NOP",
+ "made": "2026-11-11T13:36:29.138Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395628",
+     "name": "Zion Williamson",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.915141876437854,
+     "avg": 21,
+     "chance": 0.8436701072590262
+    },
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.70586031788078,
+     "avg": 7.7,
+     "chance": 0.8722178038735169
+    },
+    {
+     "playerId": "3064514",
+     "name": "Julius Randle",
+     "teamId": "17",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.54055637043555,
+     "avg": 5,
+     "chance": 0.8104940046345466
+    }
+   ],
+   "chance": 0.5964134316691749
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4278104",
+     "name": "Michael Porter Jr.",
+     "teamId": "17",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.508194155185215,
+     "avg": 21.5,
+     "chance": 0.9313622437603855
+    },
+    {
+     "playerId": "3064514",
+     "name": "Julius Randle",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.994656423341717,
+     "avg": 6.7,
+     "chance": 0.815597805945392
+    },
+    {
+     "playerId": "5279130",
+     "name": "Nolan Traore",
+     "teamId": "17",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.173921078893441,
+     "avg": 2.6,
+     "chance": 0.6062320593800137
+    }
+   ],
+   "chance": 0.46050417979677666
+  }
+ ]
+}
