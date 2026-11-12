@@ -1,0 +1,605 @@
+{
+  "id": "401909968",
+  "usDate": "2026-11-11",
+  "start": "2026-11-12T00:00Z",
+  "teams": [
+    {
+      "id": "28",
+      "code": "TOR",
+      "name": "Toronto Raptors",
+      "homeAway": "home",
+      "score": 93,
+      "color": "d91244",
+      "alternateColor": "000000",
+      "players": [
+        {
+          "id": "4395625",
+          "name": "RJ Barrett",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "31",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-16",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "8",
+            "assists": "7",
+            "turnovers": "2",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "6",
+            "fouls": "2",
+            "plusMinus": "-22"
+          },
+          "onCourt": {
+            "secs": 1889.0000000000005,
+            "ptsFor": 48,
+            "ptsAgainst": 69
+          }
+        },
+        {
+          "id": "5093267",
+          "name": "Collin Murray-Boyles",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "20",
+            "points": "5",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-5",
+            "freeThrowsMade-freeThrowsAttempted": "2-4",
+            "rebounds": "4",
+            "assists": "3",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "1",
+            "fouls": "4",
+            "plusMinus": "-3"
+          },
+          "onCourt": {
+            "secs": 1229,
+            "ptsFor": 43,
+            "ptsAgainst": 47
+          }
+        },
+        {
+          "id": "3134908",
+          "name": "Jakob Poeltl",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "32",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "9",
+            "assists": "1",
+            "turnovers": "3",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "8",
+            "fouls": "4",
+            "plusMinus": "-18"
+          },
+          "onCourt": {
+            "secs": 1924.9000000000003,
+            "ptsFor": 50,
+            "ptsAgainst": 67
+          }
+        },
+        {
+          "id": "4395724",
+          "name": "Immanuel Quickley",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "28",
+            "points": "11",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-8",
+            "freeThrowsMade-freeThrowsAttempted": "4-4",
+            "rebounds": "4",
+            "assists": "4",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "4",
+            "fouls": "2",
+            "plusMinus": "-13"
+          },
+          "onCourt": {
+            "secs": 1680.0000000000005,
+            "ptsFor": 44,
+            "ptsAgainst": 56
+          }
+        },
+        {
+          "id": "4684272",
+          "name": "Ja'Kobe Walter",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "35",
+            "points": "17",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-11",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "5-10",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "3",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "4",
+            "plusMinus": "-16"
+          },
+          "onCourt": {
+            "secs": 2119.600000000001,
+            "ptsFor": 58,
+            "ptsAgainst": 74
+          }
+        },
+        {
+          "id": "2993874",
+          "name": "Kyle Anderson",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "11",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-2",
+            "rebounds": "3",
+            "assists": "4",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "1",
+            "fouls": "5",
+            "plusMinus": "+14"
+          },
+          "onCourt": {
+            "secs": 679.1,
+            "ptsFor": 31,
+            "ptsAgainst": 17
+          }
+        },
+        {
+          "id": "4431893",
+          "name": "Jamison Battle",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "25",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "2",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "+10"
+          },
+          "onCourt": {
+            "secs": 1479.4000000000003,
+            "ptsFor": 57,
+            "ptsAgainst": 46
+          }
+        },
+        {
+          "id": "5149115",
+          "name": "Allen Graves",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "18",
+            "points": "13",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-8",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-4",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "5",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "1",
+            "fouls": "3",
+            "plusMinus": "+4"
+          },
+          "onCourt": {
+            "secs": 1098.5,
+            "ptsFor": 40,
+            "ptsAgainst": 36
+          }
+        },
+        {
+          "id": "4432241",
+          "name": "Jamal Shead",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "22",
+            "points": "3",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "3",
+            "assists": "6",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "2",
+            "plusMinus": "+6"
+          },
+          "onCourt": {
+            "secs": 1345.5000000000005,
+            "ptsFor": 53,
+            "ptsAgainst": 49
+          }
+        },
+        {
+          "id": "4702656",
+          "name": "Alijah Martin",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "16",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "4-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "1",
+            "plusMinus": "+13"
+          },
+          "onCourt": {
+            "secs": 955.0000000000003,
+            "ptsFor": 41,
+            "ptsAgainst": 29
+          }
+        },
+        {
+          "id": "4431684",
+          "name": "Trayce Jackson-Davis",
+          "played": false,
+          "reason": "ILLNESS"
+        },
+        {
+          "id": "4432737",
+          "name": "Jaden Bradley",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "code": "BOS",
+      "name": "Boston Celtics",
+      "homeAway": "away",
+      "score": 98,
+      "color": "008348",
+      "alternateColor": "ffffff",
+      "players": [
+        {
+          "id": "4065648",
+          "name": "Jayson Tatum",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "38",
+            "points": "24",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-21",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-11",
+            "freeThrowsMade-freeThrowsAttempted": "10-12",
+            "rebounds": "7",
+            "assists": "8",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "2",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "7",
+            "fouls": "1",
+            "plusMinus": "+9"
+          },
+          "onCourt": {
+            "secs": 2265.000000000001,
+            "ptsFor": 84,
+            "ptsAgainst": 75
+          }
+        },
+        {
+          "id": "4277951",
+          "name": "Luka Garza",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "11",
+            "points": "5",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-3",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "2",
+            "plusMinus": "-5"
+          },
+          "onCourt": {
+            "secs": 654.7,
+            "ptsFor": 22,
+            "ptsAgainst": 27
+          }
+        },
+        {
+          "id": "4397424",
+          "name": "Neemias Queta",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "31",
+            "points": "11",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-1",
+            "freeThrowsMade-freeThrowsAttempted": "6-8",
+            "rebounds": "13",
+            "assists": "3",
+            "turnovers": "5",
+            "steals": "1",
+            "blocks": "3",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "10",
+            "fouls": "2",
+            "plusMinus": "+27"
+          },
+          "onCourt": {
+            "secs": 1842.3000000000004,
+            "ptsFor": 68,
+            "ptsAgainst": 41
+          }
+        },
+        {
+          "id": "3078576",
+          "name": "Derrick White",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "38",
+            "points": "19",
+            "fieldGoalsMade-fieldGoalsAttempted": "7-15",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-7",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "1",
+            "assists": "7",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "4",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "0",
+            "fouls": "1",
+            "plusMinus": "+18"
+          },
+          "onCourt": {
+            "secs": 2303.000000000001,
+            "ptsFor": 79,
+            "ptsAgainst": 61
+          }
+        },
+        {
+          "id": "4593841",
+          "name": "Baylor Scheierman",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "29",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "7",
+            "assists": "3",
+            "turnovers": "0",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "5",
+            "fouls": "3",
+            "plusMinus": "+18"
+          },
+          "onCourt": {
+            "secs": 1734.3000000000002,
+            "ptsFor": 61,
+            "ptsAgainst": 45
+          }
+        },
+        {
+          "id": "4065804",
+          "name": "Sam Hauser",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "24",
+            "points": "8",
+            "fieldGoalsMade-fieldGoalsAttempted": "2-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "9",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "6",
+            "fouls": "2",
+            "plusMinus": "+1"
+          },
+          "onCourt": {
+            "secs": 1462.0000000000007,
+            "ptsFor": 53,
+            "ptsAgainst": 50
+          }
+        },
+        {
+          "id": "4351852",
+          "name": "Mitchell Robinson",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "11",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "2",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "2",
+            "plusMinus": "-17"
+          },
+          "onCourt": {
+            "secs": 657.0000000000001,
+            "ptsFor": 19,
+            "ptsAgainst": 36
+          }
+        },
+        {
+          "id": "4066354",
+          "name": "Payton Pritchard",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "31",
+            "points": "14",
+            "fieldGoalsMade-fieldGoalsAttempted": "5-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "1",
+            "assists": "1",
+            "turnovers": "5",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "2",
+            "plusMinus": "-17"
+          },
+          "onCourt": {
+            "secs": 1874.5000000000005,
+            "ptsFor": 59,
+            "ptsAgainst": 74
+          }
+        },
+        {
+          "id": "4683689",
+          "name": "Jordan Walsh",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "18",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "3",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "4",
+            "plusMinus": "+3"
+          },
+          "onCourt": {
+            "secs": 1102,
+            "ptsFor": 32,
+            "ptsAgainst": 31
+          }
+        },
+        {
+          "id": "5175647",
+          "name": "Hugo Gonzalez",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "8",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-1",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "0",
+            "plusMinus": "-12"
+          },
+          "onCourt": {
+            "secs": 505.19999999999993,
+            "ptsFor": 13,
+            "ptsAgainst": 25
+          }
+        },
+        {
+          "id": "5106283",
+          "name": "Dillon Mitchell",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5142621",
+          "name": "Chris Cenac Jr.",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "3195",
+          "name": "Mike Conley",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4397251",
+          "name": "Ron Harper Jr.",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909977",
+ "start": "2026-11-13T00:00Z",
+ "game": "DET @ WAS",
+ "made": "2026-11-12T13:05:52.353Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.275806864648235,
+     "avg": 22.3,
+     "chance": 0.9637436968476931
+    },
+    {
+     "playerId": "6583",
+     "name": "Anthony Davis",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.532526630235806,
+     "avg": 10,
+     "chance": 0.9614783833052466
+    },
+    {
+     "playerId": "4277905",
+     "name": "Trae Young",
+     "teamId": "27",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.166313503611037,
+     "avg": 8.333333333333334,
+     "chance": 0.9643128124349931
+    }
+   ],
+   "chance": 0.8935503150911063
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.999468296894573,
+     "avg": 10.7,
+     "chance": 0.6362645284135358
+    },
+    {
+     "playerId": "6583",
+     "name": "Anthony Davis",
+     "teamId": "27",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.532526630235806,
+     "avg": 10,
+     "chance": 0.9614783833052466
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 8.173394132536327,
+     "avg": 7.6,
+     "chance": 0.7132650437691962
+    }
+   ],
+   "chance": 0.4363431645075929
+  }
+ ]
+}

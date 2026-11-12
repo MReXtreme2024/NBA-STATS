@@ -1,0 +1,84 @@
+{
+ "gameId": "401909979",
+ "start": "2026-11-13T02:00Z",
+ "game": "CHA @ PHX",
+ "made": "2026-11-12T13:05:52.353Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.52872630742758,
+     "avg": 15.272727272727273,
+     "chance": 0.89148656652417
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 8.312421570585347,
+     "avg": 9.11111111111111,
+     "chance": 0.9552554198346782
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.920613903221331,
+     "avg": 4.8,
+     "chance": 0.8588562488601955
+    }
+   ],
+   "chance": 0.7313997265009348
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.28281558253076,
+     "avg": 11.8,
+     "chance": 0.7007290656540459
+    },
+    {
+     "playerId": "4576060",
+     "name": "Ryan Kalkbrenner",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.720402366097431,
+     "avg": 5.363636363636363,
+     "chance": 0.7904681373691359
+    },
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.19461918730129,
+     "avg": 3,
+     "chance": 0.7747443313824232
+    }
+   ],
+   "chance": 0.42913398360939725
+  }
+ ]
+}

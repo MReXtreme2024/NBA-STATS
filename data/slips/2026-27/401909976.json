@@ -1,0 +1,84 @@
+{
+ "gameId": "401909976",
+ "start": "2026-11-13T00:00Z",
+ "game": "TOR @ PHI",
+ "made": "2026-11-12T13:05:52.353Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 21.788735653814015,
+     "avg": 20.454545454545453,
+     "chance": 0.8088282224913094
+    },
+    {
+     "playerId": "3134908",
+     "name": "Jakob Poeltl",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.386711143295755,
+     "avg": 6.777777777777778,
+     "chance": 0.9152907649129483
+    },
+    {
+     "playerId": "4432241",
+     "name": "Jamal Shead",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.818644719809319,
+     "avg": 6.909090909090909,
+     "chance": 0.9463883445979504
+    }
+   ],
+   "chance": 0.7006235968703921
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 21.788735653814015,
+     "avg": 20.454545454545453,
+     "chance": 0.5932964395703944
+    },
+    {
+     "playerId": "5093267",
+     "name": "Collin Murray-Boyles",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.508027762115389,
+     "avg": 4.9,
+     "chance": 0.7667421673958814
+    },
+    {
+     "playerId": "4432241",
+     "name": "Jamal Shead",
+     "teamId": "28",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.818644719809319,
+     "avg": 6.909090909090909,
+     "chance": 0.9463883445979504
+    }
+   ],
+   "chance": 0.4305171665471884
+  }
+ ]
+}
