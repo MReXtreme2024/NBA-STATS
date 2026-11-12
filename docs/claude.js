@@ -29,6 +29,9 @@ export const MODEL = {
   matchupMinutes: 600, // a team's record against a role is pulled toward average as if it had allowed this many average minutes
   ratingWeight: 1, // (tested 29 Oct: 0.5–1.5 all helped the stats model in both halves) how much players' on-court offensive/defensive ratings adjust the stats model's team scores for who is playing (0 = off)
   ratingPossessions: 200, // a player's ratings are pulled toward his team's as if he'd also played this many average possessions
+  oppRebPower: 1, // team rebounds × (opponent's rebounds allowed ÷ league)^this (0 = ignore the opponent)
+  oppAstPower: 0.5, // team assists × (opponent's assists allowed ÷ league)^this
+  oppTpmPower: 1, // team 3PM × (opponent's 3PM allowed ÷ league)^this
   newRoleShare: 0.25, // (tested: 0.25 beat 0, 0.15, 0.35, 0.5) a player new to a role (first start, or first game off the bench): this share of the way to the team's typical minutes in it
 };
 

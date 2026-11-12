@@ -378,11 +378,11 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
     const lg = ratings.league;
     const expected = {
       pts: scores[side],
-      reb: t.reb * paceFactor * (o.rebAllowed / lg.reb),
+      reb: t.reb * paceFactor * (o.rebAllowed / lg.reb) ** MODEL.oppRebPower,
       // assists follow made baskets: the team's usual assists × how many points it is projected
       // to score against its usual points, nudged by how many assists the opponent allows
-      ast: t.ast * (scores[side] / ((t.ortg * t.pace) / 100)) * Math.sqrt(o.astAllowed / lg.ast),
-      tpm: t.tpm * paceFactor * (o.tpmAllowed / lg.tpm),
+      ast: t.ast * (scores[side] / ((t.ortg * t.pace) / 100)) * (o.astAllowed / lg.ast) ** MODEL.oppAstPower,
+      tpm: t.tpm * paceFactor * (o.tpmAllowed / lg.tpm) ** MODEL.oppTpmPower,
     };
     sides[side] = {
       teamId: id,
