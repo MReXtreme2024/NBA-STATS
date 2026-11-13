@@ -332,3 +332,13 @@ ul.ranking .name .pill { font-size: 11px; padding: 1px 5px; }
 ul.ranking .mins { display: block; margin-top: 2px; font-size: 12px; color: var(--muted); }
 ul.ranking b { flex-shrink: 0; font-size: 18px; }
 .switch.three { grid-template-columns: repeat(3, 1fr); }
+table.quarters th[scope="row"] { text-align: left; font-weight: 600; }
+table.quarters th[scope="row"] .mins { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+table.quarters td { text-align: right; font-variant-numeric: tabular-nums; }
+table.quarters { width: 100%; min-width: 0; font-size: 14px; }
+table.quarters th, table.quarters td { padding: 8px 4px; }
+table.quarters th[scope="row"] { overflow-wrap: anywhere; }
+table.quarters { table-layout: fixed; }
+table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 36%; white-space: normal; }
+table.quarters td, table.quarters thead th { white-space: nowrap; text-align: right; }
+table.quarters thead th:first-child { text-align: left; }

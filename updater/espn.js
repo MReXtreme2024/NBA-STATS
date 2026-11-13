@@ -1,5 +1,6 @@
 // ESPN calls, retries and parsing. ESPN is the only data source (see CLAUDE.md).
 import { onCourt } from './oncourt.js';
+import { quarterLines } from './quarters.js';
 
 const USER_AGENT =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36';
@@ -141,6 +142,7 @@ export function isCountedGame(event, espnSeasonYear) {
 export function trimGame(summary, usDate) {
   const comp = summary.header.competitions[0];
   const court = onCourt(summary); // seconds on court and points for/against while on, from the play-by-play
+  const quarters = quarterLines(summary); // points, rebounds, assists in each quarter, from the play-by-play
   const boxTeams = summary.boxscore.teams;
   const boxPlayers = summary.boxscore.players;
 
@@ -158,6 +160,7 @@ export function trimGame(summary, usDate) {
         played,
         ...(played ? { starter: a.starter === true, stats } : { reason: a.reason ?? '' }),
         ...(played && court?.[a.athlete.id] ? { onCourt: court[a.athlete.id] } : {}),
+        ...(played && quarters ? { quarters: quarters[a.athlete.id] ?? [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] } : {}),
       };
     });
     return {

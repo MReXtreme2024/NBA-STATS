@@ -105,7 +105,7 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
       for (const { p, stats } of lines) {
         let player = team.playersById.get(p.id);
         if (!player) {
-          player = { id: p.id, name: p.name, gp: 0, totals: zeroTotals(), teamTotalsInHisGames: zeroTotals() };
+          player = { id: p.id, name: p.name, gp: 0, totals: zeroTotals(), teamTotalsInHisGames: zeroTotals(), qGp: 0, qt: [[0, 0, 0], [0, 0, 0], [0, 0, 0], [0, 0, 0]] };
           team.playersById.set(p.id, player);
         }
         player.name = p.name; // latest spelling wins
@@ -113,6 +113,8 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
           player.gp++;
           addInto(player.totals, stats);
           addInto(player.teamTotalsInHisGames, gameTotals);
+          // Quarter totals (points, rebounds, assists in Q1–Q4, from the play-by-play; overtime left out).
+          if (p.quarters) { player.qGp++; for (let q = 0; q < 4; q++) for (let k = 0; k < 3; k++) player.qt[q][k] += p.quarters[q][k]; }
         }
       }
     }

@@ -1,4 +1,4 @@
-import { MODES, playerStat, show, teamAverage, working } from './calc.js';
+import { MODES, cut, hundredths, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
 import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, LEVELS, lineAt, settle, slipChance, suggestSlips } from './slips.js';
 
@@ -528,6 +528,38 @@ function slipsPage(g) {
     <a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${readSlips().length} saved ›</span></a>`;
 }
 
+// 12. By quarter (13 Nov 2026, Nate's request): each player's average points, rebounds or assists by
+// the end of the 1st, 2nd, 3rd and 4th quarter, from his quarter-by-quarter totals in games he played for the
+// team (overtime left out). Whole-number maths like Nate's formula: averages cut to 2 decimals.
+const QUARTER_KEY = 'quarterStat';
+function quartersPage(g) {
+  const away = teamById(g.awayId);
+  const home = teamById(g.homeId);
+  const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
+  const k = { pts: 0, reb: 1, ast: 2 }[stat];
+  const c = g.claude ? claudeFor(g) : null;
+  const block = (t, side) => {
+    const out = new Set([...(readLineup(g.id)?.[t.id]?.out ?? []), ...(side?.out ?? []).map((o) => o.id)]);
+    const rows = projectable(t, [...out])
+      .filter((p) => p.qGp > 0)
+      .map((p) => {
+        let run = 0;
+        const ends = p.qt.map((q) => (run += q[k])).map((total) => cut(100 * total, p.qGp)); // hundredths, cut
+        return { p, ends };
+      })
+      .sort((a, b) => b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name))
+      .map(({ p, ends }) => `<tr data-href="#/team/${t.id}/player/${p.id}"><th scope="row">${esc(p.name)}<span class="mins">${p.qGp} game${p.qGp === 1 ? '' : 's'}</span></th>${ends.map((v) => `<td>${hundredths(v)}</td>`).join('')}</tr>`)
+      .join('');
+    return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
+      ${rows ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">By end of</th><th scope="col">Q1</th><th scope="col">Q2</th><th scope="col">Q3</th><th scope="col">Q4</th></tr></thead><tbody>${rows}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
+  };
+  const btn = (s2, label) => `<button data-qstat="${s2}" aria-pressed="${stat === s2}">${label}</button>`;
+  return `${bar(`${away.code} @ ${home.code} by quarter`, `#/game/${g.id}`, startText(g.start))}
+    <div class="switch three" role="group" aria-label="Stat">${btn('pts', 'Points')}${btn('reb', 'Rebounds')}${btn('ast', 'Assists')}</div>
+    ${block(away, c?.away)}${block(home, c?.home)}
+    <p class="working">Each player's average ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} by the end of each quarter this season (adding up his averages in each quarter), from ESPN's play-by-play, in games he played for this team. Overtime isn't included, so Q4 is the end of regulation. Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
+}
+
 // 11. Saved slips, settled from each night's results: Nate's record, Claude's record, and what Claude has learned.
 // A settled result is kept with the slip, since results are only published for two weeks.
 function mySlipsPage() {
@@ -635,7 +667,8 @@ function claudeMatchup(g, away, home) {
       <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
     ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
-  return `${levels}${slipLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  const quarterLink = `<a class="lineup-link done" href="#/game/${g.id}/quarters"><span>By quarter</span><span class="gp">Points, rebounds, assists ›</span></a>`;
+  return `${levels}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
     <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. The big number is his projected average; the small line under it is the one he goes over the chosen share of the time (tap the buttons at the top: 80/20 = goes over 80% of the time, 50/50 = as likely over as under), learned from how real results have landed. "—" means no line is that safe for him (e.g. a player who gets 2 assists has no 90/10 line). No line is ever 100% certain, so the buttons stop at 95/5 and 5/95. Points, rebounds and assists only.</p>`;
@@ -749,6 +782,8 @@ function render() {
     html = upcomingPage(); title = 'Upcoming games';
   } else if (parts[0] === 'slips') {
     html = mySlipsPage(); title = 'My bet slips';
+  } else if (game && parts[2] === 'quarters') {
+    html = quartersPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} by quarter`;
   } else if (game && parts[2] === 'slips' && game.claude?.home?.inputs) {
     html = slipsPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} bet slips`;
   } else if (game && parts[2] === 'lineup' && game.claude?.home?.inputs) {
@@ -842,6 +877,8 @@ app.addEventListener('click', (e) => {
   }
   const levelBtn = e.target.closest('[data-level]');
   if (levelBtn) { saveLevel(Number(levelBtn.dataset.level)); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
+  const qBtn = e.target.closest('[data-qstat]');
+  if (qBtn) { store(QUARTER_KEY, qBtn.dataset.qstat); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const viewBtn = e.target.closest('[data-view]');
   if (viewBtn) { store(VIEW_KEY, viewBtn.dataset.view); render(); return; }
   const rankBtn = e.target.closest('[data-rank]');
