@@ -3,18 +3,18 @@
   "start": "2026-11-14T01:00Z",
   "homeId": "4",
   "awayId": "1",
-  "savedAt": "2026-11-13T13:10:17.604Z",
+  "savedAt": "2026-11-13T20:27:20.631Z",
   "teams": {
     "1": {
-      "score": 126.25,
+      "score": 125.8,
       "players": {
         "2490149": {
           "name": "CJ McCollum",
           "min": 23.5,
           "claude": {
-            "pts": 15.05,
+            "pts": 14.99,
             "reb": 2.86,
-            "ast": 3.6
+            "ast": 3.59
           },
           "nate": {
             "pts": 13,
@@ -26,7 +26,7 @@
           "name": "Jock Landale",
           "min": 13,
           "claude": {
-            "pts": 6.55,
+            "pts": 6.52,
             "reb": 3.89,
             "ast": 1.24
           },
@@ -40,9 +40,9 @@
           "name": "Nickeil Alexander-Walker",
           "min": 28.4,
           "claude": {
-            "pts": 20.62,
+            "pts": 20.55,
             "reb": 3.23,
-            "ast": 3.03
+            "ast": 3.02
           },
           "nate": {
             "pts": 21,
@@ -54,9 +54,9 @@
           "name": "Corey Kispert",
           "min": 9.6,
           "claude": {
-            "pts": 5.57,
+            "pts": 5.55,
             "reb": 1.23,
-            "ast": 0.88
+            "ast": 0.87
           },
           "nate": {
             "pts": 3,
@@ -68,9 +68,9 @@
           "name": "Luguentz Dort",
           "min": 22.5,
           "claude": {
-            "pts": 8.3,
+            "pts": 8.27,
             "reb": 3.28,
-            "ast": 1.37
+            "ast": 1.36
           },
           "nate": {
             "pts": 9,
@@ -82,7 +82,7 @@
           "name": "Aaron Wiggins",
           "min": 21.5,
           "claude": {
-            "pts": 11.6,
+            "pts": 11.56,
             "reb": 3.35,
             "ast": 1.98
           },
@@ -96,9 +96,9 @@
           "name": "Onyeka Okongwu",
           "min": 27,
           "claude": {
-            "pts": 14.06,
+            "pts": 14.01,
             "reb": 7.66,
-            "ast": 2.88
+            "ast": 2.87
           },
           "nate": {
             "pts": 13,
@@ -110,9 +110,9 @@
           "name": "Jalen Johnson",
           "min": 26.6,
           "claude": {
-            "pts": 17.77,
+            "pts": 17.7,
             "reb": 8.09,
-            "ast": 6.4
+            "ast": 6.38
           },
           "nate": {
             "pts": 14,
@@ -124,9 +124,9 @@
           "name": "Dyson Daniels",
           "min": 28,
           "claude": {
-            "pts": 10.48,
+            "pts": 10.45,
             "reb": 6.73,
-            "ast": 5.61
+            "ast": 5.59
           },
           "nate": {
             "pts": 9,
@@ -138,9 +138,9 @@
           "name": "Zuby Ejiofor",
           "min": 8.2,
           "claude": {
-            "pts": 4.04,
+            "pts": 4.02,
             "reb": 2.08,
-            "ast": 1.01
+            "ast": 1
           },
           "nate": {
             "pts": 2,
@@ -152,9 +152,9 @@
           "name": "Kingston Flemings",
           "min": 19.6,
           "claude": {
-            "pts": 8.63,
+            "pts": 8.6,
             "reb": 2.86,
-            "ast": 3.88
+            "ast": 3.86
           },
           "nate": {
             "pts": 7,
@@ -165,15 +165,15 @@
       }
     },
     "4": {
-      "score": 118.77,
+      "score": 119.22,
       "players": {
         "2595516": {
           "name": "Norman Powell",
           "min": 25.4,
           "claude": {
-            "pts": 18.95,
+            "pts": 19.02,
             "reb": 2.87,
-            "ast": 1.95
+            "ast": 1.96
           },
           "nate": {
             "pts": 15,
@@ -185,9 +185,9 @@
           "name": "Buddy Hield",
           "min": 12.4,
           "claude": {
-            "pts": 6.02,
+            "pts": 6.04,
             "reb": 1.84,
-            "ast": 1.21
+            "ast": 1.22
           },
           "nate": {
             "pts": 4,
@@ -199,7 +199,7 @@
           "name": "Zach Collins",
           "min": 10.2,
           "claude": {
-            "pts": 5.21,
+            "pts": 5.23,
             "reb": 3.25,
             "ast": 0.87
           },
@@ -213,7 +213,7 @@
           "name": "Nic Claxton",
           "min": 13.8,
           "claude": {
-            "pts": 6.33,
+            "pts": 6.36,
             "reb": 3.68,
             "ast": 1.92
           },
@@ -227,9 +227,9 @@
           "name": "Tre Jones",
           "min": 21.6,
           "claude": {
-            "pts": 12.15,
+            "pts": 12.2,
             "reb": 2.75,
-            "ast": 4.14
+            "ast": 4.15
           },
           "nate": {
             "pts": 10,
@@ -241,7 +241,7 @@
           "name": "Jalen Smith",
           "min": 22.5,
           "claude": {
-            "pts": 12.05,
+            "pts": 12.1,
             "reb": 7.58,
             "ast": 1.54
           },
@@ -255,7 +255,7 @@
           "name": "Patrick Williams",
           "min": 14.2,
           "claude": {
-            "pts": 4.95,
+            "pts": 4.96,
             "reb": 2.18,
             "ast": 1.19
           },
@@ -269,7 +269,7 @@
           "name": "Isaac Okoro",
           "min": 21.7,
           "claude": {
-            "pts": 7.35,
+            "pts": 7.38,
             "reb": 2.1,
             "ast": 1.44
           },
@@ -283,9 +283,9 @@
           "name": "Jordan Hawkins",
           "min": 10,
           "claude": {
-            "pts": 3.96,
+            "pts": 3.98,
             "reb": 1.28,
-            "ast": 0.59
+            "ast": 0.6
           },
           "nate": {
             "pts": 2,
@@ -297,9 +297,9 @@
           "name": "Matas Buzelis",
           "min": 27.1,
           "claude": {
-            "pts": 15.41,
+            "pts": 15.47,
             "reb": 5.3,
-            "ast": 2.06
+            "ast": 2.07
           },
           "nate": {
             "pts": 13,
@@ -311,9 +311,9 @@
           "name": "Josh Giddey",
           "min": 28.8,
           "claude": {
-            "pts": 14.03,
+            "pts": 14.09,
             "reb": 6.72,
-            "ast": 8.64
+            "ast": 8.67
           },
           "nate": {
             "pts": 10,
@@ -325,9 +325,9 @@
           "name": "Leonard Miller",
           "min": 13.1,
           "claude": {
-            "pts": 6.49,
+            "pts": 6.52,
             "reb": 3.38,
-            "ast": 0.77
+            "ast": 0.78
           },
           "nate": {
             "pts": 5,
@@ -339,7 +339,7 @@
           "name": "Noa Essengue",
           "min": 8.9,
           "claude": {
-            "pts": 0.89,
+            "pts": 0.9,
             "reb": 0.57,
             "ast": 0.11
           },

@@ -3,7 +3,7 @@
   "start": "2026-11-14T00:00Z",
   "homeId": "11",
   "awayId": "18",
-  "savedAt": "2026-11-13T13:10:15.917Z",
+  "savedAt": "2026-11-13T20:27:18.952Z",
   "teams": {
     "11": {
       "score": 105.73,
@@ -193,13 +193,13 @@
       }
     },
     "18": {
-      "score": 112.8,
+      "score": 113.7,
       "players": {
         "6585": {
           "name": "Andre Drummond",
           "min": 13.8,
           "claude": {
-            "pts": 4.47,
+            "pts": 4.5,
             "reb": 7.25,
             "ast": 1.06
           },
@@ -213,7 +213,7 @@
           "name": "Jordan Clarkson",
           "min": 11.3,
           "claude": {
-            "pts": 5.63,
+            "pts": 5.67,
             "reb": 1.43,
             "ast": 0.79
           },
@@ -227,9 +227,9 @@
           "name": "Josh Hart",
           "min": 22.5,
           "claude": {
-            "pts": 7.8,
+            "pts": 7.86,
             "reb": 5.89,
-            "ast": 3.28
+            "ast": 3.31
           },
           "nate": {
             "pts": 6,
@@ -241,9 +241,9 @@
           "name": "Karl-Anthony Towns",
           "min": 27.4,
           "claude": {
-            "pts": 17.97,
+            "pts": 18.11,
             "reb": 12.34,
-            "ast": 2.89
+            "ast": 2.91
           },
           "nate": {
             "pts": 20,
@@ -255,9 +255,9 @@
           "name": "Mikal Bridges",
           "min": 22.9,
           "claude": {
-            "pts": 8.25,
+            "pts": 8.32,
             "reb": 3.1,
-            "ast": 2.36
+            "ast": 2.38
           },
           "nate": {
             "pts": 5,
@@ -269,9 +269,9 @@
           "name": "Landry Shamet",
           "min": 22.3,
           "claude": {
-            "pts": 8.72,
+            "pts": 8.78,
             "reb": 1.78,
-            "ast": 1.56
+            "ast": 1.57
           },
           "nate": {
             "pts": 9,
@@ -283,9 +283,9 @@
           "name": "Jalen Brunson",
           "min": 29.5,
           "claude": {
-            "pts": 22.36,
+            "pts": 22.54,
             "reb": 3.06,
-            "ast": 5.23
+            "ast": 5.27
           },
           "nate": {
             "pts": 26,
@@ -297,9 +297,9 @@
           "name": "OG Anunoby",
           "min": 28.7,
           "claude": {
-            "pts": 14.37,
+            "pts": 14.49,
             "reb": 5.08,
-            "ast": 2
+            "ast": 2.01
           },
           "nate": {
             "pts": 16,
@@ -311,9 +311,9 @@
           "name": "Jose Alvarado",
           "min": 9.3,
           "claude": {
-            "pts": 3.28,
+            "pts": 3.31,
             "reb": 1.29,
-            "ast": 1.6
+            "ast": 1.61
           },
           "nate": {
             "pts": 0,
@@ -325,9 +325,9 @@
           "name": "Miles McBride",
           "min": 19.4,
           "claude": {
-            "pts": 8.58,
+            "pts": 8.65,
             "reb": 1.89,
-            "ast": 1.69
+            "ast": 1.71
           },
           "nate": {
             "pts": 7,
@@ -339,9 +339,9 @@
           "name": "Tyler Kolek",
           "min": 9.8,
           "claude": {
-            "pts": 3.45,
+            "pts": 3.48,
             "reb": 1.5,
-            "ast": 2.63
+            "ast": 2.65
           },
           "nate": {
             "pts": 2,
