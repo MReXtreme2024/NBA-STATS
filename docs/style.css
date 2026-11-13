@@ -357,3 +357,7 @@ table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 25%
 table.quarters { font-size: 12.5px; }
 table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 27%; }
 table.quarters th[scope="row"] { overflow-wrap: normal; word-break: normal; hyphens: none; font-size: 13px; }
+.ratings table.results th[scope="row"] { font-size: 14px; }
+.ratings table.results th[scope="row"] .mins { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+.ratings table.results td { text-align: center; }
+.ratings table.results thead th { text-align: center; }

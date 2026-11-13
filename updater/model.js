@@ -79,6 +79,8 @@ export function teamRatings(games, before = null) {
     const n = r.gp;
     rated.set(id, {
       gp: n,
+      // the season's actual figures, before pulling toward the league (for display)
+      raw: { pace: r.poss / n, ortg: (100 * r.pts) / r.poss, drtg: (100 * r.oppPts) / r.poss },
       pace: shrink(r.poss / n, league.pace, n, k),
       ortg: shrink((100 * r.pts) / r.poss, league.rtg, n, k),
       drtg: shrink((100 * r.oppPts) / r.poss, league.rtg, n, k),

@@ -1,6 +1,6 @@
 import { MODES, cut, hundredths, playerStat, show, teamAverage, working } from './calc.js';
 import { allocate, lineupScores } from './claude.js';
-import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, LEVELS, lineAt, settle, slipChance, suggestSlips } from './slips.js';
+import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, settle, slipChance, suggestSlips } from './slips.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -62,17 +62,6 @@ function saveFormula(f) {
   try { localStorage.setItem(FORMULA_KEY, f); } catch { /* private mode: just don't remember */ }
 }
 
-// The Your formula / Claude's formula tabs on the results page.
-// Which over/under line Claude's formula lists show under each player (0.8 = the 80/20 line), remembered.
-const LEVEL_KEY = 'claudeLine';
-function readLevel() {
-  try { const v = Number(localStorage.getItem(LEVEL_KEY)); return LEVELS.includes(v) ? v : 0.5; } catch { return 0.5; }
-}
-function saveLevel(v) {
-  try { localStorage.setItem(LEVEL_KEY, String(v)); } catch { /* private mode: not remembered */ }
-}
-const levelName = (v) => `${Math.round(v * 100)}/${Math.round((1 - v) * 100)}`;
-
 // The Upcoming games page: Claude's formula (the games) or Rankings (every projected player across the
 // day's games, ranked by points, rebounds or assists). Nate swapped this in for the Your formula tab (8 Nov 2026).
 const VIEW_KEY = 'upcomingView';
@@ -86,12 +75,29 @@ function viewTabs(view) {
   return `<div class="switch tabs three" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}</div>`;
 }
 
-// The row of over/under line buttons (95/5 … 5/95).
-function levelsBox(level) {
-  return data.calibration?.pts ? `<section class="levels-box"><p class="levels-title">Line shown under each player: he goes over it <b>${Math.round(level * 100)}%</b> of the time</p>
-    <div class="levels" role="group" aria-label="Over/under line">${LEVELS.map((v) => `<button data-level="${v}" aria-pressed="${v === level}">${levelName(v)}</button>`).join('')}</div></section>` : '';
+// Team ratings at the top of a game page (13 Nov 2026, Nate: "which team has the best offensive and/or
+// defensive ratings", in place of the line buttons): offence and defence per 100 possessions, net and pace,
+// each with its league rank; the better side of each is highlighted.
+const ordinal = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th'}`;
+function ratingsBox(away, home) {
+  const a = away.ratings;
+  const h = home.ratings;
+  if (!a || !h) return '';
+  const rows = [['Offence', 'ortg', 'pts scored /100'], ['Defence', 'drtg', 'pts allowed /100'], ['Net', 'net', 'off − def'], ['Pace', 'pace', 'possessions']];
+  const fig = (v, k) => (k === 'net' && v > 0 ? `+${v.toFixed(1)}` : v.toFixed(1));
+  const cell = (r, k, better) => `<td class="${better ? 'win' : ''}"><b>${fig(r[k], k)}</b><span class="proj">${ordinal(r.rank[k])}</span></td>`;
+  const body = rows.map(([label, k, note]) => {
+    const awayBetter = k === 'pace' ? false : k === 'drtg' ? a[k] < h[k] : a[k] > h[k];
+    const homeBetter = k === 'pace' ? false : k === 'drtg' ? h[k] < a[k] : h[k] > a[k];
+    return `<tr><th scope="row">${label}<span class="mins">${note}</span></th>${cell(a, k, awayBetter)}${cell(h, k, homeBetter)}</tr>`;
+  }).join('');
+  const better = (k) => (k === 'drtg' ? (a[k] < h[k] ? away : home) : a[k] > h[k] ? away : home);
+  return `<section class="stat ratings"><h3>Team ratings</h3>
+    <div class="table-wrap"><table class="results"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${body}</tbody></table></div>
+    <p class="working"><b>${esc(better('ortg').code)}</b> has the better offence, <b>${esc(better('drtg').code)}</b> the better defence${better('ortg') === better('drtg') ? ` — ${esc(better('ortg').code)} is better at both` : ''}. Ranks are out of 30.</p></section>`;
 }
 
+// The Your formula / Claude's formula tabs on the results page.
 function formulaTabs(formula) {
   const btn = (f, label) => `<button data-formula="${f}" aria-pressed="${formula === f}">${label}</button>`;
   return `<div class="switch tabs" role="group" aria-label="Formula">${btn('nate', 'Your formula')}${btn('claude', "Claude's formula")}</div>`;
@@ -247,26 +253,22 @@ function upcomingPage() {
 }
 
 // Rankings: every player Claude projects in the day's games (with Nate's lineups where confirmed), ranked
-// by points, rebounds or assists, with the chosen over/under line. Tap a row for that game.
+// by points, rebounds or assists. Tap a row for that game.
 function rankings(games) {
   const stat = readStored(RANK_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const level = readLevel();
   const all = games.filter((g) => g.claude).flatMap((g) => {
     const c = claudeFor(g);
     return [[c.away, g.homeId], [c.home, g.awayId]].flatMap(([side, oppId]) => side.players.map((p) => ({ p, g, team: teamById(side.teamId), opp: teamById(oppId), home: side === c.home })));
   }).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name));
   if (!all.length) return '<p class="message">Claude\'s formula isn\'t ready for these games yet. It appears after the next nightly update.</p>';
-  const cal = data.calibration?.[stat];
   const items = all.map(({ p, g, team, opp, home }, i) => {
-    const line = cal ? lineAt(p[stat], cal, level) : null;
     const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-    return `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}${tag}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${Math.floor(p.min)} min${cal ? ` · ${levelName(level)} ${line ? line.toFixed(1) : '—'}` : ''}</span></span><b>${one(p[stat])}</b></a></li>`;
+    return `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}${tag}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${Math.floor(p.min)} min</span></span><b>${one(p[stat])}</b></a></li>`;
   }).join('');
   const btn = (s, label) => `<button data-rank="${s}" aria-pressed="${stat === s}">${label}</button>`;
   return `<div class="switch three" role="group" aria-label="Rank by">${btn('pts', 'Points')}${btn('reb', 'Rebounds')}${btn('ast', 'Assists')}</div>
-    ${levelsBox(level)}
     <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} · ${all.length} players, ${games.filter((g) => g.claude).length} games</h3><ul class="ranking">${items}</ul></section>
-    <p class="working">Claude's projected ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} for every player in the day's games, highest first, using your confirmed lineups where you've saved one. The small line is the one he goes over the chosen share of the time. Tap a player for his game.</p>`;
+    <p class="working">Claude's projected ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} for every player in the day's games, highest first, using your confirmed lineups where you've saved one. Tap a player for his game.</p>`;
 }
 
 // 8. Results: both formulas' real pre-game projections against what happened.
@@ -681,28 +683,20 @@ function claudeMatchup(g, away, home) {
       .sort((a, b) => value(b) - value(a) || a.name.localeCompare(b.name))
       .map((p) => {
         const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-        return `<li><a href="#/team/${t.id}/player/${p.id}"><span class="name">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min${half(p, stat)}</span></span><b>${one(value(p))}</b></a></li>`;
+        return `<li><a href="#/team/${t.id}/player/${p.id}"><span class="name">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min</span></span><b>${one(value(p))}</b></a></li>`;
       }).join('');
     return `<div class="side"><div class="side-head" style="${colours(t)}">${esc(t.code)}</div>
       ${items ? `<ul>${items}</ul>` : '<p class="none">No projections</p>'}</div>`;
   };
-  // The chosen over/under line for points, rebounds and assists (learned from results; none for the combos and 3PM).
-  const level = readLevel();
-  const half = (p, stat) => {
-    if (!stat || !data.calibration?.[stat]) return '';
-    const line = lineAt(p[stat], data.calibration[stat], level);
-    return ` · ${levelName(level)} ${line ? line.toFixed(1) : '—'}`;
-  };
-  const levels = levelsBox(level);
   const sections = CLAUDE_STATS.map(([label, value, stat]) => `<section class="stat"><h3>${label}</h3>
       <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
     ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
   const quarterLink = `<a class="lineup-link done" href="#/game/${g.id}/quarters"><span>By quarter</span><span class="gp">Points, rebounds, assists ›</span></a>`;
-  return `${levels}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  return `${ratingsBox(away, home)}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
-    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. The big number is his projected average; the small line under it is the one he goes over the chosen share of the time (tap the buttons at the top: 80/20 = goes over 80% of the time, 50/50 = as likely over as under), learned from how real results have landed. "—" means no line is that safe for him (e.g. a player who gets 2 assists has no 90/10 line). No line is ever 100% certain, so the buttons stop at 95/5 and 5/95. Points, rebounds and assists only.</p>`;
+    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. Team ratings at the top: offence = points scored per 100 possessions, defence = points allowed per 100 possessions (lower is better), net = offence − defence, pace = possessions a game; ranks are out of the league's 30 teams; the better team in each is highlighted.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
@@ -906,8 +900,6 @@ app.addEventListener('click', (e) => {
     writeSlips(readSlips().filter((x) => x.id !== delSlip.dataset.deleteSlip));
     const y = window.scrollY; render(); window.scrollTo(0, y); return;
   }
-  const levelBtn = e.target.closest('[data-level]');
-  if (levelBtn) { saveLevel(Number(levelBtn.dataset.level)); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const qSort = e.target.closest('[data-qsort]');
   if (qSort) { store(QSORT_KEY, qSort.dataset.qsort); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const qBtn = e.target.closest('[data-qstat]');
