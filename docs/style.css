@@ -352,3 +352,8 @@ ul.ranking .mins .hl { color: var(--accent); font-weight: 700; }
 table.quarters { font-size: 13px; }
 table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 28%; }
 table.quarters th, table.quarters td { padding: 8px 2px; }
+.switch.four + .switch.three { margin-top: -8px; }
+table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 25%; }
+table.quarters { font-size: 12.5px; }
+table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 27%; }
+table.quarters th[scope="row"] { overflow-wrap: normal; word-break: normal; hyphens: none; font-size: 13px; }
