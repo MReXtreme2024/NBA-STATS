@@ -348,3 +348,7 @@ table.quarters button.sort { border: 0; background: none; color: inherit; font: 
 table.quarters button.sort.on { color: var(--accent); }
 table.quarters td.win { color: var(--accent); font-weight: 700; }
 ul.ranking .mins .hl { color: var(--accent); font-weight: 700; }
+.switch.four button.half { grid-column: span 2; }
+table.quarters { font-size: 13px; }
+table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 28%; }
+table.quarters th, table.quarters td { padding: 8px 2px; }

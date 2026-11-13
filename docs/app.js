@@ -534,6 +534,8 @@ function slipsPage(g) {
 const QUARTER_KEY = 'quarterStat';
 const QSORT_KEY = 'quarterSort';
 const QUARTER_STATS = { pts: 'points', reb: 'rebounds', ast: 'assists' };
+const PERIOD_NAMES = ['Q1', 'Q2', 'Q3', 'Q4', '1st half', '2nd half'];
+const PERIOD_SHORT = ['Q1', 'Q2', 'Q3', 'Q4', '1H', '2H'];
 // One game's players (roster, minus anyone ruled out) with their real average in each quarter, in hundredths.
 function quarterRows(g, stat) {
   const k = { pts: 0, reb: 1, ast: 2 }[stat];
@@ -542,25 +544,27 @@ function quarterRows(g, stat) {
     const t = teamById(id);
     const out = [...(readLineup(g.id)?.[id]?.out ?? []), ...(side?.out ?? []).map((o) => o.id)];
     return projectable(t, out).filter((p) => p.qGp > 0).map((p) => {
-      const ends = p.qt.map((q) => cut(100 * q[k], p.qGp)); // his average in each quarter, hundredths, cut
+      // His average in Q1–Q4, then the 1st half (Q1 + Q2) and 2nd half (Q3 + Q4), in hundredths, cut.
+      const sums = [...p.qt.map((q) => q[k]), p.qt[0][k] + p.qt[1][k], p.qt[2][k] + p.qt[3][k]];
+      const ends = sums.map((total) => cut(100 * total, p.qGp));
       return { p, g, team: t, opp: teamById(oppId), home, ends };
     });
   });
 }
 const quarterButtons = (stat, sortQ) => `<div class="switch three" role="group" aria-label="Stat">${['pts', 'reb', 'ast'].map((s2) => `<button data-qstat="${s2}" aria-pressed="${stat === s2}">${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[s2]}</button>`).join('')}</div>
-    <p class="levels-title">His average in each quarter: tap a quarter to rank by it</p>
-    <div class="switch four" role="group" aria-label="Rank by quarter">${[0, 1, 2, 3].map((q) => `<button data-qsort="${q}" aria-pressed="${sortQ === q}">Q${q + 1}</button>`).join('')}</div>`;
-const quarterNote = (stat) => `<p class="working">Each player's real average ${QUARTER_STATS[stat]} in each quarter this season (not a prediction), from ESPN's play-by-play, in games he played for this team. Overtime isn't included. Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
+    <p class="levels-title">His average in each quarter or half: tap one to rank by it</p>
+    <div class="switch four" role="group" aria-label="Rank by quarter or half">${PERIOD_NAMES.map((name, q) => `<button data-qsort="${q}" aria-pressed="${sortQ === q}"${q > 3 ? ' class="half"' : ''}>${name}</button>`).join('')}</div>`;
+const quarterNote = (stat) => `<p class="working">Each player's real average ${QUARTER_STATS[stat]} in each quarter this season (not a prediction), from ESPN's play-by-play, in games he played for this team. Overtime isn't included. 1H = 1st half (Q1 + Q2), 2H = 2nd half (Q3 + Q4). Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
 
 // Upcoming games → By quarter: every player in the day's games, ranked by his average in the chosen quarter.
 function quarterRankings(games) {
   const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3'], '3'));
+  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3', '4', '5'], '3'));
   const all = games.flatMap((g) => quarterRows(g, stat)).filter((r) => r.ends[sortQ] > 0)
     .sort((a, b) => b.ends[sortQ] - a.ends[sortQ] || b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name));
-  const items = all.map(({ p, g, team, opp, home, ends }, i) => `<li><a href="#/game/${g.id}/quarters"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${p.qGp} game${p.qGp === 1 ? '' : 's'}</span><span class="mins">${ends.map((v, q) => (q === sortQ ? `<span class="hl">Q${q + 1} ${hundredths(v)}</span>` : `Q${q + 1} ${hundredths(v)}`)).join(' · ')}</span></span><b>${hundredths(ends[sortQ])}</b></a></li>`).join('');
+  const items = all.map(({ p, g, team, opp, home, ends }, i) => `<li><a href="#/game/${g.id}/quarters"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${p.qGp} game${p.qGp === 1 ? '' : 's'}</span><span class="mins">${ends.map((v, q) => (q === sortQ ? `<span class="hl">${PERIOD_SHORT[q]} ${hundredths(v)}</span>` : `${PERIOD_SHORT[q]} ${hundredths(v)}`)).join(' · ')}</span></span><b>${hundredths(ends[sortQ])}</b></a></li>`).join('');
   return `${quarterButtons(stat, sortQ)}
-    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} in Q${sortQ + 1} · ${all.length} players, ${games.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No quarter figures yet</p>'}</section>
+    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} in the ${PERIOD_NAMES[sortQ]} · ${all.length} players, ${games.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No quarter figures yet</p>'}</section>
     ${quarterNote(stat)}`;
 }
 
@@ -569,7 +573,7 @@ function quartersPage(g) {
   const away = teamById(g.awayId);
   const home = teamById(g.homeId);
   const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3'], '3'));
+  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3', '4', '5'], '3'));
   const rows = quarterRows(g, stat);
   const block = (t) => {
     const body = rows.filter((r) => r.team === t)
@@ -577,7 +581,7 @@ function quartersPage(g) {
       .map(({ p, ends }) => `<tr data-href="#/team/${t.id}/player/${p.id}"><th scope="row">${esc(p.name)}<span class="mins">${p.qGp} game${p.qGp === 1 ? '' : 's'}</span></th>${ends.map((v, q) => `<td${q === sortQ ? ' class="win"' : ''}>${hundredths(v)}</td>`).join('')}</tr>`)
       .join('');
     return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
-      ${body ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">Per quarter</th>${[0, 1, 2, 3].map((q) => `<th scope="col"><button class="sort${q === sortQ ? ' on' : ''}" data-qsort="${q}">Q${q + 1}${q === sortQ ? ' ▼' : ''}</button></th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
+      ${body ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">Per quarter</th>${PERIOD_SHORT.map((name, q) => `<th scope="col"><button class="sort${q === sortQ ? ' on' : ''}" data-qsort="${q}">${name}${q === sortQ ? '▼' : ''}</button></th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
   };
   return `${bar(`${away.code} @ ${home.code} by quarter`, `#/game/${g.id}`, startText(g.start))}
     ${quarterButtons(stat, sortQ)}
