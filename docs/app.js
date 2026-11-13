@@ -83,7 +83,7 @@ const readStored = (key, allowed, fallback) => {
 const store = (key, v) => { try { localStorage.setItem(key, v); } catch { /* private mode: not remembered */ } };
 function viewTabs(view) {
   const btn = (v, label) => `<button data-view="${v}" aria-pressed="${view === v}">${label}</button>`;
-  return `<div class="switch tabs" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}</div>`;
+  return `<div class="switch tabs three" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}</div>`;
 }
 
 // The row of over/under line buttons (95/5 … 5/95).
@@ -223,7 +223,7 @@ const pill = (t) => `<span class="pill" style="${colours(t)}">${esc(t.code)}</sp
 
 // 6. Upcoming games: today's (US date) games not yet started, from the nightly update.
 function upcomingPage() {
-  const view = readStored(VIEW_KEY, ['games', 'rankings'], 'games');
+  const view = readStored(VIEW_KEY, ['games', 'rankings', 'quarters'], 'games');
   const games = data.upcoming?.games ?? [];
   const rows = games.map((g) => {
     const away = teamById(g.awayId);
@@ -235,7 +235,7 @@ function upcomingPage() {
       <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
       <span class="when">${score}${startText(g.start)}${note}</span></a></li>`;
   }).join('');
-  const body = !games.length ? null : view === 'rankings' ? rankings(games) : `<ul class="games-list">${rows}</ul>`;
+  const body = !games.length ? null : view === 'rankings' ? rankings(games) : view === 'quarters' ? quarterRankings(games) : `<ul class="games-list">${rows}</ul>`;
   const shown = body !== null
     ? body
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
@@ -532,32 +532,58 @@ function slipsPage(g) {
 // the end of the 1st, 2nd, 3rd and 4th quarter, from his quarter-by-quarter totals in games he played for the
 // team (overtime left out). Whole-number maths like Nate's formula: averages cut to 2 decimals.
 const QUARTER_KEY = 'quarterStat';
+const QSORT_KEY = 'quarterSort';
+const QUARTER_STATS = { pts: 'points', reb: 'rebounds', ast: 'assists' };
+// One game's players (roster, minus anyone ruled out) with their average by the end of each quarter, in hundredths.
+function quarterRows(g, stat) {
+  const k = { pts: 0, reb: 1, ast: 2 }[stat];
+  const c = g.claude ? claudeFor(g) : null;
+  return [[g.awayId, g.homeId, c?.away, false], [g.homeId, g.awayId, c?.home, true]].flatMap(([id, oppId, side, home]) => {
+    const t = teamById(id);
+    const out = [...(readLineup(g.id)?.[id]?.out ?? []), ...(side?.out ?? []).map((o) => o.id)];
+    return projectable(t, out).filter((p) => p.qGp > 0).map((p) => {
+      let run = 0;
+      const ends = p.qt.map((q) => (run += q[k])).map((total) => cut(100 * total, p.qGp)); // hundredths, cut
+      return { p, g, team: t, opp: teamById(oppId), home, ends };
+    });
+  });
+}
+const quarterButtons = (stat, sortQ) => `<div class="switch three" role="group" aria-label="Stat">${['pts', 'reb', 'ast'].map((s2) => `<button data-qstat="${s2}" aria-pressed="${stat === s2}">${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[s2]}</button>`).join('')}</div>
+    <p class="levels-title">By the end of: tap a quarter to rank by it</p>
+    <div class="switch four" role="group" aria-label="Rank by quarter">${[0, 1, 2, 3].map((q) => `<button data-qsort="${q}" aria-pressed="${sortQ === q}">Q${q + 1}</button>`).join('')}</div>`;
+const quarterNote = (stat) => `<p class="working">Each player's average ${QUARTER_STATS[stat]} by the end of each quarter this season (his averages in each quarter added up as the game goes on), from ESPN's play-by-play, in games he played for this team. Overtime isn't included, so Q4 is the end of regulation. Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
+
+// Upcoming games → By quarter: every player in the day's games, ranked by his average by the end of the chosen quarter.
+function quarterRankings(games) {
+  const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
+  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3'], '3'));
+  const all = games.flatMap((g) => quarterRows(g, stat)).filter((r) => r.ends[sortQ] > 0)
+    .sort((a, b) => b.ends[sortQ] - a.ends[sortQ] || b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name));
+  const items = all.map(({ p, g, team, opp, home, ends }, i) => `<li><a href="#/game/${g.id}/quarters"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${p.qGp} game${p.qGp === 1 ? '' : 's'}</span><span class="mins">${ends.map((v, q) => (q === sortQ ? `<span class="hl">Q${q + 1} ${hundredths(v)}</span>` : `Q${q + 1} ${hundredths(v)}`)).join(' · ')}</span></span><b>${hundredths(ends[sortQ])}</b></a></li>`).join('');
+  return `${quarterButtons(stat, sortQ)}
+    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} by the end of Q${sortQ + 1} · ${all.length} players, ${games.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No quarter figures yet</p>'}</section>
+    ${quarterNote(stat)}`;
+}
+
+// A game's By quarter page: both teams, every quarter shown, ranked by the chosen quarter (tap Q1–Q4).
 function quartersPage(g) {
   const away = teamById(g.awayId);
   const home = teamById(g.homeId);
   const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const k = { pts: 0, reb: 1, ast: 2 }[stat];
-  const c = g.claude ? claudeFor(g) : null;
-  const block = (t, side) => {
-    const out = new Set([...(readLineup(g.id)?.[t.id]?.out ?? []), ...(side?.out ?? []).map((o) => o.id)]);
-    const rows = projectable(t, [...out])
-      .filter((p) => p.qGp > 0)
-      .map((p) => {
-        let run = 0;
-        const ends = p.qt.map((q) => (run += q[k])).map((total) => cut(100 * total, p.qGp)); // hundredths, cut
-        return { p, ends };
-      })
-      .sort((a, b) => b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name))
-      .map(({ p, ends }) => `<tr data-href="#/team/${t.id}/player/${p.id}"><th scope="row">${esc(p.name)}<span class="mins">${p.qGp} game${p.qGp === 1 ? '' : 's'}</span></th>${ends.map((v) => `<td>${hundredths(v)}</td>`).join('')}</tr>`)
+  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3'], '3'));
+  const rows = quarterRows(g, stat);
+  const block = (t) => {
+    const body = rows.filter((r) => r.team === t)
+      .sort((a, b) => b.ends[sortQ] - a.ends[sortQ] || b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name))
+      .map(({ p, ends }) => `<tr data-href="#/team/${t.id}/player/${p.id}"><th scope="row">${esc(p.name)}<span class="mins">${p.qGp} game${p.qGp === 1 ? '' : 's'}</span></th>${ends.map((v, q) => `<td${q === sortQ ? ' class="win"' : ''}>${hundredths(v)}</td>`).join('')}</tr>`)
       .join('');
     return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
-      ${rows ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">By end of</th><th scope="col">Q1</th><th scope="col">Q2</th><th scope="col">Q3</th><th scope="col">Q4</th></tr></thead><tbody>${rows}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
+      ${body ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">By end of</th>${[0, 1, 2, 3].map((q) => `<th scope="col"><button class="sort${q === sortQ ? ' on' : ''}" data-qsort="${q}">Q${q + 1}${q === sortQ ? ' ▼' : ''}</button></th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
   };
-  const btn = (s2, label) => `<button data-qstat="${s2}" aria-pressed="${stat === s2}">${label}</button>`;
   return `${bar(`${away.code} @ ${home.code} by quarter`, `#/game/${g.id}`, startText(g.start))}
-    <div class="switch three" role="group" aria-label="Stat">${btn('pts', 'Points')}${btn('reb', 'Rebounds')}${btn('ast', 'Assists')}</div>
-    ${block(away, c?.away)}${block(home, c?.home)}
-    <p class="working">Each player's average ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} by the end of each quarter this season (adding up his averages in each quarter), from ESPN's play-by-play, in games he played for this team. Overtime isn't included, so Q4 is the end of regulation. Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
+    ${quarterButtons(stat, sortQ)}
+    ${block(away)}${block(home)}
+    ${quarterNote(stat)}`;
 }
 
 // 11. Saved slips, settled from each night's results: Nate's record, Claude's record, and what Claude has learned.
@@ -877,6 +903,8 @@ app.addEventListener('click', (e) => {
   }
   const levelBtn = e.target.closest('[data-level]');
   if (levelBtn) { saveLevel(Number(levelBtn.dataset.level)); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
+  const qSort = e.target.closest('[data-qsort]');
+  if (qSort) { store(QSORT_KEY, qSort.dataset.qsort); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const qBtn = e.target.closest('[data-qstat]');
   if (qBtn) { store(QUARTER_KEY, qBtn.dataset.qstat); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const viewBtn = e.target.closest('[data-view]');

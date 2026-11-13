@@ -342,3 +342,9 @@ table.quarters { table-layout: fixed; }
 table.quarters thead th:first-child, table.quarters th[scope="row"] { width: 36%; white-space: normal; }
 table.quarters td, table.quarters thead th { white-space: nowrap; text-align: right; }
 table.quarters thead th:first-child { text-align: left; }
+.switch.four { grid-template-columns: repeat(4, 1fr); }
+.switch.tabs.three button { font-size: 14px; }
+table.quarters button.sort { border: 0; background: none; color: inherit; font: inherit; font-weight: 700; padding: 6px 2px; min-height: 36px; cursor: pointer; }
+table.quarters button.sort.on { color: var(--accent); }
+table.quarters td.win { color: var(--accent); font-weight: 700; }
+ul.ranking .mins .hl { color: var(--accent); font-weight: 700; }
