@@ -1,0 +1,84 @@
+{
+ "gameId": "401909300",
+ "start": "2026-11-14T01:00Z",
+ "game": "MEM @ NOP",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.604942142593053,
+     "avg": 26.2,
+     "chance": 0.9547954309536736
+    },
+    {
+     "playerId": "5041935",
+     "name": "Cameron Boozer",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.968543489084821,
+     "avg": 9.818181818181818,
+     "chance": 0.9136631688789143
+    },
+    {
+     "playerId": "4433083",
+     "name": "Cam Spencer",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.863991015341036,
+     "avg": 4.818181818181818,
+     "chance": 0.8529013303726369
+    }
+   ],
+   "chance": 0.7440382148958883
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.365826844615668,
+     "avg": 10.727272727272727,
+     "chance": 0.7058439115853016
+    },
+    {
+     "playerId": "5041935",
+     "name": "Cameron Boozer",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.968543489084821,
+     "avg": 9.818181818181818,
+     "chance": 0.7463008635266974
+    },
+    {
+     "playerId": "4065733",
+     "name": "Ty Jerome",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.37069305872604,
+     "avg": 4.9,
+     "chance": 0.6209254930634571
+    }
+   ],
+   "chance": 0.32708611461198756
+  }
+ ]
+}

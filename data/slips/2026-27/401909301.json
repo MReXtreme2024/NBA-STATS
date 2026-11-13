@@ -1,0 +1,84 @@
+{
+ "gameId": "401909301",
+ "start": "2026-11-14T01:30Z",
+ "game": "UTA @ HOU",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 21.689557553210904,
+     "avg": 20.916666666666668,
+     "chance": 0.8066667400126294
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.820716024810321,
+     "avg": 6.75,
+     "chance": 0.8793637208170959
+    },
+    {
+     "playerId": "4871144",
+     "name": "Alperen Sengun",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.679327660502455,
+     "avg": 7.9,
+     "chance": 0.9378785836222929
+    }
+   ],
+   "chance": 0.6652874239392244
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 21.689557553210904,
+     "avg": 20.916666666666668,
+     "chance": 0.5889154575746995
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.327435159498248,
+     "avg": 4,
+     "chance": 0.607577572707976
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.5528438155004847,
+     "avg": 3.0833333333333335,
+     "chance": 0.6894715286419971
+    }
+   ],
+   "chance": 0.2467010654273082
+  }
+ ]
+}

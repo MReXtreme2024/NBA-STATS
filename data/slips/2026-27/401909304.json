@@ -1,0 +1,84 @@
+{
+ "gameId": "401909304",
+ "start": "2026-11-14T03:30Z",
+ "game": "OKC @ LAC",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.687917017068504,
+     "avg": 20.4,
+     "chance": 0.8967630892787836
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.602413348442183,
+     "avg": 6.25,
+     "chance": 0.864688656958618
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.006741819798757,
+     "avg": 4.5,
+     "chance": 0.871529999034559
+    }
+   ],
+   "chance": 0.6758025511967564
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.687917017068504,
+     "avg": 20.4,
+     "chance": 0.8967630892787836
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.602413348442183,
+     "avg": 6.25,
+     "chance": 0.6225301452051915
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.006741819798757,
+     "avg": 4.5,
+     "chance": 0.5611056730933999
+    }
+   ],
+   "chance": 0.31324400679727926
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909299",
+ "start": "2026-11-14T01:00Z",
+ "game": "ATL @ CHI",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2595516",
+     "name": "Norman Powell",
+     "teamId": "4",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.947284841211708,
+     "avg": 19.25,
+     "chance": 0.902479885005935
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.718291294293057,
+     "avg": 4.6,
+     "chance": 0.8737377179669865
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.6097725390880795,
+     "avg": 5.75,
+     "chance": 0.9320497534977067
+    }
+   ],
+   "chance": 0.7349498587612651
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4711294",
+     "name": "Matas Buzelis",
+     "teamId": "4",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.4127316135474,
+     "avg": 13.5,
+     "chance": 0.7976330978236892
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 6.718291294293057,
+     "avg": 4.6,
+     "chance": 0.6366012769503784
+    },
+    {
+     "playerId": "4395626",
+     "name": "Tre Jones",
+     "teamId": "4",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.138901301595897,
+     "avg": 2.9,
+     "chance": 0.7709235275711607
+    }
+   ],
+   "chance": 0.3914551149501029
+  }
+ ]
+}

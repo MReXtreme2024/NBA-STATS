@@ -1,0 +1,84 @@
+{
+ "gameId": "401909296",
+ "start": "2026-11-14T00:00Z",
+ "game": "NYK @ IND",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.36456197577884,
+     "avg": 26,
+     "chance": 0.9662922369804787
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.344591119035123,
+     "avg": 13.545454545454545,
+     "chance": 0.9958907560117514
+    },
+    {
+     "playerId": "4395712",
+     "name": "Andrew Nembhard",
+     "teamId": "11",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.7685038880296045,
+     "avg": 7.8,
+     "chance": 0.943372310737994
+    }
+   ],
+   "chance": 0.9078274631793739
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3149673",
+     "name": "Pascal Siakam",
+     "teamId": "11",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.437309236690886,
+     "avg": 22.727272727272727,
+     "chance": 0.8912865437064118
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.344591119035123,
+     "avg": 13.545454545454545,
+     "chance": 0.9958907560117514
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.22708125019003,
+     "avg": 5.181818181818182,
+     "chance": 0.5942320524039713
+    }
+   ],
+   "chance": 0.5274546490118641
+  }
+ ]
+}

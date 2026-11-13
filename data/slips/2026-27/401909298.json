@@ -1,0 +1,84 @@
+{
+ "gameId": "401909298",
+ "start": "2026-11-14T01:00Z",
+ "game": "CLE @ MIA",
+ "made": "2026-11-13T13:10:20.413Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 25.203995759725114,
+     "avg": 22.833333333333332,
+     "chance": 0.8998668517493045
+    },
+    {
+     "playerId": "4066328",
+     "name": "Jarrett Allen",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.747748974145532,
+     "avg": 8.3,
+     "chance": 0.8385996519522737
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.203955516242097,
+     "avg": 5.583333333333333,
+     "chance": 0.833115005724008
+    }
+   ],
+   "chance": 0.6286919344335309
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 25.203995759725114,
+     "avg": 22.833333333333332,
+     "chance": 0.7277999847257728
+    },
+    {
+     "playerId": "4066328",
+     "name": "Jarrett Allen",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.747748974145532,
+     "avg": 8.3,
+     "chance": 0.622257646926869
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.203955516242097,
+     "avg": 5.583333333333333,
+     "chance": 0.5799396586159463
+    }
+   ],
+   "chance": 0.2626425540866842
+  }
+ ]
+}
