@@ -108,7 +108,7 @@ function teamAveragesBox(away, home) {
   // gives up) ÷ 2, worked in whole numbers: cut(100 × (total × oppGP + oppAllowed × GP), 2 × GP × oppGP).
   const expected = (t, o, s) => cut(100 * (t.totals[s] * o.gp + o.allowed[s] * t.gp), 2 * t.gp * o.gp);
   const tonight = `<h4 class="avg-title">Expected tonight<span class="mins">(average + opponent gives up) ÷ 2</span></h4>
-      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${[['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists']].map(([s, label]) => `<tr><th scope="row">${label}</th><td>${hundredths(expected(away, home, s))}</td><td>${hundredths(expected(home, away, s))}</td></tr>`).join('')}</tbody></table></div>
+      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${[['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists'], ['tpm', '3-pointers']].map(([s, label]) => `<tr><th scope="row">${label}</th><td>${hundredths(expected(away, home, s))}</td><td>${hundredths(expected(home, away, s))}</td></tr>`).join('')}</tbody></table></div>
       <p class="working">e.g. ${esc(away.code)} points: (${hundredths(teamAverage(away.totals.pts, away.gp))} + ${hundredths(teamAverage(home.allowed.pts, home.gp))}) ÷ 2. Tested on this season's games, this beat a team's own average for points, rebounds and assists.</p>`;
   return `<section class="stat team-box"><h3>Team averages</h3>
     ${tonight}
@@ -329,9 +329,7 @@ function resultsPage() {
 // Claude's formula for one game: projected team scores, then every stat side by side.
 const CLAUDE_STATS = [
   ['Points', (p) => p.pts, 'pts'], ['Rebounds', (p) => p.reb, 'reb'], ['Assists', (p) => p.ast, 'ast'],
-  ['Points + Rebounds', (p) => p.pts + p.reb], ['Points + Assists', (p) => p.pts + p.ast],
-  ['Rebounds + Assists', (p) => p.reb + p.ast], ['Points + Rebounds + Assists', (p) => p.pts + p.reb + p.ast],
-  ['3PM', (p) => p.tpm],
+  ['3-pointers made', (p) => p.tpm],
 ];
 
 // Starting lineups Nate confirms before tip-off, kept on his phone: { teamId: { starters: [id], out: [id] } }.
