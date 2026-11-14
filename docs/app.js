@@ -104,7 +104,14 @@ function teamAveragesBox(away, home) {
       <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead>${body}</table></div>
       <p class="working">${lines.join('.<br>')}.</p>`;
   };
+  // Expected tonight (14 Nov 2026, Nate's request): meet in the middle, (his average + what the opponent
+  // gives up) ÷ 2, worked in whole numbers: cut(100 × (total × oppGP + oppAllowed × GP), 2 × GP × oppGP).
+  const expected = (t, o, s) => cut(100 * (t.totals[s] * o.gp + o.allowed[s] * t.gp), 2 * t.gp * o.gp);
+  const tonight = `<h4 class="avg-title">Expected tonight<span class="mins">(average + opponent gives up) ÷ 2</span></h4>
+      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${[['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists']].map(([s, label]) => `<tr><th scope="row">${label}</th><td>${hundredths(expected(away, home, s))}</td><td>${hundredths(expected(home, away, s))}</td></tr>`).join('')}</tbody></table></div>
+      <p class="working">e.g. ${esc(away.code)} points: (${hundredths(teamAverage(away.totals.pts, away.gp))} + ${hundredths(teamAverage(home.allowed.pts, home.gp))}) ÷ 2. Tested on this season's games, this beat a team's own average for points, rebounds and assists.</p>`;
   return `<section class="stat team-box"><h3>Team averages</h3>
+    ${tonight}
     ${table('Per game', 'totals', false, 'higher is better')}
     ${table('Given up per game', 'allowed', true, 'lower is better')}
     <p class="legend"><span class="chip c3">3 of 3</span><span class="chip c2">2 of 3</span><span class="chip c1">1 of 3</span> how many of the three in each group (points, rebounds, assists / 3-pointers, steals, blocks) the team is better in. Given up = what opponents average against them. Season averages over ${away.gp} (${esc(away.code)}) and ${home.gp} (${esc(home.code)}) games, cut to 2 decimals.</p></section>`;

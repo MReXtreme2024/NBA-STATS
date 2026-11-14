@@ -378,13 +378,15 @@ export function projectGame(games, game, { extras = {}, prior = {}, rosters = {}
     const o = ratings.team(oppId);
     const paceFactor = scores.poss / t.pace;
     const lg = ratings.league;
+    // 'middle' (Nate's meet-in-the-middle, 14 Nov 2026): (team's average + what the opponent allows) ÷ 2.
+    const middle = MODEL.teamTotals === 'middle';
     const expected = {
       pts: scores[side],
-      reb: t.reb * paceFactor * (o.rebAllowed / lg.reb) ** MODEL.oppRebPower,
+      reb: middle ? (t.reb + o.rebAllowed) / 2 : t.reb * paceFactor * (o.rebAllowed / lg.reb) ** MODEL.oppRebPower,
       // assists follow made baskets: the team's usual assists × how many points it is projected
       // to score against its usual points, nudged by how many assists the opponent allows
-      ast: t.ast * (scores[side] / ((t.ortg * t.pace) / 100)) * (o.astAllowed / lg.ast) ** MODEL.oppAstPower,
-      tpm: t.tpm * paceFactor * (o.tpmAllowed / lg.tpm) ** MODEL.oppTpmPower,
+      ast: middle ? (t.ast + o.astAllowed) / 2 : t.ast * (scores[side] / ((t.ortg * t.pace) / 100)) * (o.astAllowed / lg.ast) ** MODEL.oppAstPower,
+      tpm: middle ? (t.tpm + o.tpmAllowed) / 2 : t.tpm * paceFactor * (o.tpmAllowed / lg.tpm) ** MODEL.oppTpmPower,
     };
     sides[side] = {
       teamId: id,
