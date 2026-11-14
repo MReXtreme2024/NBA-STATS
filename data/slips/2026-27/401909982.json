@@ -1,0 +1,84 @@
+{
+ "gameId": "401909982",
+ "start": "2026-11-15T01:00Z",
+ "game": "DET @ MIA",
+ "made": "2026-11-14T13:34:17.321Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3032977",
+     "name": "Giannis Antetokounmpo",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 27.801684440371073,
+     "avg": 28.5,
+     "chance": 0.9929036982755549
+    },
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.23553075168907,
+     "avg": 8.833333333333334,
+     "chance": 0.8765394508814616
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 8.543185295490575,
+     "avg": 7.909090909090909,
+     "chance": 0.9531604368607587
+    }
+   ],
+   "chance": 0.8295538884191175
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059319",
+     "name": "Andrew Wiggins",
+     "teamId": "14",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.513859876127288,
+     "avg": 8.666666666666666,
+     "chance": 0.6099877776283258
+    },
+    {
+     "playerId": "4066261",
+     "name": "Bam Adebayo",
+     "teamId": "14",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.23553075168907,
+     "avg": 8.833333333333334,
+     "chance": 0.677485252683093
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 8.543185295490575,
+     "avg": 7.909090909090909,
+     "chance": 0.7545868714257254
+    }
+   ],
+   "chance": 0.3118388527892105
+  }
+ ]
+}
