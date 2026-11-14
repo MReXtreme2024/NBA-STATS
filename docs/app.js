@@ -72,7 +72,7 @@ const readStored = (key, allowed, fallback) => {
 const store = (key, v) => { try { localStorage.setItem(key, v); } catch { /* private mode: not remembered */ } };
 function viewTabs(view) {
   const btn = (v, label) => `<button data-view="${v}" aria-pressed="${view === v}">${label}</button>`;
-  return `<div class="switch tabs three" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}</div>`;
+  return `<div class="switch tabs" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}${btn('diffs', 'Differences')}</div>`;
 }
 
 // Team averages at the top of a game page (14 Nov 2026, Nate's request, replacing the ratings box): each
@@ -80,6 +80,8 @@ function viewTabs(view) {
 // in each stat (higher scored, lower allowed) is coloured by how many of the three it wins: green all 3,
 // yellow 2, red 1. Whole-number maths like Nate's formula: averages cut to 2 decimals.
 const WIN_CLASS = { 3: 'c3', 2: 'c2', 1: 'c1' };
+// Expected tonight in hundredths: (his average + what the opponent gives up) ÷ 2, in whole numbers.
+const expectedTonight = (t, o, s) => cut(100 * (t.totals[s] * o.gp + o.allowed[s] * t.gp), 2 * t.gp * o.gp);
 function teamAveragesBox(away, home) {
   if (!away.gp || !home.gp) return '';
   // Two groups of three, each coloured on its own (14 Nov 2026: Nate added 3-pointers, steals and blocks).
@@ -106,7 +108,7 @@ function teamAveragesBox(away, home) {
   };
   // Expected tonight (14 Nov 2026, Nate's request): meet in the middle, (his average + what the opponent
   // gives up) ÷ 2, worked in whole numbers: cut(100 × (total × oppGP + oppAllowed × GP), 2 × GP × oppGP).
-  const expected = (t, o, s) => cut(100 * (t.totals[s] * o.gp + o.allowed[s] * t.gp), 2 * t.gp * o.gp);
+  const expected = expectedTonight;
   const tonight = `<h4 class="avg-title">Expected tonight<span class="mins">(average + opponent gives up) ÷ 2</span></h4>
       <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${[['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists'], ['tpm', '3-pointers']].map(([s, label]) => `<tr><th scope="row">${label}</th><td>${hundredths(expected(away, home, s))}</td><td>${hundredths(expected(home, away, s))}</td></tr>`).join('')}</tbody></table></div>
       <p class="working">e.g. ${esc(away.code)} points: (${hundredths(teamAverage(away.totals.pts, away.gp))} + ${hundredths(teamAverage(home.allowed.pts, home.gp))}) ÷ 2. Tested on this season's games, this beat a team's own average for points, rebounds and assists.</p>`;
@@ -249,7 +251,7 @@ const pill = (t) => `<span class="pill" style="${colours(t)}">${esc(t.code)}</sp
 
 // 6. Upcoming games: today's (US date) games not yet started, from the nightly update.
 function upcomingPage() {
-  const view = readStored(VIEW_KEY, ['games', 'rankings', 'quarters'], 'games');
+  const view = readStored(VIEW_KEY, ['games', 'rankings', 'quarters', 'diffs'], 'games');
   const games = data.upcoming?.games ?? [];
   const rows = games.map((g) => {
     const away = teamById(g.awayId);
@@ -261,7 +263,7 @@ function upcomingPage() {
       <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
       <span class="when">${score}${startText(g.start)}${note}</span></a></li>`;
   }).join('');
-  const body = !games.length ? null : view === 'rankings' ? rankings(games) : view === 'quarters' ? quarterRankings(games) : `<ul class="games-list">${rows}</ul>`;
+  const body = !games.length ? null : view === 'rankings' ? rankings(games) : view === 'quarters' ? quarterRankings(games) : view === 'diffs' ? differences(games) : `<ul class="games-list">${rows}</ul>`;
   const shown = body !== null
     ? body
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
@@ -588,6 +590,28 @@ function quarterRankings(games) {
   return `${quarterButtons(stat, sortQ)}
     <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} ${sortQ === 6 ? 'per game' : `in the ${PERIOD_NAMES[sortQ]}`} · ${all.length} players, ${games.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No quarter figures yet</p>'}</section>
     ${quarterNote(stat)}`;
+}
+
+// Upcoming games → Differences (14 Nov 2026, Nate's request): each game's gap between the two teams'
+// Expected tonight figures (e.g. NYK 112.13 v IND 107.51 points = NYK +4.62), ranked biggest first, per stat.
+const DIFF_KEY = 'diffStat';
+const DIFF_STATS = [['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists'], ['tpm', '3PM']];
+function differences(games) {
+  const stat = readStored(DIFF_KEY, DIFF_STATS.map(([k]) => k), 'pts');
+  const rows = games.map((g) => {
+    const away = teamById(g.awayId);
+    const home = teamById(g.homeId);
+    if (!away.gp || !home.gp) return null;
+    const a = expectedTonight(away, home, stat);
+    const h = expectedTonight(home, away, stat);
+    const [top, other, topV, otherV] = a >= h ? [away, home, a, h] : [home, away, h, a];
+    return { g, top, other, topV, otherV, gap: topV - otherV };
+  }).filter(Boolean).sort((x, y) => y.gap - x.gap);
+  const items = rows.map(({ g, top, other, topV, otherV, gap }, i) => `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(top)} over ${esc(other.code)}<span class="mins">${esc(top.code)} ${hundredths(topV)} – ${esc(other.code)} ${hundredths(otherV)} · ${top.id === g.homeId ? 'home' : 'away'} · ${startText(g.start)}</span></span><b>+${hundredths(gap)}</b></a></li>`).join('');
+  const name = Object.fromEntries(DIFF_STATS)[stat];
+  return `<div class="switch four" role="group" aria-label="Stat">${DIFF_STATS.map(([k, label]) => `<button data-diff="${k}" aria-pressed="${stat === k}">${label}</button>`).join('')}</div>
+    <section class="stat"><h3>${name} · biggest Expected tonight gap first · ${rows.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No games yet</p>'}</section>
+    <p class="working">For each game: both teams' Expected tonight ${name === '3PM' ? '3-pointers' : name.toLowerCase()} ((team's average + what the opponent gives up) ÷ 2), and how far ahead the higher team is. Tap a game to open it. Whole-number maths, cut to 2 decimals.</p>`;
 }
 
 // A game's By quarter page: both teams, every quarter shown, ranked by the chosen quarter (tap Q1–Q4).
@@ -918,6 +942,8 @@ app.addEventListener('click', (e) => {
     writeSlips(readSlips().filter((x) => x.id !== delSlip.dataset.deleteSlip));
     const y = window.scrollY; render(); window.scrollTo(0, y); return;
   }
+  const diffBtn = e.target.closest('[data-diff]');
+  if (diffBtn) { store(DIFF_KEY, diffBtn.dataset.diff); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const qSort = e.target.closest('[data-qsort]');
   if (qSort) { store(QSORT_KEY, qSort.dataset.qsort); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const qBtn = e.target.closest('[data-qstat]');
