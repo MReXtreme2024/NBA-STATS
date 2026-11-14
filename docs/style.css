@@ -372,3 +372,4 @@ table.quarters th[scope="row"] { overflow-wrap: normal; word-break: normal; hyph
 .c1 { background: rgba(220, 38, 38, 0.22); }
 .team-box .legend { font-size: 12px; color: var(--muted); }
 .team-box .chip { display: inline-block; padding: 1px 6px; margin-right: 4px; border-radius: 6px; color: var(--text); font-weight: 600; }
+.team-avgs tbody + tbody tr:first-child th, .team-avgs tbody + tbody tr:first-child td { border-top: 3px solid var(--line); }

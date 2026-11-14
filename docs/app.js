@@ -82,27 +82,32 @@ function viewTabs(view) {
 const WIN_CLASS = { 3: 'c3', 2: 'c2', 1: 'c1' };
 function teamAveragesBox(away, home) {
   if (!away.gp || !home.gp) return '';
-  const stats = [['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists']];
+  // Two groups of three, each coloured on its own (14 Nov 2026: Nate added 3-pointers, steals and blocks).
+  const groups = [[['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists']], [['tpm', '3-pointers'], ['stl', 'Steals'], ['blk', 'Blocks']]];
   const table = (title, key, lowerWins, note) => {
     const avg = (t, s) => teamAverage(t[key][s], t.gp);
-    const winner = Object.fromEntries(stats.map(([s]) => {
-      const a = avg(away, s);
-      const h = avg(home, s);
-      return [s, a === h ? null : (lowerWins ? a < h : a > h) ? away : home];
-    }));
-    const wins = (t) => stats.filter(([s]) => winner[s] === t).length;
-    const cls = { [away.id]: WIN_CLASS[wins(away)] ?? '', [home.id]: WIN_CLASS[wins(home)] ?? '' };
-    const cell = (t, s) => `<td class="${winner[s] === t ? `best ${cls[t.id]}` : ''}">${hundredths(avg(t, s))}</td>`;
-    const body = stats.map(([s, label]) => `<tr><th scope="row">${label}</th>${cell(away, s)}${cell(home, s)}</tr>`).join('');
-    const lead = [away, home].map((t) => ({ t, n: wins(t) })).sort((x, y) => y.n - x.n)[0];
+    const lines = [];
+    const body = groups.map((stats) => {
+      const winner = Object.fromEntries(stats.map(([s]) => {
+        const a = avg(away, s);
+        const h = avg(home, s);
+        return [s, a === h ? null : (lowerWins ? a < h : a > h) ? away : home];
+      }));
+      const wins = (t) => stats.filter(([s]) => winner[s] === t).length;
+      const cls = { [away.id]: WIN_CLASS[wins(away)] ?? '', [home.id]: WIN_CLASS[wins(home)] ?? '' };
+      const lead = [away, home].map((t) => ({ t, n: wins(t) })).sort((x, y) => y.n - x.n)[0];
+      lines.push(`<b>${esc(lead.t.code)}</b> ${lowerWins ? 'gives up less' : 'is higher'} in ${lead.n} of 3 (${stats.map(([, l]) => l.toLowerCase()).join(', ')})`);
+      const cell = (t, s) => `<td class="${winner[s] === t ? `best ${cls[t.id]}` : ''}">${hundredths(avg(t, s))}</td>`;
+      return `<tbody>${stats.map(([s, label]) => `<tr><th scope="row">${label}</th>${cell(away, s)}${cell(home, s)}</tr>`).join('')}</tbody>`;
+    }).join('');
     return `<h4 class="avg-title">${title}<span class="mins">${note}</span></h4>
-      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${body}</tbody></table></div>
-      <p class="working"><b>${esc(lead.t.code)}</b> ${lowerWins ? 'gives up less' : 'is higher'} in ${lead.n} of 3.</p>`;
+      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead>${body}</table></div>
+      <p class="working">${lines.join('.<br>')}.</p>`;
   };
   return `<section class="stat team-box"><h3>Team averages</h3>
     ${table('Per game', 'totals', false, 'higher is better')}
     ${table('Given up per game', 'allowed', true, 'lower is better')}
-    <p class="legend"><span class="chip c3">3 of 3</span><span class="chip c2">2 of 3</span><span class="chip c1">1 of 3</span> how many of the three the team is better in. Season averages over ${away.gp} (${esc(away.code)}) and ${home.gp} (${esc(home.code)}) games, cut to 2 decimals.</p></section>`;
+    <p class="legend"><span class="chip c3">3 of 3</span><span class="chip c2">2 of 3</span><span class="chip c1">1 of 3</span> how many of the three in each group (points, rebounds, assists / 3-pointers, steals, blocks) the team is better in. Given up = what opponents average against them. Season averages over ${away.gp} (${esc(away.code)}) and ${home.gp} (${esc(home.code)}) games, cut to 2 decimals.</p></section>`;
 }
 
 // The Your formula / Claude's formula tabs on the results page.
