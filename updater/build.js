@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkAppData, checkGame } from './checks.js';
 import { scoreResults } from './results.js';
-import { playerRatings, lineOf, teamRatings } from './model.js';
+import { playerRatings, lineOf } from './model.js';
 import { updateCalibration } from './calibrate.js';
 import { CLAUDE_SLIPS, claudeSlips, settle } from '../docs/slips.js';
 
@@ -75,7 +75,7 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
       const colour = normaliseHex(config.colourOverrides?.[code] ?? t.color);
       return [t.id, {
         id: t.id, code, name: t.name, colour, textColour: textColourFor(colour),
-        gp: 0, totals: zeroTotals(), games: [], playersById: new Map(), roster: rosters[t.id] ?? null,
+        gp: 0, totals: zeroTotals(), allowed: zeroTotals(), games: [], playersById: new Map(), roster: rosters[t.id] ?? null,
       }];
     }),
   );
@@ -94,6 +94,8 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
 
       team.gp++;
       addInto(team.totals, gameTotals);
+      // What the opponent scored in this game (from its player lines): the team's "allowed" totals.
+      for (const p of opp.players) if (p.played) addInto(team.allowed, lineToStats(p.stats));
       team.games.push({
         id: game.id,
         date: dateIn(game.start, config.timeZone),
@@ -196,22 +198,6 @@ export function build(now = new Date()) {
   const data = buildAppData(games, teams, config, now, {
     upcoming: readOptional('upcoming.json'), rosters: readOptional('rosters.json'),
   });
-  // Team offensive and defensive ratings (points scored and allowed per 100 possessions) with league ranks,
-  // shown at the top of each game page (13 Nov 2026, Nate's request).
-  const tr = teamRatings(games);
-  const rows = data.teams.filter((t) => t.gp > 0).map((t) => {
-    const r = tr.team(t.id).raw;
-    return { t, v: { ortg: r.ortg, drtg: r.drtg, net: r.ortg - r.drtg, pace: r.pace } };
-  });
-  // 1 = best: highest offence, net and pace; lowest points allowed.
-  const rank = (row, k) => 1 + rows.filter((x) => (k === 'drtg' ? x.v[k] < row.v[k] : x.v[k] > row.v[k])).length;
-  for (const row of rows) {
-    const keys = ['ortg', 'drtg', 'net', 'pace'];
-    row.t.ratings = {
-      ...Object.fromEntries(keys.map((k) => [k, Math.round(row.v[k] * 10) / 10])),
-      rank: Object.fromEntries(keys.map((k) => [k, rank(row, k)])),
-    };
-  }
   // Players' on-court ratings for the Player page (the same ones Claude's formula uses).
   const pr = playerRatings(games);
   for (const t of data.teams) for (const p of t.players) if (pr[p.id]) p.rating = pr[p.id];

@@ -75,26 +75,34 @@ function viewTabs(view) {
   return `<div class="switch tabs three" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}</div>`;
 }
 
-// Team ratings at the top of a game page (13 Nov 2026, Nate: "which team has the best offensive and/or
-// defensive ratings", in place of the line buttons): offence and defence per 100 possessions, net and pace,
-// each with its league rank; the better side of each is highlighted.
-const ordinal = (n) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][n % 10] ?? 'th'}`;
-function ratingsBox(away, home) {
-  const a = away.ratings;
-  const h = home.ratings;
-  if (!a || !h) return '';
-  const rows = [['Offence', 'ortg', 'pts scored /100'], ['Defence', 'drtg', 'pts allowed /100'], ['Net', 'net', 'off − def'], ['Pace', 'pace', 'possessions']];
-  const fig = (v, k) => (k === 'net' && v > 0 ? `+${v.toFixed(1)}` : v.toFixed(1));
-  const cell = (r, k, better) => `<td class="${better ? 'win' : ''}"><b>${fig(r[k], k)}</b><span class="proj">${ordinal(r.rank[k])}</span></td>`;
-  const body = rows.map(([label, k, note]) => {
-    const awayBetter = k === 'pace' ? false : k === 'drtg' ? a[k] < h[k] : a[k] > h[k];
-    const homeBetter = k === 'pace' ? false : k === 'drtg' ? h[k] < a[k] : h[k] > a[k];
-    return `<tr><th scope="row">${label}<span class="mins">${note}</span></th>${cell(a, k, awayBetter)}${cell(h, k, homeBetter)}</tr>`;
-  }).join('');
-  const better = (k) => (k === 'drtg' ? (a[k] < h[k] ? away : home) : a[k] > h[k] ? away : home);
-  return `<section class="stat ratings"><h3>Team ratings</h3>
-    <div class="table-wrap"><table class="results"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${body}</tbody></table></div>
-    <p class="working"><b>${esc(better('ortg').code)}</b> has the better offence, <b>${esc(better('drtg').code)}</b> the better defence${better('ortg') === better('drtg') ? ` — ${esc(better('ortg').code)} is better at both` : ''}. Ranks are out of 30.</p></section>`;
+// Team averages at the top of a game page (14 Nov 2026, Nate's request, replacing the ratings box): each
+// team's points, rebounds and assists a game, and what it gives up a game. In each table the better team
+// in each stat (higher scored, lower allowed) is coloured by how many of the three it wins: green all 3,
+// yellow 2, red 1. Whole-number maths like Nate's formula: averages cut to 2 decimals.
+const WIN_CLASS = { 3: 'c3', 2: 'c2', 1: 'c1' };
+function teamAveragesBox(away, home) {
+  if (!away.gp || !home.gp) return '';
+  const stats = [['pts', 'Points'], ['reb', 'Rebounds'], ['ast', 'Assists']];
+  const table = (title, key, lowerWins, note) => {
+    const avg = (t, s) => teamAverage(t[key][s], t.gp);
+    const winner = Object.fromEntries(stats.map(([s]) => {
+      const a = avg(away, s);
+      const h = avg(home, s);
+      return [s, a === h ? null : (lowerWins ? a < h : a > h) ? away : home];
+    }));
+    const wins = (t) => stats.filter(([s]) => winner[s] === t).length;
+    const cls = { [away.id]: WIN_CLASS[wins(away)] ?? '', [home.id]: WIN_CLASS[wins(home)] ?? '' };
+    const cell = (t, s) => `<td class="${winner[s] === t ? `best ${cls[t.id]}` : ''}">${hundredths(avg(t, s))}</td>`;
+    const body = stats.map(([s, label]) => `<tr><th scope="row">${label}</th>${cell(away, s)}${cell(home, s)}</tr>`).join('');
+    const lead = [away, home].map((t) => ({ t, n: wins(t) })).sort((x, y) => y.n - x.n)[0];
+    return `<h4 class="avg-title">${title}<span class="mins">${note}</span></h4>
+      <div class="table-wrap"><table class="results team-avgs"><thead><tr><th></th><th scope="col">${pill(away)}</th><th scope="col">${pill(home)}</th></tr></thead><tbody>${body}</tbody></table></div>
+      <p class="working"><b>${esc(lead.t.code)}</b> ${lowerWins ? 'gives up less' : 'is higher'} in ${lead.n} of 3.</p>`;
+  };
+  return `<section class="stat team-box"><h3>Team averages</h3>
+    ${table('Per game', 'totals', false, 'higher is better')}
+    ${table('Given up per game', 'allowed', true, 'lower is better')}
+    <p class="legend"><span class="chip c3">3 of 3</span><span class="chip c2">2 of 3</span><span class="chip c1">1 of 3</span> how many of the three the team is better in. Season averages over ${away.gp} (${esc(away.code)}) and ${home.gp} (${esc(home.code)}) games, cut to 2 decimals.</p></section>`;
 }
 
 // The Your formula / Claude's formula tabs on the results page.
@@ -693,10 +701,10 @@ function claudeMatchup(g, away, home) {
   const slipLink = g.claude?.home?.inputs && data.calibration?.pts
     ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
   const quarterLink = `<a class="lineup-link done" href="#/game/${g.id}/quarters"><span>By quarter</span><span class="gp">Points, rebounds, assists ›</span></a>`;
-  return `${ratingsBox(away, home)}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  return `${teamAveragesBox(away, home)}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     <div class="stats">${sections}</div>
-    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal. Team ratings at the top: offence = points scored per 100 possessions, defence = points allowed per 100 possessions (lower is better), net = offence − defence, pace = possessions a game; ranks are out of the league's 30 teams; the better team in each is highlighted.</p>`;
+    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
