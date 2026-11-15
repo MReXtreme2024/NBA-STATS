@@ -1,0 +1,285 @@
+{
+  "id": "401909986",
+  "start": "2026-11-15T21:00Z",
+  "homeId": "21",
+  "awayId": "13",
+  "savedAt": "2026-11-15T13:14:00.746Z",
+  "teams": {
+    "13": {
+      "score": 116.33,
+      "players": {
+        "3907498": {
+          "name": "Matisse Thybulle",
+          "min": 21.7,
+          "claude": {
+            "pts": 7.1,
+            "reb": 2.17,
+            "ast": 1.1
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "3945274": {
+          "name": "Luka Doncic",
+          "min": 33.2,
+          "claude": {
+            "pts": 32.99,
+            "reb": 6.83,
+            "ast": 7.36
+          },
+          "nate": {
+            "pts": 32,
+            "reb": 6,
+            "ast": 6
+          }
+        },
+        "4277811": {
+          "name": "Collin Sexton",
+          "min": 19.4,
+          "claude": {
+            "pts": 11.99,
+            "reb": 1.86,
+            "ast": 2.74
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "4278077": {
+          "name": "Jarred Vanderbilt",
+          "min": 10.9,
+          "claude": {
+            "pts": 2.55,
+            "reb": 2.84,
+            "ast": 0.88
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "4278580": {
+          "name": "Sandro Mamukelashvili",
+          "min": 23.7,
+          "claude": {
+            "pts": 11.43,
+            "reb": 4.78,
+            "ast": 1.86
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4397014": {
+          "name": "Quentin Grimes",
+          "min": 25.5,
+          "claude": {
+            "pts": 9.9,
+            "reb": 2.76,
+            "ast": 2.69
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4433136": {
+          "name": "Walker Kessler",
+          "min": 31.1,
+          "claude": {
+            "pts": 14.46,
+            "reb": 10.59,
+            "ast": 2.4
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 10,
+            "ast": 1
+          }
+        },
+        "4433137": {
+          "name": "Ziaire Williams",
+          "min": 20.1,
+          "claude": {
+            "pts": 8.93,
+            "reb": 2.06,
+            "ast": 1.23
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4592691": {
+          "name": "Jake LaRavia",
+          "min": 24.6,
+          "claude": {
+            "pts": 6.92,
+            "reb": 3.83,
+            "ast": 1.93
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 2
+          }
+        }
+      }
+    },
+    "21": {
+      "score": 112.65,
+      "players": {
+        "3136193": {
+          "name": "Devin Booker",
+          "min": 30.3,
+          "claude": {
+            "pts": 22.64,
+            "reb": 2.92,
+            "ast": 5.17
+          },
+          "nate": {
+            "pts": 25,
+            "reb": 2,
+            "ast": 5
+          }
+        },
+        "3155526": {
+          "name": "Dillon Brooks",
+          "min": 26.8,
+          "claude": {
+            "pts": 15.42,
+            "reb": 3.28,
+            "ast": 1.79
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 3,
+            "ast": 2
+          }
+        },
+        "3913174": {
+          "name": "Luke Kennard",
+          "min": 16.4,
+          "claude": {
+            "pts": 6.71,
+            "reb": 1.6,
+            "ast": 1.77
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4066383": {
+          "name": "Miles Bridges",
+          "min": 26.2,
+          "claude": {
+            "pts": 13.39,
+            "reb": 5.56,
+            "ast": 2.82
+          },
+          "nate": {
+            "pts": 14,
+            "reb": 7,
+            "ast": 3
+          }
+        },
+        "4278402": {
+          "name": "Jordan Goodwin",
+          "min": 15,
+          "claude": {
+            "pts": 6.01,
+            "reb": 3.17,
+            "ast": 1.63
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4278585": {
+          "name": "Collin Gillespie",
+          "min": 23.2,
+          "claude": {
+            "pts": 8.91,
+            "reb": 2.83,
+            "ast": 3.97
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "4437244": {
+          "name": "Jalen Green",
+          "min": 23.5,
+          "claude": {
+            "pts": 13.27,
+            "reb": 3.11,
+            "ast": 2.71
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "4601023": {
+          "name": "Oso Ighodaro",
+          "min": 18.6,
+          "claude": {
+            "pts": 5.21,
+            "reb": 4.3,
+            "ast": 2.39
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4888725": {
+          "name": "Ryan Dunn",
+          "min": 16.7,
+          "claude": {
+            "pts": 4.93,
+            "reb": 3.71,
+            "ast": 1.3
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "5203685": {
+          "name": "Khaman Maluach",
+          "min": 14,
+          "claude": {
+            "pts": 4.88,
+            "reb": 4.47,
+            "ast": 0.46
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 6,
+            "ast": 1
+          }
+        }
+      }
+    }
+  }
+}

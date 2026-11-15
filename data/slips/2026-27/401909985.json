@@ -1,0 +1,84 @@
+{
+ "gameId": "401909985",
+ "start": "2026-11-15T18:00Z",
+ "game": "IND @ PHI",
+ "made": "2026-11-15T13:14:04.730Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.9104144867355,
+     "avg": 21.166666666666668,
+     "chance": 0.8500008640335353
+    },
+    {
+     "playerId": "5124612",
+     "name": "VJ Edgecombe",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.154720594646097,
+     "avg": 6.416666666666667,
+     "chance": 0.9047600804709874
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.646703228858016,
+     "avg": 5.538461538461538,
+     "chance": 0.9380530707092768
+    }
+   ],
+   "chance": 0.7214067592963043
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4351851",
+     "name": "Anfernee Simons",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.457307873165968,
+     "avg": 10.23076923076923,
+     "chance": 0.6093562699720465
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.508073530859818,
+     "avg": 3.3846153846153846,
+     "chance": 0.6385521856497334
+    },
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.9526161872566483,
+     "avg": 3.6666666666666665,
+     "chance": 0.7498664084909412
+    }
+   ],
+   "chance": 0.29177735229444396
+  }
+ ]
+}

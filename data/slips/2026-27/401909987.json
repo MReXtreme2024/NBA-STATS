@@ -1,0 +1,84 @@
+{
+ "gameId": "401909987",
+ "start": "2026-11-15T21:30Z",
+ "game": "CHA @ LAC",
+ "made": "2026-11-15T13:14:04.730Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.399083127341923,
+     "avg": 15.166666666666666,
+     "chance": 0.8023386816002727
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.385540963105426,
+     "avg": 9.5,
+     "chance": 0.9207312364116663
+    },
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.561375702762493,
+     "avg": 6.909090909090909,
+     "chance": 0.9773259538259602
+    }
+   ],
+   "chance": 0.7219881003159314
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4396907",
+     "name": "Darius Garland",
+     "teamId": "12",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.07248991561421,
+     "avg": 20.727272727272727,
+     "chance": 0.9073790426004695
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.385540963105426,
+     "avg": 9.5,
+     "chance": 0.9207312364116663
+    },
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.831895482264905,
+     "avg": 3.25,
+     "chance": 0.7298425923035461
+    }
+   ],
+   "chance": 0.6097486196742486
+  }
+ ]
+}

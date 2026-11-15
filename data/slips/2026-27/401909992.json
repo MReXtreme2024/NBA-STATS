@@ -1,0 +1,84 @@
+{
+ "gameId": "401909992",
+ "start": "2026-11-16T01:00Z",
+ "game": "ATL @ MIL",
+ "made": "2026-11-15T13:14:04.730Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.73248556111926,
+     "avg": 14.076923076923077,
+     "chance": 0.8121789203687756
+    },
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.992845087796549,
+     "avg": 7.923076923076923,
+     "chance": 0.9473687935667405
+    },
+    {
+     "playerId": "4591725",
+     "name": "Ryan Rollins",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.499962258518842,
+     "avg": 3.923076923076923,
+     "chance": 0.8119584172014577
+    }
+   ],
+   "chance": 0.6247475715515532
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2490149",
+     "name": "CJ McCollum",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 15.73248556111926,
+     "avg": 14.076923076923077,
+     "chance": 0.5535260786910099
+    },
+    {
+     "playerId": "4395725",
+     "name": "Tyler Herro",
+     "teamId": "15",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.122751928844202,
+     "avg": 4.083333333333333,
+     "chance": 0.5781709010543757
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.7720725343316373,
+     "avg": 2.8461538461538463,
+     "chance": 0.7246259470973955
+    }
+   ],
+   "chance": 0.23190397781379257
+  }
+ ]
+}

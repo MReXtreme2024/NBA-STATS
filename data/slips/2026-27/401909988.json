@@ -1,0 +1,84 @@
+{
+ "gameId": "401909988",
+ "start": "2026-11-15T22:00Z",
+ "game": "SAS @ UTA",
+ "made": "2026-11-15T13:14:04.730Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.454234280336806,
+     "avg": 20.916666666666668,
+     "chance": 0.8344468547765882
+    },
+    {
+     "playerId": "4873138",
+     "name": "Ace Bailey",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.476529622130537,
+     "avg": 6.384615384615385,
+     "chance": 0.8608014397046837
+    },
+    {
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.022147676027686,
+     "avg": 4.076923076923077,
+     "chance": 0.879850059300477
+    }
+   ],
+   "chance": 0.6319901861119127
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5105839",
+     "name": "Brice Sensabaugh",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.919065099627698,
+     "avg": 8,
+     "chance": 0.6357914951903906
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.356134469049698,
+     "avg": 4.230769230769231,
+     "chance": 0.7527967039118543
+    },
+    {
+     "playerId": "4683766",
+     "name": "Isaiah Collier",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.022147676027686,
+     "avg": 4.076923076923077,
+     "chance": 0.5705637677659223
+    }
+   ],
+   "chance": 0.27308422442425745
+  }
+ ]
+}
