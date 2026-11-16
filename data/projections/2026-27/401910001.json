@@ -3,7 +3,7 @@
   "start": "2026-11-17T02:00Z",
   "homeId": "7",
   "awayId": "21",
-  "savedAt": "2026-11-16T13:24:48.537Z",
+  "savedAt": "2026-11-16T22:51:26.609Z",
   "teams": {
     "7": {
       "score": 119.35,
@@ -179,15 +179,15 @@
       }
     },
     "21": {
-      "score": 109.22,
+      "score": 110.12,
       "players": {
         "3136193": {
           "name": "Devin Booker",
           "min": 29.7,
           "claude": {
-            "pts": 21.42,
+            "pts": 21.59,
             "reb": 2.98,
-            "ast": 5.03
+            "ast": 5.07
           },
           "nate": {
             "pts": 24,
@@ -199,9 +199,9 @@
           "name": "Dillon Brooks",
           "min": 26,
           "claude": {
-            "pts": 14.16,
+            "pts": 14.28,
             "reb": 3.25,
-            "ast": 1.64
+            "ast": 1.66
           },
           "nate": {
             "pts": 13,
@@ -213,9 +213,9 @@
           "name": "Luke Kennard",
           "min": 16.9,
           "claude": {
-            "pts": 6.96,
+            "pts": 7.01,
             "reb": 1.81,
-            "ast": 1.82
+            "ast": 1.84
           },
           "nate": {
             "pts": 8,
@@ -227,9 +227,9 @@
           "name": "Miles Bridges",
           "min": 25.8,
           "claude": {
-            "pts": 12.84,
+            "pts": 12.95,
             "reb": 5.54,
-            "ast": 2.72
+            "ast": 2.74
           },
           "nate": {
             "pts": 14,
@@ -241,9 +241,9 @@
           "name": "Jordan Goodwin",
           "min": 16.5,
           "claude": {
-            "pts": 6.41,
+            "pts": 6.46,
             "reb": 3.56,
-            "ast": 1.81
+            "ast": 1.83
           },
           "nate": {
             "pts": 6,
@@ -255,9 +255,9 @@
           "name": "Collin Gillespie",
           "min": 23.6,
           "claude": {
-            "pts": 9.27,
+            "pts": 9.35,
             "reb": 2.96,
-            "ast": 3.9
+            "ast": 3.93
           },
           "nate": {
             "pts": 9,
@@ -269,9 +269,9 @@
           "name": "Jalen Green",
           "min": 23,
           "claude": {
-            "pts": 12.5,
+            "pts": 12.6,
             "reb": 3.09,
-            "ast": 2.53
+            "ast": 2.55
           },
           "nate": {
             "pts": 11,
@@ -283,9 +283,9 @@
           "name": "Oso Ighodaro",
           "min": 18.1,
           "claude": {
-            "pts": 4.9,
+            "pts": 4.94,
             "reb": 4.23,
-            "ast": 2.29
+            "ast": 2.3
           },
           "nate": {
             "pts": 4,
@@ -297,9 +297,9 @@
           "name": "Ryan Dunn",
           "min": 17.3,
           "claude": {
-            "pts": 4.85,
+            "pts": 4.89,
             "reb": 3.97,
-            "ast": 1.29
+            "ast": 1.3
           },
           "nate": {
             "pts": 5,
@@ -311,9 +311,9 @@
           "name": "Khaman Maluach",
           "min": 13.5,
           "claude": {
-            "pts": 4.6,
+            "pts": 4.64,
             "reb": 4.39,
-            "ast": 0.42
+            "ast": 0.43
           },
           "nate": {
             "pts": 7,
