@@ -1,0 +1,84 @@
+{
+ "gameId": "401909997",
+ "start": "2026-11-17T00:30Z",
+ "game": "PHI @ BKN",
+ "made": "2026-11-16T13:24:48.539Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.38300065694746,
+     "avg": 26.714285714285715,
+     "chance": 0.9679214886839778
+    },
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.792701521065382,
+     "avg": 6.153846153846154,
+     "chance": 0.8004276704426057
+    },
+    {
+     "playerId": "1966",
+     "name": "LeBron James",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.278358645356739,
+     "avg": 6.909090909090909,
+     "chance": 0.9104688849269638
+    }
+   ],
+   "chance": 0.7053868086791761
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.38300065694746,
+     "avg": 26.714285714285715,
+     "chance": 0.9679214886839778
+    },
+    {
+     "playerId": "3064514",
+     "name": "Julius Randle",
+     "teamId": "17",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.638893470233697,
+     "avg": 6.25,
+     "chance": 0.7849635746360801
+    },
+    {
+     "playerId": "3917376",
+     "name": "Jaylen Brown",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.4685349523685827,
+     "avg": 3.5384615384615383,
+     "chance": 0.6773578779897187
+    }
+   ],
+   "chance": 0.5146450762900997
+  }
+ ]
+}

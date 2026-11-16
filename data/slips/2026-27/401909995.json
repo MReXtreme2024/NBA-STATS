@@ -1,0 +1,84 @@
+{
+ "gameId": "401909995",
+ "start": "2026-11-17T00:00Z",
+ "game": "CHI @ CLE",
+ "made": "2026-11-16T13:24:48.539Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 24.79602071982566,
+     "avg": 23,
+     "chance": 0.8945768616292497
+    },
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.722982783555426,
+     "avg": 5.333333333333333,
+     "chance": 0.881126508341499
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 7.203209666146955,
+     "avg": 5.769230769230769,
+     "chance": 0.8466422843289305
+    }
+   ],
+   "chance": 0.6673534082410605
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4871145",
+     "name": "Josh Giddey",
+     "teamId": "4",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.336121074520982,
+     "avg": 10.416666666666666,
+     "chance": 0.7083553402129301
+    },
+    {
+     "playerId": "4683747",
+     "name": "Jaylon Tyson",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 3.9951934173491357,
+     "avg": 3.125,
+     "chance": 0.5620111649025992
+    },
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 7.203209666146955,
+     "avg": 5.769230769230769,
+     "chance": 0.5936167998196029
+    }
+   ],
+   "chance": 0.2363209909161819
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401910000",
+ "start": "2026-11-17T01:00Z",
+ "game": "GSW @ NOP",
+ "made": "2026-11-16T13:24:48.539Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.924074202148642,
+     "avg": 16.5,
+     "chance": 0.9046889565426994
+    },
+    {
+     "playerId": "4869780",
+     "name": "Derik Queen",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.247270219656366,
+     "avg": 6.214285714285714,
+     "chance": 0.8417266339897883
+    },
+    {
+     "playerId": "5144091",
+     "name": "Jeremiah Fears",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.219467685862555,
+     "avg": 5.214285714285714,
+     "chance": 0.9045914954014128
+    }
+   ],
+   "chance": 0.6888471385549465
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.810411651267993,
+     "avg": 9.923076923076923,
+     "chance": 0.6827046614686553
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.873083774161902,
+     "avg": 4.071428571428571,
+     "chance": 0.6938410923081135
+    },
+    {
+     "playerId": "4869780",
+     "name": "Derik Queen",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.4258613892613665,
+     "avg": 2.4285714285714284,
+     "chance": 0.6695283530054668
+    }
+   ],
+   "chance": 0.3171479134049327
+  }
+ ]
+}

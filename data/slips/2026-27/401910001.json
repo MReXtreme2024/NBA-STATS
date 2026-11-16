@@ -1,0 +1,84 @@
+{
+ "gameId": "401910001",
+ "start": "2026-11-17T02:00Z",
+ "game": "PHX @ DEN",
+ "made": "2026-11-16T13:24:48.539Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3936299",
+     "name": "Jamal Murray",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 21.90634119231496,
+     "avg": 25.90909090909091,
+     "chance": 0.9604632797258292
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.31930091601422,
+     "avg": 10.545454545454545,
+     "chance": 0.9897757583692669
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.02573725119728,
+     "avg": 5.166666666666667,
+     "chance": 0.8840484868429247
+    }
+   ],
+   "chance": 0.840414745322558
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3978",
+     "name": "DeMar DeRozan",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.103004130454673,
+     "avg": 9.9,
+     "chance": 0.5872730579679583
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 10.31930091601422,
+     "avg": 10.545454545454545,
+     "chance": 0.9897757583692669
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.02573725119728,
+     "avg": 5.166666666666667,
+     "chance": 0.8840484868429247
+    }
+   ],
+   "chance": 0.513869658388012
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401909998",
+ "start": "2026-11-17T00:30Z",
+ "game": "HOU @ MIA",
+ "made": "2026-11-16T13:24:48.539Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.60094123801213,
+     "avg": 21.285714285714285,
+     "chance": 0.8390777463402292
+    },
+    {
+     "playerId": "4433192",
+     "name": "Tari Eason",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.0291099269903805,
+     "avg": 6.142857142857143,
+     "chance": 0.8211481121806838
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.430465457243679,
+     "avg": 3.357142857142857,
+     "chance": 0.8071012238653383
+    }
+   ],
+   "chance": 0.5560984796183969
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 19.5,
+     "mu": 22.60094123801213,
+     "avg": 21.285714285714285,
+     "chance": 0.6367740978140861
+    },
+    {
+     "playerId": "4433192",
+     "name": "Tari Eason",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.0291099269903805,
+     "avg": 6.142857142857143,
+     "chance": 0.8211481121806838
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.430465457243679,
+     "avg": 3.357142857142857,
+     "chance": 0.8071012238653383
+    }
+   ],
+   "chance": 0.42202180810931134
+  }
+ ]
+}
