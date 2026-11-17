@@ -1,0 +1,84 @@
+{
+ "gameId": "401910005",
+ "start": "2026-11-18T04:00Z",
+ "game": "CHA @ LAL",
+ "made": "2026-11-17T13:33:44.355Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3135045",
+     "name": "Grayson Allen",
+     "teamId": "30",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.30067919957512,
+     "avg": 14.923076923076923,
+     "chance": 0.8020179261459796
+    },
+    {
+     "playerId": "4433249",
+     "name": "Moussa Diabate",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.224111245952009,
+     "avg": 9.727272727272727,
+     "chance": 0.9123653928094914
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 8.013144591508178,
+     "avg": 7.75,
+     "chance": 0.9241908635746745
+    }
+   ],
+   "chance": 0.6762613230635459
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397014",
+     "name": "Quentin Grimes",
+     "teamId": "13",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.908091494442655,
+     "avg": 9.166666666666666,
+     "chance": 0.6405316551819464
+    },
+    {
+     "playerId": "4278580",
+     "name": "Sandro Mamukelashvili",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.389678518311518,
+     "avg": 4.285714285714286,
+     "chance": 0.7598861932607186
+    },
+    {
+     "playerId": "4277811",
+     "name": "Collin Sexton",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.0373545334482697,
+     "avg": 2.6153846153846154,
+     "chance": 0.5888035438398525
+    }
+   ],
+   "chance": 0.2865890325642691
+  }
+ ]
+}

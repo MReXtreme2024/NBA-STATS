@@ -1,0 +1,84 @@
+{
+ "gameId": "401910003",
+ "start": "2026-11-18T01:00Z",
+ "game": "POR @ MIN",
+ "made": "2026-11-17T13:33:44.355Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.632776826655732,
+     "avg": 17.714285714285715,
+     "chance": 0.9181466765663102
+    },
+    {
+     "playerId": "4433247",
+     "name": "Jonathan Kuminga",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.0137338368699025,
+     "avg": 5.642857142857143,
+     "chance": 0.8202833671673797
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.606382742263524,
+     "avg": 3.923076923076923,
+     "chance": 0.8263967209514311
+    }
+   ],
+   "chance": 0.6223927961533295
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.923505037105146,
+     "avg": 8.692307692307692,
+     "chance": 0.5789898698441887
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.342567713751289,
+     "avg": 3.7142857142857144,
+     "chance": 0.6149539891803724
+    },
+    {
+     "playerId": "3995",
+     "name": "Jrue Holiday",
+     "teamId": "22",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.606382742263524,
+     "avg": 3.923076923076923,
+     "chance": 0.8263967209514311
+    }
+   ],
+   "chance": 0.2942403128484496
+  }
+ ]
+}

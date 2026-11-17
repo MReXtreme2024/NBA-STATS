@@ -1,0 +1,84 @@
+{
+ "gameId": "401910002",
+ "start": "2026-11-18T00:30Z",
+ "game": "NYK @ TOR",
+ "made": "2026-11-17T13:33:44.355Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.027790410230388,
+     "avg": 20.76923076923077,
+     "chance": 0.9064112808760407
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.100722643085332,
+     "avg": 13.923076923076923,
+     "chance": 0.9954581870856691
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.521284425562852,
+     "avg": 5.923076923076923,
+     "chance": 0.9286638446468005
+    }
+   ],
+   "chance": 0.837928307618846
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395625",
+     "name": "RJ Barrett",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.027790410230388,
+     "avg": 20.76923076923077,
+     "chance": 0.9064112808760407
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.100722643085332,
+     "avg": 13.923076923076923,
+     "chance": 0.9954581870856691
+    },
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.521284425562852,
+     "avg": 5.923076923076923,
+     "chance": 0.9286638446468005
+    }
+   ],
+   "chance": 0.837928307618846
+  }
+ ]
+}
