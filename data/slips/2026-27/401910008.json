@@ -1,0 +1,84 @@
+{
+ "gameId": "401910008",
+ "start": "2026-11-19T00:00Z",
+ "game": "HOU @ IND",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.172371872632677,
+     "avg": 21.333333333333332,
+     "chance": 0.929896628741908
+    },
+    {
+     "playerId": "4871144",
+     "name": "Alperen Sengun",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.497322496225752,
+     "avg": 9.307692307692308,
+     "chance": 0.9293005441171107
+    },
+    {
+     "playerId": "4395712",
+     "name": "Andrew Nembhard",
+     "teamId": "11",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.607565632857526,
+     "avg": 7.636363636363637,
+     "chance": 0.9367831879607462
+    }
+   ],
+   "chance": 0.8095244172793646
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3202",
+     "name": "Kevin Durant",
+     "teamId": "10",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.172371872632677,
+     "avg": 21.333333333333332,
+     "chance": 0.929896628741908
+    },
+    {
+     "playerId": "4433192",
+     "name": "Tari Eason",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.7652817525285736,
+     "avg": 6.2,
+     "chance": 0.7983614221147646
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.507242663045812,
+     "avg": 3.357142857142857,
+     "chance": 0.690148366478549
+    }
+   ],
+   "chance": 0.5123617268334383
+  }
+ ]
+}

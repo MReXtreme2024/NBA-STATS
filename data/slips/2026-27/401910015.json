@@ -1,0 +1,84 @@
+{
+ "gameId": "401910015",
+ "start": "2026-11-19T02:30Z",
+ "game": "BOS @ DEN",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3936299",
+     "name": "Jamal Murray",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 20.513600566766314,
+     "avg": 26.083333333333332,
+     "chance": 0.9361944662337369
+    },
+    {
+     "playerId": "4065648",
+     "name": "Jayson Tatum",
+     "teamId": "2",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.287460530215204,
+     "avg": 6.538461538461538,
+     "chance": 0.8461107143695386
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.351312488358675,
+     "avg": 8.916666666666666,
+     "chance": 0.9900238243035074
+    }
+   ],
+   "chance": 0.7842217987343062
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3064290",
+     "name": "Aaron Gordon",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.029886936836148,
+     "avg": 11,
+     "chance": 0.5864296036861244
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.888150966953834,
+     "avg": 10.916666666666666,
+     "chance": 0.9858673890213454
+    },
+    {
+     "playerId": "4066354",
+     "name": "Payton Pritchard",
+     "teamId": "2",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.9907140958851306,
+     "avg": 3.9285714285714284,
+     "chance": 0.7615274514005236
+    }
+   ],
+   "chance": 0.4402708684315228
+  }
+ ]
+}

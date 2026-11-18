@@ -1,0 +1,84 @@
+{
+ "gameId": "401910007",
+ "start": "2026-11-19T00:00Z",
+ "game": "MEM @ CLE",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.203973642666412,
+     "avg": 16.357142857142858,
+     "chance": 0.8881622015633603
+    },
+    {
+     "playerId": "4600663",
+     "name": "Zach Edey",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.569310284256971,
+     "avg": 7.909090909090909,
+     "chance": 0.8301306795022415
+    },
+    {
+     "playerId": "4433083",
+     "name": "Cam Spencer",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.430805414226822,
+     "avg": 5.357142857142857,
+     "chance": 0.9749657280305473
+    }
+   ],
+   "chance": 0.7188331561906288
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.191439707761557,
+     "avg": 11.384615384615385,
+     "chance": 0.7992368970154253
+    },
+    {
+     "playerId": "4600663",
+     "name": "Zach Edey",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.569310284256971,
+     "avg": 7.909090909090909,
+     "chance": 0.6089872180647791
+    },
+    {
+     "playerId": "4433083",
+     "name": "Cam Spencer",
+     "teamId": "29",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 6.430805414226822,
+     "avg": 5.357142857142857,
+     "chance": 0.775319369578974
+    }
+   ],
+   "chance": 0.37736736240404434
+  }
+ ]
+}

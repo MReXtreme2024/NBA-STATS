@@ -1,0 +1,84 @@
+{
+ "gameId": "401910014",
+ "start": "2026-11-19T01:00Z",
+ "game": "ATL @ OKC",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.72720180241514,
+     "avg": 14.071428571428571,
+     "chance": 0.8488299468360279
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.474594388071197,
+     "avg": 6.5,
+     "chance": 0.927824088023521
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.2515261226801275,
+     "avg": 4.357142857142857,
+     "chance": 0.9084520501277392
+    }
+   ],
+   "chance": 0.7154649219503325
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 16.72720180241514,
+     "avg": 14.071428571428571,
+     "chance": 0.6141220262180076
+    },
+    {
+     "playerId": "3133626",
+     "name": "Kenrich Williams",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.579755183618163,
+     "avg": 3.642857142857143,
+     "chance": 0.6507173080764259
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.2515261226801275,
+     "avg": 4.357142857142857,
+     "chance": 0.6101031528787058
+    }
+   ],
+   "chance": 0.24380931929195448
+  }
+ ]
+}

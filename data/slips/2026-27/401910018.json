@@ -1,0 +1,84 @@
+{
+ "gameId": "401910018",
+ "start": "2026-11-19T03:00Z",
+ "game": "PHX @ SAC",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 23.065651924814343,
+     "avg": 24.46153846153846,
+     "chance": 0.9752128305400921
+    },
+    {
+     "playerId": "3155942",
+     "name": "Domantas Sabonis",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.914627017048716,
+     "avg": 13.166666666666666,
+     "chance": 0.9861128451813791
+    },
+    {
+     "playerId": "5142620",
+     "name": "Darius Acuff Jr.",
+     "teamId": "23",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.5196156399147895,
+     "avg": 7.076923076923077,
+     "chance": 0.9769855572678272
+    }
+   ],
+   "chance": 0.9395376021639174
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4437244",
+     "name": "Jalen Green",
+     "teamId": "21",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.559151638591018,
+     "avg": 11.923076923076923,
+     "chance": 0.7226195042123351
+    },
+    {
+     "playerId": "3155942",
+     "name": "Domantas Sabonis",
+     "teamId": "23",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.914627017048716,
+     "avg": 13.166666666666666,
+     "chance": 0.9861128451813791
+    },
+    {
+     "playerId": "4278585",
+     "name": "Collin Gillespie",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.029095857442414,
+     "avg": 4,
+     "chance": 0.7662449635016262
+    }
+   ],
+   "chance": 0.546014188630079
+  }
+ ]
+}

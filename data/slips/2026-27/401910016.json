@@ -1,0 +1,84 @@
+{
+ "gameId": "401910016",
+ "start": "2026-11-19T01:00Z",
+ "game": "GSW @ DAL",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5041939",
+     "name": "Cooper Flagg",
+     "teamId": "6",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.08234336148081,
+     "avg": 23.53846153846154,
+     "chance": 0.908903226341027
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.205700268580965,
+     "avg": 7.428571428571429,
+     "chance": 0.9115253214370194
+    },
+    {
+     "playerId": "6589",
+     "name": "Draymond Green",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.668947299864304,
+     "avg": 6.916666666666667,
+     "chance": 0.941397286939353
+    }
+   ],
+   "chance": 0.7799366431016553
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 12.01394382701447,
+     "avg": 9.785714285714286,
+     "chance": 0.6452603750722368
+    },
+    {
+     "playerId": "4709138",
+     "name": "Brandin Podziemski",
+     "teamId": "9",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.70079261044652,
+     "avg": 5,
+     "chance": 0.6675396689751061
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.5450655141074336,
+     "avg": 3.4285714285714284,
+     "chance": 0.6959578535607335
+    }
+   ],
+   "chance": 0.29977472640974095
+  }
+ ]
+}

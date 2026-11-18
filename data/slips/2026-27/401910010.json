@@ -1,0 +1,84 @@
+{
+ "gameId": "401910010",
+ "start": "2026-11-19T00:00Z",
+ "game": "PHI @ ORL",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3059318",
+     "name": "Joel Embiid",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.513786943577315,
+     "avg": 19.5,
+     "chance": 0.9167534283846837
+    },
+    {
+     "playerId": "5124612",
+     "name": "VJ Edgecombe",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.394925773127741,
+     "avg": 6.428571428571429,
+     "chance": 0.8564978505479772
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.725267026360685,
+     "avg": 5.8,
+     "chance": 0.9449688784311902
+    }
+   ],
+   "chance": 0.7419870505717282
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4351851",
+     "name": "Anfernee Simons",
+     "teamId": "20",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.399628871319443,
+     "avg": 10.266666666666667,
+     "chance": 0.611948990873266
+    },
+    {
+     "playerId": "4431678",
+     "name": "Tyrese Maxey",
+     "teamId": "20",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 3.9246945523056187,
+     "avg": 3.2666666666666666,
+     "chance": 0.5504013923102558
+    },
+    {
+     "playerId": "4066320",
+     "name": "Desmond Bane",
+     "teamId": "19",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.0546184539760612,
+     "avg": 2.6666666666666665,
+     "chance": 0.5922149916394306
+    }
+   ],
+   "chance": 0.19946841830988712
+  }
+ ]
+}

@@ -1,0 +1,84 @@
+{
+ "gameId": "401910017",
+ "start": "2026-11-19T03:00Z",
+ "game": "UTA @ LAL",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.034716014154785,
+     "avg": 16.866666666666667,
+     "chance": 0.8839406626996261
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.229435143182734,
+     "avg": 7.076923076923077,
+     "chance": 0.8041407736244528
+    },
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.572446665480872,
+     "avg": 6.928571428571429,
+     "chance": 0.9781771387863231
+    }
+   ],
+   "chance": 0.6953007608218796
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5105839",
+     "name": "Brice Sensabaugh",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.616877065462988,
+     "avg": 10.533333333333333,
+     "chance": 0.7741193042798555
+    },
+    {
+     "playerId": "3945274",
+     "name": "Luka Doncic",
+     "teamId": "13",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.229435143182734,
+     "avg": 7.076923076923077,
+     "chance": 0.5718052624061102
+    },
+    {
+     "playerId": "4397014",
+     "name": "Quentin Grimes",
+     "teamId": "13",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 2.897387534436599,
+     "avg": 2.4615384615384617,
+     "chance": 0.56507240213375
+    }
+   ],
+   "chance": 0.2501267514114283
+  }
+ ]
+}

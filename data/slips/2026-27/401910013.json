@@ -1,0 +1,84 @@
+{
+ "gameId": "401910013",
+ "start": "2026-11-19T01:00Z",
+ "game": "DET @ NOP",
+ "made": "2026-11-18T14:00:27.647Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5107199",
+     "name": "Daniss Jenkins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.953899856175077,
+     "avg": 14.076923076923077,
+     "chance": 0.8221411195206415
+    },
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.422385324322176,
+     "avg": 5.615384615384615,
+     "chance": 0.8591282159780523
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 6.5,
+     "mu": 9.827685297436993,
+     "avg": 7.769230769230769,
+     "chance": 0.8833076106184646
+    }
+   ],
+   "chance": 0.6239019241576242
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3908845",
+     "name": "John Collins",
+     "teamId": "8",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.30083031194543,
+     "avg": 10.461538461538462,
+     "chance": 0.7602787962166938
+    },
+    {
+     "playerId": "4066372",
+     "name": "Kevin Huerter",
+     "teamId": "8",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.346693292992004,
+     "avg": 2.8461538461538463,
+     "chance": 0.6148980486115667
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 8.5,
+     "mu": 9.827685297436993,
+     "avg": 7.769230769230769,
+     "chance": 0.6751275662393947
+    }
+   ],
+   "chance": 0.31561805147612826
+  }
+ ]
+}
