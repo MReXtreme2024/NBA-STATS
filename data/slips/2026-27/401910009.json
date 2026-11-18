@@ -2,7 +2,7 @@
  "gameId": "401910009",
  "start": "2026-11-19T00:00Z",
  "game": "MIL @ MIA",
- "made": "2026-11-18T14:00:27.647Z",
+ "made": "2026-11-18T21:21:59.387Z",
  "slips": [
   {
    "type": "claude-banker",
@@ -15,57 +15,19 @@
      "teamId": "14",
      "stat": "pts",
      "line": 9.5,
-     "mu": 24.30849462484715,
+     "mu": 25.074015309359645,
      "avg": 28.285714285714285,
-     "chance": 0.9868345247603304
+     "chance": 0.9904426882145383
     },
     {
-     "playerId": "4066261",
-     "name": "Bam Adebayo",
-     "teamId": "14",
-     "stat": "reb",
-     "line": 3.5,
-     "mu": 7.783104130786732,
-     "avg": 8,
-     "chance": 0.9407576749306896
-    },
-    {
-     "playerId": "4278053",
-     "name": "Davion Mitchell",
-     "teamId": "14",
-     "stat": "ast",
-     "line": 2.5,
-     "mu": 7.591526571652655,
-     "avg": 9.214285714285714,
-     "chance": 0.9908313143088575
-    }
-   ],
-   "chance": 0.9198602005790913
-  },
-  {
-   "type": "claude-bigger",
-   "title": "Claude's bigger payout",
-   "locked": true,
-   "legs": [
-    {
-     "playerId": "3059319",
-     "name": "Andrew Wiggins",
-     "teamId": "14",
-     "stat": "pts",
-     "line": 9.5,
-     "mu": 10.518003118533677,
-     "avg": 9.357142857142858,
-     "chance": 0.5535104229776426
-    },
-    {
-     "playerId": "5082206",
-     "name": "Brayden Burries",
+     "playerId": "5105623",
+     "name": "Kel'el Ware",
      "teamId": "15",
      "stat": "reb",
      "line": 3.5,
-     "mu": 5.373144634357075,
-     "avg": 5.357142857142857,
-     "chance": 0.7558535453404274
+     "mu": 8.10113018136405,
+     "avg": 6.785714285714286,
+     "chance": 0.9521205465514644
     },
     {
      "playerId": "4432848",
@@ -73,12 +35,50 @@
      "teamId": "15",
      "stat": "ast",
      "line": 2.5,
-     "mu": 3.7900131693471337,
+     "mu": 4.543078735968245,
      "avg": 2.9285714285714284,
-     "chance": 0.7318632834708106
+     "chance": 0.8204762066287891
     }
    ],
-   "chance": 0.3061917025330138
+   "chance": 0.773726156349258
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5082206",
+     "name": "Brayden Burries",
+     "teamId": "15",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.062684346278465,
+     "avg": 9.428571428571429,
+     "chance": 0.5883384276994207
+    },
+    {
+     "playerId": "5105623",
+     "name": "Kel'el Ware",
+     "teamId": "15",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.10113018136405,
+     "avg": 6.785714285714286,
+     "chance": 0.5588759643187918
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.543078735968245,
+     "avg": 2.9285714285714284,
+     "chance": 0.8204762066287891
+    }
+   ],
+   "chance": 0.26977930967093633
   }
  ]
 }
