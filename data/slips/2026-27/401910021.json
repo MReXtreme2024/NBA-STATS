@@ -1,0 +1,84 @@
+{
+ "gameId": "401910021",
+ "start": "2026-11-20T01:00Z",
+ "game": "NYK @ MIN",
+ "made": "2026-11-19T21:25:28.497Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.676617044199297,
+     "avg": 27,
+     "chance": 0.9720191130477884
+    },
+    {
+     "playerId": "3136195",
+     "name": "Karl-Anthony Towns",
+     "teamId": "18",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 12.702608468279461,
+     "avg": 14.071428571428571,
+     "chance": 0.9971303753704511
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.834558473878076,
+     "avg": 5.533333333333333,
+     "chance": 0.9545445329408174
+    }
+   ],
+   "chance": 0.9251729905839048
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3934672",
+     "name": "Jalen Brunson",
+     "teamId": "18",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.676617044199297,
+     "avg": 27,
+     "chance": 0.9720191130477884
+    },
+    {
+     "playerId": "3136196",
+     "name": "Trey Lyles",
+     "teamId": "16",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 3.958142336681735,
+     "avg": 3.8666666666666667,
+     "chance": 0.5523624720569582
+    },
+    {
+     "playerId": "4432816",
+     "name": "LaMelo Ball",
+     "teamId": "16",
+     "stat": "ast",
+     "line": 4.5,
+     "mu": 5.834558473878076,
+     "avg": 5.533333333333333,
+     "chance": 0.7127781833451892
+    }
+   ],
+   "chance": 0.38269551067288365
+  }
+ ]
+}

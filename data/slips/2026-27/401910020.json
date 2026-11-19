@@ -1,0 +1,84 @@
+{
+ "gameId": "401910020",
+ "start": "2026-11-20T01:00Z",
+ "game": "POR @ MIL",
+ "made": "2026-11-19T21:25:28.497Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.44679673275371,
+     "avg": 15.4,
+     "chance": 0.840091687906436
+    },
+    {
+     "playerId": "5105623",
+     "name": "Kel'el Ware",
+     "teamId": "15",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.424977606471998,
+     "avg": 6.533333333333333,
+     "chance": 0.8176664460337332
+    },
+    {
+     "playerId": "4591725",
+     "name": "Ryan Rollins",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.435501035255614,
+     "avg": 3.923076923076923,
+     "chance": 0.8106722745345204
+    }
+   ],
+   "chance": 0.5568627709994798
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4683678",
+     "name": "Scoot Henderson",
+     "teamId": "22",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.956583208414159,
+     "avg": 8.714285714285714,
+     "chance": 0.5844976848312459
+    },
+    {
+     "playerId": "5105623",
+     "name": "Kel'el Ware",
+     "teamId": "15",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 8.424977606471998,
+     "avg": 6.533333333333333,
+     "chance": 0.5915869197382327
+    },
+    {
+     "playerId": "4432848",
+     "name": "Jaime Jaquez Jr.",
+     "teamId": "15",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.9712336186882404,
+     "avg": 3.066666666666667,
+     "chance": 0.7606938201298765
+    }
+   ],
+   "chance": 0.26303361051887847
+  }
+ ]
+}

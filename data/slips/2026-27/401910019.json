@@ -1,0 +1,84 @@
+{
+ "gameId": "401910019",
+ "start": "2026-11-20T01:00Z",
+ "game": "GSW @ MEM",
+ "made": "2026-11-19T21:25:28.497Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4903027",
+     "name": "Cedric Coward",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 15.426957860411212,
+     "avg": 14.5,
+     "chance": 0.8088745281619197
+    },
+    {
+     "playerId": "5041935",
+     "name": "Cameron Boozer",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 9.826397539652204,
+     "avg": 9.4,
+     "chance": 0.9128976401766953
+    },
+    {
+     "playerId": "5175737",
+     "name": "Yaxel Lendeborg",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.404428886004884,
+     "avg": 3.466666666666667,
+     "chance": 0.807354527988666
+    }
+   ],
+   "chance": 0.5961664463347319
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "2991070",
+     "name": "Jerami Grant",
+     "teamId": "29",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.994263392408394,
+     "avg": 11.142857142857142,
+     "chance": 0.7921038751764707
+    },
+    {
+     "playerId": "5041935",
+     "name": "Cameron Boozer",
+     "teamId": "29",
+     "stat": "reb",
+     "line": 7.5,
+     "mu": 9.826397539652204,
+     "avg": 9.4,
+     "chance": 0.741895692334458
+    },
+    {
+     "playerId": "4066436",
+     "name": "De'Anthony Melton",
+     "teamId": "9",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.0850300721950092,
+     "avg": 2.2666666666666666,
+     "chance": 0.6025046212209333
+    }
+   ],
+   "chance": 0.3540669335566441
+  }
+ ]
+}
