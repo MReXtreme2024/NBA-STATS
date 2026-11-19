@@ -3,18 +3,18 @@
   "start": "2026-11-20T01:00Z",
   "homeId": "29",
   "awayId": "9",
-  "savedAt": "2026-11-19T21:25:26.879Z",
+  "savedAt": "2026-11-19T21:38:57.670Z",
   "teams": {
     "9": {
-      "score": 109.82,
+      "score": 109.84,
       "players": {
         "3213": {
           "name": "Al Horford",
-          "min": 18.4,
+          "min": 17.1,
           "claude": {
-            "pts": 6.12,
-            "reb": 3.87,
-            "ast": 2.4
+            "pts": 5.29,
+            "reb": 3.6,
+            "ast": 2.23
           },
           "nate": {
             "pts": 3,
@@ -24,11 +24,11 @@
         },
         "2990969": {
           "name": "Georges Niang",
-          "min": 20.9,
+          "min": 18.9,
           "claude": {
-            "pts": 8.37,
-            "reb": 3.12,
-            "ast": 1.98
+            "pts": 7.65,
+            "reb": 2.84,
+            "ast": 1.83
           },
           "nate": {
             "pts": 7,
@@ -38,11 +38,11 @@
         },
         "3134903": {
           "name": "Gary Payton II",
-          "min": 14.8,
+          "min": 14.4,
           "claude": {
-            "pts": 6.57,
-            "reb": 2.86,
-            "ast": 1.44
+            "pts": 6.15,
+            "reb": 2.62,
+            "ast": 1.23
           },
           "nate": {
             "pts": 4,
@@ -52,11 +52,11 @@
         },
         "4066436": {
           "name": "De'Anthony Melton",
-          "min": 25.4,
+          "min": 24.5,
           "claude": {
-            "pts": 12.18,
-            "reb": 3.72,
-            "ast": 3.09
+            "pts": 11.34,
+            "reb": 3.77,
+            "ast": 2.98
           },
           "nate": {
             "pts": 9,
@@ -66,11 +66,11 @@
         },
         "4397886": {
           "name": "Charles Bassey",
-          "min": 15.7,
+          "min": 17.4,
           "claude": {
-            "pts": 7.97,
-            "reb": 5.49,
-            "ast": 0.72
+            "pts": 9.09,
+            "reb": 6.16,
+            "ast": 0.8
           },
           "nate": {
             "pts": 6,
@@ -80,11 +80,11 @@
         },
         "4433149": {
           "name": "LJ Cryer",
-          "min": 16.1,
+          "min": 18.6,
           "claude": {
-            "pts": 8.37,
-            "reb": 1.28,
-            "ast": 1.57
+            "pts": 9.9,
+            "reb": 1.34,
+            "ast": 2.16
           },
           "nate": {
             "pts": 5,
@@ -94,11 +94,11 @@
         },
         "4703396": {
           "name": "Graham Ike",
-          "min": 10,
+          "min": 10.8,
           "claude": {
-            "pts": 4.51,
-            "reb": 2.18,
-            "ast": 1.28
+            "pts": 4.92,
+            "reb": 2.37,
+            "ast": 1.41
           },
           "nate": {
             "pts": 3,
@@ -108,11 +108,11 @@
         },
         "4709138": {
           "name": "Brandin Podziemski",
-          "min": 32.1,
+          "min": 31.2,
           "claude": {
-            "pts": 15.62,
-            "reb": 4.92,
-            "ast": 4.43
+            "pts": 15.38,
+            "reb": 4.68,
+            "ast": 4.31
           },
           "nate": {
             "pts": 13,
@@ -122,11 +122,11 @@
         },
         "4897262": {
           "name": "Will Richard",
-          "min": 23.6,
+          "min": 25.4,
           "claude": {
-            "pts": 7.9,
-            "reb": 2.58,
-            "ast": 1.61
+            "pts": 8.77,
+            "reb": 2.73,
+            "ast": 1.72
           },
           "nate": {
             "pts": 6,
@@ -136,11 +136,11 @@
         },
         "4997536": {
           "name": "Gui Santos",
-          "min": 19,
+          "min": 18.5,
           "claude": {
-            "pts": 7.69,
-            "reb": 3.64,
-            "ast": 2.28
+            "pts": 7.18,
+            "reb": 3.69,
+            "ast": 2.21
           },
           "nate": {
             "pts": 4,
@@ -150,10 +150,10 @@
         },
         "5175737": {
           "name": "Yaxel Lendeborg",
-          "min": 35.9,
+          "min": 35.2,
           "claude": {
-            "pts": 22.26,
-            "reb": 7.52,
+            "pts": 22.03,
+            "reb": 7.42,
             "ast": 4.4
           },
           "nate": {
@@ -165,15 +165,15 @@
       }
     },
     "29": {
-      "score": 115.62,
+      "score": 115.67,
       "players": {
         "2991070": {
           "name": "Jerami Grant",
-          "min": 26.3,
+          "min": 25.3,
           "claude": {
-            "pts": 14.99,
-            "reb": 2.76,
-            "ast": 2.03
+            "pts": 13.74,
+            "reb": 2.48,
+            "ast": 1.95
           },
           "nate": {
             "pts": 10,
@@ -183,11 +183,11 @@
         },
         "4432810": {
           "name": "Isaiah Stewart",
-          "min": 17.5,
+          "min": 17.3,
           "claude": {
-            "pts": 8.76,
-            "reb": 3.8,
-            "ast": 0.87
+            "pts": 9.08,
+            "reb": 3.63,
+            "ast": 0.84
           },
           "nate": {
             "pts": 7,
@@ -197,11 +197,11 @@
         },
         "4433083": {
           "name": "Cam Spencer",
-          "min": 26.8,
+          "min": 29.4,
           "claude": {
-            "pts": 13.35,
-            "reb": 3.36,
-            "ast": 6.55
+            "pts": 14.8,
+            "reb": 3.84,
+            "ast": 7.02
           },
           "nate": {
             "pts": 11,
@@ -211,11 +211,11 @@
         },
         "4593016": {
           "name": "Quinten Post",
-          "min": 11.1,
+          "min": 9.4,
           "claude": {
-            "pts": 4.94,
-            "reb": 2.56,
-            "ast": 0.77
+            "pts": 4.11,
+            "reb": 2.09,
+            "ast": 0.56
           },
           "nate": {
             "pts": 3,
@@ -225,11 +225,11 @@
         },
         "4594326": {
           "name": "Kris Murray",
-          "min": 13.2,
+          "min": 11,
           "claude": {
-            "pts": 3.03,
-            "reb": 2.07,
-            "ast": 0.83
+            "pts": 2.36,
+            "reb": 1.69,
+            "ast": 0.69
           },
           "nate": {
             "pts": 1,
@@ -239,11 +239,11 @@
         },
         "4595400": {
           "name": "Olivier-Maxence Prosper",
-          "min": 11.6,
+          "min": 12.3,
           "claude": {
-            "pts": 6.46,
-            "reb": 2.26,
-            "ast": 0.63
+            "pts": 6.86,
+            "reb": 2.36,
+            "ast": 0.64
           },
           "nate": {
             "pts": 3,
@@ -251,27 +251,13 @@
             "ast": 0
           }
         },
-        "4683934": {
-          "name": "Jahmai Mashack",
-          "min": 9,
-          "claude": {
-            "pts": 2.58,
-            "reb": 1.1,
-            "ast": 1
-          },
-          "nate": {
-            "pts": 0,
-            "reb": 0,
-            "ast": 0
-          }
-        },
         "4684806": {
           "name": "Taylor Hendricks",
-          "min": 15.4,
+          "min": 17,
           "claude": {
-            "pts": 7.11,
-            "reb": 3.44,
-            "ast": 0.82
+            "pts": 8.46,
+            "reb": 3.98,
+            "ast": 0.93
           },
           "nate": {
             "pts": 5,
@@ -281,11 +267,11 @@
         },
         "4781746": {
           "name": "Javon Small",
-          "min": 16.9,
+          "min": 17.8,
           "claude": {
-            "pts": 7.94,
-            "reb": 2.53,
-            "ast": 3.48
+            "pts": 8.1,
+            "reb": 2.55,
+            "ast": 3.73
           },
           "nate": {
             "pts": 4,
@@ -295,11 +281,11 @@
         },
         "4903027": {
           "name": "Cedric Coward",
-          "min": 29.4,
+          "min": 30.7,
           "claude": {
-            "pts": 15.43,
-            "reb": 7.94,
-            "ast": 3.39
+            "pts": 15.87,
+            "reb": 8.57,
+            "ast": 3.49
           },
           "nate": {
             "pts": 13,
@@ -309,11 +295,11 @@
         },
         "5041935": {
           "name": "Cameron Boozer",
-          "min": 32.5,
+          "min": 31.9,
           "claude": {
-            "pts": 17.55,
-            "reb": 9.83,
-            "ast": 5.46
+            "pts": 17.14,
+            "reb": 9.61,
+            "ast": 5.2
           },
           "nate": {
             "pts": 16,
@@ -323,11 +309,11 @@
         },
         "5112087": {
           "name": "Jaylen Wells",
-          "min": 28.9,
+          "min": 29,
           "claude": {
-            "pts": 12.83,
-            "reb": 3.5,
-            "ast": 1.69
+            "pts": 12.48,
+            "reb": 3.46,
+            "ast": 1.62
           },
           "nate": {
             "pts": 10,

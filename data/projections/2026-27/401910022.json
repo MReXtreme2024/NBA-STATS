@@ -3,18 +3,18 @@
   "start": "2026-11-20T01:00Z",
   "homeId": "24",
   "awayId": "12",
-  "savedAt": "2026-11-19T21:25:28.495Z",
+  "savedAt": "2026-11-19T21:38:59.321Z",
   "teams": {
     "12": {
-      "score": 104.69,
+      "score": 104.68,
       "players": {
         "3448": {
           "name": "Brook Lopez",
-          "min": 22.6,
+          "min": 23.7,
           "claude": {
-            "pts": 10.87,
-            "reb": 4.61,
-            "ast": 1.48
+            "pts": 12.1,
+            "reb": 5.02,
+            "ast": 1.59
           },
           "nate": {
             "pts": 14,
@@ -24,11 +24,11 @@
         },
         "2991139": {
           "name": "Kris Dunn",
-          "min": 24.1,
+          "min": 23.2,
           "claude": {
-            "pts": 6.48,
-            "reb": 3.44,
-            "ast": 3.41
+            "pts": 6.16,
+            "reb": 3.37,
+            "ast": 3.3
           },
           "nate": {
             "pts": 7,
@@ -38,11 +38,11 @@
         },
         "3936099": {
           "name": "Derrick Jones Jr.",
-          "min": 25,
+          "min": 25.3,
           "claude": {
-            "pts": 9.37,
-            "reb": 3.82,
-            "ast": 1.18
+            "pts": 9.36,
+            "reb": 3.94,
+            "ast": 1.13
           },
           "nate": {
             "pts": 10,
@@ -52,11 +52,11 @@
         },
         "4065778": {
           "name": "Max Strus",
-          "min": 16,
+          "min": 16.1,
           "claude": {
-            "pts": 7,
-            "reb": 3.49,
-            "ast": 1.62
+            "pts": 6.73,
+            "reb": 3.27,
+            "ast": 1.77
           },
           "nate": {
             "pts": 4,
@@ -66,11 +66,11 @@
         },
         "4066648": {
           "name": "Rui Hachimura",
-          "min": 23.9,
+          "min": 23.7,
           "claude": {
-            "pts": 10.21,
-            "reb": 4.01,
-            "ast": 0.93
+            "pts": 10.2,
+            "reb": 4.31,
+            "ast": 1
           },
           "nate": {
             "pts": 11,
@@ -80,11 +80,11 @@
         },
         "4396907": {
           "name": "Darius Garland",
-          "min": 29.9,
+          "min": 30.5,
           "claude": {
-            "pts": 18.83,
-            "reb": 2.45,
-            "ast": 6.37
+            "pts": 19.01,
+            "reb": 2.43,
+            "ast": 6.3
           },
           "nate": {
             "pts": 21,
@@ -94,11 +94,11 @@
         },
         "4432170": {
           "name": "Isaiah Jackson",
-          "min": 15.9,
+          "min": 15.8,
           "claude": {
-            "pts": 6.5,
-            "reb": 5.17,
-            "ast": 1.1
+            "pts": 6.4,
+            "reb": 4.92,
+            "ast": 1.19
           },
           "nate": {
             "pts": 7,
@@ -108,11 +108,11 @@
         },
         "4702352": {
           "name": "Kobe Sanders",
-          "min": 19.9,
+          "min": 19.4,
           "claude": {
-            "pts": 7.27,
-            "reb": 2.53,
-            "ast": 1.89
+            "pts": 7,
+            "reb": 2.45,
+            "ast": 1.92
           },
           "nate": {
             "pts": 8,
@@ -122,10 +122,10 @@
         },
         "5106258": {
           "name": "Gradey Dick",
-          "min": 14.9,
+          "min": 15.9,
           "claude": {
-            "pts": 6.52,
-            "reb": 2.34,
+            "pts": 6.96,
+            "reb": 2.56,
             "ast": 0.67
           },
           "nate": {
@@ -136,11 +136,11 @@
         },
         "5254165": {
           "name": "Keaton Wagler",
-          "min": 20.4,
+          "min": 20.2,
           "claude": {
-            "pts": 10.85,
-            "reb": 3.32,
-            "ast": 2.62
+            "pts": 10.63,
+            "reb": 3.26,
+            "ast": 2.55
           },
           "nate": {
             "pts": 12,
@@ -155,11 +155,11 @@
       "players": {
         "6578": {
           "name": "Harrison Barnes",
-          "min": 18.4,
+          "min": 16.9,
           "claude": {
-            "pts": 7.01,
-            "reb": 1.69,
-            "ast": 1.18
+            "pts": 6.48,
+            "reb": 1.47,
+            "ast": 0.99
           },
           "nate": {
             "pts": 4,
@@ -169,11 +169,11 @@
         },
         "3064560": {
           "name": "Luke Kornet",
-          "min": 17.7,
+          "min": 16.8,
           "claude": {
-            "pts": 5.03,
-            "reb": 4.79,
-            "ast": 1.5
+            "pts": 4.62,
+            "reb": 4.54,
+            "ast": 1.36
           },
           "nate": {
             "pts": 3,
@@ -181,13 +181,27 @@
             "ast": 1
           }
         },
+        "3134916": {
+          "name": "Jordan McLaughlin",
+          "min": 8.6,
+          "claude": {
+            "pts": 2.78,
+            "reb": 1.07,
+            "ast": 1.25
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 0
+          }
+        },
         "4066259": {
           "name": "De'Aaron Fox",
           "min": 29.8,
           "claude": {
-            "pts": 15.81,
-            "reb": 3.79,
-            "ast": 5.96
+            "pts": 15.3,
+            "reb": 3.92,
+            "ast": 5.93
           },
           "nate": {
             "pts": 12,
@@ -197,11 +211,11 @@
         },
         "4395630": {
           "name": "Devin Vassell",
-          "min": 29.5,
+          "min": 30.1,
           "claude": {
-            "pts": 12.29,
-            "reb": 3.66,
-            "ast": 2.7
+            "pts": 12.28,
+            "reb": 3.75,
+            "ast": 2.85
           },
           "nate": {
             "pts": 9,
@@ -211,11 +225,11 @@
         },
         "4395723": {
           "name": "Keldon Johnson",
-          "min": 25.2,
+          "min": 24.7,
           "claude": {
-            "pts": 11.97,
-            "reb": 5.59,
-            "ast": 1.98
+            "pts": 11.03,
+            "reb": 5.52,
+            "ast": 2.1
           },
           "nate": {
             "pts": 8,
@@ -225,11 +239,11 @@
         },
         "4592479": {
           "name": "Julian Champagnie",
-          "min": 28.3,
+          "min": 28.7,
           "claude": {
-            "pts": 11.15,
-            "reb": 4.99,
-            "ast": 1.57
+            "pts": 11.34,
+            "reb": 4.85,
+            "ast": 1.59
           },
           "nate": {
             "pts": 9,
@@ -239,11 +253,11 @@
         },
         "4845367": {
           "name": "Stephon Castle",
-          "min": 31.5,
+          "min": 32,
           "claude": {
-            "pts": 17.19,
-            "reb": 5.3,
-            "ast": 6.96
+            "pts": 17.56,
+            "reb": 5.42,
+            "ast": 6.78
           },
           "nate": {
             "pts": 15,
@@ -253,11 +267,11 @@
         },
         "5061568": {
           "name": "Carter Bryant",
-          "min": 10.8,
+          "min": 9.6,
           "claude": {
-            "pts": 3.9,
-            "reb": 1.86,
-            "ast": 0.68
+            "pts": 3.51,
+            "reb": 1.48,
+            "ast": 0.61
           },
           "nate": {
             "pts": 3,
@@ -267,11 +281,11 @@
         },
         "5104157": {
           "name": "Victor Wembanyama",
-          "min": 31.3,
+          "min": 32,
           "claude": {
-            "pts": 28.69,
-            "reb": 11.83,
-            "ast": 3.5
+            "pts": 30.24,
+            "reb": 12.19,
+            "ast": 3.62
           },
           "nate": {
             "pts": 28,
