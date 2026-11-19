@@ -5,9 +5,9 @@
 
 export const MODEL = {
   shrinkGames: 8, // team ratings: league average counts as this many games
-  recency: 0.85, // each older game counts this much of the next newer one
-  priorMinuteGames: 3, // last season's minutes count as this many games
-  priorRateMinutes: 400, // last season's per-minute rates count as this many minutes
+  recency: 0.7, // each older game counts this much of the next newer one (19 Nov 2026: 0.85 → 0.7, Nate approved)
+  priorMinuteGames: 1, // last season's minutes count as this many games (19 Nov 2026: 3 → 1)
+  priorRateMinutes: 200, // last season's per-minute rates count as this many minutes (19 Nov 2026: 400 → 200)
   leagueRateMinutes: 60, // league-average rates (no last season) count as this many minutes (tested: 60 beat 150)
   homeEdge: 1.2, // points added to the home team, taken from the away team
   marketWeight: 0.9, // share of the betting market's implied score in the final team score
