@@ -1,0 +1,39 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { LADDERS, SAFETY, ladderPicks, pickRung, rungChances } from '../docs/ladders.js';
+
+// Misses shaped like a bell curve (good enough for a test).
+const bell = Array.from({ length: 101 }, (_, i) => {
+  const p = Math.min(0.995, Math.max(0.005, i / 100));
+  const t = Math.sqrt(-2 * Math.log(p < 0.5 ? p : 1 - p));
+  const z = t - (2.515517 + 0.802853 * t + 0.010328 * t * t) / (1 + 1.432788 * t + 0.189269 * t * t + 0.001308 * t ** 3);
+  return p < 0.5 ? -z : z;
+});
+const cal = { pts: { bias: 1, k: 3, shape: bell }, reb: { bias: 1, k: 1.5, shape: bell }, ast: { bias: 1, k: 1.2, shape: bell }, tpm: { bias: 1, k: 1, shape: bell } };
+
+test("Nate's ladders", () => {
+  assert.deepEqual(LADDERS.pts, [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);
+  assert.deepEqual(LADDERS.reb, [4, 6, 8, 10, 12, 14, 16, 18, 20]);
+  assert.deepEqual(LADDERS.ast, [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]);
+  assert.deepEqual(LADDERS.tpm, [1, 2, 3, 4, 5]);
+});
+
+test('rung chances fall as the rungs rise; picks are the highest rung at each safety level', () => {
+  const chances = rungChances(25, 'pts', cal);
+  for (let i = 1; i < chances.length; i++) assert.ok(chances[i].chance <= chances[i - 1].chance);
+  const picks = SAFETY.map((lv) => pickRung(chances, lv));
+  picks.forEach((p, i) => {
+    assert.ok(p.chance >= SAFETY[i]);
+    const next = chances[chances.indexOf(p) + 1];
+    assert.ok(!next || next.chance < SAFETY[i]); // the next rung up isn't that safe
+  });
+  assert.ok(picks[0].n <= picks[1].n && picks[1].n <= picks[2].n); // safer = lower (or the same) rung
+});
+
+test('no rung safe enough gives no pick; nothing learned gives no ladder', () => {
+  const p = ladderPicks({ pts: 3, reb: 1.2, ast: 0.5, tpm: 0.2 }, cal);
+  assert.equal(p.reb[0.9], null);
+  assert.equal(p.tpm[0.9], null);
+  assert.equal(rungChances(20, 'pts', null), null);
+  assert.equal(pickRung(null, 0.9), null);
+});

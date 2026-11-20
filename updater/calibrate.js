@@ -8,7 +8,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { projectGame, lineOf } from './model.js';
 
-export const SLIP_STATS = ['pts', 'reb', 'ast'];
+// Points, rebounds, assists and (since 20 Nov 2026, for the ladders) 3-pointers made.
+export const LADDER_STATS = ['pts', 'reb', 'ast', 'tpm'];
+export const SLIP_STATS = LADDER_STATS;
 const MIN_MINUTES = 15; // only players projected a real role are learned from (slips use rotation players)
 
 // One finished game's records: [{ id, stat, mu, x }] for players who played.
@@ -20,7 +22,7 @@ export function gameRecords(game, projection) {
       const m = side.players.find((x) => x.id === p.id);
       if (!p.played || !m || m.min < MIN_MINUTES) continue;
       const a = lineOf(p.stats);
-      for (const s of SLIP_STATS) out.push({ id: p.id, stat: s, mu: Math.round(m[s] * 100) / 100, x: a[s] });
+      for (const s of SLIP_STATS) if (Number.isFinite(m[s])) out.push({ id: p.id, stat: s, mu: Math.round(m[s] * 100) / 100, x: a[s] });
     }
   }
   return out;
@@ -57,6 +59,16 @@ export function updateCalibration(dataDir, season, games, snapshots, { prior = {
     const away = g.teams.find((t) => t.homeAway === 'away');
     if (!prev.some((x) => x.teams.some((t) => t.id === home.id)) || !prev.some((x) => x.teams.some((t) => t.id === away.id))) continue;
     const snap = bySnapshot.get(g.id);
+    // projected from only the earlier games; players who had been playing but missed it count as ruled out
+    const replay = () => {
+      const injuries = {};
+      for (const side of [home, away]) {
+        const now = new Set(side.players.filter((p) => p.played).map((p) => p.id));
+        injuries[side.id] = {};
+        for (const x of prev) for (const t of x.teams) if (t.id === side.id) for (const p of t.players) if (p.played && !now.has(p.id)) injuries[side.id][p.id] = 'Out';
+      }
+      return projectGame(prev, { homeId: home.id, awayId: away.id, start: g.start }, { extras: { line: lines[g.id] ?? null, injuries }, prior, positions });
+    };
     let projection;
     let source;
     if (snap) {
@@ -65,17 +77,13 @@ export function updateCalibration(dataDir, season, games, snapshots, { prior = {
       projection = { home: side(home.id), away: side(away.id) };
       source = 'real';
     } else {
-      // projected from only the earlier games; players who had been playing but missed it count as ruled out
-      const injuries = {};
-      for (const side of [home, away]) {
-        const now = new Set(side.players.filter((p) => p.played).map((p) => p.id));
-        injuries[side.id] = {};
-        for (const x of prev) for (const t of x.teams) if (t.id === side.id) for (const p of t.players) if (p.played && !now.has(p.id)) injuries[side.id][p.id] = 'Out';
-      }
-      projection = projectGame(prev, { homeId: home.id, awayId: away.id, start: g.start }, { extras: { line: lines[g.id] ?? null, injuries }, prior, positions });
+      projection = replay();
       source = 'replay';
     }
-    store[g.id] = { start: g.start, source, records: gameRecords(g, projection) };
+    const records = gameRecords(g, projection);
+    // Snapshots saved before 20 Nov 2026 have no 3-pointers: take those from a replay of the game.
+    if (!records.some((r) => r.stat === 'tpm')) records.push(...gameRecords(g, replay()).filter((r) => r.stat === 'tpm'));
+    store[g.id] = { start: g.start, source, records };
     added++;
   }
   if (added) {

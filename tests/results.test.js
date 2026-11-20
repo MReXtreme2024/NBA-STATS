@@ -14,7 +14,7 @@ const game = { id: 'g9', start: '2026-10-28T23:00Z', homeId: 'A', awayId: 'B' };
 
 test("snapshot keeps both formulas' projections; Nate's uses his whole-number maths", () => {
   const s = snapshot(game, claude, teams, '2026-10-28T13:00:00Z');
-  assert.deepEqual(s.teams.A.players.p1, { name: 'P One', min: 31.2, claude: { pts: 24.57, reb: 5.1, ast: 4.2 }, nate: { pts: 25, reb: 5, ast: 4 } });
+  assert.deepEqual(s.teams.A.players.p1, { name: 'P One', min: 31.2, claude: { pts: 24.57, reb: 5.1, ast: 4.2, tpm: 2 }, nate: { pts: 25, reb: 5, ast: 4 } });
   assert.equal(s.teams.A.score, 110.46);
 });
 

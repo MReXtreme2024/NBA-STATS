@@ -1,6 +1,5 @@
 import { MODES, cut, hundredths, playerStat, show, teamAverage, working } from './calc.js';
-import { allocate, lineupScores } from './claude.js';
-import { CLAUDE_SLIPS, MIN_SLIP_MINUTES, STAT_NAME, chanceOver, claudeSlips, settle, slipChance, suggestSlips } from './slips.js';
+import { LADDER_STATS, MIN_LADDER_MINUTES, SAFETY, pickRung, rungChances } from './ladders.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -62,17 +61,15 @@ function saveFormula(f) {
   try { localStorage.setItem(FORMULA_KEY, f); } catch { /* private mode: just don't remember */ }
 }
 
-// The Upcoming games page: Claude's formula (the games) or Rankings (every projected player across the
-// day's games, ranked by points, rebounds or assists). Nate swapped this in for the Your formula tab (8 Nov 2026).
+// The Upcoming games page: Games, Ladders (every player's ladder rung across the day's games) or Differences.
 const VIEW_KEY = 'upcomingView';
-const RANK_KEY = 'rankStat';
 const readStored = (key, allowed, fallback) => {
   try { const v = localStorage.getItem(key); return allowed.includes(v) ? v : fallback; } catch { return fallback; }
 };
 const store = (key, v) => { try { localStorage.setItem(key, v); } catch { /* private mode: not remembered */ } };
 function viewTabs(view) {
   const btn = (v, label) => `<button data-view="${v}" aria-pressed="${view === v}">${label}</button>`;
-  return `<div class="switch tabs" role="group" aria-label="View">${btn('games', "Claude's formula")}${btn('rankings', 'Rankings')}${btn('quarters', 'By quarter')}${btn('diffs', 'Differences')}</div>`;
+  return `<div class="switch tabs three" role="group" aria-label="View">${btn('games', 'Games')}${btn('ladders', 'Ladders')}${btn('diffs', 'Differences')}</div>`;
 }
 
 // Team averages at the top of a game page (14 Nov 2026, Nate's request, replacing the ratings box): each
@@ -251,7 +248,7 @@ const pill = (t) => `<span class="pill" style="${colours(t)}">${esc(t.code)}</sp
 
 // 6. Upcoming games: today's (US date) games not yet started, from the nightly update.
 function upcomingPage() {
-  const view = readStored(VIEW_KEY, ['games', 'rankings', 'quarters', 'diffs'], 'games');
+  const view = readStored(VIEW_KEY, ['games', 'ladders', 'diffs'], 'games');
   const games = data.upcoming?.games ?? [];
   const rows = games.map((g) => {
     const away = teamById(g.awayId);
@@ -263,34 +260,60 @@ function upcomingPage() {
       <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
       <span class="when">${score}${startText(g.start)}${note}</span></a></li>`;
   }).join('');
-  const body = !games.length ? null : view === 'rankings' ? rankings(games) : view === 'quarters' ? quarterRankings(games) : view === 'diffs' ? differences(games) : `<ul class="games-list">${rows}</ul>`;
+  const body = !games.length ? null : view === 'ladders' ? ladderRankings(games) : view === 'diffs' ? differences(games) : `<ul class="games-list">${rows}</ul>`;
   const shown = body !== null
     ? body
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
   const results = data.results?.games
     ? `<a class="upcoming-link" href="#/results"><span>How did the projections go?</span><span class="gp">${data.results.games} games scored ›</span></a>` : '';
-  const mine = readSlips();
-  const slips = `<a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${mine.length} saved ›</span></a>`;
-  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for projections')}${viewTabs(view)}${shown}${slips}${results}`;
+  return `${bar('Upcoming games', '#/', 'Melbourne times · tap a game for ladders')}${viewTabs(view)}${shown}${results}`;
 }
 
-// Rankings: every player Claude projects in the day's games (with Nate's lineups where confirmed), ranked
-// by points, rebounds or assists. Tap a row for that game.
-function rankings(games) {
-  const stat = readStored(RANK_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const all = games.filter((g) => g.claude).flatMap((g) => {
-    const c = claudeFor(g);
-    return [[c.away, g.homeId], [c.home, g.awayId]].flatMap(([side, oppId]) => side.players.map((p) => ({ p, g, team: teamById(side.teamId), opp: teamById(oppId), home: side === c.home })));
-  }).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name));
-  if (!all.length) return '<p class="message">Claude\'s formula isn\'t ready for these games yet. It appears after the next nightly update.</p>';
-  const items = all.map(({ p, g, team, opp, home }, i) => {
+// Player prop ladders (20 Nov 2026, Nate's request: "your goal is for players to never go under the ladder you
+// choose"). Each player projected 15+ minutes gets, for each stat, the highest rung he clears at least 90%, 80%
+// and 70% of the time (docs/ladders.js), from Claude's projection and what results have taught it.
+const LADDER_KEY = 'ladderStat';
+const LEVEL_KEY = 'ladderLevel';
+const LADDER_NAMES = { pts: 'Points', reb: 'Rebounds', ast: 'Assists', tpm: '3PM' };
+const LADDER_UNITS = { pts: 'points', reb: 'rebounds', ast: 'assists', tpm: '3-pointers' };
+const pct = (x) => `${Math.floor(x * 100)}%`;
+const ladderRows = (side, stat) => side.players
+  .filter((p) => p.min >= MIN_LADDER_MINUTES)
+  .map((p) => {
+    const chances = rungChances(p[stat], stat, data.calibration);
+    return { p, chances, picks: SAFETY.map((lv) => pickRung(chances, lv)) };
+  });
+const ladderStatButtons = (stat) => `<div class="switch four" role="group" aria-label="Stat">${LADDER_STATS.map((k) => `<button data-ladder="${k}" aria-pressed="${stat === k}">${LADDER_NAMES[k]}</button>`).join('')}</div>`;
+
+// Upcoming games → Ladders: every player in the day's games, ranked by his rung at the chosen safety.
+function ladderRankings(games) {
+  const stat = readStored(LADDER_KEY, LADDER_STATS, 'pts');
+  const level = Number(readStored(LEVEL_KEY, SAFETY.map(String), '0.9'));
+  const li = SAFETY.indexOf(level);
+  if (!data.calibration?.tpm) return '<p class="message">The ladders appear after the next nightly update.</p>';
+  const all = games.filter((g) => g.claude).flatMap((g) => [[g.claude.away, g.homeId, false], [g.claude.home, g.awayId, true]]
+    .flatMap(([side, oppId, home]) => ladderRows(side, stat).map((r) => ({ ...r, g, team: teamById(side.teamId), opp: teamById(oppId), home }))));
+  const picked = all.filter((r) => r.picks[li]).sort((a, b) => b.picks[li].n - a.picks[li].n || b.picks[li].chance - a.picks[li].chance || a.p.name.localeCompare(b.p.name));
+  const items = picked.map(({ p, g, team, opp, home, picks }, i) => {
     const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-    return `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}${tag}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${Math.floor(p.min)} min</span></span><b>${one(p[stat])}</b></a></li>`;
+    return `<li><a href="#/game/${g.id}"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}${tag}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${Math.floor(p.min)} min · projected ${one(p[stat])}</span></span><span class="rung"><b>${picks[li].n}+</b><small>${pct(picks[li].chance)}</small></span></a></li>`;
   }).join('');
-  const btn = (s, label) => `<button data-rank="${s}" aria-pressed="${stat === s}">${label}</button>`;
-  return `<div class="switch three" role="group" aria-label="Rank by">${btn('pts', 'Points')}${btn('reb', 'Rebounds')}${btn('ast', 'Assists')}</div>
-    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} · ${all.length} players, ${games.filter((g) => g.claude).length} games</h3><ul class="ranking">${items}</ul></section>
-    <p class="working">Claude's projected ${{ pts: 'points', reb: 'rebounds', ast: 'assists' }[stat]} for every player in the day's games, highest first, using your confirmed lineups where you've saved one. Tap a player for his game.</p>`;
+  const levelBtns = `<div class="switch three" role="group" aria-label="Safety">${SAFETY.map((lv) => `<button data-level="${lv}" aria-pressed="${lv === level}">${lv * 100}% safe</button>`).join('')}</div>`;
+  return `${ladderStatButtons(stat)}${levelBtns}
+    <section class="stat"><h3>${LADDER_NAMES[stat]} · ${Math.round(level * 100)}% rung · ${picked.length} of ${all.length} players</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No player has a rung that safe today</p>'}</section>
+    ${ladderRecordBox()}
+    <p class="working">Each player's highest ${LADDER_UNITS[stat]} rung that Claude expects him to clear at least ${Math.round(level * 100)}% of the time (the small % is Claude's chance for that rung). No pick is certain. Players projected under ${MIN_LADDER_MINUTES} minutes, and anyone ruled out, are left off; players with no rung that safe aren't listed. Tap a player for his game.</p>`;
+}
+
+// How the ladder picks have done once games finished (recorded each night before tip-off).
+function ladderRecordBox() {
+  const rec = data.ladderRecord;
+  if (!rec?.games) return `<section class="stat"><h3>Ladder record</h3><p class="working">Every night's picks are saved before tip-off and checked after the game. The record starts with today's games. In testing on this season's games so far, rungs picked at 90% were cleared 90–96% of the time, at 80% 85–90%, and at 70% 76–83%.</p></section>`;
+  const row = (r) => `<tr><th scope="row">${LADDER_NAMES[r[0]]}</th>${SAFETY.map((lv) => { const x = r[1][lv]; return `<td>${x.picks ? `<b>${pct(x.hits / x.picks)}</b><span class="proj">${x.hits} of ${x.picks}</span>` : '—'}</td>`; }).join('')}</tr>`;
+  const table = (record) => `<div class="table-wrap"><table class="results"><thead><tr><th></th>${SAFETY.map((lv) => `<th scope="col">${lv * 100}%</th>`).join('')}</tr></thead><tbody>${Object.entries(record).map(row).join('')}</tbody></table></div>`;
+  return `<section class="stat"><h3>Ladder record · how often picks were cleared</h3>
+    <p class="working">Season so far (${rec.games} games):</p>${table(rec.season)}
+    ${rec.lastDay ? `<p class="working">Last day, ${dateText(rec.lastDate)} (${rec.lastDay.games} games):</p>${table(rec.lastDay.record)}` : ''}</section>`;
 }
 
 // 8. Results: both formulas' real pre-game projections against what happened.
@@ -328,269 +351,7 @@ function resultsPage() {
     ${summary}${formulaTabs(formula)}<div class="stats">${games}</div>`;
 }
 
-// Claude's formula for one game: projected team scores, then every stat side by side.
-const CLAUDE_STATS = [
-  ['Points', (p) => p.pts, 'pts'], ['Rebounds', (p) => p.reb, 'reb'], ['Assists', (p) => p.ast, 'ast'],
-  ['3-pointers made', (p) => p.tpm],
-];
-
-// Starting lineups Nate confirms before tip-off, kept on his phone: { teamId: { starters: [id], out: [id] } }.
-const LINEUP_PREFIX = 'lineup:';
-function readLineup(gameId) {
-  try { return JSON.parse(localStorage.getItem(LINEUP_PREFIX + gameId)) ?? null; } catch { return null; }
-}
-function saveLineup(gameId, lineup) {
-  try {
-    if (lineup) localStorage.setItem(LINEUP_PREFIX + gameId, JSON.stringify(lineup));
-    else localStorage.removeItem(LINEUP_PREFIX + gameId);
-  } catch { /* private mode: the lineup just isn't kept */ }
-}
-// Forget lineups for games that are no longer upcoming.
-function tidyLineups() {
-  try {
-    const live = new Set((data.upcoming?.games ?? []).map((g) => LINEUP_PREFIX + g.id));
-    for (const k of Object.keys(localStorage)) if (k.startsWith(LINEUP_PREFIX) && !live.has(k)) localStorage.removeItem(k);
-  } catch { /* nothing to tidy */ }
-}
-
-// Claude's formula for a game: the nightly figures, re-worked on the phone with Nate's confirmed lineup if he set one.
-// Claude's formula for a game with a lineup: team scores moved by what the lineup changes (players'
-// ratings), then each team's players re-worked to the new score. all: include every player (lineup screen).
-function claudeWith(g, lineups, { all = false } = {}) {
-  const scores = lineupScores(g.claude, lineups);
-  const redo = (side, key) => {
-    if (!side.inputs) return side;
-    const score = scores?.[key] ?? side.score;
-    const exp = side.inputs.expected;
-    const inputs = { ...side.inputs, expected: { ...exp, pts: score, ast: side.score ? (exp.ast * score) / side.score : exp.ast } };
-    return { ...side, score, lineupChange: score - side.score, ...allocate(inputs, lineups[side.teamId], { all, positionRates: g.claude.positionRates }) };
-  };
-  return { ...g.claude, home: redo(g.claude.home, 'home'), away: redo(g.claude.away, 'away') };
-}
-const claudeFor = (g) => {
-  const lineup = readLineup(g.id);
-  return g.claude && lineup ? claudeWith(g, lineup) : g.claude;
-};
-
-// "Confirm starting lineup" button, or a note that it's confirmed.
-function lineupButton(g) {
-  if (!g.claude?.home?.inputs) return '';
-  const done = readLineup(g.id);
-  return `<a class="lineup-link${done ? ' done' : ''}" href="#/game/${g.id}/lineup">${done
-    ? '<span>✓ Lineup confirmed by you</span><span class="gp">Edit ›</span>'
-    : '<span>Confirm starting lineup</span><span class="gp">Before tip-off ›</span>'}</a>`;
-}
-
-// The lineup Claude's formula expects for one team: last game's starters (unless ruled out) as projected
-// starters, injured players out, nobody confirmed yet.
-function predictedLineup(inputs) {
-  const isOut = (c) => /^out$/i.test(c.status);
-  return {
-    starters: [],
-    projected: inputs.candidates.filter((c) => c.starter && !isOut(c)).map((c) => c.id),
-    out: inputs.candidates.filter(isOut).map((c) => c.id),
-    positions: {},
-  };
-}
-
-let lineupDraft = null; // { gameId, teams: { teamId: lineup }, open: playerId } while Nate is editing
-let lineupFromMatchup = false; // opened with the button, so saving can step back to the matchup page
-
-const ROLES = [['confirmed', 'Confirmed starter'], ['projected', 'Projected starter'], ['out', 'Out']];
-const ROLE_LIST = { confirmed: 'starters', projected: 'projected', out: 'out' };
-const roleIn = (pick, id) => (pick.starters.includes(id) ? 'confirmed' : pick.projected.includes(id) ? 'projected' : pick.out.includes(id) ? 'out' : 'bench');
-const ROLE_SHORT = { confirmed: 'Confirmed', projected: 'Projected', out: 'Out', bench: 'Bench' };
-
-// 9. Lineup: tap a player to set Confirmed starter, Projected starter or Out (untapped = bench) and his
-// position; his points, rebounds and assists update straight away.
-function lineupPage(g) {
-  const away = teamById(g.awayId);
-  const home = teamById(g.homeId);
-  const sides = [[away, g.claude.away], [home, g.claude.home]];
-  if (lineupDraft?.gameId !== g.id) {
-    const saved = readLineup(g.id);
-    lineupDraft = {
-      gameId: g.id,
-      open: null,
-      teams: Object.fromEntries(sides.map(([t, side]) => {
-        const base = predictedLineup(side.inputs);
-        const s = saved?.[t.id];
-        return [t.id, s ? { starters: s.starters ?? [], projected: s.projected ?? [], out: s.out ?? [], positions: s.positions ?? {} } : base];
-      })),
-    };
-  }
-  const draft = claudeWith(g, lineupDraft.teams, { all: true });
-  const scoreLine = [[away, draft.away], [home, draft.home]].map(([t, s]) => {
-    const ch = changeText(s.score, s.score - (s.lineupChange ?? 0));
-    return `${esc(t.code)} ${one(s.score)}${ch ? ` <small>(${ch})</small>` : ''}`;
-  }).join(' · ');
-  const teamBlock = ([t, side]) => {
-    const pick = lineupDraft.teams[t.id];
-    const result = draft[side === g.claude.home ? 'home' : 'away'];
-    const projOf = (id) => result.players.find((p) => p.id === id) ?? { pts: 0, reb: 0, ast: 0 }; // out: 0P 0R 0A
-    const avgMin = (c) => (c.w ? c.wMin / c.w : 0);
-    const rows = [...side.inputs.candidates]
-      .sort((a, b) => b.starter - a.starter || avgMin(b) - avgMin(a)) // fixed order, so rows don't jump while tapping
-      .map((c) => {
-        const role = roleIn(pick, c.id);
-        const pos = pick.positions[c.id] ?? c.pos;
-        const p = projOf(c.id);
-        const nums = `<span class="pra"><b>${one(p.pts)}</b>P <b>${one(p.reb)}</b>R <b>${one(p.ast)}</b>A</span>`;
-        const note = c.status ? ` <span class="tag">${esc(c.status === 'Day-To-Day' ? 'GTD' : c.status)}</span>` : '';
-        const isOpen = lineupDraft.open === c.id;
-        const row = `<button class="lineup-row role-${role}" data-open="${c.id}" aria-expanded="${isOpen}">
-          <span class="name">${esc(c.name)}${note}<span class="mins">${pos || '—'} · ${ROLE_SHORT[role]}</span></span>${nums}</button>`;
-        if (!isOpen) return `<li>${row}</li>`;
-        const posBtn = (x) => `<button data-pos="${x}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${pos === x}">${x}${x === c.pos ? ' <small>usual</small>' : ''}</button>`;
-        const roleBtn = ([r, label]) => `<button data-role="${r}" data-team="${t.id}" data-player="${c.id}" aria-pressed="${role === r}">${label}</button>`;
-        return `<li>${row}<div class="lineup-panel">
-          <h4>${esc(c.name)}</h4>
-          <p class="panel-label">Position</p><div class="choice">${['PG', 'SG', 'SF', 'PF', 'C'].map(posBtn).join('')}</div>
-          <p class="panel-label">Status <small>(tap again for bench)</small></p><div class="choice">${ROLES.map(roleBtn).join('')}</div>
-          <div class="figures"><div><b>${one(p.pts)}</b><span>Points</span></div><div><b>${one(p.reb)}</b><span>Rebounds</span></div><div><b>${one(p.ast)}</b><span>Assists</span></div></div>
-        </div></li>`;
-      }).join('');
-    const n = pick.starters.length + pick.projected.length;
-    return `<section class="stat"><h3><span class="pill" style="${colours(t)}">${esc(t.code)}</span> Starters: <b class="${n === 5 ? '' : 'warn'}">${n} of 5</b> <small>(${pick.starters.length} confirmed)</small></h3>
-      <ul class="lineup">${rows}</ul></section>`;
-  };
-  return `${bar(`${away.code} @ ${home.code} lineup`, `#/game/${g.id}`, 'Tap a player to set his status and position')}
-    <p class="out-line"><b>Projected score with this lineup:</b> ${scoreLine}</p>
-    <div class="stats">${sides.map(teamBlock).join('')}</div>
-    <div class="buttons lineup-actions">
-      <button class="button" data-lineup="reset">Back to predicted</button>
-      <button class="button primary" data-lineup="save">Save lineup</button>
-    </div>
-    <p class="working">Confirmed starters are certain to play their usual starter minutes. Projected starters get mostly starter minutes, with a small chance they come off the bench. Everyone you don't tap comes off the bench; players marked Out are removed and their minutes shared out. Moving a player to another position shifts his numbers halfway toward that position's league averages, and his teammates are re-balanced. Your formula leaves out players marked Out.</p>`;
-}
-
-// Saved bet slips, kept on the phone (they stay after the game, so the record builds up).
-const SLIPS_KEY = 'betSlips';
-function readSlips() {
-  try { return JSON.parse(localStorage.getItem(SLIPS_KEY)) ?? []; } catch { return []; }
-}
-function writeSlips(list) {
-  try { localStorage.setItem(SLIPS_KEY, JSON.stringify(list)); } catch { /* private mode: not kept */ }
-}
-const pct = (x) => (x === null ? '—' : `${Math.round(x * 100)}%`);
-// Claude's chance against what the odds say (1 ÷ odds; the bookmaker's margin makes this a little high).
-function valueText(chance, odds) {
-  if (chance === null) return '';
-  if (!(odds > 1)) return `Claude's chance all three go over: <b>${pct(chance)}</b>. Add the odds to compare.`;
-  const implied = 1 / odds;
-  const verdict = chance > implied * 1.05 ? 'Claude rates this <b>better</b> than the odds suggest'
-    : chance < implied * 0.95 ? 'Claude rates this <b>worse</b> than the odds suggest' : 'About what the odds suggest';
-  return `Claude's chance all three go over: <b>${pct(chance)}</b> · the odds imply ${pct(implied)}. ${verdict}.`;
-}
-
-// A player's season averages for this team (lines for the suggested slips; value for Claude's).
-function seasonAverages(teamId, id) {
-  const p = teamById(teamId)?.players.find((x) => x.id === id);
-  return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
-}
-
-// Claude's locked slips. The nightly update records them for every game (with the injury report); when
-// Nate saves a lineup before tip-off, Claude re-picks them on the phone and that version counts instead.
-const CLAUDE_SLIP_PREFIX = 'claudeSlips:';
-function readClaudeOverride(gameId) {
-  try { return JSON.parse(localStorage.getItem(CLAUDE_SLIP_PREFIX + gameId)) ?? null; } catch { return null; }
-}
-function writeClaudeOverride(gameId, entry) {
-  try {
-    if (entry) localStorage.setItem(CLAUDE_SLIP_PREFIX + gameId, JSON.stringify(entry));
-    else localStorage.removeItem(CLAUDE_SLIP_PREFIX + gameId);
-  } catch { /* private mode: not kept */ }
-}
-function allClaudeOverrides() {
-  try { return Object.keys(localStorage).filter((k) => k.startsWith(CLAUDE_SLIP_PREFIX)).map((k) => JSON.parse(localStorage.getItem(k))).filter(Boolean); } catch { return []; }
-}
-const claudeSlipsFor = (g) => (data.calibration?.pts && g.claude?.home ? claudeSlips([claudeFor(g).away, claudeFor(g).home], seasonAverages, data.calibration) : []);
-// After a lineup is saved (or reset), Claude's slips for that game follow it — until tip-off.
-function refreshClaudeOverride(g, saving) {
-  if (!g || new Date(g.start) <= new Date()) return;
-  if (!saving) { writeClaudeOverride(g.id, null); return; }
-  const slips = claudeSlipsFor(g);
-  if (slips.length) writeClaudeOverride(g.id, { gameId: g.id, start: g.start, game: `${teamById(g.awayId).code} @ ${teamById(g.homeId).code}`, made: new Date().toISOString(), lineup: true, slips });
-}
-
-let slipDraft = null; // { gameId, slips, odds: { i: text }, saved: { i: true } } on a game's slips page
-
-// 10. A game's two suggested bet slips (from Claude's formula with Nate's lineup): edit lines, add odds, save.
-function slipsPage(g) {
-  const away = teamById(g.awayId);
-  const home = teamById(g.homeId);
-  if (slipDraft?.gameId !== g.id) {
-    const c = claudeFor(g);
-    slipDraft = { gameId: g.id, slips: suggestSlips([c.away, c.home], seasonAverages, data.calibration), odds: {}, saved: {} };
-  }
-  const lineupNote = readLineup(g.id) ? '' : `<p class="out-line">You haven't confirmed this game's lineup, so these use the injury report. <a href="#/game/${g.id}/lineup">Confirm lineup ›</a></p>`;
-  const cards = slipDraft.slips.map((slip, i) => {
-    const legs = slip.legs.map((l, j) => `<li class="leg">
-      <span class="name">${pill(teamById(l.teamId))} ${esc(l.name)}<span class="mins">Claude projects ${one(l.mu)} · chance over ${pct(l.chance)}</span></span>
-      <span class="line-edit"><button data-step="-1" data-slip="${i}" data-leg="${j}" aria-label="Lower line">−</button>
-        <span class="line"><b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small></span>
-        <button data-step="1" data-slip="${i}" data-leg="${j}" aria-label="Raise line">+</button></span></li>`).join('');
-    const odds = slipDraft.odds[i] ?? '';
-    return `<section class="stat slip"><h3>${slip.title}</h3>
-      <ul class="legs">${legs}</ul>
-      <label class="odds">Odds for this slip <input data-odds="${i}" inputmode="decimal" placeholder="e.g. 5.50" value="${esc(odds)}"></label>
-      <p class="working" data-value="${i}">${valueText(slipChance(slip.legs), Number(odds))}</p>
-      <button class="button primary" data-save-slip="${i}">${slipDraft.saved[i] ? '✓ Saved — save again to update' : 'Save slip'}</button></section>`;
-  }).join('');
-  const locked = claudeSlipsFor(g).map((slip) => `<section class="stat slip locked"><h3>🔒 ${slip.title}</h3>
-      <ul class="legs">${slip.legs.map((l) => `<li class="leg">
-        <span class="name">${pill(teamById(l.teamId))} ${esc(l.name)}<span class="mins">Claude projects ${one(l.mu)} (season average ${one(l.avg)}) · chance over ${pct(l.chance)}</span></span>
-        <span class="line-edit"><span class="line"><b>Over ${l.line.toFixed(1)}</b><small>${STAT_NAME[l.stat]}</small></span></span></li>`).join('')}</ul>
-      <p class="working">Claude's chance all three go over: <b>${pct(slip.chance)}</b> · fair odds ${(1 / slip.chance).toFixed(2)}</p></section>`).join('');
-  const lockedNote = readLineup(g.id) ? 'Picked with your lineup.' : 'Picked with the injury report; they change to fit your lineup when you save one (until tip-off).';
-  return `${bar(`${away.code} @ ${home.code} bet slips`, `#/game/${g.id}`, 'Goal: all three go over')}
-    ${lineupNote}<h2 class="group">Your slips <small>you can change these</small></h2><div class="stats">${cards}</div>
-    ${locked ? `<h2 class="group">Claude's slips <small>locked</small></h2><p class="working">Claude's own picks: Claude chooses the players and the lines (common bookmaker lines like 10+, 15+, 20+ points). It looks for value, players its projection rates above their season average, since that's roughly what bookmakers price on. Banker: every leg ${Math.round(CLAUDE_SLIPS[0].target * 100)}%+. Bigger payout: every leg ${Math.round(CLAUDE_SLIPS[1].target * 100)}%+. ${lockedNote} Claude's slips are recorded for every game, so Claude has its own record on My bet slips.</p><div class="stats">${locked}</div>` : ''}
-    <p class="working"><b>Safest overs</b> picks, for each stat, the player most likely to go over a line set at his season average (to the .5 below). <b>Biggest projections</b> picks the top projected player for each stat. Three different players each time, from players expected to play ${MIN_SLIP_MINUTES}+ minutes, with lines of at least 9.5 points, 3.5 rebounds and 2.5 assists. Change a line with − and + to match your bookmaker's; the chance updates. Chances come from how far real results have landed from Claude's projections, re-learned every night. They treat the three legs as separate, though in one game they can move together. Points chances have run a few % high so far. These are estimates, not certainties — bet only what you're comfortable losing.</p>
-    <a class="upcoming-link" href="#/slips"><span>My bet slips</span><span class="gp">${readSlips().length} saved ›</span></a>`;
-}
-
-// 12. By quarter (13 Nov 2026, Nate's request): each player's average points, rebounds or assists in
-// each quarter (his real average in Q1, Q2, Q3 and Q4 separately), from his quarter-by-quarter totals in games he played for the
-// team (overtime left out). Whole-number maths like Nate's formula: averages cut to 2 decimals.
-const QUARTER_KEY = 'quarterStat';
-const QSORT_KEY = 'quarterSort';
-const QUARTER_STATS = { pts: 'points', reb: 'rebounds', ast: 'assists' };
-const PERIOD_NAMES = ['Q1', 'Q2', 'Q3', 'Q4', '1st half', '2nd half', 'Total'];
-const PERIOD_SHORT = ['Q1', 'Q2', 'Q3', 'Q4', '1H', '2H', 'Tot'];
-// One game's players (roster, minus anyone ruled out) with their real average in each quarter, in hundredths.
-function quarterRows(g, stat) {
-  const k = { pts: 0, reb: 1, ast: 2 }[stat];
-  const c = g.claude ? claudeFor(g) : null;
-  return [[g.awayId, g.homeId, c?.away, false], [g.homeId, g.awayId, c?.home, true]].flatMap(([id, oppId, side, home]) => {
-    const t = teamById(id);
-    const out = [...(readLineup(g.id)?.[id]?.out ?? []), ...(side?.out ?? []).map((o) => o.id)];
-    return projectable(t, out).filter((p) => p.qGp > 0).map((p) => {
-      // His average in Q1–Q4, then the 1st half (Q1 + Q2) and 2nd half (Q3 + Q4), in hundredths, cut.
-      const sums = [...p.qt.map((q) => q[k]), p.qt[0][k] + p.qt[1][k], p.qt[2][k] + p.qt[3][k]];
-      // …and his whole-game average (box score, overtime included), as on his Player page.
-      const ends = [...sums.map((total) => cut(100 * total, p.qGp)), cut(100 * p.totals[stat], p.gp)];
-      return { p, g, team: t, opp: teamById(oppId), home, ends };
-    });
-  });
-}
-const quarterButtons = (stat, sortQ) => `<div class="switch three" role="group" aria-label="Stat">${['pts', 'reb', 'ast'].map((s2) => `<button data-qstat="${s2}" aria-pressed="${stat === s2}">${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[s2]}</button>`).join('')}</div>
-    <p class="levels-title">His average in each quarter, half or the whole game: tap one to rank by it</p>
-    <div class="switch four" role="group" aria-label="Rank by quarter">${PERIOD_NAMES.slice(0, 4).map((name, q) => `<button data-qsort="${q}" aria-pressed="${sortQ === q}">${name}</button>`).join('')}</div>
-    <div class="switch three" role="group" aria-label="Rank by half or total">${PERIOD_NAMES.slice(4).map((name, i) => `<button data-qsort="${i + 4}" aria-pressed="${sortQ === i + 4}">${name}</button>`).join('')}</div>`;
-const quarterNote = (stat) => `<p class="working">Each player's real average ${QUARTER_STATS[stat]} in each quarter this season (not a prediction), from ESPN's play-by-play, in games he played for this team. Overtime isn't included. 1H = 1st half (Q1 + Q2), 2H = 2nd half (Q3 + Q4). Total (Tot) is his whole-game average from the box score, overtime included, so it can be a little above the four quarters added up. Players ruled out (injury report or your lineup) are left off. Averages are cut to 2 decimals, like your formula.</p>`;
-
-// Upcoming games → By quarter: every player in the day's games, ranked by his average in the chosen quarter.
-function quarterRankings(games) {
-  const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3', '4', '5', '6'], '3'));
-  const all = games.flatMap((g) => quarterRows(g, stat)).filter((r) => r.ends[sortQ] > 0)
-    .sort((a, b) => b.ends[sortQ] - a.ends[sortQ] || b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name));
-  const items = all.map(({ p, g, team, opp, home, ends }, i) => `<li><a href="#/game/${g.id}/quarters"><span class="rank">${i + 1}</span><span class="name">${pill(team)} ${esc(p.name)}<span class="mins">${home ? 'vs' : '@'} ${esc(opp.code)} · ${startText(g.start)} · ${p.qGp} game${p.qGp === 1 ? '' : 's'}</span><span class="mins">${ends.map((v, q) => (q === sortQ ? `<span class="hl">${PERIOD_SHORT[q]} ${hundredths(v)}</span>` : `${PERIOD_SHORT[q]} ${hundredths(v)}`)).join(' · ')}</span></span><b>${hundredths(ends[sortQ])}</b></a></li>`).join('');
-  return `${quarterButtons(stat, sortQ)}
-    <section class="stat"><h3>${{ pts: 'Points', reb: 'Rebounds', ast: 'Assists' }[stat]} ${sortQ === 6 ? 'per game' : `in the ${PERIOD_NAMES[sortQ]}`} · ${all.length} players, ${games.length} games</h3>${items ? `<ul class="ranking">${items}</ul>` : '<p class="none">No quarter figures yet</p>'}</section>
-    ${quarterNote(stat)}`;
-}
+const claudeFor = (g) => g.claude;
 
 // Upcoming games → Differences (14 Nov 2026, Nate's request): each game's gap between the two teams'
 // Expected tonight figures (e.g. NYK 112.13 v IND 107.51 points = NYK +4.62), ranked biggest first, per stat.
@@ -614,131 +375,35 @@ function differences(games) {
     <p class="working">For each game: both teams' Expected tonight ${name === '3PM' ? '3-pointers' : name.toLowerCase()} ((team's average + what the opponent gives up) ÷ 2), and how far ahead the higher team is. Tap a game to open it. Whole-number maths, cut to 2 decimals.</p>`;
 }
 
-// A game's By quarter page: both teams, every quarter shown, ranked by the chosen quarter (tap Q1–Q4).
-function quartersPage(g) {
-  const away = teamById(g.awayId);
-  const home = teamById(g.homeId);
-  const stat = readStored(QUARTER_KEY, ['pts', 'reb', 'ast'], 'pts');
-  const sortQ = Number(readStored(QSORT_KEY, ['0', '1', '2', '3', '4', '5', '6'], '3'));
-  const rows = quarterRows(g, stat);
-  const block = (t) => {
-    const body = rows.filter((r) => r.team === t)
-      .sort((a, b) => b.ends[sortQ] - a.ends[sortQ] || b.ends[3] - a.ends[3] || a.p.name.localeCompare(b.p.name))
-      .map(({ p, ends }) => `<tr data-href="#/team/${t.id}/player/${p.id}"><th scope="row">${esc(p.name)}<span class="mins">${p.qGp} game${p.qGp === 1 ? '' : 's'}</span></th>${ends.map((v, q) => `<td${q === sortQ ? ' class="win"' : ''}>${hundredths(v)}</td>`).join('')}</tr>`)
-      .join('');
-    return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
-      ${body ? `<div class="table-wrap"><table class="results quarters"><thead><tr><th scope="col">Per quarter</th>${PERIOD_SHORT.map((name, q) => `<th scope="col"><button class="sort${q === sortQ ? ' on' : ''}" data-qsort="${q}">${name}${q === sortQ ? '▼' : ''}</button></th>`).join('')}</tr></thead><tbody>${body}</tbody></table></div>` : '<p class="none">No quarter figures yet</p>'}</section>`;
-  };
-  return `${bar(`${away.code} @ ${home.code} by quarter`, `#/game/${g.id}`, startText(g.start))}
-    ${quarterButtons(stat, sortQ)}
-    ${block(away)}${block(home)}
-    ${quarterNote(stat)}`;
-}
-
-// 11. Saved slips, settled from each night's results: Nate's record, Claude's record, and what Claude has learned.
-// A settled result is kept with the slip, since results are only published for two weeks.
-function mySlipsPage() {
-  const slips = readSlips().sort((a, b) => (b.start ?? '').localeCompare(a.start ?? ''));
-  let changed = false;
-  const settled = slips.map((s) => {
-    const r = settle(s, data.recent);
-    if (!s.result && r.status !== 'pending') { s.result = r; changed = true; }
-    return { s, r };
-  });
-  if (changed) writeSlips(slips);
-  const count = (list, st) => list.filter((x) => x.r.status === st).length;
-  const figures = (list) => `<div class="figures"><div><b>${count(list, 'won')}</b><span>Won</span></div><div><b>${count(list, 'lost')}</b><span>Lost</span></div><div><b>${count(list, 'pending')}</b><span>Waiting</span></div></div>`;
-  const legs = settled.flatMap((x) => x.s.legs.map((l, i) => ({ l, r: x.r.legs[i] }))).filter((x) => x.r.result === 'hit' || x.r.result === 'miss');
-  const saidAvg = legs.length ? legs.reduce((t, x) => t + (x.l.chance ?? 0), 0) / legs.length : null;
-  const hitRate = legs.length ? legs.filter((x) => x.r.result === 'hit').length / legs.length : null;
-  const record = `<section class="stat"><h3>Your record</h3>${figures(settled)}
-    <p class="working">Each slip is one bet: it wins only if all three legs go over, and one leg missing makes it one loss.</p>
-    <p class="working">${legs.length ? `How Claude's chances are tracking (single legs, not your bets): ${legs.length} legs settled; Claude gave them ${pct(saidAvg)} on average and ${pct(hitRate)} went over.` : 'No settled legs yet. Slips settle after each game, once the nightly update has the results.'}${count(settled, 'void') ? ` ${count(settled, 'void')} slip(s) void (players didn't play).` : ''}</p></section>`;
-
-  // Claude's slips: the nightly record, with the phone's lineup versions counting instead where Nate saved one.
-  const cs = data.claudeSlips ?? { results: {}, recent: [] };
-  const overrides = new Map();
-  for (const o of allClaudeOverrides()) {
-    let dirty = false;
-    for (const sl of o.slips) {
-      if (sl.result) continue;
-      const r = settle({ ...sl, gameId: o.gameId }, data.recent);
-      if (r.status !== 'pending') { sl.result = r; dirty = true; }
-    }
-    if (dirty) writeClaudeOverride(o.gameId, o);
-    overrides.set(o.gameId, o);
-  }
-  const letter = { W: 'won', L: 'lost', V: 'void' };
-  const claudeList = []; // { type, r } for every Claude slip
-  for (const [gameId, codes] of Object.entries(cs.results)) {
-    if (overrides.has(gameId)) continue;
-    CLAUDE_SLIPS.forEach((c, i) => letter[codes[i]] && claudeList.push({ type: c.type, r: { status: letter[codes[i]] } }));
-  }
-  const nightly = cs.recent.filter((e) => !overrides.has(e.gameId));
-  for (const e of nightly) if (!cs.results[e.gameId]) e.slips.forEach((sl) => claudeList.push({ type: sl.type, r: { status: 'pending' } }));
-  for (const o of overrides.values()) o.slips.forEach((sl) => claudeList.push({ type: sl.type, r: sl.result ?? { status: 'pending' } }));
-  const byType = CLAUDE_SLIPS.map((c) => {
-    const list = claudeList.filter((x) => x.type === c.type);
-    return `<p class="working"><b>${c.title}:</b> won ${count(list, 'won')}, lost ${count(list, 'lost')}${count(list, 'pending') ? `, waiting ${count(list, 'pending')}` : ''}</p>`;
-  }).join('');
-  const claudeRecord = `<section class="stat"><h3>Claude's record (its locked slips, every game)</h3>${figures(claudeList)}${byType}</section>`;
-
-  const badge = { won: '✓ Won', lost: '✗ Lost', void: 'Void', pending: 'Waiting' };
-  const card = (game, start, slip, r, extra) => `<section class="stat slip ${r.status}"><h3>${esc(game)} · ${esc(slip.title)} <span class="badge ${r.status}">${badge[r.status]}</span></h3>
-    <ul class="legs">${slip.legs.map((l, i) => {
-    const res = r.legs?.[i] ?? { result: 'pending' };
-    const mark = res.result === 'hit' ? '✓' : res.result === 'miss' ? '✗' : res.result === 'void' ? 'void' : '';
-    return `<li class="leg"><span class="name">${esc(l.name)} over ${l.line.toFixed(1)} ${STAT_NAME[l.stat]}<span class="mins">Claude: ${one(l.mu)} projected, ${pct(l.chance)} chance</span></span><b>${res.actual ?? ''} ${mark}</b></li>`;
-  }).join('')}</ul>
-    <p class="working">${start ? startText(start) : ''}${slip.odds ? ` · odds ${slip.odds.toFixed(2)}` : ''} · Claude's chance ${pct(slip.chance)}</p>${extra}</section>`;
-  const cards = settled.map(({ s, r }) => card(s.game, s.start, s, r, `<button class="button" data-delete-slip="${esc(s.id)}">Delete</button>`)).join('');
-  const claudeGames = [...nightly.map((e) => ({ ...e, lineup: false })), ...overrides.values()]
-    .filter((e) => e.start >= new Date(Date.now() - 14 * 24 * 3600 * 1000).toISOString())
-    .sort((a, b) => b.start.localeCompare(a.start));
-  const claudeCards = claudeGames.flatMap((e) => e.slips.map((sl) => card(e.game, e.start, sl, sl.result ?? settle({ ...sl, gameId: e.gameId }, data.recent),
-    e.lineup ? '<p class="working">Picked with your lineup.</p>' : ''))).join('');
-
-  const cal = data.calibration;
-  const hist = (cal?.history ?? []).slice(-6).map((h) => `<tr><td>${dateText(h.date)}</td><td>${h.games}</td><td>×${h.pts?.lean ?? '—'}</td><td>×${h.reb?.lean ?? '—'}</td><td>×${h.ast?.lean ?? '—'}</td></tr>`).join('');
-  const learning = cal?.pts ? `<section class="stat"><h3>What Claude has learned</h3>
-    <p class="working">Every night Claude compares its projections with what players actually did and re-learns its chances. So far: ${cal.games} games, ${cal.pts.n} player results. "Lean" is how results compare with projections (×1.00 = spot on, ×0.97 = results 3% lower).</p>
-    <div class="table-wrap"><table class="results"><thead><tr><th>Night</th><th>Games</th><th>Points</th><th>Rebounds</th><th>Assists</th></tr></thead><tbody>${hist}</tbody></table></div></section>` : '';
-  return `${bar('My bet slips', '#/upcoming', 'Settled automatically after each game')}
-    <h2 class="group">Your slips</h2>${record}${cards || '<p class="message">No saved slips yet. Confirm a game\'s lineup to get its slips.</p>'}
-    <h2 class="group">Claude's slips <small>locked</small></h2>${claudeRecord}${claudeCards ? `<details class="claude-slips"><summary>Show Claude's slips (last two weeks)</summary>${claudeCards}</details>` : '<p class="message">Claude\'s slips appear after the next nightly update.</p>'}
-    ${learning}`;
-}
-
-function claudeMatchup(g, away, home) {
-  const c = claudeFor(g);
-  if (!c) return '<p class="message">Claude\'s formula isn\'t ready for this game yet. It appears after the next nightly update.</p>';
+// A game's ladders: team averages, projected scores, then each team's players with their 90%, 80% and 70%
+// rungs for the chosen stat; tap a player for his full ladder (every rung's chance).
+let openLadder = null; // player id whose full ladder is showing
+function ladderMatchup(g, away, home) {
+  const c = g.claude;
+  if (!c) return '<p class="message">Claude\'s ladders aren\'t ready for this game yet. They appear after the next nightly update.</p>';
+  const stat = readStored(LADDER_KEY, LADDER_STATS, 'pts');
   const scoreBox = (t, side) => {
     const parts = [`Stats model ${one(side.model)}`];
     if (side.market !== null) parts.push(`Betting market ${one(side.market)}`);
-    const ch = changeText(side.score, side.score - (side.lineupChange ?? 0));
-    if (ch) parts.push(`Your lineup ${ch}`);
     return `<div class="panel" style="${colours(t)}"><p>${esc(t.code)} projected</p><h2 class="big">${one(side.score)}</h2><p class="small">${parts.join(' · ')}</p></div>`;
   };
   const outLine = (t, side) => (side.out.length ? `<p class="out-line"><b>${esc(t.code)} out:</b> ${side.out.map((o) => esc(o.name)).join(', ')}</p>` : '');
-  const column = (t, side, value, stat) => {
-    const items = [...side.players]
-      .sort((a, b) => value(b) - value(a) || a.name.localeCompare(b.name))
-      .map((p) => {
-        const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-        return `<li><a href="#/team/${t.id}/player/${p.id}"><span class="name">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min</span></span><b>${one(value(p))}</b></a></li>`;
-      }).join('');
-    return `<div class="side"><div class="side-head" style="${colours(t)}">${esc(t.code)}</div>
-      ${items ? `<ul>${items}</ul>` : '<p class="none">No projections</p>'}</div>`;
+  const cell = (pick) => (pick ? `<td><b>${pick.n}+</b><span class="proj">${pct(pick.chance)}</span></td>` : '<td class="none">—</td>');
+  const block = (t, side) => {
+    const rows = ladderRows(side, stat).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
+      const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
+      const full = openLadder === p.id && chances
+        ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
+      return `<tr data-ladder-open="${p.id}"><th scope="row">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min · proj ${one(p[stat])}</span></th>${picks.map(cell).join('')}</tr>${full}`;
+    }).join('');
+    return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
+      ${rows ? `<div class="table-wrap"><table class="results ladders"><thead><tr><th scope="col">${LADDER_NAMES[stat]}</th>${SAFETY.map((lv) => `<th scope="col">${lv * 100}%</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>` : '<p class="none">No players projected 15+ minutes</p>'}</section>`;
   };
-  const sections = CLAUDE_STATS.map(([label, value, stat]) => `<section class="stat"><h3>${label}</h3>
-      <div class="sides">${column(away, c.away, value, stat)}${column(home, c.home, value, stat)}</div></section>`).join('');
-  const slipLink = g.claude?.home?.inputs && data.calibration?.pts
-    ? `<a class="lineup-link done" href="#/game/${g.id}/slips"><span>Bet slips for this game</span><span class="gp">${readLineup(g.id) ? 'With your lineup' : 'Confirm lineup first'} ›</span></a>` : '';
-  const quarterLink = `<a class="lineup-link done" href="#/game/${g.id}/quarters"><span>By quarter</span><span class="gp">Points, rebounds, assists ›</span></a>`;
-  return `${teamAveragesBox(away, home)}${slipLink}${quarterLink}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  return `${teamAveragesBox(away, home)}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
-    <div class="stats">${sections}</div>
-    <p class="working">How Claude's formula works: team scores blend a pace-and-efficiency model (10%) with the betting market's implied score (90%). Player figures are expected minutes × per-minute production (this season blended with last season), scaled to the team's projected totals for this matchup. Players ruled out are removed and their minutes shared out; GTD = game-time decision. Figures are cut to one decimal.</p>`;
+    ${ladderStatButtons(stat)}
+    ${data.calibration?.tpm ? `${block(away, c.away)}${block(home, c.home)}` : '<p class="message">The ladders appear after the next nightly update.</p>'}
+    <p class="working">Ladders: for each player, the highest ${LADDER_UNITS[stat]} rung Claude expects him to clear at least 90%, 80% and 70% of the time (the % under it is Claude's chance). Tap a player to see every rung (green 90%+, yellow 80%+, red 70%+). Built from Claude's projection (expected minutes × production, scaled to the betting market's team score) and how far real results have landed from projections this season, re-learned every night. No pick is ever certain. Players projected under ${MIN_LADDER_MINUTES} minutes, and anyone ruled out, are left off.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
@@ -771,11 +436,10 @@ function matchupPage(g) {
   const home = teamById(g.homeId);
   if (g.claude) {
     const note = g.note ? ` · ${g.note}` : '';
-    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}${claudeMatchup(g, away, home)}`;
+    return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${ladderMatchup(g, away, home)}`;
   }
-  const outFor = (t) => readLineup(g.id)?.[t.id]?.out ?? [];
   const column = (t, s) => {
-    const items = projectable(t, outFor(t))
+    const items = projectable(t)
       .map((p) => ({ p, v: statFor(t, p, s, mode).projection }))
       .filter(({ v }) => v !== null && v >= 1)
       .sort((a, b) => b.v - a.v || a.p.name.localeCompare(b.p.name))
@@ -787,7 +451,7 @@ function matchupPage(g) {
   const sections = PROJ_STATS.map((s) => `<section class="stat"><h3>${LONG[s]}</h3>
       <div class="sides">${column(away, s)}${column(home, s)}</div></section>`).join('');
   const note = g.note ? ` · ${g.note}` : '';
-  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}${lineupButton(g)}
+  return `${bar(`${away.code} @ ${home.code}`, '#/upcoming', `${startText(g.start)}${note}`)}${gameNav(g)}
     <p class="out-line">Claude's formula isn't ready for this game yet (it appears after the next nightly update), so this shows your formula.</p>
     <section class="matchup">
       <div class="panel" style="${colours(away)}"><h2>${esc(away.name)}</h2><p>Away · ${away.gp} played</p></div>
@@ -847,16 +511,7 @@ function render() {
     html = resultsPage(); title = 'How did the projections go?';
   } else if (parts[0] === 'upcoming') {
     html = upcomingPage(); title = 'Upcoming games';
-  } else if (parts[0] === 'slips') {
-    html = mySlipsPage(); title = 'My bet slips';
-  } else if (game && parts[2] === 'quarters') {
-    html = quartersPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} by quarter`;
-  } else if (game && parts[2] === 'slips' && game.claude?.home?.inputs) {
-    html = slipsPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} bet slips`;
-  } else if (game && parts[2] === 'lineup' && game.claude?.home?.inputs) {
-    html = lineupPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code} lineup`;
   } else if (game) {
-    lineupDraft = null;
     html = matchupPage(game); title = `${teamById(game.awayId).code} @ ${teamById(game.homeId).code}`;
   } else if (team && parts.length === 2) {
     html = teamPage(team); title = team.name;
@@ -881,77 +536,16 @@ app.addEventListener('click', (e) => {
   if (sortBtn) { playerSort = sortBtn.dataset.sort; render(); return; }
   const projSortBtn = e.target.closest('[data-psort]');
   if (projSortBtn) { projectionSort = projSortBtn.dataset.psort; render(); return; }
-  if (e.target.closest('.lineup-link')) lineupFromMatchup = true;
-  const openBtn = e.target.closest('[data-open]');
-  if (openBtn && lineupDraft) {
-    lineupDraft.open = lineupDraft.open === openBtn.dataset.open ? null : openBtn.dataset.open;
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
-  const roleBtn = e.target.closest('[data-role]');
-  if (roleBtn && lineupDraft) {
-    const pick = lineupDraft.teams[roleBtn.dataset.team];
-    const id = roleBtn.dataset.player;
-    const was = roleIn(pick, id);
-    for (const list of Object.values(ROLE_LIST)) pick[list] = pick[list].filter((x) => x !== id);
-    if (was !== roleBtn.dataset.role) pick[ROLE_LIST[roleBtn.dataset.role]].push(id); // tapping his current status again = bench
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
-  const posBtn = e.target.closest('[data-pos]');
-  if (posBtn && lineupDraft) {
-    lineupDraft.teams[posBtn.dataset.team].positions[posBtn.dataset.player] = posBtn.dataset.pos;
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
-  const lineupBtn = e.target.closest('[data-lineup]');
-  if (lineupBtn && lineupDraft) {
-    const gameId = lineupDraft.gameId;
-    const saving = lineupBtn.dataset.lineup === 'save';
-    saveLineup(gameId, saving ? lineupDraft.teams : null);
-    refreshClaudeOverride(data.upcoming?.games.find((x) => x.id === gameId), saving);
-    lineupDraft = null;
-    slipDraft = null; // new lineup, new suggested slips
-    lineupFromMatchup = false;
-    // Saving a lineup opens this game's bet slips (Back returns to the matchup); resetting returns to the matchup.
-    location.replace(saving && data.calibration?.pts ? `#/game/${gameId}/slips` : `#/game/${gameId}`);
-    return;
-  }
-  const stepBtn = e.target.closest('[data-step]');
-  if (stepBtn && slipDraft) {
-    const l = slipDraft.slips[stepBtn.dataset.slip].legs[stepBtn.dataset.leg];
-    l.line = Math.max(0.5, l.line + Number(stepBtn.dataset.step));
-    l.chance = chanceOver(l.mu, l.line, data.calibration?.[l.stat]);
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
-  const saveSlipBtn = e.target.closest('[data-save-slip]');
-  if (saveSlipBtn && slipDraft) {
-    const i = Number(saveSlipBtn.dataset.saveSlip);
-    const slip = slipDraft.slips[i];
-    const odds = Number(document.querySelector(`[data-odds="${i}"]`)?.value) || null;
-    const g = data.upcoming?.games.find((x) => x.id === slipDraft.gameId);
-    const all = readSlips().filter((x) => !(x.gameId === slipDraft.gameId && x.type === slip.type));
-    all.push({
-      id: `${slipDraft.gameId}-${slip.type}`, gameId: slipDraft.gameId, start: g?.start ?? null,
-      game: g ? `${teamById(g.awayId).code} @ ${teamById(g.homeId).code}` : '', type: slip.type, title: slip.title,
-      legs: slip.legs.map((l) => ({ ...l })), odds: odds && odds > 1 ? odds : null, chance: slipChance(slip.legs), saved: new Date().toISOString(),
-    });
-    writeSlips(all);
-    slipDraft.saved[i] = true;
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
-  const delSlip = e.target.closest('[data-delete-slip]');
-  if (delSlip) {
-    writeSlips(readSlips().filter((x) => x.id !== delSlip.dataset.deleteSlip));
-    const y = window.scrollY; render(); window.scrollTo(0, y); return;
-  }
+  const ladderBtn = e.target.closest('[data-ladder]');
+  if (ladderBtn) { store(LADDER_KEY, ladderBtn.dataset.ladder); openLadder = null; const y = window.scrollY; render(); window.scrollTo(0, y); return; }
+  const levelBtn = e.target.closest('[data-level]');
+  if (levelBtn) { store(LEVEL_KEY, levelBtn.dataset.level); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
+  const ladderRow = e.target.closest('[data-ladder-open]');
+  if (ladderRow) { openLadder = openLadder === ladderRow.dataset.ladderOpen ? null : ladderRow.dataset.ladderOpen; const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const diffBtn = e.target.closest('[data-diff]');
   if (diffBtn) { store(DIFF_KEY, diffBtn.dataset.diff); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
-  const qSort = e.target.closest('[data-qsort]');
-  if (qSort) { store(QSORT_KEY, qSort.dataset.qsort); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
-  const qBtn = e.target.closest('[data-qstat]');
-  if (qBtn) { store(QUARTER_KEY, qBtn.dataset.qstat); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const viewBtn = e.target.closest('[data-view]');
   if (viewBtn) { store(VIEW_KEY, viewBtn.dataset.view); render(); return; }
-  const rankBtn = e.target.closest('[data-rank]');
-  if (rankBtn) { store(RANK_KEY, rankBtn.dataset.rank); const y = window.scrollY; render(); window.scrollTo(0, y); return; }
   const formulaBtn = e.target.closest('[data-formula]');
   if (formulaBtn) { saveFormula(formulaBtn.dataset.formula); render(); return; }
   const modeBtn = e.target.closest('[data-mode]');
@@ -963,15 +557,6 @@ app.addEventListener('click', (e) => {
 });
 
 window.addEventListener('hashchange', () => { render(); window.scrollTo(0, 0); });
-app.addEventListener('input', (e) => {
-  const box = e.target.closest('[data-odds]');
-  if (!box || !slipDraft) return;
-  slipDraft.odds[box.dataset.odds] = box.value;
-  const slip = slipDraft.slips[box.dataset.odds];
-  const out = document.querySelector(`[data-value="${box.dataset.odds}"]`);
-  if (out) out.innerHTML = valueText(slipChance(slip.legs), Number(box.value));
-});
-
 // Matchup pages: swipe left for the next upcoming game, right for the previous one.
 // Moving between games replaces the page in history, so Back still returns to the games list.
 const openGame = (g) => { if (g) location.replace(`#/game/${g.id}`); };
@@ -997,7 +582,6 @@ try {
   const res = await fetch('data/app-data.json', { cache: 'no-cache' });
   if (!res.ok) throw new Error(res.status);
   data = await res.json();
-  tidyLineups();
   render();
 } catch {
   app.innerHTML = `<p class="message">Couldn't load the stats. Check your connection and try again.</p>`;

@@ -26,7 +26,7 @@ export function snapshot(game, claude, teams, savedAt) {
       players[p.id] = {
         name: p.name,
         min: Math.round(p.min * 10) / 10,
-        claude: Object.fromEntries(STATS.map((s) => [s, Math.round(p[s] * 100) / 100])),
+        claude: Object.fromEntries([...STATS, 'tpm'].map((s) => [s, Math.round(p[s] * 100) / 100])), // tpm for the ladders' learning
         nate,
       };
     }

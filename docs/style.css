@@ -375,3 +375,20 @@ table.quarters th[scope="row"] { overflow-wrap: normal; word-break: normal; hyph
 .team-avgs tbody + tbody tr:first-child th, .team-avgs tbody + tbody tr:first-child td { border-top: 3px solid var(--line); }
 ul.ranking .name b.plain { font-size: inherit; color: var(--text); }
 ul.ranking .mins .pill { font-size: 10px; padding: 0 4px; }
+table.ladders { table-layout: fixed; width: 100%; font-size: 14px; }
+table.ladders thead th:first-child, table.ladders th[scope="row"] { width: 40%; text-align: left; }
+table.ladders th[scope="row"] { font-size: 14px; overflow-wrap: normal; }
+table.ladders th[scope="row"] .mins { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }
+table.ladders td { text-align: center; padding: 8px 2px; }
+table.ladders td b { font-size: 16px; }
+table.ladders td.none { color: var(--muted); }
+table.ladders tr[data-ladder-open] { cursor: pointer; }
+table.ladders tr.full-ladder td { text-align: left; padding: 6px 4px 12px; }
+table.ladders .chip { display: inline-block; margin: 2px 4px 2px 0; padding: 2px 6px; border-radius: 6px; font-size: 12px; font-variant-numeric: tabular-nums; border: 1px solid var(--line); }
+ul.ranking .rung { flex-shrink: 0; text-align: right; }
+ul.ranking .rung b { display: block; font-size: 18px; }
+ul.ranking .rung small { display: block; font-size: 11px; color: var(--muted); }
+table.ladders th[scope="row"] { overflow-wrap: break-word; word-break: normal; hyphens: auto; }
+table.ladders .chips { display: flex; flex-wrap: wrap; gap: 4px; white-space: normal; }
+table.ladders .chips .chip { margin: 0; }
+table.ladders th[scope="row"] { white-space: normal; height: auto; padding-top: 8px; padding-bottom: 8px; }

@@ -9,7 +9,7 @@ import { checkAppData, checkGame } from './checks.js';
 import { scoreResults } from './results.js';
 import { playerRatings, lineOf } from './model.js';
 import { updateCalibration } from './calibrate.js';
-import { CLAUDE_SLIPS, claudeSlips, settle } from '../docs/slips.js';
+import { LADDER_STATS, MIN_LADDER_MINUTES, SAFETY, ladderPicks } from '../docs/ladders.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -144,38 +144,46 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
   };
 }
 
-// Claude's locked bet slips: picked for every upcoming game each run (until tip-off) and kept in
-// data/slips/<season>/<gameId>.json, then settled against the finished game. Published: one letter per
-// slip for every finished game (W won, L lost, V void, in CLAUDE_SLIPS order) for the season record, and
-// the full slips for the last two weeks and upcoming games.
-export function recordClaudeSlips(dir, data, games, now, cutoff) {
+// Ladder picks (20 Nov 2026): for every upcoming game each run (until tip-off), each player projected 15+
+// minutes gets his 90%, 80% and 70% rungs for points, rebounds, assists and 3PM, kept in
+// data/ladders/<season>/<gameId>.json; once the game is finished each pick is scored (cleared or not; a
+// player who didn't play is left out). Published: the season record per stat and safety level, and the last
+// day's games.
+export function recordLadders(dir, data, games, now, timeZone) {
   const code = (id) => data.teams.find((t) => t.id === id)?.code ?? '';
-  const averages = (teamId, id) => {
-    const p = data.teams.find((t) => t.id === teamId)?.players.find((x) => x.id === id);
-    return p?.gp ? { pts: p.totals.pts / p.gp, reb: p.totals.reb / p.gp, ast: p.totals.ast / p.gp } : null;
-  };
   fs.mkdirSync(dir, { recursive: true });
   for (const g of data.upcoming.games) {
-    if (!g.claude?.home || new Date(g.start) <= now) continue;
-    const slips = claudeSlips([g.claude.away, g.claude.home], averages, data.calibration);
-    if (!slips.length) continue;
-    const entry = { gameId: g.id, start: g.start, game: `${code(g.awayId)} @ ${code(g.homeId)}`, made: now.toISOString(), slips };
-    fs.writeFileSync(path.join(dir, `${g.id}.json`), JSON.stringify(entry, null, 1) + '\n');
+    if (!g.claude?.home || new Date(g.start) <= now || !data.calibration?.tpm) continue;
+    const players = [g.claude.away, g.claude.home].flatMap((side) => side.players
+      .filter((p) => p.min >= MIN_LADDER_MINUTES)
+      .map((p) => ({ id: p.id, name: p.name, teamId: side.teamId, picks: ladderPicks(p, data.calibration) })));
+    const entry = { gameId: g.id, start: g.start, game: `${code(g.awayId)} @ ${code(g.homeId)}`, made: now.toISOString(), players };
+    fs.writeFileSync(path.join(dir, `${g.id}.json`), JSON.stringify(entry) + '\n');
   }
   const byId = new Map(games.map((g) => [g.id, g]));
-  const results = {};
-  const recent = [];
-  for (const entry of loadGames(dir).sort((a, b) => a.start.localeCompare(b.start))) {
+  const blank = () => Object.fromEntries(LADDER_STATS.map((s) => [s, Object.fromEntries(SAFETY.map((lv) => [lv, { picks: 0, hits: 0 }]))]));
+  const season = blank();
+  const days = new Map();
+  for (const entry of loadGames(dir)) {
     const g = byId.get(entry.gameId);
-    const box = g && { [g.id]: { players: Object.fromEntries(g.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {
-      const l = lineOf(p.stats);
-      return [p.id, [l.pts, l.reb, l.ast]];
-    }))) } };
-    const slips = entry.slips.map((sl) => ({ ...sl, result: box ? settle({ ...sl, gameId: entry.gameId }, box) : null }));
-    if (box) results[entry.gameId] = CLAUDE_SLIPS.map((c) => ({ won: 'W', lost: 'L', void: 'V' })[slips.find((x) => x.type === c.type)?.result?.status] ?? '-').join('');
-    if (!box ? new Date(entry.start) > now : entry.start >= cutoff) recent.push({ ...entry, slips });
+    if (!g) continue;
+    const day = dateIn(g.start, timeZone);
+    if (!days.has(day)) days.set(day, { games: 0, record: blank() });
+    const d = days.get(day);
+    d.games++;
+    const actual = new Map(g.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => [p.id, lineOf(p.stats)])));
+    for (const pl of entry.players) {
+      const a = actual.get(pl.id);
+      if (!a) continue; // didn't play
+      for (const s of LADDER_STATS) for (const lv of SAFETY) {
+        const pick = pl.picks[s]?.[lv];
+        if (!pick) continue;
+        for (const rec of [season, d.record]) { rec[s][lv].picks++; if (a[s] >= pick.n) rec[s][lv].hits++; }
+      }
+    }
   }
-  return { results, recent };
+  const lastDate = [...days.keys()].sort().at(-1) ?? null;
+  return { season, games: [...days.values()].reduce((t, d) => t + d.games, 0), lastDate, lastDay: lastDate ? days.get(lastDate) : null };
 }
 
 export function loadGames(gamesDir) {
@@ -204,7 +212,7 @@ export function build(now = new Date()) {
   const snapshots = loadGames(path.join(ROOT, 'data', 'projections', config.season));
   data.results = scoreResults(snapshots, games, config.timeZone);
 
-  // Bet slips: re-learn the chances from every result so far (a history is kept to show the learning),
+  // Ladders: re-learn the chances from every result so far (a history is kept to show the learning),
   // and publish the last two weeks of players' points, rebounds and assists so the phone can settle slips.
   const { calibration, added } = updateCalibration(path.join(ROOT, 'data'), config.season, games, snapshots, {
     prior: readOptional(path.join('prior', `${config.priorSeason}.json`)) ?? {},
@@ -217,19 +225,11 @@ export function build(now = new Date()) {
     const summary = (c) => (c ? { n: c.n, lean: c.bias, spread: c.k } : null);
     const date = dateIn(now.toISOString(), config.timeZone);
     if (history.at(-1)?.date === date) history.pop(); // one row a night: the latest run wins
-    history.push({ date, games: calibration.games, pts: summary(calibration.pts), reb: summary(calibration.reb), ast: summary(calibration.ast) });
+    history.push({ date, games: calibration.games, pts: summary(calibration.pts), reb: summary(calibration.reb), ast: summary(calibration.ast), tpm: summary(calibration.tpm) });
     fs.writeFileSync(historyFile, JSON.stringify(history, null, 1) + '\n');
   }
   data.calibration = { ...calibration, history: history.slice(-30) };
-  const cutoff = new Date(now.getTime() - 14 * 24 * 3600 * 1000).toISOString();
-  data.recent = Object.fromEntries(games.filter((g) => g.start >= cutoff).map((g) => [g.id, {
-    date: dateIn(g.start, config.timeZone),
-    players: Object.fromEntries(g.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {
-      const l = lineOf(p.stats);
-      return [p.id, [l.pts, l.reb, l.ast]];
-    }))),
-  }]));
-  data.claudeSlips = recordClaudeSlips(path.join(ROOT, 'data', 'slips', config.season), data, games, now, cutoff);
+  data.ladderRecord = recordLadders(path.join(ROOT, 'data', 'ladders', config.season), data, games, now, config.timeZone);
   const file = path.join(ROOT, 'docs', 'data', 'app-data.json');
   const previous = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : null;
   checkAppData(data, previous);
