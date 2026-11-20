@@ -1,0 +1,84 @@
+{
+ "gameId": "401909310",
+ "start": "2026-11-21T01:00Z",
+ "game": "NOP @ OKC",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 19.778962058586547,
+     "avg": 16.5,
+     "chance": 0.9235820737341237
+    },
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.7662335601609165,
+     "avg": 6.466666666666667,
+     "chance": 0.8815463711797322
+    },
+    {
+     "playerId": "4278073",
+     "name": "Shai Gilgeous-Alexander",
+     "teamId": "25",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.764290142374061,
+     "avg": 4.266666666666667,
+     "chance": 0.8543998580611665
+    }
+   ],
+   "chance": 0.6956356400576862
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5174983",
+     "name": "Aday Mara",
+     "teamId": "25",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.487956541084412,
+     "avg": 9.2,
+     "chance": 0.5561246003418985
+    },
+    {
+     "playerId": "3133626",
+     "name": "Kenrich Williams",
+     "teamId": "25",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.0909017569100286,
+     "avg": 3.7333333333333334,
+     "chance": 0.5701006969233922
+    },
+    {
+     "playerId": "4397136",
+     "name": "Saddiq Bey",
+     "teamId": "3",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.12749837199538,
+     "avg": 2.5625,
+     "chance": 0.6116493761662386
+    }
+   ],
+   "chance": 0.19392161336305214
+  }
+ ]
+}

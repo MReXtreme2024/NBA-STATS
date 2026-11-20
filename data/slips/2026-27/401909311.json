@@ -1,0 +1,84 @@
+{
+ "gameId": "401909311",
+ "start": "2026-11-21T02:30Z",
+ "game": "PHX @ UTA",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 22.97704765820534,
+     "avg": 21.6,
+     "chance": 0.8564278034833065
+    },
+    {
+     "playerId": "4066383",
+     "name": "Miles Bridges",
+     "teamId": "21",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.142098698923113,
+     "avg": 6.928571428571429,
+     "chance": 0.8284935044615669
+    },
+    {
+     "playerId": "3136193",
+     "name": "Devin Booker",
+     "teamId": "21",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 4.993584383146457,
+     "avg": 5.428571428571429,
+     "chance": 0.8848723161260581
+    }
+   ],
+   "chance": 0.6278566144821716
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "5105839",
+     "name": "Brice Sensabaugh",
+     "teamId": "26",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 14.030539446489259,
+     "avg": 10.375,
+     "chance": 0.7499446910745293
+    },
+    {
+     "playerId": "5041955",
+     "name": "Darryn Peterson",
+     "teamId": "26",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.009406698554005,
+     "avg": 4.125,
+     "chance": 0.5585121424406697
+    },
+    {
+     "playerId": "4433627",
+     "name": "Keyonte George",
+     "teamId": "26",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.909114813854805,
+     "avg": 7.133333333333334,
+     "chance": 0.98422254408051
+    }
+   ],
+   "chance": 0.4122447779699079
+  }
+ ]
+}

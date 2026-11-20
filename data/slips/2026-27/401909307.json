@@ -1,0 +1,84 @@
+{
+ "gameId": "401909307",
+ "start": "2026-11-21T00:30Z",
+ "game": "IND @ CLE",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 17.30554038268571,
+     "avg": 16.2,
+     "chance": 0.8681500711337692
+    },
+    {
+     "playerId": "2995706",
+     "name": "Mario Hezonja",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.9870429724909116,
+     "avg": 5.4375,
+     "chance": 0.8160699424695688
+    },
+    {
+     "playerId": "3908809",
+     "name": "Donovan Mitchell",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.345595827775631,
+     "avg": 5.333333333333333,
+     "chance": 0.9211545381934306
+    }
+   ],
+   "chance": 0.6526114413513244
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3992",
+     "name": "James Harden",
+     "teamId": "5",
+     "stat": "pts",
+     "line": 14.5,
+     "mu": 17.30554038268571,
+     "avg": 16.2,
+     "chance": 0.6485102596266407
+    },
+    {
+     "playerId": "2995706",
+     "name": "Mario Hezonja",
+     "teamId": "5",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 5.9870429724909116,
+     "avg": 5.4375,
+     "chance": 0.8160699424695688
+    },
+    {
+     "playerId": "5023693",
+     "name": "Tyrese Proctor",
+     "teamId": "5",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 2.9760391471871417,
+     "avg": 2.6666666666666665,
+     "chance": 0.5819570986188602
+    }
+   ],
+   "chance": 0.30798899832753424
+  }
+ ]
+}

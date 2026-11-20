@@ -1,0 +1,84 @@
+{
+ "gameId": "401909305",
+ "start": "2026-11-21T00:00Z",
+ "game": "CHA @ ATL",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4431680",
+     "name": "Onyeka Okongwu",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 16.781740828526093,
+     "avg": 15,
+     "chance": 0.8533589390938885
+    },
+    {
+     "playerId": "4396971",
+     "name": "Naz Reid",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 5.5,
+     "mu": 8.522588929070592,
+     "avg": 8.357142857142858,
+     "chance": 0.823850937517231
+    },
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 5.689739548874029,
+     "avg": 5.466666666666667,
+     "chance": 0.9477672803893349
+    }
+   ],
+   "chance": 0.6663188414607537
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4869342",
+     "name": "Dyson Daniels",
+     "teamId": "1",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 10.993752035589832,
+     "avg": 9.533333333333333,
+     "chance": 0.5885746249357915
+    },
+    {
+     "playerId": "2583632",
+     "name": "Royce O'Neale",
+     "teamId": "30",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.2485497193353865,
+     "avg": 3.2142857142857144,
+     "chance": 0.5953905481503194
+    },
+    {
+     "playerId": "4396971",
+     "name": "Naz Reid",
+     "teamId": "30",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.2337984372813735,
+     "avg": 2.357142857142857,
+     "chance": 0.6352523263898078
+    }
+   ],
+   "chance": 0.22261259622364654
+  }
+ ]
+}

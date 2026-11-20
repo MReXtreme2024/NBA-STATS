@@ -1,0 +1,84 @@
+{
+ "gameId": "401909312",
+ "start": "2026-11-21T03:00Z",
+ "game": "HOU @ DEN",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3936299",
+     "name": "Jamal Murray",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 22.247951838944545,
+     "avg": 25.692307692307693,
+     "chance": 0.9671916431835818
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 6.2831756862564125,
+     "avg": 7.133333333333334,
+     "chance": 0.8432313677989314
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 7.642264946286258,
+     "avg": 8.923076923076923,
+     "chance": 0.9910596499425396
+    }
+   ],
+   "chance": 0.8082748837003925
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "3064290",
+     "name": "Aaron Gordon",
+     "teamId": "7",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 11.253422075885386,
+     "avg": 11.153846153846153,
+     "chance": 0.6069183637649993
+    },
+    {
+     "playerId": "3112335",
+     "name": "Nikola Jokic",
+     "teamId": "7",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 9.640247559920084,
+     "avg": 10.692307692307692,
+     "chance": 0.9832735742647275
+    },
+    {
+     "playerId": "4684740",
+     "name": "Amen Thompson",
+     "teamId": "10",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 3.350074782171956,
+     "avg": 3.3333333333333335,
+     "chance": 0.6611326805137312
+    }
+   ],
+   "chance": 0.39454202673817845
+  }
+ ]
+}

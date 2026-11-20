@@ -1,0 +1,84 @@
+{
+ "gameId": "401909308",
+ "start": "2026-11-21T00:30Z",
+ "game": "TOR @ DET",
+ "made": "2026-11-20T21:01:52.569Z",
+ "slips": [
+  {
+   "type": "claude-banker",
+   "title": "Claude's banker",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4395724",
+     "name": "Immanuel Quickley",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 18.955687107407396,
+     "avg": 17.76923076923077,
+     "chance": 0.9077524844095917
+    },
+    {
+     "playerId": "3134908",
+     "name": "Jakob Poeltl",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 7.55452398571524,
+     "avg": 6.615384615384615,
+     "chance": 0.9300422808797744
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.89502946139506,
+     "avg": 7.769230769230769,
+     "chance": 0.9840227604932652
+    }
+   ],
+   "chance": 0.8307594355226523
+  },
+  {
+   "type": "claude-bigger",
+   "title": "Claude's bigger payout",
+   "locked": true,
+   "legs": [
+    {
+     "playerId": "4684272",
+     "name": "Ja'Kobe Walter",
+     "teamId": "28",
+     "stat": "pts",
+     "line": 9.5,
+     "mu": 13.809449810710166,
+     "avg": 12.2,
+     "chance": 0.7414617297460009
+    },
+    {
+     "playerId": "5149115",
+     "name": "Allen Graves",
+     "teamId": "28",
+     "stat": "reb",
+     "line": 3.5,
+     "mu": 4.194757379057662,
+     "avg": 2.7333333333333334,
+     "chance": 0.587539859959781
+    },
+    {
+     "playerId": "4432166",
+     "name": "Cade Cunningham",
+     "teamId": "8",
+     "stat": "ast",
+     "line": 2.5,
+     "mu": 6.89502946139506,
+     "avg": 7.769230769230769,
+     "chance": 0.9840227604932652
+    }
+   ],
+   "chance": 0.4286780230698023
+  }
+ ]
+}
