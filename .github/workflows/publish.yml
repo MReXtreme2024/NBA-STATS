@@ -32,6 +32,14 @@ jobs:
       - name: Run tests
         run: node --test
 
+      # Give the site's files a version tag in the published copy (not in the repo), so phones load new code
+      # straight away instead of an old saved copy (21 Nov 2026).
+      - name: Stamp file versions
+        run: |
+          v="${GITHUB_SHA::8}"
+          sed -i -E "s#(href|src)=\"(style\.css|app\.js)\"#\1=\"\2?v=$v\"#" docs/index.html
+          sed -i -E "s#from '\./([a-z]+\.js)'#from './\1?v=$v'#" docs/*.js
+
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
