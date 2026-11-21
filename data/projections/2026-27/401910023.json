@@ -1,0 +1,319 @@
+{
+  "id": "401910023",
+  "start": "2026-11-21T18:00Z",
+  "homeId": "20",
+  "awayId": "15",
+  "savedAt": "2026-11-21T14:13:30.555Z",
+  "teams": {
+    "15": {
+      "score": 108.41,
+      "players": {
+        "3133628": {
+          "name": "Myles Turner",
+          "min": 20.7,
+          "claude": {
+            "pts": 6.8,
+            "reb": 4.46,
+            "ast": 1.8,
+            "tpm": 1.13
+          },
+          "nate": {
+            "pts": 6,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "3134907": {
+          "name": "Kyle Kuzma",
+          "min": 22.9,
+          "claude": {
+            "pts": 10.67,
+            "reb": 4.32,
+            "ast": 2.16,
+            "tpm": 1.2
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4277843": {
+          "name": "Gary Trent Jr.",
+          "min": 9.5,
+          "claude": {
+            "pts": 3.68,
+            "reb": 0.51,
+            "ast": 0.44,
+            "tpm": 0.81
+          },
+          "nate": {
+            "pts": 2,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4277922": {
+          "name": "Jericho Sims",
+          "min": 10.3,
+          "claude": {
+            "pts": 2.07,
+            "reb": 2.42,
+            "ast": 0.71,
+            "tpm": 0
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4395725": {
+          "name": "Tyler Herro",
+          "min": 24.7,
+          "claude": {
+            "pts": 15.96,
+            "reb": 3.47,
+            "ast": 3.39,
+            "tpm": 1.94
+          },
+          "nate": {
+            "pts": 18,
+            "reb": 3,
+            "ast": 3
+          }
+        },
+        "4397233": {
+          "name": "Pete Nance",
+          "min": 8.1,
+          "claude": {
+            "pts": 2.76,
+            "reb": 1.36,
+            "ast": 0.59,
+            "tpm": 0.49
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "4397475": {
+          "name": "AJ Green",
+          "min": 14.3,
+          "claude": {
+            "pts": 5.13,
+            "reb": 1.25,
+            "ast": 1.04,
+            "tpm": 1.39
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4432848": {
+          "name": "Jaime Jaquez Jr.",
+          "min": 23,
+          "claude": {
+            "pts": 12.56,
+            "reb": 4.27,
+            "ast": 2.97,
+            "tpm": 1.2
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "4591725": {
+          "name": "Ryan Rollins",
+          "min": 21,
+          "claude": {
+            "pts": 10.24,
+            "reb": 3.89,
+            "ast": 3.68,
+            "tpm": 1.38
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 4,
+            "ast": 3
+          }
+        },
+        "5082206": {
+          "name": "Brayden Burries",
+          "min": 23,
+          "claude": {
+            "pts": 10.61,
+            "reb": 5.29,
+            "ast": 2.42,
+            "tpm": 1.09
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 5,
+            "ast": 2
+          }
+        },
+        "5105623": {
+          "name": "Kel'el Ware",
+          "min": 18.8,
+          "claude": {
+            "pts": 9.13,
+            "reb": 7.02,
+            "ast": 0.74,
+            "tpm": 0.8
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 6,
+            "ast": 0
+          }
+        },
+        "5164559": {
+          "name": "Nate Ament",
+          "min": 19.3,
+          "claude": {
+            "pts": 8.42,
+            "reb": 3.3,
+            "ast": 0.88,
+            "tpm": 1.02
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "5214640": {
+          "name": "Kasparas Jakucionis",
+          "min": 17.2,
+          "claude": {
+            "pts": 7.47,
+            "reb": 2.4,
+            "ast": 2.84,
+            "tpm": 1
+          },
+          "nate": {
+            "pts": 8,
+            "reb": 2,
+            "ast": 3
+          }
+        }
+      }
+    },
+    "20": {
+      "score": 120.06,
+      "players": {
+        "1966": {
+          "name": "LeBron James",
+          "min": 30.3,
+          "claude": {
+            "pts": 15.63,
+            "reb": 7.11,
+            "ast": 6.23,
+            "tpm": 0.92
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 5,
+            "ast": 5
+          }
+        },
+        "2581018": {
+          "name": "Kentavious Caldwell-Pope",
+          "min": 28.3,
+          "claude": {
+            "pts": 8.17,
+            "reb": 4.13,
+            "ast": 2.46,
+            "tpm": 1.61
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 1
+          }
+        },
+        "3059318": {
+          "name": "Joel Embiid",
+          "min": 31.7,
+          "claude": {
+            "pts": 21.53,
+            "reb": 9.43,
+            "ast": 3.68,
+            "tpm": 0.77
+          },
+          "nate": {
+            "pts": 16,
+            "reb": 6,
+            "ast": 3
+          }
+        },
+        "4351851": {
+          "name": "Anfernee Simons",
+          "min": 28.6,
+          "claude": {
+            "pts": 14.19,
+            "reb": 3.1,
+            "ast": 1.94,
+            "tpm": 3.01
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "4431678": {
+          "name": "Tyrese Maxey",
+          "min": 38.6,
+          "claude": {
+            "pts": 27.57,
+            "reb": 4.28,
+            "ast": 6.13,
+            "tpm": 3
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "4432446": {
+          "name": "Jabari Walker",
+          "min": 14.4,
+          "claude": {
+            "pts": 5.76,
+            "reb": 4.89,
+            "ast": 0.67,
+            "tpm": 0.66
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "5124612": {
+          "name": "VJ Edgecombe",
+          "min": 38.5,
+          "claude": {
+            "pts": 15.5,
+            "reb": 8.2,
+            "ast": 4.3,
+            "tpm": 1.98
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 6,
+            "ast": 3
+          }
+        }
+      }
+    }
+  }
+}
