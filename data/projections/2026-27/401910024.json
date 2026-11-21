@@ -3,18 +3,18 @@
   "start": "2026-11-22T00:30Z",
   "homeId": "18",
   "awayId": "22",
-  "savedAt": "2026-11-21T14:13:31.093Z",
+  "savedAt": "2026-11-21T20:02:40.078Z",
   "teams": {
     "18": {
-      "score": 110.93,
+      "score": 109.58,
       "players": {
         "6585": {
           "name": "Andre Drummond",
           "min": 13.2,
           "claude": {
-            "pts": 4.03,
+            "pts": 3.99,
             "reb": 6.49,
-            "ast": 0.9,
+            "ast": 0.89,
             "tpm": 0.15
           },
           "nate": {
@@ -27,9 +27,9 @@
           "name": "Josh Hart",
           "min": 23.2,
           "claude": {
-            "pts": 6.75,
+            "pts": 6.66,
             "reb": 5.16,
-            "ast": 2.85,
+            "ast": 2.82,
             "tpm": 1.02
           },
           "nate": {
@@ -42,9 +42,9 @@
           "name": "Karl-Anthony Towns",
           "min": 31.6,
           "claude": {
-            "pts": 20.48,
+            "pts": 20.23,
             "reb": 12.98,
-            "ast": 3.4,
+            "ast": 3.36,
             "tpm": 1.64
           },
           "nate": {
@@ -57,9 +57,9 @@
           "name": "Mikal Bridges",
           "min": 27.3,
           "claude": {
-            "pts": 9.29,
+            "pts": 9.18,
             "reb": 3.51,
-            "ast": 2.45,
+            "ast": 2.42,
             "tpm": 1.11
           },
           "nate": {
@@ -72,9 +72,9 @@
           "name": "Landry Shamet",
           "min": 24.4,
           "claude": {
-            "pts": 9.79,
+            "pts": 9.67,
             "reb": 1.67,
-            "ast": 1.54,
+            "ast": 1.52,
             "tpm": 1.88
           },
           "nate": {
@@ -87,9 +87,9 @@
           "name": "Jalen Brunson",
           "min": 32.7,
           "claude": {
-            "pts": 25.05,
+            "pts": 24.74,
             "reb": 2.82,
-            "ast": 5.56,
+            "ast": 5.49,
             "tpm": 2.43
           },
           "nate": {
@@ -102,9 +102,9 @@
           "name": "OG Anunoby",
           "min": 32.8,
           "claude": {
-            "pts": 15.93,
+            "pts": 15.73,
             "reb": 5.17,
-            "ast": 1.9,
+            "ast": 1.88,
             "tpm": 1.83
           },
           "nate": {
@@ -117,9 +117,9 @@
           "name": "Miles McBride",
           "min": 15.4,
           "claude": {
-            "pts": 6.57,
+            "pts": 6.49,
             "reb": 1.24,
-            "ast": 1.11,
+            "ast": 1.09,
             "tpm": 1.47
           },
           "nate": {
@@ -132,9 +132,9 @@
           "name": "Tyler Kolek",
           "min": 11.4,
           "claude": {
-            "pts": 3.67,
+            "pts": 3.62,
             "reb": 1.61,
-            "ast": 3.08,
+            "ast": 3.05,
             "tpm": 0.52
           },
           "nate": {
@@ -146,15 +146,15 @@
       }
     },
     "22": {
-      "score": 105.76,
+      "score": 106.21,
       "players": {
         "3995": {
           "name": "Jrue Holiday",
           "min": 27.5,
           "claude": {
-            "pts": 12.99,
+            "pts": 13.05,
             "reb": 3.3,
-            "ast": 4.4,
+            "ast": 4.41,
             "tpm": 2.34
           },
           "nate": {
@@ -167,9 +167,9 @@
           "name": "Damian Lillard",
           "min": 29.3,
           "claude": {
-            "pts": 17.78,
+            "pts": 17.86,
             "reb": 2.97,
-            "ast": 3.59,
+            "ast": 3.6,
             "tpm": 2.86
           },
           "nate": {
@@ -182,9 +182,9 @@
           "name": "Robert Williams III",
           "min": 13.7,
           "claude": {
-            "pts": 4.83,
+            "pts": 4.85,
             "reb": 4.83,
-            "ast": 0.84,
+            "ast": 0.85,
             "tpm": 0.08
           },
           "nate": {
@@ -197,9 +197,9 @@
           "name": "Toumani Camara",
           "min": 31.5,
           "claude": {
-            "pts": 11.74,
+            "pts": 11.79,
             "reb": 3.59,
-            "ast": 1.65,
+            "ast": 1.66,
             "tpm": 2.57
           },
           "nate": {
@@ -212,7 +212,7 @@
           "name": "Branden Carlson",
           "min": 8.5,
           "claude": {
-            "pts": 3.25,
+            "pts": 3.27,
             "reb": 1.9,
             "ast": 0.4,
             "tpm": 0.38
@@ -227,9 +227,9 @@
           "name": "Deni Avdija",
           "min": 28.8,
           "claude": {
-            "pts": 18.94,
+            "pts": 19.02,
             "reb": 4.91,
-            "ast": 5.03,
+            "ast": 5.05,
             "tpm": 1.66
           },
           "nate": {
@@ -242,7 +242,7 @@
           "name": "Scoot Henderson",
           "min": 24.5,
           "claude": {
-            "pts": 10.52,
+            "pts": 10.57,
             "reb": 2.09,
             "ast": 2.12,
             "tpm": 1.36
@@ -257,7 +257,7 @@
           "name": "Jayson Kent",
           "min": 8.5,
           "claude": {
-            "pts": 3.08,
+            "pts": 3.09,
             "reb": 1.36,
             "ast": 0.08,
             "tpm": 0.39
@@ -272,9 +272,9 @@
           "name": "Sidy Cissoko",
           "min": 25.3,
           "claude": {
-            "pts": 6.82,
+            "pts": 6.85,
             "reb": 3.1,
-            "ast": 1.86,
+            "ast": 1.87,
             "tpm": 1.19
           },
           "nate": {
@@ -287,9 +287,9 @@
           "name": "Donovan Clingan",
           "min": 25.7,
           "claude": {
-            "pts": 9.8,
+            "pts": 9.84,
             "reb": 9.4,
-            "ast": 1.7,
+            "ast": 1.71,
             "tpm": 0.87
           },
           "nate": {

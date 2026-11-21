@@ -2,1304 +2,6 @@
   "usDate": "2026-11-21",
   "games": [
     {
-      "id": "401910023",
-      "start": "2026-11-21T18:00Z",
-      "homeId": "20",
-      "awayId": "15",
-      "note": "",
-      "claude": {
-        "line": {
-          "spread": -11.5,
-          "overUnder": 228.5
-        },
-        "positionRates": {
-          "PG": {
-            "pts": 0.5418,
-            "reb": 0.13073,
-            "ast": 0.16936,
-            "tpm": 0.06518
-          },
-          "SG": {
-            "pts": 0.40029,
-            "reb": 0.12912,
-            "ast": 0.07836,
-            "tpm": 0.06752
-          },
-          "SF": {
-            "pts": 0.44645,
-            "reb": 0.1532,
-            "ast": 0.08224,
-            "tpm": 0.06091
-          },
-          "PF": {
-            "pts": 0.48711,
-            "reb": 0.24702,
-            "ast": 0.09683,
-            "tpm": 0.0453
-          },
-          "C": {
-            "pts": 0.44065,
-            "reb": 0.30293,
-            "ast": 0.08876,
-            "tpm": 0.02522
-          }
-        },
-        "scoring": {
-          "poss": 101.53519297618581,
-          "lgRtg": 112.0920062573525,
-          "homeEdge": 1.2,
-          "base": {
-            "home": {
-              "ortg": 112.8910838215878,
-              "drtg": 110.95343489059285
-            },
-            "away": {
-              "ortg": 108.09374496477089,
-              "drtg": 116.55678356358605
-            }
-          }
-        },
-        "home": {
-          "teamId": "20",
-          "score": 120.05580289634467,
-          "model": 120.5580289634468,
-          "market": 120,
-          "players": [
-            {
-              "id": "4431678",
-              "name": "Tyrese Maxey",
-              "status": "Day-To-Day",
-              "role": null,
-              "starter": true,
-              "min": 38.60478485466654,
-              "pts": 27.572447087893835,
-              "reb": 4.277888215962317,
-              "ast": 6.12693440704661,
-              "tpm": 2.998511416618584
-            },
-            {
-              "id": "3059318",
-              "name": "Joel Embiid",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 31.712372822612952,
-              "pts": 21.531571892779972,
-              "reb": 9.43072260788818,
-              "ast": 3.6814515619327466,
-              "tpm": 0.7717318240387254
-            },
-            {
-              "id": "1966",
-              "name": "LeBron James",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 30.273118630902303,
-              "pts": 15.632396761387765,
-              "reb": 7.1102633477507755,
-              "ast": 6.233387660898361,
-              "tpm": 0.9214926782510195
-            },
-            {
-              "id": "5124612",
-              "name": "VJ Edgecombe",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 38.456219268075074,
-              "pts": 15.50437949953017,
-              "reb": 8.20297491717269,
-              "ast": 4.2961939886895575,
-              "tpm": 1.984224945191611
-            },
-            {
-              "id": "4351851",
-              "name": "Anfernee Simons",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 28.64075855667671,
-              "pts": 14.190064585767171,
-              "reb": 3.0973431334271675,
-              "ast": 1.9396238257018006,
-              "tpm": 3.0128674357822143
-            },
-            {
-              "id": "2581018",
-              "name": "Kentavious Caldwell-Pope",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 28.28136879098065,
-              "pts": 8.16649920857725,
-              "reb": 4.131233871740569,
-              "ast": 2.46461977288629,
-              "tpm": 1.6130913130056224
-            },
-            {
-              "id": "4432446",
-              "name": "Jabari Walker",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 14.379227713318267,
-              "pts": 5.760904304141879,
-              "reb": 4.8917540349309885,
-              "ast": 0.6705722993972987,
-              "tpm": 0.6570466255928241
-            }
-          ],
-          "out": [
-            {
-              "id": "3912848",
-              "name": "Dean Wade",
-              "status": "Out"
-            },
-            {
-              "id": "3917376",
-              "name": "Jaylen Brown",
-              "status": "Out"
-            },
-            {
-              "id": "5105637",
-              "name": "Adem Bona",
-              "status": "Out"
-            }
-          ],
-          "inputs": {
-            "teamGames": 16,
-            "candidates": [
-              {
-                "id": "1966",
-                "name": "LeBron James",
-                "pos": "SF",
-                "status": "",
-                "starter": true,
-                "gp": 12,
-                "wMin": 70.404,
-                "w": 2.229,
-                "startMin": 70.404,
-                "startW": 2.229,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 70.404,
-                "roleW": 2.229,
-                "priorMin": 33.2,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.53294,
-                  "reb": 0.20161,
-                  "ast": 0.21286,
-                  "tpm": 0.03027
-                },
-                "rating": {
-                  "off": -1.07,
-                  "def": 0.78
-                }
-              },
-              {
-                "id": "3059318",
-                "name": "Joel Embiid",
-                "pos": "C",
-                "status": "",
-                "starter": true,
-                "gp": 13,
-                "wMin": 89.861,
-                "w": 2.778,
-                "startMin": 89.861,
-                "startW": 2.778,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 89.861,
-                "roleW": 2.778,
-                "priorMin": 31.6,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.70074,
-                  "reb": 0.25527,
-                  "ast": 0.12001,
-                  "tpm": 0.0242
-                },
-                "rating": {
-                  "off": 1.4,
-                  "def": -1.32
-                }
-              },
-              {
-                "id": "2581018",
-                "name": "Kentavious Caldwell-Pope",
-                "pos": "SG",
-                "status": "",
-                "starter": true,
-                "gp": 16,
-                "wMin": 88.319,
-                "w": 3.322,
-                "startMin": 32.429,
-                "startW": 1.014,
-                "benchMin": 55.89,
-                "benchW": 2.308,
-                "roleMin": 32.429,
-                "roleW": 1.014,
-                "priorMin": 21.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.29802,
-                  "reb": 0.12539,
-                  "ast": 0.09009,
-                  "tpm": 0.05672
-                },
-                "rating": {
-                  "off": 0.5,
-                  "def": -1.46
-                }
-              },
-              {
-                "id": "4351851",
-                "name": "Anfernee Simons",
-                "pos": "SG",
-                "status": "",
-                "starter": true,
-                "gp": 16,
-                "wMin": 86.112,
-                "w": 3.322,
-                "startMin": 38,
-                "startW": 1,
-                "benchMin": 48.112,
-                "benchW": 2.322,
-                "roleMin": 38,
-                "roleW": 1,
-                "priorMin": 24.9,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.51134,
-                  "reb": 0.09283,
-                  "ast": 0.07001,
-                  "tpm": 0.10461
-                },
-                "rating": {
-                  "off": -1.54,
-                  "def": 1.07
-                }
-              },
-              {
-                "id": "5124612",
-                "name": "VJ Edgecombe",
-                "pos": "SG",
-                "status": "",
-                "starter": true,
-                "gp": 15,
-                "wMin": 119.517,
-                "w": 3.308,
-                "startMin": 119.517,
-                "startW": 3.308,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 119.517,
-                "roleW": 3.308,
-                "priorMin": 35,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.4161,
-                  "reb": 0.1831,
-                  "ast": 0.11549,
-                  "tpm": 0.05131
-                },
-                "rating": {
-                  "off": 2.35,
-                  "def": -0.14
-                }
-              },
-              {
-                "id": "4432446",
-                "name": "Jabari Walker",
-                "pos": "PF",
-                "status": "",
-                "starter": false,
-                "gp": 12,
-                "wMin": 51.773,
-                "w": 3.178,
-                "startMin": 12.25,
-                "startW": 0.49,
-                "benchMin": 39.523,
-                "benchW": 2.688,
-                "roleMin": 39.523,
-                "roleW": 2.688,
-                "priorMin": 11.9,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.41349,
-                  "reb": 0.29202,
-                  "ast": 0.04821,
-                  "tpm": 0.04544
-                },
-                "rating": {
-                  "off": 0.59,
-                  "def": 1.86
-                }
-              },
-              {
-                "id": "4711297",
-                "name": "Justin Edwards",
-                "pos": "SF",
-                "status": "",
-                "starter": false,
-                "gp": 7,
-                "wMin": 15.46,
-                "w": 1.808,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 15.46,
-                "benchW": 1.808,
-                "roleMin": 15.46,
-                "roleW": 1.808,
-                "priorMin": 15.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.37306,
-                  "reb": 0.10746,
-                  "ast": 0.07421,
-                  "tpm": 0.06145
-                },
-                "rating": {
-                  "off": -3.89,
-                  "def": 4.53
-                }
-              },
-              {
-                "id": "3904625",
-                "name": "Tacko Fall",
-                "pos": "C",
-                "status": "",
-                "starter": false,
-                "gp": 5,
-                "wMin": 13.146,
-                "w": 2.651,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 13.146,
-                "benchW": 2.651,
-                "roleMin": 13.146,
-                "roleW": 2.651,
-                "priorMin": 0,
-                "kMin": 0,
-                "rate": {
-                  "pts": 0.38262,
-                  "reb": 0.22586,
-                  "ast": 0.08307,
-                  "tpm": 0.04219
-                },
-                "rating": {
-                  "off": 2.13,
-                  "def": 0.12
-                }
-              },
-              {
-                "id": "4433144",
-                "name": "Caleb Love",
-                "pos": "SG",
-                "status": "",
-                "starter": false,
-                "gp": 3,
-                "wMin": 6.353,
-                "w": 1.353,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 6.353,
-                "benchW": 1.353,
-                "roleMin": 6.353,
-                "roleW": 1.353,
-                "priorMin": 20.7,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.49751,
-                  "reb": 0.11165,
-                  "ast": 0.12094,
-                  "tpm": 0.09306
-                },
-                "rating": {
-                  "off": 0.86,
-                  "def": 0.12
-                }
-              },
-              {
-                "id": "4873090",
-                "name": "Labaron Philon Jr.",
-                "pos": "SG",
-                "status": "",
-                "starter": false,
-                "gp": 11,
-                "wMin": 23.444,
-                "w": 3.041,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 23.444,
-                "benchW": 3.041,
-                "roleMin": 23.444,
-                "roleW": 3.041,
-                "priorMin": 0,
-                "kMin": 0,
-                "rate": {
-                  "pts": 0.4479,
-                  "reb": 0.15264,
-                  "ast": 0.10433,
-                  "tpm": 0.0641
-                },
-                "rating": {
-                  "off": -4.22,
-                  "def": -3.03
-                }
-              },
-              {
-                "id": "3912848",
-                "name": "Dean Wade",
-                "pos": "SF",
-                "status": "Out",
-                "starter": true,
-                "gp": 13,
-                "wMin": 68.461,
-                "w": 2.311,
-                "startMin": 36.819,
-                "startW": 1.135,
-                "benchMin": 31.642,
-                "benchW": 1.176,
-                "roleMin": 36.819,
-                "roleW": 1.135,
-                "priorMin": 22.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.21027,
-                  "reb": 0.17855,
-                  "ast": 0.06664,
-                  "tpm": 0.04344
-                },
-                "rating": {
-                  "off": 2.53,
-                  "def": 2.59
-                }
-              },
-              {
-                "id": "3917376",
-                "name": "Jaylen Brown",
-                "pos": "PG",
-                "status": "Out",
-                "starter": true,
-                "gp": 14,
-                "wMin": 75.725,
-                "w": 2.294,
-                "startMin": 75.725,
-                "startW": 2.294,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 75.725,
-                "roleW": 2.294,
-                "priorMin": 34.4,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.70388,
-                  "reb": 0.19405,
-                  "ast": 0.11611,
-                  "tpm": 0.05631
-                },
-                "rating": {
-                  "off": -0.48,
-                  "def": -1.2
-                }
-              },
-              {
-                "id": "4431678",
-                "name": "Tyrese Maxey",
-                "pos": "PG",
-                "status": "Day-To-Day",
-                "starter": true,
-                "gp": 15,
-                "wMin": 81.612,
-                "w": 2.322,
-                "startMin": 81.612,
-                "startW": 2.322,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 81.612,
-                "roleW": 2.322,
-                "priorMin": 38,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.73713,
-                  "reb": 0.09512,
-                  "ast": 0.16407,
-                  "tpm": 0.07724
-                },
-                "rating": {
-                  "off": 0.49,
-                  "def": -0.16
-                }
-              },
-              {
-                "id": "5099752",
-                "name": "Rayan Rupert",
-                "pos": "SG",
-                "status": "",
-                "starter": false,
-                "gp": 3,
-                "wMin": 1.556,
-                "w": 0.998,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 1.556,
-                "benchW": 0.998,
-                "roleMin": 1.556,
-                "roleW": 0.998,
-                "priorMin": 16.8,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.30723,
-                  "reb": 0.1804,
-                  "ast": 0.06777,
-                  "tpm": 0.04006
-                },
-                "rating": {
-                  "off": -0.23,
-                  "def": -0.48
-                }
-              },
-              {
-                "id": "5105637",
-                "name": "Adem Bona",
-                "pos": "C",
-                "status": "Out",
-                "starter": false,
-                "gp": 9,
-                "wMin": 3.99,
-                "w": 0.263,
-                "startMin": 0.888,
-                "startW": 0.04,
-                "benchMin": 3.102,
-                "benchW": 0.223,
-                "roleMin": 3.102,
-                "roleW": 0.223,
-                "priorMin": 17.4,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.22614,
-                  "reb": 0.25739,
-                  "ast": 0.03886,
-                  "tpm": 0
-                },
-                "rating": {
-                  "off": -6.92,
-                  "def": -1.06
-                }
-              }
-            ],
-            "expected": {
-              "pts": 120.05580289634467,
-              "reb": 46.126275811776544,
-              "ast": 28.028854843315653,
-              "tpm": 13.841580283349227
-            },
-            "spread": 11.646028437902785,
-            "backToBack": false,
-            "oppMatchup": {
-              "PG": {
-                "pts": 1.038,
-                "reb": 1.033,
-                "ast": 1.07,
-                "tpm": 1.058
-              },
-              "SG": {
-                "pts": 1.034,
-                "reb": 1.074,
-                "ast": 0.945,
-                "tpm": 1.123
-              },
-              "SF": {
-                "pts": 1.052,
-                "reb": 1.015,
-                "ast": 1.121,
-                "tpm": 1.114
-              },
-              "PF": {
-                "pts": 1.02,
-                "reb": 1.075,
-                "ast": 0.95,
-                "tpm": 1.08
-              },
-              "C": {
-                "pts": 1.081,
-                "reb": 1.072,
-                "ast": 1.019,
-                "tpm": 0.998
-              }
-            }
-          }
-        },
-        "away": {
-          "teamId": "15",
-          "score": 108.40977445844189,
-          "model": 107.5977445844189,
-          "market": 108.5,
-          "players": [
-            {
-              "id": "4395725",
-              "name": "Tyler Herro",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 24.68373145817975,
-              "pts": 15.961320356069045,
-              "reb": 3.4657940584187825,
-              "ast": 3.3857145367618906,
-              "tpm": 1.9382670017231802
-            },
-            {
-              "id": "4432848",
-              "name": "Jaime Jaquez Jr.",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 22.959824518956136,
-              "pts": 12.56217777885372,
-              "reb": 4.270164218609049,
-              "ast": 2.9684094054364873,
-              "tpm": 1.196808853140874
-            },
-            {
-              "id": "3134907",
-              "name": "Kyle Kuzma",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 22.921486364710788,
-              "pts": 10.66944184598949,
-              "reb": 4.315024964871305,
-              "ast": 2.1642255748449997,
-              "tpm": 1.199499304420798
-            },
-            {
-              "id": "5082206",
-              "name": "Brayden Burries",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 23.006199878136417,
-              "pts": 10.613173092022071,
-              "reb": 5.292534656075108,
-              "ast": 2.4158598378752387,
-              "tpm": 1.0864912590561215
-            },
-            {
-              "id": "4591725",
-              "name": "Ryan Rollins",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 20.985758296852307,
-              "pts": 10.241939331213505,
-              "reb": 3.8909603624775215,
-              "ast": 3.6767204231355586,
-              "tpm": 1.38094695719007
-            },
-            {
-              "id": "5105623",
-              "name": "Kel'el Ware",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 18.808710834796706,
-              "pts": 9.134605138605675,
-              "reb": 7.022790917599934,
-              "ast": 0.7392288332574025,
-              "tpm": 0.8027399008099665
-            },
-            {
-              "id": "5164559",
-              "name": "Nate Ament",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 19.30168215457616,
-              "pts": 8.418808293201304,
-              "reb": 3.30377490367866,
-              "ast": 0.8809340654935588,
-              "tpm": 1.0186868072655038
-            },
-            {
-              "id": "5214640",
-              "name": "Kasparas Jakucionis",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 17.218598502796823,
-              "pts": 7.46539985795671,
-              "reb": 2.3957583158590694,
-              "ast": 2.8355865301949525,
-              "tpm": 1.0020880571249857
-            },
-            {
-              "id": "3133628",
-              "name": "Myles Turner",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 20.71650874555369,
-              "pts": 6.797600349244907,
-              "reb": 4.4613023816266395,
-              "ast": 1.7991482339014397,
-              "tpm": 1.129956595817266
-            },
-            {
-              "id": "4397475",
-              "name": "AJ Green",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 14.270448998384767,
-              "pts": 5.133611765930187,
-              "reb": 1.2464052314664364,
-              "ast": 1.040820120580571,
-              "tpm": 1.390068694505926
-            },
-            {
-              "id": "4277843",
-              "name": "Gary Trent Jr.",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 9.494897739902944,
-              "pts": 3.6788854836734894,
-              "reb": 0.5059651825234784,
-              "ast": 0.4385407045179386,
-              "tpm": 0.8140881798166842
-            },
-            {
-              "id": "4397233",
-              "name": "Pete Nance",
-              "status": "",
-              "role": null,
-              "starter": true,
-              "min": 8.137457851738219,
-              "pts": 2.7567970590142297,
-              "reb": 1.357656590146544,
-              "ast": 0.5944145409144417,
-              "tpm": 0.48962466479053113
-            },
-            {
-              "id": "4277922",
-              "name": "Jericho Sims",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 10.29364519160045,
-              "pts": 2.0656008156879064,
-              "reb": 2.422513771897279,
-              "ast": 0.7096053253508157,
-              "tpm": 0
-            }
-          ],
-          "out": [
-            {
-              "id": "4997526",
-              "name": "Ousmane Dieng",
-              "status": "Out"
-            }
-          ],
-          "inputs": {
-            "teamGames": 16,
-            "candidates": [
-              {
-                "id": "4397233",
-                "name": "Pete Nance",
-                "pos": "SF",
-                "status": "",
-                "starter": true,
-                "gp": 2,
-                "wMin": 28.96,
-                "w": 1.24,
-                "startMin": 28,
-                "startW": 1,
-                "benchMin": 0.96,
-                "benchW": 0.24,
-                "roleMin": 28,
-                "roleW": 1,
-                "priorMin": 15.7,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.33961,
-                  "reb": 0.1655,
-                  "ast": 0.07215,
-                  "tpm": 0.06471
-                },
-                "rating": {
-                  "off": 10.77,
-                  "def": 0.08
-                }
-              },
-              {
-                "id": "5164559",
-                "name": "Nate Ament",
-                "pos": "SF",
-                "status": "",
-                "starter": true,
-                "gp": 14,
-                "wMin": 78.29,
-                "w": 3.311,
-                "startMin": 40.282,
-                "startW": 1.24,
-                "benchMin": 38.008,
-                "benchW": 2.071,
-                "roleMin": 40.282,
-                "roleW": 1.24,
-                "priorMin": 0,
-                "kMin": 0,
-                "rate": {
-                  "pts": 0.43724,
-                  "reb": 0.16979,
-                  "ast": 0.04508,
-                  "tpm": 0.05676
-                },
-                "rating": {
-                  "off": 2.12,
-                  "def": 3.31
-                }
-              },
-              {
-                "id": "5105623",
-                "name": "Kel'el Ware",
-                "pos": "C",
-                "status": "",
-                "starter": true,
-                "gp": 16,
-                "wMin": 69.825,
-                "w": 3.322,
-                "startMin": 31.522,
-                "startW": 1.24,
-                "benchMin": 38.302,
-                "benchW": 2.082,
-                "roleMin": 31.522,
-                "roleW": 1.24,
-                "priorMin": 22.1,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.48685,
-                  "reb": 0.37038,
-                  "ast": 0.03882,
-                  "tpm": 0.0459
-                },
-                "rating": {
-                  "off": -2.48,
-                  "def": -0.45
-                }
-              },
-              {
-                "id": "4395725",
-                "name": "Tyler Herro",
-                "pos": "PG",
-                "status": "",
-                "starter": true,
-                "gp": 15,
-                "wMin": 89.287,
-                "w": 3.154,
-                "startMin": 89.287,
-                "startW": 3.154,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 89.287,
-                "roleW": 3.154,
-                "priorMin": 31.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.64822,
-                  "reb": 0.13928,
-                  "ast": 0.13548,
-                  "tpm": 0.08445
-                },
-                "rating": {
-                  "off": -0.01,
-                  "def": 1.17
-                }
-              },
-              {
-                "id": "5082206",
-                "name": "Brayden Burries",
-                "pos": "SG",
-                "status": "",
-                "starter": true,
-                "gp": 16,
-                "wMin": 86.424,
-                "w": 3.322,
-                "startMin": 84.978,
-                "startW": 3.239,
-                "benchMin": 1.446,
-                "benchW": 0.083,
-                "roleMin": 84.978,
-                "roleW": 3.239,
-                "priorMin": 0,
-                "kMin": 0,
-                "rate": {
-                  "pts": 0.46245,
-                  "reb": 0.2282,
-                  "ast": 0.10372,
-                  "tpm": 0.05079
-                },
-                "rating": {
-                  "off": -4.63,
-                  "def": -0.64
-                }
-              },
-              {
-                "id": "4432848",
-                "name": "Jaime Jaquez Jr.",
-                "pos": "SF",
-                "status": "",
-                "starter": false,
-                "gp": 16,
-                "wMin": 83.913,
-                "w": 3.322,
-                "startMin": 14.306,
-                "startW": 0.549,
-                "benchMin": 69.607,
-                "benchW": 2.773,
-                "roleMin": 69.607,
-                "roleW": 2.773,
-                "priorMin": 28.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.54848,
-                  "reb": 0.18449,
-                  "ast": 0.1277,
-                  "tpm": 0.05606
-                },
-                "rating": {
-                  "off": 3.88,
-                  "def": 1.94
-                }
-              },
-              {
-                "id": "4277922",
-                "name": "Jericho Sims",
-                "pos": "C",
-                "status": "",
-                "starter": false,
-                "gp": 11,
-                "wMin": 36.808,
-                "w": 2.921,
-                "startMin": 17.99,
-                "startW": 1.19,
-                "benchMin": 18.818,
-                "benchW": 1.731,
-                "roleMin": 18.818,
-                "roleW": 1.731,
-                "priorMin": 19.7,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.20116,
-                  "reb": 0.23345,
-                  "ast": 0.06809,
-                  "tpm": 0
-                },
-                "rating": {
-                  "off": -3.05,
-                  "def": -7.8
-                }
-              },
-              {
-                "id": "2991043",
-                "name": "Caris LeVert",
-                "pos": "PG",
-                "status": "",
-                "starter": false,
-                "gp": 2,
-                "wMin": 16.6,
-                "w": 1.7,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 16.6,
-                "benchW": 1.7,
-                "roleMin": 16.6,
-                "roleW": 1.7,
-                "priorMin": 19.2,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.40221,
-                  "reb": 0.12253,
-                  "ast": 0.14212,
-                  "tpm": 0.05213
-                },
-                "rating": {
-                  "off": 7.69,
-                  "def": -4.02
-                }
-              },
-              {
-                "id": "4277843",
-                "name": "Gary Trent Jr.",
-                "pos": "SG",
-                "status": "",
-                "starter": false,
-                "gp": 8,
-                "wMin": 40.665,
-                "w": 2.989,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 40.665,
-                "benchW": 2.989,
-                "roleMin": 40.665,
-                "roleW": 2.989,
-                "priorMin": 21.2,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.38841,
-                  "reb": 0.05286,
-                  "ast": 0.04562,
-                  "tpm": 0.09221
-                },
-                "rating": {
-                  "off": -1.87,
-                  "def": 1.85
-                }
-              },
-              {
-                "id": "4591725",
-                "name": "Ryan Rollins",
-                "pos": "PG",
-                "status": "",
-                "starter": false,
-                "gp": 14,
-                "wMin": 48.419,
-                "w": 2.132,
-                "startMin": 6.134,
-                "startW": 0.251,
-                "benchMin": 42.285,
-                "benchW": 1.881,
-                "roleMin": 42.285,
-                "roleW": 1.881,
-                "priorMin": 32.1,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.48924,
-                  "reb": 0.18392,
-                  "ast": 0.17305,
-                  "tpm": 0.07077
-                },
-                "rating": {
-                  "off": 0.93,
-                  "def": -4.59
-                }
-              },
-              {
-                "id": "5214640",
-                "name": "Kasparas Jakucionis",
-                "pos": "PG",
-                "status": "",
-                "starter": false,
-                "gp": 15,
-                "wMin": 62.774,
-                "w": 2.979,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 62.774,
-                "benchW": 2.979,
-                "roleMin": 62.774,
-                "roleW": 2.979,
-                "priorMin": 17.8,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.43463,
-                  "reb": 0.13802,
-                  "ast": 0.16266,
-                  "tpm": 0.06259
-                },
-                "rating": {
-                  "off": 2.37,
-                  "def": 4.64
-                }
-              },
-              {
-                "id": "3134907",
-                "name": "Kyle Kuzma",
-                "pos": "SF",
-                "status": "",
-                "starter": true,
-                "gp": 15,
-                "wMin": 63.35,
-                "w": 2.322,
-                "startMin": 63.35,
-                "startW": 2.322,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 63.35,
-                "roleW": 2.322,
-                "priorMin": 26.2,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.46662,
-                  "reb": 0.18674,
-                  "ast": 0.09326,
-                  "tpm": 0.05628
-                },
-                "rating": {
-                  "off": -0.04,
-                  "def": 0.66
-                }
-              },
-              {
-                "id": "3133628",
-                "name": "Myles Turner",
-                "pos": "C",
-                "status": "",
-                "starter": true,
-                "gp": 14,
-                "wMin": 51.317,
-                "w": 2.082,
-                "startMin": 51.317,
-                "startW": 2.082,
-                "benchMin": 0,
-                "benchW": 0,
-                "roleMin": 51.317,
-                "roleW": 2.082,
-                "priorMin": 26.9,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.32893,
-                  "reb": 0.21362,
-                  "ast": 0.08578,
-                  "tpm": 0.05866
-                },
-                "rating": {
-                  "off": -1.51,
-                  "def": -0.48
-                }
-              },
-              {
-                "id": "4397475",
-                "name": "AJ Green",
-                "pos": "SG",
-                "status": "",
-                "starter": false,
-                "gp": 15,
-                "wMin": 26.652,
-                "w": 2.322,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 26.652,
-                "benchW": 2.322,
-                "roleMin": 26.652,
-                "roleW": 2.322,
-                "priorMin": 29.1,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.36062,
-                  "reb": 0.08664,
-                  "ast": 0.07204,
-                  "tpm": 0.10476
-                },
-                "rating": {
-                  "off": -3.79,
-                  "def": -2.87
-                }
-              },
-              {
-                "id": "4997526",
-                "name": "Ousmane Dieng",
-                "pos": "SF",
-                "status": "Out",
-                "starter": true,
-                "gp": 10,
-                "wMin": 12.627,
-                "w": 1,
-                "startMin": 1.715,
-                "startW": 0.343,
-                "benchMin": 10.912,
-                "benchW": 0.657,
-                "roleMin": 1.715,
-                "roleW": 0.343,
-                "priorMin": 19.3,
-                "kMin": 1,
-                "rate": {
-                  "pts": 0.36457,
-                  "reb": 0.13982,
-                  "ast": 0.10796,
-                  "tpm": 0.05696
-                },
-                "rating": {
-                  "off": -3.4,
-                  "def": -0.99
-                }
-              },
-              {
-                "id": "5214989",
-                "name": "Bogoljub Markovic",
-                "pos": "PF",
-                "status": "",
-                "starter": false,
-                "gp": 3,
-                "wMin": 1.732,
-                "w": 0.428,
-                "startMin": 0,
-                "startW": 0,
-                "benchMin": 1.732,
-                "benchW": 0.428,
-                "roleMin": 1.732,
-                "roleW": 0.428,
-                "priorMin": 0,
-                "kMin": 0,
-                "rate": {
-                  "pts": 0.41407,
-                  "reb": 0.18963,
-                  "ast": 0.10359,
-                  "tpm": 0.04566
-                },
-                "rating": {
-                  "off": 4.02,
-                  "def": 5.14
-                }
-              }
-            ],
-            "expected": {
-              "pts": 108.40977445844189,
-              "reb": 44.961170972960694,
-              "ast": 24.615541966716318,
-              "tpm": 13.787551035315046
-            },
-            "spread": 11.646028437902785,
-            "backToBack": false,
-            "oppMatchup": {
-              "PG": {
-                "pts": 0.947,
-                "reb": 1.168,
-                "ast": 1.048,
-                "tpm": 0.922
-              },
-              "SG": {
-                "pts": 0.938,
-                "reb": 0.988,
-                "ast": 0.893,
-                "tpm": 0.853
-              },
-              "SF": {
-                "pts": 1.098,
-                "reb": 1.041,
-                "ast": 1.034,
-                "tpm": 1.14
-              },
-              "PF": {
-                "pts": 1.014,
-                "reb": 0.963,
-                "ast": 0.834,
-                "tpm": 0.918
-              },
-              "C": {
-                "pts": 0.995,
-                "reb": 0.973,
-                "ast": 1.054,
-                "tpm": 1.181
-              }
-            }
-          }
-        }
-      }
-    },
-    {
       "id": "401910024",
       "start": "2026-11-22T00:30Z",
       "homeId": "18",
@@ -1307,13 +9,13 @@
       "note": "",
       "claude": {
         "line": {
-          "spread": -5.5,
-          "overUnder": 216.5
+          "spread": -3.5,
+          "overUnder": 215.5
         },
         "positionRates": {
           "PG": {
             "pts": 0.5418,
-            "reb": 0.13073,
+            "reb": 0.13067,
             "ast": 0.16936,
             "tpm": 0.06518
           },
@@ -1337,7 +39,7 @@
           },
           "C": {
             "pts": 0.44065,
-            "reb": 0.30293,
+            "reb": 0.30299,
             "ast": 0.08876,
             "tpm": 0.02522
           }
@@ -1359,9 +61,9 @@
         },
         "home": {
           "teamId": "18",
-          "score": 110.93090342342384,
+          "score": 109.58090342342383,
           "model": 110.30903423423844,
-          "market": 111,
+          "market": 109.5,
           "players": [
             {
               "id": "3934672",
@@ -1370,21 +72,21 @@
               "role": null,
               "starter": true,
               "min": 32.67432001888245,
-              "pts": 25.048170040212682,
-              "reb": 2.8155018378235637,
-              "ast": 5.5619875106903045,
+              "pts": 24.74334038039088,
+              "reb": 2.8155450222844163,
+              "ast": 5.494299581468532,
               "tpm": 2.431154515386569
             },
             {
               "id": "3136195",
               "name": "Karl-Anthony Towns",
-              "status": "",
+              "status": "Day-To-Day",
               "role": null,
               "starter": true,
               "min": 31.551717555892335,
-              "pts": 20.478909622120778,
-              "reb": 12.979350962032706,
-              "ast": 3.400935365534946,
+              "pts": 20.229686663173652,
+              "reb": 12.97955004067154,
+              "ast": 3.3595468741246903,
               "tpm": 1.635335624044315
             },
             {
@@ -1394,9 +96,9 @@
               "role": null,
               "starter": true,
               "min": 32.828478700029535,
-              "pts": 15.927212827814888,
-              "reb": 5.1658070333276855,
-              "ast": 1.90112761248643,
+              "pts": 15.733382825047507,
+              "reb": 5.16588626701477,
+              "ast": 1.8779913880651766,
               "tpm": 1.8304128783513398
             },
             {
@@ -1406,9 +108,9 @@
               "role": null,
               "starter": false,
               "min": 24.405515340874167,
-              "pts": 9.794135866806307,
-              "reb": 1.6725848046307956,
-              "ast": 1.5404821817250305,
+              "pts": 9.674943802087247,
+              "reb": 1.6726104589109838,
+              "ast": 1.5217349176070165,
               "tpm": 1.8815571246759208
             },
             {
@@ -1418,9 +120,9 @@
               "role": null,
               "starter": true,
               "min": 27.31773645986232,
-              "pts": 9.293846809813928,
-              "reb": 3.5079378930270466,
-              "ast": 2.4454449953816626,
+              "pts": 9.180743131703979,
+              "reb": 3.5079916981443366,
+              "ast": 2.4156845711726933,
               "tpm": 1.111108838128439
             },
             {
@@ -1430,9 +132,9 @@
               "role": null,
               "starter": true,
               "min": 23.237973107034602,
-              "pts": 6.74582165823384,
-              "reb": 5.155163829922443,
-              "ast": 2.852281463739343,
+              "pts": 6.663726777929343,
+              "reb": 5.155242900362963,
+              "ast": 2.81756994641445,
               "tpm": 1.016068723102959
             },
             {
@@ -1442,9 +144,9 @@
               "role": null,
               "starter": false,
               "min": 15.4425659868628,
-              "pts": 6.571561295336523,
-              "reb": 1.241114269914129,
-              "ast": 1.1072971724317988,
+              "pts": 6.491587117943941,
+              "reb": 1.2411333062542522,
+              "ast": 1.0938216562622685,
               "tpm": 1.4675268159628452
             },
             {
@@ -1454,9 +156,9 @@
               "role": null,
               "starter": false,
               "min": 13.215446716212686,
-              "pts": 4.034636049480705,
-              "reb": 6.494451598974198,
-              "ast": 0.90112138491021,
+              "pts": 3.985535586952164,
+              "reb": 6.494551211550211,
+              "ast": 0.8901549739995789,
               "tpm": 0.15483788990359768
             },
             {
@@ -1466,9 +168,9 @@
               "role": null,
               "starter": false,
               "min": 11.354930725463026,
-              "pts": 3.668889492342263,
-              "reb": 1.6068626754388775,
-              "ast": 3.0842966830868703,
+              "pts": 3.624240069487061,
+              "reb": 1.6068873216661932,
+              "ast": 3.0467616013948544,
               "tpm": 0.5184227097798418
             }
           ],
@@ -1514,7 +216,7 @@
                 "id": "3136195",
                 "name": "Karl-Anthony Towns",
                 "pos": "C",
-                "status": "",
+                "status": "Day-To-Day",
                 "starter": true,
                 "gp": 15,
                 "wMin": 115.544,
@@ -1921,7 +623,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.45528,
-                  "reb": 0.17489,
+                  "reb": 0.17488,
                   "ast": 0.10585,
                   "tpm": 0.05376
                 },
@@ -1932,12 +634,12 @@
               }
             ],
             "expected": {
-              "pts": 110.93090342342384,
-              "reb": 44.9810385522396,
-              "ast": 25.41859152480116,
+              "pts": 109.58090342342383,
+              "reb": 44.9817232539725,
+              "ast": 25.109253932665077,
               "tpm": 13.298175499940577
             },
-            "spread": 5.173606703518971,
+            "spread": 3.373606703518959,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -1975,9 +677,9 @@
         },
         "away": {
           "teamId": "22",
-          "score": 105.75729671990487,
+          "score": 106.20729671990487,
           "model": 108.07296719904866,
-          "market": 105.5,
+          "market": 106,
           "players": [
             {
               "id": "4683021",
@@ -1986,9 +688,9 @@
               "role": null,
               "starter": true,
               "min": 28.753054366384347,
-              "pts": 18.938889331998556,
-              "reb": 4.912644055698411,
-              "ast": 5.02739731972274,
+              "pts": 19.019474790058922,
+              "reb": 4.912713770322406,
+              "ast": 5.048789023785176,
               "tpm": 1.6635677045660602
             },
             {
@@ -1998,9 +700,9 @@
               "role": null,
               "starter": true,
               "min": 29.31010171336555,
-              "pts": 17.77953049699376,
-              "reb": 2.974778103754274,
-              "ast": 3.5892311992552584,
+              "pts": 17.85518285358564,
+              "reb": 2.974820318401748,
+              "ast": 3.6045034697250933,
               "tpm": 2.8558472831546333
             },
             {
@@ -2010,9 +712,9 @@
               "role": null,
               "starter": false,
               "min": 27.458444150715177,
-              "pts": 12.993749618665909,
-              "reb": 3.3026826146531403,
-              "ast": 4.395683963884883,
+              "pts": 13.049038355327607,
+              "reb": 3.302729482546284,
+              "ast": 4.414387711475815,
               "tpm": 2.3404858828310036
             },
             {
@@ -2022,9 +724,9 @@
               "role": null,
               "starter": true,
               "min": 31.452615869876567,
-              "pts": 11.739391956915053,
-              "reb": 3.5876004332795484,
-              "ast": 1.648960627337034,
+              "pts": 11.789343369672917,
+              "reb": 3.587651344400407,
+              "ast": 1.6559769969428777,
               "tpm": 2.5723316852351323
             },
             {
@@ -2034,9 +736,9 @@
               "role": null,
               "starter": false,
               "min": 24.45235537917079,
-              "pts": 10.524437106622036,
-              "reb": 2.0901964197755545,
-              "ast": 2.1158246802182195,
+              "pts": 10.569218855445696,
+              "reb": 2.0902260814517986,
+              "ast": 2.124827568299029,
               "tpm": 1.3557751321160403
             },
             {
@@ -2046,9 +748,9 @@
               "role": null,
               "starter": true,
               "min": 25.714820174956007,
-              "pts": 9.79928067611821,
-              "reb": 9.395572389596962,
-              "ast": 1.7014502977501074,
+              "pts": 9.840976865799874,
+              "reb": 9.395705720811058,
+              "ast": 1.7086900122448472,
               "tpm": 0.8683969971632874
             },
             {
@@ -2058,9 +760,9 @@
               "role": null,
               "starter": true,
               "min": 25.33517787460127,
-              "pts": 6.81799994296179,
-              "reb": 3.0979537670555195,
-              "ast": 1.8591696238921567,
+              "pts": 6.847010706942063,
+              "reb": 3.097997729671084,
+              "ast": 1.8670804381498936,
               "tpm": 1.1855402432755724
             },
             {
@@ -2070,9 +772,9 @@
               "role": null,
               "starter": false,
               "min": 13.65424103414467,
-              "pts": 4.828570879754496,
-              "reb": 4.834263815206968,
-              "ast": 0.8429523831358996,
+              "pts": 4.849116572234177,
+              "reb": 4.834332417548263,
+              "ast": 0.846539167066429,
               "tpm": 0.0758476704364142
             },
             {
@@ -2082,9 +784,9 @@
               "role": null,
               "starter": false,
               "min": 8.528577534554174,
-              "pts": 3.254219974554964,
-              "reb": 1.9031188609567757,
-              "ast": 0.3979649104562633,
+              "pts": 3.2680667637030276,
+              "reb": 1.903145867842336,
+              "ast": 0.39965826131960497,
               "tpm": 0.3816426468828429
             },
             {
@@ -2094,9 +796,9 @@
               "role": null,
               "starter": true,
               "min": 8.473843500511403,
-              "pts": 3.0787541335586117,
-              "reb": 1.3558030984997964,
-              "ast": 0.08151285421563273,
+              "pts": 3.0918543110694903,
+              "reb": 1.3558223385062271,
+              "ast": 0.08185969349324954,
               "tpm": 0.3931079943086697
             }
           ],
@@ -2570,12 +1272,12 @@
               }
             ],
             "expected": {
-              "pts": 105.75729671990487,
-              "reb": 40.892553063024394,
-              "ast": 22.71083873988058,
+              "pts": 106.20729671990487,
+              "reb": 40.893133363353236,
+              "ast": 22.80747393905756,
               "tpm": 14.544909192765648
             },
-            "spread": 5.173606703518971,
+            "spread": 3.373606703518959,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -2621,13 +1323,13 @@
       "note": "",
       "claude": {
         "line": {
-          "spread": -5.5,
+          "spread": -4.5,
           "overUnder": 230.5
         },
         "positionRates": {
           "PG": {
             "pts": 0.5418,
-            "reb": 0.13073,
+            "reb": 0.13067,
             "ast": 0.16936,
             "tpm": 0.06518
           },
@@ -2651,7 +1353,7 @@
           },
           "C": {
             "pts": 0.44065,
-            "reb": 0.30293,
+            "reb": 0.30299,
             "ast": 0.08876,
             "tpm": 0.02522
           }
@@ -2673,9 +1375,9 @@
         },
         "home": {
           "teamId": "6",
-          "score": 117.92958074964277,
-          "model": 117.2958074964277,
-          "market": 118,
+          "score": 117.48336258166967,
+          "model": 117.33362581669664,
+          "market": 117.5,
           "players": [
             {
               "id": "5041939",
@@ -2683,11 +1385,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 29.339350933662075,
-              "pts": 21.327936061417024,
-              "reb": 5.717176620358403,
-              "ast": 5.563438204999776,
-              "tpm": 1.2222816103572256
+              "min": 30.016804085847397,
+              "pts": 21.668100903330103,
+              "reb": 5.864983271760802,
+              "ast": 5.658020009167727,
+              "tpm": 1.2468207359847385
             },
             {
               "id": "6442",
@@ -2695,11 +1397,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 25.66250868640086,
-              "pts": 18.510451571233265,
-              "reb": 3.242858478112168,
-              "ast": 3.8707252841293798,
-              "tpm": 2.784124556415438
+              "min": 26.255062606284575,
+              "pts": 18.805679614600244,
+              "reb": 3.3266963730120445,
+              "ast": 3.936529947958026,
+              "tpm": 2.8400200077366398
             },
             {
               "id": "4278078",
@@ -2707,11 +1409,11 @@
               "status": "Day-To-Day",
               "role": null,
               "starter": true,
-              "min": 25.3123180774114,
-              "pts": 12.023325393215162,
-              "reb": 5.457151065929371,
-              "ast": 1.3061977177869257,
-              "tpm": 1.7577959532190173
+              "min": 25.896786006147526,
+              "pts": 12.2150885610095,
+              "reb": 5.5982352546493415,
+              "ast": 1.3284038666100257,
+              "tpm": 1.793086327677787
             },
             {
               "id": "4278594",
@@ -2719,11 +1421,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 21.465942752415994,
-              "pts": 10.845017774543418,
-              "reb": 2.8251743479374074,
-              "ast": 3.314528263849901,
-              "tpm": 0.8457424242620136
+              "min": 21.961596886521903,
+              "pts": 11.017987805314267,
+              "reb": 2.8982138196426557,
+              "ast": 3.370877242954019,
+              "tpm": 0.862721964346411
             },
             {
               "id": "4278049",
@@ -2731,11 +1433,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 19.151707292872366,
-              "pts": 8.317792920361521,
-              "reb": 5.116166099636343,
-              "ast": 1.5253006771384667,
-              "tpm": 0.07900648576234315
+              "min": 19.593925135544573,
+              "pts": 8.450455579592713,
+              "reb": 5.248434775141825,
+              "ast": 1.5512317083868594,
+              "tpm": 0.08059265875478784
             },
             {
               "id": "4896372",
@@ -2743,11 +1445,11 @@
               "status": "Day-To-Day",
               "role": null,
               "starter": false,
-              "min": 19.30447513247628,
-              "pts": 7.898853399111911,
-              "reb": 2.558403962416369,
-              "ast": 4.139110450746203,
-              "tpm": 1.3201075582179127
+              "min": 19.750220423820622,
+              "pts": 8.024834282122159,
+              "reb": 2.624546596749692,
+              "ast": 4.2094778242401985,
+              "tpm": 1.3466106855974294
             },
             {
               "id": "5211175",
@@ -2755,11 +1457,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 19.276555449931504,
-              "pts": 7.745319045016989,
-              "reb": 3.585595873617955,
-              "ast": 1.0549056600150313,
-              "tpm": 1.0682735307001863
+              "min": 19.721656068631564,
+              "pts": 7.868851168375176,
+              "reb": 3.6782945874331845,
+              "ast": 1.072839692330073,
+              "tpm": 1.0897207145179455
             },
             {
               "id": "4873153",
@@ -2767,11 +1469,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 16.066803283211755,
-              "pts": 6.341057524507652,
-              "reb": 3.8471596781570674,
-              "ast": 1.4257162073847929,
-              "tpm": 0.30609465961741306
+              "min": 16.43778989959477,
+              "pts": 6.442192712843475,
+              "reb": 3.9466206231651078,
+              "ast": 1.4499542425991958,
+              "tpm": 0.3122399662657452
             },
             {
               "id": "4593125",
@@ -2779,11 +1481,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 9.524533175497202,
-              "pts": 5.010580656583054,
-              "reb": 2.2228631485124306,
-              "ast": 0.9172335905440547,
-              "tpm": 0.6389721392312346
+              "min": 9.744457093971864,
+              "pts": 5.0904957206582235,
+              "reb": 2.280331017764092,
+              "ast": 0.9328271146635709,
+              "tpm": 0.651800457569832
             },
             {
               "id": "3138160",
@@ -2791,11 +1493,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 17.434656850223643,
-              "pts": 4.993953030263038,
-              "reb": 2.7455875184094736,
-              "ast": 1.899145704898571,
-              "tpm": 0.7291325305280305
+              "min": 17.83722755695669,
+              "pts": 5.073602895968226,
+              "reb": 2.8165694250700524,
+              "ast": 1.9314323270427138,
+              "tpm": 0.7437709531420337
             },
             {
               "id": "4432582",
@@ -2803,11 +1505,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 12.857313066015582,
-              "pts": 4.802921060292244,
-              "reb": 1.6883721206575635,
-              "ast": 0.9699252787025057,
-              "tpm": 0.960923800635555
+              "min": 13.154191728563367,
+              "pts": 4.879524107042315,
+              "reb": 1.7320217480955058,
+              "ast": 0.9864145932931381,
+              "tpm": 0.9802157785745597
             },
             {
               "id": "4432107",
@@ -2815,14 +1517,19 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 8.619445132306849,
-              "pts": 3.511784501639357,
-              "reb": 0.6877422064209785,
-              "ast": 1.3146615334896046,
-              "tpm": 0.7311047652992604
+              "min": 8.818470335290124,
+              "pts": 3.5677948730317386,
+              "reb": 0.7055224639343117,
+              "ast": 1.337011572283224,
+              "tpm": 0.7457827834667008
             }
           ],
           "out": [
+            {
+              "id": "5106040",
+              "name": "Tobi Lawal",
+              "status": "Out"
+            },
             {
               "id": "5279129",
               "name": "Sergio de Larrea",
@@ -3200,7 +1907,7 @@
                 "id": "5106040",
                 "name": "Tobi Lawal",
                 "pos": "PF",
-                "status": "Day-To-Day",
+                "status": "Out",
                 "starter": false,
                 "gp": 8,
                 "wMin": 11.639,
@@ -3215,7 +1922,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.4044,
-                  "reb": 0.20457,
+                  "reb": 0.20456,
                   "ast": 0.09858,
                   "tpm": 0.04467
                 },
@@ -3271,7 +1978,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.46007,
-                  "reb": 0.17611,
+                  "reb": 0.1761,
                   "ast": 0.10806,
                   "tpm": 0.05919
                 },
@@ -3282,12 +1989,12 @@
               }
             ],
             "expected": {
-              "pts": 117.92958074964277,
-              "reb": 43.38286309387738,
-              "ast": 28.319006843447013,
+              "pts": 117.48336258166967,
+              "reb": 43.38346528155976,
+              "ast": 28.21185429298279,
               "tpm": 13.17290207822212
             },
-            "spread": 5.583480862883192,
+            "spread": 4.670509394248285,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -3325,9 +2032,9 @@
         },
         "away": {
           "teamId": "12",
-          "score": 112.34609988675957,
-          "model": 110.9609988675958,
-          "market": 112.5,
+          "score": 112.81285318742138,
+          "model": 111.12853187421376,
+          "market": 113,
           "players": [
             {
               "id": "4396907",
@@ -3336,9 +2043,9 @@
               "role": null,
               "starter": true,
               "min": 31.48803379434127,
-              "pts": 20.931692534724597,
-              "reb": 2.3912569647697732,
-              "ast": 7.1265644690840535,
+              "pts": 21.018655380687818,
+              "reb": 2.3912891208390623,
+              "ast": 7.156172506138095,
               "tpm": 2.394082970696248
             },
             {
@@ -3348,9 +2055,9 @@
               "role": null,
               "starter": true,
               "min": 24.310361472861953,
-              "pts": 13.637952984380476,
-              "reb": 5.0778844340509925,
-              "ast": 1.9176373611162698,
+              "pts": 13.694613247408265,
+              "reb": 5.077952718140117,
+              "ast": 1.9256043806093863,
               "tpm": 1.6906040393669066
             },
             {
@@ -3360,9 +2067,9 @@
               "role": null,
               "starter": true,
               "min": 25.233071807191337,
-              "pts": 11.694648913116325,
-              "reb": 4.695420004977185,
-              "ast": 1.2180114107118591,
+              "pts": 11.743235521692679,
+              "reb": 4.695483145933278,
+              "ast": 1.2230717630228565,
               "tpm": 1.6186442012324196
             },
             {
@@ -3372,9 +2079,9 @@
               "role": null,
               "starter": false,
               "min": 19.291789400889453,
-              "pts": 10.679289652844774,
-              "reb": 3.261737201780808,
-              "ast": 2.6995309907605645,
+              "pts": 10.723657848084422,
+              "reb": 3.2617810635024913,
+              "ast": 2.710746466878083,
               "tpm": 1.2958947705272794
             },
             {
@@ -3384,9 +2091,9 @@
               "role": null,
               "starter": true,
               "min": 25.489358883316072,
-              "pts": 9.953558707688682,
-              "reb": 3.905833823094953,
-              "ast": 1.2607927554621712,
+              "pts": 9.994911779889922,
+              "reb": 3.905886346209322,
+              "ast": 1.2660308472219708,
               "tpm": 1.3605493441447059
             },
             {
@@ -3396,9 +2103,9 @@
               "role": null,
               "starter": true,
               "min": 18.235975708688883,
-              "pts": 8.338907175554944,
-              "reb": 3.6769667429542254,
-              "ast": 2.256409732163853,
+              "pts": 8.37355201371155,
+              "reb": 3.6770161884128694,
+              "ast": 2.265784215934936,
               "tpm": 1.8931546162180137
             },
             {
@@ -3408,9 +2115,9 @@
               "role": null,
               "starter": false,
               "min": 15.116827461971388,
-              "pts": 6.913219720973417,
-              "reb": 2.4567105400033045,
-              "ast": 0.7298583518692021,
+              "pts": 6.941941395568414,
+              "reb": 2.4567435762497265,
+              "ast": 0.7328906226386719,
               "tpm": 0.7480662027146526
             },
             {
@@ -3420,9 +2127,9 @@
               "role": null,
               "starter": false,
               "min": 18.19085358819254,
-              "pts": 6.812647319164359,
-              "reb": 2.297925365153489,
-              "ast": 1.9966505530568117,
+              "pts": 6.840951155485067,
+              "reb": 2.297956266160094,
+              "ast": 2.004945840893656,
               "tpm": 1.020130503556005
             },
             {
@@ -3432,9 +2139,9 @@
               "role": null,
               "starter": false,
               "min": 22.749861115009093,
-              "pts": 6.460764887934921,
-              "reb": 3.2990447063561943,
-              "ast": 3.574414272029692,
+              "pts": 6.487606792898984,
+              "reb": 3.2990890697649484,
+              "ast": 3.5892645397388887,
               "tpm": 0.6956922191314383
             },
             {
@@ -3444,9 +2151,9 @@
               "role": null,
               "starter": false,
               "min": 14.163329687607844,
-              "pts": 6.173401896529356,
-              "reb": 4.476760619703349,
-              "ast": 1.2283531908228063,
+              "pts": 6.19904992271292,
+              "reb": 4.476820820270163,
+              "ast": 1.2334565091113177,
               "tpm": 0.060506806182364516
             }
           ],
@@ -3865,7 +2572,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.53209,
-                  "reb": 0.22169,
+                  "reb": 0.22168,
                   "ast": 0.10073,
                   "tpm": 0.06274
                 },
@@ -3904,17 +2611,17 @@
               }
             ],
             "expected": {
-              "pts": 112.34609988675957,
-              "reb": 40.68326880702323,
-              "ast": 26.89499010240347,
+              "pts": 112.81285318742138,
+              "reb": 40.683789183557835,
+              "ast": 27.00672807474267,
               "tpm": 13.627923003331244
             },
-            "spread": 5.583480862883192,
+            "spread": 4.670509394248285,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
                 "pts": 1.003,
-                "reb": 1.021,
+                "reb": 1.022,
                 "ast": 1.033,
                 "tpm": 1.004
               },
@@ -3956,12 +2663,12 @@
       "claude": {
         "line": {
           "spread": -6.5,
-          "overUnder": 227.5
+          "overUnder": 228.5
         },
         "positionRates": {
           "PG": {
             "pts": 0.5418,
-            "reb": 0.13073,
+            "reb": 0.13067,
             "ast": 0.16936,
             "tpm": 0.06518
           },
@@ -3985,7 +2692,7 @@
           },
           "C": {
             "pts": 0.44065,
-            "reb": 0.30293,
+            "reb": 0.30299,
             "ast": 0.08876,
             "tpm": 0.02522
           }
@@ -4007,9 +2714,9 @@
         },
         "home": {
           "teamId": "16",
-          "score": 116.73097082361896,
-          "model": 114.3097082361896,
-          "market": 117,
+          "score": 117.15764258372374,
+          "model": 114.0764258372375,
+          "market": 117.5,
           "players": [
             {
               "id": "4432816",
@@ -4018,9 +2725,9 @@
               "role": null,
               "starter": true,
               "min": 29.530415641767483,
-              "pts": 19.78411067325856,
-              "reb": 4.496408908969301,
-              "ast": 6.271249337274418,
+              "pts": 19.85642499792756,
+              "reb": 4.496486456842772,
+              "ast": 6.294171831398398,
               "tpm": 3.704363879212526
             },
             {
@@ -4030,9 +2737,9 @@
               "role": null,
               "starter": true,
               "min": 31.389142386724245,
-              "pts": 17.968706597834714,
-              "reb": 4.177554006131739,
-              "ast": 3.5729085432517755,
+              "pts": 18.034385308607103,
+              "reb": 4.177626054834613,
+              "ast": 3.585968138028436,
               "tpm": 2.085784564984853
             },
             {
@@ -4042,9 +2749,9 @@
               "role": null,
               "starter": true,
               "min": 34.17803102430269,
-              "pts": 17.336093326607738,
-              "reb": 5.459256963677914,
-              "ast": 3.3268756496451033,
+              "pts": 17.399459727150923,
+              "reb": 5.459351117429683,
+              "ast": 3.33903595191166,
               "tpm": 1.503536143986508
             },
             {
@@ -4054,9 +2761,9 @@
               "role": null,
               "starter": true,
               "min": 27.946887198263564,
-              "pts": 13.120145212343266,
-              "reb": 5.302356224364328,
-              "ast": 2.557576348036752,
+              "pts": 13.168101597962977,
+              "reb": 5.302447672108051,
+              "ast": 2.566924729141781,
               "tpm": 1.3747277234580706
             },
             {
@@ -4066,9 +2773,9 @@
               "role": null,
               "starter": false,
               "min": 15.928423521038656,
-              "pts": 9.895118212416186,
-              "reb": 1.5749446097954487,
-              "ast": 2.7604763803917978,
+              "pts": 9.931286570088082,
+              "reb": 1.574971772272838,
+              "ast": 2.7705663959861098,
               "tpm": 1.7656361823113704
             },
             {
@@ -4078,9 +2785,9 @@
               "role": null,
               "starter": false,
               "min": 18.387239741367935,
-              "pts": 9.715078985296218,
-              "reb": 2.1958634554157963,
-              "ast": 1.8988666078215575,
+              "pts": 9.750589268650893,
+              "reb": 2.1959013266470047,
+              "ast": 1.9058072916182136,
               "tpm": 1.0413969852726674
             },
             {
@@ -4090,9 +2797,9 @@
               "role": null,
               "starter": true,
               "min": 28.169646490148445,
-              "pts": 8.361777790214072,
-              "reb": 10.004739896270237,
-              "ast": 1.4993457315930656,
+              "pts": 8.392341525118209,
+              "reb": 10.004912444256705,
+              "ast": 1.5048260979242174,
               "tpm": 0
             },
             {
@@ -4102,9 +2809,9 @@
               "role": null,
               "starter": false,
               "min": 20.486088463007338,
-              "pts": 7.5497131354887195,
-              "reb": 3.999276983318283,
-              "ast": 1.352387815536094,
+              "pts": 7.577308634515901,
+              "reb": 3.99934595734439,
+              "ast": 1.357331025427417,
               "tpm": 1.1407176844577867
             },
             {
@@ -4114,9 +2821,9 @@
               "role": null,
               "starter": false,
               "min": 14.801597524556332,
-              "pts": 5.931341164556238,
-              "reb": 4.832356032015261,
-              "ast": 0.44748264480640954,
+              "pts": 5.953021235891265,
+              "reb": 4.832439373842422,
+              "ast": 0.44911827077892363,
               "tpm": 0
             },
             {
@@ -4126,9 +2833,9 @@
               "role": null,
               "starter": true,
               "min": 10.101454370744717,
-              "pts": 3.0551371519067034,
-              "reb": 1.1306364231136032,
-              "ast": 0.659357522527162,
+              "pts": 3.0663042032622103,
+              "reb": 1.1306559227747897,
+              "ast": 0.6617675875912149,
               "tpm": 0.13436729610357218
             }
           ],
@@ -4446,7 +3153,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.35985,
-                  "reb": 0.1529,
+                  "reb": 0.15289,
                   "ast": 0.10193,
                   "tpm": 0.03968
                 },
@@ -4569,12 +3276,12 @@
               }
             ],
             "expected": {
-              "pts": 116.73097082361896,
-              "reb": 44.86310260537899,
-              "ast": 25.45013740256456,
+              "pts": 117.15764258372374,
+              "reb": 44.86384804838156,
+              "ast": 25.543162028709997,
               "tpm": 12.942232326696956
             },
-            "spread": 5.8706539772170885,
+            "spread": 5.851624420776133,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -4612,21 +3319,33 @@
         },
         "away": {
           "teamId": "29",
-          "score": 110.86031684640187,
-          "model": 114.10316846401874,
-          "market": 110.5,
+          "score": 111.30601816294761,
+          "model": 114.06018162947612,
+          "market": 111,
           "players": [
+            {
+              "id": "4065733",
+              "name": "Ty Jerome",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 25.862476307028118,
+              "pts": 20.176797903817512,
+              "reb": 2.9656675973255933,
+              "ast": 5.179645041943593,
+              "tpm": 2.391476002797704
+            },
             {
               "id": "4903027",
               "name": "Cedric Coward",
               "status": "",
               "role": null,
               "starter": true,
-              "min": 34.71550827483538,
-              "pts": 17.977977045773418,
-              "reb": 8.97745461609136,
-              "ast": 4.191982384264744,
-              "tpm": 2.8195464283292635
+              "min": 33.122738393805065,
+              "pts": 15.883517856215716,
+              "reb": 8.72425374375314,
+              "ast": 3.8371943782958873,
+              "tpm": 2.4510701170878537
             },
             {
               "id": "4433083",
@@ -4634,11 +3353,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 34.38665739406525,
-              "pts": 16.747246254916277,
-              "reb": 4.147033460798434,
-              "ast": 8.890719624925774,
-              "tpm": 3.158232380410465
+              "min": 32.80897540326815,
+              "pts": 14.79616890460663,
+              "reb": 4.030070186151758,
+              "ast": 8.138254466866947,
+              "tpm": 2.7454944287015435
             },
             {
               "id": "5112087",
@@ -4646,11 +3365,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 33.464195710275824,
-              "pts": 14.744664164209563,
-              "reb": 3.969629479556901,
-              "ast": 1.8767050854276697,
-              "tpm": 2.6588238672959186
+              "min": 31.928836855718366,
+              "pts": 13.026890397058649,
+              "reb": 3.8576697214667015,
+              "ast": 1.717870339950255,
+              "tpm": 2.311351805471296
             },
             {
               "id": "4600663",
@@ -4658,11 +3377,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 24.89007848761594,
-              "pts": 11.891880394506199,
-              "reb": 9.475362467391994,
-              "ast": 1.1164308097616278,
-              "tpm": 0.10126969059374026
+              "min": 23.748105654100133,
+              "pts": 10.506459881954694,
+              "reb": 9.208118560843676,
+              "ast": 1.0219418008659003,
+              "tpm": 0.08803512149581207
             },
             {
               "id": "4432810",
@@ -4670,11 +3389,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 20.248739517419914,
-              "pts": 10.388120525108153,
-              "reb": 4.025543936900175,
-              "ast": 1.0330017266201434,
-              "tpm": 0.7947908494409566
+              "min": 19.319714305493136,
+              "pts": 9.177890117056714,
+              "reb": 3.9120071628314976,
+              "ast": 0.9455737297550687,
+              "tpm": 0.6909225118005771
             },
             {
               "id": "4684806",
@@ -4682,11 +3401,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 20.307927620187492,
-              "pts": 10.007866883732811,
-              "reb": 4.287531065344453,
-              "ast": 1.161141539661928,
-              "tpm": 1.2261841439254295
+              "min": 19.376186819980767,
+              "pts": 8.841936550796252,
+              "reb": 4.16660518464141,
+              "ast": 1.0628684426540262,
+              "tpm": 1.0659385789945919
             },
             {
               "id": "4595400",
@@ -4694,23 +3413,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 17.19577576280593,
-              "pts": 9.570113806816174,
-              "reb": 3.135203660172091,
-              "ast": 0.9211600159943084,
-              "tpm": 0.924626520779983
-            },
-            {
-              "id": "4431785",
-              "name": "Scotty Pippen Jr.",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 15.565266152436141,
-              "pts": 7.714461825579411,
-              "reb": 1.7214902029885828,
-              "ast": 3.1688842906173957,
-              "tpm": 0.6540353710660248
+              "min": 16.406822494453465,
+              "pts": 8.45518231275736,
+              "reb": 3.046778116890516,
+              "ast": 0.8431977310191574,
+              "tpm": 0.8037904294747328
             },
             {
               "id": "4593016",
@@ -4718,11 +3425,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 11.53427105519154,
-              "pts": 4.98415582744852,
-              "reb": 2.3830331745772404,
-              "ast": 0.6974091986314286,
-              "tpm": 0.8056580432304564
+              "min": 11.005071269582585,
+              "pts": 4.403494780412567,
+              "reb": 2.315821909868382,
+              "ast": 0.6383840414991946,
+              "tpm": 0.7003695113911563
             },
             {
               "id": "4683934",
@@ -4730,11 +3437,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 13.507264577072696,
-              "pts": 3.3374639866722315,
-              "reb": 1.525340176906409,
-              "ast": 1.684234765779265,
-              "tpm": 0.3629373753304821
+              "min": 12.887542577810938,
+              "pts": 2.948644816478279,
+              "reb": 1.4823193564265176,
+              "ast": 1.541689726378042,
+              "tpm": 0.3155064041892621
             },
             {
               "id": "4594326",
@@ -4742,11 +3449,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 11.884680500269416,
-              "pts": 2.4598518141912735,
-              "reb": 1.7308154252889403,
-              "ast": 0.7641767012111876,
-              "tpm": 0.3107479036093685
+              "min": 11.33940370361024,
+              "pts": 2.173275675837913,
+              "reb": 1.6819993639129136,
+              "ast": 0.6995006832373837,
+              "tpm": 0.27013738551414757
             }
           ],
           "out": [
@@ -4771,8 +3478,8 @@
               "status": "Out"
             },
             {
-              "id": "4065733",
-              "name": "Ty Jerome",
+              "id": "4431785",
+              "name": "Scotty Pippen Jr.",
               "status": "Out"
             }
           ],
@@ -5022,7 +3729,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.45163,
-                  "reb": 0.1903,
+                  "reb": 0.19029,
                   "ast": 0.08413,
                   "tpm": 0.05555
                 },
@@ -5203,7 +3910,7 @@
                 "id": "4065733",
                 "name": "Ty Jerome",
                 "pos": "PG",
-                "status": "Out",
+                "status": "",
                 "starter": true,
                 "gp": 11,
                 "wMin": 23.145,
@@ -5231,7 +3938,7 @@
                 "id": "4431785",
                 "name": "Scotty Pippen Jr.",
                 "pos": "PG",
-                "status": "",
+                "status": "Out",
                 "starter": false,
                 "gp": 5,
                 "wMin": 0.832,
@@ -5257,12 +3964,12 @@
               }
             ],
             "expected": {
-              "pts": 110.86031684640187,
-              "reb": 45.806718675586936,
-              "ast": 25.705844158136188,
+              "pts": 111.30601816294761,
+              "reb": 45.80749076985228,
+              "ast": 25.809191585873336,
               "tpm": 13.948769328668295
             },
-            "spread": 5.8706539772170885,
+            "spread": 5.851624420776133,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -5291,7 +3998,7 @@
               },
               "C": {
                 "pts": 0.955,
-                "reb": 0.989,
+                "reb": 0.988,
                 "ast": 0.996,
                 "tpm": 1.023
               }
@@ -5308,13 +4015,13 @@
       "note": "",
       "claude": {
         "line": {
-          "spread": -17.5,
-          "overUnder": 228.5
+          "spread": -19.5,
+          "overUnder": 227.5
         },
         "positionRates": {
           "PG": {
             "pts": 0.5418,
-            "reb": 0.13073,
+            "reb": 0.13067,
             "ast": 0.16936,
             "tpm": 0.06518
           },
@@ -5338,7 +4045,7 @@
           },
           "C": {
             "pts": 0.44065,
-            "reb": 0.30293,
+            "reb": 0.30299,
             "ast": 0.08876,
             "tpm": 0.02522
           }
@@ -5360,9 +4067,9 @@
         },
         "home": {
           "teamId": "24",
-          "score": 123.08391083382867,
-          "model": 123.83910833828675,
-          "market": 123,
+          "score": 123.48850047435255,
+          "model": 123.38500474352541,
+          "market": 123.5,
           "players": [
             {
               "id": "5104157",
@@ -5371,9 +4078,9 @@
               "role": null,
               "starter": true,
               "min": 31.959030437312858,
-              "pts": 30.941538632080647,
-              "reb": 12.425507851459479,
-              "ast": 3.7359096149744238,
+              "pts": 31.043246693740397,
+              "reb": 12.425750171284363,
+              "ast": 3.7481899391688094,
               "tpm": 1.976837786290005
             },
             {
@@ -5383,9 +4090,9 @@
               "role": null,
               "starter": true,
               "min": 31.984280995613467,
-              "pts": 18.123208582028955,
-              "reb": 5.59096903129286,
-              "ast": 7.337029460814593,
+              "pts": 18.182781457116118,
+              "reb": 5.591078065277852,
+              "ast": 7.361147041186831,
               "tpm": 1.8697101984787807
             },
             {
@@ -5395,9 +4102,9 @@
               "role": null,
               "starter": true,
               "min": 30.05146390218499,
-              "pts": 15.493510975267789,
-              "reb": 3.965121454946609,
-              "ast": 6.1803365185118695,
+              "pts": 15.544439760301275,
+              "reb": 3.9651987819700265,
+              "ast": 6.20065192865282,
               "tpm": 1.1386824789761483
             },
             {
@@ -5407,9 +4114,9 @@
               "role": null,
               "starter": true,
               "min": 29.850796541490954,
-              "pts": 12.555473096446509,
-              "reb": 3.8190512467843414,
-              "ast": 2.9995454691812986,
+              "pts": 12.596744244822325,
+              "reb": 3.819125725175117,
+              "ast": 3.0094052876977053,
               "tpm": 1.6602644475715846
             },
             {
@@ -5419,9 +4126,9 @@
               "role": null,
               "starter": true,
               "min": 28.592529812072492,
-              "pts": 11.982066579257125,
-              "reb": 4.925744603114693,
-              "ast": 1.6224471015231887,
+              "pts": 12.021452880660727,
+              "reb": 4.925840664022941,
+              "ast": 1.627780254208437,
               "tpm": 2.7671960092371335
             },
             {
@@ -5431,9 +4138,9 @@
               "role": null,
               "starter": false,
               "min": 25.052401538326993,
-              "pts": 11.374175803217105,
-              "reb": 5.715615791667451,
-              "ast": 2.2614123701784417,
+              "pts": 11.411563904296312,
+              "reb": 5.715727256489195,
+              "ast": 2.26884586828334,
               "tpm": 0.6446521529107629
             },
             {
@@ -5443,9 +4150,9 @@
               "role": null,
               "starter": false,
               "min": 16.8850811993752,
-              "pts": 6.74834948845149,
-              "reb": 1.5289744039970161,
-              "ast": 1.0343947568890883,
+              "pts": 6.770532016412829,
+              "reb": 1.5290042217569222,
+              "ast": 1.037794920241182,
               "tpm": 1.2034694180952745
             },
             {
@@ -5455,9 +4162,9 @@
               "role": null,
               "starter": false,
               "min": 16.631220104319787,
-              "pts": 4.675596603980997,
-              "reb": 4.461643545637102,
-              "ast": 1.4774654538420897,
+              "pts": 4.69096577722569,
+              "reb": 4.46173055573726,
+              "ast": 1.4823220367440049,
               "tpm": 0
             },
             {
@@ -5467,9 +4174,9 @@
               "role": null,
               "starter": false,
               "min": 10.414231143414073,
-              "pts": 3.8333142488736365,
-              "reb": 1.6217732566103602,
-              "ast": 0.664306211185951,
+              "pts": 3.845914752249425,
+              "reb": 1.6218048841153476,
+              "ast": 0.6664898549242815,
               "tpm": 0.7212972864583829
             },
             {
@@ -5479,9 +4186,9 @@
               "role": null,
               "starter": false,
               "min": 8.29390293464507,
-              "pts": 2.644337463653822,
-              "reb": 1.0482058762919322,
-              "ast": 1.3645152430038108,
+              "pts": 2.6530296764426082,
+              "reb": 1.0482263181980032,
+              "ast": 1.3690005467930413,
               "tpm": 0.42798031988409585
             }
           ],
@@ -5822,7 +4529,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.4055,
-                  "reb": 0.32319,
+                  "reb": 0.32318,
                   "ast": 0.08388,
                   "tpm": 0.02924
                 },
@@ -5878,7 +4585,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.51918,
-                  "reb": 0.16943,
+                  "reb": 0.16942,
                   "ast": 0.10254,
                   "tpm": 0.0677
                 },
@@ -5906,7 +4613,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.46274,
-                  "reb": 0.17776,
+                  "reb": 0.17775,
                   "ast": 0.12397,
                   "tpm": 0.05464
                 },
@@ -5917,12 +4624,12 @@
               }
             ],
             "expected": {
-              "pts": 123.08391083382867,
-              "reb": 47.70136286845677,
-              "ast": 30.171751201767794,
+              "pts": 123.48850047435255,
+              "reb": 47.7022223877877,
+              "ast": 30.27092889193056,
               "tpm": 12.809060548198433
             },
-            "spread": 17.145361517930766,
+            "spread": 18.953264118919662,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
@@ -5960,9 +4667,9 @@
         },
         "away": {
           "teamId": "3",
-          "score": 105.9385493158979,
-          "model": 109.88549315897906,
-          "market": 105.5,
+          "score": 104.53523635543289,
+          "model": 109.3523635543288,
+          "market": 104,
           "players": [
             {
               "id": "4395628",
@@ -5970,11 +4677,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 29.843826167709512,
-              "pts": 18.524751953063607,
-              "reb": 4.81732602589733,
-              "ast": 2.6381892078168807,
-              "tpm": 0.2542418495457367
+              "min": 33.05127283334959,
+              "pts": 20.46113444865273,
+              "reb": 5.22992093361195,
+              "ast": 2.8994158159115604,
+              "tpm": 0.30719570842774324
             },
             {
               "id": "4397136",
@@ -5982,11 +4689,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 34.10464594135317,
-              "pts": 17.48941291908519,
-              "reb": 5.019586502964051,
-              "ast": 2.7536191959478025,
-              "tpm": 2.6723418621501915
+              "min": 37.77002156352408,
+              "pts": 19.31757197462634,
+              "reb": 5.449504639876993,
+              "ast": 3.0262753801253908,
+              "tpm": 3.2289410770537277
             },
             {
               "id": "5144091",
@@ -5994,23 +4701,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 30.57131619854134,
-              "pts": 15.002831432791606,
-              "reb": 4.524445899226403,
-              "ast": 4.860177371483711,
-              "tpm": 1.3309264906150104
-            },
-            {
-              "id": "4397688",
-              "name": "Trey Murphy III",
-              "status": "",
-              "role": null,
-              "starter": false,
-              "min": 23.290697566627,
-              "pts": 11.296224927731819,
-              "reb": 3.254856731954971,
-              "ast": 2.3095822961533226,
-              "tpm": 1.862819369443216
+              "min": 33.85694940301747,
+              "pts": 16.57106944452528,
+              "reb": 4.868639781488353,
+              "ast": 5.341419446816819,
+              "tpm": 1.6081337784485301
             },
             {
               "id": "4869780",
@@ -6018,11 +4713,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 20.474448273315833,
-              "pts": 9.821429552513084,
-              "reb": 5.561299463756439,
-              "ast": 2.305050404784023,
-              "tpm": 0.4590639816129545
+              "min": 22.674926874016226,
+              "pts": 10.848058374066772,
+              "reb": 6.037614296235427,
+              "ast": 2.533290478295382,
+              "tpm": 0.5546784893880459
             },
             {
               "id": "4277956",
@@ -6030,11 +4725,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 17.48541987585744,
-              "pts": 8.13964365545479,
-              "reb": 1.283612611423736,
-              "ast": 2.3616470373427423,
-              "tpm": 1.4240469779055216
+              "min": 19.36465450760238,
+              "pts": 8.99047628925689,
+              "reb": 1.3935516157810437,
+              "ast": 2.5954911616587553,
+              "tpm": 1.7206495350537352
             },
             {
               "id": "4277813",
@@ -6042,11 +4737,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 28.282845877094775,
-              "pts": 7.453403760633482,
-              "reb": 2.8969682323386063,
-              "ast": 1.9821152646553477,
-              "tpm": 1.3381911228481376
+              "min": 31.322527156348865,
+              "pts": 8.232504102231413,
+              "reb": 3.1450881092263843,
+              "ast": 2.1783791436464504,
+              "tpm": 1.6169114987542546
             },
             {
               "id": "4997538",
@@ -6054,11 +4749,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 12.984773752824436,
-              "pts": 4.481678030954431,
-              "reb": 2.7493210019812495,
-              "ast": 0.6456046391239234,
-              "tpm": 0.6981950322375682
+              "min": 14.380304240220518,
+              "pts": 4.950145458318351,
+              "reb": 2.9847951714670113,
+              "ast": 0.7095307250728877,
+              "tpm": 0.8436160999150009
             },
             {
               "id": "4683742",
@@ -6066,10 +4761,10 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 10.040908731515781,
-              "pts": 3.2718293471270274,
-              "reb": 2.9757550537048356,
-              "ast": 0.5251272444389865,
+              "min": 11.120049155733327,
+              "pts": 3.6138319333092306,
+              "reb": 3.2306228735626297,
+              "ast": 0.5771239732848367,
               "tpm": 0
             },
             {
@@ -6078,14 +4773,31 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 11.987866517961839,
-              "pts": 3.17363268512768,
-              "reb": 3.69468114864218,
-              "ast": 0.7843753877471056,
+              "min": 13.276255019995732,
+              "pts": 3.505370826317443,
+              "reb": 4.048347325406158,
+              "ast": 0.862042190949474,
+              "tpm": 0
+            },
+            {
+              "id": "3442",
+              "name": "DeAndre Jordan",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 8.40008347084721,
+              "pts": 2.2319859090404597,
+              "reb": 2.8661007492771025,
+              "ast": 0.43603897593382207,
               "tpm": 0
             }
           ],
           "out": [
+            {
+              "id": "4397688",
+              "name": "Trey Murphy III",
+              "status": "Out"
+            },
             {
               "id": "4683634",
               "name": "Bennedict Mathurin",
@@ -6213,7 +4925,7 @@
                 "kMin": 1,
                 "rate": {
                   "pts": 0.28972,
-                  "reb": 0.33297,
+                  "reb": 0.33606,
                   "ast": 0.06851,
                   "tpm": 0
                 },
@@ -6241,7 +4953,7 @@
                 "kMin": 1,
                 "rate": {
                   "pts": 0.53706,
-                  "reb": 0.15989,
+                  "reb": 0.15848,
                   "ast": 0.16646,
                   "tpm": 0.04262
                 },
@@ -6254,7 +4966,7 @@
                 "id": "4397688",
                 "name": "Trey Murphy III",
                 "pos": "SF",
-                "status": "",
+                "status": "Out",
                 "starter": false,
                 "gp": 10,
                 "wMin": 36.372,
@@ -6465,7 +5177,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.46706,
-                  "reb": 0.17164,
+                  "reb": 0.17163,
                   "ast": 0.12409,
                   "tpm": 0.0483
                 },
@@ -6616,12 +5328,12 @@
               }
             ],
             "expected": {
-              "pts": 105.9385493158979,
-              "reb": 41.33666154617263,
-              "ast": 22.609866389286545,
+              "pts": 104.53523635543289,
+              "reb": 41.3373267046178,
+              "ast": 22.31036522806282,
               "tpm": 10.806580067075668
             },
-            "spread": 17.145361517930766,
+            "spread": 18.953264118919662,
             "backToBack": true,
             "oppMatchup": {
               "PG": {
@@ -6650,7 +5362,7 @@
               },
               "C": {
                 "pts": 1.054,
-                "reb": 0.917,
+                "reb": 0.916,
                 "ast": 0.972,
                 "tpm": 1.167
               }
@@ -6668,12 +5380,12 @@
       "claude": {
         "line": {
           "spread": 13.5,
-          "overUnder": 216.5
+          "overUnder": 217.5
         },
         "positionRates": {
           "PG": {
             "pts": 0.5418,
-            "reb": 0.13073,
+            "reb": 0.13067,
             "ast": 0.16936,
             "tpm": 0.06518
           },
@@ -6697,7 +5409,7 @@
           },
           "C": {
             "pts": 0.44065,
-            "reb": 0.30293,
+            "reb": 0.30299,
             "ast": 0.08876,
             "tpm": 0.02522
           }
@@ -6719,9 +5431,9 @@
         },
         "home": {
           "teamId": "23",
-          "score": 101.80914055853653,
-          "model": 104.59140558536521,
-          "market": 101.5,
+          "score": 102.25208104670179,
+          "model": 104.52081046701788,
+          "market": 102,
           "players": [
             {
               "id": "5142620",
@@ -6729,11 +5441,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 35.281391378350975,
-              "pts": 22.15271416839753,
-              "reb": 3.5606297122474118,
-              "ast": 6.426618252057258,
-              "tpm": 2.9133996104839923
+              "min": 32.98301785405025,
+              "pts": 20.97793565815459,
+              "reb": 3.2230101466699215,
+              "ast": 6.254394062827659,
+              "tpm": 2.8598098806192906
             },
             {
               "id": "3064440",
@@ -6741,11 +5453,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 32.05461610082662,
-              "pts": 18.513043614876672,
-              "reb": 3.287543115126021,
-              "ast": 2.4993576148778387,
-              "tpm": 2.5386053144845526
+              "min": 29.966447859735933,
+              "pts": 17.531280132866257,
+              "reb": 2.975817671020366,
+              "ast": 2.4323784009375418,
+              "tpm": 2.4919096354754786
             },
             {
               "id": "4065732",
@@ -6753,11 +5465,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 30.41022261773726,
-              "pts": 13.376023118101882,
-              "reb": 4.248282848670784,
-              "ast": 1.6713463365091346,
-              "tpm": 1.9906933734874526
+              "min": 28.429176865228023,
+              "pts": 12.666680488923022,
+              "reb": 3.845459885955791,
+              "ast": 1.6265566420792525,
+              "tpm": 1.9540761103613271
             },
             {
               "id": "3155942",
@@ -6765,11 +5477,11 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 29.499542107129688,
-              "pts": 12.361257463044845,
-              "reb": 11.54143491563386,
-              "ast": 4.3414217901678525,
-              "tpm": 0.2598084468756384
+              "min": 27.577821791994257,
+              "pts": 11.70572877627645,
+              "reb": 10.447073929723391,
+              "ast": 4.225077887575532,
+              "tpm": 0.2550294716761737
             },
             {
               "id": "4066262",
@@ -6777,11 +5489,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 17.52185991274514,
-              "pts": 8.317662400545236,
-              "reb": 1.3751292558041242,
-              "ast": 3.0459202129581384,
-              "tpm": 1.2728278206852228
+              "min": 16.38041459705187,
+              "pts": 7.876569224813485,
+              "reb": 1.2447392463177274,
+              "ast": 2.9642939021115526,
+              "tpm": 1.2494151385288377
             },
             {
               "id": "4594327",
@@ -6789,11 +5501,23 @@
               "status": "",
               "role": null,
               "starter": true,
-              "min": 23.3713538646882,
-              "pts": 8.149265683752729,
-              "reb": 3.435441741075239,
-              "ast": 1.2767052059356236,
-              "tpm": 0.8215133126035816
+              "min": 21.8488486898321,
+              "pts": 7.717102738537175,
+              "reb": 3.109692521997778,
+              "ast": 1.2424913300908764,
+              "tpm": 0.8064022113511968
+            },
+            {
+              "id": "4431679",
+              "name": "Precious Achiuwa",
+              "status": "Day-To-Day",
+              "role": null,
+              "starter": false,
+              "min": 15.634577443865954,
+              "pts": 5.8419714856894585,
+              "reb": 3.808512934894811,
+              "ast": 0.7376128205432068,
+              "tpm": 0.23721868110667393
             },
             {
               "id": "4279318",
@@ -6801,11 +5525,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 12.152676690905617,
-              "pts": 4.215090334251277,
-              "reb": 1.2468698394331024,
-              "ast": 0.4687523021259162,
-              "tpm": 0.8410095642501831
+              "min": 11.361001837262997,
+              "pts": 3.9915602735206033,
+              "reb": 1.12864141144659,
+              "ast": 0.45619041000523486,
+              "tpm": 0.8255398445455421
             },
             {
               "id": "5106058",
@@ -6813,11 +5537,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 13.972151438817582,
-              "pts": 4.208362291570655,
-              "reb": 1.2431772344461551,
-              "ast": 0.7508893378464369,
-              "tpm": 0.8508491905427242
+              "min": 13.061948589952511,
+              "pts": 3.98518902504123,
+              "reb": 1.1252989399450917,
+              "ast": 0.7307665761793102,
+              "tpm": 0.8351984785316761
             },
             {
               "id": "4395650",
@@ -6825,11 +5549,11 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 18.385221615889336,
-              "pts": 4.113574721820277,
-              "reb": 3.0125761110199436,
-              "ast": 1.1257573511840848,
-              "tpm": 1.0542065091945936
+              "min": 17.187533402654918,
+              "pts": 3.8954281260244894,
+              "reb": 2.72692308892299,
+              "ast": 1.0955886622293807,
+              "tpm": 1.0348151967752297
             },
             {
               "id": "4433174",
@@ -6837,10 +5561,10 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 11.24693473762643,
-              "pts": 2.923778581622185,
-              "reb": 4.002576820754003,
-              "ast": 0.83263145268221,
+              "min": 10.51426360362007,
+              "pts": 2.7687279535010347,
+              "reb": 3.623051748892332,
+              "ast": 0.8103181190997534,
               "tpm": 0
             },
             {
@@ -6849,20 +5573,14 @@
               "status": "",
               "role": null,
               "starter": false,
-              "min": 9.223865432534991,
-              "pts": 2.1174682040083717,
-              "reb": 1.3454916957167087,
-              "ast": 0.5911271903122397,
-              "tpm": 0.33940391070618836
+              "min": 8.622985272381797,
+              "pts": 2.005176946003498,
+              "reb": 1.2179119251403205,
+              "ast": 0.5752858259911977,
+              "tpm": 0.33316083858373885
             }
           ],
-          "out": [
-            {
-              "id": "4431679",
-              "name": "Precious Achiuwa",
-              "status": "Out"
-            }
-          ],
+          "out": [],
           "inputs": {
             "teamGames": 15,
             "candidates": [
@@ -7122,7 +5840,7 @@
                 "id": "4431679",
                 "name": "Precious Achiuwa",
                 "pos": "PF",
-                "status": "Out",
+                "status": "Day-To-Day",
                 "starter": false,
                 "gp": 12,
                 "wMin": 23.989,
@@ -7260,12 +5978,12 @@
               }
             ],
             "expected": {
-              "pts": 101.80914055853653,
-              "reb": 40.15981258568572,
-              "ast": 23.67994205665025,
+              "pts": 102.25208104670179,
+              "reb": 40.16036468932223,
+              "ast": 23.782966255035138,
               "tpm": 12.896366801634686
             },
-            "spread": 13.44970491497567,
+            "spread": 13.453320176087999,
             "backToBack": true,
             "oppMatchup": {
               "PG": {
@@ -7303,9 +6021,9 @@
         },
         "away": {
           "teamId": "2",
-          "score": 115.2588454735122,
-          "model": 117.58845473512201,
-          "market": 115,
+          "score": 115.70540122278979,
+          "model": 117.55401222789796,
+          "market": 115.5,
           "players": [
             {
               "id": "4065648",
@@ -7314,9 +6032,9 @@
               "role": null,
               "starter": true,
               "min": 29.23493385146418,
-              "pts": 22.54943994489221,
-              "reb": 6.2137790233914725,
-              "ast": 5.614172022817718,
+              "pts": 22.63680488429459,
+              "reb": 6.213872891358914,
+              "ast": 5.63592341885091,
               "tpm": 2.3432049843239837
             },
             {
@@ -7326,9 +6044,9 @@
               "role": null,
               "starter": true,
               "min": 23.517951640835225,
-              "pts": 15.520959580829127,
-              "reb": 3.9550305468246747,
-              "ast": 2.9287033518395877,
+              "pts": 15.581093566265562,
+              "reb": 3.955090293184692,
+              "ast": 2.940050240786112,
               "tpm": 2.452132852541131
             },
             {
@@ -7338,9 +6056,9 @@
               "role": null,
               "starter": false,
               "min": 26.051756868295513,
-              "pts": 13.838369792485832,
-              "reb": 2.799083415247527,
-              "ast": 3.8923436733478223,
+              "pts": 13.891984797616907,
+              "reb": 2.799125699382495,
+              "ast": 3.907424064257145,
               "tpm": 2.2348780103165033
             },
             {
@@ -7350,9 +6068,9 @@
               "role": null,
               "starter": true,
               "min": 28.274326563363463,
-              "pts": 12.996706582007716,
-              "reb": 2.8802560885871067,
-              "ast": 4.7456187215507155,
+              "pts": 13.047060669991389,
+              "reb": 2.880299598950724,
+              "ast": 4.764005018197032,
               "tpm": 1.8078168001435841
             },
             {
@@ -7362,9 +6080,9 @@
               "role": null,
               "starter": true,
               "min": 20.713490229170436,
-              "pts": 9.061061963145002,
-              "reb": 6.162912803717209,
-              "ast": 1.6679705899696466,
+              "pts": 9.096167896208794,
+              "reb": 6.1630059032780755,
+              "ast": 1.6744329300487697,
               "tpm": 0.16021491520004352
             },
             {
@@ -7374,9 +6092,9 @@
               "role": null,
               "starter": false,
               "min": 18.387652183461917,
-              "pts": 7.571127097557372,
-              "reb": 2.6355987636794382,
-              "ast": 1.0802331723146734,
+              "pts": 7.600460467330737,
+              "reb": 2.635638578146288,
+              "ast": 1.0844183984608817,
               "tpm": 2.0252038646171138
             },
             {
@@ -7386,9 +6104,9 @@
               "role": null,
               "starter": false,
               "min": 11.248607892377635,
-              "pts": 5.494573500213922,
-              "reb": 2.5368248910499074,
-              "ast": 1.1067360770845645,
+              "pts": 5.515861526970296,
+              "reb": 2.5368632133969657,
+              "ast": 1.1110239853672188,
               "tpm": 0.71609933912714
             },
             {
@@ -7398,9 +6116,9 @@
               "role": null,
               "starter": false,
               "min": 15.216832922508246,
-              "pts": 4.64928948957967,
-              "reb": 2.681876930200147,
-              "ast": 1.2071956534678616,
+              "pts": 4.66730257085858,
+              "reb": 2.681917443764504,
+              "ast": 1.2118727796124482,
               "tpm": 1.014233527651688
             },
             {
@@ -7410,9 +6128,9 @@
               "role": null,
               "starter": false,
               "min": 14.478429988422787,
-              "pts": 4.398717188340179,
-              "reb": 4.998598518409091,
-              "ast": 0.7026618886924071,
+              "pts": 4.415759459081569,
+              "reb": 4.998674029347155,
+              "ast": 0.7053842628833404,
               "tpm": 0
             },
             {
@@ -7422,9 +6140,9 @@
               "role": null,
               "starter": true,
               "min": 12.952729524510898,
-              "pts": 4.072418645853281,
-              "reb": 2.4690437437858024,
-              "ast": 0.5157037751193462,
+              "pts": 4.0881967143589995,
+              "reb": 2.469081042202254,
+              "ast": 0.5177018038585516,
               "tpm": 0.5858560713610629
             },
             {
@@ -7434,9 +6152,9 @@
               "role": null,
               "starter": false,
               "min": 11.69411368101342,
-              "pts": 3.4747081014596586,
-              "reb": 2.2803662166658443,
-              "ast": 0.4808543054723462,
+              "pts": 3.4881704164203344,
+              "reb": 2.2804006648399704,
+              "ast": 0.48271731437020055,
               "tpm": 0.4485526584337379
             }
           ],
@@ -7883,7 +6601,7 @@
                 "kMin": 0,
                 "rate": {
                   "pts": 0.45528,
-                  "reb": 0.17489,
+                  "reb": 0.17488,
                   "ast": 0.10585,
                   "tpm": 0.05376
                 },
@@ -7894,12 +6612,12 @@
               }
             ],
             "expected": {
-              "pts": 115.2588454735122,
-              "reb": 43.86024585405915,
-              "ast": 27.090417359484658,
+              "pts": 115.70540122278979,
+              "reb": 43.86090116848582,
+              "ast": 27.1953757387961,
               "tpm": 15.478386160841723
             },
-            "spread": 13.44970491497567,
+            "spread": 13.453320176087999,
             "backToBack": false,
             "oppMatchup": {
               "PG": {
