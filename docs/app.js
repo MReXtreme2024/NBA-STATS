@@ -390,20 +390,21 @@ function ladderMatchup(g, away, home) {
   const outLine = (t, side) => (side.out.length ? `<p class="out-line"><b>${esc(t.code)} out:</b> ${side.out.map((o) => esc(o.name)).join(', ')}</p>` : '');
   const cell = (pick) => (pick ? `<td><b>${pick.n}+</b><span class="proj">${pct(pick.chance)}</span></td>` : '<td class="none">—</td>');
   const block = (t, side) => {
-    const rows = ladderRows(side, stat).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
+    // players with no rung even 70% likely are left off (21 Nov 2026, Nate: "a lot of space taken up for nothing")
+    const rows = ladderRows(side, stat).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
       const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
       const full = openLadder === p.id && chances
         ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
       return `<tr data-ladder-open="${p.id}"><th scope="row">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min · proj ${one(p[stat])}</span></th>${picks.map(cell).join('')}</tr>${full}`;
     }).join('');
     return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
-      ${rows ? `<div class="table-wrap"><table class="results ladders"><thead><tr><th scope="col">${LADDER_NAMES[stat]}</th>${SAFETY.map((lv) => `<th scope="col">${lv * 100}%</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>` : '<p class="none">No players projected 15+ minutes</p>'}</section>`;
+      ${rows ? `<div class="table-wrap"><table class="results ladders"><thead><tr><th scope="col">${LADDER_NAMES[stat]}</th>${SAFETY.map((lv) => `<th scope="col">${lv * 100}%</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="none">No player has a ${LADDER_UNITS[stat]} rung 70%+ likely</p>`}</section>`;
   };
   return `${teamAveragesBox(away, home)}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     ${ladderStatButtons(stat)}
     ${data.calibration?.tpm ? `${block(away, c.away)}${block(home, c.home)}` : '<p class="message">The ladders appear after the next nightly update.</p>'}
-    <p class="working">Ladders: for each player, the highest ${LADDER_UNITS[stat]} rung Claude expects him to clear at least 90%, 80% and 70% of the time (the % under it is Claude's chance). Tap a player to see every rung (green 90%+, yellow 80%+, red 70%+). Built from Claude's projection, not just season averages: each team's score comes from its offensive rating against the opponent's defensive rating (points per 100 possessions) and both teams' pace, blended with the betting market; players' on-court offensive and defensive ratings shift that for who is playing or out; team rebounds, assists and 3-pointers are adjusted for what the opponent gives up; then each player gets his expected minutes × production per minute, scaled to his team's total. The chances then allow for how far real results have landed from these projections this season, re-learned every night. No pick is ever certain. Players projected under ${MIN_LADDER_MINUTES} minutes, and anyone ruled out, are left off.</p>`;
+    <p class="working">Ladders: for each player, the highest ${LADDER_UNITS[stat]} rung Claude expects him to clear at least 90%, 80% and 70% of the time (the % under it is Claude's chance). Tap a player to see every rung (green 90%+, yellow 80%+, red 70%+). Built from Claude's projection, not just season averages: each team's score comes from its offensive rating against the opponent's defensive rating (points per 100 possessions) and both teams' pace, blended with the betting market; players' on-court offensive and defensive ratings shift that for who is playing or out; team rebounds, assists and 3-pointers are adjusted for what the opponent gives up; then each player gets his expected minutes × production per minute, scaled to his team's total. The chances then allow for how far real results have landed from these projections this season, re-learned every night. No pick is ever certain. Players projected under ${MIN_LADDER_MINUTES} minutes, anyone ruled out, and players with no rung at least 70% likely are left off.</p>`;
 }
 
 // Players to project for an upcoming game: those on the current roster (when known) who have played for this team.
