@@ -144,6 +144,11 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
     .sort((a, b) => a.start.localeCompare(b.start) || a.id.localeCompare(b.id))
     .map((g) => {
       const done = finished.get(g.id);
+      // the ladder picks saved before tip-off (the ones the Ladder record scores)
+      const saved = path.join(ROOT, 'data', 'ladders', config.season, `${g.id}.json`);
+      const picks = fs.existsSync(saved)
+        ? Object.fromEntries(JSON.parse(fs.readFileSync(saved, 'utf8')).players.map((pl) => [pl.id, pl.picks])) : null;
+      if (picks) g = { ...g, savedPicks: picks };
       if (!done) return { ...g, started: true };
       const score = Object.fromEntries(done.teams.map((t) => [t.id, t.score]));
       const actual = Object.fromEntries(done.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {

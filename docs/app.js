@@ -288,11 +288,13 @@ const LEVEL_KEY = 'ladderLevel';
 const LADDER_NAMES = { pts: 'Points', reb: 'Rebounds', ast: 'Assists', tpm: '3PM' };
 const LADDER_UNITS = { pts: 'points', reb: 'rebounds', ast: 'assists', tpm: '3-pointers' };
 const pct = (x) => `${Math.floor(x * 100)}%`;
-const ladderRows = (side, stat) => side.players
+// saved: a started game's picks as saved before tip-off ({ playerId: { stat: { level: pick } } }), used as they were.
+const ladderRows = (side, stat, saved = null) => side.players
   .filter((p) => p.min >= MIN_LADDER_MINUTES)
   .map((p) => {
     const chances = rungChances(p[stat], stat, data.calibration);
-    return { p, chances, picks: SAFETY.map((lv) => pickRung(chances, lv)) };
+    const kept = saved?.[p.id]?.[stat];
+    return { p, chances, picks: SAFETY.map((lv) => (kept ? kept[lv] ?? null : pickRung(chances, lv))) };
   });
 const ladderStatButtons = (stat) => `<div class="switch four" role="group" aria-label="Stat">${LADDER_STATS.map((k) => `<button data-ladder="${k}" aria-pressed="${stat === k}">${LADDER_NAMES[k]}</button>`).join('')}</div>`;
 
@@ -407,7 +409,7 @@ function ladderMatchup(g, away, home) {
     : '<td class="none">—</td>');
   const block = (t, side) => {
     // players with no rung even 70% likely are left off (21 Nov 2026, Nate: "a lot of space taken up for nothing")
-    const rows = ladderRows(side, stat).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
+    const rows = ladderRows(side, stat, g.savedPicks).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
       const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
       const full = openLadder === p.id && chances
         ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
