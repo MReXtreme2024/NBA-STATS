@@ -600,6 +600,20 @@ app.addEventListener('touchend', (e) => {
   openGame(neighbourGame(m[1], dx < 0 ? 1 : -1));
 }, { passive: true });
 
+// If a newer version of the site has been published than the one this phone is running (its saved copy of
+// the page), reload once to pick it up (22 Nov 2026: phones kept showing old versions). The published copy
+// tags app.js with ?v=<commit>; asking for the page "no-cache" always gets the current tag.
+const runningVersion = new URL(import.meta.url).searchParams.get('v');
+if (runningVersion) {
+  fetch('./', { cache: 'no-cache' }).then((r) => r.text()).then((page) => {
+    const live = /app\.js\?v=([a-z0-9]+)/.exec(page)?.[1];
+    const key = `reloadedFor:${live}`;
+    let tried = false;
+    try { tried = sessionStorage.getItem(key) === '1'; sessionStorage.setItem(key, '1'); } catch { /* private mode */ }
+    if (live && live !== runningVersion && !tried) location.reload();
+  }).catch(() => { /* offline: keep what we have */ });
+}
+
 try {
   const res = await fetch('data/app-data.json', { cache: 'no-cache' });
   if (!res.ok) throw new Error(res.status);
