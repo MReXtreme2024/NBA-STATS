@@ -88,5 +88,21 @@ test('upcoming games are kept in start order; games with unknown teams are dropp
 });
 
 test('no upcoming file means an empty upcoming list', () => {
-  assert.deepEqual(data.upcoming, { usDate: null, games: [] });
+  assert.deepEqual(data.upcoming, { usDate: null, games: [], earlier: [] });
+});
+
+test("earlier-today games keep their pre-game projection; finished ones get the score and players' stats", () => {
+  const [home, away] = [game.teams.find((t) => t.homeAway === 'home'), game.teams.find((t) => t.homeAway === 'away')];
+  const upcoming = { usDate: game.usDate, games: [], earlier: [
+    { id: game.id, start: game.start, homeId: home.id, awayId: away.id, claude: { kept: true } },
+    { id: 'later', start: '2026-10-23T02:00Z', homeId: home.id, awayId: away.id },
+  ] };
+  const d = buildAppData([game], teams, config, now, { upcoming });
+  const [done, started] = d.upcoming.earlier;
+  assert.equal(done.claude.kept, true);
+  assert.equal(done.final.score[home.id], home.score);
+  const p = home.players.find((x) => x.played);
+  assert.equal(done.final.actual[p.id][0], Number(p.stats.points));
+  assert.equal(started.started, true);
+  assert.equal(started.final, undefined); // not finished yet
 });

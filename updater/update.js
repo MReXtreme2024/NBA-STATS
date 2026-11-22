@@ -117,8 +117,17 @@ async function main() {
       snapshot(g, g.claude, appTeams, new Date().toISOString()));
   }
 
-  // Today's (US date) games that haven't started, for the Upcoming games screen.
-  writeJson(path.join(DATA_DIR, 'upcoming.json'), { usDate: today, games: upcoming });
+  // Today's (US date) games that haven't started, for the Upcoming games screen. Games that started in the
+  // last 30 hours stay as "earlier", with their pre-game projections, so their ladders can be checked once
+  // the result is in (22 Nov 2026).
+  const upcomingFile = path.join(DATA_DIR, 'upcoming.json');
+  const prev = fs.existsSync(upcomingFile) ? JSON.parse(fs.readFileSync(upcomingFile, 'utf8')) : null;
+  const since = new Date(Date.now() - 30 * 3600 * 1000).toISOString();
+  const earlier = [];
+  for (const g of [...(prev?.earlier ?? []), ...(prev?.games ?? [])]) {
+    if (g.start >= since && !upcoming.some((u) => u.id === g.id) && !earlier.some((e) => e.id === g.id)) earlier.push(g);
+  }
+  writeJson(upcomingFile, { usDate: today, games: upcoming, earlier });
   console.log(`Upcoming: ${upcoming.length} games on ${today}`);
 
   const data = build();

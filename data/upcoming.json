@@ -6655,5 +6655,1305 @@
         }
       }
     }
+  ],
+  "earlier": [
+    {
+      "id": "401910023",
+      "start": "2026-11-21T18:00Z",
+      "homeId": "20",
+      "awayId": "15",
+      "note": "",
+      "claude": {
+        "line": {
+          "spread": -11.5,
+          "overUnder": 228.5
+        },
+        "positionRates": {
+          "PG": {
+            "pts": 0.5418,
+            "reb": 0.13073,
+            "ast": 0.16936,
+            "tpm": 0.06518
+          },
+          "SG": {
+            "pts": 0.40029,
+            "reb": 0.12912,
+            "ast": 0.07836,
+            "tpm": 0.06752
+          },
+          "SF": {
+            "pts": 0.44645,
+            "reb": 0.1532,
+            "ast": 0.08224,
+            "tpm": 0.06091
+          },
+          "PF": {
+            "pts": 0.48711,
+            "reb": 0.24702,
+            "ast": 0.09683,
+            "tpm": 0.0453
+          },
+          "C": {
+            "pts": 0.44065,
+            "reb": 0.30293,
+            "ast": 0.08876,
+            "tpm": 0.02522
+          }
+        },
+        "scoring": {
+          "poss": 101.53519297618581,
+          "lgRtg": 112.0920062573525,
+          "homeEdge": 1.2,
+          "base": {
+            "home": {
+              "ortg": 112.8910838215878,
+              "drtg": 110.95343489059285
+            },
+            "away": {
+              "ortg": 108.09374496477089,
+              "drtg": 116.55678356358605
+            }
+          }
+        },
+        "home": {
+          "teamId": "20",
+          "score": 120.05580289634467,
+          "model": 120.5580289634468,
+          "market": 120,
+          "players": [
+            {
+              "id": "4431678",
+              "name": "Tyrese Maxey",
+              "status": "Day-To-Day",
+              "role": null,
+              "starter": true,
+              "min": 38.60478485466654,
+              "pts": 27.572447087893835,
+              "reb": 4.277888215962317,
+              "ast": 6.12693440704661,
+              "tpm": 2.998511416618584
+            },
+            {
+              "id": "3059318",
+              "name": "Joel Embiid",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 31.712372822612952,
+              "pts": 21.531571892779972,
+              "reb": 9.43072260788818,
+              "ast": 3.6814515619327466,
+              "tpm": 0.7717318240387254
+            },
+            {
+              "id": "1966",
+              "name": "LeBron James",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 30.273118630902303,
+              "pts": 15.632396761387765,
+              "reb": 7.1102633477507755,
+              "ast": 6.233387660898361,
+              "tpm": 0.9214926782510195
+            },
+            {
+              "id": "5124612",
+              "name": "VJ Edgecombe",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 38.456219268075074,
+              "pts": 15.50437949953017,
+              "reb": 8.20297491717269,
+              "ast": 4.2961939886895575,
+              "tpm": 1.984224945191611
+            },
+            {
+              "id": "4351851",
+              "name": "Anfernee Simons",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 28.64075855667671,
+              "pts": 14.190064585767171,
+              "reb": 3.0973431334271675,
+              "ast": 1.9396238257018006,
+              "tpm": 3.0128674357822143
+            },
+            {
+              "id": "2581018",
+              "name": "Kentavious Caldwell-Pope",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 28.28136879098065,
+              "pts": 8.16649920857725,
+              "reb": 4.131233871740569,
+              "ast": 2.46461977288629,
+              "tpm": 1.6130913130056224
+            },
+            {
+              "id": "4432446",
+              "name": "Jabari Walker",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 14.379227713318267,
+              "pts": 5.760904304141879,
+              "reb": 4.8917540349309885,
+              "ast": 0.6705722993972987,
+              "tpm": 0.6570466255928241
+            }
+          ],
+          "out": [
+            {
+              "id": "3912848",
+              "name": "Dean Wade",
+              "status": "Out"
+            },
+            {
+              "id": "3917376",
+              "name": "Jaylen Brown",
+              "status": "Out"
+            },
+            {
+              "id": "5105637",
+              "name": "Adem Bona",
+              "status": "Out"
+            }
+          ],
+          "inputs": {
+            "teamGames": 16,
+            "candidates": [
+              {
+                "id": "1966",
+                "name": "LeBron James",
+                "pos": "SF",
+                "status": "",
+                "starter": true,
+                "gp": 12,
+                "wMin": 70.404,
+                "w": 2.229,
+                "startMin": 70.404,
+                "startW": 2.229,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 70.404,
+                "roleW": 2.229,
+                "priorMin": 33.2,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.53294,
+                  "reb": 0.20161,
+                  "ast": 0.21286,
+                  "tpm": 0.03027
+                },
+                "rating": {
+                  "off": -1.07,
+                  "def": 0.78
+                }
+              },
+              {
+                "id": "3059318",
+                "name": "Joel Embiid",
+                "pos": "C",
+                "status": "",
+                "starter": true,
+                "gp": 13,
+                "wMin": 89.861,
+                "w": 2.778,
+                "startMin": 89.861,
+                "startW": 2.778,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 89.861,
+                "roleW": 2.778,
+                "priorMin": 31.6,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.70074,
+                  "reb": 0.25527,
+                  "ast": 0.12001,
+                  "tpm": 0.0242
+                },
+                "rating": {
+                  "off": 1.4,
+                  "def": -1.32
+                }
+              },
+              {
+                "id": "2581018",
+                "name": "Kentavious Caldwell-Pope",
+                "pos": "SG",
+                "status": "",
+                "starter": true,
+                "gp": 16,
+                "wMin": 88.319,
+                "w": 3.322,
+                "startMin": 32.429,
+                "startW": 1.014,
+                "benchMin": 55.89,
+                "benchW": 2.308,
+                "roleMin": 32.429,
+                "roleW": 1.014,
+                "priorMin": 21.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.29802,
+                  "reb": 0.12539,
+                  "ast": 0.09009,
+                  "tpm": 0.05672
+                },
+                "rating": {
+                  "off": 0.5,
+                  "def": -1.46
+                }
+              },
+              {
+                "id": "4351851",
+                "name": "Anfernee Simons",
+                "pos": "SG",
+                "status": "",
+                "starter": true,
+                "gp": 16,
+                "wMin": 86.112,
+                "w": 3.322,
+                "startMin": 38,
+                "startW": 1,
+                "benchMin": 48.112,
+                "benchW": 2.322,
+                "roleMin": 38,
+                "roleW": 1,
+                "priorMin": 24.9,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.51134,
+                  "reb": 0.09283,
+                  "ast": 0.07001,
+                  "tpm": 0.10461
+                },
+                "rating": {
+                  "off": -1.54,
+                  "def": 1.07
+                }
+              },
+              {
+                "id": "5124612",
+                "name": "VJ Edgecombe",
+                "pos": "SG",
+                "status": "",
+                "starter": true,
+                "gp": 15,
+                "wMin": 119.517,
+                "w": 3.308,
+                "startMin": 119.517,
+                "startW": 3.308,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 119.517,
+                "roleW": 3.308,
+                "priorMin": 35,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.4161,
+                  "reb": 0.1831,
+                  "ast": 0.11549,
+                  "tpm": 0.05131
+                },
+                "rating": {
+                  "off": 2.35,
+                  "def": -0.14
+                }
+              },
+              {
+                "id": "4432446",
+                "name": "Jabari Walker",
+                "pos": "PF",
+                "status": "",
+                "starter": false,
+                "gp": 12,
+                "wMin": 51.773,
+                "w": 3.178,
+                "startMin": 12.25,
+                "startW": 0.49,
+                "benchMin": 39.523,
+                "benchW": 2.688,
+                "roleMin": 39.523,
+                "roleW": 2.688,
+                "priorMin": 11.9,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.41349,
+                  "reb": 0.29202,
+                  "ast": 0.04821,
+                  "tpm": 0.04544
+                },
+                "rating": {
+                  "off": 0.59,
+                  "def": 1.86
+                }
+              },
+              {
+                "id": "4711297",
+                "name": "Justin Edwards",
+                "pos": "SF",
+                "status": "",
+                "starter": false,
+                "gp": 7,
+                "wMin": 15.46,
+                "w": 1.808,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 15.46,
+                "benchW": 1.808,
+                "roleMin": 15.46,
+                "roleW": 1.808,
+                "priorMin": 15.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.37306,
+                  "reb": 0.10746,
+                  "ast": 0.07421,
+                  "tpm": 0.06145
+                },
+                "rating": {
+                  "off": -3.89,
+                  "def": 4.53
+                }
+              },
+              {
+                "id": "3904625",
+                "name": "Tacko Fall",
+                "pos": "C",
+                "status": "",
+                "starter": false,
+                "gp": 5,
+                "wMin": 13.146,
+                "w": 2.651,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 13.146,
+                "benchW": 2.651,
+                "roleMin": 13.146,
+                "roleW": 2.651,
+                "priorMin": 0,
+                "kMin": 0,
+                "rate": {
+                  "pts": 0.38262,
+                  "reb": 0.22586,
+                  "ast": 0.08307,
+                  "tpm": 0.04219
+                },
+                "rating": {
+                  "off": 2.13,
+                  "def": 0.12
+                }
+              },
+              {
+                "id": "4433144",
+                "name": "Caleb Love",
+                "pos": "SG",
+                "status": "",
+                "starter": false,
+                "gp": 3,
+                "wMin": 6.353,
+                "w": 1.353,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 6.353,
+                "benchW": 1.353,
+                "roleMin": 6.353,
+                "roleW": 1.353,
+                "priorMin": 20.7,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.49751,
+                  "reb": 0.11165,
+                  "ast": 0.12094,
+                  "tpm": 0.09306
+                },
+                "rating": {
+                  "off": 0.86,
+                  "def": 0.12
+                }
+              },
+              {
+                "id": "4873090",
+                "name": "Labaron Philon Jr.",
+                "pos": "SG",
+                "status": "",
+                "starter": false,
+                "gp": 11,
+                "wMin": 23.444,
+                "w": 3.041,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 23.444,
+                "benchW": 3.041,
+                "roleMin": 23.444,
+                "roleW": 3.041,
+                "priorMin": 0,
+                "kMin": 0,
+                "rate": {
+                  "pts": 0.4479,
+                  "reb": 0.15264,
+                  "ast": 0.10433,
+                  "tpm": 0.0641
+                },
+                "rating": {
+                  "off": -4.22,
+                  "def": -3.03
+                }
+              },
+              {
+                "id": "3912848",
+                "name": "Dean Wade",
+                "pos": "SF",
+                "status": "Out",
+                "starter": true,
+                "gp": 13,
+                "wMin": 68.461,
+                "w": 2.311,
+                "startMin": 36.819,
+                "startW": 1.135,
+                "benchMin": 31.642,
+                "benchW": 1.176,
+                "roleMin": 36.819,
+                "roleW": 1.135,
+                "priorMin": 22.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.21027,
+                  "reb": 0.17855,
+                  "ast": 0.06664,
+                  "tpm": 0.04344
+                },
+                "rating": {
+                  "off": 2.53,
+                  "def": 2.59
+                }
+              },
+              {
+                "id": "3917376",
+                "name": "Jaylen Brown",
+                "pos": "PG",
+                "status": "Out",
+                "starter": true,
+                "gp": 14,
+                "wMin": 75.725,
+                "w": 2.294,
+                "startMin": 75.725,
+                "startW": 2.294,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 75.725,
+                "roleW": 2.294,
+                "priorMin": 34.4,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.70388,
+                  "reb": 0.19405,
+                  "ast": 0.11611,
+                  "tpm": 0.05631
+                },
+                "rating": {
+                  "off": -0.48,
+                  "def": -1.2
+                }
+              },
+              {
+                "id": "4431678",
+                "name": "Tyrese Maxey",
+                "pos": "PG",
+                "status": "Day-To-Day",
+                "starter": true,
+                "gp": 15,
+                "wMin": 81.612,
+                "w": 2.322,
+                "startMin": 81.612,
+                "startW": 2.322,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 81.612,
+                "roleW": 2.322,
+                "priorMin": 38,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.73713,
+                  "reb": 0.09512,
+                  "ast": 0.16407,
+                  "tpm": 0.07724
+                },
+                "rating": {
+                  "off": 0.49,
+                  "def": -0.16
+                }
+              },
+              {
+                "id": "5099752",
+                "name": "Rayan Rupert",
+                "pos": "SG",
+                "status": "",
+                "starter": false,
+                "gp": 3,
+                "wMin": 1.556,
+                "w": 0.998,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 1.556,
+                "benchW": 0.998,
+                "roleMin": 1.556,
+                "roleW": 0.998,
+                "priorMin": 16.8,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.30723,
+                  "reb": 0.1804,
+                  "ast": 0.06777,
+                  "tpm": 0.04006
+                },
+                "rating": {
+                  "off": -0.23,
+                  "def": -0.48
+                }
+              },
+              {
+                "id": "5105637",
+                "name": "Adem Bona",
+                "pos": "C",
+                "status": "Out",
+                "starter": false,
+                "gp": 9,
+                "wMin": 3.99,
+                "w": 0.263,
+                "startMin": 0.888,
+                "startW": 0.04,
+                "benchMin": 3.102,
+                "benchW": 0.223,
+                "roleMin": 3.102,
+                "roleW": 0.223,
+                "priorMin": 17.4,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.22614,
+                  "reb": 0.25739,
+                  "ast": 0.03886,
+                  "tpm": 0
+                },
+                "rating": {
+                  "off": -6.92,
+                  "def": -1.06
+                }
+              }
+            ],
+            "expected": {
+              "pts": 120.05580289634467,
+              "reb": 46.126275811776544,
+              "ast": 28.028854843315653,
+              "tpm": 13.841580283349227
+            },
+            "spread": 11.646028437902785,
+            "backToBack": false,
+            "oppMatchup": {
+              "PG": {
+                "pts": 1.038,
+                "reb": 1.033,
+                "ast": 1.07,
+                "tpm": 1.058
+              },
+              "SG": {
+                "pts": 1.034,
+                "reb": 1.074,
+                "ast": 0.945,
+                "tpm": 1.123
+              },
+              "SF": {
+                "pts": 1.052,
+                "reb": 1.015,
+                "ast": 1.121,
+                "tpm": 1.114
+              },
+              "PF": {
+                "pts": 1.02,
+                "reb": 1.075,
+                "ast": 0.95,
+                "tpm": 1.08
+              },
+              "C": {
+                "pts": 1.081,
+                "reb": 1.072,
+                "ast": 1.019,
+                "tpm": 0.998
+              }
+            }
+          }
+        },
+        "away": {
+          "teamId": "15",
+          "score": 108.40977445844189,
+          "model": 107.5977445844189,
+          "market": 108.5,
+          "players": [
+            {
+              "id": "4395725",
+              "name": "Tyler Herro",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 24.68373145817975,
+              "pts": 15.961320356069045,
+              "reb": 3.4657940584187825,
+              "ast": 3.3857145367618906,
+              "tpm": 1.9382670017231802
+            },
+            {
+              "id": "4432848",
+              "name": "Jaime Jaquez Jr.",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 22.959824518956136,
+              "pts": 12.56217777885372,
+              "reb": 4.270164218609049,
+              "ast": 2.9684094054364873,
+              "tpm": 1.196808853140874
+            },
+            {
+              "id": "3134907",
+              "name": "Kyle Kuzma",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 22.921486364710788,
+              "pts": 10.66944184598949,
+              "reb": 4.315024964871305,
+              "ast": 2.1642255748449997,
+              "tpm": 1.199499304420798
+            },
+            {
+              "id": "5082206",
+              "name": "Brayden Burries",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 23.006199878136417,
+              "pts": 10.613173092022071,
+              "reb": 5.292534656075108,
+              "ast": 2.4158598378752387,
+              "tpm": 1.0864912590561215
+            },
+            {
+              "id": "4591725",
+              "name": "Ryan Rollins",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 20.985758296852307,
+              "pts": 10.241939331213505,
+              "reb": 3.8909603624775215,
+              "ast": 3.6767204231355586,
+              "tpm": 1.38094695719007
+            },
+            {
+              "id": "5105623",
+              "name": "Kel'el Ware",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 18.808710834796706,
+              "pts": 9.134605138605675,
+              "reb": 7.022790917599934,
+              "ast": 0.7392288332574025,
+              "tpm": 0.8027399008099665
+            },
+            {
+              "id": "5164559",
+              "name": "Nate Ament",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 19.30168215457616,
+              "pts": 8.418808293201304,
+              "reb": 3.30377490367866,
+              "ast": 0.8809340654935588,
+              "tpm": 1.0186868072655038
+            },
+            {
+              "id": "5214640",
+              "name": "Kasparas Jakucionis",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 17.218598502796823,
+              "pts": 7.46539985795671,
+              "reb": 2.3957583158590694,
+              "ast": 2.8355865301949525,
+              "tpm": 1.0020880571249857
+            },
+            {
+              "id": "3133628",
+              "name": "Myles Turner",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 20.71650874555369,
+              "pts": 6.797600349244907,
+              "reb": 4.4613023816266395,
+              "ast": 1.7991482339014397,
+              "tpm": 1.129956595817266
+            },
+            {
+              "id": "4397475",
+              "name": "AJ Green",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 14.270448998384767,
+              "pts": 5.133611765930187,
+              "reb": 1.2464052314664364,
+              "ast": 1.040820120580571,
+              "tpm": 1.390068694505926
+            },
+            {
+              "id": "4277843",
+              "name": "Gary Trent Jr.",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 9.494897739902944,
+              "pts": 3.6788854836734894,
+              "reb": 0.5059651825234784,
+              "ast": 0.4385407045179386,
+              "tpm": 0.8140881798166842
+            },
+            {
+              "id": "4397233",
+              "name": "Pete Nance",
+              "status": "",
+              "role": null,
+              "starter": true,
+              "min": 8.137457851738219,
+              "pts": 2.7567970590142297,
+              "reb": 1.357656590146544,
+              "ast": 0.5944145409144417,
+              "tpm": 0.48962466479053113
+            },
+            {
+              "id": "4277922",
+              "name": "Jericho Sims",
+              "status": "",
+              "role": null,
+              "starter": false,
+              "min": 10.29364519160045,
+              "pts": 2.0656008156879064,
+              "reb": 2.422513771897279,
+              "ast": 0.7096053253508157,
+              "tpm": 0
+            }
+          ],
+          "out": [
+            {
+              "id": "4997526",
+              "name": "Ousmane Dieng",
+              "status": "Out"
+            }
+          ],
+          "inputs": {
+            "teamGames": 16,
+            "candidates": [
+              {
+                "id": "4397233",
+                "name": "Pete Nance",
+                "pos": "SF",
+                "status": "",
+                "starter": true,
+                "gp": 2,
+                "wMin": 28.96,
+                "w": 1.24,
+                "startMin": 28,
+                "startW": 1,
+                "benchMin": 0.96,
+                "benchW": 0.24,
+                "roleMin": 28,
+                "roleW": 1,
+                "priorMin": 15.7,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.33961,
+                  "reb": 0.1655,
+                  "ast": 0.07215,
+                  "tpm": 0.06471
+                },
+                "rating": {
+                  "off": 10.77,
+                  "def": 0.08
+                }
+              },
+              {
+                "id": "5164559",
+                "name": "Nate Ament",
+                "pos": "SF",
+                "status": "",
+                "starter": true,
+                "gp": 14,
+                "wMin": 78.29,
+                "w": 3.311,
+                "startMin": 40.282,
+                "startW": 1.24,
+                "benchMin": 38.008,
+                "benchW": 2.071,
+                "roleMin": 40.282,
+                "roleW": 1.24,
+                "priorMin": 0,
+                "kMin": 0,
+                "rate": {
+                  "pts": 0.43724,
+                  "reb": 0.16979,
+                  "ast": 0.04508,
+                  "tpm": 0.05676
+                },
+                "rating": {
+                  "off": 2.12,
+                  "def": 3.31
+                }
+              },
+              {
+                "id": "5105623",
+                "name": "Kel'el Ware",
+                "pos": "C",
+                "status": "",
+                "starter": true,
+                "gp": 16,
+                "wMin": 69.825,
+                "w": 3.322,
+                "startMin": 31.522,
+                "startW": 1.24,
+                "benchMin": 38.302,
+                "benchW": 2.082,
+                "roleMin": 31.522,
+                "roleW": 1.24,
+                "priorMin": 22.1,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.48685,
+                  "reb": 0.37038,
+                  "ast": 0.03882,
+                  "tpm": 0.0459
+                },
+                "rating": {
+                  "off": -2.48,
+                  "def": -0.45
+                }
+              },
+              {
+                "id": "4395725",
+                "name": "Tyler Herro",
+                "pos": "PG",
+                "status": "",
+                "starter": true,
+                "gp": 15,
+                "wMin": 89.287,
+                "w": 3.154,
+                "startMin": 89.287,
+                "startW": 3.154,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 89.287,
+                "roleW": 3.154,
+                "priorMin": 31.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.64822,
+                  "reb": 0.13928,
+                  "ast": 0.13548,
+                  "tpm": 0.08445
+                },
+                "rating": {
+                  "off": -0.01,
+                  "def": 1.17
+                }
+              },
+              {
+                "id": "5082206",
+                "name": "Brayden Burries",
+                "pos": "SG",
+                "status": "",
+                "starter": true,
+                "gp": 16,
+                "wMin": 86.424,
+                "w": 3.322,
+                "startMin": 84.978,
+                "startW": 3.239,
+                "benchMin": 1.446,
+                "benchW": 0.083,
+                "roleMin": 84.978,
+                "roleW": 3.239,
+                "priorMin": 0,
+                "kMin": 0,
+                "rate": {
+                  "pts": 0.46245,
+                  "reb": 0.2282,
+                  "ast": 0.10372,
+                  "tpm": 0.05079
+                },
+                "rating": {
+                  "off": -4.63,
+                  "def": -0.64
+                }
+              },
+              {
+                "id": "4432848",
+                "name": "Jaime Jaquez Jr.",
+                "pos": "SF",
+                "status": "",
+                "starter": false,
+                "gp": 16,
+                "wMin": 83.913,
+                "w": 3.322,
+                "startMin": 14.306,
+                "startW": 0.549,
+                "benchMin": 69.607,
+                "benchW": 2.773,
+                "roleMin": 69.607,
+                "roleW": 2.773,
+                "priorMin": 28.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.54848,
+                  "reb": 0.18449,
+                  "ast": 0.1277,
+                  "tpm": 0.05606
+                },
+                "rating": {
+                  "off": 3.88,
+                  "def": 1.94
+                }
+              },
+              {
+                "id": "4277922",
+                "name": "Jericho Sims",
+                "pos": "C",
+                "status": "",
+                "starter": false,
+                "gp": 11,
+                "wMin": 36.808,
+                "w": 2.921,
+                "startMin": 17.99,
+                "startW": 1.19,
+                "benchMin": 18.818,
+                "benchW": 1.731,
+                "roleMin": 18.818,
+                "roleW": 1.731,
+                "priorMin": 19.7,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.20116,
+                  "reb": 0.23345,
+                  "ast": 0.06809,
+                  "tpm": 0
+                },
+                "rating": {
+                  "off": -3.05,
+                  "def": -7.8
+                }
+              },
+              {
+                "id": "2991043",
+                "name": "Caris LeVert",
+                "pos": "PG",
+                "status": "",
+                "starter": false,
+                "gp": 2,
+                "wMin": 16.6,
+                "w": 1.7,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 16.6,
+                "benchW": 1.7,
+                "roleMin": 16.6,
+                "roleW": 1.7,
+                "priorMin": 19.2,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.40221,
+                  "reb": 0.12253,
+                  "ast": 0.14212,
+                  "tpm": 0.05213
+                },
+                "rating": {
+                  "off": 7.69,
+                  "def": -4.02
+                }
+              },
+              {
+                "id": "4277843",
+                "name": "Gary Trent Jr.",
+                "pos": "SG",
+                "status": "",
+                "starter": false,
+                "gp": 8,
+                "wMin": 40.665,
+                "w": 2.989,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 40.665,
+                "benchW": 2.989,
+                "roleMin": 40.665,
+                "roleW": 2.989,
+                "priorMin": 21.2,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.38841,
+                  "reb": 0.05286,
+                  "ast": 0.04562,
+                  "tpm": 0.09221
+                },
+                "rating": {
+                  "off": -1.87,
+                  "def": 1.85
+                }
+              },
+              {
+                "id": "4591725",
+                "name": "Ryan Rollins",
+                "pos": "PG",
+                "status": "",
+                "starter": false,
+                "gp": 14,
+                "wMin": 48.419,
+                "w": 2.132,
+                "startMin": 6.134,
+                "startW": 0.251,
+                "benchMin": 42.285,
+                "benchW": 1.881,
+                "roleMin": 42.285,
+                "roleW": 1.881,
+                "priorMin": 32.1,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.48924,
+                  "reb": 0.18392,
+                  "ast": 0.17305,
+                  "tpm": 0.07077
+                },
+                "rating": {
+                  "off": 0.93,
+                  "def": -4.59
+                }
+              },
+              {
+                "id": "5214640",
+                "name": "Kasparas Jakucionis",
+                "pos": "PG",
+                "status": "",
+                "starter": false,
+                "gp": 15,
+                "wMin": 62.774,
+                "w": 2.979,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 62.774,
+                "benchW": 2.979,
+                "roleMin": 62.774,
+                "roleW": 2.979,
+                "priorMin": 17.8,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.43463,
+                  "reb": 0.13802,
+                  "ast": 0.16266,
+                  "tpm": 0.06259
+                },
+                "rating": {
+                  "off": 2.37,
+                  "def": 4.64
+                }
+              },
+              {
+                "id": "3134907",
+                "name": "Kyle Kuzma",
+                "pos": "SF",
+                "status": "",
+                "starter": true,
+                "gp": 15,
+                "wMin": 63.35,
+                "w": 2.322,
+                "startMin": 63.35,
+                "startW": 2.322,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 63.35,
+                "roleW": 2.322,
+                "priorMin": 26.2,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.46662,
+                  "reb": 0.18674,
+                  "ast": 0.09326,
+                  "tpm": 0.05628
+                },
+                "rating": {
+                  "off": -0.04,
+                  "def": 0.66
+                }
+              },
+              {
+                "id": "3133628",
+                "name": "Myles Turner",
+                "pos": "C",
+                "status": "",
+                "starter": true,
+                "gp": 14,
+                "wMin": 51.317,
+                "w": 2.082,
+                "startMin": 51.317,
+                "startW": 2.082,
+                "benchMin": 0,
+                "benchW": 0,
+                "roleMin": 51.317,
+                "roleW": 2.082,
+                "priorMin": 26.9,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.32893,
+                  "reb": 0.21362,
+                  "ast": 0.08578,
+                  "tpm": 0.05866
+                },
+                "rating": {
+                  "off": -1.51,
+                  "def": -0.48
+                }
+              },
+              {
+                "id": "4397475",
+                "name": "AJ Green",
+                "pos": "SG",
+                "status": "",
+                "starter": false,
+                "gp": 15,
+                "wMin": 26.652,
+                "w": 2.322,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 26.652,
+                "benchW": 2.322,
+                "roleMin": 26.652,
+                "roleW": 2.322,
+                "priorMin": 29.1,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.36062,
+                  "reb": 0.08664,
+                  "ast": 0.07204,
+                  "tpm": 0.10476
+                },
+                "rating": {
+                  "off": -3.79,
+                  "def": -2.87
+                }
+              },
+              {
+                "id": "4997526",
+                "name": "Ousmane Dieng",
+                "pos": "SF",
+                "status": "Out",
+                "starter": true,
+                "gp": 10,
+                "wMin": 12.627,
+                "w": 1,
+                "startMin": 1.715,
+                "startW": 0.343,
+                "benchMin": 10.912,
+                "benchW": 0.657,
+                "roleMin": 1.715,
+                "roleW": 0.343,
+                "priorMin": 19.3,
+                "kMin": 1,
+                "rate": {
+                  "pts": 0.36457,
+                  "reb": 0.13982,
+                  "ast": 0.10796,
+                  "tpm": 0.05696
+                },
+                "rating": {
+                  "off": -3.4,
+                  "def": -0.99
+                }
+              },
+              {
+                "id": "5214989",
+                "name": "Bogoljub Markovic",
+                "pos": "PF",
+                "status": "",
+                "starter": false,
+                "gp": 3,
+                "wMin": 1.732,
+                "w": 0.428,
+                "startMin": 0,
+                "startW": 0,
+                "benchMin": 1.732,
+                "benchW": 0.428,
+                "roleMin": 1.732,
+                "roleW": 0.428,
+                "priorMin": 0,
+                "kMin": 0,
+                "rate": {
+                  "pts": 0.41407,
+                  "reb": 0.18963,
+                  "ast": 0.10359,
+                  "tpm": 0.04566
+                },
+                "rating": {
+                  "off": 4.02,
+                  "def": 5.14
+                }
+              }
+            ],
+            "expected": {
+              "pts": 108.40977445844189,
+              "reb": 44.961170972960694,
+              "ast": 24.615541966716318,
+              "tpm": 13.787551035315046
+            },
+            "spread": 11.646028437902785,
+            "backToBack": false,
+            "oppMatchup": {
+              "PG": {
+                "pts": 0.947,
+                "reb": 1.168,
+                "ast": 1.048,
+                "tpm": 0.922
+              },
+              "SG": {
+                "pts": 0.938,
+                "reb": 0.988,
+                "ast": 0.893,
+                "tpm": 0.853
+              },
+              "SF": {
+                "pts": 1.098,
+                "reb": 1.041,
+                "ast": 1.034,
+                "tpm": 1.14
+              },
+              "PF": {
+                "pts": 1.014,
+                "reb": 0.963,
+                "ast": 0.834,
+                "tpm": 0.918
+              },
+              "C": {
+                "pts": 0.995,
+                "reb": 0.973,
+                "ast": 1.054,
+                "tpm": 1.181
+              }
+            }
+          }
+        }
+      }
+    }
   ]
 }

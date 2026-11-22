@@ -244,6 +244,8 @@ function projectionsPage(t) {
 }
 
 const teamById = (id) => data.teams.find((t) => t.id === id);
+// Games that started in the last 30 hours (kept with their pre-game ladders, 22 Nov 2026), then those still to come.
+const todaysGames = () => [...(data.upcoming?.earlier ?? []), ...(data.upcoming?.games ?? [])];
 const pill = (t) => `<span class="pill" style="${colours(t)}">${esc(t.code)}</span>`;
 
 // 6. Upcoming games: today's (US date) games not yet started, from the nightly update.
@@ -260,7 +262,16 @@ function upcomingPage() {
       <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
       <span class="when">${score}${startText(g.start)}${note}</span></a></li>`;
   }).join('');
-  const body = !games.length ? null : view === 'ladders' ? ladderRankings(games) : view === 'diffs' ? differences(games) : `<ul class="games-list">${rows}</ul>`;
+  const earlier = (data.upcoming?.earlier ?? []).map((g) => {
+    const away = teamById(g.awayId);
+    const home = teamById(g.homeId);
+    const status = g.final ? `<span class="proj-score">Final ${g.final.score[g.awayId]} – ${g.final.score[g.homeId]}</span>` : '<span class="proj-score">Started</span>';
+    return `<li><a class="game-row" href="#/game/${g.id}">
+      <span class="teams-line">${pill(away)}<span class="at">@</span>${pill(home)}</span>
+      <span class="when">${status}${startText(g.start)}</span></a></li>`;
+  }).join('');
+  const earlierList = earlier ? `<h2 class="group">Earlier games <small>pre-game ladders${data.upcoming.earlier.some((g) => g.final) ? ', checked' : ''}</small></h2><ul class="games-list">${earlier}</ul>` : '';
+  const body = !games.length && !earlier ? null : view === 'ladders' ? (games.length ? ladderRankings(games) : '<p class="message">No games still to start.</p>') : view === 'diffs' ? differences(games) : `${games.length ? `<ul class="games-list">${rows}</ul>` : ''}${earlierList}`;
   const shown = body !== null
     ? body
     : '<p class="message">No upcoming games right now. The list refreshes with each nightly update.</p>';
@@ -388,19 +399,29 @@ function ladderMatchup(g, away, home) {
     return `<div class="panel" style="${colours(t)}"><p>${esc(t.code)} projected</p><h2 class="big">${one(side.score)}</h2><p class="small">${parts.join(' · ')}</p></div>`;
   };
   const outLine = (t, side) => (side.out.length ? `<p class="out-line"><b>${esc(t.code)} out:</b> ${side.out.map((o) => esc(o.name)).join(', ')}</p>` : '');
-  const cell = (pick) => (pick ? `<td><b>${pick.n}+</b><span class="proj">${pct(pick.chance)}</span></td>` : '<td class="none">—</td>');
+  const k = LADDER_STATS.indexOf(stat);
+  // Finished games: each rung ticked (cleared) or crossed, with what he actually got.
+  const actualOf = (id) => (g.final ? g.final.actual[id]?.[k] ?? null : null);
+  const cell = (pick, actual) => (pick
+    ? `<td class="${actual === null ? '' : actual >= pick.n ? 'hit' : 'miss'}"><b>${pick.n}+${actual === null ? '' : actual >= pick.n ? ' ✓' : ' ✗'}</b><span class="proj">${pct(pick.chance)}</span></td>`
+    : '<td class="none">—</td>');
   const block = (t, side) => {
     // players with no rung even 70% likely are left off (21 Nov 2026, Nate: "a lot of space taken up for nothing")
     const rows = ladderRows(side, stat).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
       const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
       const full = openLadder === p.id && chances
         ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
-      return `<tr data-ladder-open="${p.id}"><th scope="row">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min · proj ${one(p[stat])}</span></th>${picks.map(cell).join('')}</tr>${full}`;
+      const actual = actualOf(p.id);
+      const got = !g.final ? '' : actual === null ? ' · didn\'t play' : ` · <b>got ${actual}</b>`;
+      return `<tr data-ladder-open="${p.id}"><th scope="row">${esc(p.name)}${tag}<span class="mins">${Math.floor(p.min)} min · proj ${one(p[stat])}${got}</span></th>${picks.map((pk) => cell(pk, actual)).join('')}</tr>${full}`;
     }).join('');
     return `<section class="stat"><h3>${pill(t)} ${esc(t.name)}</h3>
       ${rows ? `<div class="table-wrap"><table class="results ladders"><thead><tr><th scope="col">${LADDER_NAMES[stat]}</th>${SAFETY.map((lv) => `<th scope="col">${lv * 100}%</th>`).join('')}</tr></thead><tbody>${rows}</tbody></table></div>` : `<p class="none">No player has a ${LADDER_UNITS[stat]} rung 70%+ likely</p>`}</section>`;
   };
-  return `${teamAveragesBox(away, home)}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
+  const startedNote = !g.started ? '' : g.final
+    ? `<p class="out-line"><b>Final: ${esc(away.code)} ${g.final.score[g.awayId]} – ${esc(home.code)} ${g.final.score[g.homeId]}.</b> These are Claude's ladders from before tip-off: ✓ = he cleared the rung, ✗ = he didn't.</p>`
+    : '<p class="out-line"><b>This game has started.</b> These are Claude\'s ladders from before tip-off; each rung is ticked or crossed once the result is in (after the next update).</p>';
+  return `${startedNote}${teamAveragesBox(away, home)}<section class="matchup">${scoreBox(away, c.away)}${scoreBox(home, c.home)}</section>
     ${outLine(away, c.away)}${outLine(home, c.home)}
     ${ladderStatButtons(stat)}
     ${data.calibration?.tpm ? `${block(away, c.away)}${block(home, c.home)}` : '<p class="message">The ladders appear after the next nightly update.</p>'}
@@ -413,14 +434,14 @@ const projectable = (t, out = []) => t.players.filter((p) => (t.roster?.length ?
 // 7. Matchup: for each projection stat, the two teams' players side by side, highest first, 1 or more only.
 // The upcoming game before or after this one (wrapping round), for swiping and the ‹ › arrows.
 function neighbourGame(id, step) {
-  const games = data.upcoming?.games ?? [];
+  const games = todaysGames();
   const i = games.findIndex((g) => g.id === id);
   return i === -1 || games.length < 2 ? null : games[(i + step + games.length) % games.length];
 }
 
 // "‹  3 of 9  ›" under the title of a matchup page.
 function gameNav(g) {
-  const games = data.upcoming?.games ?? [];
+  const games = todaysGames();
   if (games.length < 2) return '';
   const i = games.findIndex((x) => x.id === g.id);
   const prev = neighbourGame(g.id, -1);
@@ -505,7 +526,7 @@ function render() {
   let html;
   let title = 'NBA Team Stats';
   const team = parts[0] === 'team' ? data.teams.find((t) => t.id === parts[1]) : null;
-  const game = parts[0] === 'game' ? data.upcoming?.games.find((g) => g.id === parts[1]) : null;
+  const game = parts[0] === 'game' ? todaysGames().find((g) => g.id === parts[1]) : null;
   if (parts.length === 0) {
     html = teamsPage();
   } else if (parts[0] === 'results') {

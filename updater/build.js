@@ -136,10 +136,27 @@ export function buildAppData(games, teams, config, now, { upcoming = null, roste
     .filter((g) => byId.has(g.homeId) && byId.has(g.awayId))
     .sort((a, b) => a.start.localeCompare(b.start) || a.id.localeCompare(b.id));
 
+  // Games from the same day that have already started: their pre-game projections, plus each player's
+  // points, rebounds, assists and 3PM once the game is finished (so the ladders can be checked).
+  const finished = new Map(games.map((g) => [g.id, g]));
+  const earlierGames = (upcoming?.earlier ?? [])
+    .filter((g) => byId.has(g.homeId) && byId.has(g.awayId))
+    .sort((a, b) => a.start.localeCompare(b.start) || a.id.localeCompare(b.id))
+    .map((g) => {
+      const done = finished.get(g.id);
+      if (!done) return { ...g, started: true };
+      const score = Object.fromEntries(done.teams.map((t) => [t.id, t.score]));
+      const actual = Object.fromEntries(done.teams.flatMap((t) => t.players.filter((p) => p.played).map((p) => {
+        const l = lineToStats(p.stats);
+        return [p.id, [l.pts, l.reb, l.ast, l.tpm]];
+      })));
+      return { ...g, started: true, final: { score, actual } };
+    });
+
   return {
     season: config.season,
     checked: isoIn(now, config.timeZone),
-    upcoming: { usDate: upcoming?.usDate ?? null, games: upcomingGames },
+    upcoming: { usDate: upcoming?.usDate ?? null, games: upcomingGames, earlier: earlierGames },
     teams: out,
   };
 }
