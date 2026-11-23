@@ -1,0 +1,304 @@
+{
+  "id": "401910043",
+  "start": "2026-11-24T01:30Z",
+  "homeId": "10",
+  "awayId": "12",
+  "savedAt": "2026-11-23T20:41:23.012Z",
+  "teams": {
+    "10": {
+      "score": 118.3,
+      "players": {
+        "3202": {
+          "name": "Kevin Durant",
+          "min": 30.3,
+          "claude": {
+            "pts": 20.24,
+            "reb": 4.48,
+            "ast": 3.72,
+            "tpm": 1.66
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "2990992": {
+          "name": "Marcus Smart",
+          "min": 16.1,
+          "claude": {
+            "pts": 5.64,
+            "reb": 1.67,
+            "ast": 1.75,
+            "tpm": 1.17
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "2991230": {
+          "name": "Fred VanVleet",
+          "min": 24,
+          "claude": {
+            "pts": 11.84,
+            "reb": 2.5,
+            "ast": 4.52,
+            "tpm": 2.33
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "3037789": {
+          "name": "Bogdan Bogdanovic",
+          "min": 12.6,
+          "claude": {
+            "pts": 5.18,
+            "reb": 1.44,
+            "ast": 1.33,
+            "tpm": 1.1
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4432639": {
+          "name": "Jabari Smith Jr.",
+          "min": 28.4,
+          "claude": {
+            "pts": 13.62,
+            "reb": 5.21,
+            "ast": 1.86,
+            "tpm": 2.16
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4433192": {
+          "name": "Tari Eason",
+          "min": 23,
+          "claude": {
+            "pts": 9.78,
+            "reb": 5.4,
+            "ast": 1.41,
+            "tpm": 1.17
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 6,
+            "ast": 1
+          }
+        },
+        "4684740": {
+          "name": "Amen Thompson",
+          "min": 27.8,
+          "claude": {
+            "pts": 14.09,
+            "reb": 5.74,
+            "ast": 3.15,
+            "tpm": 0.27
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4711272": {
+          "name": "Reed Sheppard",
+          "min": 16.8,
+          "claude": {
+            "pts": 8.23,
+            "reb": 1.55,
+            "ast": 2.25,
+            "tpm": 1.96
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "4871144": {
+          "name": "Alperen Sengun",
+          "min": 25.5,
+          "claude": {
+            "pts": 17.11,
+            "reb": 6.8,
+            "ast": 5.45,
+            "tpm": 0.73
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 8,
+            "ast": 6
+          }
+        }
+      }
+    },
+    "12": {
+      "score": 105.81,
+      "players": {
+        "3448": {
+          "name": "Brook Lopez",
+          "min": 24.3,
+          "claude": {
+            "pts": 13.21,
+            "reb": 4.75,
+            "ast": 1.67,
+            "tpm": 1.63
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "2991139": {
+          "name": "Kris Dunn",
+          "min": 22.2,
+          "claude": {
+            "pts": 5.89,
+            "reb": 3.04,
+            "ast": 3.27,
+            "tpm": 0.68
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 3,
+            "ast": 4
+          }
+        },
+        "3936099": {
+          "name": "Derrick Jones Jr.",
+          "min": 25.4,
+          "claude": {
+            "pts": 9.15,
+            "reb": 3.75,
+            "ast": 1.14,
+            "tpm": 1.31
+          },
+          "nate": {
+            "pts": 9,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4065778": {
+          "name": "Max Strus",
+          "min": 19.3,
+          "claude": {
+            "pts": 7.99,
+            "reb": 3.63,
+            "ast": 2.16,
+            "tpm": 1.87
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "4066648": {
+          "name": "Rui Hachimura",
+          "min": 25.7,
+          "claude": {
+            "pts": 11.53,
+            "reb": 4.56,
+            "ast": 1.12,
+            "tpm": 1.7
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "4396907": {
+          "name": "Darius Garland",
+          "min": 31.5,
+          "claude": {
+            "pts": 19.62,
+            "reb": 2.16,
+            "ast": 6.3,
+            "tpm": 2.33
+          },
+          "nate": {
+            "pts": 20,
+            "reb": 2,
+            "ast": 6
+          }
+        },
+        "4432170": {
+          "name": "Isaiah Jackson",
+          "min": 11.9,
+          "claude": {
+            "pts": 4.86,
+            "reb": 3.45,
+            "ast": 0.93,
+            "tpm": 0.05
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 4,
+            "ast": 1
+          }
+        },
+        "4702352": {
+          "name": "Kobe Sanders",
+          "min": 18.5,
+          "claude": {
+            "pts": 6.63,
+            "reb": 2.19,
+            "ast": 1.82,
+            "tpm": 1.08
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 2
+          }
+        },
+        "5106258": {
+          "name": "Gradey Dick",
+          "min": 15.2,
+          "claude": {
+            "pts": 6.56,
+            "reb": 2.38,
+            "ast": 0.72,
+            "tpm": 0.71
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "5254165": {
+          "name": "Keaton Wagler",
+          "min": 19.2,
+          "claude": {
+            "pts": 9.91,
+            "reb": 3.2,
+            "ast": 2.48,
+            "tpm": 1.25
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 3,
+            "ast": 3
+          }
+        }
+      }
+    }
+  }
+}
