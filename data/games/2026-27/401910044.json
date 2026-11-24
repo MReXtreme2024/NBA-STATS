@@ -1,0 +1,1307 @@
+{
+  "id": "401910044",
+  "usDate": "2026-11-23",
+  "start": "2026-11-24T03:00Z",
+  "teams": [
+    {
+      "id": "13",
+      "code": "LAL",
+      "name": "Los Angeles Lakers",
+      "homeAway": "home",
+      "score": 109,
+      "color": "552583",
+      "alternateColor": "fdb927",
+      "players": [
+        {
+          "id": "4592691",
+          "name": "Jake LaRavia",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "37",
+            "points": "15",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "10",
+            "assists": "1",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "5",
+            "defensiveRebounds": "5",
+            "fouls": "4",
+            "plusMinus": "+9"
+          },
+          "onCourt": {
+            "secs": 2229.0999999999995,
+            "ptsFor": 82,
+            "ptsAgainst": 73
+          },
+          "quarters": [
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              6,
+              5,
+              0
+            ],
+            [
+              4,
+              3,
+              1
+            ],
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4433136",
+          "name": "Walker Kessler",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "36",
+            "points": "10",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "2-5",
+            "rebounds": "12",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "2",
+            "offensiveRebounds": "4",
+            "defensiveRebounds": "8",
+            "fouls": "1",
+            "plusMinus": "+16"
+          },
+          "onCourt": {
+            "secs": 2147.4999999999995,
+            "ptsFor": 84,
+            "ptsAgainst": 68
+          },
+          "quarters": [
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              4,
+              0
+            ],
+            [
+              5,
+              6,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "3907498",
+          "name": "Matisse Thybulle",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "27",
+            "points": "14",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-9",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-5",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "4",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "2",
+            "blocks": "2",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "3",
+            "fouls": "1",
+            "plusMinus": "+3"
+          },
+          "onCourt": {
+            "secs": 1606.7,
+            "ptsFor": 55,
+            "ptsAgainst": 53
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              3,
+              0
+            ],
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "3945274",
+          "name": "Luka Doncic",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "33",
+            "points": "28",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-24",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "3-14",
+            "freeThrowsMade-freeThrowsAttempted": "9-10",
+            "rebounds": "4",
+            "assists": "8",
+            "turnovers": "4",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "4",
+            "fouls": "4",
+            "plusMinus": "+14"
+          },
+          "onCourt": {
+            "secs": 1970.6,
+            "ptsFor": 81,
+            "ptsAgainst": 67
+          },
+          "quarters": [
+            [
+              14,
+              1,
+              4
+            ],
+            [
+              0,
+              2,
+              2
+            ],
+            [
+              10,
+              1,
+              1
+            ],
+            [
+              4,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4397014",
+          "name": "Quentin Grimes",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "30",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-8",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-4",
+            "freeThrowsMade-freeThrowsAttempted": "6-6",
+            "rebounds": "3",
+            "assists": "8",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "1",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "3",
+            "plusMinus": "+4"
+          },
+          "onCourt": {
+            "secs": 1793,
+            "ptsFor": 63,
+            "ptsAgainst": 59
+          },
+          "quarters": [
+            [
+              2,
+              0,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              0,
+              0,
+              2
+            ],
+            [
+              5,
+              1,
+              3
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4278077",
+          "name": "Jarred Vanderbilt",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "12",
+            "points": "1",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "2",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "2",
+            "plusMinus": "-1"
+          },
+          "onCourt": {
+            "secs": 707,
+            "ptsFor": 23,
+            "ptsAgainst": 24
+          },
+          "quarters": [
+            [
+              0,
+              2,
+              0
+            ],
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4278580",
+          "name": "Sandro Mamukelashvili",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "13",
+            "points": "2",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "4",
+            "assists": "2",
+            "turnovers": "1",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "4",
+            "fouls": "1",
+            "plusMinus": "+10"
+          },
+          "onCourt": {
+            "secs": 804.4,
+            "ptsFor": 38,
+            "ptsAgainst": 27
+          },
+          "quarters": [
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4433137",
+          "name": "Ziaire Williams",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "19",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-5",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-4",
+            "freeThrowsMade-freeThrowsAttempted": "1-3",
+            "rebounds": "4",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "3",
+            "fouls": "1",
+            "plusMinus": "+6"
+          },
+          "onCourt": {
+            "secs": 1149,
+            "ptsFor": 45,
+            "ptsAgainst": 39
+          },
+          "quarters": [
+            [
+              2,
+              2,
+              0
+            ],
+            [
+              3,
+              0,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4277811",
+          "name": "Collin Sexton",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "23",
+            "points": "12",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-6",
+            "freeThrowsMade-freeThrowsAttempted": "4-5",
+            "rebounds": "2",
+            "assists": "4",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "1",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "4",
+            "plusMinus": "+14"
+          },
+          "onCourt": {
+            "secs": 1384.6999999999998,
+            "ptsFor": 51,
+            "ptsAgainst": 37
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              2,
+              4
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "5113969",
+          "name": "Cameron Carr",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "10",
+            "points": "9",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "1",
+            "plusMinus": "0"
+          },
+          "onCourt": {
+            "secs": 608.0000000000001,
+            "ptsFor": 23,
+            "ptsAgainst": 23
+          },
+          "quarters": [
+            [
+              5,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "3155535",
+          "name": "Kevon Looney",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5060631",
+          "name": "Adou Thiero",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "5105817",
+          "name": "Carson Cooper",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4683774",
+          "name": "Bronny James",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        },
+        {
+          "id": "4868423",
+          "name": "Jaden Hardy",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "code": "UTAH",
+      "name": "Utah Jazz",
+      "homeAway": "away",
+      "score": 94,
+      "color": "4e008e",
+      "alternateColor": "79a3dc",
+      "players": [
+        {
+          "id": "4277919",
+          "name": "Mo Bamba",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "29",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-1",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "7",
+            "assists": "2",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "2",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "7",
+            "fouls": "1",
+            "plusMinus": "-10"
+          },
+          "onCourt": {
+            "secs": 1726.5,
+            "ptsFor": 55,
+            "ptsAgainst": 65
+          },
+          "quarters": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              3,
+              1
+            ],
+            [
+              2,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4432811",
+          "name": "Josh Green",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "19",
+            "points": "8",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-3",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "2",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "1",
+            "defensiveRebounds": "1",
+            "fouls": "6",
+            "plusMinus": "-2"
+          },
+          "onCourt": {
+            "secs": 1166.6,
+            "ptsFor": 40,
+            "ptsAgainst": 41
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              1,
+              1
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4433627",
+          "name": "Keyonte George",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "33",
+            "points": "14",
+            "fieldGoalsMade-fieldGoalsAttempted": "4-10",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "2-7",
+            "freeThrowsMade-freeThrowsAttempted": "4-6",
+            "rebounds": "4",
+            "assists": "2",
+            "turnovers": "3",
+            "steals": "2",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "4",
+            "fouls": "3",
+            "plusMinus": "-5"
+          },
+          "onCourt": {
+            "secs": 1962.3000000000002,
+            "ptsFor": 71,
+            "ptsAgainst": 76
+          },
+          "quarters": [
+            [
+              3,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              2,
+              2
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4873138",
+          "name": "Ace Bailey",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "33",
+            "points": "18",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-16",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "1-1",
+            "rebounds": "5",
+            "assists": "1",
+            "turnovers": "3",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "2",
+            "fouls": "1",
+            "plusMinus": "-2"
+          },
+          "onCourt": {
+            "secs": 1987.3,
+            "ptsFor": 72,
+            "ptsAgainst": 74
+          },
+          "quarters": [
+            [
+              4,
+              2,
+              0
+            ],
+            [
+              4,
+              1,
+              0
+            ],
+            [
+              10,
+              1,
+              0
+            ],
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "5041955",
+          "name": "Darryn Peterson",
+          "played": true,
+          "starter": true,
+          "stats": {
+            "minutes": "29",
+            "points": "13",
+            "fieldGoalsMade-fieldGoalsAttempted": "6-13",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-4",
+            "freeThrowsMade-freeThrowsAttempted": "1-2",
+            "rebounds": "6",
+            "assists": "5",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "3",
+            "defensiveRebounds": "3",
+            "fouls": "3",
+            "plusMinus": "-16"
+          },
+          "onCourt": {
+            "secs": 1709.6999999999998,
+            "ptsFor": 57,
+            "ptsAgainst": 73
+          },
+          "quarters": [
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              6,
+              2,
+              1
+            ],
+            [
+              2,
+              3,
+              3
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4433618",
+          "name": "Harrison Ingram",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "1",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "+2"
+          },
+          "onCourt": {
+            "secs": 88,
+            "ptsFor": 4,
+            "ptsAgainst": 2
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4684793",
+          "name": "Kyle Filipowski",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "24",
+            "points": "21",
+            "fieldGoalsMade-fieldGoalsAttempted": "8-14",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "1-3",
+            "freeThrowsMade-freeThrowsAttempted": "4-8",
+            "rebounds": "12",
+            "assists": "4",
+            "turnovers": "2",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "6",
+            "defensiveRebounds": "6",
+            "fouls": "5",
+            "plusMinus": "-21"
+          },
+          "onCourt": {
+            "secs": 1415.4,
+            "ptsFor": 42,
+            "ptsAgainst": 63
+          },
+          "quarters": [
+            [
+              6,
+              3,
+              1
+            ],
+            [
+              4,
+              4,
+              2
+            ],
+            [
+              6,
+              2,
+              0
+            ],
+            [
+              5,
+              3,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "5105839",
+          "name": "Brice Sensabaugh",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "17",
+            "points": "6",
+            "fieldGoalsMade-fieldGoalsAttempted": "3-8",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-2",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "4",
+            "assists": "1",
+            "turnovers": "2",
+            "steals": "2",
+            "blocks": "1",
+            "offensiveRebounds": "2",
+            "defensiveRebounds": "2",
+            "fouls": "2",
+            "plusMinus": "-1"
+          },
+          "onCourt": {
+            "secs": 1024,
+            "ptsFor": 31,
+            "ptsAgainst": 32
+          },
+          "quarters": [
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              3,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4684682",
+          "name": "Jonas Aidoo",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "1",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "1",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "1",
+            "fouls": "0",
+            "plusMinus": "+2"
+          },
+          "onCourt": {
+            "secs": 88,
+            "ptsFor": 4,
+            "ptsAgainst": 2
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "3133602",
+          "name": "Svi Mykhailiuk",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "25",
+            "points": "4",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-7",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-6",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "3",
+            "assists": "2",
+            "turnovers": "2",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "3",
+            "fouls": "1",
+            "plusMinus": "-17"
+          },
+          "onCourt": {
+            "secs": 1504.3999999999999,
+            "ptsFor": 46,
+            "ptsAgainst": 64
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              2,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4065663",
+          "name": "Josh Okogie",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "9",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-4",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-3",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "1",
+            "steals": "1",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "-7"
+          },
+          "onCourt": {
+            "secs": 558.5,
+            "ptsFor": 13,
+            "ptsAgainst": 20
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4683736",
+          "name": "Kobe Bufkin",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "1",
+            "points": "0",
+            "fieldGoalsMade-fieldGoalsAttempted": "0-0",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "0-0",
+            "rebounds": "0",
+            "assists": "0",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "0",
+            "fouls": "0",
+            "plusMinus": "+2"
+          },
+          "onCourt": {
+            "secs": 88,
+            "ptsFor": 4,
+            "ptsAgainst": 2
+          },
+          "quarters": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4683766",
+          "name": "Isaiah Collier",
+          "played": true,
+          "starter": false,
+          "stats": {
+            "minutes": "18",
+            "points": "4",
+            "fieldGoalsMade-fieldGoalsAttempted": "1-6",
+            "threePointFieldGoalsMade-threePointFieldGoalsAttempted": "0-0",
+            "freeThrowsMade-freeThrowsAttempted": "2-2",
+            "rebounds": "2",
+            "assists": "1",
+            "turnovers": "0",
+            "steals": "0",
+            "blocks": "0",
+            "offensiveRebounds": "0",
+            "defensiveRebounds": "2",
+            "fouls": "3",
+            "plusMinus": "0"
+          },
+          "onCourt": {
+            "secs": 1081.3000000000002,
+            "ptsFor": 31,
+            "ptsAgainst": 31
+          },
+          "quarters": [
+            [
+              0,
+              1,
+              1
+            ],
+            [
+              4,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "id": "4065673",
+          "name": "Tony Bradley",
+          "played": false,
+          "reason": "COACH'S DECISION"
+        }
+      ]
+    }
+  ]
+}
