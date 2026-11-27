@@ -3,16 +3,16 @@
   "start": "2026-11-28T02:30Z",
   "homeId": "24",
   "awayId": "13",
-  "savedAt": "2026-11-27T19:48:53.762Z",
+  "savedAt": "2026-11-27T21:55:37.468Z",
   "teams": {
     "13": {
-      "score": 110.59,
+      "score": 109.69,
       "players": {
         "3907498": {
           "name": "Matisse Thybulle",
           "min": 20.5,
           "claude": {
-            "pts": 6.26,
+            "pts": 6.21,
             "reb": 2.12,
             "ast": 0.85,
             "tpm": 1.39
@@ -27,9 +27,9 @@
           "name": "Luka Doncic",
           "min": 28.8,
           "claude": {
-            "pts": 26.54,
+            "pts": 26.32,
             "reb": 5.45,
-            "ast": 5.78,
+            "ast": 5.73,
             "tpm": 3.43
           },
           "nate": {
@@ -42,9 +42,9 @@
           "name": "Austin Reaves",
           "min": 23.1,
           "claude": {
-            "pts": 14.78,
+            "pts": 14.66,
             "reb": 2.46,
-            "ast": 3,
+            "ast": 2.97,
             "tpm": 1.39
           },
           "nate": {
@@ -57,9 +57,9 @@
           "name": "Collin Sexton",
           "min": 18.1,
           "claude": {
-            "pts": 10.03,
+            "pts": 9.95,
             "reb": 1.65,
-            "ast": 2.35,
+            "ast": 2.33,
             "tpm": 0.98
           },
           "nate": {
@@ -72,9 +72,9 @@
           "name": "Jarred Vanderbilt",
           "min": 9.3,
           "claude": {
-            "pts": 1.87,
+            "pts": 1.86,
             "reb": 2.67,
-            "ast": 0.72,
+            "ast": 0.71,
             "tpm": 0.11
           },
           "nate": {
@@ -87,9 +87,9 @@
           "name": "Sandro Mamukelashvili",
           "min": 17.2,
           "claude": {
-            "pts": 7.03,
+            "pts": 6.98,
             "reb": 3.47,
-            "ast": 1.24,
+            "ast": 1.23,
             "tpm": 0.89
           },
           "nate": {
@@ -102,9 +102,9 @@
           "name": "Quentin Grimes",
           "min": 26.2,
           "claude": {
-            "pts": 10.57,
+            "pts": 10.48,
             "reb": 3.08,
-            "ast": 2.66,
+            "ast": 2.64,
             "tpm": 1.49
           },
           "nate": {
@@ -117,9 +117,9 @@
           "name": "Walker Kessler",
           "min": 26.8,
           "claude": {
-            "pts": 11.28,
+            "pts": 11.18,
             "reb": 9.17,
-            "ast": 1.64,
+            "ast": 1.63,
             "tpm": 0.3
           },
           "nate": {
@@ -132,9 +132,9 @@
           "name": "Ziaire Williams",
           "min": 17.1,
           "claude": {
-            "pts": 6.52,
+            "pts": 6.46,
             "reb": 1.72,
-            "ast": 0.99,
+            "ast": 0.98,
             "tpm": 1.08
           },
           "nate": {
@@ -147,9 +147,9 @@
           "name": "Jake LaRavia",
           "min": 23.9,
           "claude": {
-            "pts": 5.99,
+            "pts": 5.94,
             "reb": 3.93,
-            "ast": 1.66,
+            "ast": 1.65,
             "tpm": 0.83
           },
           "nate": {
