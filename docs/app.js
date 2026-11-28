@@ -1,5 +1,5 @@
 import { MODES, cut, hundredths, playerStat, show, teamAverage, working } from './calc.js';
-import { LADDER_STATS, MARK_STATS, MIN_LADDER_MINUTES, SAFETY, fiftyMark, pickRung, rungChances } from './ladders.js';
+import { LADDER_STATS, MARKS, MARK_STATS, MIN_LADDER_MINUTES, SAFETY, markAt, pickRung, rungChances } from './ladders.js';
 
 const app = document.getElementById('app');
 const TZ = 'Australia/Melbourne';
@@ -411,8 +411,8 @@ function ladderMatchup(g, away, home) {
     // players with no rung even 70% likely are left off (21 Nov 2026, Nate: "a lot of space taken up for nothing")
     const rows = ladderRows(side, stat, g.savedPicks).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
       const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
-      const mark = MARK_STATS.includes(stat) ? fiftyMark(p[stat], stat, data.calibration) : null;
-      const markChip = mark === null ? '' : `<span class="chip mark">50% mark ${one(mark)}</span>`;
+      const marks = MARK_STATS.includes(stat) ? MARKS.map((sh) => [sh, markAt(p[stat], stat, data.calibration, sh)]).filter(([, m]) => m !== null) : [];
+      const markChip = marks.length ? `<span class="chip mark">${marks.map(([sh, m]) => `${sh * 100}% mark ${one(m)}`).join(' · ')}</span>` : '';
       const full = openLadder === p.id && chances
         ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${markChip}${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
       const actual = actualOf(p.id);
