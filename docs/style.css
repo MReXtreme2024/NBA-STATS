@@ -394,3 +394,4 @@ table.ladders .chips .chip { margin: 0; }
 table.ladders th[scope="row"] { white-space: normal; height: auto; padding-top: 8px; padding-bottom: 8px; }
 table.ladders td.hit b { color: #15803d; }
 table.ladders td.miss b { color: #b91c1c; }
+table.ladders .chips .chip.mark { flex-basis: 100%; font-weight: 700; text-align: center; border-color: var(--accent, #2563eb); }

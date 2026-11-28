@@ -37,3 +37,16 @@ test('no rung safe enough gives no pick; nothing learned gives no ladder', () =>
   assert.equal(rungChances(20, 'pts', null), null);
   assert.equal(pickRung(null, 0.9), null);
 });
+
+test('fiftyMark: half the results above, half below', async () => {
+  const { fiftyMark } = await import('../docs/ladders.js');
+  const { chanceOver } = await import('../docs/slips.js');
+  const shape = Array.from({ length: 101 }, (_, i) => (i - 50) / 25); // even spread, middle 0
+  const cal = { pts: { bias: 0.95, k: 2, shape } };
+  const m = fiftyMark(21.5, 'pts', cal);
+  assert.ok(Math.abs(m - 0.95 * 21.5) < 1e-9);
+  // the .5 lines either side of the mark sit either side of 50%
+  assert.ok(chanceOver(21.5, Math.floor(m) - 0.5, cal.pts) >= 0.5);
+  assert.ok(chanceOver(21.5, Math.floor(m) + 0.5, cal.pts) <= 0.5);
+  assert.equal(fiftyMark(10, 'reb', cal), null);
+});

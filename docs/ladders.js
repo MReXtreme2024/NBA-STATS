@@ -37,3 +37,14 @@ export function ladderPicks(player, cal) {
     return [s, Object.fromEntries(SAFETY.map((lv) => [lv, pickRung(chances, lv)]))];
   }));
 }
+
+// The exact 50% mark (28 Nov 2026, Nate's request): the figure he goes over half the time and under half the
+// time, from the same projection and calibration as the rungs (the middle of the learned misses). Points,
+// rebounds and assists only. null if that stat isn't learned yet.
+export const MARK_STATS = ['pts', 'reb', 'ast'];
+export function fiftyMark(mu, stat, cal) {
+  const c = cal?.[stat];
+  if (!c?.shape?.length) return null;
+  const mid = c.shape[(c.shape.length - 1) / 2];
+  return Math.max(0, c.bias * mu + mid * Math.sqrt(c.k * Math.max(mu, 1)));
+}
