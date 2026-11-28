@@ -1,0 +1,289 @@
+{
+  "id": "401910050",
+  "start": "2026-11-29T01:30Z",
+  "homeId": "10",
+  "awayId": "20",
+  "savedAt": "2026-11-28T19:44:32.852Z",
+  "teams": {
+    "10": {
+      "score": 116.54,
+      "players": {
+        "3202": {
+          "name": "Kevin Durant",
+          "min": 31.9,
+          "claude": {
+            "pts": 20.94,
+            "reb": 5.31,
+            "ast": 3.61,
+            "tpm": 1.66
+          },
+          "nate": {
+            "pts": 21,
+            "reb": 5,
+            "ast": 3
+          }
+        },
+        "2990992": {
+          "name": "Marcus Smart",
+          "min": 17.1,
+          "claude": {
+            "pts": 5.55,
+            "reb": 1.92,
+            "ast": 1.8,
+            "tpm": 1.03
+          },
+          "nate": {
+            "pts": 4,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "2991230": {
+          "name": "Fred VanVleet",
+          "min": 26.7,
+          "claude": {
+            "pts": 12.13,
+            "reb": 2.83,
+            "ast": 4.65,
+            "tpm": 2.33
+          },
+          "nate": {
+            "pts": 11,
+            "reb": 2,
+            "ast": 4
+          }
+        },
+        "3037789": {
+          "name": "Bogdan Bogdanovic",
+          "min": 12.3,
+          "claude": {
+            "pts": 4.84,
+            "reb": 1.43,
+            "ast": 1.25,
+            "tpm": 0.96
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4432639": {
+          "name": "Jabari Smith Jr.",
+          "min": 29.8,
+          "claude": {
+            "pts": 13.73,
+            "reb": 5.7,
+            "ast": 1.81,
+            "tpm": 2.03
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 6,
+            "ast": 2
+          }
+        },
+        "4432827": {
+          "name": "Oscar Tshiebwe",
+          "min": 8.3,
+          "claude": {
+            "pts": 3.75,
+            "reb": 3.53,
+            "ast": 0.69,
+            "tpm": 0
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 1,
+            "ast": 0
+          }
+        },
+        "4433192": {
+          "name": "Tari Eason",
+          "min": 21.3,
+          "claude": {
+            "pts": 8.83,
+            "reb": 5.18,
+            "ast": 1.29,
+            "tpm": 1.03
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 5,
+            "ast": 1
+          }
+        },
+        "4684740": {
+          "name": "Amen Thompson",
+          "min": 30.2,
+          "claude": {
+            "pts": 15.02,
+            "reb": 6.56,
+            "ast": 3.29,
+            "tpm": 0.29
+          },
+          "nate": {
+            "pts": 15,
+            "reb": 6,
+            "ast": 3
+          }
+        },
+        "4711272": {
+          "name": "Reed Sheppard",
+          "min": 16.6,
+          "claude": {
+            "pts": 7.75,
+            "reb": 1.64,
+            "ast": 2.15,
+            "tpm": 1.72
+          },
+          "nate": {
+            "pts": 7,
+            "reb": 1,
+            "ast": 2
+          }
+        },
+        "4871144": {
+          "name": "Alperen Sengun",
+          "min": 27.6,
+          "claude": {
+            "pts": 17.96,
+            "reb": 7.8,
+            "ast": 5.73,
+            "tpm": 0.81
+          },
+          "nate": {
+            "pts": 19,
+            "reb": 8,
+            "ast": 6
+          }
+        }
+      }
+    },
+    "20": {
+      "score": 103.76,
+      "players": {
+        "2581018": {
+          "name": "Kentavious Caldwell-Pope",
+          "min": 29.9,
+          "claude": {
+            "pts": 7.72,
+            "reb": 3.63,
+            "ast": 2.47,
+            "tpm": 1.37
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 2,
+            "ast": 1
+          }
+        },
+        "3917376": {
+          "name": "Jaylen Brown",
+          "min": 31.1,
+          "claude": {
+            "pts": 19.14,
+            "reb": 6.17,
+            "ast": 3.43,
+            "tpm": 1.35
+          },
+          "nate": {
+            "pts": 17,
+            "reb": 4,
+            "ast": 2
+          }
+        },
+        "4351851": {
+          "name": "Anfernee Simons",
+          "min": 28.6,
+          "claude": {
+            "pts": 13.03,
+            "reb": 2.6,
+            "ast": 1.86,
+            "tpm": 2.47
+          },
+          "nate": {
+            "pts": 10,
+            "reb": 1,
+            "ast": 1
+          }
+        },
+        "4431678": {
+          "name": "Tyrese Maxey",
+          "min": 42,
+          "claude": {
+            "pts": 26.61,
+            "reb": 4.15,
+            "ast": 6.49,
+            "tpm": 2.38
+          },
+          "nate": {
+            "pts": 24,
+            "reb": 3,
+            "ast": 5
+          }
+        },
+        "4432446": {
+          "name": "Jabari Walker",
+          "min": 19.2,
+          "claude": {
+            "pts": 6.89,
+            "reb": 5.71,
+            "ast": 1.05,
+            "tpm": 0.64
+          },
+          "nate": {
+            "pts": 5,
+            "reb": 3,
+            "ast": 0
+          }
+        },
+        "4433144": {
+          "name": "Caleb Love",
+          "min": 9.1,
+          "claude": {
+            "pts": 4,
+            "reb": 1.08,
+            "ast": 1.05,
+            "tpm": 0.68
+          },
+          "nate": {
+            "pts": 0,
+            "reb": 0,
+            "ast": 0
+          }
+        },
+        "5105637": {
+          "name": "Adem Bona",
+          "min": 12.4,
+          "claude": {
+            "pts": 2.38,
+            "reb": 3.5,
+            "ast": 0.42,
+            "tpm": 0
+          },
+          "nate": {
+            "pts": 1,
+            "reb": 2,
+            "ast": 0
+          }
+        },
+        "5124612": {
+          "name": "VJ Edgecombe",
+          "min": 42,
+          "claude": {
+            "pts": 15.29,
+            "reb": 7.94,
+            "ast": 5.02,
+            "tpm": 1.64
+          },
+          "nate": {
+            "pts": 12,
+            "reb": 5,
+            "ast": 4
+          }
+        }
+      }
+    }
+  }
+}
