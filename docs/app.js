@@ -412,7 +412,7 @@ function ladderMatchup(g, away, home) {
     const rows = ladderRows(side, stat, g.savedPicks).filter((r) => r.picks.some(Boolean)).sort((a, b) => b.p[stat] - a.p[stat] || a.p.name.localeCompare(b.p.name)).map(({ p, chances, picks }) => {
       const tag = p.status ? ` <span class="tag">${esc(p.status === 'Day-To-Day' ? 'GTD' : p.status)}</span>` : '';
       const marks = MARK_STATS.includes(stat) ? MARKS.map((sh) => [sh, markAt(p[stat], stat, data.calibration, sh)]).filter(([, m]) => m !== null) : [];
-      const markChip = marks.length ? `<span class="chip mark">${marks.map(([sh, m]) => `${sh * 100}% mark ${one(m)}`).join(' · ')}</span>` : '';
+      const markChip = marks.length ? `<div class="marks">${marks.map(([sh, m]) => `<span><span class="lv">${Math.round(sh * 100)}% mark</span>${one(m)}</span>`).join('')}</div>` : '';
       const full = openLadder === p.id && chances
         ? `<tr class="full-ladder"><td colspan="4"><div class="chips">${markChip}${chances.map((r) => `<span class="chip${r.chance >= SAFETY[0] ? ' c3' : r.chance >= SAFETY[1] ? ' c2' : r.chance >= SAFETY[2] ? ' c1' : ''}">${r.n}+ ${pct(r.chance)}</span>`).join('')}</div></td></tr>` : '';
       const actual = actualOf(p.id);

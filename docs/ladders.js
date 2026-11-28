@@ -38,11 +38,11 @@ export function ladderPicks(player, cal) {
   }));
 }
 
-// The exact marks (28 Nov 2026, Nate's request: 50%, then 60% and 70%): the figure he goes over that share of
+// The exact marks (28 Nov 2026, Nate's request: 50%, then 60%, 70% and 80%): the figure he goes over that share of
 // the time, from the same projection and calibration as the rungs (the matching point of the learned misses,
 // so chanceOver agrees with it). Points, rebounds and assists only. null if that stat isn't learned yet.
 export const MARK_STATS = ['pts', 'reb', 'ast'];
-export const MARKS = [0.5, 0.6, 0.7];
+export const MARKS = [0.5, 0.6, 0.7, 0.8];
 export function markAt(mu, stat, cal, share) {
   const c = cal?.[stat];
   if (!c?.shape?.length) return null;

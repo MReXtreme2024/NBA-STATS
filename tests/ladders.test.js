@@ -56,9 +56,9 @@ test('markAt: 60% and 70% marks sit below the 50% mark and agree with chanceOver
   const { chanceOver } = await import('../docs/slips.js');
   const shape = Array.from({ length: 101 }, (_, i) => (i - 50) / 25);
   const cal = { pts: { bias: 1, k: 2, shape } };
-  const [m5, m6, m7] = [0.5, 0.6, 0.7].map((s) => markAt(20, 'pts', cal, s));
-  assert.ok(m5 > m6 && m6 > m7);
-  for (const [m, s] of [[m6, 0.6], [m7, 0.7]]) {
+  const [m5, m6, m7, m8] = [0.5, 0.6, 0.7, 0.8].map((s) => markAt(20, 'pts', cal, s));
+  assert.ok(m5 > m6 && m6 > m7 && m7 > m8);
+  for (const [m, s] of [[m6, 0.6], [m7, 0.7], [m8, 0.8]]) {
     const below = Math.floor(m - 0.5); // the result has to clear below + 0.5, which is at most m
     assert.ok(chanceOver(20, below, cal.pts) >= s);
     assert.ok(chanceOver(20, below + 1, cal.pts) <= s);
